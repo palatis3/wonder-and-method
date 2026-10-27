@@ -1,0 +1,40 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 46,
+  "reviewedCount": 46,
+  "nextCandidateIndex": null,
+  "contentPassCount": 46,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "recommendedFixes": [
+    {
+      "route": "/areas/pennsylvania/berks-county/",
+      "recommendedFixes": [
+        "Consider trimming the brief review-versus-substantial-improvement recap in limits because the FAQs explain those website services more fully."
+      ]
+    }
+  ],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "uniqueRoutes": 46,
+    "exactDimensionQuotes": 276,
+    "currentDraftHashesMatched": 46,
+    "currentSourceEntryHashesMatched": 46,
+    "currentSiblingDraftHashesMatched": 46,
+    "immutablePacketHashesMatched": 10,
+    "rendererInputHashesMatched": 5,
+    "reconstructedCandidateBodyHashesMatched": 46,
+    "errors": []
+  },
+  "reviewScope": "Independent manual read of complete candidate prose including FAQs/disclosures, source entries, supplied neighbor drafts and relevant before/after correction receipts. Exact shared strings cross-referenced to earlier complete reads. Official factual receipts compared for changed examples. Earlier 45-route assignment superseded by this corrected 46-route assignment.",
+  "limits": [
+    "Content-only review; no visual, accessibility, interaction or publication acceptance.",
+    "Earlier baseline findings retained; baseline not reread.",
+    "Official-source receipt findings compared; no independent fresh source retrieval.",
+    "Supplied assignment neighbors compared; broader topical-family overlap remains separately reviewable."
+  ],
+  "reviewedAt": "2026-10-27"
+}

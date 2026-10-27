@@ -2,6 +2,7 @@ import {gzipSync} from 'node:zlib';
 import {locationServicePages} from '../src/location-service-pages.mjs';
 import historicCountyRoutes from './fixtures/historic-county-routes.json' with {type:'json'};
 import {countyLocalNotes} from '../src/county-local-notes.mjs';
+import {directoryReadableNote,directorySentences,directoryLocalNote,directoryPlaceNote} from '../src/directory-editorial-notes.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -18,6 +19,15 @@ const servicesByPath=new Map(locationServicePages(offers).map(page=>[page.path,p
 const directories=new Map(states.map(state=>[state.id,countyDirectory(state)]));
 const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(region=>region.slugs.includes(county.slug))).split('|')})));
 const matches=query=>cards.filter(card=>countyMatchScore(card,parseCountyQuery(query))).map(card=>card.state+'/'+card.slug).sort();
+const entryHtml=(html,slug)=>{
+ const start=html.indexOf(`id="${slug}"`);assert.ok(start>=0,slug);
+ const tail=html.slice(start);let depth=1;
+ for(const match of tail.matchAll(/<\/?details\b[^>]*>/g)){
+  depth+=match[0].startsWith('</')?-1:1;
+  if(!depth)return tail.slice(0,match.index+match[0].length);
+ }
+ throw Error('Unclosed directory entry '+slug);
+};
 
 test('forty expansion hubs expose 2889 entries within 53 public directory pages and preserve 333 original areas',()=>{
  assert.equal(states.length,40);assert.equal(pages.length,53);assert.equal(byPath.size,53);
@@ -53,15 +63,26 @@ test('hub entries expose every recorded place and distinct government type with 
   const definitionHtml=html.replace(/(<div id="geography-note-\d+">)([\s\S]*?)(<\/div>)/g,(_,open,note,close)=>open+note.replaceAll('</p><p>',' ')+close);
   for(const county of state.counties){
    const g=state.geography[county.slug];
-   const entry=html.slice(html.indexOf(`id="${county.slug}"`)).split('</details>')[0];
+   const entry=entryHtml(html,county.slug);
    for(const place of [...(g.municipalityDetails||[]),...(g.communities||[]),...(g.administrativeDistricts||[])]){
     assert.ok(entry.includes(e(place.name)),`${state.id}/${county.slug}: ${place.name}`);
-    if(place.note||place.governmentStatus)assert.ok(entry.includes(e(place.note||place.governmentStatus)),place.name+' keeps its status');
+    const note=directoryPlaceNote(place,state,county);
+    if(note)assert.ok(entry.includes(e(note)),place.name+' keeps its reader-facing annotation');
+    if(!place.note&&place.governmentStatus)assert.ok(html.includes(e(place.governmentStatus)),place.name+' keeps its recorded status in the entry or shared definitions');
    }
    assert.match(entry,/href="#geography-reference-\d+"/);
    for(const url of g.sources)assert.ok(html.includes(`href="${e(url)}"`),state.id+' source '+url);
-   const shared=Object.values(state.geography).find(other=>other.directoryNote&&g.directoryNote.startsWith(other.directoryNote+' '));
-   assert.ok(definitionHtml.includes(e(g.directoryNote))||(shared&&definitionHtml.includes(e(shared.directoryNote))&&definitionHtml.includes(e(g.directoryNote.slice(shared.directoryNote.length+1)))),state.id+' complete place definitions, with a shared prefix printed once');
+   for(const sentence of directorySentences(directoryReadableNote(g.directoryNote,state))){
+    // Shared definitions can appear once, separately from a named county's
+    // evidence. Named subjects replace these two ambiguous singular labels.
+    if(sentence.startsWith('This county has no incorporated municipality in the January 2026 Census inventory;')){
+     assert.match(definitionHtml,/no incorporated municipalit/);
+     const remainder=sentence.split(';').slice(1).join(';');
+     if(remainder)assert.ok(definitionHtml.includes(e(remainder)),state.id+' unincorporated-area qualification');
+    }else if(sentence==='This census area has no county-equivalent municipal government.'){
+     assert.match(definitionHtml,/census areas have no county-equivalent municipal government/);
+    }else assert.ok(definitionHtml.includes(e(sentence)),state.id+' complete readable definition: '+sentence);
+   }
   }
  }
  assert.match(directories.get('michigan'),/>Charter townships<\/h3>/);
@@ -127,8 +148,9 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
   for(const county of state.counties){
    count++;
    const start=page.body.indexOf(`id="${county.slug}"`);assert.ok(start>=0,state.id+'/'+county.slug);
-   const entry=page.body.slice(start).split('</details>')[0],g=state.geography[county.slug];
-   const note=countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote;if(note)assert.ok(entry.includes(e(note)),state.id+'/'+county.slug+' retained fact');
+   const entry=entryHtml(page.body,county.slug),g=state.geography[county.slug];
+   const originalNote=countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote;
+   const note=directoryLocalNote(originalNote?.replace(/^[^.]+ is a (?:city|town|village|borough|township); [^.]+ is a (?:city|town|village|borough|township) in [^.]+\.\s*/,'').replace(/\s*(?:Confirm the actual shipment address|Use the actual class address in arrival instructions|Confirm the actual delivery address)\./g,''),state);if(note)assert.ok(entry.includes(e(note)),state.id+'/'+county.slug+' retained local fact');
    for(const name of [...Object.values(g.municipalities).flat(),...g.communities.map(place=>place.name)])assert.ok(entry.includes(e(name)),state.id+'/'+county.slug+': '+name);
    assert.match(entry,/href="#geography-reference-\d+"/);
    const destination=countyPath(county,state);

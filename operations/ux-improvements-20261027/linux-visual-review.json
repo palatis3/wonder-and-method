@@ -1,0 +1,473 @@
+{
+  "reviewed_commit": "ebe755bf0ed336815e02f0f5c364675de51afdcb",
+  "reviewer": "Astra independent visual review",
+  "status": "changes_requested",
+  "scope": "All 39 changed Linux screenshot candidates listed in evidence/ux-improvements-20261027/visual-changes.json. No baseline or source changes made.",
+  "coverage": {
+    "images": 39,
+    "accepted": 35,
+    "held": 4,
+    "method": "Every full-page and viewport candidate inspected at original pixel resolution. Desktop strips are at most 1450 pixels high; phone strips are at most 1400 pixels high and arranged in columns without resizing. Adjacent strips overlap by 60 pixels. Added labels and strip boundaries are inspection artifacts. home-viewport-01 and floating-tools-home have identical SHA256; their identical pixels were inspected once.",
+    "hash_and_dimensions_verified": true
+  },
+  "findings": [
+    {
+      "id": "V1",
+      "priority": "P2",
+      "title": "Keep floating controls clear of mobile prose",
+      "description": "At the 390px phone width, the fixed 48px chat launcher occupies x approximately 326-374 and y approximately 780-828, overlapping body text in about, pricing and work. The scrolled floating-tools-content capture also shows both fixed controls over the local-example disclosure. Pricing obscures cost/optional-care wording. Desktop controls sit outside content and phone inquiry forms are clear.",
+      "affected_candidates": [
+        "phone\\about.png",
+        "phone\\floating-tools-content.png",
+        "phone\\pricing.png",
+        "phone\\work.png"
+      ],
+      "required_resolution": "Change the mobile control placement or visibility so ordinary text remains readable, then recapture affected mobile states and review before accepting their baselines.",
+      "regression_attribution": "Observed in candidate pixels; this static review does not establish whether the underlying control behavior predates this commit."
+    }
+  ],
+  "limits": [
+    "Acceptance applies only to the supplied static screenshot states and exact hashes, not all scrolling positions, interactive states or routes.",
+    "No new P1 issue or additional layout defect observed.",
+    "Sticky header coverage at the top of mid-scroll viewport captures and text crossing artificial inspection-strip edges are not classified as defects."
+  ],
+  "images": [
+    {
+      "path": "desktop\\about.png",
+      "width": 1440,
+      "height": 3274,
+      "sha256": "c5338a90b56555a0a8a9cbdc3df170ed94378e4e51512414f55f447ec18e484f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 3,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\contact.png",
+      "width": 1440,
+      "height": 2819,
+      "sha256": "af785d2c46c71bc6714bc22175a42421e5dfbb50654066238790f045c354a814",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\floating-tools-content.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "195ca35a6543daca31d99228778c2e8bfb30fee78e2a2e84931ec0f528cc3cc0",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\floating-tools-home.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\footer-closed.png",
+      "width": 1440,
+      "height": 385,
+      "sha256": "887ff282bc7c3f0f9ca84acde84f82735ca12e5ae266579c7c1c965528fe1d92",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\footer-open.png",
+      "width": 1440,
+      "height": 2829,
+      "sha256": "f9a43893d9887d0c415b6abd9737c0cba201ab7298ffbeedc60cc068cd86b899",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-01.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-02.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fe86f6351647c5110a25179d319901a16bc4559fe26bcf8388edfdee0d11f1ba",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-03.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b39d456b6e77874d111df35b9898773e55596fca3a01ec1e5d07b182c9e334b8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-04.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d6df5a4117e51183a01a28234363414f0d0a313d8f7e30165f934a6500c034f8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-05.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "00e93d28bc0b452515325ee51d91d16847b59abd2eeb22f2bb572f7b0a8ec4d3",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-06.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b8d7753b234025bdea42ef255c20369a53dee3545eba9ec7a199dc0007b99eb2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\home-viewport-07.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "992ce7996b7b77d6612e72b9b56ed706ed4c6417ebb2719d8e867bd128dc91a2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\iowa-county.png",
+      "width": 1440,
+      "height": 4921,
+      "sha256": "97a7908559b1cd85daa154ae9bb14ca60d95e317b1b5d9018c694b16c551e589",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 4,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\missouri-county.png",
+      "width": 1440,
+      "height": 4719,
+      "sha256": "efc487142dffc4b9cb89ce42b54e20d85e7d1ca99669435e99da6b93d62635fb",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 4,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\monthly-seo.png",
+      "width": 1440,
+      "height": 6193,
+      "sha256": "63720c66bcf817c83f17c258b7fe4693038dcea323f48efaeeb54bc4ac65b36a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 5,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\pricing.png",
+      "width": 1440,
+      "height": 5990,
+      "sha256": "fb165c79bffd18e56e9fa81735010df8f66f4c76f6f8fa495e01c870186fbf5f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 5,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\scope-request.png",
+      "width": 1440,
+      "height": 2765,
+      "sha256": "17d75cc851353a2973007c4c706a65669fadb81c06a5dbd2808383bcb240d6ec",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\service-questions.png",
+      "width": 1296,
+      "height": 426,
+      "sha256": "bdd58c314444f4f8d633f792d65e0c5f582ee7f54b50160a30dcfbe99bca400f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\texas-county.png",
+      "width": 1440,
+      "height": 4606,
+      "sha256": "e6ef1933145b1dfab3fa374a23c2d899436e3d0ae4b0f71448c768226f51ed20",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 4,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\web-design.png",
+      "width": 1440,
+      "height": 7432,
+      "sha256": "10d9a64f250fc745104c0d0a3c94dde42a6b149ce267f9316524fc2165821271",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 6,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "desktop\\work.png",
+      "width": 1440,
+      "height": 8096,
+      "sha256": "633ca7619e3d485c8247169cecf734e8964f216513a791adff91123925333f4f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 6,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\about.png",
+      "width": 390,
+      "height": 4224,
+      "sha256": "83a4db71e2035e882a2643ca82a7ec6274e81b612690761c7969da947caa62af",
+      "disposition": "hold",
+      "finding_ids": [
+        "V1"
+      ],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "Chat launcher covers part of the founder biography near original y=780-828."
+    },
+    {
+      "path": "phone\\contact.png",
+      "width": 390,
+      "height": 3835,
+      "sha256": "1e1a26845c50196f9506ecbc058c415eb6a6192c87d6385265545a927d3d5c7f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\county-questions.png",
+      "width": 350,
+      "height": 983,
+      "sha256": "ea86d9b0d0315783402ea003cb2ec3d08586281c5f9561be48d8dde07a3df4a2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\floating-tools-content.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "ffb8a8321c4cbe0baaeb4f08dfd795bdb6dc345f9c1be83f738ce290b884884b",
+      "disposition": "hold",
+      "finding_ids": [
+        "V1"
+      ],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "Back-to-top and chat launchers cover the local-example disclosure near the bottom of this viewport (original y=780-828)."
+    },
+    {
+      "path": "phone\\floating-tools-home.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "95dfd8c752346e8996212bc04b989289b3d486c8981f09cb51e8527484db7abc",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\footer-closed.png",
+      "width": 390,
+      "height": 746,
+      "sha256": "c696384806b0afbaaf34d305b461d6602d689799642fb478261e920415b0bef6",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\footer-open.png",
+      "width": 390,
+      "height": 4002,
+      "sha256": "101b9cf49fdcf0d7b63200a2d014347857cdd7e29a93c2293afce4592a076483",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\home.png",
+      "width": 390,
+      "height": 8305,
+      "sha256": "0e62a4f4960aaa336aa4e5d2e711fe8b342cbb06dd407e50b02caafa3e2c81f1",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 3,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\iowa-county.png",
+      "width": 390,
+      "height": 6169,
+      "sha256": "85cd4e419627f846b6141eae2adfa1cd716b79e2b93d3a626b4646a93311b57b",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\missouri-county.png",
+      "width": 390,
+      "height": 5788,
+      "sha256": "76f2a3a5a55a1a6a50861bb8b113f9e2d87e73cfc724355d2e24740c03561aaa",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\monthly-seo.png",
+      "width": 390,
+      "height": 8417,
+      "sha256": "d9122aef538171843265c15ee31c9c9080c64c4fc6eb19f7ea0d10fda29039eb",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 3,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\pricing.png",
+      "width": 390,
+      "height": 9539,
+      "sha256": "3efdac58e394124e3495a75c436654437b2372bd64c8c831a553af9bee95350b",
+      "disposition": "hold",
+      "finding_ids": [
+        "V1"
+      ],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 3,
+      "notes": "Chat launcher covers the common-cost disclosure, including the ends of approved-extras and optional-monthly-help text, near original y=780-828."
+    },
+    {
+      "path": "phone\\scope-request.png",
+      "width": 390,
+      "height": 3287,
+      "sha256": "cddfc50661cefa51d3e9d3c645154226994b8493ec3d62a1a810ca3788a837b5",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\service-questions.png",
+      "width": 350,
+      "height": 477,
+      "sha256": "6d4a2ebd7ec0fdc3401f4526711031ffd61ec0fed40275b0855f2807214d591f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 1,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\texas-county.png",
+      "width": 390,
+      "height": 5751,
+      "sha256": "b380fb5b611e91e27bd39363ffe21e30552940411aed33a4f9f07ab8e3cd347a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 2,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\web-design.png",
+      "width": 390,
+      "height": 8629,
+      "sha256": "f4c215ec49841cb45a80b0d9c8e316f56e1711f4e59974abd80e02b26c4f7ee4",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 3,
+      "notes": "No actionable clipping, overlap, missing visible content, or broken layout observed in the captured state."
+    },
+    {
+      "path": "phone\\work.png",
+      "width": 390,
+      "height": 12859,
+      "sha256": "4585b7acea3d01dc4103eeb5d0ff4b0b9387e0d621788dc6a1b338d4cc1c5cd9",
+      "disposition": "hold",
+      "finding_ids": [
+        "V1"
+      ],
+      "inspection": "Complete image at original pixel scale using overlapping, unscaled strips.",
+      "inspection_sheet_count": 4,
+      "notes": "Chat launcher covers the end of the introductory AssetRounds paragraph near original y=780-828."
+    }
+  ]
+}

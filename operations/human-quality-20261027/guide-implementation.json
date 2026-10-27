@@ -1,0 +1,1365 @@
+{
+  "date": "2026-10-27",
+  "count": 65,
+  "scope": "All 65 existing guides; guide index owned separately",
+  "approach": "Explicit section ordering, practical examples, descriptive headings, targeted condensation and optional secondary detail. Preserve historical observations and commercial values.",
+  "verification": "Compared all 65 rendered section collections against the pre-edit capture: every section ID, embedded ID and existing link preserved; every guide changed.",
+  "guides": [
+    {
+      "route": "/guides/ai-search-visibility/",
+      "baselineFindings": [
+        "Turn the opening into three explicit checks: intended public page, approved service answer, recorded evidence; retain the detailed explanation below.",
+        "Use one labeled example record to carry the bookkeeping case from observation through edit and follow-up, reducing repeated cautions about unsupported outcomes."
+      ],
+      "implemented": [
+        "Prioritized sections: eligibility, useful-answer, measurement",
+        "Added practical guidance/example: Start with three checks"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/ai-website-content-review/",
+      "baselineFindings": [
+        "Lead with a direct qualified answer to 'Is AI content bad for SEO?' followed by the four review decisions.",
+        "Bring the draft, claim table and approved rewrite together as one exercise; shorten general approval reminders that recur before and after it."
+      ],
+      "implemented": [
+        "Prioritized sections: quality, worked-example, claim-record",
+        "Added practical guidance/example: Review the claim, not the writing tool"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/ai-website-or-custom/",
+      "baselineFindings": [
+        "Move the AI-method versus template-structure distinction and sibling link into the opening so readers select the correct comparison early.",
+        "Condense the generated-copy and AI-search sections to a short diagnostic with links to their dedicated guides; retain the hands-on trial checklist as this page's main value."
+      ],
+      "implemented": [
+        "Prioritized sections: choose-the-job, comparison, trial",
+        "Added practical guidance/example: Choose the right comparison",
+        "Made secondary detail optional: review-ai-copy, ai-search"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/alexandria-sign-project-website/",
+      "baselineFindings": [
+        "Bring the six-stage handoff board immediately after the short answer and replace 'The customer decision' with 'Artwork approval does not clear installation'.",
+        "Compress the three source narratives into short evidence notes beside relevant stages; retain the changed-lighting test once and preserve all municipal-review limits."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"customer-decision\":\"Artwork approval does not clear installation\",\"check\":\"Test a change to the approved lighting\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/approved-buyer-account-flow/",
+      "baselineFindings": [
+        "Move the state map ahead of the portal-transition explanation; add a short pending-application message that demonstrates reference, scope and next action.",
+        "Make legacy-portal migration an optional subsection, and label the core H2 'Login, application and approval are different states'."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"customer-decision\":\"Login, application and approval are different states\"}",
+        "Added practical guidance/example: Illustrative pending message",
+        "Made secondary detail optional: planning-3"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/brevard-county-launch-tour-website/",
+      "baselineFindings": [
+        "Add a compact illustrative change table with event, reservation affected, approved outcome and customer action; leave all operator-specific outcomes as confirmed facts or placeholders.",
+        "Merge the journey-test prose with the Saturday-to-Monday scenario so the same test is not introduced twice; move source detail beside the relevant policy distinction."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2, check",
+        "Replaced vague headings: {\"customer-decision\":\"A launch change does not determine every booking outcome\"}",
+        "Added practical guidance/example: Change record to complete with the operator",
+        "Made secondary detail optional: source-observations"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/citrus-county-manatee-tour-website/",
+      "baselineFindings": [
+        "Add a small three-option comparison scaffold for visit type, starting point and what the guest does; populate only confirmed operator details.",
+        "Group arrival, seasonal access and assistance checks under descriptive H3s and shorten repeated instructions to confirm operator facts."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-1",
+        "Replaced vague headings: {\"customer-decision\":\"Choose the visit before planning arrival\"}",
+        "Added practical guidance/example: Compare the actual offers",
+        "Made secondary detail optional: source-observations"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/class-take-home/",
+      "baselineFindings": [
+        "Rename the layout 'Class confirmation: materials, collection and changes' and turn the no-storage lesson into one short sample message.",
+        "Keep the category-specific cancellation point as one secondary row or note rather than a separate equal-weight section."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Class confirmation: materials, collection and changes\",\"customer-decision\":\"Know what happens to the work after class\"}",
+        "Added practical guidance/example: Illustrative no-storage message"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/contact-form-not-working/",
+      "baselineFindings": [
+        "Show the five diagnostic stages once with a 'first failed stage' marker and refer technical readers to the matching symptom row.",
+        "Keep platform setup details beneath named platform subheadings/disclosures, preserve the simple public test first, and date-check the Wix/Squarespace controls against their linked official documentation."
+      ],
+      "implemented": [
+        "Added practical guidance/example: Stop at the first failed stage"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/contractor-website-checklist/",
+      "baselineFindings": [
+        "Replace the two long parallel briefs with one comparison table showing only meaningful HVAC/roof differences, while retaining explicit fictional labeling and safe information boundaries.",
+        "Fold 'Then work on search' into a short final readiness check and remove repeated service-area/inquiry advice already taught above."
+      ],
+      "implemented": [
+        "Prioritized sections: job, services, coverage, inquiry, annotated-examples",
+        "Replaced vague headings: {\"annotated-examples\":\"Compare the information each trade needs\",\"search\":\"Search readiness after the customer journey works\"}",
+        "Made secondary detail optional: search",
+        "Replaced two parallel fictional trade briefs with one comparison table and shared field/evidence boundaries."
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/custom-print-order/",
+      "baselineFindings": [
+        "Rename the generic layout 'Print inquiry to accepted order' and add separate short inquiry-received and production-accepted message examples using owner-approved placeholders.",
+        "Reduce the Hatch channel paragraph to a brief dated evidence note; make the business's accepted submission route the main instruction."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Print inquiry to accepted order\",\"customer-decision\":\"An inquiry is not an accepted production order\"}",
+        "Added practical guidance/example: Two different messages"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/custom-website-or-template/",
+      "baselineFindings": [
+        "Move the social-page question to a brief prerequisite link or remove it from this comparison's main sequence.",
+        "Turn the same-content trial into a compact four-check scorecard; reduce overlap between the introductory comparison table and the separate template/custom prose."
+      ],
+      "implemented": [
+        "Prioritized sections: fit, compare, quality",
+        "Added practical guidance/example: Use the same trial in both options",
+        "Made secondary detail optional: website-or-social"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/customer-case-study-template/",
+      "baselineFindings": [
+        "Add a short finished fictional case-study paragraph assembled from the record, with a single persistent fictional label.",
+        "Keep permissions and measured-outcome checks, but tighten repeated reminders that evidence is not a revenue result."
+      ],
+      "implemented": [
+        "Prioritized sections: record, worked-example, structure",
+        "Added practical guidance/example: Fictional finished paragraph"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/departure-address/",
+      "baselineFindings": [
+        "Make one reusable arrival-confirmation specimen the main content: product, check-in address, map, vehicle branch, access request, return leg and update contact.",
+        "Move named destination examples into compact optional evidence notes and align the PortMiami return-leg lesson with a row in the specimen.",
+        "Replace 'Branch parking instructions' with 'Give each vehicle type the right parking directions'."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2",
+        "Replaced vague headings: {\"layout\":\"Arrival confirmation to send with the booking\",\"planning-2\":\"Give each vehicle type the right parking directions\",\"customer-decision\":\"Send the guest to the correct check-in point\"}",
+        "Added practical guidance/example: Complete one arrival card",
+        "Made secondary detail optional: florida-cruise-terminals"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/experience-product-choice/",
+      "baselineFindings": [
+        "Use a consistent option comparison with columns for access, party conditions, return/onsite facilities and booking owner; move passenger count to a shared check.",
+        "Rename abstract headings and keep unresolved duration guidance in a short dated note rather than repeating it in prose, table and final facts."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Compare access, party conditions and return arrangements\",\"planning-1\":\"Show the differences that change the guest’s choice\",\"planning-3\":\"Mark unconfirmed duration clearly\",\"customer-decision\":\"Choose the experience before the booking route\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/farm-event-website-updates/",
+      "baselineFindings": [
+        "Either identify ON Farm Fest as the worked example in the subtitle or broaden the audience line while clearly labeling the case.",
+        "Merge the two prose sections about event states and make the four-state table the main explanation; use a distinct caption instead of repeating its H2."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"customer-decision\":\"Worked example: an ON Farm Fest event page\",\"layout\":\"Use a different message for each event state\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/ferry-booking-status/",
+      "baselineFindings": [
+        "Lead with a reusable booking-status checklist covering passenger, vehicle, equipment, return and stay; add the missing equipment/return rows currently taught by the Key West section.",
+        "Condense route examples into short evidence notes and use one complete hypothetical guest record to demonstrate unresolved dependencies."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"layout\":\"Check every part of the ferry booking\",\"customer-decision\":\"Check what each reservation actually secures\"}",
+        "Added practical guidance/example: Fictional guest record",
+        "Made secondary detail optional: florida-camping-capacity"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/ferry-route-and-last-mile/",
+      "baselineFindings": [
+        "Rename the layout 'Ferry-to-property journey record' and demonstrate one fictional terminal, connection and final-leg sequence with unknowns explicitly labeled.",
+        "Consolidate duplicate Cape May–Lewes source entries where they point to the same document, retaining both observations in one note."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Ferry-to-property journey record\",\"customer-decision\":\"Plan the whole journey to the property\"}",
+        "Added practical guidance/example: Fictional journey with an unresolved connection"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/franklin-county-canoe-rental-website/",
+      "baselineFindings": [
+        "Merge the two difficult-case sections into one test after the inquiry model; retain the separate changed-access-point scenario as a second bullet.",
+        "Place the two access options and who-carries question together early; replace generic customer-decision heading with 'Delivery to parking is not delivery to water'."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-1, planning-2, check",
+        "Replaced vague headings: {\"customer-decision\":\"Delivery to parking is not delivery to water\",\"check\":\"Test carrying responsibilities and a changed access point\"}",
+        "Made secondary detail optional: planning-3"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/how-to-choose-a-web-designer/",
+      "baselineFindings": [
+        "Group the nine proposal questions into scope, collaboration and ownership/acceptance, each with an answer/evidence field.",
+        "Move the two-quote example adjacent to the opening comparison worksheet and reduce repeated generic reminders to compare the same work."
+      ],
+      "implemented": [
+        "Prioritized sections: same-brief, compare-quotes, questions",
+        "Added practical guidance/example: Record the answer and its evidence"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/industrial-website-planning/",
+      "baselineFindings": [
+        "Keep the buyer-led site plan prominent and combine the document-owner explanation with the approval checklist so the same approval principle is not taught twice.",
+        "Add one short example of a specification download label showing title, revision and intended use, with fictional placeholders and no technical claims."
+      ],
+      "implemented": [
+        "Prioritized sections: buyer-task, site-plan, approval, documents",
+        "Added practical guidance/example: Fictional download label"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/inquiry-confirmation-examples/",
+      "baselineFindings": [
+        "Present the three messages together with short 'use when' labels and keep the shared explanation of receipt versus approval once.",
+        "Add a concise pending-or-failed submission counterpart because the introductory guidance names those states but provides only successful-save examples."
+      ],
+      "implemented": [
+        "Prioritized sections: event, project, quote, booking",
+        "Added practical guidance/example: If the submission is pending or failed"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/island-payment-preparation/",
+      "baselineFindings": [
+        "Label Smith Island as the worked example in the subtitle and rename the layout 'Before-departure payment and parking card'.",
+        "Show a simple paid/to-pay/provider checklist using owner-confirmed placeholders; keep the location-specific ATM evidence as a short note."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"customer-decision\":\"Worked example: preparing for a Smith Island visit\",\"layout\":\"Before-departure payment and parking card\"}",
+        "Added practical guidance/example: Keep paid and still-to-pay separate"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/itinerary-dependency-review/",
+      "baselineFindings": [
+        "Rename the layout 'Outside-service change log' and give consistent columns for dependent offer, evidence, owner, current status and customer action.",
+        "Add one before/after package message illustrating a paused dependency and what remains available; shorten repeated warning about historical reviews."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Outside-service change log\",\"customer-decision\":\"Check the outside service behind the itinerary\"}",
+        "Added practical guidance/example: Illustrative change message"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/kayak-rental-access-information/",
+      "baselineFindings": [
+        "Make the Frontenac worked-case scope explicit near the title, or frame the general lesson first and label the location as its example.",
+        "Replace the repeated panel title/caption with a concise explanation and add a sample question that asks about desired arrangements without requesting medical details."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"customer-decision\":\"Worked example: the handoff at Frontenac\",\"layout\":\"Describe the launch, handoff and available assistance\"}",
+        "Added practical guidance/example: Ask about arrangements"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/local-seo-audit/",
+      "baselineFindings": [
+        "Keep the audit table and completed example adjacent, with short expandable definitions for its five statuses.",
+        "Condense the keyword/page-expansion discussion to one existing-page-first rule and a link; keep this guide focused on evidence, correction and retest."
+      ],
+      "implemented": [
+        "Prioritized sections: scope, checklist, completed-example, priority",
+        "Made secondary detail optional: keywords"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/local-seo-profile-eligibility/",
+      "baselineFindings": [
+        "Rebuild the opening as a short eligibility triage: online-only, customers visit a staffed location, business visits customers, or mixed/uncertain; link each to the current official rule without guaranteeing eligibility.",
+        "Move general service-page and SEO-purchasing advice to the audit/reporting guides, keeping a concise website-versus-profile distinction.",
+        "Clarify that the studio can assess website work, while profile verification, account recovery and external listing management remain outside the offer; make the CTA match that boundary."
+      ],
+      "implemented": [
+        "Prioritized sections: eligibility, two-surfaces",
+        "Added practical guidance/example: Choose the business model before the address",
+        "Made secondary detail optional: pages, sequence, expectations",
+        "Changed inquiry label and ending to website-content scope with explicit profile-management exclusions."
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/manufacturing-rfq-form/",
+      "baselineFindings": [
+        "Lead with the six-field RFQ record and one revision-B/revision-C case; move operator comparisons into brief evidence notes.",
+        "Provide three short response specimens for received, missing file/quantity and ready-for-quote states; keep production approval explicitly separate.",
+        "Use H3s to split file requirements, file receipt and revised-file handling inside the current long sections."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"customer-decision\":\"Give the shop one RFQ record to review\"}",
+        "Added practical guidance/example: Illustrative RFQ responses"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/marine-service-intake/",
+      "baselineFindings": [
+        "Put the readiness record near the opening, with a location-first field and named dependency owner.",
+        "Fold South Florida's facility-selector lesson into the location row; keep regional sources as optional evidence notes and merge the two location-change tests.",
+        "Separate intake, site access and confirmation copy with descriptive H3s and include one concise pending-visit message."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"customer-decision\":\"Confirm the service location before the visit\"}",
+        "Added practical guidance/example: Illustrative pending-visit message",
+        "Made secondary detail optional: florida-yard-location"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/marion-county-equestrian-stay-website/",
+      "baselineFindings": [
+        "Make a three-arrangement confirmation card the main worked example, with lodging confirmed and show/stall statuses explicitly separate.",
+        "Condense source observations to notes beside the relevant record and merge repeated state-separation prose; retain dated-event boundaries and independent cancellation terms."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2",
+        "Replaced vague headings: {\"customer-decision\":\"Confirm lodging, show entry and stalls separately\"}",
+        "Added practical guidance/example: Fictional three-arrangement card",
+        "Made secondary detail optional: source-observations"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/niagara-county-hotel-transport-information/",
+      "baselineFindings": [
+        "Move the maintenance record below the three-service comparison so table rows remain comparable.",
+        "Rename the customer-decision heading to 'Which trolley does the guest need?' and bring the comparison before longer upkeep instructions."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-1",
+        "Replaced vague headings: {\"customer-decision\":\"Which trolley does the guest need?\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/one-page-website-seo/",
+      "baselineFindings": [
+        "Display the two page maps as concise parallel diagrams and attach the exact decision that justifies each separate page.",
+        "Keep one locality warning linked to the area-page guide and shorten repeated explanations that page count does not guarantee visibility."
+      ],
+      "implemented": [
+        "Prioritized sections: decision, example-one, example-many, compare",
+        "Replaced vague headings: {\"example-one\":\"Page map A: one offer, one connected decision\",\"example-many\":\"Page map B: separate pages for different service decisions\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/otsego-county-baseball-lodging-website/",
+      "baselineFindings": [
+        "Add a compact completed fictional inquiry showing venue, real nights, household count and separate players' lodging.",
+        "Combine repeated fact-confirmation instructions into the form's owner-check note and give the test a descriptive heading about counting actual guests."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"check\":\"Count the actual overnight guests\",\"customer-decision\":\"Confirm the venue, actual nights and overnight guests\"}",
+        "Added practical guidance/example: Fictional family inquiry"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/parts-compatibility-inquiry/",
+      "baselineFindings": [
+        "Lead with a standard/modified/unknown branch and a sample handoff that preserves item, known configuration and change description.",
+        "Rename the long heading 'Recheck the recommendation when the equipment changes' and shorten repeated cautions about automatic compatibility approval."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"planning-3\":\"Recheck the recommendation when the equipment changes\",\"customer-decision\":\"Carry the equipment configuration into specialist review\"}",
+        "Added practical guidance/example: Route the configuration first"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/personalization-preview/",
+      "baselineFindings": [
+        "Add a clearly fictional initials example showing entered name order and the selected style's displayed order, labeled as illustrative rather than a universal convention.",
+        "Rename the layout 'Personalization review states' and show the approval reset when product, text or style changes."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Personalization review states\",\"customer-decision\":\"Approve the displayed result before fulfillment\"}",
+        "Added practical guidance/example: Fictional initials preview"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/philadelphia-moving-website/",
+      "baselineFindings": [
+        "Move the origin/destination worksheet immediately after the short answer and use one completed fictional two-address case.",
+        "Move Boston/Arlington comparisons into an optional cross-jurisdiction note; retain current-authority links and remove any implication the worksheet determines permit need.",
+        "Replace 'Assign the public-space task' with 'Name who checks loading access at each address'."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"planning-2\":\"Name who checks loading access at each address\",\"customer-decision\":\"Check loading access at both addresses\"}",
+        "Added practical guidance/example: Fictional two-address record",
+        "Made secondary detail optional: planning-3"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/photography-location-confirmation/",
+      "baselineFindings": [
+        "Show a two-status session/location confirmation specimen with fee owner and next action before the property examples.",
+        "Condense property-specific instructions to clearly dated evidence notes and rename the generic layout 'Session and location approval record'."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout",
+        "Replaced vague headings: {\"layout\":\"Session and location approval record\",\"customer-decision\":\"A booked session does not approve the location\"}",
+        "Added practical guidance/example: Illustrative confirmation"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/quote-request-form/",
+      "baselineFindings": [
+        "Move keep/defer/remove ahead of the examples so readers have the decision rule before the field catalog.",
+        "Show shared contact fields once, then compare the fields that differ across project, scheduled service and B2B requests; preserve optional status and each reason."
+      ],
+      "implemented": [
+        "Prioritized sections: first-decision, field-review, project-example, scheduled-example, b2b-example"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/repair-authorization-form/",
+      "baselineFindings": [
+        "Bring the six-stage record forward and show one pair of illustrative messages: inspection accepted and repair awaiting named approval.",
+        "Use the two-unit case to demonstrate independent approval and return destinations; shorten the operator-by-operator introduction and split shipping guidance into a secondary note."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"customer-decision\":\"Receiving the unit does not authorise repair\"}",
+        "Added practical guidance/example: Separate inspection from repair approval"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/river-section-and-release/",
+      "baselineFindings": [
+        "Rename the generic table 'Trip choice: section, date and operator confirmation' and bring the incompatible-combined-trip example beside it.",
+        "Replace 'Use the calendar as a dependency' with 'Check the release plan, then confirm the actual trip' for easier scanning."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check",
+        "Replaced vague headings: {\"layout\":\"Trip choice: section, date and operator confirmation\",\"planning-2\":\"Check the release plan, then confirm the actual trip\",\"customer-decision\":\"Choose the river section before checking the release plan\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/seo-work-and-reporting/",
+      "baselineFindings": [
+        "Keep the annotated monthly report as the main example and remove the separate Research/finished-work and Check-the-work restatements.",
+        "Combine general and local keyword research into one worked keyword-to-existing-page row with missing metrics explicit.",
+        "Move plan/promotional detail to concise optional comparison notes; retain finite allowances, approval rules and no-guarantee boundaries once beside the relevant promise."
+      ],
+      "implemented": [
+        "Prioritized sections: completed-report, keyword-opportunities, metrics, time",
+        "Replaced vague headings: {\"work\":\"Reference: distinguish research from finished work\",\"receipt\":\"Reference: evidence behind a report\"}",
+        "Made secondary detail optional: work, receipt, scope, campaigns, provider-questions",
+        "Shortened repeated work/report explanations, retaining the owned-work evidence link."
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/service-area-pages/",
+      "baselineFindings": [
+        "Lead with a concise existing-page/separate-page decision checklist, then retain the North/South example as the proof of how to apply it.",
+        "Shorten the territory table to question, new useful answer, page decision and owner; move exclusions into one shared note.",
+        "Separate the studio's delivery disclosure from the decision criteria and avoid treating research citations as proof of independent value."
+      ],
+      "implemented": [
+        "Prioritized sections: choose, example, question, facts",
+        "Added practical guidance/example: Use the existing page unless a new page earns its place"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/shared-kitchen-inquiry/",
+      "baselineFindings": [
+        "Show initial fit questions separately from later onboarding and equipment review, marking which details are optional at first contact.",
+        "Move the routing worksheet forward and provide a short request-received message that names the next facility review without implying acceptance."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2",
+        "Replaced vague headings: {\"customer-decision\":\"Route the intended kitchen use before booking\"}",
+        "Added practical guidance/example: Illustrative request receipt"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/shipping-date-and-quote/",
+      "baselineFindings": [
+        "Rename the layout 'Shipping-date and quote decisions' and add a one-line example message for the Friday dispatch/arrival conflict.",
+        "Keep the separate-quote branch beside destination and packing requirements, with an explicit return route to complete the order after the quote."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-3",
+        "Replaced vague headings: {\"layout\":\"Shipping-date and quote decisions\",\"customer-decision\":\"Keep dispatch, arrival and quote approval separate\"}",
+        "Added practical guidance/example: Illustrative Friday date correction"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/slow-website-on-mobile/",
+      "baselineFindings": [
+        "Put the four symptom choices directly below the short answer so a reader can jump to the relevant investigation.",
+        "Present lab/field, URL/origin and rolling-window definitions in a compact labeled reference; keep the worked layout-shift case beside its matching symptom."
+      ],
+      "implemented": [
+        "Prioritized sections: diagnosis, describe, worked-example, test-speed, interpret",
+        "Replaced vague headings: {\"diagnosis\":\"Choose the symptom: blank, late, unresponsive or moving\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/small-business-faq-examples/",
+      "baselineFindings": [
+        "Use short weak/better answer cards with one concise reason; move repeated approval prerequisites into a shared checklist.",
+        "Keep the six examples on one task-oriented index so readers can choose price, fit, coverage, preparation, timing or follow-up without reading every table."
+      ],
+      "implemented": [
+        "Added practical guidance/example: Choose the question you need to answer"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/timed-booking-handoff/",
+      "baselineFindings": [
+        "Keep the confirmation card, one timing/time-zone example and one ticket-versus-reservation example as the core guide.",
+        "Move AMR access, boat-only camping and the additional destination catalog into a compact optional evidence library or relevant existing dependency guides; preserve citations and route links.",
+        "Rename the opening model 'Booking confirmation card' and use descriptive subheadings for time, ticket proof and separate reservations."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2, planning-3, check",
+        "Replaced vague headings: {\"layout\":\"Booking confirmation card\",\"planning-2\":\"State the local time and time zone\",\"planning-3\":\"Show ticket proof and separate reservations\",\"customer-decision\":\"Give each booking a usable confirmation\"}",
+        "Made secondary detail optional: planning-1, planning-4, planning-5, related-cases"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/vacation-rental-property-fit/",
+      "baselineFindings": [
+        "Lead with a property/date/conditions inquiry card and a clearly separate alternative-offer card.",
+        "Condense the three source summaries into a short minimum-stay comparison note, keeping each fact tied to its property and review date.",
+        "Merge repeated property-identity advice across narrative, worksheet and test while retaining the changed-property acceptance check."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-3, check",
+        "Replaced vague headings: {\"customer-decision\":\"Keep the chosen property and its conditions together\"}",
+        "Added practical guidance/example: Keep an alternative offer separate",
+        "Made secondary detail optional: source-observations"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/walton-county-bonfire-booking-website/",
+      "baselineFindings": [
+        "Bring a preference/capacity/location status card forward and use the blank-fallback case as the main example.",
+        "Group weather, customer cancellation and unavailable-location outcomes in a compact owner-supplied policy matrix; shorten repeated prose that each must be separate."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, check, planning-3",
+        "Replaced vague headings: {\"customer-decision\":\"Confirm provider capacity and location separately\"}",
+        "Added practical guidance/example: Complete each policy outcome separately",
+        "Made secondary detail optional: source-observations"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-audit-checklist/",
+      "baselineFindings": [
+        "Use one consistent status vocabulary across the audit, launch and maintenance worksheets, preserving the distinction between unchecked and passed.",
+        "Keep the form example brief and add a contrasting content/navigation finding so a general audit does not read mainly as another form guide."
+      ],
+      "implemented": [
+        "Added practical guidance/example: A contrasting content finding"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-care-versus-seo/",
+      "baselineFindings": [
+        "Merge Three examples and Choose work before choosing a plan into one three-choice decision section.",
+        "Keep the comparison table concise and move detailed pause/renewal terms to a clearly labeled optional detail with a visible boundary summary and full-terms link."
+      ],
+      "implemented": [
+        "Prioritized sections: short-answer, situations, compare, owned-change",
+        "Replaced vague headings: {\"situations\":\"Choose the work: a repair, routine care or a search improvement\"}",
+        "Made secondary detail optional: plans, costs"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-content-template/",
+      "baselineFindings": [
+        "Keep the annotated transformation, then present Home/Service/About/Contact as a compact prompt matrix with only genuinely different questions.",
+        "Shorten the service-page SEO subsection to one relevant-versus-irrelevant question example and link the FAQ guide.",
+        "Remove repeated template-download and fact-approval reminders; keep a single shared approval checklist and final reader test."
+      ],
+      "implemented": [
+        "Prioritized sections: facts, notes-to-copy, page-purpose, homepage, service, about, contact, review",
+        "Replaced vague headings: {\"notes-to-copy\":\"Start with the example: owner notes to usable service copy\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-handover-checklist/",
+      "baselineFindings": [
+        "Turn the example paragraph into a compact received/verified/missing handover record with an owner and due date for the booking account.",
+        "Group files, account control and reuse rights visually so readers do not confuse possessing files with having the right and ability to operate them."
+      ],
+      "implemented": [
+        "Prioritized sections: meaning, example, accounts, files, register, verification",
+        "Added practical guidance/example: Illustrative handover status"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-launch-announcement/",
+      "baselineFindings": [
+        "Present the three draft formats together with concise channel-specific notes; retain one shared approval/permissions block.",
+        "Keep the retirement date for the on-site notice prominent, and remove repeated explanation that preparing a draft does not send it."
+      ],
+      "implemented": [
+        "Prioritized sections: fictional-brief, email, social, notice, ready, approve-send",
+        "Added practical guidance/example: Give the notice an end date"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-launch-checklist/",
+      "baselineFindings": [
+        "Use one pre-launch/post-launch checklist with a named approver and unresolved blockers; remove the repeated version/date record instructions.",
+        "Add a brief example of a blocked launch when a form receiving check is unknown, alongside the next owner/action rather than a guessed pass."
+      ],
+      "implemented": [
+        "Added practical guidance/example: Illustrative blocked launch"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-maintenance-checklist/",
+      "baselineFindings": [
+        "Keep one visible responsibility split between routine checks and host/specialist work, then link back to it from the timing answer.",
+        "Shorten the timing FAQ to planned work, elapsed wait and outage window with one example; show how those fields fit the maintenance log."
+      ],
+      "implemented": [
+        "Added practical guidance/example: Assign the work before scheduling it"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-maintenance-cost/",
+      "baselineFindings": [
+        "Move the annual budget example directly after the three cost categories, with actual-versus-assumed values clearly marked.",
+        "Merge provider-bill instructions into one checklist and condense the five task rows to scope, owner and separate cost needed; retain all commercial exclusions.",
+        "Link to the care-versus-SEO guide for plan selection rather than re-teaching that decision at the end."
+      ],
+      "implemented": [
+        "Prioritized sections: three-bills, first-year, platform-cost, task-owners, studio-plans",
+        "Made secondary detail optional: choose-care"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-migration-checklist/",
+      "baselineFindings": [
+        "Combine content decisions and URL destinations into one worked inventory, preserving the merge row and verification owners.",
+        "Keep before/live/ongoing checks in one sequence and make traffic-drop investigation a concise optional branch linked to the search-visibility guide.",
+        "Use one download instruction near the combined worksheet rather than repeating it after each table."
+      ],
+      "implemented": [
+        "Prioritized sections: inventory, content-inventory, redirect-example, map, before, launch, after",
+        "Replaced vague headings: {\"redirect-example\":\"Match each content decision to its destination\",\"map\":\"Apply and verify the URL map\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-not-generating-leads/",
+      "baselineFindings": [
+        "Keep the diagnostic table as the single four-stage model; remove the repeated prose enumeration and shorten the process strip to a navigation aid.",
+        "Put the remodeler example beside the service-fit stage and link each other stage to its dedicated investigation rather than repeating general task checks."
+      ],
+      "implemented": [
+        "Prioritized sections: define-the-problem, find-the-bottleneck, worked-example, measurement, page-decision, lead-record",
+        "Replaced vague headings: {\"find-the-bottleneck\":\"Use the four-stage diagnostic to choose one investigation\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-not-showing-on-google/",
+      "baselineFindings": [
+        "Show an opening three-branch choice: URL inaccessible/unindexed, indexed but not visible for the query, or Maps/profile issue.",
+        "Keep definitions available as a compact reference and group report reasons by access, replacement/duplicate, error and discovery; preserve exact official labels for matching."
+      ],
+      "implemented": [
+        "Prioritized sections: define, inspection-steps, specific-index-checks, relevance, maps, plain-search-terms",
+        "Added practical guidance/example: Choose the missing result"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-project-cost/",
+      "baselineFindings": [
+        "Lead with the first-year budget model and a concise build-price summary; link complete package and add-on allowances instead of repeating catalogs.",
+        "Reduce the two-proposal comparison to the few cost-changing omissions—writing, editing/ownership, outside bills and migration—and link the provider-comparison guide.",
+        "Keep exact prices, payment milestones, editing limits and assumptions unchanged while moving detail into clearly labeled optional sections."
+      ],
+      "implemented": [
+        "Prioritized sections: ongoing-costs, dated-price-example, redesign-budget, matched-proposals, compare-quotes",
+        "Replaced vague headings: {\"ongoing-costs\":\"Start with the first-year budget\",\"two-budgets\":\"Optional detail: complete build allowances\",\"optional-additions\":\"Optional detail: additional work and exact prices\"}",
+        "Made secondary detail optional: two-budgets, optional-additions"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-redesign-brief/",
+      "baselineFindings": [
+        "Use the three requirement examples as the main brief model, with concise prompts for business facts, content inventory, editing and approval.",
+        "Merge both send-the-same-brief instructions and reduce repeated download prompts.",
+        "Break the dense editing paragraph into update frequency, required tool and responsible editor, preserving the studio's source-code limitation."
+      ],
+      "implemented": [
+        "Prioritized sections: before-a-redesign, requirements-evidence, decision, business, content, editing, acceptance, rfp",
+        "Added practical guidance/example: Make the editing requirement explicit"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-redesign-timeline/",
+      "baselineFindings": [
+        "Show build work and the two review windows on one labeled timeline; state corrections and readiness dependencies beside it.",
+        "Avoid repeating the complete package-time list at the end; retain a concise proposal/date confirmation and written-approval rule."
+      ],
+      "implemented": [
+        "Prioritized sections: start, example, sequence, ready, reviews, studio",
+        "Replaced vague headings: {\"example\":\"Plan the build and review windows together\"}",
+        "Added practical guidance/example: Read the schedule as dependencies"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/website-repair-or-redesign/",
+      "baselineFindings": [
+        "Use the existing decision diagram as the main overview and remove the duplicate keep/fix/rebuild list from the frequency answer.",
+        "Keep one short explanation and one example for each decision branch; consolidate repeated retain-content/access/retest reminders into a shared checklist."
+      ],
+      "implemented": [
+        "Prioritized sections: start, worksheet, keep, contained, owned, rework, compare",
+        "Replaced vague headings: {\"worksheet\":\"Record the keep, fix or rebuild decision\"}"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    },
+    {
+      "route": "/guides/wholesale-order-readiness/",
+      "baselineFindings": [
+        "Lead with a worked fictional cart containing one pack-size error and one backorder, with the next action beside each line.",
+        "Shorten account-approval prose to a clear prerequisite plus the dedicated guide link; retain order-versus-item minimum and inbound-versus-dispatch distinctions."
+      ],
+      "implemented": [
+        "Prioritized sections: customer-decision, layout, planning-2, planning-3",
+        "Replaced vague headings: {\"customer-decision\":\"Check each cart line before accepting the order\"}",
+        "Added practical guidance/example: Fictional cart review"
+      ],
+      "source": "src/guide-editorial-revisions.mjs",
+      "preservation": {
+        "sectionIds": true,
+        "embeddedIds": true,
+        "allExistingLinks": true,
+        "offerValues": "Still supplied dynamically to original section factories; no commercial amounts added by editorial helper"
+      },
+      "reviewStatus": "Implementation ready for independent full-text and browser review; no self-awarded score",
+      "retainedDetail": "Historical source observations, commercial allowances and remaining detailed explanations are retained. Secondary-detail disclosures change reading order, not the factual record."
+    }
+  ]
+}

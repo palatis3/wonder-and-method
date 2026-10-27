@@ -1,0 +1,1414 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/broome-county/",
+    "/areas/delaware-county/",
+    "/areas/delaware/sussex-county/",
+    "/areas/essex-county/",
+    "/areas/florida/brevard-county/",
+    "/areas/florida/calhoun-county/",
+    "/areas/florida/clay-county/",
+    "/areas/florida/columbia-county/",
+    "/areas/florida/escambia-county/",
+    "/areas/florida/gadsden-county/",
+    "/areas/florida/gilchrist-county/",
+    "/areas/florida/glades-county/",
+    "/areas/florida/hardee-county/",
+    "/areas/florida/holmes-county/",
+    "/areas/florida/lake-county/",
+    "/areas/florida/lee-county/",
+    "/areas/kentucky/bell-county/",
+    "/areas/kentucky/boyle-county/",
+    "/areas/kentucky/fayette-county/",
+    "/areas/kentucky/kenton-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-a.jsonl",
+    "operations/human-quality-20261027/audits/local-after-residual-b.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/delaware-county/",
+      "before": {
+        "route": "/areas/delaware-county/",
+        "inputHash": "391ffce799ea12e4a27cb5b81227d682e64f377c22e1fb0502221b3ffd1f8494",
+        "heading": "Let the backup-power inquiry begin with the intended use.",
+        "intro": "A customer may know what they hope to keep running without knowing which system to request. Your electrical-service page can make that a useful starting point and preserve unknowns for the electrician’s review.",
+        "customerQuestion": "Can we discuss the result we need before choosing a generator or battery?",
+        "decisions": [
+          {
+            "label": "Describe the goal in ordinary language",
+            "body": "Ask what the customer wants the arrangement to support using the contractor’s approved preliminary questions. Do not require an equipment capacity or technical solution just to begin the conversation."
+          },
+          {
+            "label": "Identify the actual property",
+            "body": "Keep the worksite and relevant setting with the request rather than only a broad service-area name. Invite known equipment identifiers or photographs where the owner finds them useful, with an honest unknown option."
+          },
+          {
+            "label": "Explain the next assessment",
+            "body": "Describe who reviews suitability and how the discussion proceeds. A service list or submitted inquiry should not appear to recommend a system, approve an installation or promise a completion date."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted backup-power services and preferred nontechnical questions.",
+          "Useful property/equipment context and approved photo prompts.",
+          "The real assessment, estimate and next-contact process."
+        ],
+        "sourceBridge": "Wire Nutz Electric lists a Delhi address and presents standby generators and whole-home battery backup alongside residential and commercial services. Those alternatives support a goal-first inquiry without asking the homeowner to select a technical answer.",
+        "limits": "A stronger published example needs the contractor’s actual first-review questions. Electricians handle assessment, sizing and permits; this website brief supplies no engineering advice, monitoring or emergency response. Wider coverage does not establish additional offices.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/delaware-county/",
+        "inputHash": "391ffce799ea12e4a27cb5b81227d682e64f377c22e1fb0502221b3ffd1f8494",
+        "heading": "Let the backup-power inquiry begin with the intended use.",
+        "intro": "A customer may know what they hope to keep running without knowing which system to request. Your electrical-service page can make that a useful starting point and preserve unknowns for the electrician’s review.",
+        "customerQuestion": "Can we discuss the result we need before choosing a generator or battery?",
+        "decisions": [
+          {
+            "label": "Describe the goal in ordinary language",
+            "body": "Ask what the customer wants the arrangement to support using the contractor’s approved preliminary questions. Do not require an equipment capacity or technical solution just to begin the conversation."
+          },
+          {
+            "label": "Identify the actual property",
+            "body": "Keep the worksite and relevant setting with the request rather than only a broad service-area name. Invite known equipment identifiers or photographs where the owner finds them useful, with an honest unknown option."
+          },
+          {
+            "label": "Explain the next assessment",
+            "body": "Describe who reviews suitability and how the discussion proceeds. A service list or submitted inquiry should not appear to recommend a system, approve an installation or promise a completion date."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted backup-power services and preferred nontechnical questions.",
+          "Useful property/equipment context and approved photo prompts.",
+          "The real assessment, estimate and next-contact process."
+        ],
+        "sourceBridge": "Wire Nutz Electric lists a Delhi address and presents standby generators and whole-home battery backup alongside residential and commercial services. Those alternatives support a goal-first inquiry without asking the homeowner to select a technical answer.",
+        "limits": "For your page, supply the questions your team uses in the first review. Electricians handle assessment, sizing and permits; this website brief supplies no engineering advice, monitoring or emergency response. Wider coverage does not establish additional offices.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "6dde51a4aa1d741a0dd76c8c75ac3ce827d9baca3c5b052197206824d8d4a586",
+      "afterSha256": "5df3aee0a55b8b015b36ccfba6a631a93c345eed07d53c43fd4fa796bb280828"
+    },
+    {
+      "route": "/areas/delaware/sussex-county/",
+      "before": {
+        "route": "/areas/delaware/sussex-county/",
+        "inputHash": "7759566fb2c9c5f8f9f29eb5edd9a5992997e255455ac903702ed7411c9a7616",
+        "heading": "Explain who supplies, installs and coordinates the project.",
+        "intro": "A cabinet customer may want products and design advice, an installed project or help coordinating several trades. Your website can make those requests distinguishable before a quote conversation assigns responsibilities nobody has agreed to.",
+        "customerQuestion": "Can you supply the cabinets, or also arrange installation and the other work?",
+        "decisions": [
+          {
+            "label": "State the direct contribution",
+            "body": "Explain the products, design and installation your business actually provides. A customer seeking supply only should have a clear route without being drawn into language describing a complete renovation."
+          },
+          {
+            "label": "Name the coordination boundary",
+            "body": "Where another contractor performs work, say who arranges it and who discusses that responsibility with the customer. Let the inquiry preserve the requested role rather than assume every trade belongs to your team."
+          },
+          {
+            "label": "Show an approved project example",
+            "body": "Caption the work your business delivered or coordinated and identify collaborators only with permission. If parties disagree about the contribution, resolve it with a factual approver before publication or use a different example."
+          }
+        ],
+        "ownerInputs": [
+          "Current division of supply, design, installation and coordination.",
+          "Permissioned project images and agreed descriptions of collaborators.",
+          "Initial questions that distinguish the responsibility being requested."
+        ],
+        "sourceBridge": "Home & Office Cabinetry’s Greenwood page describes design, product installation and project management, including qualified subcontractor oversight. Those are this operator’s arrangements; another Sussex business needs its own accurate role description.",
+        "limits": "A public responsibility explanation can support an ordinary inquiry. Trade schedules, shared project records and automated estimates need separate assessment. Kent County or wider Delmarva coverage should follow actual operating arrangements.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/delaware/sussex-county/",
+        "inputHash": "7759566fb2c9c5f8f9f29eb5edd9a5992997e255455ac903702ed7411c9a7616",
+        "heading": "Explain who supplies, installs and coordinates the project.",
+        "intro": "A cabinet customer may want products and design advice, an installed project or help coordinating several trades. Your website can make those requests distinguishable before a quote conversation assigns responsibilities nobody has agreed to.",
+        "customerQuestion": "Can you supply the cabinets, or also arrange installation and the other work?",
+        "decisions": [
+          {
+            "label": "State the direct contribution",
+            "body": "Explain the products, design and installation your business actually provides. A customer seeking supply only should have a clear route without being drawn into language describing a complete renovation."
+          },
+          {
+            "label": "Name the coordination boundary",
+            "body": "Where another contractor performs work, say who arranges it and who discusses that responsibility with the customer. Let the inquiry preserve the requested role rather than assume every trade belongs to your team."
+          },
+          {
+            "label": "Show an approved project example",
+            "body": "Caption the work your business delivered or coordinated and identify collaborators only with permission."
+          }
+        ],
+        "ownerInputs": [
+          "Current division of supply, design, installation and coordination.",
+          "Permissioned project images and agreed descriptions of collaborators.",
+          "Initial questions that distinguish the responsibility being requested."
+        ],
+        "sourceBridge": "Home & Office Cabinetry’s Greenwood page describes design, product installation and project management, including qualified subcontractor oversight. Those are this operator’s arrangements; another Sussex business needs its own accurate role description.",
+        "limits": "A public responsibility explanation can support an ordinary inquiry. Trade schedules, shared project records and automated estimates need separate assessment. Kent County or wider Delmarva coverage should follow actual operating arrangements.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "684c564e9aa5cf95c769ddf884fc940f2347794c06d75103080dc902444b0611",
+      "afterSha256": "61bebc32e45f88f3cfe0975e4e41c423d21d31702fcf4bfe446e6227ed50e34f"
+    },
+    {
+      "route": "/areas/essex-county/",
+      "before": {
+        "route": "/areas/essex-county/",
+        "inputHash": "c68fef4e336117485ea98a3382ca442ac876b8c535678e6df16f4377fa7361dd",
+        "heading": "Make an availability call distinct from a rental reservation.",
+        "intro": "A rental website still has a useful job when equipment is first-come, first-served. Your page can help customers choose what to ask about, understand what the call establishes and prepare for collection and return.",
+        "customerQuestion": "If skis are available when I call, will a set be held for my visit?",
+        "decisions": [
+          {
+            "label": "State what the inquiry establishes",
+            "body": "Put the actual no-reservations or holding policy beside equipment choices and the telephone route. A booking-style button should not suggest that an availability answer creates a reserved set."
+          },
+          {
+            "label": "Identify the rental being discussed",
+            "body": "Separate daily and season arrangements, package contents and individual items. Someone needing only boots should be able to find that discussion without assuming a complete package or season agreement applies."
+          },
+          {
+            "label": "Explain the handoff and changes",
+            "body": "Use current instructions for fitting preparation, collection and return. Distinguish pickup from the day of use, and explain whom to contact about a changed rental period without implying an automatic extension."
+          }
+        ],
+        "ownerInputs": [
+          "Current package contents, separate items and seasonal terms.",
+          "Exact availability-check and reservation wording used by staff.",
+          "Approved fitting, pickup and return instructions with an update owner."
+        ],
+        "sourceBridge": "Lake Placid Ski & Board publishes first-come rentals without reservations, telephone availability checks, and daily and season offerings. Its shop is at 2532 Main Street, Lake Placid; proximity to Whiteface does not imply mountain admission is included.",
+        "limits": "Seasonal facts come from the owner and need an agreed publishing window. Website care does not monitor stock or decide current terms. Live inventory, reservations, agreements and fitting systems need separate scope; an informational page can support telephone inquiries.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/essex-county/",
+        "inputHash": "c68fef4e336117485ea98a3382ca442ac876b8c535678e6df16f4377fa7361dd",
+        "heading": "Make an availability call distinct from a rental reservation.",
+        "intro": "A rental website still has a useful job when equipment is first-come, first-served. Your page can help customers choose what to ask about, understand what the call establishes and prepare for collection and return.",
+        "customerQuestion": "If skis are available when I call, will a set be held for my visit?",
+        "decisions": [
+          {
+            "label": "State what the inquiry establishes",
+            "body": "Put the actual no-reservations or holding policy beside equipment choices and the telephone route. A booking-style button should not suggest that an availability answer creates a reserved set."
+          },
+          {
+            "label": "Identify the rental being discussed",
+            "body": "Separate daily and season arrangements, package contents and individual items. Someone needing only boots should be able to find that discussion without assuming a complete package or season agreement applies."
+          },
+          {
+            "label": "Explain the handoff and changes",
+            "body": "Use current instructions for fitting preparation, collection and return. Distinguish pickup from the day of use, and explain whom to contact about a changed rental period without implying an automatic extension."
+          }
+        ],
+        "ownerInputs": [
+          "Current package contents, separate items and seasonal terms.",
+          "Exact availability-check and reservation wording used by staff.",
+          "Approved fitting, pickup and return instructions with an update owner."
+        ],
+        "sourceBridge": "Lake Placid Ski & Board publishes first-come rentals without reservations, telephone availability checks, and daily and season offerings. Its shop is at 2532 Main Street, Lake Placid; proximity to Whiteface does not imply mountain admission is included.",
+        "limits": "Live inventory, reservations, agreements and fitting systems need separate scope; an informational page can support telephone inquiries.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "2099d9faad4756a0d34df7623aaaea9909e1b3a2f00beae5659998926812eb6a",
+      "afterSha256": "e11678fdf2d7b18ce8134ab1edb108dc0344f5265d7c5a69c109af1eca7e2e91"
+    },
+    {
+      "route": "/areas/florida/brevard-county/",
+      "before": {
+        "route": "/areas/florida/brevard-county/",
+        "inputHash": "63c5004a2bc9f6c540337dc9a063253773035f931728408a379bd177cf3ee87d",
+        "heading": "Let the customer describe the warm room before choosing a remedy.",
+        "intro": "Someone with one uncomfortable room may not know whether to request repair, replacement or another service. Your HVAC page can make their observations useful without asking them to identify the fault before a technician visits.",
+        "customerQuestion": "Can I describe when this room gets warm before choosing a new-system quote?",
+        "decisions": [
+          {
+            "label": "Capture the location and pattern",
+            "body": "Use the technician’s approved questions about which rooms feel different and when the problem is noticed. Accept uncertainty so the customer can report what they experience without asserting a diagnosis."
+          },
+          {
+            "label": "Keep known context and unknowns",
+            "body": "Invite useful existing-system information and recent work or changes. An unknown model number should not prevent an initial inquiry, and a requested replacement should remain a discussion until assessed."
+          },
+          {
+            "label": "Explain the review and options",
+            "body": "Describe the actual assessment process and how the business presents proposed work. Approved examples can identify the work performed without suggesting that every similar symptom has the same cause or solution."
+          }
+        ],
+        "ownerInputs": [
+          "Observed patterns and context technicians actually find useful.",
+          "Current capabilities and assessment/contact process.",
+          "Approved case captions showing assessment and work performed."
+        ],
+        "sourceBridge": "Launchpad Services lists duct, insulation, thermostat and airflow services alongside air conditioning, and describes assessing the issue before discussing options. Its Palm Bay address and stated Brevard coverage establish the example’s local connection. A stronger case needs owner-approved observations and process detail.",
+        "limits": "Technicians diagnose and size equipment. The website does not select the fault, estimate savings or promise a particular outcome. Connected diagnostic tools, calculators and dispatch integrations require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/brevard-county/",
+        "inputHash": "63c5004a2bc9f6c540337dc9a063253773035f931728408a379bd177cf3ee87d",
+        "heading": "Let the customer describe the warm room before choosing a remedy.",
+        "intro": "Someone with one uncomfortable room may not know whether to request repair, replacement or another service. Your HVAC page can make their observations useful without asking them to identify the fault before a technician visits.",
+        "customerQuestion": "Can I describe when this room gets warm before choosing a new-system quote?",
+        "decisions": [
+          {
+            "label": "Capture the location and pattern",
+            "body": "Use the technician’s approved questions about which rooms feel different and when the problem is noticed. Accept uncertainty so the customer can report what they experience without asserting a diagnosis."
+          },
+          {
+            "label": "Keep known context and unknowns",
+            "body": "Invite useful existing-system information and recent work or changes. An unknown model number should not prevent an initial inquiry, and a requested replacement should remain a discussion until assessed."
+          },
+          {
+            "label": "Explain the review and options",
+            "body": "Describe the actual assessment process and how the business presents proposed work. Approved examples can identify the work performed without suggesting that every similar symptom has the same cause or solution."
+          }
+        ],
+        "ownerInputs": [
+          "Observed patterns and context technicians actually find useful.",
+          "Current capabilities and assessment/contact process.",
+          "Approved case captions showing assessment and work performed."
+        ],
+        "sourceBridge": "Launchpad Services lists duct, insulation, thermostat and airflow services alongside air conditioning, and describes assessing the issue before discussing options. Its Palm Bay address and stated Brevard coverage establish the example’s local connection. For your page, send the observation prompts your technicians use and explain what happens during the assessment.",
+        "limits": "Technicians diagnose and size equipment. The website does not select the fault, estimate savings or promise a particular outcome. Connected diagnostic tools, calculators and dispatch integrations require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "0bac335b248ac176ad45f4d8e05b648c9c3b07725abfa265bc635088d922f280",
+      "afterSha256": "ceb3fb828787ef143601e591fe4d932458e6daa127680b98efe52bc3b4039e3e"
+    },
+    {
+      "route": "/areas/florida/calhoun-county/",
+      "before": {
+        "route": "/areas/florida/calhoun-county/",
+        "inputHash": "844d956f8fb965ca1e6d0fc33c45bfae0c790e14d5778ff901dcf136a3101efc",
+        "heading": "Show when a building choice changes the delivery conversation.",
+        "intro": "A buyer may start with a building shown on the lot and then switch to a custom configuration. Your dealer page can make the change in process visible while retaining the inventory and design tools already in use.",
+        "customerQuestion": "If I change this lot building to a custom design, what needs to be reviewed again?",
+        "decisions": [
+          {
+            "label": "Identify the building being discussed",
+            "body": "Distinguish a specific inventory listing from a general style photograph. Keep the listing identifier or saved design reference with the inquiry so the dealer can confirm availability or the proposed specification."
+          },
+          {
+            "label": "Explain the order path",
+            "body": "Describe how an existing building and a configured request reach delivery review. A changed design needs its own accepted specification and current lead-time discussion; a previous delivery conversation should not silently carry over."
+          },
+          {
+            "label": "Keep the destination and access questions",
+            "body": "Ask for the actual property and the delivery team’s useful preliminary context. A constrained approach or uncertainty about readiness should be raised before the buyer treats a displayed product as deliverable to that site."
+          }
+        ],
+        "ownerInputs": [
+          "Current inventory/custom labels and existing tool links.",
+          "How the team confirms building status, specifications and lead time.",
+          "Approved destination, access and readiness questions with the review contact."
+        ],
+        "sourceBridge": "Stor-Mor’s Blountstown dealer page separates inventory browsing from design-your-own tools and describes different delivery scheduling for off-lot and custom buildings. It lists the dealer at 19984 W. Central Avenue, Blountstown.",
+        "limits": "The dealer and delivery team determine suitability and arrangements. This is no site-preparation or permitting instruction. Configurators, synchronized inventory, finance applications and delivery scheduling require separate scope; the public explanation can link existing systems.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/calhoun-county/",
+        "inputHash": "844d956f8fb965ca1e6d0fc33c45bfae0c790e14d5778ff901dcf136a3101efc",
+        "heading": "Show when a building choice changes the delivery conversation.",
+        "intro": "A buyer may start with a building shown on the lot and then switch to a custom configuration. Your dealer page can make the change in process visible while retaining the inventory and design tools already in use.",
+        "customerQuestion": "If I change this lot building to a custom design, what needs to be reviewed again?",
+        "decisions": [
+          {
+            "label": "Identify the building being discussed",
+            "body": "Distinguish a specific inventory listing from a general style photograph. Keep the listing identifier or saved design reference with the inquiry so the dealer can confirm availability or the proposed specification."
+          },
+          {
+            "label": "Explain the order path",
+            "body": "Describe how an existing building and a configured request reach delivery review. A changed design needs its own accepted specification and current lead-time discussion; a previous delivery conversation should not silently carry over."
+          },
+          {
+            "label": "Keep the destination and access questions",
+            "body": "Ask for the actual property and the delivery team’s useful preliminary context. A constrained approach or uncertainty about readiness should be raised before the buyer treats a displayed product as deliverable to that site."
+          }
+        ],
+        "ownerInputs": [
+          "Current inventory/custom labels and existing tool links.",
+          "How the team confirms building status, specifications and lead time.",
+          "Approved destination, access and readiness questions with the review contact."
+        ],
+        "sourceBridge": "Stor-Mor’s Blountstown dealer page separates inventory browsing from design-your-own tools and describes different delivery scheduling for off-lot and custom buildings. It lists the dealer at 19984 W. Central Avenue, Blountstown.",
+        "limits": "The dealer and delivery team determine suitability and arrangements. This does not provide site-preparation or permitting instructions. Configurators, synchronized inventory, finance applications and delivery scheduling require separate scope; the public explanation can link existing systems.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "0453a97ecf91712a220f242c5ebb63d0edafa1327e54ba0c7d0e9f9d54599186",
+      "afterSha256": "a59f0f6c1d1b9de1562ecdf8a317f6b66d0a5d51f70c1d76b9e2f74d4032f58e"
+    },
+    {
+      "route": "/areas/florida/clay-county/",
+      "before": {
+        "route": "/areas/florida/clay-county/",
+        "inputHash": "4cb549bc97807684bed6f87c7514f5fd54eead7d718afc0f6efc0f8f11c7f16c",
+        "heading": "Explain the equipment behind the repair photograph.",
+        "intro": "A reinforced piece of metal gives a prospective customer little context on its own. Your repair portfolio can identify the equipment, the reported condition and your team’s contribution so the example supports a useful assessment question.",
+        "customerQuestion": "Have you assessed equipment like mine, and what should I describe about the problem?",
+        "decisions": [
+          {
+            "label": "Place the component in context",
+            "body": "Use an approved description of the agricultural or industrial equipment and the affected area. Respect customer confidentiality and avoid publishing identifiers or details that the customer has not permitted."
+          },
+          {
+            "label": "Separate the observation from the work",
+            "body": "Caption what was reported and the work actually performed, using repair-team approval. A reinforcement or realignment example should not suggest that the same method suits another cracked or misaligned assembly."
+          },
+          {
+            "label": "Connect the evidence to inspection",
+            "body": "Ask for the team’s useful initial observations and equipment location, then explain the real shop or field review arrangements. Customers can report a problem without choosing a welding process or diagnosing the fault."
+          }
+        ],
+        "ownerInputs": [
+          "A permissioned repair example with equipment and condition context.",
+          "Accurate team-approved work caption and confidentiality limits.",
+          "Accepted work, initial questions and inspection/contact process."
+        ],
+        "sourceBridge": "Wright’s Welding & Fabrication describes equipment repairs serving Green Cove Springs, including cracks, reinforcement, realignment and on-site inspection. It lists an Orange Park office. A stronger published example requires an actual approved repair caption rather than relying on the capability list alone.",
+        "limits": "Qualified technicians determine faults and repairs. Website evidence prepares a discussion; it does not authorize work. Repair-authorization and field-service scheduling systems require separate scope while the existing inquiry can remain in use.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/clay-county/",
+        "inputHash": "4cb549bc97807684bed6f87c7514f5fd54eead7d718afc0f6efc0f8f11c7f16c",
+        "heading": "Explain the equipment behind the repair photograph.",
+        "intro": "A reinforced piece of metal gives a prospective customer little context on its own. Your repair portfolio can identify the equipment, the reported condition and your team’s contribution so the example supports a useful assessment question.",
+        "customerQuestion": "Have you assessed equipment like mine, and what should I describe about the problem?",
+        "decisions": [
+          {
+            "label": "Place the component in context",
+            "body": "Use an approved description of the agricultural or industrial equipment and the affected area. Respect customer confidentiality and avoid publishing identifiers or details that the customer has not permitted."
+          },
+          {
+            "label": "Separate the observation from the work",
+            "body": "Caption what was reported and the work actually performed, using repair-team approval. A reinforcement or realignment example should not suggest that the same method suits another cracked or misaligned assembly."
+          },
+          {
+            "label": "Connect the evidence to inspection",
+            "body": "Ask for the team’s useful initial observations and equipment location, then explain the real shop or field review arrangements. Customers can report a problem without choosing a welding process or diagnosing the fault."
+          }
+        ],
+        "ownerInputs": [
+          "A permissioned repair example with equipment and condition context.",
+          "Accurate team-approved work caption and confidentiality limits.",
+          "Accepted work, initial questions and inspection/contact process."
+        ],
+        "sourceBridge": "Wright’s Welding & Fabrication describes equipment repairs serving Green Cove Springs, including cracks, reinforcement, realignment and on-site inspection. It lists an Orange Park office. For your page, send one approved example naming the equipment, reported issue and work your team performed.",
+        "limits": "Qualified technicians determine faults and repairs. Website evidence prepares a discussion; it does not authorize work. Repair-authorization and field-service scheduling systems require separate scope while the existing inquiry can remain in use.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "c2a959811488daf591057e7d36adb82724beb856ba20a169e430ff52eaadb121",
+      "afterSha256": "53859c980bd762a5aa296ba37c4c9bb8710184153b394a9699dd1422ee554843"
+    },
+    {
+      "route": "/areas/florida/columbia-county/",
+      "before": {
+        "route": "/areas/florida/columbia-county/",
+        "inputHash": "66855255bb0563579a618fa0f7464274b42eba95b0206a2b48f0a70c354c5491",
+        "heading": "Prepare the showroom visit around the room the customer has.",
+        "intro": "A closet-storage project does not start with the same questions as a kitchen. Your showroom page can help each visitor bring useful context even when they do not yet have formal plans.",
+        "customerQuestion": "What should I bring to discuss closet storage rather than kitchen cabinets?",
+        "decisions": [
+          {
+            "label": "Identify the room and purpose",
+            "body": "Explain the product requests your shop accepts and ask what the customer wants to improve. For a closet, storage needs and current difficulties can be useful before detailed dimensions; custom doors and built-ins need their own intended-use context."
+          },
+          {
+            "label": "Suggest relevant starting material",
+            "body": "Use the shop’s actual guidance for photographs, references and available plans or rough measurements. Keep final dimensions for the appropriate review so incomplete preparation does not falsely appear to be an approved order."
+          },
+          {
+            "label": "Label design evidence accurately",
+            "body": "Distinguish 3D studies from photographs of completed work. A rendering can explain a proposed layout, with a caption naming the actual service and the measurement or product decisions still to be confirmed."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted products and room-specific preparation guidance.",
+          "Current showroom visit arrangements and measurement process.",
+          "Permissioned finished examples and clearly labeled design studies."
+        ],
+        "sourceBridge": "Handy Woodworks lists cabinetry, countertops, closet systems, built-ins, custom doors and 3D design, with a Lake City showroom at 214 SW Windswept Glen. Its range makes product-specific preparation more useful than one kitchen-focused inquiry.",
+        "limits": "The shop verifies dimensions and product suitability. Configurators, automated design, measured quotations and manufacturing tools require separate scope. Useful service information may be enough initially; a blog is optional and additional articles need an agreed page plan and price.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/columbia-county/",
+        "inputHash": "66855255bb0563579a618fa0f7464274b42eba95b0206a2b48f0a70c354c5491",
+        "heading": "Prepare the showroom visit around the room the customer has.",
+        "intro": "A closet-storage project does not start with the same questions as a kitchen. Your showroom page can help each visitor bring useful context even when they do not yet have formal plans.",
+        "customerQuestion": "What should I bring to discuss closet storage rather than kitchen cabinets?",
+        "decisions": [
+          {
+            "label": "Identify the room and purpose",
+            "body": "Explain the product requests your shop accepts and ask what the customer wants to improve. For a closet, storage needs and current difficulties can be useful before detailed dimensions; custom doors and built-ins need their own intended-use context."
+          },
+          {
+            "label": "Suggest relevant starting material",
+            "body": "Use the shop’s actual guidance for photographs, references and available plans or rough measurements. Keep final dimensions for the appropriate review so incomplete preparation does not falsely appear to be an approved order."
+          },
+          {
+            "label": "Label design evidence accurately",
+            "body": "Distinguish 3D studies from photographs of completed work. A rendering can explain a proposed layout, with a caption naming the actual service and the measurement or product decisions still to be confirmed."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted products and room-specific preparation guidance.",
+          "Current showroom visit arrangements and measurement process.",
+          "Permissioned finished examples and clearly labeled design studies."
+        ],
+        "sourceBridge": "Handy Woodworks lists cabinetry, countertops, closet systems, built-ins, custom doors and 3D design, with a Lake City showroom at 214 SW Windswept Glen. Its range makes product-specific preparation more useful than one kitchen-focused inquiry.",
+        "limits": "The shop verifies dimensions and product suitability. Configurators, automated design, measured quotations and manufacturing tools require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "3212e228c426ce02a18a3f444895909ad39141fe5c531800cd78e32a619628cd",
+      "afterSha256": "b03490abf78ec3c25f5cc08e002cc888f0156770a54101013ac58df822bb8573"
+    },
+    {
+      "route": "/areas/florida/escambia-county/",
+      "before": {
+        "route": "/areas/florida/escambia-county/",
+        "inputHash": "043c6476258797859242adfcaa53940ef0bb5577058023eee8f500637dacf97a",
+        "heading": "Make the installation partner’s role visible before the inquiry.",
+        "intro": "A sign company seeking field installation has different needs from a retailer ordering a complete sign. Your capability page can identify the accepted customer relationship and the materials, site and handoff details needed for review.",
+        "customerQuestion": "Can your crew install our printed graphics, and what needs to be ready at the site?",
+        "decisions": [
+          {
+            "label": "Identify the audience and contribution",
+            "body": "State whether the business works with trade partners, brands or direct consumers. Name installation capabilities accurately so a visitor seeking design and fabrication can recognize whether that full service is offered."
+          },
+          {
+            "label": "Separate materials from site readiness",
+            "body": "Ask about production status, the actual worksite, access contact and known limitations. Printed graphics and an unfinished wall are two different facts; approved artwork alone does not establish that materials have arrived or installation can proceed."
+          },
+          {
+            "label": "Agree the completion handoff",
+            "body": "Show the crew’s contribution in permissioned project examples and explain actual completion-report practices. Let partners ask about photographs or sign-off rather than assume those records are included."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted customer types and installation capabilities.",
+          "Material, access and site-review requirements.",
+          "Approved project captions and completion-documentation practices."
+        ],
+        "sourceBridge": "Customology describes subcontract sign and graphic installation for sign companies and national brands, and its FAQ excludes direct-to-consumer work. It states a Pensacola base with broader regional coverage; service areas do not establish additional offices.",
+        "limits": "Site suitability and scheduling remain for operator review. Trade portals, fleet scheduling and asset tracking require separate scope. When comparing website proposals, check whether the page plan and inquiry actually serve this trade relationship as well as showing an attractive portfolio.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/escambia-county/",
+        "inputHash": "043c6476258797859242adfcaa53940ef0bb5577058023eee8f500637dacf97a",
+        "heading": "Make the installation partner’s role visible before the inquiry.",
+        "intro": "A sign company seeking field installation has different needs from a retailer ordering a complete sign. Your capability page can identify the accepted customer relationship and the materials, site and handoff details needed for review.",
+        "customerQuestion": "Can your crew install our printed graphics, and what needs to be ready at the site?",
+        "decisions": [
+          {
+            "label": "Identify the audience and contribution",
+            "body": "State whether the business works with trade partners, brands or direct consumers. Name installation capabilities accurately so a visitor seeking design and fabrication can recognize whether that full service is offered."
+          },
+          {
+            "label": "Separate materials from site readiness",
+            "body": "Ask about production status, the actual worksite, access contact and known limitations. Printed graphics and an unfinished wall are two different facts; approved artwork alone does not establish that materials have arrived or installation can proceed."
+          },
+          {
+            "label": "Agree the completion handoff",
+            "body": "Show the crew’s contribution in permissioned project examples and explain actual completion-report practices. Let partners ask about photographs or sign-off rather than assume those records are included."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted customer types and installation capabilities.",
+          "Material, access and site-review requirements.",
+          "Approved project captions and completion-documentation practices."
+        ],
+        "sourceBridge": "Customology describes subcontract sign and graphic installation for sign companies and national brands, and its FAQ excludes direct-to-consumer work. It states a Pensacola base with broader regional coverage; service areas do not establish additional offices.",
+        "limits": "Site suitability and scheduling remain for operator review. Trade portals, fleet scheduling and asset tracking require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "0a20bd62d68afe21809869c3472883c26ce5eb820c4c73d6337493f4e9e1259e",
+      "afterSha256": "c4ee3ebecca75eb22b122648bf032d279470161bc392232e0bbbeb29520e05b7"
+    },
+    {
+      "route": "/areas/florida/gadsden-county/",
+      "before": {
+        "route": "/areas/florida/gadsden-county/",
+        "inputHash": "084e551156dc230af73a252e1b31d5b00627aff70e29a53948a8b73d7a2785cd",
+        "heading": "Make the date visible before a buyer uses saved availability.",
+        "intro": "An older spreadsheet may still help a buyer prepare a list, but it cannot establish current stock. Your nursery page can distinguish dated documents from the current inventory route and carry the plant request into the right discussion.",
+        "customerQuestion": "Is this saved availability list current, and where should I check these plants now?",
+        "decisions": [
+          {
+            "label": "Label each document’s date and purpose",
+            "body": "Show the date in both the download label and file naming. Explain that the general product range is not a current stock list, and keep a saved copy identifiable after it leaves the website."
+          },
+          {
+            "label": "Explain the live-inventory handoff",
+            "body": "Label the designated external source clearly and maintain the correct link. A buyer with an old PDF or spreadsheet should find the current route without assuming the saved quantity is held stock."
+          },
+          {
+            "label": "Preserve the purchase details",
+            "body": "Ask for plant reference, container size and requested quantity using the nursery’s actual process. Separate a new-customer introduction from account approval, an accepted order and stock allocation."
+          }
+        ],
+        "ownerInputs": [
+          "Approved availability links, filenames and update owner.",
+          "Plant identifiers and information needed for purchase inquiries.",
+          "Current new-customer, order and fulfillment arrangements."
+        ],
+        "sourceBridge": "May Nursery in Havana offers dated PDF and Excel availability alongside a Plantiful link described as live availability with updated photographs. It explicitly says download quantities reflect the filename date, making document age part of the buyer’s decision.",
+        "limits": "Previously downloaded files cannot be changed remotely. Agree which download addresses stay stable, which versions remain dated and who replaces them. Inventory synchronization, order processing and reservation systems need separate scope; the website can explain and link the existing tools.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/gadsden-county/",
+        "inputHash": "084e551156dc230af73a252e1b31d5b00627aff70e29a53948a8b73d7a2785cd",
+        "heading": "Make the date visible before a buyer uses saved availability.",
+        "intro": "An older spreadsheet may still help a buyer prepare a list, but it cannot establish current stock. Your nursery page can distinguish dated documents from the current inventory route and carry the plant request into the right discussion.",
+        "customerQuestion": "Is this saved availability list current, and where should I check these plants now?",
+        "decisions": [
+          {
+            "label": "Label each document’s date and purpose",
+            "body": "Show the date in both the download label and file naming. Explain that the general product range is not a current stock list, and keep a saved copy identifiable after it leaves the website."
+          },
+          {
+            "label": "Explain the live-inventory handoff",
+            "body": "Label the designated external source clearly and maintain the correct link. A buyer with an old PDF or spreadsheet should find the current route without assuming the saved quantity is held stock."
+          },
+          {
+            "label": "Preserve the purchase details",
+            "body": "Ask for plant reference, container size and requested quantity using the nursery’s actual process. Separate a new-customer introduction from account approval, an accepted order and stock allocation."
+          }
+        ],
+        "ownerInputs": [
+          "Approved availability links, filenames and update owner.",
+          "Plant identifiers and information needed for purchase inquiries.",
+          "Current new-customer, order and fulfillment arrangements."
+        ],
+        "sourceBridge": "May Nursery in Havana offers dated PDF and Excel availability alongside a Plantiful link described as live availability with updated photographs. It explicitly says download quantities reflect the filename date, making document age part of the buyer’s decision.",
+        "limits": "Inventory synchronization, order processing and reservation systems need separate scope; the website can explain and link the existing tools.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "920542bfc3e806188f90f63f2d52ede6e8fc83e4508ea6cb2246d06e87592e3f",
+      "afterSha256": "a841c79398b1362d993db958e28c9488b891dc56634447d0c3a424ca6f5c7283"
+    },
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "before": {
+        "route": "/areas/florida/gilchrist-county/",
+        "inputHash": "f38ddd1ff12c2c3c67e23e6ade9392f4aa2b04aa476f2e0a444df04ae182f68d",
+        "heading": "Say what the workshop contributed to the room photograph.",
+        "intro": "A mantel, table and ceiling detail can appear in one portfolio while representing different scopes of work. Your captions can help a buyer recognize the object they want and the surrounding work that still needs discussion.",
+        "customerQuestion": "Did you make the mantel alone, or also carry out the surrounding fireplace work?",
+        "decisions": [
+          {
+            "label": "Name the object and its purpose",
+            "body": "Use accurate object names and explain whether the example is freestanding furniture, a fitted piece or an architectural detail. A customer can describe intended use and appearance without knowing the construction method."
+          },
+          {
+            "label": "Identify the actual contribution",
+            "body": "Caption what the shop designed, made or installed, with permission to publish the project. Keep an inspiration image distinct from completed work and avoid implying responsibility for every visible element of the room."
+          },
+          {
+            "label": "Keep related items identifiable",
+            "body": "Let someone interested in a table and matching ceiling feature describe one design direction while preserving two work items and their separate installation questions. Explain which room context starts review and what the workshop later verifies."
+          }
+        ],
+        "ownerInputs": [
+          "One permissioned example with accurate object and contribution captions.",
+          "Current capabilities and design-reference permissions.",
+          "Preferred room information and actual installation responsibilities."
+        ],
+        "sourceBridge": "Hurst Carpentry’s Trenton millwork introduction lists mantels, faux beams, doors, tables and ceiling work alongside broader room and built-in services. The range supports a contribution-led gallery, but a stronger example needs a real owner-approved caption rather than a list of capabilities.",
+        "limits": "The maker and project team handle architectural design, structural review, CAD and installation management. Website design tools or project-management connections need separate scope; a concise caption can prepare an ordinary project inquiry.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/gilchrist-county/",
+        "inputHash": "f38ddd1ff12c2c3c67e23e6ade9392f4aa2b04aa476f2e0a444df04ae182f68d",
+        "heading": "Say what the workshop contributed to the room photograph.",
+        "intro": "A mantel, table and ceiling detail can appear in one portfolio while representing different scopes of work. Your captions can help a buyer recognize the object they want and the surrounding work that still needs discussion.",
+        "customerQuestion": "Did you make the mantel alone, or also carry out the surrounding fireplace work?",
+        "decisions": [
+          {
+            "label": "Name the object and its purpose",
+            "body": "Use accurate object names and explain whether the example is freestanding furniture, a fitted piece or an architectural detail. A customer can describe intended use and appearance without knowing the construction method."
+          },
+          {
+            "label": "Identify the actual contribution",
+            "body": "A fictional caption shows the distinction: “Made and fitted the timber mantel; the existing fireplace surround and hearth stayed unchanged.” This is an illustration, not a completed project. Replace it with an approved account of your actual work. A buyer asking for the whole fireplace should be able to see which surrounding work needs a separate conversation."
+          },
+          {
+            "label": "Keep related items identifiable",
+            "body": "Let someone interested in a table and matching ceiling feature describe one design direction while preserving two work items and their separate installation questions. Explain which room context starts review and what the workshop later verifies."
+          }
+        ],
+        "ownerInputs": [
+          "One permissioned example with accurate object and contribution captions.",
+          "Current capabilities and design-reference permissions.",
+          "Preferred room information and actual installation responsibilities."
+        ],
+        "sourceBridge": "Hurst Carpentry’s Trenton millwork introduction lists mantels, faux beams, doors, tables and ceiling work alongside broader room and built-in services. The range makes it useful to name the exact object and the workshop’s contribution in each caption.",
+        "limits": "The maker and project team handle architectural design, structural review, CAD and installation management. Website design tools or project-management connections need separate scope; a concise caption can prepare an ordinary project inquiry.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "dba89e60c5b174c022c75316249337e8db5f1e692856b954af5b840903bd2d73",
+      "afterSha256": "01f779a61d6caea9a03201523ecc4705bd4d6842fc98725800c4201f51522903"
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "before": {
+        "route": "/areas/florida/glades-county/",
+        "inputHash": "9c4a35465cf17c81a951ab8d21dd4f0db3db947e5ead2eff316875e78d9903ea",
+        "heading": "Keep related RV symptoms together in one service request.",
+        "intro": "An electrical problem may affect several functions while the owner knows little about the cause. Your mobile-service page can let them describe that combined problem and the vehicle’s actual location before a technician reviews attendance.",
+        "customerQuestion": "Can I explain several affected functions together without choosing a replacement part?",
+        "decisions": [
+          {
+            "label": "Start with the observed change",
+            "body": "Use the service team’s approved prompts for what stopped working and when. Leave a route for uncertain or combined concerns instead of forcing separate, disconnected requests for every service category."
+          },
+          {
+            "label": "Identify the RV and requested work",
+            "body": "Retain known vehicle details and other maintenance or repair being requested. The technician can then review the combined scope without a symptom being treated as a diagnosis or a customer-selected remedy."
+          },
+          {
+            "label": "Describe the current site",
+            "body": "Ask for the actual RV location and the team’s useful site-contact information. A campsite maintenance request should remain a discussion until the operator accepts the work and confirms practical attendance arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted RV work and identifiers useful before review.",
+          "Actual prompts for related symptoms and combined maintenance requests.",
+          "Current coverage, location questions and confirmation process."
+        ],
+        "sourceBridge": "Major’s Truck Repair describes engine, electrical, cooling, brake and suspension services and explicitly includes Moore Haven in its mobile RV area. Its contact address is in Okeechobee. A more distinctive published case needs the operator’s actual multi-function review questions.",
+        "limits": "The business and technicians handle diagnosis, troubleshooting and emergency response. Dispatch and visit scheduling tools require separate website scope. A clear public introduction can support the existing contact route without promising a confirmed mobile visit.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/glades-county/",
+        "inputHash": "9c4a35465cf17c81a951ab8d21dd4f0db3db947e5ead2eff316875e78d9903ea",
+        "heading": "Keep related RV symptoms together in one service request.",
+        "intro": "An electrical problem may affect several functions while the owner knows little about the cause. Your mobile-service page can let them describe that combined problem and the vehicle’s actual location before a technician reviews attendance.",
+        "customerQuestion": "Can I explain several affected functions together without choosing a replacement part?",
+        "decisions": [
+          {
+            "label": "Start with the observed change",
+            "body": "Fictional inquiry: “The lights started flickering and the cooling changed during the same trip. I do not know whether they are related.” Keep both observations in one request, then use the team’s approved questions to establish when each change began. The grouped description must not become a diagnosis that the functions share one fault."
+          },
+          {
+            "label": "Identify the RV and requested work",
+            "body": "Retain known vehicle details and other maintenance or repair being requested. The technician can then review the combined scope without a symptom being treated as a diagnosis or a customer-selected remedy."
+          },
+          {
+            "label": "Describe the current site",
+            "body": "Ask for the actual RV location and the team’s useful site-contact information. A campsite maintenance request should remain a discussion until the operator accepts the work and confirms practical attendance arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted RV work and identifiers useful before review.",
+          "Actual prompts for related symptoms and combined maintenance requests.",
+          "Current coverage, location questions and confirmation process."
+        ],
+        "sourceBridge": "Major’s Truck Repair describes engine, electrical, cooling, brake and suspension services and explicitly includes Moore Haven in its mobile RV area. Its contact address is in Okeechobee.",
+        "limits": "The business and technicians handle diagnosis, troubleshooting and emergency response. Dispatch and visit scheduling tools require separate website scope. A clear public introduction can support the existing contact route without promising a confirmed mobile visit.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "16f3ecacdc64ad9548e6717a92e05167d054115b7d8ac7e53e516c96a567e52d",
+      "afterSha256": "dbd5afc4fa14a1eb7b053f9313edc7e165425581c12efa9ffa49824edf4c8329"
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "before": {
+        "route": "/areas/florida/hardee-county/",
+        "inputHash": "5f973435c6e80fe59c29bbf24af9e0464723a87f505e8f540af22ca15b315c1b",
+        "heading": "Let the water-service inquiry begin with the observed concern.",
+        "intro": "A customer may be uncertain whether a change relates to water treatment, a pump or a new supply need. Your service page can accept that uncertainty while preserving the existing equipment and the result the customer wants to discuss.",
+        "customerQuestion": "Can I describe the concern before choosing between treatment and pump work?",
+        "decisions": [
+          {
+            "label": "Use recognizable starting descriptions",
+            "body": "Place plain-language descriptions beside service names and retain a general inquiry route. Invite observations and existing treatment information without asking the customer to interpret a water test or select a system."
+          },
+          {
+            "label": "Identify equipment and records",
+            "body": "For pump or component work, ask for the business’s useful identifiers and known history. A part or pump reference can support review without the page deciding whether fabrication, rebuilding or another remedy is appropriate."
+          },
+          {
+            "label": "Show actual workshop contribution",
+            "body": "Use a permissioned example to explain what the business assessed and performed. Keep a new-property or supply request distinct, with intended use and location available for the team’s feasibility discussion."
+          }
+        ],
+        "ownerInputs": [
+          "Approved observation prompts and accepted service categories.",
+          "Useful existing-system and component information.",
+          "An actual workshop example and current assessment/contact process."
+        ],
+        "sourceBridge": "Ullrich Water Services in Wauchula offers treatment and analysis alongside wells and pumps. Its pump page describes custom components, an in-house machine shop and rebuild work. That workshop detail can strengthen the page if supported by an accurate owner-approved example rather than a category list alone.",
+        "limits": "Qualified specialists handle testing, interpretation, diagnosis, equipment selection and engineering. Public content prepares the request without promising a remedy. Dispatch and service-system integrations require separate scope; the existing inquiry can carry clear observations and known equipment context.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/hardee-county/",
+        "inputHash": "5f973435c6e80fe59c29bbf24af9e0464723a87f505e8f540af22ca15b315c1b",
+        "heading": "Let the water-service inquiry begin with the observed concern.",
+        "intro": "A customer may be uncertain whether a change relates to water treatment, a pump or a new supply need. Your service page can accept that uncertainty while preserving the existing equipment and the result the customer wants to discuss.",
+        "customerQuestion": "Can I describe the concern before choosing between treatment and pump work?",
+        "decisions": [
+          {
+            "label": "Use recognizable starting descriptions",
+            "body": "Place plain-language descriptions beside service names and retain a general inquiry route. Invite observations and existing treatment information without asking the customer to interpret a water test or select a system."
+          },
+          {
+            "label": "Identify equipment and records",
+            "body": "Fictional inquiry: “Our existing pump is marked [model]. I have a photograph of the damaged component, but do not know if it can be rebuilt. Can your workshop assess it?” The identifier and available record start a component-review conversation; they do not authorize a rebuild or a custom replacement. A water-treatment question should keep its own observations and review route."
+          },
+          {
+            "label": "Show actual workshop contribution",
+            "body": "A fictional caption structure is: “Customer-supplied pump component, rebuilt in the workshop; site removal and installation were outside this job.” This is an illustration, not a completed project. Publish only an approved account of what your team actually assessed and performed. It helps customers distinguish workshop work from work at their property; new-supply requests still need their own use and location discussion."
+          }
+        ],
+        "ownerInputs": [
+          "Approved observation prompts and accepted service categories.",
+          "Useful existing-system and component information.",
+          "An actual workshop example and current assessment/contact process."
+        ],
+        "sourceBridge": "Ullrich Water Services in Wauchula offers treatment and analysis alongside wells and pumps. Its pump page describes custom components, an in-house machine shop and rebuild work. That range calls for distinguishing an existing-component assessment from a new water-supply or treatment request.",
+        "limits": "Qualified specialists handle testing, interpretation, diagnosis, equipment selection and engineering. Public content prepares the request without promising a remedy. Dispatch and service-system integrations require separate scope; the existing inquiry can carry clear observations and known equipment context.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "64d2a02d730c2481fd8b32c28a7022c8314e16911c687b8ba0e1253713f7ece7",
+      "afterSha256": "7380142ed7e62095cb8cee109ad14c1a6f257014cad1e2916e52fefecf73a480"
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "before": {
+        "route": "/areas/florida/holmes-county/",
+        "inputHash": "12142027d7a9bde98a23a912e980a5d7d103bb381b4f5ec3e8df4dc02c9e1eed",
+        "heading": "Keep the material and its preparation in the same inquiry.",
+        "intro": "A roofing-material request may also involve cutting, a special order and delivery. Your supplier page can explain the surrounding services so the customer does not mistake a product image for a complete project package.",
+        "customerQuestion": "Can I ask about the roofing material, required cutting and delivery together?",
+        "decisions": [
+          {
+            "label": "Identify the product or missing item",
+            "body": "Use current product references and a clear route for a special-order request. A customer with an incomplete list should be able to ask for the support your staff actually provides without treating it as a finished construction estimate."
+          },
+          {
+            "label": "Describe the requested preparation",
+            "body": "Explain real cutting or other services and the information needed for review. Preserve that work with the material request rather than assume every catalog item includes the preparation needed to use it."
+          },
+          {
+            "label": "Confirm the package and destination",
+            "body": "Ask about collection or the actual delivery location. Identify packages needing their own arrangement so a barn-kit buyer does not assume that a general local-delivery description applies unchanged."
+          }
+        ],
+        "ownerInputs": [
+          "Product identifiers and genuine cutting/preparation services.",
+          "Special-order and incomplete-list review process.",
+          "Owner-approved ordinary versus package delivery distinctions."
+        ],
+        "sourceBridge": "Panhandle Lumber & Supply’s Bonifay service page lists metal-roof cutting, special orders, contractor support and delivery, with barn-kit arrangements treated separately. It explicitly identifies the Bonifay store and Holmes County service. The stronger example would explain the owner’s actual package-delivery distinction.",
+        "limits": "The supplier and project team agree supply terms, construction estimates and engineering responsibilities. Public content does not include installation by implication. Live-stock feeds, freight calculators and order integrations require separate scope while existing catalog and contact tools remain useful.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/holmes-county/",
+        "inputHash": "12142027d7a9bde98a23a912e980a5d7d103bb381b4f5ec3e8df4dc02c9e1eed",
+        "heading": "Keep the material and its preparation in the same inquiry.",
+        "intro": "A roofing-material request may also involve cutting, a special order and delivery. Your supplier page can explain the surrounding services so the customer does not mistake a product image for a complete project package.",
+        "customerQuestion": "Can I ask about the roofing material, required cutting and delivery together?",
+        "decisions": [
+          {
+            "label": "Identify the product or missing item",
+            "body": "Use current product references and a clear route for a special-order request. A customer with an incomplete list should be able to ask for the support your staff actually provides without treating it as a finished construction estimate."
+          },
+          {
+            "label": "Describe the requested preparation",
+            "body": "Explain real cutting or other services and the information needed for review. Preserve that work with the material request rather than assume every catalog item includes the preparation needed to use it."
+          },
+          {
+            "label": "Confirm the package and destination",
+            "body": "Fictional comparison: “Twelve roofing sheets, cut to the agreed lengths, delivered to [address]” differs from “A complete barn kit to that address.” Keep the material-and-cutting list with the first request and the kit reference with the second. Ask staff which delivery arrangement applies to each; do not carry an ordinary-delivery price, access assumption or inclusion into the kit request without confirmation."
+          }
+        ],
+        "ownerInputs": [
+          "Product identifiers and genuine cutting/preparation services.",
+          "Special-order and incomplete-list review process.",
+          "Owner-approved ordinary versus package delivery distinctions."
+        ],
+        "sourceBridge": "Panhandle Lumber & Supply’s Bonifay service page lists metal-roof cutting, special orders, contractor support and delivery, with barn-kit arrangements treated separately. It explicitly identifies the Bonifay store and Holmes County service.",
+        "limits": "The supplier and project team agree supply terms, construction estimates and engineering responsibilities. Public content does not include installation by implication. Live-stock feeds, freight calculators and order integrations require separate scope while existing catalog and contact tools remain useful.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "f81e583da0619716fa01e503d16617dd42e69cf5190dc6cb8a9c0b8b2cedf80b",
+      "afterSha256": "94ad8bfce515a967be6d9bda48e422176cbc1654ce1dc31e3cf6cf8fe20261dc"
+    },
+    {
+      "route": "/areas/florida/lake-county/",
+      "before": {
+        "route": "/areas/florida/lake-county/",
+        "inputHash": "45ac56b591dbb0303972a6677762dbdba3fa83f2a6bef58f1299ab083a524dfc",
+        "heading": "Keep each room visible in the flooring estimate request.",
+        "intro": "Replacing bedroom carpet and hall flooring can involve different existing surfaces and preparation. Your page can carry that context into measurement and quotation instead of treating one square-foot figure as the complete scope.",
+        "customerQuestion": "How should I describe the bedroom and hall before the in-home measurement?",
+        "decisions": [
+          {
+            "label": "Identify the rooms and current surfaces",
+            "body": "Ask which areas are changing, how they are used and what flooring is there now. Use the estimator’s approved photo and preparation questions so product browsing remains connected to the actual replacement job."
+          },
+          {
+            "label": "Explain what measurement establishes",
+            "body": "Accept a room list or rough dimensions as starting context while distinguishing installer-verified quantities and layout. A preferred sample does not decide removal work or the condition underneath the existing surface."
+          },
+          {
+            "label": "Connect the written quote and preparation",
+            "body": "Describe how materials, labor and removal are discussed. Keep furniture, access and timing concerns available for review without promising the schedule or conditions shown in another project photograph."
+          }
+        ],
+        "ownerInputs": [
+          "Actual room information and measurement practice.",
+          "What the written quote says about removal and preparation.",
+          "Permissioned examples and responsibility for condition/access questions."
+        ],
+        "sourceBridge": "LA Flooring’s Clermont service page describes browsing, in-home measurement and a written quote distinguishing materials, labor and removal. Its showroom is in Wildwood, Sumter County; Clermont coverage does not establish a Lake County showroom.",
+        "limits": "Installers assess suitability and agree the plan. Live stock, automated measurement and instant installed pricing require separate scope. An ineffective estimate page can first receive a scoped review of its explanation, request path and delivery evidence before a broader redesign is considered.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/lake-county/",
+        "inputHash": "45ac56b591dbb0303972a6677762dbdba3fa83f2a6bef58f1299ab083a524dfc",
+        "heading": "Keep each room visible in the flooring estimate request.",
+        "intro": "Replacing bedroom carpet and hall flooring can involve different existing surfaces and preparation. Your page can carry that context into measurement and quotation instead of treating one square-foot figure as the complete scope.",
+        "customerQuestion": "How should I describe the bedroom and hall before the in-home measurement?",
+        "decisions": [
+          {
+            "label": "Identify the rooms and current surfaces",
+            "body": "Ask which areas are changing, how they are used and what flooring is there now. Use the estimator’s approved photo and preparation questions so product browsing remains connected to the actual replacement job."
+          },
+          {
+            "label": "Explain what measurement establishes",
+            "body": "Accept a room list or rough dimensions as starting context while distinguishing installer-verified quantities and layout. A preferred sample does not decide removal work or the condition underneath the existing surface."
+          },
+          {
+            "label": "Connect the written quote and preparation",
+            "body": "Describe how materials, labor and removal are discussed. Keep furniture, access and timing concerns available for review without promising the schedule or conditions shown in another project photograph."
+          }
+        ],
+        "ownerInputs": [
+          "Actual room information and measurement practice.",
+          "What the written quote says about removal and preparation.",
+          "Permissioned examples and responsibility for condition/access questions."
+        ],
+        "sourceBridge": "LA Flooring’s Clermont service page describes browsing, in-home measurement and a written quote distinguishing materials, labor and removal. Its showroom is in Wildwood, Sumter County; Clermont coverage does not establish a Lake County showroom.",
+        "limits": "Installers assess suitability and agree the plan. Live stock, automated measurement and instant installed pricing require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "231c441460a7f055ceca852faa80ea376294b5cdbd9b5beababcf01df52f84ca",
+      "afterSha256": "e689d2fdb8579d53a7d00be12cd5c404ebc0eaaafd3616fc3febf03e85eb753c"
+    },
+    {
+      "route": "/areas/florida/lee-county/",
+      "before": {
+        "route": "/areas/florida/lee-county/",
+        "inputHash": "8bdfb111f7637d23f4a17a682ae13b22dd0016e929bb3dfdf81959871bee8cec",
+        "heading": "Let a cabinetry inquiry show which decisions are still open.",
+        "intro": "A homeowner may have room photographs while a builder has plans that are still changing. Your page can make both useful starting points without asking either person to invent final selections just to contact the team.",
+        "customerQuestion": "Can we start with room photos even though we have not chosen the cabinets or finish?",
+        "decisions": [
+          {
+            "label": "Ask what is known now",
+            "body": "Explain the real minimum information: who is asking, the room or specialty space, the intended change and available material. Keep a homeowner’s rough idea and a trade professional’s current plans understandable without unnecessary separate forms."
+          },
+          {
+            "label": "Preserve open choices and roles",
+            "body": "Let the requester identify unsettled style, finish or other decisions and the builder, designer or client who will help approve them. Evolving dimensions should remain marked as evolving rather than appear to be final specifications."
+          },
+          {
+            "label": "Explain review and follow-up",
+            "body": "Describe who reviews the project and how contact follows. An inquiry can establish a focused next conversation without confirming the design, reserving production or promising that every desired configuration is feasible."
+          }
+        ],
+        "ownerInputs": [
+          "Minimum starting information and accepted project types.",
+          "Actual homeowner/trade review and follow-up process.",
+          "Approved examples and the decisions the team helps clients resolve."
+        ],
+        "sourceBridge": "Cabinet Genies’ Cape Coral inquiry invites clients, builders and designers, explicitly allows unfinished details and explains team review followed by contact. That is the concrete expectation to make visible beside the request route.",
+        "limits": "CRM connections, portals, automatic qualification and design tools need separate scope. Website planning can also begin before all project photos are ready, but agreed facts, publishable photographs and access must be ready for build work or the page plan and schedule need adjustment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/lee-county/",
+        "inputHash": "8bdfb111f7637d23f4a17a682ae13b22dd0016e929bb3dfdf81959871bee8cec",
+        "heading": "Let a cabinetry inquiry show which decisions are still open.",
+        "intro": "A homeowner may have room photographs while a builder has plans that are still changing. Your page can make both useful starting points without asking either person to invent final selections just to contact the team.",
+        "customerQuestion": "Can we start with room photos even though we have not chosen the cabinets or finish?",
+        "decisions": [
+          {
+            "label": "Ask what is known now",
+            "body": "Explain the real minimum information: who is asking, the room or specialty space, the intended change and available material. Keep a homeowner’s rough idea and a trade professional’s current plans understandable without unnecessary separate forms."
+          },
+          {
+            "label": "Preserve open choices and roles",
+            "body": "Let the requester identify unsettled style, finish or other decisions and the builder, designer or client who will help approve them. Evolving dimensions should remain marked as evolving rather than appear to be final specifications."
+          },
+          {
+            "label": "Explain review and follow-up",
+            "body": "Describe who reviews the project and how contact follows. An inquiry can establish a focused next conversation without confirming the design, reserving production or promising that every desired configuration is feasible."
+          }
+        ],
+        "ownerInputs": [
+          "Minimum starting information and accepted project types.",
+          "Actual homeowner/trade review and follow-up process.",
+          "Approved examples and the decisions the team helps clients resolve."
+        ],
+        "sourceBridge": "Cabinet Genies’ Cape Coral inquiry invites clients, builders and designers, explicitly allows unfinished details and explains team review followed by contact. That is the concrete expectation to make visible beside the request route.",
+        "limits": "CRM connections, portals, automatic qualification and design tools need separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "363297217205bd43d092bf9909e67a6aa10be92fbe3dde205bda105223a04831",
+      "afterSha256": "262118a51c0ba7d864ef5418e4410a73211e49dc5add93004d734236183c940c"
+    },
+    {
+      "route": "/areas/kentucky/bell-county/",
+      "before": {
+        "heading": "Show when the reference ends and the file transfer begins.",
+        "intro": "A print customer can submit project details without sending the artwork. Explain each actual step and its completion state so the customer knows what has been transferred and what still needs review.",
+        "customerQuestion": "Have I identified the job, uploaded the files or received production approval?",
+        "decisions": [
+          {
+            "label": "Identify the intended print request",
+            "body": "The Ideal Print Shop’s process starts with a reference form. Explain the real fields and job-reference conventions so the business can match later files to the correct request. Completing this first step should not be presented as proof that artwork has arrived."
+          },
+          {
+            "label": "Make the upload action clear",
+            "body": "The published instructions continue through an upload-files button that starts the transfer. Put that next action where customers finish the reference step, with current file and naming guidance. State what each approved message actually confirms rather than allowing a general success notice to imply every stage is complete."
+          },
+          {
+            "label": "Explain versions and review",
+            "body": "Show how a corrected design should be identified as a replacement and how the customer asks about receipt. Two submitted versions should not imply that both are to be printed. Keep receiving artwork distinct from assessing it and approving production, using the shop’s actual correction and confirmation process."
+          }
+        ],
+        "ownerInputs": [
+          "Verified reference and transfer steps with current messages.",
+          "Accepted file guidance and job-reference conventions.",
+          "Receipt wording and replacement-artwork review process."
+        ],
+        "sourceBridge": "The Ideal Print Shop in Middlesboro explicitly describes a reference form followed by a separate upload action. That sequence supports clearer instructions about what each submission has accomplished.",
+        "limits": "The business approves receipt and review claims. Content can clarify the existing route without changing the uploader. Storage, automated receipt messages, upload behavior and production integrations require separate scope; a general inquiry can still provide help.",
+        "route": "/areas/kentucky/bell-county/",
+        "inputHash": "b8aec2047a7efdd561a9a1c3160c8bf63252336149a17b73182b7210b237d11a"
+      },
+      "after": {
+        "heading": "Finish the job details, then upload the artwork.",
+        "intro": "A print customer can submit project details without sending the artwork. Explain each actual step and its completion state so the customer knows what has been transferred and what still needs review.",
+        "customerQuestion": "Have I identified the job, uploaded the files or received production approval?",
+        "decisions": [
+          {
+            "label": "Identify the intended print request",
+            "body": "The Ideal Print Shop’s process starts with a reference form. Explain the real fields and job-reference conventions so the business can match later files to the correct request. Completing this first step should not be presented as proof that artwork has arrived."
+          },
+          {
+            "label": "Make the upload action clear",
+            "body": "The published instructions continue through an upload-files button that starts the transfer. Put that next action where customers finish the reference step, with current file and naming guidance. State what each approved message actually confirms rather than allowing a general success notice to imply every stage is complete."
+          },
+          {
+            "label": "Explain versions and review",
+            "body": "Show how a corrected design should be identified as a replacement and how the customer asks about receipt. Two submitted versions should not imply that both are to be printed. Keep receiving artwork distinct from assessing it and approving production, using the shop’s actual correction and confirmation process."
+          }
+        ],
+        "ownerInputs": [
+          "Verified reference and transfer steps with current messages.",
+          "Accepted file guidance and job-reference conventions.",
+          "Receipt wording and replacement-artwork review process."
+        ],
+        "sourceBridge": "The Ideal Print Shop in Middlesboro explicitly describes a reference form followed by a separate upload action. That sequence supports clearer instructions about what each submission has accomplished.",
+        "limits": "The business approves receipt and review claims. Content can clarify the existing route without changing the uploader. Storage, automated receipt messages, upload behavior and production integrations require separate scope; a general inquiry can still provide help.",
+        "route": "/areas/kentucky/bell-county/",
+        "inputHash": "b8aec2047a7efdd561a9a1c3160c8bf63252336149a17b73182b7210b237d11a"
+      },
+      "beforeSha256": "fe88db137ecc7bcddf55686278cab8a82c049c411b2cdcfe34899310c072483f",
+      "afterSha256": "017193a739a7106e64563f6751e3948194eb9d9205f977a62210520a9fd47db9"
+    },
+    {
+      "route": "/areas/kentucky/kenton-county/",
+      "before": {
+        "heading": "Explain what is finished before explaining the final handoff",
+        "intro": "A custom sign can be fabricated while its installation is still unresolved. A signage website should define the physical deliverable and show how pickup, self-installation or coordinated installation relates to the customer's intended opening date.",
+        "customerQuestion": "Will I be collecting a finished item, or receiving an installed result?",
+        "decisions": [
+          {
+            "label": "Define fabrication completion",
+            "body": "Use the business's actual stage names to explain what is physically ready when making is complete. Keep quotation and artwork review connected to that process without merging them into one promise. Project examples should identify whether the photograph shows the fabricated object or the finished installation."
+          },
+          {
+            "label": "Describe the chosen handoff",
+            "body": "Explain available pickup, shipping, self-installation and installation arrangements with their actual boundaries. For customer-installed work, identify what guidance or kit is supplied and what the customer still arranges. For site work, gather the location and access information needed for a separate discussion."
+          },
+          {
+            "label": "Review the complete outcome against the date",
+            "body": "Invite the buyer to state the target opening date and unresolved dependencies. A finished sign waiting for building access is not yet an installed project. Show how approval, fabrication and handoff questions will be reviewed together without suggesting that a date entered in an inquiry reserves production or installation capacity."
+          }
+        ],
+        "ownerInputs": [
+          "Actual stage definitions and completion terminology.",
+          "Available handoff options and self-installation limits.",
+          "Approval responsibilities and destination or access questions."
+        ],
+        "sourceBridge": "Grainwell's Covington process distinguishes quoting, artwork, fabrication, installation, self-installation, pickup and shipping. Its completion stage can precede installation, making clear milestone language useful to customers planning an opening.",
+        "limits": "The business confirms production and handoff arrangements. Website explanations do not reserve a slot; tracking, payment milestones, scheduling and installation-management tools need separate scope.",
+        "route": "/areas/kentucky/kenton-county/",
+        "inputHash": "2e5ebd898163c89db19b4105335321824ec72b14f110fabb0d6ea0b85dac34a1"
+      },
+      "after": {
+        "heading": "Separate a finished sign from an installed sign.",
+        "intro": "A custom sign can be fabricated while its installation is still unresolved. A signage website should define the physical deliverable and show how pickup, self-installation or coordinated installation relates to the customer's intended opening date.",
+        "customerQuestion": "Will I be collecting a finished item, or receiving an installed result?",
+        "decisions": [
+          {
+            "label": "Define fabrication completion",
+            "body": "Use the business's actual stage names to explain what is physically ready when making is complete. Keep quotation and artwork review connected to that process without merging them into one promise. Project examples should identify whether the photograph shows the fabricated object or the finished installation."
+          },
+          {
+            "label": "Describe the chosen handoff",
+            "body": "Explain available pickup, shipping, self-installation and installation arrangements with their actual boundaries. For customer-installed work, identify what guidance or kit is supplied and what the customer still arranges. For site work, gather the location and access information needed for a separate discussion."
+          },
+          {
+            "label": "Review the complete outcome against the date",
+            "body": "Invite the buyer to state the target opening date and unresolved dependencies. A finished sign waiting for building access is not yet an installed project. Show how approval, fabrication and handoff questions will be reviewed together without suggesting that a date entered in an inquiry reserves production or installation capacity."
+          }
+        ],
+        "ownerInputs": [
+          "Actual stage definitions and completion terminology.",
+          "Available handoff options and self-installation limits.",
+          "Approval responsibilities and destination or access questions."
+        ],
+        "sourceBridge": "Grainwell's Covington process distinguishes quoting, artwork, fabrication, installation, self-installation, pickup and shipping. Its completion stage can precede installation, making clear milestone language useful to customers planning an opening.",
+        "limits": "The business confirms production and handoff arrangements. Website explanations do not reserve a slot; tracking, payment milestones, scheduling and installation-management tools need separate scope.",
+        "route": "/areas/kentucky/kenton-county/",
+        "inputHash": "2e5ebd898163c89db19b4105335321824ec72b14f110fabb0d6ea0b85dac34a1"
+      },
+      "beforeSha256": "4365ac2675741e4edadc460179893fe890cce30ffb9be1abcecffb1be5805128",
+      "afterSha256": "9b4f4dd10854b67f26a8e09fbd3c3a7cd2c3355b8f597ac923597d206ad67549"
+    }
+  ],
+  "faqs": [
+    {
+      "route": "/areas/broome-county/",
+      "before": [
+        {
+          "question": "How can I check what I receive at website handoff?",
+          "answer": "Check the source and content files, approved assets, dependency and non-secret configuration files, licenses, account inventory, completed checks and build and publishing instructions. The delivery should identify unfinished items too. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
+          "links": [
+            {
+              "path": "/work/source-handoff/",
+              "label": "Inspect the handoff contents"
+            }
+          ]
+        },
+        {
+          "question": "What if a review finds that the missing form details cannot be fixed safely?",
+          "answer": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree on a separate price before proceeding.",
+          "links": [
+            {
+              "path": "/services/website-audit/",
+              "label": "Understand the review deliverable"
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "question": "How can I check what I receive at website handoff?",
+          "answer": "You receive the paid website files, publishing instructions and a record of completed checks and unfinished items. Use the linked handoff checklist to inspect the full delivery. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
+          "links": [
+            {
+              "path": "/work/source-handoff/",
+              "label": "Inspect the handoff contents"
+            }
+          ]
+        },
+        {
+          "question": "What if a review finds that the missing form details cannot be fixed safely?",
+          "answer": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree on a separate price before proceeding.",
+          "links": [
+            {
+              "path": "/services/website-audit/",
+              "label": "Understand the review deliverable"
+            }
+          ]
+        }
+      ],
+      "beforeSha256": "8370fd4470b1976d2b9cb93ded068cec311f102e141eb20bc6f2b5b5d3d77954",
+      "afterSha256": "10300a3ad50a549bcb0d1d88b19d030ec66268a2a4ca6caa847012569a15ac04"
+    },
+    {
+      "route": "/areas/kentucky/boyle-county/",
+      "before": [
+        {
+          "question": "Can you improve our wood photographs without misrepresenting the material?",
+          "answer": "I can prepare supplied photographs for clear website use, with the edits agreed in the written proposal. We should preserve the grain, weathering and other details the example is meant to show, and explain relevant lighting or sample differences in the caption. Screens cannot guarantee an exact color match. You approve the images and factual descriptions; new photography is separate work.",
+          "links": [
+            {
+              "path": "/services/web-design/",
+              "label": "Review website design and supplied-image work"
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "question": "Can you improve our wood photographs without misrepresenting the material?",
+          "answer": "I can prepare supplied photographs for clear website use within the written proposal. You approve the finished images and factual captions. The guidance above explains how we preserve the material’s appearance; the linked scope describes the website design work. New photography is separate work.",
+          "links": [
+            {
+              "path": "/services/web-design/",
+              "label": "Review website design and supplied-image work"
+            }
+          ]
+        }
+      ],
+      "beforeSha256": "fb08b397c6f2bd580897bec4761542600b9e178ccddfbcfa8c1b1fc7657e1c7f",
+      "afterSha256": "6c1c7f9bbefab517f2562ec1d3e1c2a81e6b4f8b250b21d7264eddbbcee09147"
+    }
+  ],
+  "sources": [
+    {
+      "route": "/areas/kentucky/fayette-county/",
+      "before": {
+        "areaId": "kentucky/fayette",
+        "market": "Lexington / Fayette County, KY",
+        "lead": "Ordering an item from a shop and asking it to personalize something you already own can require different first steps. I help Lexington and Fayette County businesses explain those routes before customers choose a design or request a quote.",
+        "decisionTitle": "Identify the item before approving its personalization.",
+        "decision": "For an illustrative engraving business, a design choice does not establish that a customer-supplied object is suitable for the work. The Lexington example below explicitly invites customers to bring an item, send a photograph or describe a project. I can clarify the difference between shop-supplied products and supplied-item inquiries around an existing contact route, or build a fuller service introduction. The owner determines what can be accepted; the website should preserve that review before presenting the requested personalization as agreed work.",
+        "scopes": [
+          {
+            "title": "Separate product orders and supplied-item inquiries",
+            "pages": [
+              "Who supplies the item",
+              "Description for the first review",
+              "Item acceptance and personalization approval"
+            ],
+            "request": "Make it clear whether the customer is choosing an offered product or asking about an object they already have. Use the business’s approved way to begin that discussion.",
+            "supplies": "The products you supply, the kinds of supplied-item inquiries you consider and the information your team uses to assess them.",
+            "check": "A customer with their own cup can ask about that item without being treated as though they selected a product from your catalog. Spelling approval does not stand in for item acceptance."
+          },
+          {
+            "title": "Build a service and product introduction",
+            "pages": [
+              "Shop-supplied products",
+              "Customer-supplied item examples",
+              "Personalization and review process",
+              "Quote or existing order handoff"
+            ],
+            "request": "Explain the two routes with approved examples and a clear account of what happens next. Keep any functioning shop or order provider connected to the appropriate product choices.",
+            "supplies": "Accurate service limits, approved photographs and current descriptions of the work the business accepts.",
+            "check": "Visitors understand who is supplying the object and which review comes next. A displayed engraving example is not an assurance that every material or object can be accepted."
+          }
+        ],
+        "planningTable": {
+          "title": "A supplied-item website brief",
+          "intro": "These are proposed content questions for an engraving or personalization business. The owner supplies the actual acceptance policy and how any photographs are shared.",
+          "columns": [
+            "Decision",
+            "What the customer should be able to state",
+            "What the business confirms"
+          ],
+          "rows": [
+            [
+              "Source of the item",
+              "An offered shop product or an object the customer already owns.",
+              "The correct product or inquiry route."
+            ],
+            [
+              "Object and known material",
+              "What the item is, its quantity and any material information the customer knows.",
+              "Whether more information is needed to assess suitability."
+            ],
+            [
+              "Requested marking",
+              "The proposed location and type of personalization.",
+              "Whether the requested work can be accepted on that item."
+            ],
+            [
+              "Design approval",
+              "The exact spelling or artwork after the relevant review.",
+              "The agreed personalization, kept distinct from the earlier item-suitability decision."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business supplies its approved item-acceptance policy and liability terms. Photo uploads, customer-property records, automated acceptance workflows and custom checkout need separate website assessment.",
+        "quoteQuestions": [
+          "Does the customer buy the item from you or supply it?",
+          "What information is needed to assess the object?",
+          "How do you distinguish item acceptance from design or spelling approval?"
+        ],
+        "coverageNote": "Lexington and Fayette County identify this Kentucky service audience. Use the business’s real location and intake arrangements when describing how a customer starts a request.",
+        "sources": [
+          {
+            "url": "https://lexingtonengraving.com/glass-cups-and-wood",
+            "label": "Lexington Engraving: supplied-item inquiries",
+            "observation": "The Lexington page invites customers to bring an item, send a photograph or describe a glass, drinkware or wood project."
+          },
+          {
+            "url": "https://lexingtonengraving.com/metal-marking-and-etching",
+            "label": "Lexington Engraving: metal-item inquiries",
+            "observation": "The metal-marking page also invites an item, photograph or description before a quote. These examples do not establish an acceptance policy for every object."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "Separating a personalization preview from approval"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "kentucky/fayette"
+        ],
+        "path": "/areas/kentucky/fayette-county/",
+        "title": "Web Design for Lexington / Fayette County, KY",
+        "description": "Web design for Lexington / Fayette County, KY. Example brief: identify the item before approving its personalization.",
+        "servedAreas": [
+          {
+            "name": "Fayette County",
+            "state": "Kentucky",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kentucky/#fayette",
+            "label": "Fayette County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "kentucky/fayette",
+        "market": "Lexington / Fayette County, KY",
+        "lead": "Ordering an item from a shop and asking it to personalize something you already own can require different first steps. I help Lexington and Fayette County businesses explain those routes before customers choose a design or request a quote.",
+        "decisionTitle": "Identify the item before approving its personalization.",
+        "decision": "For an illustrative engraving business, a design choice does not establish that a customer-supplied object is suitable for the work. The Lexington example below explicitly invites customers to bring an item, send a photograph or describe a project. I can clarify the difference between shop-supplied products and supplied-item inquiries around an existing contact route, or build a fuller service introduction. The owner determines what can be accepted; the website should preserve that review before presenting the requested personalization as agreed work.",
+        "scopes": [
+          {
+            "title": "Separate product orders and supplied-item inquiries",
+            "pages": [
+              "Who supplies the item",
+              "Description for the first review",
+              "Item acceptance and personalization approval"
+            ],
+            "request": "Make it clear whether the customer is choosing an offered product or asking about an object they already have. Use the business’s approved way to begin that discussion.",
+            "supplies": "The products you supply, the kinds of supplied-item inquiries you consider and the information your team uses to assess them.",
+            "check": "A customer with their own cup can ask about that item without being treated as though they selected a product from your catalog. Spelling approval does not stand in for item acceptance."
+          },
+          {
+            "title": "Build a service and product introduction",
+            "pages": [
+              "Shop-supplied products",
+              "Customer-supplied item examples",
+              "Personalization and review process",
+              "Quote or existing order handoff"
+            ],
+            "request": "Explain the two routes with approved examples and a clear account of what happens next. Keep any functioning shop or order provider connected to the appropriate product choices.",
+            "supplies": "Accurate service limits, approved photographs and current descriptions of the work the business accepts.",
+            "check": "Visitors understand who is supplying the object and which review comes next. A displayed engraving example is not an assurance that every material or object can be accepted."
+          }
+        ],
+        "planningTable": {
+          "title": "A supplied-item website brief",
+          "intro": "These are proposed content questions for an engraving or personalization business. The owner supplies the actual acceptance policy and how any photographs are shared.",
+          "columns": [
+            "Decision",
+            "What the customer should be able to state",
+            "What the business confirms"
+          ],
+          "rows": [
+            [
+              "Source of the item",
+              "An offered shop product or an object the customer already owns.",
+              "The correct product or inquiry route."
+            ],
+            [
+              "Object and known material",
+              "What the item is, its quantity and any material information the customer knows.",
+              "Whether more information is needed to assess suitability."
+            ],
+            [
+              "Requested marking",
+              "The proposed location and type of personalization.",
+              "Whether the requested work can be accepted on that item."
+            ],
+            [
+              "Design approval",
+              "The exact spelling or artwork after the relevant review.",
+              "The agreed personalization, kept distinct from the earlier item-suitability decision."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business supplies its approved item-acceptance policy and liability terms. Photo uploads, customer-property records, automated acceptance workflows and custom checkout need separate website assessment.",
+        "quoteQuestions": [
+          "Does the customer buy the item from you or supply it?",
+          "What information is needed to assess the object?",
+          "How do you distinguish item acceptance from design or spelling approval?"
+        ],
+        "coverageNote": "For website projects in Lexington and Fayette County. Wonder and Method is based in Buffalo, New York, and works online with Kentucky businesses. The engraving business is a public planning example, not a studio client or partner.",
+        "sources": [
+          {
+            "url": "https://lexingtonengraving.com/glass-cups-and-wood",
+            "label": "Lexington Engraving: supplied-item inquiries",
+            "observation": "The Lexington page invites customers to bring an item, send a photograph or describe a glass, drinkware or wood project."
+          },
+          {
+            "url": "https://lexingtonengraving.com/metal-marking-and-etching",
+            "label": "Lexington Engraving: metal-item inquiries",
+            "observation": "The metal-marking page also invites an item, photograph or description before a quote. These examples do not establish an acceptance policy for every object."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "Separating a personalization preview from approval"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "kentucky/fayette"
+        ],
+        "path": "/areas/kentucky/fayette-county/",
+        "title": "Web Design for Lexington / Fayette County, KY",
+        "description": "Web design for Lexington / Fayette County, KY. Example brief: identify the item before approving its personalization.",
+        "servedAreas": [
+          {
+            "name": "Fayette County",
+            "state": "Kentucky",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kentucky/#fayette",
+            "label": "Fayette County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "e24b8bf492036be4ecb84eec940ee98c451f539571fd025466151f7f92bc41cd",
+      "afterSha256": "fb427a8c812c0e4fcf1616977a3cad33b55103584a205fd1874db6e660a1243d"
+    }
+  ],
+  "limits": "Fictional samples are labelled and do not assert new operator facts or client results. Historical reviews remain unchanged. No publication acceptance.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-checkpoint-recheck.jsonl",
+    "reviewFileSha256": "02f079b9a87b3c637f046ab4922a41d80b05fbbe8d42229fa1fb1bce772abcce",
+    "exactCandidates": 20,
+    "reviewedOn": "2026-10-27",
+    "scope": "Content only; family, visual, accessibility and release checks remain separate.",
+    "briefImportCount": 20,
+    "preservationChecks": "5 passed"
+  }
+}

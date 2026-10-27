@@ -62,7 +62,7 @@ export function assertOfferBindings({config,offers,map,geography}){
  has('/services/web-design/','Probe &amp; Starter, up to 25 minutes');has('/services/web-design/','Probe &amp; Studio, up to 45 minutes');
  has('/areas/new-jersey/monmouth-county/','Probe &amp; Care includes two sets');
  has('/areas/suffolk-county/','Probe &amp; Progress includes three substantial researched improvements');
- has('/areas/pennsylvania/lancaster-county/','Probe &amp; Progress researches two active services or topics');
+ lacks('/areas/pennsylvania/lancaster-county/','How would monthly SEO choose which of our two services to work on first?');
  has('/areas/pennsylvania/delaware-county/','Probe &amp; Care can publish two agreed sets');
  has('/areas/ohio/cuyahoga-county/','Probe &amp; Progress and Probe &amp; Campaign include Probe &amp; Care care and their separate allowance');
  has('/guides/seo-work-and-reporting/','two newsletter excerpts of up to 200 words each');

@@ -1,0 +1,219 @@
+{
+  "batch": "residual-l",
+  "reviewer": "Codex primary",
+  "date": "2026-10-27",
+  "assigned": 115,
+  "reviewed": 115,
+  "status": "complete-content-only",
+  "nextPacket": null,
+  "passContent": 90,
+  "reviseContent": 25,
+  "validatedEvidenceFields": 690,
+  "holds": [
+    {
+      "route": "/areas/texas/marion-county/",
+      "candidateBodySha256": "f5c93e943233b868633686aa9e6b114e059f275ba8227cb00d5dc8987b0700ae",
+      "requiredFixes": [
+        "Verify the official tour page and replace generic stair-related references with the actual published feature and scope, preserving unresolved access questions and appointment confirmation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/texas/martin-county/",
+      "candidateBodySha256": "df81365ca653bc45171155e4a8cfb6be88800b7ff3ec0ef57e07252ccd7775ac",
+      "requiredFixes": [
+        "Add a clearly fictional three-RV brief with separately labelled lengths and arrival/departure dates, including one shorter stay. State these are example inquiry details, not accepted rig limits, rates, adjacency or availability."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/texas/mason-county/",
+      "candidateBodySha256": "979bedcfa07d445fd0d912dce718eef7f7aa55efd2131c7fef0436ad9e6b8404",
+      "requiredFixes": [
+        "Verify the official private-tour rate and minimum and show the dated two-adult comparison, preserving current confirmation and optional multi-venue coordination boundaries. Do not invent fees or combine unrelated tour formats."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/texas/real-county/",
+      "candidateBodySha256": "1e545bbf0fa4d2e8fcbb39635471af557811c06b0670547314508123696d925e",
+      "requiredFixes": [
+        "Verify official accommodation descriptions and provide at least two named units with relevant bathroom/river/pool facts, preserving absent or uncertain features and the office booking route. Do not infer availability or a private pool from general property imagery."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/manassas-park-city/",
+      "candidateBodySha256": "11d6c7ff49f9e125150f167e22ea2abf329df7f8428095183eacab04b38776d3",
+      "requiredFixes": [
+        "Verify the official full-front included-panel list and state it as a dated textual example beside the package name. Retain body-style review and custom-coverage questions; do not infer extra panels from images or promise protection."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/martinsville-city/",
+      "candidateBodySha256": "3659106d43dad210a25768f495ae6b3566b69a30883ff3d822ae1c893db8de31",
+      "requiredFixes": [
+        "Add a bounded fictional office-supply comparison with one exact-item/pack request and one alternative-for-a-task question, preserving supplier review and no implied equivalence, stock or technical suitability."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/northampton-county/",
+      "candidateBodySha256": "894fc88bdbf5eff07efe8e422bf3c9a67d178f8958eac005b74d6c15ebfa5197",
+      "requiredFixes": [
+        "Check the official service description and state the actual report output and any published brand-specific manufacturer-contact qualification. If format/recipient is not published, identify it as a question instead of implying those details are established. Keep warranty decisions and repair approval separate."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/norton-city/",
+      "candidateBodySha256": "9a49f9df0261f7006ad4bc71dfee02a7b106863ff908213b4f2f31064c31fe3f",
+      "requiredFixes": [
+        "Verify the official UPS listing and provide a dated weekday closing-versus-carrier-cutoff example. Keep Saturday shop opening distinct from an explicitly published or unconfirmed collection; do not promise same-day departure or delivery."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/nottoway-county/",
+      "candidateBodySha256": "40fc2dcc730e9a375787c1d0283c6267a00e30c9ff879a66eed19d14876f2316",
+      "requiredFixes": [
+        "Verify the official FedEx FAQ and state the actual contact route for prepaid-label drop-off versus shipping purchased at the store. Preserve transaction uncertainty, carrier specificity and no claim-outcome or liability determination."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/patrick-county/",
+      "candidateBodySha256": "711451615b67033233428fb08cb5875eff5233b42d30be436b193ef8fd8d3b63",
+      "requiredFixes": [
+        "Add a clearly fictional equal-floor-area inquiry comparison naming a concrete layout difference and a known versus unresolved selection, without implying cost or builder requirements."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/poquoson-city/",
+      "candidateBodySha256": "ebbad4e3a17c18d2d3542579977c23296498b322263fa4f08bff4c4fea541fe2",
+      "requiredFixes": [
+        "Add a clearly fictional boat/trailer request with distinct initial dates, a tentative later boat stay and a different trailer departure; make explicit that staff confirm each arrangement."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/prince-edward-county/",
+      "candidateBodySha256": "9f4ee06848b113c6c9f1d86b0ab3cc12db5901a72c38f3bb8acdfed9443dd334",
+      "requiredFixes": [
+        "Verify the official split-delivery conditions and give a concrete mixed-order example with the actual fee or eligibility caveat if published; preserve estimate versus confirmed-date distinctions."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/prince-george-county/",
+      "candidateBodySha256": "29c3ff7d6600fc2cbd651f7f7e3e94f70cefceb566a914c476afde7fe20f08b9",
+      "requiredFixes": [
+        "Verify the named package and published footprint guidance and incorporate the actual dimension comparison; retain operator site confirmation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/radford-city/",
+      "candidateBodySha256": "757c911fcf618f88667ce955d1a84a46b439d331c7778118a315812dcad4762c",
+      "requiredFixes": [
+        "Add a clearly fictional rack inquiry with a named use setting, bicycle count/use and appearance preference, keeping placement and mounting for shop review."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/roanoke-county/",
+      "candidateBodySha256": "d4e6d8242d4d125aa94b85f0746350ff0154cb0cbd9ac9ea39e4ce3c26730569",
+      "requiredFixes": [
+        "Add one clearly fictional room request identifying a fabric change on one piece, wood review on another and an unchanged piece, with assessment and scope retained."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/virginia/wythe-county/",
+      "candidateBodySha256": "d5e590860f5871177533e958e041e86586756b7281cdf22d1f62ff84f4bdc249",
+      "requiredFixes": [
+        "Verify the named table and its actual published dining/counter/bar variants; add a concrete model-and-height comparison and retain staff review of existing seating."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/braxton-county/",
+      "candidateBodySha256": "083c872ead5489f81ea8843a8886172a712a419f9f2abc4f4a280d8114da97ff",
+      "requiredFixes": [
+        "Replace the unsupplied example instruction with a clearly fictional short role/piece/quantity list including one unresolved entry and a coordinating preference."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/calhoun-county/",
+      "candidateBodySha256": "c537f58d0d69150825083b76a33008c8b591bd770f8da6084cacc23c5b369baa",
+      "requiredFixes": [
+        "Verify and name the actual rental-service branch versus Grantsville in a concise example; distinguish location-specific capability from current stock and special-order confirmation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/doddridge-county/",
+      "candidateBodySha256": "c23cd0cfc31fce48260a8a8c64f4fbf4286b16487dd4df5df27f1816b857f7e2",
+      "requiredFixes": [
+        "Verify one named rental space and its actual amenities, name a shared activity and explain the published overnight option or explicit need to ask if none is stated; avoid implying all park facilities share rules."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/gilmer-county/",
+      "candidateBodySha256": "05a1a2522fdf8f979c422831b66031b5244822ad19b5423f25f82225ff8f4c37",
+      "requiredFixes": [
+        "Verify the published rental-period definitions and give a simple project-ready/collection/use-period example, leaving actual charges and availability with staff."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/grant-county/",
+      "candidateBodySha256": "dc382bb896b8c8e0d3656e790c5583f4f937489fd2e553ff408dcea8587eb1f5",
+      "requiredFixes": [
+        "Add a clearly fictional two-reference cabinet request with explicit placeholder collection labels, desired function and a retained flexible preference, or use verified actual examples without implying compatibility."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/west-virginia/mason-county/",
+      "candidateBodySha256": "5fff19614d380d269691a8ae8ff9df36c59385517b3bdafdf5abd65273116abb",
+      "requiredFixes": [
+        "Supply a clearly fictional short roster showing one shared title and two recipient-specific items versus a single collective piece; replace the instruction to show an example."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/wisconsin/crawford-county/",
+      "candidateBodySha256": "caef14555c65e7927b3f3761969ce33a5f34c7b39ddaee93bbcc9522da93b99f",
+      "requiredFixes": [
+        "Rewrite the source bridge as direct public-facing attribution rather than supplied-evidence commentary; consolidate locality/pickup limitation in the coverage note and retain one clear unresolved later-instructions limitation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/wisconsin/rock-county/",
+      "candidateBodySha256": "f83680015c06636e159d589ef088bd8d663d0bd958ef8439e4558776f8226c63",
+      "requiredFixes": [
+        "Verify the published repeat-appointment assistance sequence and state the actual differences using dated source wording, while leaving the individual session arrangement and current terms with staff."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/yates-county/",
+      "candidateBodySha256": "e935e3f06cae8aa6b140626ce5d32a01696c69e3ceb434a38e8a2acd1287d700",
+      "requiredFixes": [
+        "Correct the heading to distinguish what the engraving proof approves from how the wood may vary, retaining the useful proof-versus-material distinction."
+      ],
+      "caps": []
+    }
+  ],
+  "limits": [
+    "Exact complete candidate reads; not independent.",
+    "Assigned neighbor compared; selected topical comparisons noted, comprehensive family audit pending.",
+    "Visuals/accessibility/final null; no publication acceptance."
+  ]
+}

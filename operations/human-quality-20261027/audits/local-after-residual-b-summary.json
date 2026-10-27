@@ -1,0 +1,54 @@
+{
+  "batch": "residual-b",
+  "reviewer": "Codex primary",
+  "date": "2026-10-27",
+  "assigned": 100,
+  "reviewed": 100,
+  "status": "complete-content-only",
+  "completeMainTextRead": true,
+  "passContent": 95,
+  "reviseContent": 5,
+  "holds": [
+    {
+      "route": "/areas/kentucky/bell-county/",
+      "candidateBodySha256": "6107f599088d0a8314d40e2c2f51f98896bccd5ed65e9b16176c7bb226980820",
+      "requiredFixes": [
+        "Change the main heading to Finish the job details, then upload the artwork. Preserve the factual sequence and separate approval explanation."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/boyle-county/",
+      "candidateBodySha256": "62624ab8e824411b50ae85b7378cf4a7459fd5351f40a0874be6944ae9c35410",
+      "requiredFixes": [
+        "Shorten the FAQ to the studio delivery promise, written scope and owner approval; link to supplied-image scope and leave material-faithfulness guidance in the third decision."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/fayette-county/",
+      "candidateBodySha256": "45e9726946d87aea0162f3a007019616356aaee9c6154368947309b1d961cc2c",
+      "requiredFixes": [
+        "Replace the coverage note with a direct statement that the studio works online from Buffalo with Lexington/Fayette County businesses and that the public engraving example is not a client relationship."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/kenton-county/",
+      "candidateBodySha256": "698db8cd8251b75e5dd717157a3ec94e459303cd7ecc3ca919b7d06b7d60223d",
+      "requiredFixes": [
+        "Replace the main heading with Separate a finished sign from an installed sign. Keep the specific stage, access and opening-date explanation."
+      ]
+    },
+    {
+      "route": "/areas/massachusetts/plymouth-county/",
+      "candidateBodySha256": "a4e7becb70c4355bb527b9375188ca9397c5b09a39d76a3b7aa9d11bac715d93",
+      "requiredFixes": [
+        "Reframe around the evidenced fabric-browsing, showroom and in-home consultation choices, with useful source-bounded preparation and a concrete illustrative inquiry. Remove the unsupported new-custom-furniture branch and its internal publication instruction. Preserve measurement and service-area confirmation boundaries."
+      ]
+    }
+  ],
+  "limits": [
+    "Exact candidates reviewed; earlier holds retained even after later correction reviews.",
+    "Primary review is not independent.",
+    "Nearest sibling is adjacent assignment item, not a complete same-task family analysis.",
+    "Visuals, accessibility, final scores and publication acceptance remain separate."
+  ]
+}

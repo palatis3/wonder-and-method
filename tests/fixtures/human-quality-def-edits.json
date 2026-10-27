@@ -1,0 +1,2821 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Exact independently reviewed DEF corrections layered before the prior combined, residual and original human acceptance ledgers.",
+  "records": [
+    {
+      "path": "/areas/vermont/essex-county/",
+      "before": {
+        "areaId": "vermont/essex",
+        "market": "Brighton / Essex County, VT",
+        "lead": "A room with a small refrigerator supports a different meal plan from a suite with cooking and dining space. I help Brighton and Essex County lodging businesses make those differences clear before guests choose by a general amenity list.",
+        "decisionTitle": "Explain what preparing and sharing a meal means in each room type.",
+        "decision": "Island Pond Country Inn lists suites with full kitchens, a deluxe option with smaller appliances and essentials rooms with a small refrigerator. For an illustrative lodging business, those differences belong beside the specific accommodation. I can clarify the existing room comparison or build a fuller stay introduction that separates food storage, cooking, shared dining and seasonal outdoor equipment. The owner confirms the current facilities for each unit and the booking provider confirms the reservation.",
+        "scopes": [
+          {
+            "title": "Clarify room-specific meal facilities",
+            "pages": [
+              "Food storage and cooking facilities",
+              "Dining and shared space",
+              "Room identification and booking questions"
+            ],
+            "request": "Help a guest compare actual facilities without treating every room as self-catering.",
+            "supplies": "Verified room inventories, current photographs and the exact booking category names.",
+            "check": "A guest planning to cook can identify the relevant room option instead of assuming a refrigerator implies a kitchen."
+          },
+          {
+            "title": "Connect accommodation choice to a group’s meal plans",
+            "pages": [
+              "Accommodation comparison",
+              "Preparing and sharing meals",
+              "Seasonal outdoor facilities",
+              "Questions before the booking handoff"
+            ],
+            "request": "Make practical group use understandable alongside sleeping arrangements.",
+            "supplies": "Owner-confirmed cooking equipment, dining-space descriptions and current seasonal availability notes.",
+            "check": "A family can ask about eating together in the chosen unit without inferring dining space from maximum occupancy."
+          }
+        ],
+        "planningTable": {
+          "title": "A room-by-room meal-planning brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Store drinks or food",
+              "Describe the actual storage equipment.",
+              "A verified inventory for the chosen room category.",
+              "A small refrigerator is not presented as a cooking facility."
+            ],
+            [
+              "Prepare a meal",
+              "Name the current equipment in plain language.",
+              "Owner-confirmed appliances and relevant room photographs.",
+              "A guest can compare the actual cooking offer before booking."
+            ],
+            [
+              "Eat together",
+              "Describe the available dining or common area.",
+              "Accurate seating and layout information.",
+              "Sleeping capacity does not silently promise the same dining arrangement."
+            ],
+            [
+              "Use outdoor equipment",
+              "Attach any seasonal limitation to the unit.",
+              "Current equipment, season and use information.",
+              "An outdoor amenity image is not read as a year-round promise."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live room availability, booking systems, pricing and occupancy calculations need separate scope. Clear accommodation content can lead to the existing reservation route and retain general questions.",
+        "quoteQuestions": [
+          "What food-storage and cooking equipment is actually in each room type?",
+          "How should the site describe where a group can eat together?",
+          "Which outdoor facilities need room-specific or seasonal explanations?"
+        ],
+        "coverageNote": "This page serves Brighton and Essex County, Vermont businesses. Island Pond Country Inn is in Island Pond, within the town of Brighton. Wonder and Method is a Buffalo studio working remotely.",
+        "sources": [
+          {
+            "url": "https://ipcinn.com/accommodations/",
+            "label": "Island Pond Country Inn: accommodation facilities",
+            "observation": "Separately describes full-kitchen suites, a smaller-appliance deluxe option, essentials rooms and seasonal suite-deck equipment."
+          },
+          {
+            "url": "https://ipcinn.com/contact-us/",
+            "label": "Island Pond Country Inn: property location",
+            "observation": "Lists 127 Cross Street, Island Pond, Vermont."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Vacation-rental websites: check the property and stay before offering dates"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "vermont/essex"
+        ],
+        "path": "/areas/vermont/essex-county/",
+        "title": "Web Design for Brighton / Essex County, VT",
+        "description": "Web design for Brighton / Essex County, VT. Example brief: explain what preparing and sharing a meal means in each room type.",
+        "servedAreas": [
+          {
+            "name": "Essex County",
+            "state": "Vermont",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/vermont/#essex",
+            "label": "Essex County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/vermont-essex.txt"
+      },
+      "after": {
+        "areaId": "vermont/essex",
+        "market": "Brighton / Essex County, VT",
+        "lead": "A room with a small refrigerator supports a different meal plan from a suite with cooking and dining space. I help Brighton and Essex County lodging businesses make those differences clear before guests choose by a general amenity list.",
+        "decisionTitle": "Explain what preparing and sharing a meal means in each room type.",
+        "decision": "Island Pond Country Inn lists suites with full kitchens, a deluxe option with smaller appliances and essentials rooms with a small refrigerator. For an illustrative lodging business, those differences belong beside the specific accommodation. I can clarify the existing room comparison or build a fuller stay introduction that separates food storage, cooking, shared dining and seasonal outdoor equipment. The owner confirms the current facilities for each unit and the booking provider confirms the reservation.",
+        "scopes": [
+          {
+            "title": "Clarify room-specific meal facilities",
+            "pages": [
+              "Food storage and cooking facilities",
+              "Dining and shared space",
+              "Room identification and booking questions"
+            ],
+            "request": "Help a guest compare actual facilities without treating every room as self-catering.",
+            "supplies": "Verified room inventories, current photographs and the exact booking category names.",
+            "check": "A guest planning to cook can identify the relevant room option instead of assuming a refrigerator implies a kitchen."
+          },
+          {
+            "title": "Connect accommodation choice to a group’s meal plans",
+            "pages": [
+              "Accommodation comparison",
+              "Preparing and sharing meals",
+              "Seasonal outdoor facilities",
+              "Questions before the booking handoff"
+            ],
+            "request": "Make practical group use understandable alongside sleeping arrangements.",
+            "supplies": "Owner-confirmed cooking equipment, dining-space descriptions and current seasonal availability notes.",
+            "check": "A family can ask about eating together in the chosen unit without inferring dining space from maximum occupancy."
+          }
+        ],
+        "planningTable": {
+          "title": "A room-by-room meal-planning brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Store drinks or food",
+              "Describe the actual storage equipment.",
+              "A verified inventory for the chosen room category.",
+              "A small refrigerator is not presented as a cooking facility."
+            ],
+            [
+              "Prepare a meal",
+              "Name the current equipment in plain language.",
+              "Owner-confirmed appliances and relevant room photographs.",
+              "A guest can compare the actual cooking offer before booking."
+            ],
+            [
+              "Eat together",
+              "Describe the available dining or common area.",
+              "Accurate seating and layout information.",
+              "Sleeping capacity does not silently promise the same dining arrangement."
+            ],
+            [
+              "Use outdoor equipment",
+              "Attach any seasonal limitation to the unit.",
+              "Current equipment, season and use information.",
+              "An outdoor amenity image is not read as a year-round promise."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live room availability, booking systems, pricing and occupancy calculations need separate scope. Clear accommodation content can lead to the existing reservation route and retain general questions.",
+        "quoteQuestions": [
+          "What food-storage and cooking equipment is actually in each room type?",
+          "How should the site describe where a group can eat together?",
+          "Which outdoor facilities need room-specific or seasonal explanations?"
+        ],
+        "coverageNote": "This page serves Brighton and Essex County, Vermont businesses. Island Pond Country Inn is in Island Pond, within the town of Brighton. Wonder and Method is a Buffalo studio working remotely.",
+        "sources": [
+          {
+            "url": "https://ipcinn.com/accommodations/",
+            "label": "Island Pond Country Inn: accommodation facilities",
+            "observation": "Essentials lists a small refrigerator; Deluxe describes an eat-in kitchen with unspecified smaller appliances; Suites list an equipped full-size kitchen, bar seating and dining area, with a deck gas grill for spring, summer and fall."
+          },
+          {
+            "url": "https://ipcinn.com/contact-us/",
+            "label": "Island Pond Country Inn: property location",
+            "observation": "Lists 127 Cross Street, Island Pond, Vermont."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Vacation-rental websites: check the property and stay before offering dates"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "vermont/essex"
+        ],
+        "path": "/areas/vermont/essex-county/",
+        "title": "Web Design for Brighton / Essex County, VT",
+        "description": "Web design for Brighton / Essex County, VT. Example brief: explain what preparing and sharing a meal means in each room type.",
+        "servedAreas": [
+          {
+            "name": "Essex County",
+            "state": "Vermont",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/vermont/#essex",
+            "label": "Essex County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/vermont-essex.txt"
+      },
+      "beforeSha256": "d2df4f0ad975c47144e84a190769e7464a47a9e7ba29623e525a3835b47a74b7",
+      "afterSha256": "91243d23666a3721ce536c6ec3691271719854ea562ce6ab14a532a5186169f4",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "bf162f6978b75b27f79f387352c12a865a9fbb9fb99dffe10dee6c9ec64b4ee1",
+        "candidateBodySha256": "da46a930fc10beba9446be8290b974cf3da578fc8497bec9e1910ca477daaacd",
+        "draftSha256": "fc046ca41709459fb75187adb65c6084ff2fac0469fcdaa445a91dbcc4cd468e",
+        "sourceEntrySha256": "91243d23666a3721ce536c6ec3691271719854ea562ce6ab14a532a5186169f4"
+      }
+    },
+    {
+      "path": "/areas/virginia/augusta-county/",
+      "before": {
+        "areaId": "virginia/augusta",
+        "market": "Augusta County, VA",
+        "lead": "A wedding package can change when the property is available, which spaces are included and who handles setup. I help Augusta County businesses explain those practical differences before a couple asks for a quote.",
+        "decisionTitle": "Compare venue packages by access and responsibility as well as guest count.",
+        "decision": "Valley Mills Farm explicitly locates its Swoope venue in Augusta County and describes weekend, single-day and smaller-event packages. Its published options differ in preparation access, spaces and included services. That makes a useful website-planning example: the visitor should be able to compare what happens before, during and after the celebration. I can clarify the current package presentation or build a fuller introduction that keeps the preferred arrangement attached to the inquiry.",
+        "scopes": [
+          {
+            "title": "Make the package differences visible",
+            "pages": [
+              "Preparation access",
+              "Celebration spaces and inclusions",
+              "Collection and cleanup arrangements"
+            ],
+            "request": "Show the practical differences alongside the package names so the visitor does not infer that every option covers the whole weekend.",
+            "supplies": "Current package inclusions, access windows and the responsibility for setup and personal items.",
+            "check": "A couple considering a single-day option can see that previous-day preparation is a separate question."
+          },
+          {
+            "title": "Build a package-and-planning introduction",
+            "pages": [
+              "Event format comparisons",
+              "Property and space examples",
+              "Planning milestones",
+              "Tour and package inquiry"
+            ],
+            "request": "Connect approved package details to the questions couples and vendors need answered, using the existing inquiry route.",
+            "supplies": "Approved package descriptions, rights-cleared photographs, actual planning stages and the details staff need from an organizer.",
+            "check": "An organizer can explain rehearsal, preparation and item-collection needs without assuming they are included in the selected event format."
+          }
+        ],
+        "planningTable": {
+          "title": "A venue access-and-responsibility brief",
+          "intro": "Populate this with the venue's own terms. It organizes public content without creating a schedule or contract.",
+          "columns": [
+            "Part of the event",
+            "What to explain",
+            "Owner-approved detail",
+            "Check with a sample visitor"
+          ],
+          "rows": [
+            [
+              "Before guests arrive",
+              "Which preparation access belongs to the option.",
+              "Actual dates, spaces and responsibilities.",
+              "The visitor knows whether earlier setup needs discussion."
+            ],
+            [
+              "During the celebration",
+              "Which spaces and services are included.",
+              "Current package scope.",
+              "A shared photo gallery does not imply identical access."
+            ],
+            [
+              "After the event",
+              "How personal items and cleanup are handled.",
+              "Actual collection and cleanup arrangements.",
+              "An organizer can distinguish staff tasks from their own."
+            ],
+            [
+              "Planning before the date",
+              "When unresolved details are reviewed.",
+              "The venue's real planning process.",
+              "A package inquiry is not mistaken for a confirmed date."
+            ]
+          ]
+        },
+        "scopeTrigger": "Contracts, event schedules, payments, vendor management and live availability need separate scope. The public site can explain package differences and prepare a tour inquiry.",
+        "quoteQuestions": [
+          "Which package differences matter beyond the guest count?",
+          "Who handles setup, cleanup and collecting personal items?",
+          "What do couples need to clarify before choosing a date?"
+        ],
+        "coverageNote": "Valley Mills Farm states that its Swoope property is in Augusta County. Staunton and Waynesboro are separate independent cities and are not treated as county premises. Wonder and Method serves Augusta County businesses remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://www.valleymillsfarm.com/weddings/",
+            "label": "Valley Mills Farm: packages and planning",
+            "observation": "Identifies Augusta County and describes packages with differing access periods, spaces, services and planning steps."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Make practical package differences clear"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/augusta"
+        ],
+        "path": "/areas/virginia/augusta-county/",
+        "title": "Web Design for Augusta County, VA",
+        "description": "Web design for Augusta County, VA. Example brief: compare venue packages by access and responsibility as well as guest count.",
+        "servedAreas": [
+          {
+            "name": "Augusta County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#augusta",
+            "label": "Augusta County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/augusta",
+        "market": "Augusta County, VA",
+        "lead": "A wedding package can change when the property is available, which spaces are included and who handles setup. I help Augusta County businesses explain those practical differences before a couple asks for a quote.",
+        "decisionTitle": "Compare venue packages by access and responsibility as well as guest count.",
+        "decision": "Valley Mills Farm explicitly locates its Swoope venue in Augusta County and describes weekend, single-day and smaller-event packages. Its published options differ in preparation access, spaces and included services. That makes a useful website-planning example: the visitor should be able to compare what happens before, during and after the celebration. I can clarify the current package presentation or build a fuller introduction that keeps the preferred arrangement attached to the inquiry.",
+        "scopes": [
+          {
+            "title": "Make the package differences visible",
+            "pages": [
+              "Preparation access",
+              "Celebration spaces and inclusions",
+              "Collection and cleanup arrangements"
+            ],
+            "request": "Show the practical differences alongside the package names so the visitor does not infer that every option covers the whole weekend.",
+            "supplies": "Current package inclusions, access windows and the responsibility for setup and personal items.",
+            "check": "A couple considering a single-day option can see that previous-day preparation is a separate question."
+          },
+          {
+            "title": "Build a package-and-planning introduction",
+            "pages": [
+              "Event format comparisons",
+              "Property and space examples",
+              "Planning milestones",
+              "Tour and package inquiry"
+            ],
+            "request": "Connect approved package details to the questions couples and vendors need answered, using the existing inquiry route.",
+            "supplies": "Approved package descriptions, rights-cleared photographs, actual planning stages and the details staff need from an organizer.",
+            "check": "An organizer can explain rehearsal, preparation and item-collection needs without assuming they are included in the selected event format."
+          }
+        ],
+        "planningTable": {
+          "title": "A venue access-and-responsibility brief",
+          "intro": "Populate this with the venue's own terms. It organizes public content without creating a schedule or contract.",
+          "columns": [
+            "Part of the event",
+            "What to explain",
+            "Owner-approved detail",
+            "Check with a sample visitor"
+          ],
+          "rows": [
+            [
+              "Before guests arrive",
+              "Which preparation access belongs to the option.",
+              "Actual dates, spaces and responsibilities.",
+              "The visitor knows whether earlier setup needs discussion."
+            ],
+            [
+              "During the celebration",
+              "Which spaces and services are included.",
+              "Current package scope.",
+              "A shared photo gallery does not imply identical access."
+            ],
+            [
+              "After the event",
+              "How personal items and cleanup are handled.",
+              "Actual collection and cleanup arrangements.",
+              "An organizer can distinguish staff tasks from their own."
+            ],
+            [
+              "Planning before the date",
+              "When unresolved details are reviewed.",
+              "The venue's real planning process.",
+              "A package inquiry is not mistaken for a confirmed date."
+            ]
+          ]
+        },
+        "scopeTrigger": "Contracts, event schedules, payments, vendor management and live availability need separate scope. The public site can explain package differences and prepare a tour inquiry.",
+        "quoteQuestions": [
+          "Which package differences matter beyond the guest count?",
+          "Who handles setup, cleanup and collecting personal items?",
+          "What do couples need to clarify before choosing a date?"
+        ],
+        "coverageNote": "Valley Mills Farm states that its Swoope property is in Augusta County. Staunton and Waynesboro are separate independent cities and are not treated as county premises. Wonder and Method serves Augusta County businesses remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://www.valleymillsfarm.com/weddings/",
+            "label": "Valley Mills Farm: packages and planning",
+            "observation": "Weekend terms distinguish Friday preparation, Saturday venue and suite access, and Sunday personal-item collection; Single Day Investment lists 12 hours of venue access and three hours of preparation-suite use. Both list ceremony/reception setup and teardown."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Make practical package differences clear"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/augusta"
+        ],
+        "path": "/areas/virginia/augusta-county/",
+        "title": "Web Design for Augusta County, VA",
+        "description": "Web design for Augusta County, VA. Example brief: compare venue packages by access and responsibility as well as guest count.",
+        "servedAreas": [
+          {
+            "name": "Augusta County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#augusta",
+            "label": "Augusta County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "fef28cea0dcb9e10d1569ee85bc9069779db889a914ff0f2687559a94b4ffff8",
+      "afterSha256": "f6b6c22f4f8760652f6c54eeea7a9889d208699a4b1609ba5f3bf4abe6b87b95",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "7e10a0caf5db2858e714b196ed1ebdf15095a937a25d993e0376d7ca7f292e0c",
+        "candidateBodySha256": "fb0b116a570496413f122acddfb41ff74a6b3df5a4b93929e2afe59e0fb9d24e",
+        "draftSha256": "0435987cfd16dab174b9be34aa52efd0fa73d40211c00c3b5d1e0a3f37135baa",
+        "sourceEntrySha256": "f6b6c22f4f8760652f6c54eeea7a9889d208699a4b1609ba5f3bf4abe6b87b95"
+      }
+    },
+    {
+      "path": "/areas/virginia/bland-county/",
+      "before": {
+        "areaId": "virginia/bland",
+        "market": "Bland County, VA",
+        "lead": "A building's opening hours may extend beyond its last tour departure. I help Bland County businesses explain the experience window, visit format and group arrangements before someone makes the trip.",
+        "decisionTitle": "Distinguish opening hours from the time needed to start the experience.",
+        "decision": "Wolf Creek Indian Village & Museum publishes separate museum/shop hours, guided-tour departures and a last self-guided departure. It also directs school and other groups to arrange visits by phone. The county identifies the attraction as a Bland County destination. A useful website can make these different visiting decisions clear before showing a single opening-hours line. I can improve the current visit information or build a fuller experience introduction with an honest group inquiry route.",
+        "scopes": [
+          {
+            "title": "Clarify the visitor timing information",
+            "pages": [
+              "Museum and shop access",
+              "Guided and self-guided visit starts",
+              "Group arrangements"
+            ],
+            "request": "Place the relevant start window beside each visit format and describe the correct action for groups.",
+            "supplies": "Current opening and departure information, format distinctions and group contact instructions.",
+            "check": "A visitor arriving near closing can tell that an open shop does not necessarily mean a guided visit can still begin."
+          },
+          {
+            "title": "Build a complete visit-planning introduction",
+            "pages": [
+              "What each visit includes",
+              "Time and arrival preparation",
+              "School and group needs",
+              "Current questions and contact"
+            ],
+            "request": "Explain the experience first, then connect its format, timing and group arrangements without promising a guide or date.",
+            "supplies": "Approved experience descriptions, current guide arrangements, visitor preparation and the details staff need from group organizers.",
+            "check": "A school organizer can identify the phone arrangement route while an individual visitor can compare guided and self-guided options."
+          }
+        ],
+        "planningTable": {
+          "title": "A visit-window content brief",
+          "intro": "Keep timings owner-approved and current. This table defines the distinctions the website should show, not a reservation schedule.",
+          "columns": [
+            "Visitor intention",
+            "Information to show",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Museum or shop visit",
+              "Opening hours for those facilities.",
+              "Current facility hours.",
+              "A general opening line is not presented as every experience's start time."
+            ],
+            [
+              "Guided village visit",
+              "Departure window and how guide availability is handled.",
+              "Current guided-visit arrangements.",
+              "A visitor can distinguish last departure from building closing."
+            ],
+            [
+              "Self-guided visit",
+              "Its own starting and completion information.",
+              "Actual self-guided arrangements.",
+              "The visitor does not assume the guided-tour timing applies unchanged."
+            ],
+            [
+              "School or group visit",
+              "How the group must arrange the visit.",
+              "Current group contact and preparation questions.",
+              "A group request is not represented as a set of individual walk-ins."
+            ]
+          ]
+        },
+        "scopeTrigger": "Guide rosters, group contracts, payment and live ticket inventory require separate scope. A clear visit page can preserve the existing telephone arrangement process.",
+        "quoteQuestions": [
+          "Which opening and departure times describe different parts of the visit?",
+          "What changes between guided and self-guided formats?",
+          "What should a group organizer prepare before calling?"
+        ],
+        "coverageNote": "Wolf Creek Indian Village & Museum lists 6394 North Scenic Highway with a Bastian address. Bland County's own visitor information identifies it as a county attraction; Bastian is a community name, not a separate town government. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://indianvillage.org/the-village/",
+            "label": "Wolf Creek Indian Village: visit formats and times",
+            "observation": "Separates shop/museum hours, guided departures and self-guided departures, and lists the Bastian address."
+          },
+          {
+            "url": "https://indianvillage.org/school-group-tours/",
+            "label": "Wolf Creek Indian Village: group visits",
+            "observation": "Directs school and other groups to telephone scheduling."
+          },
+          {
+            "url": "https://www.blandcountyva.gov/business/what_to_do.php",
+            "label": "Bland County: visitor information",
+            "observation": "Identifies Wolf Creek Indian Village and Museum as a Bland County attraction."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep arrival and start times distinct"
+          },
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Compare visit formats"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/bland"
+        ],
+        "path": "/areas/virginia/bland-county/",
+        "title": "Web Design for Bland County, VA",
+        "description": "Web design for Bland County, VA. Example brief: distinguish opening hours from the time needed to start the experience.",
+        "servedAreas": [
+          {
+            "name": "Bland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#bland",
+            "label": "Bland County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/bland",
+        "market": "Bland County, VA",
+        "lead": "A building's opening hours may extend beyond its last tour departure. I help Bland County businesses explain the experience window, visit format and group arrangements before someone makes the trip.",
+        "decisionTitle": "Distinguish opening hours from the time needed to start the experience.",
+        "decision": "Wolf Creek Indian Village & Museum publishes separate museum/shop hours, guided-tour departures and a last self-guided departure. It also directs school and other groups to arrange visits by phone. The county identifies the attraction as a Bland County destination. A useful website can make these different visiting decisions clear before showing a single opening-hours line. I can improve the current visit information or build a fuller experience introduction with an honest group inquiry route.",
+        "scopes": [
+          {
+            "title": "Clarify the visitor timing information",
+            "pages": [
+              "Museum and shop access",
+              "Guided and self-guided visit starts",
+              "Group arrangements"
+            ],
+            "request": "Place the relevant start window beside each visit format and describe the correct action for groups.",
+            "supplies": "Current opening and departure information, format distinctions and group contact instructions.",
+            "check": "A visitor arriving near closing can tell that an open shop does not necessarily mean a guided visit can still begin."
+          },
+          {
+            "title": "Build a complete visit-planning introduction",
+            "pages": [
+              "What each visit includes",
+              "Time and arrival preparation",
+              "School and group needs",
+              "Current questions and contact"
+            ],
+            "request": "Explain the experience first, then connect its format, timing and group arrangements without promising a guide or date.",
+            "supplies": "Approved experience descriptions, current guide arrangements, visitor preparation and the details staff need from group organizers.",
+            "check": "A school organizer can identify the phone arrangement route while an individual visitor can compare guided and self-guided options."
+          }
+        ],
+        "planningTable": {
+          "title": "A visit-window content brief",
+          "intro": "Keep timings owner-approved and current. This table defines the distinctions the website should show, not a reservation schedule.",
+          "columns": [
+            "Visitor intention",
+            "Information to show",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Museum or shop visit",
+              "Opening hours for those facilities.",
+              "Current facility hours.",
+              "A general opening line is not presented as every experience's start time."
+            ],
+            [
+              "Guided village visit",
+              "Departure window and how guide availability is handled.",
+              "Current guided-visit arrangements.",
+              "A visitor can distinguish last departure from building closing."
+            ],
+            [
+              "Self-guided visit",
+              "Its own starting and completion information.",
+              "Actual self-guided arrangements.",
+              "The visitor does not assume the guided-tour timing applies unchanged."
+            ],
+            [
+              "School or group visit",
+              "How the group must arrange the visit.",
+              "Current group contact and preparation questions.",
+              "A group request is not represented as a set of individual walk-ins."
+            ]
+          ]
+        },
+        "scopeTrigger": "Guide rosters, group contracts, payment and live ticket inventory require separate scope. A clear visit page can preserve the existing telephone arrangement process.",
+        "quoteQuestions": [
+          "Which opening and departure times describe different parts of the visit?",
+          "What changes between guided and self-guided formats?",
+          "What should a group organizer prepare before calling?"
+        ],
+        "coverageNote": "Wolf Creek Indian Village & Museum lists 6394 North Scenic Highway with a Bastian address. Bland County's own visitor information identifies it as a county attraction; Bastian is a community name, not a separate town government. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://indianvillage.org/the-village/",
+            "label": "Wolf Creek Indian Village: visit formats and times",
+            "observation": "Lists Monday–Saturday museum/shop hours of 9 a.m.–5 p.m.; guided departures from 10 a.m. through 3:30 p.m. each half hour subject to guide availability; last self-guided departure 4 p.m. and completion by 5 p.m.; Sunday closed."
+          },
+          {
+            "url": "https://indianvillage.org/school-group-tours/",
+            "label": "Wolf Creek Indian Village: group visits",
+            "observation": "Directs school and other groups to telephone scheduling."
+          },
+          {
+            "url": "https://www.blandcountyva.gov/business/what_to_do.php",
+            "label": "Bland County: visitor information",
+            "observation": "Identifies Wolf Creek Indian Village and Museum as a Bland County attraction."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep arrival and start times distinct"
+          },
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Compare visit formats"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/bland"
+        ],
+        "path": "/areas/virginia/bland-county/",
+        "title": "Web Design for Bland County, VA",
+        "description": "Web design for Bland County, VA. Example brief: distinguish opening hours from the time needed to start the experience.",
+        "servedAreas": [
+          {
+            "name": "Bland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#bland",
+            "label": "Bland County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "735512176d34bdd8ff58ccc480d269b83e1e15513073db3cb92bd28c3c20da57",
+      "afterSha256": "26b21ed0e1948c7ad78869c3c29bb43a49b88ab21e383ae8fceac48766d0dd94",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "c74fe848345fafc991b379948d1576d910ce9af46de8945fb57ce75a40c005a8",
+        "candidateBodySha256": "88dad27e739f5b34d6f1201a9d29c3d68ec7748658a06576c8c6bcce639e8349",
+        "draftSha256": "893f56213d006249dbffdc9dcc727202f4dba9856dc13c9042d8003047e168db",
+        "sourceEntrySha256": "26b21ed0e1948c7ad78869c3c29bb43a49b88ab21e383ae8fceac48766d0dd94"
+      }
+    },
+    {
+      "path": "/areas/virginia/botetourt-county/",
+      "before": {
+        "areaId": "virginia/botetourt",
+        "market": "Buchanan / Botetourt County, VA",
+        "lead": "A river trip and a riverside campsite can be bought for different reasons. I help Botetourt County businesses explain the equipment, overnight stay and arrival arrangements without making one purchase imply the others.",
+        "decisionTitle": "Keep the paddle trip and the campsite understandable as separate choices.",
+        "decision": "Twin River Outfitters describes day trips with equipment and shuttle inclusions, while its Arcadia campground page says campsites are also available to the general public. The operator lists a Buchanan office and a separate campground address. A useful website can help someone choose a paddle outing, a camping stay or a combination and understand what remains to arrange. I can improve those distinctions on an existing site or build a fuller trip-and-stay introduction.",
+        "scopes": [
+          {
+            "title": "Clarify trip and camping information",
+            "pages": [
+              "Day-trip inclusions",
+              "Standalone campsite use",
+              "Office and campground arrival"
+            ],
+            "request": "Make it clear which page describes the trip and which describes the stay, then label the correct next action and location.",
+            "supplies": "Current trip inclusions, campground arrangements and verified check-in directions.",
+            "check": "A visitor booking a campsite does not assume that a boat and shuttle are part of the stay."
+          },
+          {
+            "title": "Build a trip-and-stay planning introduction",
+            "pages": [
+              "Paddling choices",
+              "Camping options",
+              "Combined visit preparation",
+              "Questions and booking links"
+            ],
+            "request": "Explain how the offers can relate without creating an unverified bundle. Keep the existing reservation process responsible for confirmation.",
+            "supplies": "Approved trip and campsite descriptions, actual combination options and the information staff need about a visitor's plans.",
+            "check": "An organizer can describe an overnight paddle plan and identify the equipment, nights and transport that still need confirmation."
+          }
+        ],
+        "planningTable": {
+          "title": "A river-trip and camping content brief",
+          "intro": "Use actual operator inclusions. This table does not approve an itinerary or determine river suitability.",
+          "columns": [
+            "Part of the visit",
+            "Public explanation",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Paddle outing",
+              "The equipment and assistance included in that product.",
+              "Current trip description.",
+              "A trip title does not imply guided accompaniment unless provided."
+            ],
+            [
+              "Camping night",
+              "What the campsite reservation covers.",
+              "Site facilities and booking arrangements.",
+              "A campsite is not presented as a complete paddling package."
+            ],
+            [
+              "Combined plan",
+              "Which components are actually arranged together.",
+              "Accepted combinations and remaining responsibilities.",
+              "The visitor can identify any unconfirmed component."
+            ],
+            [
+              "Arrival",
+              "Office, launch or campground as appropriate.",
+              "Verified location for the selected arrangement.",
+              "A generic business address does not replace campsite directions."
+            ]
+          ]
+        },
+        "scopeTrigger": "The outfitter confirms itineraries and river suitability. Shuttle-scheduling tools, camping inventory and payments need separate website scope. The public website can prepare the choice and link established reservations.",
+        "quoteQuestions": [
+          "Can a campsite be booked without a river trip?",
+          "What is included in each trip and any combined arrangement?",
+          "Which location should visitors use for each part of their visit?"
+        ],
+        "coverageNote": "Twin River Outfitters lists its office at 640 Lowe Street in Buchanan, a Botetourt County town, and separately identifies Arcadia Campground. Its river routes are not additional business premises. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://canoevirginia.net/day-trips/",
+            "label": "Twin River Outfitters: day trips",
+            "observation": "Describes day-trip inclusions and a Buchanan office, and distinguishes unguided trips from any specifically guided offering."
+          },
+          {
+            "url": "https://canoevirginia.net/campgrounds/arcadia/",
+            "label": "Twin River Outfitters: Arcadia Campground",
+            "observation": "Says the campground is available to the general public and lists a separate Arcadia Road address."
+          },
+          {
+            "url": "https://www.buchanan-va.gov/238/Twin-River-Outfitters",
+            "label": "Town of Buchanan: Twin River Outfitters",
+            "observation": "Identifies the outfitter's Lowe Street location in Buchanan."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep trip components and confirmations distinct"
+          },
+          {
+            "path": "/guides/departure-address/",
+            "label": "Give the right arrival point"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/botetourt"
+        ],
+        "path": "/areas/virginia/botetourt-county/",
+        "title": "Web Design for Buchanan / Botetourt County, VA",
+        "description": "Web design for Buchanan / Botetourt County, VA. Example brief: keep the paddle trip and the campsite understandable as separate choices.",
+        "servedAreas": [
+          {
+            "name": "Botetourt County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#botetourt",
+            "label": "Botetourt County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/botetourt",
+        "market": "Buchanan / Botetourt County, VA",
+        "lead": "A river trip and a riverside campsite can be bought for different reasons. I help Botetourt County businesses explain the equipment, overnight stay and arrival arrangements without making one purchase imply the others.",
+        "decisionTitle": "Keep the paddle trip and the campsite understandable as separate choices.",
+        "decision": "Twin River Outfitters describes day trips with equipment and shuttle inclusions, while its Arcadia campground page says campsites are also available to the general public. The operator lists a Buchanan office and a separate campground address. A useful website can help someone choose a paddle outing, a camping stay or a combination and understand what remains to arrange. I can improve those distinctions on an existing site or build a fuller trip-and-stay introduction.",
+        "scopes": [
+          {
+            "title": "Clarify trip and camping information",
+            "pages": [
+              "Day-trip inclusions",
+              "Standalone campsite use",
+              "Office and campground arrival"
+            ],
+            "request": "Make it clear which page describes the trip and which describes the stay, then label the correct next action and location.",
+            "supplies": "Current trip inclusions, campground arrangements and verified check-in directions.",
+            "check": "A visitor booking a campsite does not assume that a boat and shuttle are part of the stay."
+          },
+          {
+            "title": "Build a trip-and-stay planning introduction",
+            "pages": [
+              "Paddling choices",
+              "Camping options",
+              "Combined visit preparation",
+              "Questions and booking links"
+            ],
+            "request": "Explain how the offers can relate without creating an unverified bundle. Keep the existing reservation process responsible for confirmation.",
+            "supplies": "Approved trip and campsite descriptions, actual combination options and the information staff need about a visitor's plans.",
+            "check": "An organizer can describe an overnight paddle plan and identify the equipment, nights and transport that still need confirmation."
+          }
+        ],
+        "planningTable": {
+          "title": "A river-trip and camping content brief",
+          "intro": "Use actual operator inclusions. This table does not approve an itinerary or determine river suitability.",
+          "columns": [
+            "Part of the visit",
+            "Public explanation",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Paddle outing",
+              "The equipment and assistance included in that product.",
+              "Current trip description.",
+              "A trip title does not imply guided accompaniment unless provided."
+            ],
+            [
+              "Camping night",
+              "What the campsite reservation covers.",
+              "Site facilities and booking arrangements.",
+              "A campsite is not presented as a complete paddling package."
+            ],
+            [
+              "Combined plan",
+              "Which components are actually arranged together.",
+              "Accepted combinations and remaining responsibilities.",
+              "The visitor can identify any unconfirmed component."
+            ],
+            [
+              "Arrival",
+              "Office, launch or campground as appropriate.",
+              "Verified location for the selected arrangement.",
+              "A generic business address does not replace campsite directions."
+            ]
+          ]
+        },
+        "scopeTrigger": "The outfitter confirms itineraries and river suitability. Shuttle-scheduling tools, camping inventory and payments need separate website scope. The public website can prepare the choice and link established reservations.",
+        "quoteQuestions": [
+          "Can a campsite be booked without a river trip?",
+          "What is included in each trip and any combined arrangement?",
+          "Which location should visitors use for each part of their visit?"
+        ],
+        "coverageNote": "Twin River Outfitters lists its office at 640 Lowe Street in Buchanan, a Botetourt County town, and separately identifies Arcadia Campground. Its river routes are not additional business premises. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://canoevirginia.net/day-trips/",
+            "label": "Twin River Outfitters: day trips",
+            "observation": "Describes day-trip inclusions and a Buchanan office, and distinguishes unguided trips from any specifically guided offering."
+          },
+          {
+            "url": "https://canoevirginia.net/campgrounds/arcadia/",
+            "label": "Twin River Outfitters: Arcadia Campground",
+            "observation": "Makes Arcadia Campground available to the public by advance reservation at 1800 Arcadia Road, Buchanan; lists the outfitter office separately at 640 Lowe Street, Buchanan."
+          },
+          {
+            "url": "https://www.buchanan-va.gov/238/Twin-River-Outfitters",
+            "label": "Town of Buchanan: Twin River Outfitters",
+            "observation": "Identifies the outfitter's Lowe Street location in Buchanan."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep trip components and confirmations distinct"
+          },
+          {
+            "path": "/guides/departure-address/",
+            "label": "Give the right arrival point"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/botetourt"
+        ],
+        "path": "/areas/virginia/botetourt-county/",
+        "title": "Web Design for Buchanan / Botetourt County, VA",
+        "description": "Web design for Buchanan / Botetourt County, VA. Example brief: keep the paddle trip and the campsite understandable as separate choices.",
+        "servedAreas": [
+          {
+            "name": "Botetourt County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#botetourt",
+            "label": "Botetourt County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "b2fdf249d438cfddd2f7071ad44e883b628817f4f042459ed0ea70b2bb41fdc3",
+      "afterSha256": "42b44a13b0aac0a6c090052b46a366ff684f696630f998bb20d96c1b2d922ed3",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "1d603a89822175cbab740f7e5dd22476d67664670e612becf121ff7c9f5d19f9",
+        "candidateBodySha256": "36bd0b33f8fd99201cbbbe05eb87a51abe1866975dbd419fef9ac3ef6a0158ba",
+        "draftSha256": "2994989eb77cfa6edd5471aee1d6e592643fd08c1dc02a67ae2ff8e8e96f1a8e",
+        "sourceEntrySha256": "42b44a13b0aac0a6c090052b46a366ff684f696630f998bb20d96c1b2d922ed3"
+      }
+    },
+    {
+      "path": "/areas/virginia/clarke-county/",
+      "before": {
+        "areaId": "virginia/clarke",
+        "market": "Clarke County, VA",
+        "lead": "A boarding facility's amenities do not describe who performs the horse's daily care. I help Clarke County equestrian businesses explain their arrangements and the owner responsibilities behind a boarding inquiry.",
+        "decisionTitle": "Separate the boarding facilities from the care the owner must arrange.",
+        "decision": "Mount Hebron Farm identifies its Clarke County location and describes field boarding with owners normally handling care beyond the listed provision, alongside occasional assistance and temporary stall access. A business with a similar arrangement needs a clear explanation of responsibility as well as attractive pasture photographs. I can clarify existing boarding information or build a fuller introduction connecting facilities, care expectations and a discussion of the horse's needs.",
+        "scopes": [
+          {
+            "title": "Clarify boarding responsibilities",
+            "pages": [
+              "Facilities included",
+              "Routine owner responsibilities",
+              "Assistance requests and tour contact"
+            ],
+            "request": "Explain the normal arrangement and how exceptions are discussed.",
+            "supplies": "Current boarding offer, care responsibilities and the process for requesting help.",
+            "check": "An owner planning travel can identify the assistance question without assuming full-care boarding."
+          },
+          {
+            "title": "Build a complete boarding introduction",
+            "pages": [
+              "Boarding approach and suitable inquiries",
+              "Pasture and barn facilities",
+              "Care and occasional assistance",
+              "Horse details and arranged visits"
+            ],
+            "request": "Connect the facility description to the actual division of work.",
+            "supplies": "Approved facility photographs, current care arrangements and the information needed before a tour.",
+            "check": "A prospective boarder can describe a horse's needs and distinguish temporary stall access from a stall-board promise."
+          }
+        ],
+        "planningTable": {
+          "title": "A boarding-responsibility content brief",
+          "intro": "The owner approves the business's current arrangements. This table does not prescribe equine care or establish suitability.",
+          "columns": [
+            "Visitor situation",
+            "Content to explain",
+            "Owner information needed",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Routine provision",
+              "State what the boarding offer includes.",
+              "Current facilities and provision list.",
+              "A pasture photograph does not imply every care task is included."
+            ],
+            [
+              "Owner's daily role",
+              "Explain what remains with the horse owner.",
+              "Approved responsibility description.",
+              "The customer can assess their own practical involvement."
+            ],
+            [
+              "Occasional help",
+              "Give a route for discussing temporary assistance.",
+              "How requests are reviewed and agreed.",
+              "An absence does not automatically create a care commitment."
+            ],
+            [
+              "Temporary facilities",
+              "Explain the purpose of temporary stall access.",
+              "Current access arrangements and limits.",
+              "A holding stall is not mistaken for an ongoing stall-board allocation."
+            ]
+          ]
+        },
+        "scopeTrigger": "Care-management records, billing, access systems and automated boarding allocation need separate scope. The website can prepare a conversation through the established contact route.",
+        "quoteQuestions": [
+          "Which tasks are included in the normal arrangement?",
+          "What occasional assistance can a customer ask about?",
+          "Which facilities need a clearer explanation of their intended use?"
+        ],
+        "coverageNote": "Mount Hebron Farm explicitly describes its location in Clarke County near Berryville. It is a private family farm that asks visitors to arrange contact for address information.",
+        "sources": [
+          {
+            "url": "https://www.mount-hebron-farm.com/horse-boarding",
+            "label": "Mount Hebron Farm: field boarding",
+            "observation": "Identifies Clarke County and describes owner care responsibilities, occasional assistance and temporary stall access."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare the details behind a service description"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/clarke"
+        ],
+        "path": "/areas/virginia/clarke-county/",
+        "title": "Web Design for Clarke County, VA",
+        "description": "Web design for Clarke County, VA. Example brief: separate the boarding facilities from the care the owner must arrange.",
+        "servedAreas": [
+          {
+            "name": "Clarke County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#clarke",
+            "label": "Clarke County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/clarke",
+        "market": "Clarke County, VA",
+        "lead": "A boarding facility's amenities do not describe who performs the horse's daily care. I help Clarke County equestrian businesses explain their arrangements and the owner responsibilities behind a boarding inquiry.",
+        "decisionTitle": "Separate the boarding facilities from the care the owner must arrange.",
+        "decision": "Mount Hebron Farm identifies its Clarke County location and describes field boarding with owners normally handling care beyond the listed provision, alongside occasional assistance and temporary stall access. A business with a similar arrangement needs a clear explanation of responsibility as well as attractive pasture photographs. I can clarify existing boarding information or build a fuller introduction connecting facilities, care expectations and a discussion of the horse's needs.",
+        "scopes": [
+          {
+            "title": "Clarify boarding responsibilities",
+            "pages": [
+              "Facilities included",
+              "Routine owner responsibilities",
+              "Assistance requests and tour contact"
+            ],
+            "request": "Explain the normal arrangement and how exceptions are discussed.",
+            "supplies": "Current boarding offer, care responsibilities and the process for requesting help.",
+            "check": "An owner planning travel can identify the assistance question without assuming full-care boarding."
+          },
+          {
+            "title": "Build a complete boarding introduction",
+            "pages": [
+              "Boarding approach and suitable inquiries",
+              "Pasture and barn facilities",
+              "Care and occasional assistance",
+              "Horse details and arranged visits"
+            ],
+            "request": "Connect the facility description to the actual division of work.",
+            "supplies": "Approved facility photographs, current care arrangements and the information needed before a tour.",
+            "check": "A prospective boarder can describe a horse's needs and distinguish temporary stall access from a stall-board promise."
+          }
+        ],
+        "planningTable": {
+          "title": "A boarding-responsibility content brief",
+          "intro": "The owner approves the business's current arrangements. This table does not prescribe equine care or establish suitability.",
+          "columns": [
+            "Visitor situation",
+            "Content to explain",
+            "Owner information needed",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Routine provision",
+              "State what the boarding offer includes.",
+              "Current facilities and provision list.",
+              "A pasture photograph does not imply every care task is included."
+            ],
+            [
+              "Owner's daily role",
+              "Explain what remains with the horse owner.",
+              "Approved responsibility description.",
+              "The customer can assess their own practical involvement."
+            ],
+            [
+              "Occasional help",
+              "Give a route for discussing temporary assistance.",
+              "How requests are reviewed and agreed.",
+              "An absence does not automatically create a care commitment."
+            ],
+            [
+              "Temporary facilities",
+              "Explain the purpose of temporary stall access.",
+              "Current access arrangements and limits.",
+              "A holding stall is not mistaken for an ongoing stall-board allocation."
+            ]
+          ]
+        },
+        "scopeTrigger": "Care-management records, billing, access systems and automated boarding allocation need separate scope. The website can prepare a conversation through the established contact route.",
+        "quoteQuestions": [
+          "Which tasks are included in the normal arrangement?",
+          "What occasional assistance can a customer ask about?",
+          "Which facilities need a clearer explanation of their intended use?"
+        ],
+        "coverageNote": "Mount Hebron Farm explicitly describes its location in Clarke County near Berryville. It is a private family farm that asks visitors to arrange contact for address information.",
+        "sources": [
+          {
+            "url": "https://www.mount-hebron-farm.com/horse-boarding",
+            "label": "Mount Hebron Farm: field boarding",
+            "observation": "Describes run-in shelters, automatic water, covered hay December–March and rotational grazing; owners generally handle remaining care and can ask about occasional assistance. Stalls serve temporary holding, and visits/address details require contact."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare the details behind a service description"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/clarke"
+        ],
+        "path": "/areas/virginia/clarke-county/",
+        "title": "Web Design for Clarke County, VA",
+        "description": "Web design for Clarke County, VA. Example brief: separate the boarding facilities from the care the owner must arrange.",
+        "servedAreas": [
+          {
+            "name": "Clarke County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#clarke",
+            "label": "Clarke County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "b3148ccfa9ce7b171b7733f04563e0747eb68b08124e7e8f77811f3add05addc",
+      "afterSha256": "c6ed5d9ee61ffafdb237ef27f3d3a208a7a2eb7cf555f7666fde888d8db73ae3",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "5bce6b982337a4ce6414f14a29d57d8dc1e46fbe0ec9b810452e31350ae232f0",
+        "candidateBodySha256": "dac34691fe43e054e6b1c485556c27e61ec0778a418edbdee2a2a6956506d3d0",
+        "draftSha256": "dceb24dbb58cb9ecb8c88b9fa46711891e3fb915c6b3a25dd17461a5b1dd3a13",
+        "sourceEntrySha256": "c6ed5d9ee61ffafdb237ef27f3d3a208a7a2eb7cf555f7666fde888d8db73ae3"
+      }
+    },
+    {
+      "path": "/areas/virginia/cumberland-county/",
+      "before": {
+        "areaId": "virginia/cumberland",
+        "market": "Cumberland County, VA",
+        "lead": "A school visit needs more than a farm's general opening information. I help Cumberland County visitor businesses connect seasonal learning activities with the practical questions teachers need to ask before arranging a trip.",
+        "decisionTitle": "Connect the school visit's learning aim to the season and group needs.",
+        "decision": "Spruceberry Farm's field-trip page presents seasonal and year-round activities, with separate information about buses, weather, mobility needs and lunches. A business offering educational visits can use its website to help a teacher describe the learning aim and practical constraints together. I can clarify a field-trip page or build a fuller group-visit introduction while leaving dates, suitable arrangements and pricing for the farm to confirm.",
+        "scopes": [
+          {
+            "title": "Clarify field-trip choices and preparation",
+            "pages": [
+              "Seasonal and year-round activities",
+              "Learning aims and group context",
+              "Arrival, lunch and inquiry preparation"
+            ],
+            "request": "Make the visit options understandable before a teacher asks for a date.",
+            "supplies": "Current programs, seasonal limits and the practical questions staff use.",
+            "check": "A teacher planning a spring visit does not assume every autumn activity will be available."
+          },
+          {
+            "title": "Build a fuller educational-visit introduction",
+            "pages": [
+              "Learning themes and activity examples",
+              "Season and visit format",
+              "Transport and participant needs",
+              "Weather discussion and group inquiry"
+            ],
+            "request": "Connect the educational offer to the arrangements needed for a particular group.",
+            "supplies": "Approved activity descriptions, current access information and the process for discussing alternatives.",
+            "check": "An organizer can describe age group, learning goals and mobility questions without treating a general farm description as confirmation of an appropriate route."
+          }
+        ],
+        "planningTable": {
+          "title": "A school-visit website brief",
+          "intro": "The farm approves current programs and arrangements. The table organizes questions; it does not certify curriculum alignment or accessibility.",
+          "columns": [
+            "Planning choice",
+            "What the page explains",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Learning purpose",
+              "Show the themes each activity can introduce.",
+              "Owner-approved descriptions and evidence for any curriculum claims.",
+              "The teacher can state the intended learning aim."
+            ],
+            [
+              "Season",
+              "Attach each activity to its actual availability pattern.",
+              "Current seasonal and year-round offer.",
+              "A crop-based activity is not presented as always available."
+            ],
+            [
+              "Group needs",
+              "Invite relevant questions before a date is agreed.",
+              "Age, mobility and participation prompts approved by staff.",
+              "The visit can be discussed for the actual group."
+            ],
+            [
+              "Practical day plan",
+              "Explain transport, lunch and weather discussion.",
+              "Current arrangements and who confirms changes.",
+              "A general opening time does not stand in for a group plan."
+            ]
+          ]
+        },
+        "scopeTrigger": "School booking platforms, student records, payments and transport scheduling need separate scope. Clear content can support the farm's existing group inquiry.",
+        "quoteQuestions": [
+          "Which activities depend on season or crop conditions?",
+          "What does the teacher need to describe about the group?",
+          "Who confirms the practical arrangements and any weather alternative?"
+        ],
+        "coverageNote": "Spruceberry Farm lists 94 Cartersville Road in Cumberland, Virginia. This example concerns its Cumberland County farm and educational visits.",
+        "sources": [
+          {
+            "url": "https://www.spruceberryfarm.com/field-trips",
+            "label": "Spruceberry Farm: school visits",
+            "observation": "Presents seasonal and year-round educational activities, group preparation questions and its Cumberland address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain the experience and its inclusions"
+          },
+          {
+            "path": "/guides/farm-event-website-updates/",
+            "label": "Keep special farm visits current"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/cumberland"
+        ],
+        "path": "/areas/virginia/cumberland-county/",
+        "title": "Web Design for Cumberland County, VA",
+        "description": "Web design for Cumberland County, VA. Example brief: connect the school visit's learning aim to the season and group needs.",
+        "servedAreas": [
+          {
+            "name": "Cumberland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#cumberland",
+            "label": "Cumberland County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/cumberland",
+        "market": "Cumberland County, VA",
+        "lead": "A school visit needs more than a farm's general opening information. I help Cumberland County visitor businesses connect seasonal learning activities with the practical questions teachers need to ask before arranging a trip.",
+        "decisionTitle": "Connect the school visit's learning aim to the season and group needs.",
+        "decision": "Spruceberry Farm's field-trip page presents seasonal and year-round activities, with separate information about buses, weather, mobility needs and lunches. A business offering educational visits can use its website to help a teacher describe the learning aim and practical constraints together. I can clarify a field-trip page or build a fuller group-visit introduction while leaving dates, suitable arrangements and pricing for the farm to confirm.",
+        "scopes": [
+          {
+            "title": "Clarify field-trip choices and preparation",
+            "pages": [
+              "Seasonal and year-round activities",
+              "Learning aims and group context",
+              "Arrival, lunch and inquiry preparation"
+            ],
+            "request": "Make the visit options understandable before a teacher asks for a date.",
+            "supplies": "Current programs, seasonal limits and the practical questions staff use.",
+            "check": "A teacher planning a spring visit does not assume every autumn activity will be available."
+          },
+          {
+            "title": "Build a fuller educational-visit introduction",
+            "pages": [
+              "Learning themes and activity examples",
+              "Season and visit format",
+              "Transport and participant needs",
+              "Weather discussion and group inquiry"
+            ],
+            "request": "Connect the educational offer to the arrangements needed for a particular group.",
+            "supplies": "Approved activity descriptions, current access information and the process for discussing alternatives.",
+            "check": "An organizer can describe age group, learning goals and mobility questions without treating a general farm description as confirmation of an appropriate route."
+          }
+        ],
+        "planningTable": {
+          "title": "A school-visit website brief",
+          "intro": "The farm approves current programs and arrangements. The table organizes questions; it does not certify curriculum alignment or accessibility.",
+          "columns": [
+            "Planning choice",
+            "What the page explains",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Learning purpose",
+              "Show the themes each activity can introduce.",
+              "Owner-approved descriptions and evidence for any curriculum claims.",
+              "The teacher can state the intended learning aim."
+            ],
+            [
+              "Season",
+              "Attach each activity to its actual availability pattern.",
+              "Current seasonal and year-round offer.",
+              "A crop-based activity is not presented as always available."
+            ],
+            [
+              "Group needs",
+              "Invite relevant questions before a date is agreed.",
+              "Age, mobility and participation prompts approved by staff.",
+              "The visit can be discussed for the actual group."
+            ],
+            [
+              "Practical day plan",
+              "Explain transport, lunch and weather discussion.",
+              "Current arrangements and who confirms changes.",
+              "A general opening time does not stand in for a group plan."
+            ]
+          ]
+        },
+        "scopeTrigger": "School booking platforms, student records, payments and transport scheduling need separate scope. Clear content can support the farm's existing group inquiry.",
+        "quoteQuestions": [
+          "Which activities depend on season or crop conditions?",
+          "What does the teacher need to describe about the group?",
+          "Who confirms the practical arrangements and any weather alternative?"
+        ],
+        "coverageNote": "Spruceberry Farm lists 94 Cartersville Road in Cumberland, Virginia. This example concerns its Cumberland County farm and educational visits.",
+        "sources": [
+          {
+            "url": "https://www.spruceberryfarm.com/field-trips",
+            "label": "Spruceberry Farm: school visits",
+            "observation": "Lists Great Pumpkin Patch for September–October and Evergreen Expedition year-round, designated picnic zones for packed lunches, indoor stations in light rain and severe-weather rescheduling; acknowledges terrain challenges and adaptive route discussions."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain the experience and its inclusions"
+          },
+          {
+            "path": "/guides/farm-event-website-updates/",
+            "label": "Keep special farm visits current"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/cumberland"
+        ],
+        "path": "/areas/virginia/cumberland-county/",
+        "title": "Web Design for Cumberland County, VA",
+        "description": "Web design for Cumberland County, VA. Example brief: connect the school visit's learning aim to the season and group needs.",
+        "servedAreas": [
+          {
+            "name": "Cumberland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#cumberland",
+            "label": "Cumberland County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "63bc123b0e51dd97caf7478e96ea867ae29bdfc490b2fc9cf9b4dc3dbf91c009",
+      "afterSha256": "164d87edfe844e12df04f5eb09415d2b271b8de109cbedcba4b94ae4a6412fa9",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "f423ebba60c33a919e40bb1d4e6f28d1ad6e2b7e783b4f423085d650cb8d5c53",
+        "candidateBodySha256": "935eba082991ef6656ded067686fae6c25ccf42e256a41f99771081a6261af83",
+        "draftSha256": "5387b5b91776627bafa3e61a9d464f9a95c5bae837d5a163131ca31aca8e0c41",
+        "sourceEntrySha256": "164d87edfe844e12df04f5eb09415d2b271b8de109cbedcba4b94ae4a6412fa9"
+      }
+    },
+    {
+      "path": "/areas/virginia/dickenson-county/",
+      "before": {
+        "areaId": "virginia/dickenson",
+        "market": "Dickenson County, VA",
+        "lead": "Two campsites with the same broad label can offer different layouts and surroundings. I help Dickenson County accommodation businesses explain the selected site so guests can ask about their equipment and preferences before booking.",
+        "decisionTitle": "Keep the individual campsite's layout attached to the booking choice.",
+        "decision": "Thunder River Campground lists primitive and full-hookup sites, including upper-level and riverside descriptions, back-in approaches and differing dimensions. Its Haysi address is also confirmed by Dickenson County visitor information. A useful website can help guests compare the actual site, rather than apply one scenic photograph or amenity list to every option. I can clarify site descriptions or build a fuller campground introduction around those decisions.",
+        "scopes": [
+          {
+            "title": "Clarify individual site descriptions",
+            "pages": [
+              "Site type and supplied connections",
+              "Layout and approach",
+              "Setting and existing booking link"
+            ],
+            "request": "Keep the facts for the selected site visible through the choice.",
+            "supplies": "Current site descriptions, approved photographs and the details staff need about a guest's setup.",
+            "check": "A guest can distinguish an upper-level site from a riverside example and ask about fit."
+          },
+          {
+            "title": "Build a fuller campground introduction",
+            "pages": [
+              "Primitive and hookup options",
+              "Site layout and arrival approach",
+              "Facilities and surroundings",
+              "Equipment questions and booking handoff"
+            ],
+            "request": "Explain how individual sites differ without implying every site has every feature.",
+            "supplies": "Current site records, facility information and how staff handles uncertain equipment requirements.",
+            "check": "A camper comparing a tent with a larger vehicle can describe the setup and identify what needs staff confirmation."
+          }
+        ],
+        "planningTable": {
+          "title": "A site-description brief for campground websites",
+          "intro": "Use the operator's current information for each site. Published dimensions do not replace the campground's judgment of vehicle fit.",
+          "columns": [
+            "Planning choice",
+            "What the page explains",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Site category",
+              "State what the category provides.",
+              "Current hookups and site-type description.",
+              "A primitive listing is not given the full-hookup offer."
+            ],
+            [
+              "Layout",
+              "Describe the actual space and approach.",
+              "Approved dimensions and back-in or other approach details.",
+              "The guest can ask about their complete setup."
+            ],
+            [
+              "Setting",
+              "Attach views and location to the correct site.",
+              "Site-specific photos and descriptions.",
+              "A river photograph does not imply every site is beside the water."
+            ],
+            [
+              "Uncertain fit",
+              "Explain what to ask before choosing.",
+              "The equipment and arrival details staff require.",
+              "A guest has a useful inquiry route without a suitability guarantee."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live site inventory, automated vehicle-fit decisions and reservation systems need separate scope. Content can support the current booking tool.",
+        "quoteQuestions": [
+          "Which differences matter between sites in the same category?",
+          "Do photographs and dimensions identify the correct site?",
+          "What should guests send when they are unsure their setup fits?"
+        ],
+        "coverageNote": "Thunder River Campground lists 1558 Splashdam Road, Haysi, and is included in Dickenson County's visitor lodging information. The example concerns that property.",
+        "sources": [
+          {
+            "url": "https://www.thunderrivercg.com/inventory",
+            "label": "Thunder River Campground: site descriptions",
+            "observation": "Distinguishes primitive and full-hookup sites and describes variations in approach, size and setting."
+          },
+          {
+            "url": "https://www.thunderrivercg.com/contact",
+            "label": "Thunder River Campground: contact",
+            "observation": "Lists the Haysi property address."
+          },
+          {
+            "url": "https://visitdickensoncounty.com/places/thunder-river-campground/",
+            "label": "Visit Dickenson County: campground",
+            "observation": "Confirms the campground's Haysi location and links its operator website."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Explain the selected property and visitor needs"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/dickenson"
+        ],
+        "path": "/areas/virginia/dickenson-county/",
+        "title": "Web Design for Dickenson County, VA",
+        "description": "Web design for Dickenson County, VA. Example brief: keep the individual campsite's layout attached to the booking choice.",
+        "servedAreas": [
+          {
+            "name": "Dickenson County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#dickenson",
+            "label": "Dickenson County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/dickenson",
+        "market": "Dickenson County, VA",
+        "lead": "Two campsites with the same broad label can offer different layouts and surroundings. I help Dickenson County accommodation businesses explain the selected site so guests can ask about their equipment and preferences before booking.",
+        "decisionTitle": "Keep the individual campsite's layout attached to the booking choice.",
+        "decision": "Thunder River Campground lists primitive and full-hookup sites, including upper-level and riverside descriptions, back-in approaches and differing dimensions. Its Haysi address is also confirmed by Dickenson County visitor information. A useful website can help guests compare the actual site, rather than apply one scenic photograph or amenity list to every option. I can clarify site descriptions or build a fuller campground introduction around those decisions.",
+        "scopes": [
+          {
+            "title": "Clarify individual site descriptions",
+            "pages": [
+              "Site type and supplied connections",
+              "Layout and approach",
+              "Setting and existing booking link"
+            ],
+            "request": "Keep the facts for the selected site visible through the choice.",
+            "supplies": "Current site descriptions, approved photographs and the details staff need about a guest's setup.",
+            "check": "A guest can distinguish an upper-level site from a riverside example and ask about fit."
+          },
+          {
+            "title": "Build a fuller campground introduction",
+            "pages": [
+              "Primitive and hookup options",
+              "Site layout and arrival approach",
+              "Facilities and surroundings",
+              "Equipment questions and booking handoff"
+            ],
+            "request": "Explain how individual sites differ without implying every site has every feature.",
+            "supplies": "Current site records, facility information and how staff handles uncertain equipment requirements.",
+            "check": "A camper comparing a tent with a larger vehicle can describe the setup and identify what needs staff confirmation."
+          }
+        ],
+        "planningTable": {
+          "title": "A site-description brief for campground websites",
+          "intro": "Use the operator's current information for each site. Published dimensions do not replace the campground's judgment of vehicle fit.",
+          "columns": [
+            "Planning choice",
+            "What the page explains",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "Site category",
+              "State what the category provides.",
+              "Current hookups and site-type description.",
+              "A primitive listing is not given the full-hookup offer."
+            ],
+            [
+              "Layout",
+              "Describe the actual space and approach.",
+              "Approved dimensions and back-in or other approach details.",
+              "The guest can ask about their complete setup."
+            ],
+            [
+              "Setting",
+              "Attach views and location to the correct site.",
+              "Site-specific photos and descriptions.",
+              "A river photograph does not imply every site is beside the water."
+            ],
+            [
+              "Uncertain fit",
+              "Explain what to ask before choosing.",
+              "The equipment and arrival details staff require.",
+              "A guest has a useful inquiry route without a suitability guarantee."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live site inventory, automated vehicle-fit decisions and reservation systems need separate scope. Content can support the current booking tool.",
+        "quoteQuestions": [
+          "Which differences matter between sites in the same category?",
+          "Do photographs and dimensions identify the correct site?",
+          "What should guests send when they are unsure their setup fits?"
+        ],
+        "coverageNote": "Thunder River Campground lists 1558 Splashdam Road, Haysi, and is included in Dickenson County's visitor lodging information. The example concerns that property.",
+        "sources": [
+          {
+            "url": "https://www.thunderrivercg.com/inventory",
+            "label": "Thunder River Campground: site descriptions",
+            "observation": "Site 9 is back-in, 25 by 50 feet, with full hookups and a river view. Site 12 is upper-level back-in with water/sewer/50-amp electricity and mountain view, without stated dimensions. Primitive Site 8 is a grassy riverside tent/pop-up location."
+          },
+          {
+            "url": "https://www.thunderrivercg.com/contact",
+            "label": "Thunder River Campground: contact",
+            "observation": "Lists the Haysi property address."
+          },
+          {
+            "url": "https://visitdickensoncounty.com/places/thunder-river-campground/",
+            "label": "Visit Dickenson County: campground",
+            "observation": "Confirms the campground's Haysi location and links its operator website."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Explain the selected property and visitor needs"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/dickenson"
+        ],
+        "path": "/areas/virginia/dickenson-county/",
+        "title": "Web Design for Dickenson County, VA",
+        "description": "Web design for Dickenson County, VA. Example brief: keep the individual campsite's layout attached to the booking choice.",
+        "servedAreas": [
+          {
+            "name": "Dickenson County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#dickenson",
+            "label": "Dickenson County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "323d31399985656c103158700d8546b863c48a145c293d1a0aca31c4cae086e4",
+      "afterSha256": "39d08383c8258fe37cc841a717ed2f4efea4a6c8a749083d89b2dc574ce8e4e4",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "4e1b9d8701826d83a33acb0f73318f0197848d55ee48a223aa1681b4e22c3ac4",
+        "candidateBodySha256": "40c68d6b084f7953b2a7197549c4b7acf1600dca523182f87626e1f97b03d937",
+        "draftSha256": "cd413853fe4a3395a611d4a4506b0269b039349846101102ff61c6fb61705927",
+        "sourceEntrySha256": "39d08383c8258fe37cc841a717ed2f4efea4a6c8a749083d89b2dc574ce8e4e4"
+      }
+    },
+    {
+      "path": "/areas/virginia/highland-county/",
+      "before": {
+        "areaId": "virginia/highland",
+        "market": "Highland County, VA",
+        "lead": "A syrup bottle can be chosen for everyday use, a gift or a group of favors. I help Highland County businesses make those product choices understandable before an order.",
+        "decisionTitle": "Separate what is in the bottle from how the gift is presented.",
+        "decision": "Mill Gap Farms sells maple syrup in several bottle styles and sizes, and describes decorative leaf bottles as gifts or wedding favors with an optional foil cap. For a farm-product business, a useful website distinguishes the product, quantity and presentation choices. I can improve a current collection introduction or build a fuller product story with a clear gift-planning explanation. A customer should know which choice changes the contents and which changes the presentation, then use the business's established ordering or inquiry route.",
+        "scopes": [
+          {
+            "title": "Clarify the bottle comparison",
+            "pages": [
+              "Product and bottle names",
+              "Size and presentation choices",
+              "Current ordering route"
+            ],
+            "request": "Explain the differences visitors need before choosing a product.",
+            "supplies": "Current product descriptions, accurate bottle photographs and available presentation options.",
+            "check": "A shopper can distinguish two bottle sizes without using the photograph's apparent scale as a volume comparison."
+          },
+          {
+            "title": "Build a fuller farm-product introduction",
+            "pages": [
+              "Farm and product origin",
+              "Everyday product choices",
+              "Gifts and event favors",
+              "Order preparation and questions"
+            ],
+            "request": "Connect the product story to practical choices for personal and group purchases.",
+            "supplies": "Approved origin information, product variants and actual arrangements for larger requests.",
+            "check": "A customer planning favors can name the bottle, desired quantity and event date without assuming custom packaging or guaranteed stock."
+          }
+        ],
+        "planningTable": {
+          "title": "A syrup-gift planning brief",
+          "intro": "Publish the producer's current options. The table organizes content for an inquiry and does not confirm quantities or fulfillment.",
+          "columns": [
+            "Choice",
+            "What to explain",
+            "Owner information",
+            "Useful buyer question"
+          ],
+          "rows": [
+            [
+              "Contents",
+              "Identify the syrup or specialty product.",
+              "Accurate product names and descriptions.",
+              "Which product do I want to give?"
+            ],
+            [
+              "Bottle size",
+              "State quantity independently of image scale.",
+              "Current sizes and labeled photographs.",
+              "How much does this bottle contain?"
+            ],
+            [
+              "Presentation",
+              "Separate bottle shape and optional finishing.",
+              "Actual decorative options and inclusions.",
+              "Which presentation choices can I request?"
+            ],
+            [
+              "Group purchase",
+              "Carry product, quantity and date together.",
+              "How the business reviews larger orders.",
+              "Can this selection be supplied for my occasion?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Custom labels, bulk-order pricing tools, inventory synchronization and checkout changes need separate scope. Product explanations can work with an existing shop.",
+        "quoteQuestions": [
+          "Which choices change the product and which change only its presentation?",
+          "What does a group purchaser need to describe before you can reply?",
+          "Which gift photographs show options that remain available?"
+        ],
+        "coverageNote": "Mill Gap Farms identifies its location as Highland County, outside Monterey, at 2760 Mill Gap Road.",
+        "sources": [
+          {
+            "url": "https://millgapfarms.com/",
+            "label": "Mill Gap Farms: farm and products",
+            "observation": "Identifies the Highland County farm and links its syrup collections."
+          },
+          {
+            "url": "https://millgapfarms.com/collections/frontpage",
+            "label": "Mill Gap Farms: decorative maple-leaf bottles",
+            "observation": "Describes several bottle sizes, gift and wedding-favor uses, and an optional foil cap."
+          },
+          {
+            "url": "https://millgapfarms.com/collections/specialty-syrups-and-products",
+            "label": "Mill Gap Farms: specialty products",
+            "observation": "Lists specialty syrup products separately from the maple-syrup collection."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Preparing useful website content"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/highland"
+        ],
+        "path": "/areas/virginia/highland-county/",
+        "title": "Web Design for Highland County, VA",
+        "description": "Web design for Highland County, VA. Example brief: separate what is in the bottle from how the gift is presented.",
+        "servedAreas": [
+          {
+            "name": "Highland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#highland",
+            "label": "Highland County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/highland",
+        "market": "Highland County, VA",
+        "lead": "A syrup bottle can be chosen for everyday use, a gift or a group of favors. I help Highland County businesses make those product choices understandable before an order.",
+        "decisionTitle": "Separate what is in the bottle from how the gift is presented.",
+        "decision": "Mill Gap Farms sells maple syrup in several bottle styles and sizes, and describes decorative leaf bottles as gifts or wedding favors with an optional foil cap. For a farm-product business, a useful website distinguishes the product, quantity and presentation choices. I can improve a current collection introduction or build a fuller product story with a clear gift-planning explanation. A customer should know which choice changes the contents and which changes the presentation, then use the business's established ordering or inquiry route.",
+        "scopes": [
+          {
+            "title": "Clarify the bottle comparison",
+            "pages": [
+              "Product and bottle names",
+              "Size and presentation choices",
+              "Current ordering route"
+            ],
+            "request": "Explain the differences visitors need before choosing a product.",
+            "supplies": "Current product descriptions, accurate bottle photographs and available presentation options.",
+            "check": "A shopper can distinguish two bottle sizes without using the photograph's apparent scale as a volume comparison."
+          },
+          {
+            "title": "Build a fuller farm-product introduction",
+            "pages": [
+              "Farm and product origin",
+              "Everyday product choices",
+              "Gifts and event favors",
+              "Order preparation and questions"
+            ],
+            "request": "Connect the product story to practical choices for personal and group purchases.",
+            "supplies": "Approved origin information, product variants and actual arrangements for larger requests.",
+            "check": "A customer planning favors can name the bottle, desired quantity and event date without assuming custom packaging or guaranteed stock."
+          }
+        ],
+        "planningTable": {
+          "title": "A syrup-gift planning brief",
+          "intro": "Publish the producer's current options. The table organizes content for an inquiry and does not confirm quantities or fulfillment.",
+          "columns": [
+            "Choice",
+            "What to explain",
+            "Owner information",
+            "Useful buyer question"
+          ],
+          "rows": [
+            [
+              "Contents",
+              "Identify the syrup or specialty product.",
+              "Accurate product names and descriptions.",
+              "Which product do I want to give?"
+            ],
+            [
+              "Bottle size",
+              "State quantity independently of image scale.",
+              "Current sizes and labeled photographs.",
+              "How much does this bottle contain?"
+            ],
+            [
+              "Presentation",
+              "Separate bottle shape and optional finishing.",
+              "Actual decorative options and inclusions.",
+              "Which presentation choices can I request?"
+            ],
+            [
+              "Group purchase",
+              "Carry product, quantity and date together.",
+              "How the business reviews larger orders.",
+              "Can this selection be supplied for my occasion?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Custom labels, bulk-order pricing tools, inventory synchronization and checkout changes need separate scope. Product explanations can work with an existing shop.",
+        "quoteQuestions": [
+          "Which choices change the product and which change only its presentation?",
+          "What does a group purchaser need to describe before you can reply?",
+          "Which gift photographs show options that remain available?"
+        ],
+        "coverageNote": "Mill Gap Farms identifies its location as Highland County, outside Monterey, at 2760 Mill Gap Road.",
+        "sources": [
+          {
+            "url": "https://millgapfarms.com/",
+            "label": "Mill Gap Farms: farm and products",
+            "observation": "Identifies the Highland County farm and links its syrup collections."
+          },
+          {
+            "url": "https://millgapfarms.com/collections/frontpage",
+            "label": "Mill Gap Farms: decorative maple-leaf bottles",
+            "observation": "Lists 1.69-ounce, 3.35-ounce and 8.45-ounce maple-leaf bottles; product names provide quantity independently of image scale. No stock promise is inferred."
+          },
+          {
+            "url": "https://millgapfarms.com/collections/specialty-syrups-and-products",
+            "label": "Mill Gap Farms: specialty products",
+            "observation": "Lists specialty syrup products separately from the maple-syrup collection."
+          },
+          {
+            "url": "https://millgapfarms.com/products/1-69-ounce-maple-leaf?variant=30310238453812",
+            "label": "Mill Gap Farms: 1.69-ounce bottle presentation",
+            "observation": "Describes the organic maple syrup bottle with or without a gold foil cap."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Preparing useful website content"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/highland"
+        ],
+        "path": "/areas/virginia/highland-county/",
+        "title": "Web Design for Highland County, VA",
+        "description": "Web design for Highland County, VA. Example brief: separate what is in the bottle from how the gift is presented.",
+        "servedAreas": [
+          {
+            "name": "Highland County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#highland",
+            "label": "Highland County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "70d6a24a391c4c094029d385f366a3413c37f3636939fac765bb41f287e546cd",
+      "afterSha256": "3a95d23612f5b2cf01cd3626e9ab550952a4fc039b395a8abf56d3994d7cd48b",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "0a5f1134a455376d8ae96d4102294732575c27cb2b7beef888c04b0b53c9759b",
+        "candidateBodySha256": "0ead47cb5c5b85aa7e007b9ea197df99d8914ba7d314d32088d740f8d6c6ae96",
+        "draftSha256": "666ab791bc8169c6e0fa52bb9e4f1430bdca1c50da03eb7228882eec464601b3",
+        "sourceEntrySha256": "3a95d23612f5b2cf01cd3626e9ab550952a4fc039b395a8abf56d3994d7cd48b"
+      }
+    },
+    {
+      "path": "/areas/virginia/hopewell-city/",
+      "before": {
+        "areaId": "virginia/hopewell-city",
+        "market": "Hopewell, VA",
+        "lead": "Two dry-storage spaces may have different height and length limits. I help Hopewell businesses explain those differences before customers assume an advertised option will fit.",
+        "decisionTitle": "Show how the rack position changes the storage discussion.",
+        "decision": "Anchor Point Marina lists wet slips and dry-storage racks, with different maximum boat lengths and heights for rack positions. For a marina website, a useful comparison preserves both dimensions and the position they describe. I can clarify an existing storage page or build a fuller introduction to the storage choices. A boat owner should arrive at the marina's review with the relevant boat information, rather than treating a single length limit as approval for every rack.",
+        "scopes": [
+          {
+            "title": "Clarify the rack comparison",
+            "pages": [
+              "Rack positions and stated limits",
+              "Boat information for review",
+              "Storage inquiry and confirmation"
+            ],
+            "request": "Keep each published limit attached to the option it describes.",
+            "supplies": "Current rack categories, measurement instructions and fit-review questions.",
+            "check": "A customer whose boat meets a length limit still sees that height must be considered for that rack."
+          },
+          {
+            "title": "Build a fuller storage introduction",
+            "pages": [
+              "Wet-slip arrangement",
+              "Dry-rack choices",
+              "Boat and equipment information",
+              "Application and availability discussion"
+            ],
+            "request": "Connect the physical arrangement to the information staff needs before discussing a place.",
+            "supplies": "Approved storage descriptions, current terms and actual application steps.",
+            "check": "A customer can compare afloat and rack storage, identify the preferred arrangement and ask staff to assess the boat without interpreting the page as an accepted lease."
+          }
+        ],
+        "planningTable": {
+          "title": "A rack-storage comparison brief",
+          "intro": "The marina approves the measurements and determines whether it can accept a boat. This table plans the explanation, not the storage decision.",
+          "columns": [
+            "Comparison point",
+            "Content to show",
+            "Owner information",
+            "Acceptance question"
+          ],
+          "rows": [
+            [
+              "Rack position",
+              "Keep the category visible beside its limits.",
+              "Current names and positions.",
+              "Can the visitor identify the option being compared?"
+            ],
+            [
+              "Length",
+              "Describe the required measurement for that option.",
+              "Approved measurement instructions.",
+              "Does the request include the length staff actually needs?"
+            ],
+            [
+              "Height",
+              "Explain the separate vertical constraint.",
+              "Current limits and relevant equipment questions.",
+              "Can height remain an unresolved question for staff?"
+            ],
+            [
+              "Final review",
+              "Show the next step for fit and availability.",
+              "Actual assessment and application process.",
+              "Is the published category distinct from an accepted space?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Storage allocation, automatic fit calculations, applications and payment systems need separate scope. A clear comparison can support the existing dockmaster inquiry.",
+        "quoteQuestions": [
+          "Which limits vary by rack position?",
+          "How should customers describe the boat and equipment for your review?",
+          "What does your team confirm before offering storage?"
+        ],
+        "coverageNote": "Anchor Point Marina is on the Appomattox River in the independent City of Hopewell, at 303A Beacon Ridge Road.",
+        "sources": [
+          {
+            "url": "https://www.anchorpointmarina.net/location-rates/",
+            "label": "Anchor Point Marina: storage arrangements",
+            "observation": "Lists wet slips and three dry-rack positions with position-specific length and height limits."
+          },
+          {
+            "url": "https://www.anchorpointmarina.net/",
+            "label": "Anchor Point Marina: location",
+            "observation": "Identifies its Appomattox River location in Hopewell and lists Beacon Ridge Road."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Preparing useful website content"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/hopewell-city"
+        ],
+        "path": "/areas/virginia/hopewell-city/",
+        "title": "Web Design for Hopewell, VA",
+        "description": "Web design for Hopewell, VA. Example brief: show how the rack position changes the storage discussion.",
+        "servedAreas": [
+          {
+            "name": "Hopewell City",
+            "state": "Virginia",
+            "type": "Independent City"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#hopewell-city",
+            "label": "Hopewell City place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/hopewell-city",
+        "market": "Hopewell, VA",
+        "lead": "Two dry-storage spaces may have different height and length limits. I help Hopewell businesses explain those differences before customers assume an advertised option will fit.",
+        "decisionTitle": "Show how the rack position changes the storage discussion.",
+        "decision": "Anchor Point Marina lists wet slips and dry-storage racks, with different maximum boat lengths and heights for rack positions. For a marina website, a useful comparison preserves both dimensions and the position they describe. I can clarify an existing storage page or build a fuller introduction to the storage choices. A boat owner should arrive at the marina's review with the relevant boat information, rather than treating a single length limit as approval for every rack.",
+        "scopes": [
+          {
+            "title": "Clarify the rack comparison",
+            "pages": [
+              "Rack positions and stated limits",
+              "Boat information for review",
+              "Storage inquiry and confirmation"
+            ],
+            "request": "Keep each published limit attached to the option it describes.",
+            "supplies": "Current rack categories, measurement instructions and fit-review questions.",
+            "check": "A customer whose boat meets a length limit still sees that height must be considered for that rack."
+          },
+          {
+            "title": "Build a fuller storage introduction",
+            "pages": [
+              "Wet-slip arrangement",
+              "Dry-rack choices",
+              "Boat and equipment information",
+              "Application and availability discussion"
+            ],
+            "request": "Connect the physical arrangement to the information staff needs before discussing a place.",
+            "supplies": "Approved storage descriptions, current terms and actual application steps.",
+            "check": "A customer can compare afloat and rack storage, identify the preferred arrangement and ask staff to assess the boat without interpreting the page as an accepted lease."
+          }
+        ],
+        "planningTable": {
+          "title": "A rack-storage comparison brief",
+          "intro": "The marina approves the measurements and determines whether it can accept a boat. This table plans the explanation, not the storage decision.",
+          "columns": [
+            "Comparison point",
+            "Content to show",
+            "Owner information",
+            "Acceptance question"
+          ],
+          "rows": [
+            [
+              "Rack position",
+              "Keep the category visible beside its limits.",
+              "Current names and positions.",
+              "Can the visitor identify the option being compared?"
+            ],
+            [
+              "Length",
+              "Describe the required measurement for that option.",
+              "Approved measurement instructions.",
+              "Does the request include the length staff actually needs?"
+            ],
+            [
+              "Height",
+              "Explain the separate vertical constraint.",
+              "Current limits and relevant equipment questions.",
+              "Can height remain an unresolved question for staff?"
+            ],
+            [
+              "Final review",
+              "Show the next step for fit and availability.",
+              "Actual assessment and application process.",
+              "Is the published category distinct from an accepted space?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Storage allocation, automatic fit calculations, applications and payment systems need separate scope. A clear comparison can support the existing dockmaster inquiry.",
+        "quoteQuestions": [
+          "Which limits vary by rack position?",
+          "How should customers describe the boat and equipment for your review?",
+          "What does your team confirm before offering storage?"
+        ],
+        "coverageNote": "Anchor Point Marina identifies its Appomattox River location in the independent City of Hopewell. Confirm the arrival address with the marina because its published street labels differ.",
+        "sources": [
+          {
+            "url": "https://www.anchorpointmarina.net/location-rates/",
+            "label": "Anchor Point Marina: storage arrangements",
+            "observation": "Lists Top Rack maximum 21 feet length/8 feet height, Middle 26/8 and Bottom 32/10. The location paragraph says 303A Beacon Road while the footer says 303A Beacon Ridge Road; arrival details need marina confirmation."
+          },
+          {
+            "url": "https://www.anchorpointmarina.net/",
+            "label": "Anchor Point Marina: location",
+            "observation": "Identifies its Appomattox River location in Hopewell and lists Beacon Ridge Road."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Preparing useful website content"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "virginia/hopewell-city"
+        ],
+        "path": "/areas/virginia/hopewell-city/",
+        "title": "Web Design for Hopewell, VA",
+        "description": "Web design for Hopewell, VA. Example brief: show how the rack position changes the storage discussion.",
+        "servedAreas": [
+          {
+            "name": "Hopewell City",
+            "state": "Virginia",
+            "type": "Independent City"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#hopewell-city",
+            "label": "Hopewell City place directory"
+          }
+        ]
+      },
+      "beforeSha256": "83d7a91b658ed1c361c3b06331928be691d96574f86324dbc7ccec7e19f9d58e",
+      "afterSha256": "c9d34835b512ae61946b087e211ee9fdeb0c374b2a0e92814d5ec161cc04bae9",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "3825314c143774504ab947acbac48d70c74222a09d3c098b4926acbda8651201",
+        "candidateBodySha256": "6f711eb1f1d4f331f039957a45d76b924ef0b8b239d40c05cfd96e9896b900bf",
+        "draftSha256": "51bd35db4a3b0852cace16d9a61af92d3d88646804af5fde56c02400a2b33304",
+        "sourceEntrySha256": "c9d34835b512ae61946b087e211ee9fdeb0c374b2a0e92814d5ec161cc04bae9"
+      }
+    },
+    {
+      "path": "/areas/virginia/page-county/",
+      "before": {
+        "areaId": "virginia/page",
+        "market": "Luray / Page County, VA",
+        "lead": "A campsite, a furnished cottage and a rental RV can share a property while asking guests to bring very different things. I help Page County businesses explain the stay before sending visitors to the booking service.",
+        "decisionTitle": "Compare what the guest brings with what the accommodation provides.",
+        "decision": "Luray RV Resort on Shenandoah River presents RV sites, cottages, Airstream rentals, glamping tents and tent camping. Its FAQ also asks guests to confirm pet rules for the chosen accommodation. That range makes a useful website-planning problem: a broad amenity list must not make a site for a customer's own RV look like a supplied rental unit. I can clarify existing accommodation descriptions or build a fuller comparison that preserves each stay type through the booking handoff.",
+        "scopes": [
+          {
+            "title": "Clarify the ways-to-stay section",
+            "pages": [
+              "Bring-your-own equipment sites",
+              "Supplied accommodation types",
+              "Unit-specific questions and booking links"
+            ],
+            "request": "State what is supplied and what the guest brings beside each option, then link to the appropriate existing booking category.",
+            "supplies": "Current stay types, verified equipment and amenity lists, approved pet information and existing booking destinations.",
+            "check": "A visitor choosing an RV site understands that the site does not itself include a rental RV."
+          },
+          {
+            "title": "Build a stay-selection introduction",
+            "pages": [
+              "Accommodation comparison",
+              "Approved interior and site photographs",
+              "Preparation and property amenities",
+              "Questions and booking handoff"
+            ],
+            "request": "Separate property-wide features from amenities specific to a site or unit. Help the visitor raise unresolved needs before booking.",
+            "supplies": "Unit descriptions, accurate photographs, current amenities and the person responsible for synchronizing public descriptions with booking listings.",
+            "check": "A guest bringing a pet can identify which accommodation's rules need checking without treating a general pet-friendly label as universal approval."
+          }
+        ],
+        "planningTable": {
+          "title": "An accommodation-content brief",
+          "intro": "Complete one version for each stay type. The owner confirms amenities and policies; the website does not infer them from a category name.",
+          "columns": [
+            "Stay choice",
+            "What to make explicit",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "RV site",
+              "The guest supplies the vehicle; the listing describes the site.",
+              "Actual hookups and site limitations.",
+              "A guest does not mistake a campsite booking for a vehicle rental."
+            ],
+            [
+              "Rental RV or cottage",
+              "The accommodation is supplied, with specific facilities.",
+              "Accurate interior and included-equipment details.",
+              "Photos correspond to the accommodation being discussed."
+            ],
+            [
+              "Glamping or tent stay",
+              "What shelter and facilities are provided.",
+              "Actual bedding, bathroom and preparation information.",
+              "A category label does not conceal what the guest must bring."
+            ],
+            [
+              "Pet-related choice",
+              "Rules apply to the selected accommodation.",
+              "Current restrictions and confirmation route.",
+              "An uncertain pet request has a useful way to ask before booking."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live availability, reservation changes, campsite-map systems and payment handling need separate scope. Existing booking links can remain the transaction route.",
+        "quoteQuestions": [
+          "Which stay types are most often confused?",
+          "Which amenities are property-wide and which belong to a particular unit?",
+          "Who keeps the public descriptions aligned with the booking service?"
+        ],
+        "coverageNote": "This page serves Page County website buyers. Luray RV Resort on Shenandoah River lists 4253 US-211 with a Luray address. Wonder and Method is based in Buffalo and works remotely.",
+        "sources": [
+          {
+            "url": "https://www.lurayrvresortshenandoahriver.com/",
+            "label": "Luray RV Resort: accommodation choices and FAQ",
+            "observation": "Presents several site and supplied-accommodation types, lists its Luray address and asks guests to confirm accommodation-specific pet policies."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Explain whether the accommodation fits the stay"
+          },
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep confirmed arrival details clear"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/page"
+        ],
+        "path": "/areas/virginia/page-county/",
+        "title": "Web Design for Luray / Page County, VA",
+        "description": "Web design for Luray / Page County, VA. Example brief: compare what the guest brings with what the accommodation provides.",
+        "servedAreas": [
+          {
+            "name": "Page County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#page",
+            "label": "Page County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "virginia/page",
+        "market": "Luray / Page County, VA",
+        "lead": "A campsite, a furnished cottage and a rental RV can share a property while asking guests to bring very different things. I help Page County businesses explain the stay before sending visitors to the booking service.",
+        "decisionTitle": "Compare what the guest brings with what the accommodation provides.",
+        "decision": "Luray RV Resort on Shenandoah River presents RV sites, cottages, Airstream rentals, glamping tents and tent camping. Its FAQ also asks guests to confirm pet rules for the chosen accommodation. That range makes a useful website-planning problem: a broad amenity list must not make a site for a customer's own RV look like a supplied rental unit. I can clarify existing accommodation descriptions or build a fuller comparison that preserves each stay type through the booking handoff.",
+        "scopes": [
+          {
+            "title": "Clarify the ways-to-stay section",
+            "pages": [
+              "Bring-your-own equipment sites",
+              "Supplied accommodation types",
+              "Unit-specific questions and booking links"
+            ],
+            "request": "State what is supplied and what the guest brings beside each option, then link to the appropriate existing booking category.",
+            "supplies": "Current stay types, verified equipment and amenity lists, approved pet information and existing booking destinations.",
+            "check": "A visitor choosing an RV site understands that the site does not itself include a rental RV."
+          },
+          {
+            "title": "Build a stay-selection introduction",
+            "pages": [
+              "Accommodation comparison",
+              "Approved interior and site photographs",
+              "Preparation and property amenities",
+              "Questions and booking handoff"
+            ],
+            "request": "Separate property-wide features from amenities specific to a site or unit. Help the visitor raise unresolved needs before booking.",
+            "supplies": "Unit descriptions, accurate photographs, current amenities and the person responsible for synchronizing public descriptions with booking listings.",
+            "check": "A guest bringing a pet can identify which accommodation's rules need checking without treating a general pet-friendly label as universal approval."
+          }
+        ],
+        "planningTable": {
+          "title": "An accommodation-content brief",
+          "intro": "Complete one version for each stay type. The owner confirms amenities and policies; the website does not infer them from a category name.",
+          "columns": [
+            "Stay choice",
+            "What to make explicit",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "RV site",
+              "The guest supplies the vehicle; the listing describes the site.",
+              "Actual hookups and site limitations.",
+              "A guest does not mistake a campsite booking for a vehicle rental."
+            ],
+            [
+              "Rental RV or cottage",
+              "The accommodation is supplied, with specific facilities.",
+              "Accurate interior and included-equipment details.",
+              "Photos correspond to the accommodation being discussed."
+            ],
+            [
+              "Glamping or tent stay",
+              "What shelter and facilities are provided.",
+              "Actual bedding, bathroom and preparation information.",
+              "A category label does not conceal what the guest must bring."
+            ],
+            [
+              "Pet-related choice",
+              "Rules apply to the selected accommodation.",
+              "Current restrictions and confirmation route.",
+              "An uncertain pet request has a useful way to ask before booking."
+            ]
+          ]
+        },
+        "scopeTrigger": "Live availability, reservation changes, campsite-map systems and payment handling need separate scope. Existing booking links can remain the transaction route.",
+        "quoteQuestions": [
+          "Which stay types are most often confused?",
+          "Which amenities are property-wide and which belong to a particular unit?",
+          "Who keeps the public descriptions aligned with the booking service?"
+        ],
+        "coverageNote": "This page serves Page County website buyers. Luray RV Resort on Shenandoah River lists 4253 US-211 with a Luray address. Wonder and Method is based in Buffalo and works remotely.",
+        "sources": [
+          {
+            "url": "https://www.lurayrvresortshenandoahriver.com/",
+            "label": "Luray RV Resort: accommodation choices and FAQ",
+            "observation": "Presents several site and supplied-accommodation types, lists its Luray address and asks guests to confirm accommodation-specific pet policies."
+          },
+          {
+            "url": "https://www.lurayrvresortshenandoahriver.com/camping",
+            "label": "Luray RV Resort: facilities by accommodation",
+            "observation": "Distinguishes RV sites from Airstream rentals with kitchenette, full bathroom and air conditioning; glamping tents include a kitchenette and private bathroom, while primitive riverfront tent sites are walk-in."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/vacation-rental-property-fit/",
+            "label": "Explain whether the accommodation fits the stay"
+          },
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep confirmed arrival details clear"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. Public examples are not clients or partners; the proposed website content requires owner approval.",
+        "areaIds": [
+          "virginia/page"
+        ],
+        "path": "/areas/virginia/page-county/",
+        "title": "Web Design for Luray / Page County, VA",
+        "description": "Web design for Luray / Page County, VA. Example brief: compare what the guest brings with what the accommodation provides.",
+        "servedAreas": [
+          {
+            "name": "Page County",
+            "state": "Virginia",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/virginia/#page",
+            "label": "Page County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "ebc748e7988454b4823d80f8c3e3aeaa2dc224e4202f8555cb0151f7396e7ca4",
+      "afterSha256": "30812916064a3ca7c7d9fb991296b56db3d78dd143011aaef277056f88945b88",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+        "entrySha256": "c3845cec01d9c2040a0a67e63983715d2298645a8e48ddd74b629531c60d8509",
+        "candidateBodySha256": "a3328017de01ae9fe5fbcda6e1ef0765d1f1b755a05902839281b29b03ca48b7",
+        "draftSha256": "44f89e3c5611bfbfd137ff55a07917383aa68d742424158b4bf2c6d830fd7782",
+        "sourceEntrySha256": "30812916064a3ca7c7d9fb991296b56db3d78dd143011aaef277056f88945b88"
+      }
+    }
+  ],
+  "faqs": [],
+  "acceptedCandidates": [
+    {
+      "route": "/areas/north-carolina/hertford-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "8d5ac34ff875a808c15e7bd4b6dada74df747790ac3350f96c5b3574e0cf8be5",
+      "candidateBodySha256": "8e7d75d486294b0f8cf49ab765e043ba12d050a45759e7bd2b04086b75fb4b07",
+      "draftSha256": "58a935a71c604844d7f2b284155ba0cb3e016a719ab9eb609586726c3dbd5f6f",
+      "sourceEntrySha256": "2fdfd9b1afa8f49623fc345b9970b4c556983bc3807b54a5e80da9cc34287f6c"
+    },
+    {
+      "route": "/areas/north-carolina/randolph-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "e15e1e0ac0574bcaad9749b5d4744e70fca6a1041fa33ed3cb42752d311719d3",
+      "candidateBodySha256": "10d2946737a9cfc6653f845b2dad3a1fb2c3fdf445cfd572ce4b70d0007cd769",
+      "draftSha256": "ca22dba91a294f2f70cdaa50f9bbc853ef3c65b5a60de1deee8d6aa2524a4b31",
+      "sourceEntrySha256": "066de1769b612d695bead33695f30878bd5cacef38b87309198f06321d8b0ea9"
+    },
+    {
+      "route": "/areas/ohio/knox-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "968bcfef27d7a7347387957c287a1f40815adf2859ef2428984eb1ce00af82ed",
+      "candidateBodySha256": "14fa169b328c57744dde854e0212717e22f6856ca32233a7aa7ce8d93910168b",
+      "draftSha256": "aae23c6b7b6db092518d9664f0bb09d755a0e72717bddf637307f2eccd2148fc",
+      "sourceEntrySha256": "1fa051aa2ca84d053e027e70232f35c1356815b1c4d4400b1e079f900d5aeb83"
+    },
+    {
+      "route": "/areas/ohio/montgomery-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "dff8b9c9c415e431c5cd108f99ef4ea59bd85b52bf0857e449eea6540166fa7f",
+      "candidateBodySha256": "a3bb8266c5bb61cf3d6d6b795b64138b0667bf942c9c0278690b84b907611046",
+      "draftSha256": "f30768efd84d567e607268516ddcb298da57d791290114f4ff8063f1ff5b5cd7",
+      "sourceEntrySha256": "bbae895470e44cd7feadf051f97c2b71f4e3cc1f7b1b80cec007ab368384088d"
+    },
+    {
+      "route": "/areas/ohio/richland-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "23d7817f11c087f555b885a2bf2fe24d247a4e5e6003d7a2d4ae61011de62754",
+      "candidateBodySha256": "e7d17ca7ab99f031229e8819985e721620fe7403886aa6df2fdf5b0404c92c75",
+      "draftSha256": "7b8ad1b25784bf2b26d518306521b61792d66642b4946db5fe65ff807ad0627a",
+      "sourceEntrySha256": "5c653b8ddaccf36cc36fc1b62a4081467416c959bdea4052fb6d752d47151119"
+    },
+    {
+      "route": "/areas/otsego-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "226de9747812c89872816d1f21b6f7da4a1619baae577a07ae75be39c0dc2b72",
+      "candidateBodySha256": "af97ef0b53204f9f57bbec526e4005203308b29bce970201cffeee52ad948571",
+      "draftSha256": "bdba7fc5092cf76e4e8f89ff73daf089c772f909a183338d4a4da04306135a53",
+      "sourceEntrySha256": "5daeed04f6bfc41a09fe0fe412a0e504daa310a0f93e2f72264b91eb77f1fdce"
+    },
+    {
+      "route": "/areas/pennsylvania/berks-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "68c8892ca9082c582786ca319b4aac94198ad1ce02d7679bc33921169bd4cfe7",
+      "candidateBodySha256": "7cc2f5ed5b4ecc93e3c64f8c44570de3da21b8149e280eb2d3cda84c2d2e1bff",
+      "draftSha256": "13b29ccf4a7a95ffea592e1c7d8f7702d6235894cbe3570abfe1bfa78e3bae3c",
+      "sourceEntrySha256": "06d55e8ce1a44ca101970b7c3a6231966e5bf15d7ea0d8a2593bb16f41b8a395"
+    },
+    {
+      "route": "/areas/pennsylvania/bucks-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "02a3343eac021c60f5cab9f1023a53dedb93a009f3724203e4b565bc3137762a",
+      "candidateBodySha256": "5819042258c409876f808c30dcf0016dfb1d61c894c7329f0f23eb7a5f1337e3",
+      "draftSha256": "09209dacce28860f728fcadadec2262518fe8ac8295938e4bc2cb0d505c6a577",
+      "sourceEntrySha256": "92e260e2052b8c83f0a70927ee61035d9f5583c34dc670ad2b9c3ad03023c71c"
+    },
+    {
+      "route": "/areas/pennsylvania/butler-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "2780b661f1a51cf8f9c139072f87ffe93d3c037a757ab41284abd4f8ba1fd547",
+      "candidateBodySha256": "52fdf9340350e0c8b944d392b8ad31609d245c5080baa694cae3dac0af02e57d",
+      "draftSha256": "9b751702b4ca4c3ae83055ab1f1d2573aee8fe59cb4573387725754485fed9af",
+      "sourceEntrySha256": "f4dc621786d23eddbddaa369f7fd2434756f368aaf9b22b5145b0378ef8604be"
+    },
+    {
+      "route": "/areas/pennsylvania/cambria-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "957d9d61b7b7afd9f940b16b60afadf0be21c5af037eda2630abbd9b5c0943bb",
+      "candidateBodySha256": "c9fe956fc1894119929f33495eba0c1e82adac52a174015a5404e3e48960222f",
+      "draftSha256": "a9481f6a0e9b18dd04b7898db1aae61efb1a0e8b9d0cc0b47c7719316f82b6f5",
+      "sourceEntrySha256": "eb4b312ce21053d0165661f7b5c02c282e5b479fb97073aa032fe31ba8b06765"
+    },
+    {
+      "route": "/areas/pennsylvania/carbon-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "720cd61237a44c9e3d2fa6db4d10f5b0e2f57d9e6cd463fe160ab76690fc104b",
+      "candidateBodySha256": "d953768da3b14841edbc80180cff4c3f10d17154acbfaeed0066106efab74499",
+      "draftSha256": "6d2e8f64f5b0ea9b9a5ec519cca94e35ef64f994aa8fc6a22c9f941a89720150",
+      "sourceEntrySha256": "e5a6de42dc7480a439f513c7fc1b9399078d6bcf47359729f84e4e11fc05664a"
+    },
+    {
+      "route": "/areas/pennsylvania/chester-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "719bdff864a9a267e2d5f1673ef0ee12be08c01858598cdea0d2f2087fb7049b",
+      "candidateBodySha256": "ad524f952411ef99eb667a6b95e403ad2efb6c3dfa37c0ac06b89d3bbd57f07c",
+      "draftSha256": "6836be8dc914ea86996092f1cd32f7156ad4d8facf99bae402871f56a7beff4e",
+      "sourceEntrySha256": "8f83ae1b19f09b9641d780da64a7b35d3fd660d7ed9cc035c4c07c69fa85ed46"
+    },
+    {
+      "route": "/areas/pennsylvania/clearfield-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "49dc9b5e52c91cf6d93275eba0d71395449426496fa74313433a3abeffd22b50",
+      "candidateBodySha256": "9367811efb67726939eba9699095a8c9a5b48773ef729bb761f5cec28fb66b79",
+      "draftSha256": "8c19b941ff5422ae8fbdcbce6aa70a5e85004424618b3acc5e64e18818acb191",
+      "sourceEntrySha256": "062982e2db34c5cbb898ff63613a2c87bac7acead1e1d50db2ed62458092e381"
+    },
+    {
+      "route": "/areas/pennsylvania/crawford-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "ee2a94de71abaecf5c4c2fa9922efa218573e2d552bc27d18b027ba7ed1dc809",
+      "candidateBodySha256": "6634709b65b6081d6c574aaa6f5ec6283f5c356f47b15a13f7bd7943dafce63b",
+      "draftSha256": "b7cb2fb8cb53740db7c375c749c2758e829508d9ac4d51f6bfc01d06048b37b9",
+      "sourceEntrySha256": "7ac596da54da69eea0eaa4d3ba7a84d4e76bd3f17d53c865e0ca7a6fdb2e12b1"
+    },
+    {
+      "route": "/areas/pennsylvania/delaware-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "9191bb7375b91f26ec2e8485b07077488bcc1d14a12ecfc364de175d1d8ab5b6",
+      "candidateBodySha256": "77dd5b64c71f8d8d357484a32f9f7192b9e9ce03d07f6155b524163a15e14196",
+      "draftSha256": "cd5e2351f1175bd006ad66f22c69b5b2a5c0a726064a73f11b19d868f839f4fd",
+      "sourceEntrySha256": "07632d2ecad4ae3e0db0e21f9dd19b0a9bd4c5ffdce71a5a3d1aa246dc3f83f4"
+    },
+    {
+      "route": "/areas/queens-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "17851e21ee9d7cfa8daaa52852b1645b78126f0cc4e3c2a5e5d17929600a75a8",
+      "candidateBodySha256": "3a6f7ebdaddd6cfef2c11bb720a4a5f82e1bea68bd39f6462d098ad92705fbc6",
+      "draftSha256": "08603b303172cd170838151d1adede57d20fec2c9427d88920565a2df4c0665b",
+      "sourceEntrySha256": "638f9c7a75b0aa4fe40b68c79862651e569687f918bf0a4c77e0bf045bcfe2ee"
+    },
+    {
+      "route": "/areas/schenectady-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "cf585c63f2ad4f3fa04e59e3ce4acf73be0671d59d2ac65b71c9a80ef7956033",
+      "candidateBodySha256": "1bb161d77446f6be4deaaba7152bf989778312742c12d858395bed4bc2764d12",
+      "draftSha256": "0f6925408dbd591b3a57caedfad3646489e06ad7d56ecb79fc3c2b7e3dc492ac",
+      "sourceEntrySha256": "14e78cd109f632435e88f095bed668f7626f62df9790ae5ac85e38745031b013"
+    },
+    {
+      "route": "/areas/tennessee/davidson-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "29a59dca469cfb1d8da6ab066d0537e196c979762df8c6b43307ac07525fdf8b",
+      "candidateBodySha256": "5800bfb4025080fb4395c015a00a42cb1c34dd4107711393a2d259e6d13f0450",
+      "draftSha256": "899009eebd7e59cfd340541ce189ebbf5bc9e5db011a5e91ac5584e449971b3f",
+      "sourceEntrySha256": "345a9da2c0118aa2599e4bc3ccbc2865d93b0c171dedaaa4a6abc0d240d1d477"
+    },
+    {
+      "route": "/areas/texas/bailey-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "f610ee422507f035e1425ddc25a7a7135b74496fdff98b2fee179ca81f11b1d3",
+      "candidateBodySha256": "c4c294b5453c775164293d2e5934a7318cb0eee266545de3d69df79c9ec9b7df",
+      "draftSha256": "9d2850ab306735ca07cafca7d9ccc15779e42094331812e587e4c2250d89b214",
+      "sourceEntrySha256": "4bba0f3bdee68d3ed322c3f7f6e6e68c1cb46e37d6f3467ce510b80b97a24a12"
+    },
+    {
+      "route": "/areas/texas/bosque-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "6af2113f7442be8fb1079710dcbe7163bb826db3c05ce45703b5d7af9f588ca2",
+      "candidateBodySha256": "31076936ad94bb7c9700be5d684fc905da0b4324e2484d1350b02bd7cb4593cd",
+      "draftSha256": "d8e5e6768bae5cc9edb26085fe6a59da6b565b74c6f7c734570c9cc59b712233",
+      "sourceEntrySha256": "3d1b5616ac2a53695ba7b65f61feed211720ac2d52483e921b4437dc2ee38b36"
+    },
+    {
+      "route": "/areas/ulster-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "e96d123b9de453d0f30a881d34ab609e901874089abff02b56bd284adc0da6d5",
+      "candidateBodySha256": "e2c5e830a5d890545b0dc70dcbd041db13807dad05e97207dbb1c693ce3d65f6",
+      "draftSha256": "6629f76165a3fa37e3f6bef506dd5218de1c9b84cdd2a496a579723d3904c34f",
+      "sourceEntrySha256": "63f534abd57ba6146253608c5f01b1a541e86fbccef7fd5c068a681a2c778de2"
+    },
+    {
+      "route": "/areas/vermont/bennington-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "dd695e8e6afef8476b73fb731956ec8dbca5f2b7428e87b9a040717f6ad9daec",
+      "candidateBodySha256": "1a7e89b22fd2754211319cfb1429826bbb3011327b15c3a8e44133126f8c5f6f",
+      "draftSha256": "1e346d7a9b4963c58ed7d2eb5b7be017a2ca35aa93052e3f9c71028bc2e889ba",
+      "sourceEntrySha256": "9d025d5db8f15f06b7a17182f76f3aa7c4b958c7baaba6313b570a13eea0f1cd"
+    },
+    {
+      "route": "/areas/vermont/essex-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "bf162f6978b75b27f79f387352c12a865a9fbb9fb99dffe10dee6c9ec64b4ee1",
+      "candidateBodySha256": "da46a930fc10beba9446be8290b974cf3da578fc8497bec9e1910ca477daaacd",
+      "draftSha256": "fc046ca41709459fb75187adb65c6084ff2fac0469fcdaa445a91dbcc4cd468e",
+      "sourceEntrySha256": "91243d23666a3721ce536c6ec3691271719854ea562ce6ab14a532a5186169f4"
+    },
+    {
+      "route": "/areas/vermont/windsor-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "d2cbba5ada62d3b1b8e58494d1e6794ae60210e6161418c19120880195d591f4",
+      "candidateBodySha256": "ba5ba64fb5597436e50d41df04a96cc8bd9d26399b937298327c50656f88c6eb",
+      "draftSha256": "6fbf6995b4ce54ecee3c85cb2453863189c65fcbe591e97cf382e93acbd02283",
+      "sourceEntrySha256": "5bb0993d04384126bc73a15e77e14f9f1578674a4655d9582952fe03554b41a4"
+    },
+    {
+      "route": "/areas/virginia/alexandria-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "4988b395e8250087da0fcb9787c83ec23833d1e9dd8bfae00b794a836e6c7899",
+      "candidateBodySha256": "52194558401a624e2efe9b06795f39132f503fd2fb9f355286c80af2f6704d66",
+      "draftSha256": "06158a340bf97444642d4ccd383dc99a7fb257a345583b000526dee6711a95c2",
+      "sourceEntrySha256": "940de256d0cbef48388136083fc0da583d3fa60ae802633211a0afb7875ddd24"
+    },
+    {
+      "route": "/areas/virginia/alleghany-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "1badfdd2aa8402ca5f642391f06db9fad1a290cfa87d912d662c948980821fcc",
+      "candidateBodySha256": "54275c0398dc0ac3de457551b4627dfdf82f62d28052acc56bf859741080351a",
+      "draftSha256": "304f2f134adb05fadee5d1715358ec4b0797a1b3af9d5995e2a8f17bce4aa82c",
+      "sourceEntrySha256": "c1c2ceba7cdc6c70ad5d87e1229d3068ec8217f3f704842940a0cec4ad2e8de8"
+    },
+    {
+      "route": "/areas/virginia/amherst-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "364b700b095370f224de4102876d0a28ff1a2fc9cb10c144b5bcd4b16555d797",
+      "candidateBodySha256": "e896b815062384752c79ceacc402767475f29bc4192c6846a7a525baa2b7aba8",
+      "draftSha256": "4ee3d922eadca32190f12c403f09b85d4311f4576077836d8e427de7843feaeb",
+      "sourceEntrySha256": "57f63b8c1670cc2a2dac756688943997494470e6b712a0df1ab74a63cdbbdb75"
+    },
+    {
+      "route": "/areas/virginia/arlington-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "90de6bc2d60243cb32aa3014b8865902f1374a730c7d134b6fd28ac072591feb",
+      "candidateBodySha256": "0a5c67d778d64f602817d7cb604becc0cf1e1da56443e668c735e54be129d88d",
+      "draftSha256": "148e39cb3ee20f296f7c59797f7e9c2aa451d0c0aadd602697cbca8f62c7647b",
+      "sourceEntrySha256": "285e819d06bcf526579969ae06060d925c6042a29f6f928dd2e9ad5bb932dda8"
+    },
+    {
+      "route": "/areas/virginia/augusta-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "7e10a0caf5db2858e714b196ed1ebdf15095a937a25d993e0376d7ca7f292e0c",
+      "candidateBodySha256": "fb0b116a570496413f122acddfb41ff74a6b3df5a4b93929e2afe59e0fb9d24e",
+      "draftSha256": "0435987cfd16dab174b9be34aa52efd0fa73d40211c00c3b5d1e0a3f37135baa",
+      "sourceEntrySha256": "f6b6c22f4f8760652f6c54eeea7a9889d208699a4b1609ba5f3bf4abe6b87b95"
+    },
+    {
+      "route": "/areas/virginia/bland-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "c74fe848345fafc991b379948d1576d910ce9af46de8945fb57ce75a40c005a8",
+      "candidateBodySha256": "88dad27e739f5b34d6f1201a9d29c3d68ec7748658a06576c8c6bcce639e8349",
+      "draftSha256": "893f56213d006249dbffdc9dcc727202f4dba9856dc13c9042d8003047e168db",
+      "sourceEntrySha256": "26b21ed0e1948c7ad78869c3c29bb43a49b88ab21e383ae8fceac48766d0dd94"
+    },
+    {
+      "route": "/areas/virginia/botetourt-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "1d603a89822175cbab740f7e5dd22476d67664670e612becf121ff7c9f5d19f9",
+      "candidateBodySha256": "36bd0b33f8fd99201cbbbe05eb87a51abe1866975dbd419fef9ac3ef6a0158ba",
+      "draftSha256": "2994989eb77cfa6edd5471aee1d6e592643fd08c1dc02a67ae2ff8e8e96f1a8e",
+      "sourceEntrySha256": "42b44a13b0aac0a6c090052b46a366ff684f696630f998bb20d96c1b2d922ed3"
+    },
+    {
+      "route": "/areas/virginia/charlottesville-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "b78519cbf49ee22e9a328447ebb616122cb91a3312b01f990451ba1657fd7221",
+      "candidateBodySha256": "a3a5de73c4fd10a7b270c609999fdfcfc81aef5cca2ca9fe6ad493396f2075c2",
+      "draftSha256": "cbd7d9b25132f28c7b79aaba109113a9ac56c621c65e89ff03820e5f03907b26",
+      "sourceEntrySha256": "07c4fe4ca9f4485124ae2b4687475de08cda2875c8dbf61ad66dd0a534c2d732"
+    },
+    {
+      "route": "/areas/virginia/clarke-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "5bce6b982337a4ce6414f14a29d57d8dc1e46fbe0ec9b810452e31350ae232f0",
+      "candidateBodySha256": "dac34691fe43e054e6b1c485556c27e61ec0778a418edbdee2a2a6956506d3d0",
+      "draftSha256": "dceb24dbb58cb9ecb8c88b9fa46711891e3fb915c6b3a25dd17461a5b1dd3a13",
+      "sourceEntrySha256": "c6ed5d9ee61ffafdb237ef27f3d3a208a7a2eb7cf555f7666fde888d8db73ae3"
+    },
+    {
+      "route": "/areas/virginia/colonial-heights-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "aa90386a20a9cd8a281038d4d8466724e9a20755d4641b5ddc936037c1d9f4af",
+      "candidateBodySha256": "a7f7e687f87d4f37a6450f5ec1bcc0560e3b97c45d0853f91ab792a3651426a9",
+      "draftSha256": "012bca1ccb208052e05dfdb02fdb954129ba9da2937dad0960e6442ac475eaee",
+      "sourceEntrySha256": "1c8c61f2e2defd76d88a11f3c5ed17ac7e3790ef256106a626b6ea4de4a043c5"
+    },
+    {
+      "route": "/areas/virginia/cumberland-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "f423ebba60c33a919e40bb1d4e6f28d1ad6e2b7e783b4f423085d650cb8d5c53",
+      "candidateBodySha256": "935eba082991ef6656ded067686fae6c25ccf42e256a41f99771081a6261af83",
+      "draftSha256": "5387b5b91776627bafa3e61a9d464f9a95c5bae837d5a163131ca31aca8e0c41",
+      "sourceEntrySha256": "164d87edfe844e12df04f5eb09415d2b271b8de109cbedcba4b94ae4a6412fa9"
+    },
+    {
+      "route": "/areas/virginia/dickenson-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "4e1b9d8701826d83a33acb0f73318f0197848d55ee48a223aa1681b4e22c3ac4",
+      "candidateBodySha256": "40c68d6b084f7953b2a7197549c4b7acf1600dca523182f87626e1f97b03d937",
+      "draftSha256": "cd413853fe4a3395a611d4a4506b0269b039349846101102ff61c6fb61705927",
+      "sourceEntrySha256": "39d08383c8258fe37cc841a717ed2f4efea4a6c8a749083d89b2dc574ce8e4e4"
+    },
+    {
+      "route": "/areas/virginia/fairfax-area/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "319ae9b869bf3c52429ca39a2082f4c66e80815e89c6871f19fed9e843ce2fc4",
+      "candidateBodySha256": "8105d074768957682ddc6a5ed1a90ada57ffe5bb1c95cbb8711f88a7a0060160",
+      "draftSha256": "678a08283f884e51e3836f69dbc4314b7193f510ce6dcb6f18d88b912f3c85f4",
+      "sourceEntrySha256": "396b4afea1e31fe35ec69a93bf95b498ccca6bd099adc338777b96576eb87e0f"
+    },
+    {
+      "route": "/areas/virginia/fredericksburg-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "0a8c653d791b87da5eae606997c604d40ea8a9bbc7a41038b53883a039e8350c",
+      "candidateBodySha256": "072c644f92908305b5b133eea94f40cf63ee32de2493d586c88a1ad043624a29",
+      "draftSha256": "06edd84462b7fb5d2ab2ccf248a738bb4a7f6c2595c4e5d5bf8e14699538dc04",
+      "sourceEntrySha256": "e1596b799fb2a399d04333b592403439eac071308530d37c821d7cde9d48cf3f"
+    },
+    {
+      "route": "/areas/virginia/hampton-roads/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "d016781b8b4b31f7390dd56d3e1f513e2adedf0a64fde2c2669d565ad1bb8069",
+      "candidateBodySha256": "bf723acac71e06e9858f632a8f78f69ba67b6314c951fb40fa8ee123e1854b66",
+      "draftSha256": "3d0bfdf7b203683a2ecc54a6048420e8aea9394afa99bcb04e2f8419f0597f22",
+      "sourceEntrySha256": "4efe8b7cf62497ca81283c8b4f416a2acdd813deae1df2950957dd7f88eb2a09"
+    },
+    {
+      "route": "/areas/virginia/henry-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "862892a587051d1fc65fa99d83ac312d174b2df191994b4bc1dfc83835b9a2a1",
+      "candidateBodySha256": "d5bf807e8380f77250a53426dafef7f0458f48a6c1591ff513bce4791c8d21b4",
+      "draftSha256": "9aa04bf510a2c25db7b9128cda7b1e4c56fa516d2b1e192c1eef519114326a75",
+      "sourceEntrySha256": "5d103bd15f6b7eab7916a4cbfe3331b3a7308bc3517f5bdeae06fb4775fc37f3"
+    },
+    {
+      "route": "/areas/virginia/highland-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "0a5f1134a455376d8ae96d4102294732575c27cb2b7beef888c04b0b53c9759b",
+      "candidateBodySha256": "0ead47cb5c5b85aa7e007b9ea197df99d8914ba7d314d32088d740f8d6c6ae96",
+      "draftSha256": "666ab791bc8169c6e0fa52bb9e4f1430bdca1c50da03eb7228882eec464601b3",
+      "sourceEntrySha256": "3a95d23612f5b2cf01cd3626e9ab550952a4fc039b395a8abf56d3994d7cd48b"
+    },
+    {
+      "route": "/areas/virginia/hopewell-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "3825314c143774504ab947acbac48d70c74222a09d3c098b4926acbda8651201",
+      "candidateBodySha256": "6f711eb1f1d4f331f039957a45d76b924ef0b8b239d40c05cfd96e9896b900bf",
+      "draftSha256": "51bd35db4a3b0852cace16d9a61af92d3d88646804af5fde56c02400a2b33304",
+      "sourceEntrySha256": "c9d34835b512ae61946b087e211ee9fdeb0c374b2a0e92814d5ec161cc04bae9"
+    },
+    {
+      "route": "/areas/virginia/king-and-queen-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "9087c949fb24a6000ca6ebc0f4f1b7d87bab17c02507202ad143d74026845166",
+      "candidateBodySha256": "14c57d203111f511407b28343c530cfd55f0032fb732861bf28cb664f07db2e5",
+      "draftSha256": "877267fd69cbed284c81638ee1674650db98cc328b0c56676c18da875d24fbcb",
+      "sourceEntrySha256": "bd2971ef6d3390a95785defdd69043c4e8da2a2c31881cd0b93cb7bfaa4fe1ab"
+    },
+    {
+      "route": "/areas/virginia/manassas-city/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "1a0515d2aaa1010028b93570b8254174e70c3acb37ec11167db210dbae6a9a89",
+      "candidateBodySha256": "2b6aa34ea4f11d999068e172f53f4b94b012c2cdb1e129c6327eff97e04b4ae5",
+      "draftSha256": "f96ad7614d69967e9cebeb96ce8b0341254a459136192cf94574d5b73c296245",
+      "sourceEntrySha256": "2f9c627d0a7f98634817919ea402ef152de3c94cb8e7ea5d6bdf0de85b2f2fea"
+    },
+    {
+      "route": "/areas/virginia/montgomery-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "1dd20ed6e92c87d4d9d15eaa2e515df3dc91ef75ca1e99d79910605c983add09",
+      "candidateBodySha256": "283533cfa599962a65464abafc3c4a995d2b0eefcbfcfac8153d22959f90d669",
+      "draftSha256": "7c5b270054776e2f348d257153cf58eb06100c2d535f82236f714288a5f8158a",
+      "sourceEntrySha256": "887021874ab8d7a7ac1b7e3377361bae76bd15bcb51a8e7e8fb1e3423b4716c7"
+    },
+    {
+      "route": "/areas/virginia/page-county/",
+      "file": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+      "entrySha256": "c3845cec01d9c2040a0a67e63983715d2298645a8e48ddd74b629531c60d8509",
+      "candidateBodySha256": "a3328017de01ae9fe5fbcda6e1ef0765d1f1b755a05902839281b29b03ca48b7",
+      "draftSha256": "44f89e3c5611bfbfd137ff55a07917383aa68d742424158b4bf2c6d830fd7782",
+      "sourceEntrySha256": "30812916064a3ca7c7d9fb991296b56db3d78dd143011aaef277056f88945b88"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "partition": "local-5",
+  "reviewedAt": "2026-10-27",
+  "status": "Editorial audit and remediation drafts complete; publication and visual/accessibility acceptance remain pending.",
+  "assignedCount": 378,
+  "auditCount": 378,
+  "draftCount": 378,
+  "uniqueAuditCount": 378,
+  "uniqueDraftCount": 378,
+  "resumedRun": {
+    "preservedExistingPairs": 335,
+    "completedPairs": 43,
+    "firstRoute": "/areas/texas/grimes-county/",
+    "lastRoute": "/areas/texas/liberty-county/",
+    "scope": "Read each remaining complete inventory mainText including expanded planning sections and links, inspect cited source observations, compare a relevant sibling decision from its source entry or complete main text, and hand-author three distinct decisions and three owner inputs. No automated editorial scoring."
+  },
+  "validation": {
+    "exactAssignedAuditCoverage": true,
+    "exactAssignedDraftCoverage": true,
+    "allBaselineHashesMatch": true,
+    "allDraftsHaveThreeDecisionsAndThreeOwnerInputs": true,
+    "allFinalVisualAccessibilityScoresNull": true
+  },
+  "publicationHoldCount": 4,
+  "publicationHolds": [
+    {
+      "route": "/areas/texas/gillespie-county/",
+      "reason": "Harper Library homepage and resale-shop page disagree on general donation acceptance hours; obtain owner-approved instruction before publishing a settled donation route."
+    },
+    {
+      "route": "/areas/texas/grimes-county/",
+      "reason": "Hold for consolidation or a materially different sourced group-use decision; Dunklin already covers staff supervision, equipment and cleanup."
+    },
+    {
+      "route": "/areas/texas/jefferson-county/",
+      "reason": "The baseline explicitly identifies unreconciled tour-page metadata and timing wording. Confirm the operative schedule and advance-access notice with the owner before publishing the rewritten tour instructions."
+    },
+    {
+      "route": "/areas/texas/kendall-county/",
+      "reason": "Cascade Caverns’ source has two conflicting Aquifer duration ranges. Obtain one approved current duration and associated preparation wording before publishing a definitive tour comparison."
+    }
+  ],
+  "inheritedThinLocalRelevanceCandidates": [
+    {
+      "route": "/areas/pennsylvania/lancaster-county/",
+      "findings": [
+        "Local geography disclaimer does not make the two-service decision local; the core example is framed generically despite the sourced business footer.",
+        "Mechanical scope cards repeat summary sentences; SEO/care cross-selling interrupts the central decision."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/pennsylvania/montgomery-county/",
+      "findings": [
+        "County framing adds little beyond the multiple-service source and state clarification.",
+        "Repeated scope cards obscure the useful preservation advice."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/pennsylvania/northampton-county/",
+      "findings": [
+        "County/boundary facts do not support the purchase-versus-review decision.",
+        "Catalog scope and maintenance cross-sell repeat the decision without a worked route example."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/pennsylvania/pike-county/",
+      "findings": [
+        "Geographic caution does not connect the sourced service variation to a local decision.",
+        "The mobile-check FAQ describes good future work but adds length without demonstrating this comparison."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/pennsylvania/wayne-county/",
+      "findings": [
+        "The sample-maintenance recommendation is stronger than its demonstrated county-specific basis.",
+        "Repeated inquiry guidance inflates a straightforward decision."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/rockland-county/",
+      "findings": [
+        "Useful location honesty principle lacks strong independent county-specific development.",
+        "Repeated scope framing dilutes the actionable distinction."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/suffolk-county/",
+      "findings": [
+        "Useful source-specific payment distinction is buried in attribution.",
+        "County travel framing and unrelated FAQs do not establish enough independent local value."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    },
+    {
+      "route": "/areas/tennessee/grundy-county/",
+      "findings": [
+        "Source locality established but substantive local tour distinction remains thin.",
+        "Currentpage primarily instructs owner to supply missing comparison facts."
+      ],
+      "needsResearch": false,
+      "publicationHold": null
+    }
+  ],
+  "inheritedCandidateNote": "Eight prior records document thin local relevance but do not set needsResearch/publicationHold. Their existing verdicts and drafts were preserved rather than silently re-reviewed. They remain unresolved independent-value candidates, not accepted pages.",
+  "capCounts": {
+    "majorBurden": 319,
+    "thinLocalRelevance": 8,
+    "noIndependentValue": 1
+  },
+  "evidenceLimitations": [
+    "No fresh browser, screenshots, keyboard, disclosure-operation or accessibility checks in this partition.",
+    "Source attribution and stated source-entry observations were reviewed; live underlying sources were not independently reopened during this resumed run. Central source-verification evidence remains necessary.",
+    "Scores are baseline editorial judgments and content-only subtotals out of 80, not final scores or claims that drafts meet the acceptance threshold.",
+    "No source files, build outputs, public routes or indexing policy were changed."
+  ],
+  "files": {
+    "audits": "operations/human-quality-20261027/audits/local-5.jsonl",
+    "drafts": "operations/human-quality-20261027/drafts/local-5.jsonl"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "in_progress",
+  "assigned": 277,
+  "reviewed": 35,
+  "complete": false,
+  "lastPacket": "packet-007.jsonl",
+  "reviewedSubtotals": {
+    "min": 63.75,
+    "max": 72.5,
+    "mean": 71.14285714285714,
+    "maximum": 80,
+    "notNormalized": true
+  },
+  "findings": [
+    {
+      "route": "/areas/california/yuba-county/",
+      "id": "duplicate-allocation-faq",
+      "severity": "minor",
+      "quote": "Can a group-planning page promise neighboring campsites?",
+      "detail": "The retained FAQ repeats the third decision's staff request, separate reservation and no-neighbor-guarantee explanation; the source bridge also states the same allocation limitation."
+    },
+    {
+      "route": "/areas/chautauqua-county/",
+      "id": "duplicate-commerce-faq-content",
+      "severity": "minor",
+      "quote": "Review retired product pages for an accurate status or relevant replacement",
+      "detail": "This instruction repeats the retained discontinued-product FAQ; the limits paragraph also repeats the retained store-transfer FAQ. Neither repetition adds a new catalog decision."
+    },
+    {
+      "route": "/areas/colorado/denver-county/",
+      "id": "photography-under-rollover-heading",
+      "severity": "minor",
+      "quote": "If photography has its own permission process, link it separately so an event inquiry does not imply that permit is included.",
+      "detail": "The sentence sits under Maintain the next-year handoff although it concerns a different approval process; the retained FAQ already explains photography permission in full."
+    },
+    {
+      "route": "/areas/colorado/gunnison-county/",
+      "id": "unidentified-geography-corroboration",
+      "severity": "minor",
+      "quote": "independently located in Gunnison County",
+      "detail": "The coverage text claims independent geographic corroboration, but all disclosed sources belong to the operator and no independent source is identified."
+    },
+    {
+      "route": "/areas/colorado/gunnison-county/",
+      "id": "duplicate-reminder-and-editorial-phrase",
+      "severity": "minor",
+      "quote": "The supplied research also records a separate summer 2027 opening reminder.",
+      "detail": "Supplied research refers to the drafting process, and the reminder appears in the third decision, source bridge and retained dedicated FAQ."
+    },
+    {
+      "route": "/areas/colorado/kiowa-county/",
+      "id": "unidentified-geography-corroboration",
+      "severity": "minor",
+      "quote": "both addresses independently locate in Kiowa County",
+      "detail": "Only Weisbrod operator pages appear in the source list; the asserted independent geographic check has no identified source."
+    }
+  ],
+  "caps": {},
+  "verification": "Unique assigned routes; baseline, draft, candidate body, sibling hashes matched packet records; candidate main-text hashes recomputed; evidence passages checked against complete candidate text.",
+  "unresolved": [
+    "Visual and accessibility evidence remains unknown; final scores remain null.",
+    "No new live source checks, source integration, builds or publication performed."
+  ]
+}

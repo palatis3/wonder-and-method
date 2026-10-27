@@ -20,501 +20,67 @@
       "reviewedAt": "2026-10-25T17:50:00.308Z"
     },
     {
-      "route": "/guides/contractor-website-checklist/",
+      "route": "/areas/alaska/",
       "rule": "long-sentence",
-      "evidenceSha256": "a81e275e990e4db00e806432bb72c4572abc724eeecd6068244d4861eb7b854f",
+      "evidenceSha256": "0aa2bba4e2e9f2fd69d5e0fa584f820b737104bae08cb3bcaa78815ae6a845aa",
       "disposition": "retain",
-      "reason": "Retain: this is a compact example page plan, with semicolons separating the purpose of Home, Replacement, Process, Coverage, About and Contact. Named page labels make the parallel structure scannable; the sentence length does not obscure the proposed information architecture.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "The colon introduces one exhaustive named set of census areas sharing the stated government status. Keeping their full official names avoids ambiguity; the preceding heading separates this reference list from general browsing instructions.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.471Z"
     },
     {
-      "route": "/areas/tennessee/loudon-county/",
+      "route": "/areas/texas/bosque-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "a74b544cfca35377b67613268f8171c1bcc9a545f7366cd3580b36da2079fb36",
+      "evidenceSha256": "8a55a4a90219cbc544780a9c409e5f6a7ecdf941bc51ab34237d101d68b66234",
       "disposition": "retain",
-      "reason": "Retain: the proposed deck-contractor example connects an assessment conversation to three specific inputs—existing surface, desired change and contractor inspection. The colon makes those questions a clear list, and the inspection qualification prevents implying that scope can be defined without assessment.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "One historical example contrasts two award mechanisms: purchase for a stated amount versus an award added to a sale. The time boundary and both mechanisms belong together, and none of the sentence implies current availability.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     },
     {
-      "route": "/areas/kentucky/clinton-county/",
+      "route": "/areas/texas/coke-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "bf437fadb14d5f653ad40fc48d4526688f0735bf56294171b8f4fd297c1b8dbf",
+      "evidenceSha256": "32e888a9f3261cc7b723eb97f6a9cf5a4b7ddc45382b9b4fa85364bbf811ea8d",
       "disposition": "retain",
-      "reason": "Retain: the retailer example describes one practical inquiry using three parallel questions about item, size and information needed before taking it home. Keeping the questions together makes their relationship to the inquiry clear and retains the conditional proposal voice.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "The sentence compares three concrete times to explain why a scheduled video does not establish adequate time for the full visit. Retaining all three values makes the condition assessable without an unstated timing inference.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     },
     {
-      "route": "/areas/texas/bandera-county/",
+      "route": "/areas/texas/san-saba-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "47382f3831ae026ea7abb4a50a5e0e8fbfe1d258328fe587cb1108c22e4ef470",
+      "evidenceSha256": "fe5235efd4f34aab1513a4b8318425783cdb867fb417ff3191f98a53806dab76",
       "disposition": "retain",
-      "reason": "Retain: the late-arrival and checkout scenario explains why first riding opportunity and final meal must be visible before travel is fixed. Those paired timing constraints are essential to the proposed check; the colon separates the scenario from its expected outcome.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "The sentence connects an operator address, city-limit description and independent county corroboration. The semicolon makes the second source relationship clear and preserves the distinction between a mailing/place name and county location.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     },
     {
-      "route": "/areas/texas/burnet-county/",
+      "route": "/areas/oklahoma/pawnee-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "324e6094edbabd32d6c3845155fa16423d6002340e93536c6dfc1ec51f07e764",
+      "evidenceSha256": "ad85238b0b0951c00fa746ec9c20bddb3e69398eaef3d562e12aaf07799d3c19",
       "disposition": "retain",
-      "reason": "Retain both flagged sentences: the first distinguishes preparation for different attraction experiences using a colon-led list; the second tests whether a family sees requirements and avoids confusing free park access with cave admission. The qualifications carry the central visitor-choice and admission distinction and should not be dropped to shorten the example.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "Parallel clauses preserve the research inputs, hourly versus copy charges, and the known-amount prerequisite for payment through a donation-labelled button. These are material conditions on the same research request.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     },
     {
-      "route": "/areas/texas/calhoun-county/",
+      "route": "/areas/oregon/wallowa-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "50d773ed3e2821bc873d503e8e5823c132ebcd7712596865b04286d1c7458e92",
+      "evidenceSha256": "e51e397a5b597ea47ff7cb573b2fd69f71418de964f84c0dac14260ca615833e",
       "disposition": "retain",
-      "reason": "Retain: the conditional no-additional-charges scenario states both the reader’s action and the limit on promising a free loan before staff review. The colon separates the scenario from the proposed page behavior; preserving that qualification avoids turning an inquiry into a guarantee.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
+      "reason": "The while clause compares two explicitly named booking products and their different cutoff/capacity limitations. Both remain attributed to the source rather than becoming a current availability promise.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     },
     {
-      "route": "/areas/texas/callahan-county/",
+      "route": "/areas/montana/cascade-county/",
       "rule": "long-sentence",
-      "evidenceSha256": "bc638e8fe4e4ffe8525523204bd9bb5c69db24bac11aee8ab2bbf5610e6332ff",
+      "evidenceSha256": "b0859cf5569a253e98d3384dbad7e42b7d96c41c01976d3e8bbc950a7f273bef",
       "disposition": "retain",
-      "reason": "Retain: the pavilion/cabin example distinguishes two arrangements, then uses a semicolon to qualify what a payment receipt can confirm. Keeping the operator-confirmation condition is important to prevent conflating payment with either reservation.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
-    },
-    {
-      "route": "/areas/texas/cottle-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "1ff895a122220601d138fb757224e1dbecd60b894410089f97b61ac68e2df7ac",
-      "disposition": "retain",
-      "reason": "Retain: the proposed outdoor-visit example explicitly orders three visitor questions—date suitability, group arrangements and stay preparation. The colon-led sequence is concrete and coherent; retaining the questions preserves the proposed decision order.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
-    },
-    {
-      "route": "/areas/texas/dimmit-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "0623a0e476da8432a7f88f3499b4b4cb4505bd45bddf65e999b14383686878f0",
-      "disposition": "retain",
-      "reason": "Retain: the ranch example uses parallel actions to distinguish a new inquiry from an amendment, preserve the original date and revised count, and direct the organizer to staff. These details jointly prevent treating a changed inquiry as an already approved hunt.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
-    },
-    {
-      "route": "/areas/texas/milam-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "1559a0fbd0a297dadaec419895e20583eb1d10b12d041bd01a3ab8bd91890cac",
-      "disposition": "retain",
-      "reason": "Retain: the semicolon preserves a useful distinction between the RV page’s location/rates/availability contact and the event page’s separate booking inquiry. Combining the related observations clarifies that park and event arrangements follow distinct information paths; this editorial decision does not independently certify the cited facts.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_ci_design_review)",
-      "reviewedAt": "2026-10-25T17:50:00.308Z"
-    },
-    {
-      "route": "/areas/missouri/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "2dc7b2e02f651b3c14f6ce87ce5886e271940849889e628614d4191761e1c1ee",
-      "disposition": "retain",
-      "reason": "Retain the source-note paragraph: it keeps the January 2026 vintage, statistical-place status, cross-county membership, township classifications, independent St. Louis City and excluded hierarchy placeholders together. Each short sentence explains a distinct limitation of the same geography source; the note is inside the source disclosure.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/missouri/gasconade-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "fe8073ff3a026caddde65cbb91905499fff81a5a3aa8a5399162874521cdfdb1",
-      "disposition": "retain",
-      "reason": "Retain the precise tour-arrival sentence: the named Shire Experience and carriage ride use Stone Barn instead of the stated First Settlement Village address, and reaching them requires a vehicle. Keeping the exception and transport requirement together prevents an incomplete arrival instruction.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/missouri/st-louis-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "6103250ae22cad93761c21c2b818160c0ffd413b44db0e2b2d98e0d7dc0ff794",
-      "disposition": "retain",
-      "reason": "Retain the two-part planning example: the semicolon clearly separates real-time tape capture plus setup/saving from a film-reel workflow whose duration cannot be inferred from running time. The distinction is the reason for asking about media type before a session.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/missouri/randolph-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "6618207ae144659a91831c670b9a614a7b2b0ef1b78ebff66380474f05e4e68f",
-      "disposition": "retain",
-      "reason": "Retain the clearly separated room and equipment requirements. The semicolon contrasts one-week room notice and branch limits with the equipment borrowing checklist. Every listed requirement supports choosing and preparing the correct request, rather than adding unrelated detail.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/missouri/stone-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "c797bbfba6965e17942a66d8497b6b068288960a4ecea7c362c4e8818e110f01",
-      "disposition": "retain",
-      "reason": "Retain the above-ground versus cave-tour distinction and the qualified first-stop exit/refund route. The sentence identifies who must be contacted and when; a shorter unconditional refund statement would misrepresent the source.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/iowa/winnebago-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "e1ca4a3541d9764d225a5f351d2b274bd8aaef7f836a4c81023fe7e6322dfee7",
-      "disposition": "retain",
-      "reason": "Retain this colon-led, parallel owner-input list: requested room, setup/cleanup duration, public access and the staff orientation. These concrete decisions describe the whole venue arrangement and remain easy to scan as one connected planning sentence.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mo_ia_integration_review)",
-      "reviewedAt": "2026-10-25T22:57:23.454Z"
-    },
-    {
-      "route": "/areas/oklahoma/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "17e906e3163ab417dae4f3f45ba6d07d94473e693107edd1f5438c2d734e5e6b",
-      "disposition": "retain",
-      "reason": "Retain this 105-word source note: eight short sentences explain the same directory inventory, moving from its January 2026 date through place types, cross-county membership, inactive-town status and excluded Census placeholders. The final date limitation closes that single topic. Keeping these qualifications in the source disclosure lets readers distinguish statistical areas from governments without losing the explanation of which records were included.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
-      "reviewedAt": "2026-10-26T02:44:12.377Z"
-    },
-    {
-      "route": "/areas/minnesota/traverse-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "be223681cd02c646900831f95bc8bdc485c8246021703f71216a843e2544ca9a",
-      "disposition": "retain",
-      "reason": "Retain this 37-word planning sentence: the colon introduces two concrete consequences for one three-camper party, with parallel clauses separating the shared-pedestal limit from the inability to hold adjoining sites. The preceding paragraph already states the two-camper limit and first-come rule; this example makes their combined consequence clear without implying approval of an electrical arrangement.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
-      "reviewedAt": "2026-10-26T02:44:12.377Z"
-    },
-    {
-      "route": "/areas/oklahoma/woodward-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "f17a84cbaa64be1e12d3b3cb0f2510fa7abd9ac8bcf453c5931e079cea9f4f4a",
-      "disposition": "retain",
-      "reason": "Retain this 38-word comparison: the colon introduces three named spaces, and semicolons clearly separate the main event center, Building A and Building B. Each clause attaches a concrete feature to the correct space. Those parallel labels make the sentence easy to scan and support the next paragraph’s equipment, livestock and presentation-use comparison.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_mnok_editorial)",
-      "reviewedAt": "2026-10-26T02:44:12.377Z"
-    },
-    {
-      "route": "/areas/kansas/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "08fbe93d67dd79120ead6770435ebb6ddc3aeed4045a55b0cca5f8e9c3d22095",
-      "disposition": "retain",
-      "reason": "Retain: this is a single inventory-method note composed of short factual sentences. Its length preserves distinctions that affect how the directory is interpreted: incorporated versus statistical places, cross-county relationships, township government status, the named Kansas consolidation exceptions, excluded Census placeholders and the January snapshot limit. Removing qualifications to meet a paragraph threshold would make the directory less accurate; each sentence has a discrete classification purpose.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/nebraska/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "43ee3f8de4322c76ce8434df1426907434451d61b0f2ba00cd0c9866e750afb6",
-      "disposition": "retain",
-      "reason": "Retain: the directory note keeps the Census date and coverage limits beside the place and subdivision classifications. Its short sentences distinguish statistical communities, active and inactive townships, election precincts without municipal government and excluded hierarchy placeholders. These are concrete interpretation instructions for the following inventory, with no promotional or repetitive filler added to the paragraph.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/kansas/coffey-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "6434fab8a69b508a1788f8565913a017ba5ce4f5ee058f836f77e519da23f296",
-      "disposition": "retain",
-      "reason": "Retain: the sentence describes one dated digitization project and preserves its newspaper title, coverage interval, six-month gap and distinction from undigitized microfilm. The chronological qualifiers make the later research-request example usable; the sentence's parallel factual clauses remain clear without suggesting that every issue in the broad interval exists online.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/kansas/nemaha-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "dbd9dbf5f418f593535ef3d32450b64d9e11d7474f3dafe47a9ccd0d61a0ad17",
-      "disposition": "retain",
-      "reason": "Retain: the sentence states one visitor acceptance check—retain references and the intended research date—followed by the specific misconception to avoid. Keeping the material-preparation qualification attached prevents exhibit opening hours from being interpreted as a confirmed research appointment. The actions and boundary are concrete and readable.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/kansas/ottawa-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "5354e382b94d599977ec1b79b549ecf0bfdff0c0ed998c97fe2e5cfc4a804cd5",
-      "disposition": "retain",
-      "reason": "Retain: this is a parallel comparison of fax sending and receiving, with first-page and additional-page rates kept together for each direction. Those four values explain why a generic per-page label would be misleading; the repeated structure makes the source example understandable without dropping a rate distinction.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/nebraska/richardson-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "ee4ccb1a7183054348b8f91167f15cce69d6e0a3cb39e867db6f1a0727a9a4b8",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces one concrete acceptance scenario comparing a short court party with a larger event. The following clause names the required choice of spaces and two precise false assumptions—opening hours as a reservation and every rental as the whole building. The length supports a useful test rather than adding an unrelated idea.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/nebraska/webster-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "355975d23b58dce6d2811b13b2e389ea03d524531387df89be515e3eb96d0624",
-      "disposition": "retain",
-      "reason": "Retain: the sentence sets up one returning visitor and explains the expected page behavior after the colon. The compact list of a shortened tour, refund and special booking option identifies exactly which unsupported responses the page must avoid while retaining the visitor's prior Childhood Home visit as useful context.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/south-dakota/brookings-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "422753bd3bde8a47e3746d22e030fb23d8ed28972062d7d2bded3f68ad6cadc2",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces an ordered three-part arrival sequence: wait for the staff greeting, send a representative with final counts, and prepare labeled lunch containers for transfer. The responsible roles and order are the subject of the brief. The list-like sentence remains clear and keeps the full handoff together.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/south-dakota/douglas-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "c7c1228a0a74f16e0239a5e46d5a59ff9e22fc74c447eddb5a9127263b4b04b4",
-      "disposition": "retain",
-      "reason": "Retain: the sentence compares three published home-support starting points and keeps each condition or reviewer attached to its program. The parallel enumeration separates provider-related visiting-nurse conditions, state-worker assessment and a private-pay route. These distinctions are necessary context for the proposed public contact comparison and do not make an eligibility determination.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/south-dakota/yankton-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "a8f615a124fbc281e08bd28d3b79d7572e4b9b3bc29331bef4d1a6fc26a3dd44",
-      "disposition": "retain",
-      "reason": "Retain: the hypothetical twelve-to-thirteen-person change is one staff-review test, and the semicolon cleanly separates the required behavior from two incorrect outcomes. It preserves the revised participant count without declaring the venue full or automatically confirming an instructor, making the threshold's practical meaning clear.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_six_state_editorial)",
-      "reviewedAt": "2026-10-26T05:53:50.737Z"
-    },
-    {
-      "route": "/areas/california/shasta-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "3ae86e3ab2dc7406c7a68f6d5c034fb72de446c4cf6441bc59f7bcffb546344b",
-      "disposition": "retain",
-      "reason": "Retain: the sentence follows one concrete acceptance check from online admission through gift-store exchange, boarding pass and activity, then uses a semicolon to name the two misleading outcomes to avoid. The reserved-departure and independent-driving exclusions preserve the actual arrival sequence; the sentence remains a coherent check rather than combining unrelated claims.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_dakota_integration_review)",
-      "reviewedAt": "2026-10-26T07:33:29.029Z"
-    },
-    {
-      "route": "/areas/new-mexico/valencia-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "80da9261d5917a3808ac3083bb1e14dae913a167e0905f5fe292f9335c159653",
-      "disposition": "retain",
-      "reason": "Retain: the sentence presents three parallel, distinct source statuses: the museum and cafe closure, a canceled history event and a play moved to a named library address. Keeping these together establishes the precise contrast the proposed event-status page must preserve; the specific relocated venue prevents a general closure notice from erasing a continuing event.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_dakota_integration_review)",
-      "reviewedAt": "2026-10-26T07:33:29.029Z"
-    },
-    {
-      "route": "/areas/oregon/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "745030c8d8dbbee53d0b67e0720347a9fc3e1287cf3866a3d2fc29585184b113",
-      "disposition": "retain",
-      "reason": "Retain: this source-definition paragraph explains how to read the Oregon directory: the January 2026 inventory date, incorporated versus statistical places, cross-county duplication, CCD status, limits on tribal-government or reservation interpretations, and the specific inactive Greenhorn classification. Its short sentences each resolve a distinct possible misreading of the lists above, including the Greenhorn entries in Baker and Grant. Under Place types and official sources, followed by the source records, the complete explanation remains coherent and useful despite exceeding the paragraph-length heuristic. The nearby general methodology repeats shared definitions but does not include the Greenhorn-specific exception; it does not make this paragraph unclear or justify dropping that exception.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_azor_guide_ledger_review)",
-      "reviewedAt": "2026-10-26T13:59:28.323Z"
-    },
-    {
-      "route": "/areas/nevada/",
-      "rule": "long-paragraph",
-      "evidenceSha256": "1a5547e2d84658b6796ed71ef5bb379b568761390c33273f9ee05cf42df2723e",
-      "disposition": "retain",
-      "reason": "Retain: this 109-word source note uses short sentences to distinguish municipalities, statistical CDPs and CCDs, tribal-name limits, cross-county membership and the January source vintage. Its final two sentences clarify Carson City’s independent status and active city government. Keeping these related source qualifications together avoids implying that the Census county-layer status describes an inactive city government; no sentence is a long chain of unrelated claims.",
-      "reviewer": "Independent Astra reviewer (/root/astra_nvwa_integration_review)",
-      "reviewedAt": "2026-10-26T17:45:46.487Z"
-    },
-    {
-      "route": "/areas/washington/pacific-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "5601c7f3b5319d1aa38bd080e5001b63e222451901493d404fd8644e01e08f52",
-      "disposition": "retain",
-      "reason": "Retain: the 38-word sentence is a parallel list of three distinct yard-rule observations: bottom-washing location, topside-washing approval, and approval/containment for specified surface work. The final exception qualifier remains attached to the source summary. The surrounding paragraph separately states the sandblasting prohibition, and the brief explicitly sends method decisions to yard staff; shortening by dropping these distinctions would blur the intake question.",
-      "reviewer": "Independent Astra reviewer (/root/astra_nvwa_integration_review)",
-      "reviewedAt": "2026-10-26T17:45:46.493Z"
-    },
-    {
-      "route": "/areas/utah/carbon-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "d77ebb6cddc0c2e7309554335a00593fc70322aaae7ca2d33a2c6e12588e3901",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces three concrete event phases—joint session, simultaneous breakouts and meal service—that explain why an organizer must describe the sequence before selecting rooms. The sentence keeps the proposed content request and its practical reason together.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/utah/iron-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "91140b6327387b98f6d81e9726f66f830cc06673725a6434908aa46c88eee11b",
-      "disposition": "retain",
-      "reason": "Retain: the semicolon connects one hypothetical comparison between daily and seasonal rental instructions. Keeping the two states together makes the check explicit: replacing the selected product must also replace the applicable return rule.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/utah/juab-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "2d7795f0564d9dd755d46cb0eddd7e04802c8749d222a99e0e32260da8a4372c",
-      "disposition": "retain",
-      "reason": "Retain: the sentence pairs the simple 150-minus-96 seating calculation with its immediate limitation. The 54-seat difference is a question for the operator; it does not confirm layout capacity or available extra chairs. Separating the caveat from the example could overstate the result.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/utah/morgan-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "d519527a0a826413f7a029381cc9105a7f56429b7299e41a4e6f2914e62e9ab7",
-      "disposition": "retain",
-      "reason": "Retain: one hypothetical group-booking scenario connects the organizer’s phone booking to the participants’ release instructions and office meeting point. The colon introduces the concrete follow-through, including the important distinction between check-in and the river.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/aguada-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "7ab9dbed3e8a79cea5c8ab52bba9009d68c5ad35d82c24ef38d031b17b83938b",
-      "disposition": "retain",
-      "reason": "Retain: this is a single fictional acceptance check with parallel outcomes after two input changes. Activity timing and meeting instructions must update, stay dates must persist, and host arrangements must remain separate from room confirmation.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/anasco-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "59cdc3e423cccf2c50c3f9a473e1f9164877af007b95b008640390d2535a264c",
-      "disposition": "retain",
-      "reason": "Retain: the semicolon connects two parts of the same fictional venue-choice check. The explicit capacity mismatch, separate ceremony choice and staff review are concrete, and the ending avoids inventing accessibility or a weather fallback.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/arecibo-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "eb3151f413368dcf5be8d85f02e5788854059d3d48ae2d7b5e773bef8b462d40",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces a parallel acceptance checklist for changing a group outing and vehicle count. It preserves people totals, exposes unresolved meal arrangements, and updates parking without inventing an admission calculation.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/carolina-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "74c04d42e7b12e5f320870283cb9a83e1aa1d2dcde13e09fce6f63e270de93c9",
-      "disposition": "retain",
-      "reason": "Retain: the sentence summarizes three related published admission and reservation conditions. Its colon keeps staff follow-up and a required deposit directly attached to the statement that submitting the form alone does not confirm a reservation.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/juncos-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "5d6336a7ae6df5682d604e0531682260ae6f99cc8628f14306cd62eea6d5b209",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces an ordered list of practical salon choices—existing nail material, selected service and length, and an additional design selection. The list explains the proposed customer question order without unrelated clauses.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/puerto-rico/san-sebastian-municipio/",
-      "rule": "long-sentence",
-      "evidenceSha256": "76c05670d8fb777e94acfa4d387173409f5fee0a2e2d7271b686fe9c6c1fca13",
-      "disposition": "retain",
-      "reason": "Retain: one hypothetical organizer’s meal and overnight stay ties three parallel preparation tasks to a clear limit. Identifying the package, included services and sleeping arrangement does not promise room availability.",
-      "reviewer": "Primary Codex and independent Astra integration review",
-      "reviewedAt": "2026-10-26T22:51:07.380Z",
-      "reviewEvidence": "evidence/co-ut-pr-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/idaho/adams-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "a9981134a8110a10b7642fcfec2c917eb2b46f7abef2d7deeafe127877ed86a6",
-      "disposition": "retain",
-      "reason": "Retain: this sentence summarizes one published equipment-only agreement, connecting collection/transport/return and the seven-day limit to emergency cancellation because of the facility’s incident-command role. Keeping the emergency condition with the off-site rental terms supports the specific planning distinction without inventing a separate policy.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-      "reviewedAt": "2026-10-27T01:02:15.069Z",
-      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/montana/carter-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "493c8adc3327893e7cd9e62cc22c4c74c24dce8aab61ed6398698d5f214fdf99",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces three parallel pieces of lesson information—available digital material, required or optional physical materials, and the actual kit custodian. Together they define the proposed resource record and avoid sending every kit inquiry to the page publisher.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-      "reviewedAt": "2026-10-27T01:02:15.069Z",
-      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/montana/fergus-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "9a9d960f5d01abd0e9155d1af809d475983864659d0fbd992208d7160a6f15d8",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces a concrete preparation sequence before buying studio access: class or orientation route, staff confirmation, and the current class schedule. These related checks explain the same pass-selection decision and remain readable as one list.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-      "reviewedAt": "2026-10-27T01:02:15.069Z",
-      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/montana/garfield-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "d1f51a312479d9f19fbddcc42fe7aaa1690ed275beeefbc63f8ba2f3de117e5a",
-      "disposition": "retain",
-      "reason": "Retain: two hypothetical changes have distinct acceptance outcomes within one comparison. Changed ground returns to staff for the rate, while extra time reveals the extension contact; neither change silently calculates or grants an outcome.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-      "reviewedAt": "2026-10-27T01:02:15.069Z",
-      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/montana/rosebud-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "c36afb74f7e9b5f4a5f617a5cccb8b3f8cdb7bc320668e355497b1fb8a4fdd24",
-      "disposition": "retain",
-      "reason": "Retain: one sentence tests two changes against two corresponding mistaken confirmation states. A changed event date and renter-forwarded insurance each require follow-up; neither automatically preserves approval or completes the professional’s handoff.",
-      "reviewer": "Codex independent reviewer (gpt-6-astra; /root/astra_co_ut_pr_integration)",
-      "reviewedAt": "2026-10-27T01:02:15.069Z",
-      "reviewEvidence": "evidence/id-mt-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/wyoming/hot-springs-county/",
-      "rule": "long-sentence",
-      "evidenceSha256": "e2ed8c2bc7ed99af6b40c6632198119fcd98a27c8e91239d81279c4e64b4d406",
-      "disposition": "retain",
-      "reason": "Retain: the colon introduces one ordered visitor preparation sequence: select the dig, prepare clothing, check in at the museum and use operator transport. These linked steps explain why a museum-admission link cannot substitute for the dig handoff. The sequence is concrete and readable as one sentence.",
-      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
-      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
-      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/alaska/copper-river-census-area/",
-      "rule": "long-sentence",
-      "evidenceSha256": "d403c2cc2fcd029a0547e8a0a60b14c29fb6deb96d6f2f58b5f57e817470ac17",
-      "disposition": "retain",
-      "reason": "Retain: a single hypothetical switch from driving to flying has two linked acceptance outcomes: replace inapplicable parking instructions and reopen local pickup review. Keeping the change and both consequences together makes clear that a prior activity booking does not confirm a revised arrival arrangement.",
-      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
-      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
-      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/alaska/denali-borough/",
-      "rule": "long-sentence",
-      "evidenceSha256": "5517124f8d85ac8633868a865d66a78d2534e0039e7350f593b51cdf095caa6b",
-      "disposition": "retain",
-      "reason": "Retain: one hypothetical family meets the stated age range but has an unresolved equipment-fit question. The sentence keeps the independent condition and staff-review outcome attached, avoiding an implication that satisfying age requirements alone confirms physical suitability.",
-      "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_co_ut_pr_ci_fix)",
-      "reviewedAt": "2026-10-27T02:57:14.594079+00:00",
-      "reviewEvidence": "evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/editorial-approval.json"
-    },
-    {
-      "route": "/areas/idaho/bear-lake-county/",
-      "severity": "review",
-      "rule": "long-sentence",
-      "detail": "1 sentences exceed 35 words; review for clarity.",
-      "evidenceSha256": "1721a91b29d654d23dc4bbc790259b4cf024a42f4d1737d120dac2032a6e22d0",
-      "disposition": "retain",
-      "reason": "The attributed operator rule keeps mandatory shop check-in despite selected delivery and the North Beach-only delivery boundary together. Its short parenthetical explains the source-specific “check-on” wording without adopting it as customer instructions; independent review found the sentence clear in context.",
-      "reviewer": "Independent Astra review; operations/ux-improvements-20261027/regression-review.json",
-      "reviewedAt": "2026-10-27"
+      "reason": "The sentence connects the request-not-completion boundary with the returning maker’s required confirmation step. Concrete actions explain what must be confirmed without inventing an immediate drop-off or collection entitlement.",
+      "reviewer": "Codex primary: exact complete emitted sentence reviewed",
+      "reviewedAt": "2026-10-27T19:16:37.472Z"
     }
   ]
 }

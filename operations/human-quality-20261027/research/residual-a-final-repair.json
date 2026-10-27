@@ -1,0 +1,1331 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/florida/polk-county/",
+    "/areas/florida/st-lucie-county/",
+    "/areas/florida/taylor-county/",
+    "/areas/florida/washington-county/",
+    "/areas/indiana/adams-county/",
+    "/areas/indiana/crawford-county/",
+    "/areas/indiana/daviess-county/",
+    "/areas/indiana/dearborn-county/",
+    "/areas/indiana/dubois-county/",
+    "/areas/indiana/franklin-county/",
+    "/areas/indiana/hendricks-county/",
+    "/areas/indiana/jennings-county/",
+    "/areas/indiana/knox-county/",
+    "/areas/indiana/lawrence-county/",
+    "/areas/indiana/marion-county/",
+    "/areas/indiana/miami-county/",
+    "/areas/indiana/monroe-county/",
+    "/areas/indiana/morgan-county/",
+    "/areas/indiana/porter-county/",
+    "/areas/indiana/st-joseph-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/florida/polk-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/polk-county/",
+        "inputHash": "b806c899d0c297166bc1e855c91456cbe06d8149acd4da8fb607742217cfff48",
+        "heading": "Let a machine-shop customer describe the result before choosing a process.",
+        "intro": "A new component, fabricated assembly and damaged machine may reach the same shop with very different starting information. Your capability page can explain those entry points without expecting the customer to choose a machine or submit a drawing they do not have.",
+        "customerQuestion": "Can I describe damaged equipment before knowing which repair or machining process it needs?",
+        "decisions": [
+          {
+            "label": "Choose the request’s purpose",
+            "body": "Distinguish a new part, an assembly, equipment repair and repeat work. Explain the information useful for each while allowing a customer to state uncertainty rather than force every inquiry into a new-part quotation."
+          },
+          {
+            "label": "Describe the available evidence",
+            "body": "Invite a drawing, sketch, existing item reference or description of the observed problem as appropriate. Explain how technical files are shared later through the shop’s approved route, with changes to a previous job identified for review."
+          },
+          {
+            "label": "Show a substantiated shop contribution",
+            "body": "Connect capabilities to permitted examples that identify what the team received, made or repaired. A finished assembly caption should explain the shop’s role instead of relying on equipment specifications as proof that any similar job will be accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted project types and preliminary review information.",
+          "Approved technical-file sharing arrangements.",
+          "Permitted examples with accurate roles and capability limits."
+        ],
+        "sourceBridge": "Independent Machine Works at 2810 Parkway Street in Lakeland introduces CNC machining, fabrication and welding, and equipment repair. Those categories support different starting conversations; the source does not by itself supply a detailed worked example or acceptance limit.",
+        "limits": "The shop and qualified specialists make engineering and manufacturing decisions. Add owner-approved evidence before making stronger capability claims. CAD exchange, confidential-file systems, instant quoting and production tracking require separate scope; public content can prepare a controlled first conversation.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/polk-county/",
+        "inputHash": "b806c899d0c297166bc1e855c91456cbe06d8149acd4da8fb607742217cfff48",
+        "heading": "Let a machine-shop customer describe the result before choosing a process.",
+        "intro": "A new component, fabricated assembly and damaged machine may reach the same shop with very different starting information. Your capability page can explain those entry points without expecting the customer to choose a machine or submit a drawing they do not have.",
+        "customerQuestion": "Can I describe damaged equipment before knowing which repair or machining process it needs?",
+        "decisions": [
+          {
+            "label": "Choose the request’s purpose",
+            "body": "Distinguish a new part, an assembly, equipment repair and repeat work. Explain the information useful for each while allowing a customer to state uncertainty rather than force every inquiry into a new-part quotation."
+          },
+          {
+            "label": "Describe the available evidence",
+            "body": "Fictional comparison: “This machine has stopped moving as expected; I have its identification and a photograph, but no drawing” starts an equipment-assessment discussion. “I need a new bracket and have a sketch showing its intended use” starts a component discussion. Keep the known reference, observed problem or proposed result with each request. Share technical files later through the shop’s approved route."
+          },
+          {
+            "label": "Show a substantiated shop contribution",
+            "body": "Connect capabilities to permitted examples that identify what the team received, made or repaired. A finished assembly caption should explain the shop’s role instead of relying on equipment specifications as proof that any similar job will be accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted project types and preliminary review information.",
+          "Approved technical-file sharing arrangements.",
+          "Permitted examples with accurate roles and capability limits."
+        ],
+        "sourceBridge": "Independent Machine Works at 2810 Parkway Street in Lakeland introduces CNC machining, fabrication and welding, and equipment repair. Those categories support different starting conversations. The two requests above are fictional illustrations, not completed jobs or promises that the shop accepts either item.",
+        "limits": "The shop and qualified specialists determine accepted work, engineering and manufacturing methods. CAD exchange, confidential-file systems, instant quoting and production tracking require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "ac2502e606d0a2fdf9472c7ca7742e0fed2e1b0e85ecdd90b90e9dedd90168da",
+      "afterSha256": "4520816136a99eab2947a9b9f02126148dba19aa246150f6703d7a525c7984e7"
+    },
+    {
+      "route": "/areas/florida/st-lucie-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/st-lucie-county/",
+        "inputHash": "0b79261e3a50467b7404464beab5b88e97bc72a050401ab7129066dc1f750699",
+        "heading": "Start the storage conversation with what needs a place.",
+        "intro": "A closet photograph does not show which items overflow or are difficult to reach. Your preparation page can help a household explain daily use before asking them to choose a cabinet layout or interpret a rendering as the final design.",
+        "customerQuestion": "How should I describe a crowded reach-in closet before the home consultation?",
+        "decisions": [
+          {
+            "label": "Describe the contents and difficulty",
+            "body": "Invite categories such as hanging, folded and frequently used items using your approved questions. Ask what currently overflows or is inconvenient, without making the customer design dimensions or select an accessory system unaided."
+          },
+          {
+            "label": "Add the room context",
+            "body": "Explain which photographs or other preparation help the designer understand doors, equipment and shared room uses. Keep preferences and undecided finishes visible alongside practical needs so the consultation can address competing priorities."
+          },
+          {
+            "label": "Show a functional project example",
+            "body": "Use an approved example to explain the particular storage problem and how the agreed design addressed it. Label 3D renderings separately from finished installations and describe the actual selection, installation and walkthrough process."
+          }
+        ],
+        "ownerInputs": [
+          "Room types served and consultation preparation guidance.",
+          "An approved example with a specific use problem and outcome.",
+          "Material choices, image-stage labels and installation responsibilities."
+        ],
+        "sourceBridge": "Chalet’s Custom Closets describes in-home consultation, 3D design, selection, manufacture, installation and walkthrough. It names Port St. Lucie and Fort Pierce among served places. The source supports that broad process; owner evidence is needed to demonstrate a particular functional improvement.",
+        "limits": "Measurement, dimensions, loading and final design remain with the business and qualified team. Interactive design tools, room scanning and automatic quotes need separate scope; a useful portfolio and preparation guide can support ordinary contact.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/st-lucie-county/",
+        "inputHash": "0b79261e3a50467b7404464beab5b88e97bc72a050401ab7129066dc1f750699",
+        "heading": "Start the storage conversation with what needs a place.",
+        "intro": "A closet photograph does not show which items overflow or are difficult to reach. Your preparation page can help a household explain daily use before asking them to choose a cabinet layout or interpret a rendering as the final design.",
+        "customerQuestion": "How should I describe a crowded reach-in closet before the home consultation?",
+        "decisions": [
+          {
+            "label": "Describe the contents and difficulty",
+            "body": "Fictional consultation brief: “The folded clothes overflow onto a chair, daily-use items are hard to reach, and the closet door shares space with our dresser. We have not chosen finishes.” Keep the overflowing items, access difficulty and room constraint as separate questions. The household can describe daily use without choosing dimensions or an accessory system."
+          },
+          {
+            "label": "Add the room context",
+            "body": "Explain which photographs or other preparation help the designer understand doors, equipment and shared room uses. Keep preferences and undecided finishes visible alongside practical needs so the consultation can address competing priorities."
+          },
+          {
+            "label": "Show a functional project example",
+            "body": "Use an approved example to explain the particular storage problem and how the agreed design addressed it. Label 3D renderings separately from finished installations and describe the actual selection, installation and walkthrough process."
+          }
+        ],
+        "ownerInputs": [
+          "Room types served and consultation preparation guidance.",
+          "An approved example with a specific use problem and outcome.",
+          "Material choices, image-stage labels and installation responsibilities."
+        ],
+        "sourceBridge": "Chalet’s Custom Closets describes in-home consultation, 3D design, selection, manufacture, installation and walkthrough, and names Port St. Lucie and Fort Pierce among served places. The fictional brief above illustrates preparation for that discussion; it is not a completed project or a promised storage result.",
+        "limits": "Measurement, dimensions, loading and final design remain with the business and qualified team. Interactive design tools, room scanning and automatic quotes need separate scope; a useful portfolio and preparation guide can support ordinary contact.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "aae8dd528d3d903119f9b7380b62c403ab7940c5ab8b5def2f8c8079e2995f8a",
+      "afterSha256": "8647540677696e554912a3d658bcc1c232fb5642180332e2894c4589c7c2d34a"
+    },
+    {
+      "route": "/areas/florida/taylor-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/taylor-county/",
+        "inputHash": "c0f61cdc67e041f02c862b501a0e08bd520ceb0403b81380bc6829a6df30a9a5",
+        "heading": "Keep the existing frame at the center of a replacement-cover inquiry.",
+        "intro": "A fabric-building cover must be considered with the structure already in place. Your replacement-service page can explain how customers identify that asset and describe the desired change, including when their original paperwork is incomplete.",
+        "customerQuestion": "What should I send about my existing frame if I no longer have all the project records?",
+        "decisions": [
+          {
+            "label": "Identify what is already there",
+            "body": "Explain which maker, project references or records help your team begin. Use approved whole-structure and detail photograph guidance while allowing customers to distinguish known information from details they cannot confirm."
+          },
+          {
+            "label": "Separate condition from the requested change",
+            "body": "Invite a plain description of the current concern and whether the customer wants replacement in kind or a different appearance or feature. Keep that desired outcome distinct from an option the manufacturer has accepted."
+          },
+          {
+            "label": "Explain the initial review and handoff",
+            "body": "State what the business reviews before quoting and which supply or installation responsibilities need discussion. An existing-frame request should not require the buyer to guess a complete new-building specification."
+          }
+        ],
+        "ownerInputs": [
+          "Useful structure identifiers and record examples.",
+          "Approved photograph guidance and replacement categories.",
+          "Initial-review, supply and installation responsibilities."
+        ],
+        "sourceBridge": "Big Top Manufacturing identifies its headquarters in Perry and describes replacement fabric membranes designed around existing frames alongside new-structure work. The source supports keeping an existing asset reference attached to replacement questions; an approved record example would make the preparation more concrete.",
+        "limits": "The manufacturer and appropriate professionals assess the structure, engineering specifications and component compatibility. Website prompts do not inspect or size the replacement. Compatibility tools based on supplier-approved data and product-record connections need separate scope; explanatory content can support the current quotation route.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/taylor-county/",
+        "inputHash": "c0f61cdc67e041f02c862b501a0e08bd520ceb0403b81380bc6829a6df30a9a5",
+        "heading": "Keep the existing frame at the center of a replacement-cover inquiry.",
+        "intro": "A fabric-building cover must be considered with the structure already in place. Your replacement-service page can explain how customers identify that asset and describe the desired change, including when their original paperwork is incomplete.",
+        "customerQuestion": "What should I send about my existing frame if I no longer have all the project records?",
+        "decisions": [
+          {
+            "label": "Identify what is already there",
+            "body": "Fictional partial-record inquiry: “Our existing frame is at [site]. The label reads [visible maker/reference]; the original project paperwork is missing. The cover is torn and we want to discuss replacement, possibly in another color.” Keep the visible identifier, missing records, current concern and requested change distinct. Staff can explain which photographs or additional records they need without the customer guessing dimensions or compatibility."
+          },
+          {
+            "label": "Separate condition from the requested change",
+            "body": "Invite a plain description of the current concern and whether the customer wants replacement in kind or a different appearance or feature. Keep that desired outcome distinct from an option the manufacturer has accepted."
+          },
+          {
+            "label": "Explain the initial review and handoff",
+            "body": "State what the business reviews before quoting and which supply or installation responsibilities need discussion. An existing-frame request should not require the buyer to guess a complete new-building specification."
+          }
+        ],
+        "ownerInputs": [
+          "Useful structure identifiers and record examples.",
+          "Approved photograph guidance and replacement categories.",
+          "Initial-review, supply and installation responsibilities."
+        ],
+        "sourceBridge": "Big Top Manufacturing identifies its headquarters in Perry and describes replacement fabric membranes designed around existing frames alongside new-structure work. The fictional inquiry keeps the existing asset at the center of that discussion without asserting that a particular frame can accept a replacement.",
+        "limits": "The manufacturer and appropriate professionals assess the structure, engineering specifications and component compatibility. Website prompts do not inspect or size the replacement. Compatibility tools based on supplier-approved data and product-record connections need separate scope; explanatory content can support the current quotation route.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "85b6c74a53ebe48d5f0836a060d4a70aa652dd38e767b8742ea18db025bf3706",
+      "afterSha256": "a78ad7ee62084cae764bfe291f4693d218595d74d70687f02451c0b38ed16911"
+    },
+    {
+      "route": "/areas/florida/washington-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/washington-county/",
+        "inputHash": "c514c37ca1e3f7fd375859c10afccf5723180efa7aa4866ec0a938610e799f86",
+        "heading": "Identify the older machine before promising a replacement part.",
+        "intro": "A brand name alone may not identify the component a customer needs. Your parts page can explain useful machine references, give uncertain customers a way to describe the missing item and distinguish parts supply from repair assessment.",
+        "customerQuestion": "What details should I send about an older saw when I do not know the part number?",
+        "decisions": [
+          {
+            "label": "Start with the machine identity",
+            "body": "Use the model and other identifiers your staff actually need to distinguish versions. Explain helpful photographs or records, with an ordinary description route for customers who cannot supply every detail."
+          },
+          {
+            "label": "Describe the proposed replacement accurately",
+            "body": "State how staff confirm the component, availability and condition of an offered item. A general statement about older parts or parts-saws should not appear to guarantee stock or compatibility for a particular request."
+          },
+          {
+            "label": "Separate buying from assessment and fitting",
+            "body": "Let the customer say whether they want an identified part or help determining the problem. Explain the actual service boundaries and handoff so uncertainty does not push someone into selecting a replacement from a brand list."
+          }
+        ],
+        "ownerInputs": [
+          "Useful model identifiers and approved reference photographs.",
+          "Actual parts sources and publishable condition descriptions.",
+          "Uncertain-request review, repair boundaries and handoff instructions."
+        ],
+        "sourceBridge": "Lanes Outdoor Equipment in Chipley describes older Husqvarna parts and parts-saws alongside mower and small-engine service. Its store is on Highway 277. That offer makes the condition and identity of the particular replacement more useful than a broad statement that older equipment is supported.",
+        "limits": "The shop verifies equipment, suitability, stock and accepted service. An owner-approved identification example would make the guidance more concrete. Live inventory, automatic compatibility lookup and repair tracking need separate scope; clear parts wording can support the existing telephone and contact routes.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/washington-county/",
+        "inputHash": "c514c37ca1e3f7fd375859c10afccf5723180efa7aa4866ec0a938610e799f86",
+        "heading": "Identify the older machine before promising a replacement part.",
+        "intro": "A brand name alone may not identify the component a customer needs. Your parts page can explain useful machine references, give uncertain customers a way to describe the missing item and distinguish parts supply from repair assessment.",
+        "customerQuestion": "What details should I send about an older saw when I do not know the part number?",
+        "decisions": [
+          {
+            "label": "Start with the machine identity",
+            "body": "Fictional request: “I have an older Husqvarna saw. Its model label reads [visible reference], but I do not know the missing part number or whether the item can be replaced on its own. Can you review the machine reference and photographs?” Keep unreadable or unknown details explicit. Staff can distinguish a known-part purchase from an assessment question rather than asking the customer to choose from a brand list."
+          },
+          {
+            "label": "Describe the proposed replacement accurately",
+            "body": "Explain how staff confirm an offered component’s identity, condition and availability. In the fictional request, a follow-up question could ask whether an offered item is new or used and what assessment is needed. Neither an older-parts listing nor a photograph guarantees stock or compatibility."
+          },
+          {
+            "label": "Separate buying from assessment and fitting",
+            "body": "Let the customer say whether they want an identified part or help determining the problem. Explain the actual service boundaries and handoff so uncertainty does not push someone into selecting a replacement from a brand list."
+          }
+        ],
+        "ownerInputs": [
+          "Useful model identifiers and approved reference photographs.",
+          "Actual parts sources and publishable condition descriptions.",
+          "Uncertain-request review, repair boundaries and handoff instructions."
+        ],
+        "sourceBridge": "Lanes Outdoor Equipment in Chipley describes older Husqvarna parts and parts-saws alongside mower and small-engine service. Its store is on Highway 277. That offer makes the condition and identity of the particular replacement more useful than a broad statement that older equipment is supported.",
+        "limits": "The request is fictional. The shop verifies equipment, suitability, stock and accepted service. Live inventory, automatic compatibility lookup and repair tracking need separate scope; clear parts wording can support the existing telephone and contact routes.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "192cb5ea9fbd5735794606368d99948c594529adbfd87c7ed306614cae4479d1",
+      "afterSha256": "588fe3566f59a5dd611e97b4706ba72191132bbefc1dcb7a669d01139a9482fc"
+    },
+    {
+      "route": "/areas/indiana/adams-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/adams-county/",
+        "inputHash": "5c5f97d19480215b017d845f9408fa303ba3a84723c2a067ac79b4b484901447",
+        "heading": "Keep the wood species beside the stain the customer prefers.",
+        "intro": "A finish name alone can lose part of the combination a customer liked. Your custom-furniture page can help people carry the product reference, wood-and-stain pair and unresolved choices from browsing into a useful first discussion.",
+        "customerQuestion": "I like this stain on the wood shown, but need a different size. What references should I bring to the conversation?",
+        "decisions": [
+          {
+            "label": "Identify the intended piece",
+            "body": "Explain the product name, code or other reference staff uses. Allow sketches and inspiration images through the approved route while making clear which piece or feature the customer wants to discuss."
+          },
+          {
+            "label": "Preserve the material pairing",
+            "body": "Label the stain together with the wood species shown. If the customer has chosen a color but not the wood, keep that uncertainty explicit rather than completing a combination on their behalf."
+          },
+          {
+            "label": "Keep changes and final approval distinct",
+            "body": "Ask which size, hardware or material questions remain open. Explain the business’s actual physical-sample review and final specification process so a screen image does not become material approval."
+          }
+        ],
+        "ownerInputs": [
+          "Product identifiers and current wood/stain labels.",
+          "Approved examples and choices allowed to remain open.",
+          "Physical-sample review and order-confirmation process."
+        ],
+        "sourceBridge": "Bernhaus Furniture in Berne invites product references, sketches and inspiration photographs and guides size, wood, stain and hardware selection. Its comparison tool pairs wood species with stains, making the complete combination a useful reference for the first inquiry.",
+        "limits": "The seller confirms available combinations and final order details. Owner-approved sample limitations belong beside images; the website cannot promise an exact screen-to-material match. Clear wording can support existing selection tools, while new configurators, automated option validation and order-system connections require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/adams-county/",
+        "inputHash": "5c5f97d19480215b017d845f9408fa303ba3a84723c2a067ac79b4b484901447",
+        "heading": "Keep the wood species beside the stain the customer prefers.",
+        "intro": "A finish name alone can lose part of the combination a customer liked. Your custom-furniture page can help people carry the product reference, wood-and-stain pair and unresolved choices from browsing into a useful first discussion.",
+        "customerQuestion": "I like this stain on the wood shown, but need a different size. What references should I bring to the conversation?",
+        "decisions": [
+          {
+            "label": "Identify the intended piece",
+            "body": "Explain the product name, code or other reference staff uses. Allow sketches and inspiration images through the approved route while making clear which piece or feature the customer wants to discuss."
+          },
+          {
+            "label": "Preserve the material pairing",
+            "body": "Label the stain together with the wood species shown. If the customer has chosen a color but not the wood, keep that uncertainty explicit rather than completing a combination on their behalf."
+          },
+          {
+            "label": "Keep changes and final approval distinct",
+            "body": "Ask which size, hardware or material questions remain open. Explain the business’s actual physical-sample review and final specification process so a screen image does not become material approval."
+          }
+        ],
+        "ownerInputs": [
+          "Product identifiers and current wood/stain labels.",
+          "Approved examples and choices allowed to remain open.",
+          "Physical-sample review and order-confirmation process."
+        ],
+        "sourceBridge": "Bernhaus Furniture in Berne invites product references, sketches and inspiration photographs and guides size, wood, stain and hardware selection. Its comparison tool pairs wood species with stains, making the complete combination a useful reference for the first inquiry.",
+        "limits": "The seller confirms available combinations and final order details. New configurators, automated option validation and order-system connections require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "0299febea709bab075623163b15c8f2ce04ddc5acbb42a13cda0ec20ba5f5a69",
+      "afterSha256": "1a4ba280d94e90ba855cb6471dc3b94feb94b74d6994d10cdc4c7c2a2da893b9"
+    },
+    {
+      "route": "/areas/indiana/crawford-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/crawford-county/",
+        "inputHash": "457c525454eaa37d1ef5101aa8c85fc54618c58a8149ffb0bf2f34237ac4e26d",
+        "heading": "Keep time on the tours separate from the whole visit.",
+        "intro": "Adding two activity durations can leave out arrival, waiting and the interval between departures. Your attraction page can compare the tours and explain how a combined-ticket visitor asks about fitting them into a limited day.",
+        "customerQuestion": "If we choose both walking tours, does adding their durations tell us exactly when we can leave?",
+        "decisions": [
+          {
+            "label": "Compare the experiences and inclusions",
+            "body": "Use current tour names, approved descriptions and labeled images. Keep the combined ticket’s actual scope clear so visitors know which activities they are considering."
+          },
+          {
+            "label": "Explain what each duration covers",
+            "body": "Put the operator-approved time with the relevant tour and state whether it describes the activity itself. Do not turn the sum into a guaranteed arrival-to-departure timetable."
+          },
+          {
+            "label": "Describe how the visit gets started",
+            "body": "Explain current departure arrangements and how guests with limited time can ask about their plan. Keep time before and between tours visible as an unresolved planning consideration where staff must advise."
+          }
+        ],
+        "ownerInputs": [
+          "Current tour names, inclusions and duration wording.",
+          "Actual departure/waiting arrangements.",
+          "Combined-ticket guidance and contact for limited-time visits."
+        ],
+        "sourceBridge": "Marengo Cave describes two walking tours with different durations and a combined ticket. Its visitor information says departures are arranged as needed. That combination makes time on each tour different from the complete time a family may spend at the attraction in Marengo.",
+        "limits": "Obtain current numeric durations and start instructions from the operator; the supplied summary does not establish them. Staff confirms actual arrangements rather than a content page calculating completion. Live departure displays, capacity controls and ticket-system integrations require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/crawford-county/",
+        "inputHash": "457c525454eaa37d1ef5101aa8c85fc54618c58a8149ffb0bf2f34237ac4e26d",
+        "heading": "Keep time on the tours separate from the whole visit.",
+        "intro": "Adding two activity durations can leave out arrival, waiting and the interval between departures. Your attraction page can compare the tours and explain how a combined-ticket visitor asks about fitting them into a limited day.",
+        "customerQuestion": "If we choose both walking tours, does adding their durations tell us exactly when we can leave?",
+        "decisions": [
+          {
+            "label": "Compare the experiences and inclusions",
+            "body": "Use current tour names, approved descriptions and labeled images. Keep the combined ticket’s actual scope clear so visitors know which activities they are considering."
+          },
+          {
+            "label": "Explain what each duration covers",
+            "body": "Put the operator-approved time with the relevant tour and state whether it describes the activity itself. Do not turn the sum into a guaranteed arrival-to-departure timetable."
+          },
+          {
+            "label": "Describe how the visit gets started",
+            "body": "Explain current departure arrangements and how guests with limited time can ask about their plan. Keep time before and between tours visible as an unresolved planning consideration where staff must advise."
+          }
+        ],
+        "ownerInputs": [
+          "Current tour names, inclusions and duration wording.",
+          "Actual departure/waiting arrangements.",
+          "Combined-ticket guidance and contact for limited-time visits."
+        ],
+        "sourceBridge": "Marengo Cave describes two walking tours with different durations and a combined ticket. Its visitor information says departures are arranged as needed. That combination makes time on each tour different from the complete time a family may spend at the attraction in Marengo.",
+        "limits": "Supply the current duration and start instructions for each tour so visitors can distinguish activity time from the whole visit. Staff confirms actual arrangements; the page does not calculate a guaranteed departure time. Live departure displays, capacity controls and ticket-system integrations require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "ab7eaca379cfa68f41de3fec1da7002a870e129c109851dd8892bdabdaa83a62",
+      "afterSha256": "43d80d17643f65568d40d917495061637c66883e33b464ddb7c05b607a854e38"
+    },
+    {
+      "route": "/areas/indiana/daviess-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/daviess-county/",
+        "inputHash": "9c377be3c4ae31ae375f5f4e114c83b2925013e1628ecc391ebca9a2784bc4ba",
+        "heading": "Ask which part of the project the customer wants you to handle.",
+        "intro": "One buyer may need a team to develop a whole project while another already has a lead contractor and wants a defined trade package. Your service page can let each describe the requested contribution and the surrounding work.",
+        "customerQuestion": "We already have plans and a lead builder. Can I ask specifically about the drywall package rather than the whole house?",
+        "decisions": [
+          {
+            "label": "Identify the larger project",
+            "body": "Ask what building or area the request concerns using the business’s accepted categories. Give enough context to understand the trade work without treating every inquiry as overall project management."
+          },
+          {
+            "label": "Name the contribution being requested",
+            "body": "Distinguish broader construction or remodeling help from a particular service. Explain actual role boundaries so a defined package remains recognizable in the first conversation."
+          },
+          {
+            "label": "Keep existing information and other participants visible",
+            "body": "Let the customer describe plans already available, decisions still open and the contact leading adjacent work. Use approved project examples to show where the business’s contribution begins and ends."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted whole-project and trade-specific roles.",
+          "Approved examples identifying actual contributions.",
+          "Initial plan information and coordination questions."
+        ],
+        "sourceBridge": "J&L Home Center near Washington describes general construction and remodeling alongside subcontractor services such as painting, drywall and framing. It separately lists custom cabinetry. Those capabilities make the requested role useful information before discussing the work at its Daviess County location.",
+        "limits": "The business confirms scope, responsibilities and accepted work; the website does not allocate a construction contract. An actual approved role example would strengthen the explanation without inventing project facts. Bid management, construction scheduling, estimating and document-control systems require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/daviess-county/",
+        "inputHash": "9c377be3c4ae31ae375f5f4e114c83b2925013e1628ecc391ebca9a2784bc4ba",
+        "heading": "Ask which part of the project the customer wants you to handle.",
+        "intro": "One buyer may need a team to develop a whole project while another already has a lead contractor and wants a defined trade package. Your service page can let each describe the requested contribution and the surrounding work.",
+        "customerQuestion": "We already have plans and a lead builder. Can I ask specifically about the drywall package rather than the whole house?",
+        "decisions": [
+          {
+            "label": "Identify the larger project",
+            "body": "Ask what building or area the request concerns using the business’s accepted categories. Give enough context to understand the trade work without treating every inquiry as overall project management."
+          },
+          {
+            "label": "Name the contribution being requested",
+            "body": "Fictional inquiry: “We have house plans and a lead builder; please review the drywall package. The builder is our coordination contact, and we are not asking you to manage the whole build.” Contrast that with a customer seeking broader construction help before a lead team is chosen. Keep the requested contribution, available plans and responsible contact together so staff can assess the actual role."
+          },
+          {
+            "label": "Keep existing information and other participants visible",
+            "body": "Let the customer describe plans already available, decisions still open and the contact leading adjacent work. Use approved project examples to show where the business’s contribution begins and ends."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted whole-project and trade-specific roles.",
+          "Approved examples identifying actual contributions.",
+          "Initial plan information and coordination questions."
+        ],
+        "sourceBridge": "J&L Home Center near Washington describes general construction and remodeling alongside subcontractor services such as painting, drywall and framing. It separately lists custom cabinetry. Those capabilities make the requested role useful information before discussing the work at its Daviess County location.",
+        "limits": "The role comparison is fictional. The business confirms scope, responsibilities and accepted work; the website does not allocate a construction contract. Bid management, construction scheduling, estimating and document-control systems require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "a50cea6c0905131b6807e73f7e2d5a9d617248df69cdff1c97208fcff347676f",
+      "afterSha256": "3117108be9ef38308e9f7c21d62fe604f40a3fa31eb53c5002d697408045c265"
+    },
+    {
+      "route": "/areas/indiana/dearborn-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/dearborn-county/",
+        "inputHash": "01a37ec18dba0e1e4eab2168f58045943743e60154ecef0fdfd576625c49c861",
+        "heading": "Show the stops that remain after a ticket purchase.",
+        "intro": "A first-time guest may still need to redeem a ticket, collect equipment and find the lesson meeting point. Your arrival page can connect the selected offer to the relevant stops without treating the booking button as the complete preparation.",
+        "customerQuestion": "I have purchased access and need rental equipment. Where do I go before meeting for the first lesson?",
+        "decisions": [
+          {
+            "label": "Start with what the guest has arranged",
+            "body": "Separate access, equipment and instruction using current inclusions. Let a guest bringing their own equipment recognize which rental-related steps do not apply."
+          },
+          {
+            "label": "Explain the arrival and equipment handoffs",
+            "body": "Use the operator’s actual redemption and collection labels and directions. Keep fitting or collection visible before the activity meeting point where the selected arrangement requires it."
+          },
+          {
+            "label": "Name the meeting place after preparation",
+            "body": "Distinguish the ticket desk and rental location from the lesson start. Keep official place names consistent with on-site signs and provide the approved contact for an uncertain arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current offer inclusions and applicable arrival steps.",
+          "Verified venue labels, directions and equipment guidance.",
+          "Lesson meeting instructions and update responsibility."
+        ],
+        "sourceBridge": "Perfect North Slopes separately explains ticket redemption, rental collection and the first-lesson meeting area at its Lawrenceburg-area destination. That supports a connected first-visit sequence. The supplied page does not give the exact on-site counter names or timings; those details must come from current operator instructions.",
+        "limits": "A purchase confirmation does not establish that every preparation step is complete. Obtain the actual route before publishing a venue-specific guide. Ticketing integrations, fitting records, live wait times and lesson scheduling require separate scope; content can support the current systems.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/dearborn-county/",
+        "inputHash": "01a37ec18dba0e1e4eab2168f58045943743e60154ecef0fdfd576625c49c861",
+        "heading": "Show the stops that remain after a ticket purchase.",
+        "intro": "A first-time guest may still need to redeem a ticket, collect equipment and find the lesson meeting point. Your arrival page can connect the selected offer to the relevant stops without treating the booking button as the complete preparation.",
+        "customerQuestion": "I have purchased access and need rental equipment. Where do I go before meeting for the first lesson?",
+        "decisions": [
+          {
+            "label": "Start with what the guest has arranged",
+            "body": "Separate access, equipment and instruction using current inclusions. Let a guest bringing their own equipment recognize which rental-related steps do not apply."
+          },
+          {
+            "label": "Explain the arrival and equipment handoffs",
+            "body": "Illustrative three-stop sequence, using generic labels: ticket redemption → rental collection and fitting → lesson meeting point. A guest bringing their own equipment may not need the rental stop. Replace these generic labels with the operator’s approved place names and directions when preparing the venue’s guide; this illustration supplies no counter names, wait times or arrival deadline."
+          },
+          {
+            "label": "Name the meeting place after preparation",
+            "body": "Distinguish the ticket desk and rental location from the lesson start. Keep official place names consistent with on-site signs and provide the approved contact for an uncertain arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current offer inclusions and applicable arrival steps.",
+          "Verified venue labels, directions and equipment guidance.",
+          "Lesson meeting instructions and update responsibility."
+        ],
+        "sourceBridge": "Perfect North Slopes separately explains ticket redemption, rental collection and the first-lesson meeting area at its Lawrenceburg-area destination. That supports a connected first-visit sequence. The generic illustration above shows the handoffs without claiming to be current venue directions.",
+        "limits": "The operator confirms the applicable stops, route and preparation for the chosen offer. A purchase confirmation does not establish that every preparation step is complete. Ticketing integrations, fitting records, live wait times and lesson scheduling require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "8f0baf399ea9f695e2d2d41440555be1d60c364fba92a7272dd572c36e9d7b8c",
+      "afterSha256": "e03ba7680c8b815e6ae2d21d8af8bb38d522bda384ca578acb1e2f67763d15ad"
+    },
+    {
+      "route": "/areas/indiana/dubois-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/dubois-county/",
+        "inputHash": "0032051c2ad9c2c542f38157771863a3051ade2aab14812b4fb6171b082e4bfe",
+        "heading": "Start with the floor and intended task before selecting a machine.",
+        "intro": "A customer can recognize the job without knowing the correct rental category. Your equipment page can let them describe the surface and desired work, then connect that information to the supplier’s selection discussion and rental arrangements.",
+        "customerQuestion": "I know the floor I need to work on, but not whether a scrubber, floor machine or burnisher is appropriate. What should I tell staff?",
+        "decisions": [
+          {
+            "label": "Describe the surface and work area",
+            "body": "Use the supplier’s approved prompts for material, setting and practical access. Keep uncertain details open for staff rather than making the customer guess a technical classification."
+          },
+          {
+            "label": "Explain the intended result",
+            "body": "Ask what cleaning or finish-care task is being discussed. Obtain owner-approved category descriptions and real task examples so the catalogue helps visitors ask useful questions without prescribing a method."
+          },
+          {
+            "label": "Discuss the rental after selection review",
+            "body": "Keep the preferred use period and pickup or delivery question with the request. A desired time should not appear as an accepted reservation before suitability and availability are confirmed."
+          }
+        ],
+        "ownerInputs": [
+          "Current equipment categories and approved task descriptions.",
+          "Surface/setting questions used by the rental team.",
+          "Rental periods, reservation guidance and handoff process."
+        ],
+        "sourceBridge": "Jasper Equipment & Supply lists extractors, vacuums, scrubbers, floor machines and burnishers, alongside janitorial supplies. Its rental information asks for advance reservation when possible and mentions delivery or pickup. The supplied evidence does not define a worked surface-to-machine choice, so that explanation needs owner input.",
+        "limits": "Equipment and chemical suitability remain with the supplier and applicable product instructions. Clear preparation can support the current process; recommendation engines, live availability, rental checkout and delivery scheduling require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/dubois-county/",
+        "inputHash": "0032051c2ad9c2c542f38157771863a3051ade2aab14812b4fb6171b082e4bfe",
+        "heading": "Start with the floor and intended task before selecting a machine.",
+        "intro": "A customer can recognize the job without knowing the correct rental category. Your equipment page can let them describe the surface and desired work, then connect that information to the supplier’s selection discussion and rental arrangements.",
+        "customerQuestion": "I know the floor I need to work on, but not whether a scrubber, floor machine or burnisher is appropriate. What should I tell staff?",
+        "decisions": [
+          {
+            "label": "Describe the surface and work area",
+            "body": "Use the supplier’s approved prompts for material, setting and practical access. Keep uncertain details open for staff rather than making the customer guess a technical classification."
+          },
+          {
+            "label": "Explain the intended result",
+            "body": "Fictional inquiry: “We want to discuss routine cleaning of [known floor material] in [work area]. We do not know the existing finish or which rental category fits. We need to discuss access and a preferred use period.” This gives staff the surface, task and uncertainty without choosing a scrubber, floor machine or burnisher for the customer. Use the supplier’s approved questions for any further details."
+          },
+          {
+            "label": "Discuss the rental after selection review",
+            "body": "Keep the preferred use period and pickup or delivery question with the request. A desired time should not appear as an accepted reservation before suitability and availability are confirmed."
+          }
+        ],
+        "ownerInputs": [
+          "Current equipment categories and approved task descriptions.",
+          "Surface/setting questions used by the rental team.",
+          "Rental periods, reservation guidance and handoff process."
+        ],
+        "sourceBridge": "Jasper Equipment & Supply lists extractors, vacuums, scrubbers, floor machines and burnishers alongside janitorial supplies. Its rental information asks for advance reservation when possible and mentions delivery or pickup. The fictional inquiry demonstrates preparation for staff selection, not a surface-to-machine recommendation.",
+        "limits": "Equipment and chemical suitability remain with the supplier and applicable product instructions. Clear preparation can support the current process; recommendation engines, live availability, rental checkout and delivery scheduling require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "83159b72f16046dced54c2b8ff59fab020b01b10c310acc66bdadefe00187398",
+      "afterSha256": "9ed37a849af36a21ea249016d8056f9f217b5af0403bf3735c5411e23cccf44b"
+    },
+    {
+      "route": "/areas/indiana/franklin-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/franklin-county/",
+        "inputHash": "2d53719f090203114824447fb3be931cd855890775271e207b19b26e8144a7ac",
+        "heading": "Explain what the watch estimate establishes before collection is planned.",
+        "intro": "A local drop-off, proposed repair and completed timepiece are different stages. Your watch-service page can describe where work happens, what the initial estimate covers and how the customer hears that the piece is ready.",
+        "customerQuestion": "Will the watch be worked on here, and is the approximate repair time a confirmed date for collecting it?",
+        "decisions": [
+          {
+            "label": "Prepare the intake conversation",
+            "body": "Ask for the identifying details and concern the shop actually needs. Explain accepted service categories without diagnosing the timepiece from the customer’s description."
+          },
+          {
+            "label": "Describe the workshop and estimate",
+            "body": "State the real on-site role and any owner-confirmed exceptions. Keep proposed work and approximate timing distinct from an accepted scope or guaranteed completion date."
+          },
+          {
+            "label": "Explain further recommendations and readiness",
+            "body": "Obtain the shop’s actual process for discussing additional work discovered during maintenance. Name how completion and return are communicated so an elapsed estimate does not become an instruction to collect the watch."
+          }
+        ],
+        "ownerInputs": [
+          "Current intake details and workshop responsibilities.",
+          "Estimate wording and process for additional recommendations.",
+          "Actual completion notification and return arrangements."
+        ],
+        "sourceBridge": "Ritzi Jewelers in Brookville describes on-site watch repair, an estimate with approximate timing and maintenance that may lead to further recommendations. Brookville supplies the Franklin County example; Batesville itself spans Franklin and Ripley counties. The supplied evidence does not define every exception or authorization step.",
+        "limits": "The owner must approve those missing process details before publication. The shop determines diagnosis and accepted work; the page does not promise a duration. Repair tracking, authorization systems and automated completion estimates require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/franklin-county/",
+        "inputHash": "2d53719f090203114824447fb3be931cd855890775271e207b19b26e8144a7ac",
+        "heading": "Explain what the watch estimate establishes before collection is planned.",
+        "intro": "A local drop-off, proposed repair and completed timepiece are different stages. Your watch-service page can describe where work happens, what the initial estimate covers and how the customer hears that the piece is ready.",
+        "customerQuestion": "Will the watch be worked on here, and is the approximate repair time a confirmed date for collecting it?",
+        "decisions": [
+          {
+            "label": "Prepare the intake conversation",
+            "body": "Ask for the identifying details and concern the shop actually needs. Explain accepted service categories without diagnosing the timepiece from the customer’s description."
+          },
+          {
+            "label": "Describe the workshop and estimate",
+            "body": "State the real on-site role and any owner-confirmed exceptions. Keep proposed work and approximate timing distinct from an accepted scope or guaranteed completion date."
+          },
+          {
+            "label": "Explain further recommendations and readiness",
+            "body": "Obtain the shop’s actual process for discussing additional work discovered during maintenance. Name how completion and return are communicated so an elapsed estimate does not become an instruction to collect the watch."
+          }
+        ],
+        "ownerInputs": [
+          "Current intake details and workshop responsibilities.",
+          "Estimate wording and process for additional recommendations.",
+          "Actual completion notification and return arrangements."
+        ],
+        "sourceBridge": "Ritzi Jewelers in Brookville describes on-site watch repair, an estimate with approximate timing and maintenance that may lead to further recommendations. Brookville supplies the Franklin County example; Batesville itself spans Franklin and Ripley counties.",
+        "limits": "Supply the shop’s current exceptions to on-site work, additional-work approval steps and readiness messages. The shop determines diagnosis and accepted work; an approximate estimate does not promise a collection date. Repair tracking, authorization systems and automated completion estimates require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "5f484a950a81d1e833eef7e95d29c62c87fdb14966095afcc4c37937b3b3217d",
+      "afterSha256": "2d0d6c0599d0f4dcaa9d2c03606ca9ca26d17f15115f44fd37ff589da3f4fe5b"
+    },
+    {
+      "route": "/areas/indiana/hendricks-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/hendricks-county/",
+        "inputHash": "cb2779670ff662b89de4246ea04eee4616de813af5e5e6ae5fa05a67a9d40e66",
+        "heading": "Compare the work inside the package before discussing replacement parts.",
+        "intro": "A larger bicycle service package can add cleaning or overhaul labor without covering every replacement. Your service page can show the actual differences and prepare the rider for the shop’s check-in assessment.",
+        "customerQuestion": "What extra work does the larger package include, and how will a possible replacement part be discussed?",
+        "decisions": [
+          {
+            "label": "Show the tasks shared by the packages",
+            "body": "Use the shop’s current adjustment list as the comparison starting point. A package name should have an understandable account of the labor it includes."
+          },
+          {
+            "label": "Describe the added cleaning or overhaul work",
+            "body": "Name the actual components and tasks that change with the option. Obtain approved lists rather than relying on a broad premium label or implying every service is included."
+          },
+          {
+            "label": "Keep parts and further recommendations separate",
+            "body": "Explain the check-in agreement and how additional work or charges are discussed. A routine-service request that reveals another concern should reach assessment without silently expanding the accepted package."
+          }
+        ],
+        "ownerInputs": [
+          "Current shared and added task lists.",
+          "Parts/additional-service boundaries.",
+          "Actual check-in, estimate and communication process."
+        ],
+        "sourceBridge": "Gear Up Cyclery in Plainfield lists tune-up packages with different adjustment, cleaning and overhaul work. Its service information says parts are additional and requires agreed work and estimates at check-in. Those boundaries help the customer use the comparison without treating a package as an all-inclusive repair.",
+        "limits": "The technician determines what the bicycle needs. The supplied summary does not enumerate every package task, so current owner lists are needed. Clear comparisons can support existing check-in; repair-authorization records and live completion-status features require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/hendricks-county/",
+        "inputHash": "cb2779670ff662b89de4246ea04eee4616de813af5e5e6ae5fa05a67a9d40e66",
+        "heading": "Compare the work inside the package before discussing replacement parts.",
+        "intro": "A larger bicycle service package can add cleaning or overhaul labor without covering every replacement. Your service page can show the actual differences and prepare the rider for the shop’s check-in assessment.",
+        "customerQuestion": "What extra work does the larger package include, and how will a possible replacement part be discussed?",
+        "decisions": [
+          {
+            "label": "Show the tasks shared by the packages",
+            "body": "Use the shop’s current adjustment list as the comparison starting point. A package name should have an understandable account of the labor it includes."
+          },
+          {
+            "label": "Describe the added cleaning or overhaul work",
+            "body": "Illustrative comparison structure: “Both packages: [shop-approved shared tasks]. Larger package adds: [named cleaning or overhaul tasks]. Replacement parts: assessed and priced separately.” The brackets are fields for the shop’s actual lists, not claims that a particular task is included. A rider can then ask which added work addresses the concern without assuming the larger package covers every repair."
+          },
+          {
+            "label": "Keep parts and further recommendations separate",
+            "body": "Explain the check-in agreement and how additional work or charges are discussed. A routine-service request that reveals another concern should reach assessment without silently expanding the accepted package."
+          }
+        ],
+        "ownerInputs": [
+          "Current shared and added task lists.",
+          "Parts/additional-service boundaries.",
+          "Actual check-in, estimate and communication process."
+        ],
+        "sourceBridge": "Gear Up Cyclery in Plainfield lists tune-up packages with different adjustment, cleaning and overhaul work. Its service information says parts are additional and requires agreed work and estimates at check-in. Those boundaries help the customer use the comparison without treating a package as an all-inclusive repair.",
+        "limits": "The technician determines what the bicycle needs and confirms the actual task lists. The comparison structure does not select a package or authorize extra work. Repair-authorization records and live completion-status features require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "d51839bd8c5b35c01bd1da88931e79ff7d072744807b2c4f935804867467c92b",
+      "afterSha256": "3c117aab504a75978216d850670ed93f09d1d2dee3a8720ef0955106887ad807"
+    },
+    {
+      "route": "/areas/indiana/jennings-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/jennings-county/",
+        "inputHash": "500717ab638f735edd84164ae2071b25188199f3103970c1a4d1c9be13229f6a",
+        "heading": "Choose the award format around how the recognition will be presented.",
+        "intro": "An organizer may know the achievement before knowing whether the award should be held, worn or displayed. Your awards page can compare actual product forms and prepare the recipient details needed for a useful supplier discussion.",
+        "customerQuestion": "Should this championship recognition be a trophy, plaque, ring or belt, and which details will change with that choice?",
+        "decisions": [
+          {
+            "label": "Describe the recognition moment",
+            "body": "Ask about the event, achievement and recipients using the kinds of work the supplier actually accepts. Keep the purpose visible before narrowing the design to a familiar catalogue image."
+          },
+          {
+            "label": "Show the physical formats accurately",
+            "body": "Use approved examples to distinguish displayed and wearable pieces. Obtain real product-specific selection questions rather than imply every format uses the same sizes, materials or requirements."
+          },
+          {
+            "label": "Separate shared and personal content",
+            "body": "Let the organizer distinguish event identity from recipient-specific information and explain the intended presentation. Keep order review and receiving arrangements open until the supplier confirms them."
+          }
+        ],
+        "ownerInputs": [
+          "Current award categories and actual format examples.",
+          "Product-specific recipient and customization requirements.",
+          "Order-review and presentation-handoff process."
+        ],
+        "sourceBridge": "Premier Sports Group in North Vernon presents trophies and plaques alongside rings and championship belts and invites custom-award inquiries for events and tournaments. This range supports comparing the object’s presentation role, but the supplied evidence does not establish detailed selection rules for each format.",
+        "limits": "The supplier confirms suitable options, specifications and timing. Add owner-approved examples before making format-specific claims. Content can prepare a general inquiry; configurators, recipient-data systems, automated proofs and new ordering integrations require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/jennings-county/",
+        "inputHash": "500717ab638f735edd84164ae2071b25188199f3103970c1a4d1c9be13229f6a",
+        "heading": "Choose the award format around how the recognition will be presented.",
+        "intro": "An organizer may know the achievement before knowing whether the award should be held, worn or displayed. Your awards page can compare actual product forms and prepare the recipient details needed for a useful supplier discussion.",
+        "customerQuestion": "Should this championship recognition be a trophy, plaque, ring or belt, and which details will change with that choice?",
+        "decisions": [
+          {
+            "label": "Describe the recognition moment",
+            "body": "Ask about the event, achievement and recipients using the kinds of work the supplier actually accepts. Keep the purpose visible before narrowing the design to a familiar catalogue image."
+          },
+          {
+            "label": "Show the physical formats accurately",
+            "body": "Fictional organizer’s inquiry: “We want one award displayed at the club and individual wearable recognition for recipients. Both should carry the event name; recipient names differ. Please show the actual trophy/plaque and ring/belt choices and tell us what details each needs.” This separates presentation and shared content without assuming common sizes, materials or customization rules across formats."
+          },
+          {
+            "label": "Separate shared and personal content",
+            "body": "Let the organizer distinguish event identity from recipient-specific information and explain the intended presentation. Keep order review and receiving arrangements open until the supplier confirms them."
+          }
+        ],
+        "ownerInputs": [
+          "Current award categories and actual format examples.",
+          "Product-specific recipient and customization requirements.",
+          "Order-review and presentation-handoff process."
+        ],
+        "sourceBridge": "Premier Sports Group in North Vernon presents trophies and plaques alongside rings and championship belts and invites custom-award inquiries for events and tournaments. The fictional inquiry uses that range to separate a shared display from recipient-specific recognition, without inventing specifications.",
+        "limits": "The supplier confirms suitable options, recipient details, specifications and timing. Configurators, recipient-data systems, automated proofs and new ordering integrations require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "b4d61c9db5b7b3519491a9c6dcca4ead0cad24f0374a2f129fdd466f56a4225b",
+      "afterSha256": "825c229a1dd4e8eff4fe3c51ec671914fbaf239bd7448d8a9481e1cbc641291f"
+    },
+    {
+      "route": "/areas/indiana/knox-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/knox-county/",
+        "inputHash": "67a43a2b09e6683e7251a2b74190c5a0f3e8f86cbb2b2a145db0165bc6d80d70",
+        "heading": "Describe the finished print and where it goes next.",
+        "intro": "Artwork alone may not say whether the customer wants flat printed pieces, additional finishing or help with mailing. Your print page can keep the physical condition and distribution responsibility with the content being quoted.",
+        "customerQuestion": "Do I want the pieces handed back to me, or should the shop also review folding and mailing as part of the job?",
+        "decisions": [
+          {
+            "label": "Identify the printed product and content",
+            "body": "Use the shop’s actual product descriptions and artwork-reference instructions. Make clear what is being printed before discussing the operations or destination that follow."
+          },
+          {
+            "label": "Describe the condition at handoff",
+            "body": "Let the customer state how finished pieces should be used and grouped. Ask about quantities in terms the printer approves rather than assuming the file determines folding or other preparation."
+          },
+          {
+            "label": "Keep the distribution question separate",
+            "body": "Distinguish customer collection or receipt from a request for mailing help. Publish the actual review route so a general capability does not appear as an agreed distribution service."
+          }
+        ],
+        "ownerInputs": [
+          "Current products and approved finishing examples.",
+          "Useful finished-quantity and grouping prompts.",
+          "Mailing-review information and actual handoff process."
+        ],
+        "sourceBridge": "Vincennes Printing presents Haven Solutions print products alongside folding, mailing and finishing capabilities and invites a job-specification inquiry. The linked Haven site was under maintenance in the supplied research and corroborates company identity and location rather than supplying a complete operating process.",
+        "limits": "The printer confirms production methods, finishing and any mailing arrangement. Clear examples can prepare the existing inquiry without assuming post-print work is included. Distribution integrations, mailing-data systems, automated quotations and production tracking require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/knox-county/",
+        "inputHash": "67a43a2b09e6683e7251a2b74190c5a0f3e8f86cbb2b2a145db0165bc6d80d70",
+        "heading": "Describe the finished print and where it goes next.",
+        "intro": "Artwork alone may not say whether the customer wants flat printed pieces, additional finishing or help with mailing. Your print page can keep the physical condition and distribution responsibility with the content being quoted.",
+        "customerQuestion": "Do I want the pieces handed back to me, or should the shop also review folding and mailing as part of the job?",
+        "decisions": [
+          {
+            "label": "Identify the printed product and content",
+            "body": "Use the shop’s actual product descriptions and artwork-reference instructions. Make clear what is being printed before discussing the operations or destination that follow."
+          },
+          {
+            "label": "Describe the condition at handoff",
+            "body": "Let the customer state how finished pieces should be used and grouped. Ask about quantities in terms the printer approves rather than assuming the file determines folding or other preparation."
+          },
+          {
+            "label": "Keep the distribution question separate",
+            "body": "Distinguish customer collection or receipt from a request for mailing help. Publish the actual review route so a general capability does not appear as an agreed distribution service."
+          }
+        ],
+        "ownerInputs": [
+          "Current products and approved finishing examples.",
+          "Useful finished-quantity and grouping prompts.",
+          "Mailing-review information and actual handoff process."
+        ],
+        "sourceBridge": "Vincennes Printing presents Haven Solutions print products alongside folding, mailing and finishing capabilities and invites a job-specification inquiry. Confirm the current finishing and mailing arrangements with the printer, then explain whether the buyer is requesting finished pieces for their own distribution or asking the shop to review mailing help.",
+        "limits": "The printer confirms production methods, finishing and any mailing arrangement. Clear examples can prepare the existing inquiry without assuming post-print work is included. Distribution integrations, mailing-data systems, automated quotations and production tracking require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "d86c9a36a78e4cd8b3fc357296f1493d534ec0d4d445392d2e62365bd5ac64ce",
+      "afterSha256": "a55d06266b49e70ad4229d496c281244c6c97d5916906615faacc2090eab3432"
+    },
+    {
+      "route": "/areas/indiana/lawrence-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/lawrence-county/",
+        "inputHash": "31522acd6334bea88045f4bb40422840ef08b6e3a93e66ce0ffc8cc2d0ccc165",
+        "heading": "Keep the reported sign problem separate from the upgrade being considered.",
+        "intro": "A flickering sign and an outdated logo can belong to the same installation while raising different requests. Your service page can preserve the observed problem and optional change before the specialist recommends work.",
+        "customerQuestion": "I want the lighting problem assessed and am also considering a new appearance. How do I keep those goals separate?",
+        "decisions": [
+          {
+            "label": "Identify the existing installation",
+            "body": "Ask for the site, sign reference and approved photographs needed for review. Keep the same installation recognizable when the inquiry includes several concerns."
+          },
+          {
+            "label": "Describe the observation without a diagnosis",
+            "body": "Let customers explain what changed in the lighting or visible condition. They should not have to identify a failed component or choose a repair method to make contact."
+          },
+          {
+            "label": "Name the optional upgrade and agreement step",
+            "body": "Keep a requested lighting or design change distinct from restoring operation. Explain the actual assessment and authorization process so neither a service inquiry nor an attractive example silently approves a retrofit or redesign."
+          }
+        ],
+        "ownerInputs": [
+          "Current repair and upgrade categories.",
+          "Approved observation prompts and sign references.",
+          "Actual assessment, recommendation and work-agreement process."
+        ],
+        "sourceBridge": "Johnny’s Signs in Bedford describes lighting and other repairs separately from LED retrofits and design modernization, with assessment before work. Those services support retaining both restoration and change goals. An owner-approved example of how the scopes differ would make the comparison more useful.",
+        "limits": "The specialist assesses the installation and the customer agrees the accepted work. A reported symptom is not approval of a technical method. Content can support the current inquiry; diagnostic tools, automatic estimates, authorization records and dispatch connections require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/lawrence-county/",
+        "inputHash": "31522acd6334bea88045f4bb40422840ef08b6e3a93e66ce0ffc8cc2d0ccc165",
+        "heading": "Keep the reported sign problem separate from the upgrade being considered.",
+        "intro": "A flickering sign and an outdated logo can belong to the same installation while raising different requests. Your service page can preserve the observed problem and optional change before the specialist recommends work.",
+        "customerQuestion": "I want the lighting problem assessed and am also considering a new appearance. How do I keep those goals separate?",
+        "decisions": [
+          {
+            "label": "Identify the existing installation",
+            "body": "Ask for the site, sign reference and approved photographs needed for review. Keep the same installation recognizable when the inquiry includes several concerns."
+          },
+          {
+            "label": "Describe the observation without a diagnosis",
+            "body": "Let customers explain what changed in the lighting or visible condition. They should not have to identify a failed component or choose a repair method to make contact."
+          },
+          {
+            "label": "Name the optional upgrade and agreement step",
+            "body": "Keep a requested lighting or design change distinct from restoring operation. Explain the actual assessment and authorization process so neither a service inquiry nor an attractive example silently approves a retrofit or redesign."
+          }
+        ],
+        "ownerInputs": [
+          "Current repair and upgrade categories.",
+          "Approved observation prompts and sign references.",
+          "Actual assessment, recommendation and work-agreement process."
+        ],
+        "sourceBridge": "Johnny’s Signs in Bedford describes lighting and other repairs separately from LED retrofits and design modernization, with assessment before work. Those services support retaining both restoration and change goals. Supply approved repair and upgrade examples with captions identifying the work actually performed.",
+        "limits": "The specialist assesses the installation and the customer agrees the accepted work. A reported symptom is not approval of a technical method. Content can support the current inquiry; diagnostic tools, automatic estimates, authorization records and dispatch connections require separate assessment.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "e2ca6e2635a90296010f47185fae21a41769a9c08403ebc045a5a24110932ce7",
+      "afterSha256": "26b0cc969d3199380519ed671dc0b54993c479b1792f827ea646d5f8d15abc20"
+    },
+    {
+      "route": "/areas/indiana/marion-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/marion-county/",
+        "inputHash": "8d44299f571f903d0e86377c3527e7c3cf5ba8652e144c498e9a0a5b532bb36b",
+        "heading": "Explain the decision needed before production can begin.",
+        "intro": "A fabrication estimate can sound like a complete project timetable when the customer has not chosen materials or approved a design. Your public process page can show which decisions move the work forward.",
+        "customerQuestion": "We have discussed the room but have not chosen materials. What do we need to decide before the project can enter production?",
+        "decisions": [
+          {
+            "label": "Prepare the first discussion",
+            "body": "Explain what the business needs to understand the room and intended result. Distinguish useful initial context from decisions that can be made later with the designer."
+          },
+          {
+            "label": "Name the choices that precede accepted work",
+            "body": "Use the business’s actual design, quotation and approval steps. Show what the customer supplies and what the company reviews, so an early conversation is not mistaken for fabrication already in progress."
+          },
+          {
+            "label": "Explain project-specific coordination",
+            "body": "Describe where installation arrangements and individual updates are confirmed. A public sequence can explain dependencies while each customer continues to use the agreed route for their own project."
+          }
+        ],
+        "ownerInputs": [
+          "Actual stages and required customer decisions.",
+          "Approved timing statements and their dependencies.",
+          "Consultation, approval and individual-update routes."
+        ],
+        "sourceBridge": "Indianapolis examples support this distinction: Nathan Alan Design describes scope, materials and customer availability for meetings and decisions as timing factors; Rines Design places design and a written quote before approval, fabrication and installation. Their sequence can inform the explanation without becoming another company’s promise.",
+        "limits": "A public process page does not report live project status. Dashboards, approval records, reminders and internal scheduling need separate requirements. Keep the existing website-project FAQs about one named approver, consolidated feedback, written approval and paid-file handoff if work stops.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/marion-county/",
+        "inputHash": "8d44299f571f903d0e86377c3527e7c3cf5ba8652e144c498e9a0a5b532bb36b",
+        "heading": "Explain the decision needed before production can begin.",
+        "intro": "A fabrication estimate can sound like a complete project timetable when the customer has not chosen materials or approved a design. Your public process page can show which decisions move the work forward.",
+        "customerQuestion": "We have discussed the room but have not chosen materials. What do we need to decide before the project can enter production?",
+        "decisions": [
+          {
+            "label": "Prepare the first discussion",
+            "body": "Explain what the business needs to understand the room and intended result. Distinguish useful initial context from decisions that can be made later with the designer."
+          },
+          {
+            "label": "Name the choices that precede accepted work",
+            "body": "Use the business’s actual design, quotation and approval steps. Show what the customer supplies and what the company reviews, so an early conversation is not mistaken for fabrication already in progress."
+          },
+          {
+            "label": "Explain project-specific coordination",
+            "body": "Describe where installation arrangements and individual updates are confirmed. A public sequence can explain dependencies while each customer continues to use the agreed route for their own project."
+          }
+        ],
+        "ownerInputs": [
+          "Actual stages and required customer decisions.",
+          "Approved timing statements and their dependencies.",
+          "Consultation, approval and individual-update routes."
+        ],
+        "sourceBridge": "Indianapolis examples support this distinction: Nathan Alan Design describes scope, materials and customer availability for meetings and decisions as timing factors; Rines Design places design and a written quote before approval, fabrication and installation. Their sequence can inform the explanation without becoming another company’s promise.",
+        "limits": "A public process page does not report live project status. Dashboards, approval records, reminders and internal scheduling need separate requirements.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "15138c9ecf237cdf0807ba1b71480d8cee6495c5068d3ab2e228b72a30d407ba",
+      "afterSha256": "332d0265a3e37d703e4ed7d252f5cd587f07a98048549bb0df52d6d4957674d3"
+    },
+    {
+      "route": "/areas/indiana/miami-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/miami-county/",
+        "inputHash": "aa2644e9bd9a1290a0a5a70f7386d44d5827c0fd9a78c4eaf1a22757aecf54bb",
+        "heading": "Compare the full venue-access window around the event.",
+        "intro": "Guests may attend for only part of the time an organizer needs the venue. Your comparison can keep preparation, supplier access and departure visible when customers choose between hourly hire and a longer package.",
+        "customerQuestion": "Our guests will attend for a few hours, but suppliers need earlier access. Which hire option covers the complete plan?",
+        "decisions": [
+          {
+            "label": "Place the guest event inside the access period",
+            "body": "Ask when guests arrive and leave, then show that as one part of the proposed arrangement. Do not use the celebration’s duration as shorthand for the whole rental."
+          },
+          {
+            "label": "Compare preparation and departure access",
+            "body": "Publish the actual before-and-after allowances for each offer. Keep setup, supplier entry and removal needs visible so shared furniture or facilities do not make different time arrangements look identical."
+          },
+          {
+            "label": "Confirm the complete request",
+            "body": "Bring the selected option, extra time and optional items into the existing venue conversation. The organizer should be able to explain what happens before, during and after the celebration."
+          }
+        ],
+        "ownerInputs": [
+          "Current access terms for every hire option.",
+          "Supplier, setup and removal instructions.",
+          "Included facilities, optional items and confirmation process."
+        ],
+        "sourceBridge": "Whitetail Woods Event Center in Peru presents an event package with Friday-to-Saturday access alongside hourly hire that includes time before and after the event. It also identifies shared facilities and separate extras. The useful comparison is the complete access arrangement, not merely the room or guest-event duration.",
+        "limits": "The supplied source description does not state precise hourly setup or departure allowances. Confirm current terms before publishing a worked timetable. Additional time, availability and supplier access remain for the venue to agree; booking and access-management systems need separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/miami-county/",
+        "inputHash": "aa2644e9bd9a1290a0a5a70f7386d44d5827c0fd9a78c4eaf1a22757aecf54bb",
+        "heading": "Compare the full venue-access window around the event.",
+        "intro": "Guests may attend for only part of the time an organizer needs the venue. Your comparison can keep preparation, supplier access and departure visible when customers choose between hourly hire and a longer package.",
+        "customerQuestion": "Our guests will attend for a few hours, but suppliers need earlier access. Which hire option covers the complete plan?",
+        "decisions": [
+          {
+            "label": "Place the guest event inside the access period",
+            "body": "Ask when guests arrive and leave, then show that as one part of the proposed arrangement. Do not use the celebration’s duration as shorthand for the whole rental."
+          },
+          {
+            "label": "Compare preparation and departure access",
+            "body": "Publish the actual before-and-after allowances for each offer. Keep setup, supplier entry and removal needs visible so shared furniture or facilities do not make different time arrangements look identical."
+          },
+          {
+            "label": "Confirm the complete request",
+            "body": "Bring the selected option, extra time and optional items into the existing venue conversation. The organizer should be able to explain what happens before, during and after the celebration."
+          }
+        ],
+        "ownerInputs": [
+          "Current access terms for every hire option.",
+          "Supplier, setup and removal instructions.",
+          "Included facilities, optional items and confirmation process."
+        ],
+        "sourceBridge": "Whitetail Woods Event Center in Peru presents an event package with Friday-to-Saturday access alongside hourly hire that includes time before and after the event. It also identifies shared facilities and separate extras. The useful comparison is the complete access arrangement, not merely the room or guest-event duration.",
+        "limits": "Supply the venue-approved setup and departure allowances for each option, including how extra time and supplier access are confirmed. The venue agrees availability and the complete access period; booking and access-management systems need separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "331be59229925dfe479c4894805e6f0aeb3d31f6feca8e03d7aca85c38a21643",
+      "afterSha256": "08e5c96bc5a2e35d1e50cce6b72c50da6a1f83cb7f1808409245b9f0c8eed18d"
+    },
+    {
+      "route": "/areas/indiana/monroe-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/monroe-county/",
+        "inputHash": "b8a627a874214af6425bac8dddba644c2b024f917bdad93da41e843f7290ef36",
+        "heading": "Compare what the landscape plan produces and how much it covers.",
+        "intro": "A site conversation, a drawing for one garden and a plan connecting several projects are different purchases. Your comparison can show both the deliverable and the area covered before a customer chooses where to begin.",
+        "customerQuestion": "We want the front garden now and a patio later. Which service helps us plan those areas together, and will we receive a drawing?",
+        "decisions": [
+          {
+            "label": "Name the output",
+            "body": "State whether each service provides advice, a drawn design or another agreed deliverable. An initial conversation should not imply that a whole-property drawing is included."
+          },
+          {
+            "label": "Identify the covered area",
+            "body": "Connect each service to its actual boundary: one project, a defined area or several related areas. Use approved examples to explain how a broader plan can support work considered in phases."
+          },
+          {
+            "label": "Route the first discussion",
+            "body": "Help customers describe the property and immediate or later projects. Preserve a suitable route for a single project or routine care rather than implying that every inquiry requires a master plan."
+          }
+        ],
+        "ownerInputs": [
+          "Current service names and deliverables.",
+          "Area covered and approved phased-project examples.",
+          "Questions used to choose the first conversation."
+        ],
+        "sourceBridge": "Bloomington’s Abell Nursery distinguishes discussions without a drawn design, a single-project design and a broader master plan. Nature’s Way describes an initial site conversation followed by a design and installation presentation. These examples support comparing output and coverage without inventing another business’s packages.",
+        "limits": "The landscape business approves fees, timing, deliverables and drawing-use rights. Archives, plan-review tools and customer portals need separate requirements. Preserve the website-project FAQ explaining that a useful first scope can expand later through a separate quote, and that design approval is written.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/monroe-county/",
+        "inputHash": "b8a627a874214af6425bac8dddba644c2b024f917bdad93da41e843f7290ef36",
+        "heading": "Compare what the landscape plan produces and how much it covers.",
+        "intro": "A site conversation, a drawing for one garden and a plan connecting several projects are different purchases. Your comparison can show both the deliverable and the area covered before a customer chooses where to begin.",
+        "customerQuestion": "We want the front garden now and a patio later. Which service helps us plan those areas together, and will we receive a drawing?",
+        "decisions": [
+          {
+            "label": "Name the output",
+            "body": "State whether each service provides advice, a drawn design or another agreed deliverable. An initial conversation should not imply that a whole-property drawing is included."
+          },
+          {
+            "label": "Identify the covered area",
+            "body": "Connect each service to its actual boundary: one project, a defined area or several related areas. Use approved examples to explain how a broader plan can support work considered in phases."
+          },
+          {
+            "label": "Route the first discussion",
+            "body": "Help customers describe the property and immediate or later projects. Preserve a suitable route for a single project or routine care rather than implying that every inquiry requires a master plan."
+          }
+        ],
+        "ownerInputs": [
+          "Current service names and deliverables.",
+          "Area covered and approved phased-project examples.",
+          "Questions used to choose the first conversation."
+        ],
+        "sourceBridge": "Bloomington’s Abell Nursery distinguishes discussions without a drawn design, a single-project design and a broader master plan. Nature’s Way describes an initial site conversation followed by a design and installation presentation. These examples support comparing output and coverage without inventing another business’s packages.",
+        "limits": "The landscape business approves fees, timing, deliverables and drawing-use rights. Archives, plan-review tools and customer portals need separate requirements.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "ee3c9f8875a771b5a4ba40b39525ca268312be999e4b449e6c7bccad1f44e229",
+      "afterSha256": "8a3e894e5097440ad1f7d4520f20b98354218a07039fa57afbbdbe438ee8526c"
+    },
+    {
+      "route": "/areas/indiana/morgan-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/morgan-county/",
+        "inputHash": "e80bc80500c02d71b3209584078fae46e146c2a95df43fd74727ff7ae7df5dc9",
+        "heading": "Explain whether the beginner class is a first project or a foundation.",
+        "intro": "Two classes can welcome people with no experience while serving different purposes. Your comparison can show whether the learner is making one piece or building the skills required for later studio participation.",
+        "customerQuestion": "I am new to jewelry making and hope to use open studio later. Which introductory course prepares me for that next step?",
+        "decisions": [
+          {
+            "label": "Identify the immediate goal",
+            "body": "Describe the project or learning experience each offer provides. A beginner label alone does not tell someone whether the class centers on a finished object or a broader set of skills."
+          },
+          {
+            "label": "Compare learning and attendance",
+            "body": "Use instructor-approved objectives and the actual session commitment. Keep materials and preparation attached to the specific class rather than allowing one introductory listing to stand for every offer."
+          },
+          {
+            "label": "State the progression requirement",
+            "body": "Explain which course satisfies which later prerequisite and how readiness is confirmed. Completing a make-and-take project should not imply qualification for all advanced classes or open studio."
+          }
+        ],
+        "ownerInputs": [
+          "Current learning objectives and project descriptions.",
+          "Accurate dates, attendance and preparation requirements.",
+          "Confirmed prerequisites and readiness-review route."
+        ],
+        "sourceBridge": "StudioPhD at The Sterling Butterfly in Martinsville describes a beginner jewelry skills intensive intended to complete prerequisites for advanced classes and open studio. A separate beginner make-and-take listing offers a project with materials provided without that stated prerequisite role. The distinction concerns what the learner is preparing to do next.",
+        "limits": "The cited intensive listing is for October 24–25, 2026, dates already past at this audit. Use it as a historical example and verify current offers before presenting a booking choice. The instructor confirms eligibility; class registration and prerequisite tracking need separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/morgan-county/",
+        "inputHash": "e80bc80500c02d71b3209584078fae46e146c2a95df43fd74727ff7ae7df5dc9",
+        "heading": "Explain whether the beginner class is a first project or a foundation.",
+        "intro": "Two classes can welcome people with no experience while serving different purposes. Your comparison can show whether the learner is making one piece or building the skills required for later studio participation.",
+        "customerQuestion": "I am new to jewelry making and hope to use open studio later. Which introductory course prepares me for that next step?",
+        "decisions": [
+          {
+            "label": "Identify the immediate goal",
+            "body": "Describe the project or learning experience each offer provides. A beginner label alone does not tell someone whether the class centers on a finished object or a broader set of skills."
+          },
+          {
+            "label": "Compare learning and attendance",
+            "body": "Use instructor-approved objectives and the actual session commitment. Keep materials and preparation attached to the specific class rather than allowing one introductory listing to stand for every offer."
+          },
+          {
+            "label": "State the progression requirement",
+            "body": "Explain which course satisfies which later prerequisite and how readiness is confirmed. Completing a make-and-take project should not imply qualification for all advanced classes or open studio."
+          }
+        ],
+        "ownerInputs": [
+          "Current learning objectives and project descriptions.",
+          "Accurate dates, attendance and preparation requirements.",
+          "Confirmed prerequisites and readiness-review route."
+        ],
+        "sourceBridge": "StudioPhD at The Sterling Butterfly in Martinsville describes a beginner jewelry skills intensive intended to complete prerequisites for advanced classes and open studio. A separate beginner make-and-take listing offers a project with materials provided without that stated prerequisite role. The distinction concerns what the learner is preparing to do next.",
+        "limits": "The October 24–25, 2026 intensive is a historical example of a course with a stated progression role. The instructor confirms current offerings, prerequisites and eligibility. Class registration and prerequisite tracking need separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "6ccfb7cef01b87316b697b4a431b7191240f511a6c43aa8f8412d5ccc079ef6f",
+      "afterSha256": "e0164f0bf6889776fb4c4b9dc4705bb57934c2154f22d47f2570bf5b2102b4c8"
+    },
+    {
+      "route": "/areas/indiana/porter-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/porter-county/",
+        "inputHash": "7d802df5d9afddc5c12aa6bef97120ad9182bdc4312057a8039e4119838a432e",
+        "heading": "Let piano owners describe the sound or touch before choosing a service.",
+        "intro": "An owner may know that a key feels uneven without knowing whether the piano needs regulation, repair or another service. Your introduction can make the specialist offer understandable while keeping an uncertain inquiry easy.",
+        "customerQuestion": "Some keys feel different from the others. What should I tell you before deciding which service to request?",
+        "decisions": [
+          {
+            "label": "Identify the instrument",
+            "body": "Ask for the piano details, known history and location the technician finds useful. An inherited or unfamiliar instrument should still have a contact route when some information is unknown."
+          },
+          {
+            "label": "Describe the observation",
+            "body": "Use technician-approved prompts for changes in sound, touch or visible condition. Customers can explain what they experience and when it occurs without selecting a technical diagnosis."
+          },
+          {
+            "label": "Explain assessment and the service range",
+            "body": "Connect actual service names to short explanations approved by the technician. Show how a visit is discussed while leaving the appropriate work to assessment of the instrument."
+          }
+        ],
+        "ownerInputs": [
+          "Confirmed acoustic instruments and service boundaries.",
+          "Technician-approved service explanations and observation examples.",
+          "Useful history, location and visit-preparation details."
+        ],
+        "sourceBridge": "Adam Gratz Piano Tuning and Repair lists a Valparaiso address and Northwest Indiana coverage, with tuning, pitch raise, voicing, regulation and repairs. Those categories establish the range, but the owner should supply accurate explanations and a worked example to make the page more useful than a list of names.",
+        "limits": "A customer observation does not authorize a repair or establish that standard tuning will resolve the issue. The technician assesses the instrument and confirms work. Diagnostic tools, automatic service selection, route planning and appointment integrations require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/porter-county/",
+        "inputHash": "7d802df5d9afddc5c12aa6bef97120ad9182bdc4312057a8039e4119838a432e",
+        "heading": "Let piano owners describe the sound or touch before choosing a service.",
+        "intro": "An owner may know that a key feels uneven without knowing whether the piano needs regulation, repair or another service. Your introduction can make the specialist offer understandable while keeping an uncertain inquiry easy.",
+        "customerQuestion": "Some keys feel different from the others. What should I tell you before deciding which service to request?",
+        "decisions": [
+          {
+            "label": "Identify the instrument",
+            "body": "Ask for the piano details, known history and location the technician finds useful. An inherited or unfamiliar instrument should still have a contact route when some information is unknown."
+          },
+          {
+            "label": "Describe the observation",
+            "body": "Fictional inquiry: “The piano is at [location]. I know its maker from the label, but not its age or last service date. Some keys feel different from the others during ordinary playing. What details would help you assess a visit?” Keep the reported touch concern separate from a diagnosis, and leave unknown history visible. The technician determines whether regulation, repair or another service is appropriate."
+          },
+          {
+            "label": "Explain assessment and the service range",
+            "body": "Connect actual service names to short explanations approved by the technician. Show how a visit is discussed while leaving the appropriate work to assessment of the instrument."
+          }
+        ],
+        "ownerInputs": [
+          "Confirmed acoustic instruments and service boundaries.",
+          "Technician-approved service explanations and observation examples.",
+          "Useful history, location and visit-preparation details."
+        ],
+        "sourceBridge": "Adam Gratz Piano Tuning and Repair lists a Valparaiso address and Northwest Indiana coverage, with tuning, pitch raise, voicing, regulation and repairs. The fictional inquiry shows how an owner can describe an observation before selecting among those services.",
+        "limits": "A customer observation does not authorize a repair or establish that standard tuning will resolve the issue. The technician assesses the instrument and confirms work. Diagnostic tools, automatic service selection, route planning and appointment integrations require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "d3378c483c9d03ab6239372358e23ca865be4f0e5779592eb754acfd5eb9fd97",
+      "afterSha256": "2a9dc0b0c1dbb9f595e805f996516aa03b874704021e1f665a4710c8ec9cb7a8"
+    },
+    {
+      "route": "/areas/indiana/st-joseph-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/indiana/st-joseph-county/",
+        "inputHash": "b3f3c51373bd697567f661575d5d4048272bc38bdb4f225b40c3b280a664a0f1",
+        "heading": "Connect the mapping output to the question the buyer needs answered.",
+        "intro": "An attractive aerial image does not tell a buyer whether the deliverable contains the information needed for a project. Your capability examples can identify the purpose, geographic extent and usable output.",
+        "customerQuestion": "We need an update for a stockpile comparison. What previous information and project area should we discuss before choosing the deliverable?",
+        "decisions": [
+          {
+            "label": "Start with the intended use",
+            "body": "Describe the decision or comparison the information needs to support. A request for elevation information should remain distinguishable from an image used mainly as visual reference."
+          },
+          {
+            "label": "Label the area and delivered information",
+            "body": "Use an approved sample to state its coverage and what the customer receives. Keep collection and processing roles clear without turning a published example into a specification for another project."
+          },
+          {
+            "label": "Preserve the update context",
+            "body": "Ask whether the work starts a new record or relates to earlier information. Keep previous data and the intended comparison available for the specialist’s requirements discussion."
+          }
+        ],
+        "ownerInputs": [
+          "Approved plain-language product explanations.",
+          "Permissioned output samples with purpose and coverage.",
+          "Questions about previous data and project context."
+        ],
+        "sourceBridge": "Williams Aerial & Mapping in South Bend describes LiDAR collection, photogrammetric mapping and orthophotography, including corridor work and stockpile updates. It lists 4483 Corporate Drive, Building 301. A labeled real output would make those capabilities more useful than an unexplained list of technical names.",
+        "limits": "The geospatial specialist confirms methods, accuracy, survey dates and data suitability. A public sample does not specify another survey. Interactive GIS, secure large-file tools and data-processing connections require separate website assessment; clear examples can prepare the existing project conversation.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/indiana/st-joseph-county/",
+        "inputHash": "b3f3c51373bd697567f661575d5d4048272bc38bdb4f225b40c3b280a664a0f1",
+        "heading": "Connect the mapping output to the question the buyer needs answered.",
+        "intro": "An attractive aerial image does not tell a buyer whether the deliverable contains the information needed for a project. Your capability examples can identify the purpose, geographic extent and usable output.",
+        "customerQuestion": "We need an update for a stockpile comparison. What previous information and project area should we discuss before choosing the deliverable?",
+        "decisions": [
+          {
+            "label": "Start with the intended use",
+            "body": "Describe the decision or comparison the information needs to support. A request for elevation information should remain distinguishable from an image used mainly as visual reference."
+          },
+          {
+            "label": "Label the area and delivered information",
+            "body": "Use an approved sample to state its coverage and what the customer receives. Keep collection and processing roles clear without turning a published example into a specification for another project."
+          },
+          {
+            "label": "Preserve the update context",
+            "body": "Fictional project brief: “We need a new stockpile comparison for [marked project area]. Our earlier dataset is [reference and survey date]; please assess whether it is suitable for comparison and which output would answer the question.” Keep the purpose, area and prior-data reference together. This is a requirements discussion, not a promise of a particular method, accuracy or calculated result."
+          }
+        ],
+        "ownerInputs": [
+          "Approved plain-language product explanations.",
+          "Permissioned output samples with purpose and coverage.",
+          "Questions about previous data and project context."
+        ],
+        "sourceBridge": "Williams Aerial & Mapping in South Bend describes LiDAR collection, photogrammetric mapping and orthophotography, including corridor work and stockpile updates, and lists 4483 Corporate Drive, Building 301. The fictional brief connects the update purpose to its area and prior-data reference without representing an actual delivered survey.",
+        "limits": "The geospatial specialist confirms methods, accuracy, survey dates and data suitability. A public sample does not specify another survey. Interactive GIS, secure large-file tools and data-processing connections require separate website assessment; clear examples can prepare the existing project conversation.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "8401d22bf08bed9baacfc7374450ca3b2d4ea89d9178faa9989259bff5801d2a",
+      "afterSha256": "f73184d5e43a5b2866fef1ec2819f9d812b6f011bf019466917b0997a769e2a1"
+    }
+  ],
+  "faqChanges": [
+    {
+      "route": "/areas/indiana/adams-county/",
+      "before": [
+        {
+          "question": "Can the website show wood and stain samples without promising an exact color match?",
+          "answer": "Yes. I can label each reference with its wood species and stain, then place your approved explanation of sample limitations beside it. You supply the actual process for reviewing physical samples and confirming the finish. The website presents those steps; a photograph or screen comparison should not be described as the final material approval.",
+          "links": []
+        }
+      ],
+      "after": null,
+      "beforeSha256": "4c68f3df706dec3e6ce10ed53d0cd0bb956f61db228ee17accd9d0022e502deb",
+      "afterSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    }
+  ],
+  "sourceChanges": [],
+  "limits": "Twenty draft repairs; not imported. One duplicate FAQ removed from source; acceptance layer pending independent review. Knox source provenance remains in existing source notes.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-combined-recheck.jsonl",
+    "reviewFileSha256": "89f1fadbb9fdb8f1d991818c8e5709050a40c5f9550413c63c0ec350cb1c9ffb",
+    "exactCandidates": 20,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

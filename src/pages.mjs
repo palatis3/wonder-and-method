@@ -80,7 +80,7 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
     const supplement=searchSupplement(path,o,config);
     if(supplement){
       if(['/services/website-care/','/services/seo/'].includes(path)){
-        const detail=`<details class="service-disclosure"><summary>${path==='/services/seo/'?'Local, on-page and technical SEO details':'Supported websites and maintenance checks'}</summary>${supplement}</details>`;
+        const detail=`<details class="service-disclosure"><summary>${path==='/services/seo/'?'Choose a search guide':'Supported websites and maintenance checks'}</summary>${supplement}</details>`;
         body=beforeClosing(body,detail);
       }else body=beforeClosing(body,supplement);
     }

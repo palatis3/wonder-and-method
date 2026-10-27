@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-27",
+  "assignment": "output/human-quality-20261027/inventory/assignments/guides.json",
+  "assignmentSha256": "e2577dd1f97b5032822af3ba0843d8b14893c8501837856b5e89f7a5ac92ecc7",
+  "expectedCount": 66,
+  "reviewedCount": 66,
+  "completeMainTextReviewedCount": 66,
+  "guideCount": 65,
+  "indexCount": 1,
+  "exactPassageValidation": "All cited passages found after whitespace normalization in their assigned baseline mainText.",
+  "coverageValidation": "Every assigned URL appears exactly once; each hash matches its packet; every comparison names another fully read assigned URL.",
+  "scoring": "Six content dimensions rated individually from 0 to 4; weighted subtotal out of 80. Visuals and accessibility remain null; finalScore remains null. No provisional normalization to 100.",
+  "scoreMeaning": "Editorial judgments, not Google quality metrics, ranking predictions, conversion measurements or accessibility certification.",
+  "contentSubtotalRange": {
+    "minimum": 47.5,
+    "maximum": 68.75,
+    "maximumPossible": 80
+  },
+  "priorityCounts": [
+    {
+      "priority": 1,
+      "count": 7
+    },
+    {
+      "priority": 2,
+      "count": 36
+    },
+    {
+      "priority": 3,
+      "count": 23
+    }
+  ],
+  "cappedRoutes": [
+    {
+      "route": "/guides/seo-work-and-reporting/",
+      "caps": [
+        {
+          "id": "majorBurden",
+          "maximum": 69,
+          "reason": "The completed-work evidence checklist is repeated in the annotated report, Research/finished-work section, Check-the-work section and result-timing section without a distinct new decision in those restatements."
+        }
+      ]
+    }
+  ],
+  "highestPriority": [
+    {
+      "route": "/guides/timed-booking-handoff/",
+      "priority": 1,
+      "contentSubtotal": 47.5,
+      "recommendedFixes": [
+        "Keep the confirmation card, one timing/time-zone example and one ticket-versus-reservation example as the core guide.",
+        "Move AMR access, boat-only camping and the additional destination catalog into a compact optional evidence library or relevant existing dependency guides; preserve citations and route links.",
+        "Rename the opening model 'Booking confirmation card' and use descriptive subheadings for time, ticket proof and separate reservations."
+      ]
+    },
+    {
+      "route": "/guides/local-seo-profile-eligibility/",
+      "priority": 1,
+      "contentSubtotal": 48.75,
+      "recommendedFixes": [
+        "Rebuild the opening as a short eligibility triage: online-only, customers visit a staffed location, business visits customers, or mixed/uncertain; link each to the current official rule without guaranteeing eligibility.",
+        "Move general service-page and SEO-purchasing advice to the audit/reporting guides, keeping a concise website-versus-profile distinction.",
+        "Clarify that the studio can assess website work, while profile verification, account recovery and external listing management remain outside the offer; make the CTA match that boundary."
+      ]
+    },
+    {
+      "route": "/guides/departure-address/",
+      "priority": 1,
+      "contentSubtotal": 53.75,
+      "recommendedFixes": [
+        "Make one reusable arrival-confirmation specimen the main content: product, check-in address, map, vehicle branch, access request, return leg and update contact.",
+        "Move named destination examples into compact optional evidence notes and align the PortMiami return-leg lesson with a row in the specimen.",
+        "Replace 'Branch parking instructions' with 'Give each vehicle type the right parking directions'."
+      ]
+    },
+    {
+      "route": "/guides/manufacturing-rfq-form/",
+      "priority": 1,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Lead with the six-field RFQ record and one revision-B/revision-C case; move operator comparisons into brief evidence notes.",
+        "Provide three short response specimens for received, missing file/quantity and ready-for-quote states; keep production approval explicitly separate.",
+        "Use H3s to split file requirements, file receipt and revised-file handling inside the current long sections."
+      ]
+    },
+    {
+      "route": "/guides/marine-service-intake/",
+      "priority": 1,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Put the readiness record near the opening, with a location-first field and named dependency owner.",
+        "Fold South Florida's facility-selector lesson into the location row; keep regional sources as optional evidence notes and merge the two location-change tests.",
+        "Separate intake, site access and confirmation copy with descriptive H3s and include one concise pending-visit message."
+      ]
+    },
+    {
+      "route": "/guides/seo-work-and-reporting/",
+      "priority": 1,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Keep the annotated monthly report as the main example and remove the separate Research/finished-work and Check-the-work restatements.",
+        "Combine general and local keyword research into one worked keyword-to-existing-page row with missing metrics explicit.",
+        "Move plan/promotional detail to concise optional comparison notes; retain finite allowances, approval rules and no-guarantee boundaries once beside the relevant promise."
+      ]
+    },
+    {
+      "route": "/guides/website-project-cost/",
+      "priority": 1,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Lead with the first-year budget model and a concise build-price summary; link complete package and add-on allowances instead of repeating catalogs.",
+        "Reduce the two-proposal comparison to the few cost-changing omissions—writing, editing/ownership, outside bills and migration—and link the provider-comparison guide.",
+        "Keep exact prices, payment milestones, editing limits and assumptions unchanged while moving detail into clearly labeled optional sections."
+      ]
+    },
+    {
+      "route": "/guides/",
+      "priority": 2,
+      "contentSubtotal": 53.75,
+      "recommendedFixes": [
+        "Keep the three Start here choices, then show concise topic counts and a few representative guides per category with an explicit expand/browse action.",
+        "Rename Business workflows to a reader-facing label such as Booking, forms and customer instructions; add a short explanation of local cases so the two groups are not interchangeable."
+      ]
+    },
+    {
+      "route": "/guides/alexandria-sign-project-website/",
+      "priority": 2,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Bring the six-stage handoff board immediately after the short answer and replace 'The customer decision' with 'Artwork approval does not clear installation'.",
+        "Compress the three source narratives into short evidence notes beside relevant stages; retain the changed-lighting test once and preserve all municipal-review limits."
+      ]
+    },
+    {
+      "route": "/guides/contractor-website-checklist/",
+      "priority": 2,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Replace the two long parallel briefs with one comparison table showing only meaningful HVAC/roof differences, while retaining explicit fictional labeling and safe information boundaries.",
+        "Fold 'Then work on search' into a short final readiness check and remove repeated service-area/inquiry advice already taught above."
+      ]
+    },
+    {
+      "route": "/guides/ferry-booking-status/",
+      "priority": 2,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Lead with a reusable booking-status checklist covering passenger, vehicle, equipment, return and stay; add the missing equipment/return rows currently taught by the Key West section.",
+        "Condense route examples into short evidence notes and use one complete hypothetical guest record to demonstrate unresolved dependencies."
+      ]
+    },
+    {
+      "route": "/guides/marion-county-equestrian-stay-website/",
+      "priority": 2,
+      "contentSubtotal": 58.75,
+      "recommendedFixes": [
+        "Make a three-arrangement confirmation card the main worked example, with lodging confirmed and show/stall statuses explicitly separate.",
+        "Condense source observations to notes beside the relevant record and merge repeated state-separation prose; retain dated-event boundaries and independent cancellation terms."
+      ]
+    }
+  ],
+  "familyFindings": [
+    "Strongest guides contain actual worked examples, honest source limits and a concrete task; retain these rather than mechanically shortening all pages.",
+    "Repeated generic H2s and identical H2/table captions make many workflow pages harder to scan. Rename them for the actual decision.",
+    "Several long workflow guides lead with operator-by-operator source narratives. Bring the reusable record or decision forward and attach concise evidence notes.",
+    "Some general titles conceal a narrowly local audience; label the location as a worked case or align title and audience.",
+    "Repeated approval and no-guarantee statements should remain beside the relevant promise, but repeated full explanations do not need separate sections.",
+    "Do not add a visual quota: the high-value candidates are timelines, parallel states, comparison matrices and annotated real or clearly fictional examples.",
+    "Local citations alone do not establish independent usefulness; every local guide received a task-based sibling comparison.",
+    "The Business Profile eligibility CTA needs a clearer boundary with excluded profile verification/account recovery; this is an expectation risk, not a verified false service claim."
+  ],
+  "officialSourceChecks": [
+    {
+      "url": "https://support.google.com/webmasters/answer/16908024",
+      "accessed": "2026-10-27",
+      "finding": "Current inclusion control and parent inheritance confirmed."
+    },
+    {
+      "url": "https://support.google.com/webmasters/answer/16984139",
+      "accessed": "2026-10-27",
+      "finding": "Current generative-AI impression report dimensions and insufficient-impression absence explanation confirmed."
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/bots",
+      "accessed": "2026-10-27",
+      "finding": "Independent search and training crawler controls confirmed."
+    },
+    {
+      "url": "https://support.wix.com/en/article/wix-forms-choosing-who-gets-notified-about-form-submissions",
+      "accessed": "2026-10-27",
+      "finding": "Automation recipient selection and external-contact prerequisite confirmed; no blanket verification of every Wix sentence."
+    },
+    {
+      "url": "https://support.squarespace.com/hc/en-us/articles/205813938-Troubleshooting-form-issues",
+      "accessed": "2026-10-27",
+      "finding": "Submission, storage and email checks confirmed."
+    }
+  ],
+  "limitations": [
+    "No source/template edits, browser sessions or builds performed.",
+    "No transactions or forms submitted.",
+    "No per-page visual/accessibility pass claimed.",
+    "Most third-party operator facts reviewed for attribution and bounds, not independently reverified.",
+    "Recommendations require baseline-to-current comparison before implementation if source changed."
+  ],
+  "priorityMeaning": "1 = highest editorial revision priority in this guide set; 2 = substantive readability improvements; 3 = focused refinements. These are content priorities, not production incident severities."
+}

@@ -1,0 +1,39 @@
+{
+  "reviewedAt": "2026-10-27",
+  "scope": "All 65 guide articles; complete text including disclosure contents, baseline audit recommendations and closest sibling task.",
+  "completeFullTextReview": true,
+  "records": "operations/human-quality-20261027/audits/guides-after-independent.jsonl",
+  "summary": "operations/human-quality-20261027/audits/guides-after-independent-summary.json",
+  "snapshot": "output/human-quality-20261027/guides-independent/snapshot.json",
+  "structuralEvidence": "output/human-quality-20261027/guides-independent/structural-check.json",
+  "findings": {
+    "allOriginalSectionAndEmbeddedIdsPreserved": true,
+    "duplicateIds": 0,
+    "unresolvedLocalFragmentLinks": 0,
+    "removedUniqueCitations": 0,
+    "contactDestinations": "Bare /contact/ changed to scoped inquiry destinations on custom/template and profile guide.",
+    "nestedDisclosures": [
+      {
+        "route": "/guides/seo-work-and-reporting/",
+        "count": 1
+      },
+      {
+        "route": "/guides/timed-booking-handoff/",
+        "count": 3
+      }
+    ]
+  },
+  "reconciledRootChanges": [
+    "AI search opening and budget order",
+    "AI draft status vocabulary",
+    "Form receiving system not always saved store",
+    "Case-study paragraph matches its project record",
+    "Ferry departure-to-property sequence",
+    "Eligible authorized limited Improve/Grow profile scope in opening and CTA"
+  ],
+  "limitations": [
+    "Visual and accessibility ratings remain null; no browser evidence added.",
+    "Source assertions read and bounded, not comprehensively reverified.",
+    "These reviews precede subsequent consolidation implementation; a separate independent reviewer must assess changed outputs."
+  ]
+}

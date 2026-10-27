@@ -52,13 +52,15 @@ test('ROI rejects missing, nonfinite and out-of-bound assumptions and keeps vali
 test('six distinct guides are complete, linked, approved, downloadable and individually gateable',async()=>{
  const index=pages.find(x=>x.path==='/guides/').html;
  const conciseGuides={
-  '/guides/website-redesign-timeline/':['start','ready','sequence','example','reviews','studio'],
-  '/guides/website-handover-checklist/':['meaning','accounts','files','register','verification','example']
+  '/guides/website-not-generating-leads/':['define-the-problem','find-the-bottleneck','measurement','page-decision','lead-record'],
+  '/guides/website-content-template/':['facts','notes-to-copy','page-purpose','service','review'],
+  '/guides/website-redesign-timeline/':['start','example','sequence','ready','reviews','studio'],
+  '/guides/website-handover-checklist/':['meaning','example','accounts','files','register','verification']
  };
  for(const guide of researchGuides){
   const detail=researchGuideDetails[guide.path.split('/').at(-2)],sections=journalSections(guide.path,offers),html=pages.find(x=>x.path===guide.path).html;
   const body=sections.map(x=>x.body).join(' '),minimumWords=conciseGuides[guide.path]?600:700;
-  assert.ok(sections.length>=6);assert.ok(body.replace(/<[^>]*>/g,' ').split(/\s+/).length>=minimumWords,guide.path);assert.equal(new Set(sections.map(s=>s.id)).size,sections.length);
+  assert.ok(sections.length>=(conciseGuides[guide.path]?.length||6));assert.ok(body.replace(/<[^>]*>/g,' ').split(/\s+/).length>=minimumWords,guide.path);assert.equal(new Set(sections.map(s=>s.id)).size,sections.length);
   if(conciseGuides[guide.path])assert.deepEqual(sections.map(section=>section.id),conciseGuides[guide.path],guide.path+' retains every practical topic after the clarity edit');
   if(guide.path==='/guides/website-redesign-timeline/'){
    for(const id of ['launch_site','focused_site','signature_site'])assert.ok(body.includes(offers[id].delivery_target.match(/\d+[–-]\d+/)[0]+' business days'),id);

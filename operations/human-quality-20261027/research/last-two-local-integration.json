@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-27",
+  "status": "Last two source entries and drafts staged; independent review pending.",
+  "changes": [
+    {
+      "route": "/areas/wyoming/sweetwater-county/",
+      "previousSourceSha256": "8ca0fc6ce89a7289ba98ce60f5dbacc6be99967c49e7603142e8cd47604f7c8e",
+      "sourceSha256": "64c1af34559f16192cdac763d847f2292811f76829bb513625625f6d67752865",
+      "previousDraftSha256": "ceca21e81e9fa8eb26756fb6774660cb3082400b167104fcc8088d61ab04bd8f",
+      "draftSha256": "1b20ad1adb5ced19dc7a0c69baa850edf2a6baca472f6bf874eb182278964989",
+      "baselineRenderedSha256": "5538b89b2171e70be66267fcfd3cdfeb7b90cfc7acab005477939ecad0b2de99",
+      "researchNote": "Research page and both PDF pages read October 27. No exact fees or unresolved category boundaries reproduced; approval and legal ownership remain with appropriate parties. Distinct from Lavaca’s incomplete indexes and Stevens’s supervised archive access.",
+      "check": "A fictional personal-use request does not assume a free digital copy, and a later book-use request is referred back to staff rather than treated as covered by the first exchange.",
+      "sources": [
+        "https://www.sweetwatermuseum.org/explore/research",
+        "https://www.sweetwatermuseum.org/images/swchm_fee_schedule.pdf"
+      ]
+    },
+    {
+      "route": "/areas/wyoming/washakie-county/",
+      "previousSourceSha256": "96c69ffefc4f753409618d2cd2f93d05fb65bf5f173db29494f8517d52dc4fbb",
+      "sourceSha256": "296e6ab3f5859e5c9c76dedc627f47b267a6fc214883a8ffd2985a917a646f0b",
+      "previousDraftSha256": "97d8aefb686f48e72673542ca67bc14d0de66fee221bbdfa5d83fe2c5581548a",
+      "draftSha256": "64ca037734597f10cd46eafe321438fc71c5d42aa7fb3b405fcdc3d086086773",
+      "baselineRenderedSha256": "99a5a89a1989f271bca4acea0674b61b9a4044b88cf42ffec36a701bad79ac28",
+      "researchNote": "Both current HTML pages read October 27 including all extracted form text. No claims about unseen validation or actual submission. The dated 2023 equipment PDF is excluded from the new factual brief. Distinct from Lemhi’s room-change, audiovisual and kitchen-use comparison.",
+      "check": "A fictional visitor entering directly on the request page sees the excluded event type before preparing the form, while an eligible workshop can describe its needs without an implied reservation.",
+      "sources": [
+        "https://www.washakiemuseum.org/facility-rental.html",
+        "https://www.washakiemuseum.org/rental-request-form.html"
+      ]
+    }
+  ],
+  "imported": false,
+  "originalAuditsPreserved": true
+}

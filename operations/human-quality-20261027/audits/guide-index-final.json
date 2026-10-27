@@ -1,0 +1,57 @@
+{
+  "route": "/guides/",
+  "family": "guide-index",
+  "reviewer": "Codex primary",
+  "independent": false,
+  "reviewedAt": "2026-10-27T23:29:41.518Z",
+  "mainHtmlSha256": "277dd2bd7285f38509b89594695e8bd4952e26e84f9f7b3b86383975ca2e96e8",
+  "mainTextSha256": "d643e0b34541f7f3b47fd6a1aee24c6575e7875b65683fd2df097e4104582866",
+  "completeMainTextRead": true,
+  "disclosuresIncluded": true,
+  "intendedVisitorTask": "Find the guide that answers the current website problem.",
+  "nearestSiblingCompared": "/guides/website-audit-checklist/",
+  "independentValue": "A task-grouped map with search, topic counts and selective expand actions, rather than a checklist for one diagnosis.",
+  "dimensionRatings": {
+    "intent": 4,
+    "distinctiveness": 4,
+    "trust": 3,
+    "coherence": 4,
+    "scanability": 4,
+    "nextStep": 4,
+    "visuals": null,
+    "accessibility": null
+  },
+  "contentSubtotal": 76.25,
+  "contentMaximum": 80,
+  "dimensionEvidence": {
+    "intent": {
+      "passage": "My contact form is not working",
+      "assessment": "Three problem-led shortcuts, search and six task categories resolve the visitor’s guide-selection task."
+    },
+    "distinctiveness": {
+      "passage": "Fix a problem 5 guides",
+      "assessment": "The counted, searchable guide map provides routing across different tasks; the individual website-audit checklist provides a sequential diagnosis within one task."
+    },
+    "trust": {
+      "passage": "These are research examples, not studio client projects.",
+      "assessment": "The local examples are clearly bounded and the ROI tool explicitly uses entered assumptions, without presenting measured results."
+    },
+    "coherence": {
+      "passage": "Use these worked examples to plan the information, choices and next steps a website needs.",
+      "assessment": "Problem, planning, search and care topics lead into optional worked examples, followed by a named planning tool. Categories explain their own purpose."
+    },
+    "scanability": {
+      "passage": "Browse 10 more guides on this topic",
+      "assessment": "Four representative cards precede explicit expand actions in larger core groups. The optional example collection contains descriptive headings and counts; no contents are silently discarded."
+    },
+    "nextStep": {
+      "passage": "Reset filters",
+      "assessment": "Start links, individual guide links, search/topic controls, reset and inquiry action provide clear ways to proceed or recover."
+    }
+  },
+  "findings": [],
+  "appliedCaps": [],
+  "finalScore": null,
+  "source": "output/human-quality-20261027/built-review/guide-index-final-corrected/pages.jsonl",
+  "limits": "Complete content read and exact grammar-delta proof. Interactive operation, geometry and accessibility remain for current build checks. Earlier baseline audit preserved."
+}

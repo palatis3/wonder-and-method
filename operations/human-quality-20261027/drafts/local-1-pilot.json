@@ -1,0 +1,86 @@
+[
+  {
+    "route": "/areas/broome-county/",
+    "heading": "Make sure the worksite reaches your team.",
+    "intro": "A customer may describe work in New York or Pennsylvania using only a town name. Before replacing the website, check whether the existing inquiry gives your team enough location and job detail to respond.",
+    "customerQuestion": "Can you take this job at my actual location?",
+    "decisions": [
+      {
+        "label": "State the coverage you actually offer",
+        "body": "Describe the work and locations your team will consider. Crossing the state line should not imply a different price or eligibility rule unless your business confirms one."
+      },
+      {
+        "label": "Keep the job location in the request",
+        "body": "Ask for town, state, the work needed and a useful reply route. Test distinct New York and Pennsylvania examples through both the customer acknowledgement and the message your team receives."
+      },
+      {
+        "label": "Choose the smallest useful change",
+        "body": "If the details arrive correctly, clearer coverage copy may be enough. Missing details call for a focused investigation; a rebuild becomes relevant when services, navigation or retained pages also need substantial change."
+      }
+    ],
+    "ownerInputs": [
+      "Your current coverage and accepted work on each side of the state line.",
+      "The existing form and an anonymized example of a request missing useful details.",
+      "A keep/change/remove list if the wider site no longer matches the business."
+    ],
+    "sourceBridge": "Amber Water Pros and Junken Monkeys describe Broome and northeastern Pennsylvania coverage, making town and state useful details for this example.",
+    "limits": "This is a proposed inquiry check, not a finding that either public example loses messages. A receipt does not confirm acceptance, travel or timing. Any included small repair remains conditional on safe, practical access; broader work needs an agreed scope and price.",
+    "inputHash": "62fa15c25e114554b149658a72671f49f500422004bce391dd55d63285938482"
+  },
+  {
+    "route": "/areas/arizona/pima-county/",
+    "heading": "Show the order of group booking and lunch planning.",
+    "intro": "Several homeschool families may be arranging one museum visit. The website can help their organizer understand the attendance roles and complete the visit booking before requesting boxed lunches.",
+    "customerQuestion": "What do I need to arrange now, and what waits until our visit is booked?",
+    "decisions": [
+      {
+        "label": "Prepare one group request",
+        "body": "Identify the intended date and aggregate attendance for the local homeschool offer. Explain the minimum group size, advance-booking requirement and one-group-per-entry-slot rule using current museum-approved terms."
+      },
+      {
+        "label": "Keep the adult roles clear",
+        "body": "Distinguish the organizer from the required accompanying adults; parents count within that accompanying-adult allocation. Collect totals for the initial discussion, not children’s names or private records."
+      },
+      {
+        "label": "Add the appropriate meal step",
+        "body": "Ordinary Flight Grill plans belong on the initial booking form. A boxed-lunch preorder follows a booked field trip and has its own deadline. If the date changes, review both arrangements with staff."
+      }
+    ],
+    "ownerInputs": [
+      "The current group definitions, minimum attendance and booking lead time.",
+      "The approved booking and meal contacts, with their actual confirmation wording.",
+      "The separate lunch deadline and who updates instructions when a date changes."
+    ],
+    "sourceBridge": "Pima Air & Space Museum’s homeschool guidance separates organizer roles, visit booking and later boxed-lunch orders, providing a concrete sequence for a group-planning page.",
+    "limits": "This is a public planning example, not a museum client project. Staff decide eligibility, supervision and booking acceptance. Submitting a visit request does not book the trip or order lunches; participant records and online ordering require separate assessment.",
+    "inputHash": "db0c488802f03a3d1bcfde132a7a2a76056d62d44dc57a549740997c55478fc1"
+  },
+  {
+    "route": "/areas/arizona/mohave-county/",
+    "heading": "Show the conditions for each stop on a shared ticket.",
+    "intro": "A ticket covering several destinations does not make their buildings interchangeable. Put each stop’s practical information beside its name so visitors can choose their outing and identify questions for staff.",
+    "customerQuestion": "Which of the included places can our party plan to visit?",
+    "decisions": [
+      {
+        "label": "Name the destinations covered",
+        "body": "List the museums or house included in the admission offer. Use the same destination names on the ticket introduction and individual building pages."
+      },
+      {
+        "label": "Keep conditions with the building",
+        "body": "Give each stop its own approved pet and physical-access information. A general icon or statement should not transfer one museum’s conditions to the historic house."
+      },
+      {
+        "label": "Connect a single stop to the whole visit",
+        "body": "From an individual building page, let visitors find the shared ticket and the other stops’ information. Give unresolved access questions a staff contact rather than assigning the whole party a suitable-or-unsuitable label."
+      }
+    ],
+    "ownerInputs": [
+      "The current ticket inclusions and destination names.",
+      "Approved pet and physical-access wording for each building.",
+      "The responsible contact and update owner for conflicting building notices."
+    ],
+    "sourceBridge": "Mohave County Historical Society describes different pet and access arrangements at its museums and Bonelli House within a shared admission offer.",
+    "limits": "The public example supports a multi-building content comparison, not special expertise in every Mohave business. Do not infer the exact conditions from another building or certify an individual’s access. Staff confirm current arrangements; the website does not approve an itinerary.",
+    "inputHash": "048c865f46c432ecadff1ed7e9c01c0e9eb345e17ed541f58ac1d3aa3727fec7"
+  }
+]

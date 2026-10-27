@@ -1,0 +1,285 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 150,
+  "reviewedCount": 150,
+  "pendingCount": 0,
+  "contentPassCount": 145,
+  "materialHoldCount": 5,
+  "nextCandidateIndex": null,
+  "completedRoutes": [
+    "/areas/pennsylvania/philadelphia-county/",
+    "/areas/pennsylvania/venango-county/",
+    "/areas/putnam-county/",
+    "/areas/queens-county/",
+    "/areas/rensselaer-county/",
+    "/areas/rhode-island/bristol-county/",
+    "/areas/rhode-island/kent-county/",
+    "/areas/rhode-island/newport-county/",
+    "/areas/rhode-island/providence-county/",
+    "/areas/rhode-island/washington-county/",
+    "/areas/richmond-county/",
+    "/areas/saratoga-county/",
+    "/areas/schenectady-county/",
+    "/areas/schoharie-county/",
+    "/areas/schuyler-county/",
+    "/areas/seneca-county/",
+    "/areas/south-carolina/aiken-county/",
+    "/areas/south-carolina/anderson-county/",
+    "/areas/south-carolina/berkeley-county/",
+    "/areas/south-carolina/charleston-county/",
+    "/areas/south-carolina/darlington-county/",
+    "/areas/south-carolina/dorchester-county/",
+    "/areas/south-carolina/florence-county/",
+    "/areas/south-carolina/greenville-county/",
+    "/areas/south-carolina/horry-county/",
+    "/areas/south-carolina/lancaster-county/",
+    "/areas/south-carolina/lexington-county/",
+    "/areas/south-carolina/richland-county/",
+    "/areas/south-carolina/spartanburg-county/",
+    "/areas/south-carolina/york-county/",
+    "/areas/st-lawrence-county/",
+    "/areas/steuben-county/",
+    "/areas/sullivan-county/",
+    "/areas/tennessee/anderson-county/",
+    "/areas/tennessee/bedford-county/",
+    "/areas/tennessee/benton-county/",
+    "/areas/tennessee/bledsoe-county/",
+    "/areas/tennessee/blount-county/",
+    "/areas/tennessee/bradley-county/",
+    "/areas/tennessee/campbell-county/",
+    "/areas/tennessee/cannon-county/",
+    "/areas/tennessee/carroll-county/",
+    "/areas/tennessee/carter-county/",
+    "/areas/tennessee/cheatham-county/",
+    "/areas/tennessee/chester-county/",
+    "/areas/tennessee/claiborne-county/",
+    "/areas/tennessee/clay-county/",
+    "/areas/tennessee/cocke-county/",
+    "/areas/tennessee/coffee-county/",
+    "/areas/tennessee/crockett-county/",
+    "/areas/tennessee/cumberland-county/",
+    "/areas/tennessee/davidson-county/",
+    "/areas/tennessee/decatur-county/",
+    "/areas/tennessee/dekalb-county/",
+    "/areas/tennessee/dickson-county/",
+    "/areas/tennessee/dyer-county/",
+    "/areas/tennessee/fayette-county/",
+    "/areas/tennessee/fentress-county/",
+    "/areas/tennessee/franklin-county/",
+    "/areas/tennessee/gibson-county/",
+    "/areas/tennessee/giles-county/",
+    "/areas/tennessee/grainger-county/",
+    "/areas/tennessee/greene-county/",
+    "/areas/tennessee/hamblen-county/",
+    "/areas/tennessee/hamilton-county/",
+    "/areas/tennessee/hancock-county/",
+    "/areas/tennessee/hardeman-county/",
+    "/areas/tennessee/hardin-county/",
+    "/areas/tennessee/hawkins-county/",
+    "/areas/tennessee/haywood-county/",
+    "/areas/tennessee/henderson-county/",
+    "/areas/tennessee/henry-county/",
+    "/areas/tennessee/hickman-county/",
+    "/areas/tennessee/houston-county/",
+    "/areas/tennessee/humphreys-county/",
+    "/areas/tennessee/jackson-county/",
+    "/areas/tennessee/jefferson-county/",
+    "/areas/tennessee/johnson-county/",
+    "/areas/tennessee/knox-county/",
+    "/areas/tennessee/lake-county/",
+    "/areas/tennessee/lauderdale-county/",
+    "/areas/tennessee/lawrence-county/",
+    "/areas/tennessee/lewis-county/",
+    "/areas/tennessee/lincoln-county/",
+    "/areas/tennessee/loudon-county/",
+    "/areas/tennessee/macon-county/",
+    "/areas/tennessee/madison-county/",
+    "/areas/tennessee/marion-county/",
+    "/areas/tennessee/marshall-county/",
+    "/areas/tennessee/maury-county/",
+    "/areas/tennessee/mcminn-county/",
+    "/areas/tennessee/mcnairy-county/",
+    "/areas/tennessee/meigs-county/",
+    "/areas/tennessee/monroe-county/",
+    "/areas/tennessee/montgomery-county/",
+    "/areas/tennessee/moore-county/",
+    "/areas/tennessee/morgan-county/",
+    "/areas/tennessee/obion-county/",
+    "/areas/tennessee/overton-county/",
+    "/areas/tennessee/perry-county/",
+    "/areas/tennessee/pickett-county/",
+    "/areas/tennessee/polk-county/",
+    "/areas/tennessee/putnam-county/",
+    "/areas/tennessee/rhea-county/",
+    "/areas/tennessee/roane-county/",
+    "/areas/tennessee/robertson-county/",
+    "/areas/tennessee/rutherford-county/",
+    "/areas/tennessee/scott-county/",
+    "/areas/tennessee/sequatchie-county/",
+    "/areas/tennessee/sevier-county/",
+    "/areas/tennessee/shelby-county/",
+    "/areas/tennessee/smith-county/",
+    "/areas/tennessee/stewart-county/",
+    "/areas/tennessee/sullivan-county/",
+    "/areas/tennessee/sumner-county/",
+    "/areas/tennessee/tipton-county/",
+    "/areas/tennessee/trousdale-county/",
+    "/areas/tennessee/unicoi-county/",
+    "/areas/tennessee/union-county/",
+    "/areas/tennessee/van-buren-county/",
+    "/areas/tennessee/warren-county/",
+    "/areas/tennessee/washington-county/",
+    "/areas/tennessee/wayne-county/",
+    "/areas/tennessee/weakley-county/",
+    "/areas/tennessee/white-county/",
+    "/areas/tennessee/williamson-county/",
+    "/areas/tennessee/wilson-county/",
+    "/areas/texas/anderson-county/",
+    "/areas/texas/andrews-county/",
+    "/areas/texas/angelina-county/",
+    "/areas/texas/aransas-county/",
+    "/areas/texas/archer-county/",
+    "/areas/texas/armstrong-county/",
+    "/areas/texas/atascosa-county/",
+    "/areas/texas/austin-county/",
+    "/areas/texas/bailey-county/",
+    "/areas/texas/bandera-county/",
+    "/areas/texas/bastrop-county/",
+    "/areas/texas/baylor-county/",
+    "/areas/texas/bee-county/",
+    "/areas/texas/bell-county/",
+    "/areas/texas/bexar-county/",
+    "/areas/texas/blanco-county/",
+    "/areas/texas/borden-county/",
+    "/areas/texas/bosque-county/",
+    "/areas/texas/bowie-county/",
+    "/areas/texas/brazoria-county/",
+    "/areas/texas/brazos-county/",
+    "/areas/texas/brewster-county/",
+    "/areas/texas/briscoe-county/"
+  ],
+  "requiredFixes": [
+    {
+      "route": "/areas/queens-county/",
+      "fixes": [
+        "Keep the full translation scope, approval, maintenance and reply-language commitments in the FAQ; shorten limits to material/access confirmation and separately scoped systems."
+      ]
+    },
+    {
+      "route": "/areas/schenectady-county/",
+      "fixes": [
+        "Keep the scoped studio commitment and detailed change-contact instructions in the FAQ. Refocus step three on confirming combined-item readiness and collection using owner-approved facts; trim the repeated limits wording."
+      ]
+    },
+    {
+      "route": "/areas/tennessee/davidson-county/",
+      "fixes": [
+        "Keep detailed public-media permissions and private-file transfer boundaries in the two FAQs. Remove the private-files sentence from decision three and shorten limits to studio confirmation and separately scoped scheduling/payment integrations."
+      ]
+    },
+    {
+      "route": "/areas/texas/bailey-county/",
+      "fixes": [
+        "Keep the website-document authority and update commitments in the FAQ. Refocus decision three on the organizer’s hours, priority and staff-request steps, removing the repeated policy-management explanation."
+      ]
+    },
+    {
+      "route": "/areas/texas/bosque-county/",
+      "fixes": [
+        "Keep annual archive/update and handoff commitments in the FAQ. Use decision three for the artist’s accepted-work return or pickup stage, based on approved carrier and return instructions, while retaining the historical-event disclosure."
+      ]
+    }
+  ],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "recoveryCheckpoint": "Residual E complete: 150 individually read candidates; 145 content passes and 5 historical holds. Current corrected drafts require the separate residual-def-final-recheck audit; retain historical hashes and judgments. Visuals/accessibility/final null.",
+  "unresolvedMaterialContentDefects": 5,
+  "validatedEvidenceFields": 900,
+  "validation": {
+    "immutablePackets": 30,
+    "packetHashesMatch": true,
+    "draftHashesMatch": true,
+    "sourceEntryHashesMatch": true,
+    "nearestSiblingHashesMatch": true,
+    "reconstructedCandidateBodyHashesMatch": true,
+    "reconstructedBodyCheck": "Separate Node process reconstructed all 150 immutable packet candidates with unchanged renderer; zero mismatches.",
+    "exactEvidenceAndFindingQuotes": true,
+    "rendererFilesUnchanged": true,
+    "currentSourceEntriesUnchanged": true,
+    "currentDraftsChangedAfterReview": [
+      {
+        "route": "/areas/queens-county/",
+        "reviewedDraftSha256": "01d5d84194147018cf18dc8cc3f84e01c57799ac9ad91d9c1873b64193f55b9d",
+        "currentDraftSha256": "08603b303172cd170838151d1adede57d20fec2c9427d88920565a2df4c0665b",
+        "status": "pending-independent-corrected-candidate-recheck"
+      },
+      {
+        "route": "/areas/schenectady-county/",
+        "reviewedDraftSha256": "4fc6294fb3b0a942d248ee7a21cf48fae5444ed10f047d97f78d40c7e7861c37",
+        "currentDraftSha256": "0f6925408dbd591b3a57caedfad3646489e06ad7d56ecb79fc3c2b7e3dc492ac",
+        "status": "pending-independent-corrected-candidate-recheck"
+      },
+      {
+        "route": "/areas/tennessee/davidson-county/",
+        "reviewedDraftSha256": "44052e460bdb0b23462fde11000afc16bf164ee477a8b8a2de7c9481de2559ee",
+        "currentDraftSha256": "899009eebd7e59cfd340541ce189ebbf5bc9e5db011a5e91ac5584e449971b3f",
+        "status": "pending-independent-corrected-candidate-recheck"
+      },
+      {
+        "route": "/areas/texas/bailey-county/",
+        "reviewedDraftSha256": "ddd76c2f7fe2b0a991591f736028bc8d2de719384ee33304bdd6e87aadb85ca4",
+        "currentDraftSha256": "9d2850ab306735ca07cafca7d9ccc15779e42094331812e587e4c2250d89b214",
+        "status": "pending-independent-corrected-candidate-recheck"
+      },
+      {
+        "route": "/areas/texas/bosque-county/",
+        "reviewedDraftSha256": "12f46066099fee8e7c21cea4b7da8f2438ab2ffe22918d60753bcb2bf12f8994",
+        "currentDraftSha256": "d8e5e6768bae5cc9edb26085fe6a59da6b565b74c6f7c734570c9cc59b712233",
+        "status": "pending-independent-corrected-candidate-recheck"
+      }
+    ],
+    "errors": []
+  },
+  "repeatedSectionCapEvidence": [
+    {
+      "route": "/areas/schenectady-county/",
+      "maximum": 69,
+      "reason": "The same substantial order-change recommendation repeats across step three, limits and FAQ.",
+      "sections": [
+        {
+          "section": "Decision three",
+          "passage": "Label the approved contact for an existing order and explain which reference the customer should include. Keep that message separate from a new inquiry. Receipt of a change request should not imply approval to alter production, preserve the original date or change the agreed collection arrangement."
+        },
+        {
+          "section": "Limits",
+          "passage": "The business confirms production acceptance, dates and readiness for the actual order. The website does not approve changes by receiving a message. Live order lookup, production updates and automated fulfillment coordination need separate scope."
+        },
+        {
+          "section": "Project FAQ answer",
+          "passage": "Yes. We can label a separate route for questions about an existing order and explain which reference the customer should include. The business supplies the approved destination and decides whether a requested change affects production or timing. A received message should not read as approval to change the job. Live order lookup or automatic production updates would need separate scope."
+        }
+      ]
+    },
+    {
+      "route": "/areas/tennessee/davidson-county/",
+      "maximum": 69,
+      "reason": "The same public-media/private-recording boundary recurs across decision three, limits and the transfer FAQ.",
+      "sections": [
+        {
+          "section": "Decision three",
+          "passage": "Ask what the customer already has, what help is needed and what result is being discussed. Preserve combined-package relationships through the existing booking or quote destination. Use authorized public audio and approved credits where examples clarify the offer, keeping private project files outside the public portfolio workflow."
+        },
+        {
+          "section": "Limits",
+          "passage": "The studio confirms package details and arrangements. Public media permission does not authorize transfer of private recordings. Shared calendars, engineer scheduling, payments, session-file transfer and private delivery systems require separate scope."
+        },
+        {
+          "section": "Project FAQ answer",
+          "passage": "No automatic transfer is included. We distinguish public website media from private project files and identify which existing provider controls each. The website handoff delivers the paid website files and instructions, not every connected account or its contents. If private recordings must move, that requires an expressly agreed transfer plan, permissions and separate scope."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,832 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-10-27T15:26:08.124Z",
+  "reviewer": "independent Astra worker",
+  "scope": "Exactly the three local pilots listed in pilot-qa.json; frozen-baseline meaning, prospective shared renderer, importer guards, visual and interaction evidence.",
+  "disposition": "accept-three-pilot-checkpoint",
+  "blockingFindings": [],
+  "nonblockingFindings": [],
+  "numericQualityRatings": null,
+  "sourceHashes": {
+    "src/human-location-brief.mjs": "86d795fcf1376bf4435aa225afac69b033a9db87226b7a5fb0bf67155a1e76e3",
+    "src/human-location-briefs.json": "4059f524984ba12397eca880d8f9dc881979a93f77f8eb27efa60177b06691e9",
+    "src/location-service-pages.mjs": "00002812121b91c1ab95eb7471790d6dbd538ca67c24e9a83133abb8159fefe8",
+    "src/assets/counties.css": "f38b6dd4e6f8589129391cefdbb7149ed1e6c9422fc4a7d48f93db5952d8d3e8",
+    "operations/human-quality-20261027/import-location-briefs.mjs": "08062903a0364686ac92a4b19d6dd89645df1084c2612099c3cc0032a5b69b2b",
+    "operations/human-quality-20261027/pilot-qa.json": "d8c9346dbb1fac20704d38835b7271f8cd266a14b59e50b812d56065ebc5dd67"
+  },
+  "preview": {
+    "origin": "http://127.0.0.1:4201",
+    "kind": "Current source preview with unbundled CSS; not final Linux production build",
+    "browser": "Windows Chromium",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "isMobile": true,
+        "hasTouch": true
+      },
+      {
+        "width": 320,
+        "height": 844,
+        "isMobile": true,
+        "hasTouch": true
+      }
+    ],
+    "reducedMotion": true
+  },
+  "perRoute": [
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "baselineFacts": [
+        "GSPS Marine in Gulf Shores separates current vessel details, requested work and earlier service history.",
+        "The changed-vessel scenario is a proposed website example, not a claim that GSPS mixes records."
+      ],
+      "preservedMeaning": [
+        "Current boat is distinguished from a returning customer and a previous boat.",
+        "Unknown history is allowed; changing the vessel prompts review of related history.",
+        "Saved vessels, accounts and record lookup stay separate; staff verify records and decide work and schedule."
+      ],
+      "clarity": "The question, three decisions and explicit boundary replace repeated summary, table and scope prose with a coherent current-vessel sequence.",
+      "inputHash": "ce9fc633f2568f773b8064f2c828e8429ec9be7c36234612f2c53d9bb5705434",
+      "frozenBaselineHash": "ce9fc633f2568f773b8064f2c828e8429ec9be7c36234612f2c53d9bb5705434",
+      "inputHashMatches": true,
+      "disposition": "accept",
+      "sourceCheck": "Compared the complete frozen main text and source-entry evidence to the complete rewritten brief. No fresh verification of external source sites in this checkpoint.",
+      "sourceLinksPreserved": true
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "baselineFacts": [
+        "Edgar’s local ordering is separate from nationwide Goldbelly shipping.",
+        "Dispatch, arrival and product preparation are distinct in the baseline shipping evidence.",
+        "The Birmingham Financial Center location is not generalized to every branch."
+      ],
+      "preservedMeaning": [
+        "A local cart, product or date is not presumed to transfer.",
+        "Occasion, collection, dispatch and arrival have different meanings.",
+        "The chosen provider confirms available options and supplies the appropriate support route."
+      ],
+      "clarity": "The three decisions progress from ordering route to date meaning to confirmation/support, without repeating a second planning table.",
+      "inputHash": "d10d2126f6c3830779aace89c4518eef11803b3865755d82d380aceac44bc3d2",
+      "frozenBaselineHash": "d10d2126f6c3830779aace89c4518eef11803b3865755d82d380aceac44bc3d2",
+      "inputHashMatches": true,
+      "disposition": "accept",
+      "sourceCheck": "Compared the complete frozen main text and source-entry evidence to the complete rewritten brief. No fresh verification of external source sites in this checkpoint.",
+      "sourceLinksPreserved": true
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "baselineFacts": [
+        "Sand Point’s agreement requires City training, proficiency, a permit and an authorized signature.",
+        "An access key is distinct from another person’s authority to operate."
+      ],
+      "preservedMeaning": [
+        "The actual operator, rather than vessel/key/fee, is the authorization subject.",
+        "New operators follow the owner’s current process and approved document route.",
+        "Crew changes require staff review; Sand Point rules are not asserted for all harbors.",
+        "The website does not issue permits or certify safe operation; qualified harbor personnel retain operational responsibility."
+      ],
+      "clarity": "The operator question and illustrative crew change remain concrete, and the published-source boundary is adjacent to the proposed explanation.",
+      "inputHash": "2026229a3b64fb8a56c771cf8eb8a11022f65fbaba468ae41b935db00bcefc83",
+      "frozenBaselineHash": "2026229a3b64fb8a56c771cf8eb8a11022f65fbaba468ae41b935db00bcefc83",
+      "inputHashMatches": true,
+      "disposition": "accept",
+      "sourceCheck": "Compared the complete frozen main text and source-entry evidence to the complete rewritten brief. No fresh verification of external source sites in this checkpoint.",
+      "sourceLinksPreserved": true
+    }
+  ],
+  "sharedRenderer": {
+    "verdict": "Suitable for further individually reviewed brief integration; this is not approval of unreviewed entries.",
+    "evidence": [
+      "All authored strings pass through escapeHtml. Native ordered-list and disclosure semantics remain.",
+      "Each pilot renders exactly three H3 decisions beneath the buyer-task H2; old summary/table/scope repetition is absent.",
+      "Source URLs, review dates, public-example/non-client status, pricing, file ownership and source-code update model remain in the rendered page.",
+      "The importer checks frozen input hashes, required prose fields, exactly three decisions/owner inputs, duplicate drafts and known source routes before writing. It was reviewed statically and was not executed by this reviewer.",
+      "The legacy planning-details ID now belongs to the public-source disclosure, intentionally replacing the removed planning table. questions remains the owner-input disclosure. Both direct URLs open correctly."
+    ]
+  },
+  "browserChecks": [
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 1440,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "0eb7e66aa85aa745c17a51800799c296397ec0808579886bd2c82c6b13e8a586",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 131.578125,
+        "headerBottom": 100
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 131.515625,
+        "headerBottom": 100,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 132.296875,
+        "headerBottom": 100,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "0eb7e66aa85aa745c17a51800799c296397ec0808579886bd2c82c6b13e8a586",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.078125,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 95.953125,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.40625,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 320,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "0eb7e66aa85aa745c17a51800799c296397ec0808579886bd2c82c6b13e8a586",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": 0,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.203125,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 95.65625,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.3125,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 1440,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "374aefa627a0def83bee18840a983ffd944eabdafc495d4e9e26ff803fbc432a",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 131.578125,
+        "headerBottom": 100
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 131.859375,
+        "headerBottom": 100,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 131.640625,
+        "headerBottom": 100,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 390,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "374aefa627a0def83bee18840a983ffd944eabdafc495d4e9e26ff803fbc432a",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.171875,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 95.515625,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.375,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 320,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "374aefa627a0def83bee18840a983ffd944eabdafc495d4e9e26ff803fbc432a",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": 0,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.203125,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 96.28125,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.34375,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 1440,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "835aa94d1eb2019057617ac9d058132c1e653cd2834bb26b5f8388e5138f1e80",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 131.78125,
+        "headerBottom": 100
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 131.9375,
+        "headerBottom": 100,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 131.890625,
+        "headerBottom": 100,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 390,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "835aa94d1eb2019057617ac9d058132c1e653cd2834bb26b5f8388e5138f1e80",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": null,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.015625,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 95.953125,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.21875,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 320,
+      "httpStatus": 200,
+      "renderedHtmlSha256": "835aa94d1eb2019057617ac9d058132c1e653cd2834bb26b5f8388e5138f1e80",
+      "javascriptErrors": [],
+      "defaultHorizontalOverflow": 0,
+      "expandedHorizontalOverflow": 0,
+      "textSpacingHorizontalOverflow": 0,
+      "decisionCount": 3,
+      "oldRepeatedBlocks": 0,
+      "duplicateIds": [],
+      "priceAnchor": {
+        "hash": "#project-prices",
+        "top": 96.203125,
+        "headerBottom": 64
+      },
+      "legacyPlanningAnchor": {
+        "open": true,
+        "top": 95.640625,
+        "headerBottom": 64,
+        "summary": "Public examples behind this planning advice"
+      },
+      "questionsAnchor": {
+        "open": true,
+        "top": 96.3125,
+        "headerBottom": 64,
+        "summary": "Useful details for this example"
+      },
+      "disclosureKeyboard": [
+        {
+          "selector": "#questions",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        },
+        {
+          "selector": ".location-source-note",
+          "openedWithSpace": true,
+          "closedWithSpace": true,
+          "focusRetained": true
+        }
+      ]
+    }
+  ],
+  "inquiryNavigation": [
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "url": "http://127.0.0.1:4201/contact/?offer=unsure&request_kind=question&county=alabama%2Fbaldwin-county&qa=1#inquiry",
+      "county": [
+        {
+          "tag": "INPUT",
+          "value": "alabama/baldwin-county"
+        }
+      ],
+      "targetExists": true
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "url": "http://127.0.0.1:4201/contact/?offer=unsure&request_kind=question&county=alabama%2Fjefferson-county&qa=1#inquiry",
+      "county": [
+        {
+          "tag": "INPUT",
+          "value": "alabama/jefferson-county"
+        }
+      ],
+      "targetExists": true
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "url": "http://127.0.0.1:4201/contact/?offer=unsure&request_kind=question&county=alaska%2Faleutians-east-borough&qa=1#inquiry",
+      "county": [
+        {
+          "tag": "INPUT",
+          "value": "alaska/aleutians-east-borough"
+        }
+      ],
+      "targetExists": true
+    }
+  ],
+  "floatingToolObservations": {
+    "sampledViewportStates": 36,
+    "textIntersections": 0,
+    "note": "At question, decision list, third decision and boundary positions for every pilot/width; not every scroll pixel."
+  },
+  "visualAssessment": [
+    "Manually inspected each pilot’s desktop and narrow initial screens, desktop and narrow question/decision presentation, narrow third-decision/source boundary, open source prose and focused owner-input disclosure.",
+    "The question callout, numbered decisions, separators and nearby scope boundary create a readable progression. Normal phone text wraps cleanly without clipped headings or competing blocks.",
+    "At 320px with 1.5 line height, 0.12em letter spacing, 0.16em word spacing and 2em paragraph margins, the selected question and longest decision states reflow without horizontal overflow.",
+    "Keyboard disclosure focus has a visible dark outer ring, remains below the sticky header and is unobscured in inspected narrow states.",
+    "Initial element-only captures of tall sections included sticky-header compositing artifacts; those captures were not used as clipping findings. Normal viewport captures were used for signoff."
+  ],
+  "manuallyInspectedEvidence": [
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-390-initial.png",
+      "sha256": "8a4a5a8be494bce9c05d390d144dab0051f39d3229185216a1faabde03b610a6"
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "name": "public-sources",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-390-public-sources.png",
+      "sha256": "39a957e105a1ace54ccfbb6a5609aa9d66c1b505070e3e08da6cacf9949e58c6"
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 390,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-initial.png",
+      "sha256": "dfa9db10687e297dca3feab78ae3f0c61c9a4f66b4db862c9ace41dfb017dda5"
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 390,
+      "name": "public-sources",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-public-sources.png",
+      "sha256": "3c67db5053c8317961037e8744d87e7e893516eb78b6bb035a125530e1483807"
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 390,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-390-initial.png",
+      "sha256": "d02e3b4799e24daad076f044f6238ce101599ab4843f6c6608e171f4687725af"
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 390,
+      "name": "public-sources",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-390-public-sources.png",
+      "sha256": "a37dbae508d9e7be6e3505c5c84d393507266410a0427626ffd481bb398169b1"
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 1440,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-1440-viewport-question.png",
+      "sha256": "28430b0a6d591bb77067bbc9f81f6f6abb81e132b7086f4f8c39fea0f38cab2b",
+      "scrollY": 1160,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-390-viewport-question.png",
+      "sha256": "dbc602f54737d6789a63b847fc15323d546b530a6a7e6b4f59253c8b1b0003c1",
+      "scrollY": 1421,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-390-viewport-decision3.png",
+      "sha256": "3f90028b89105f6171be157a85f56557d74e2a008d135c0b82fe72bc2276c25c",
+      "scrollY": 2222,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 320,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-320-viewport-question.png",
+      "sha256": "28147a30019468b8954549cdfddbc5a62223a5fb6efe9b11e20e02981b2406a9",
+      "scrollY": 1952,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 320,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-320-viewport-decision3.png",
+      "sha256": "52e422043d6aed2707212aa7b92b5d202ef955efd36ac2456ce746301a7a0a6a",
+      "scrollY": 3205,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 1440,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-1440-viewport-question.png",
+      "sha256": "69d8f9c6f30ea27457d936fc272c3b85fc513214f520abfa424512dbc2583a0d",
+      "scrollY": 1191,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 390,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-viewport-question.png",
+      "sha256": "f736dd53b41a33488b5c0b96d7abd6779cb056d4486e7ac2b5f8a10fdb45fd74",
+      "scrollY": 1473,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 390,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-viewport-decision3.png",
+      "sha256": "681d0c10dbb54e1b5fa6d1798a1f17394d65c77e3794f3d746d9ba7a857d01d0",
+      "scrollY": 2273,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 320,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-320-viewport-question.png",
+      "sha256": "71bf881544b673a0a468388698055a8da532c3b1c5d286db994ad15537484a00",
+      "scrollY": 1976,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 320,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-320-viewport-decision3.png",
+      "sha256": "48c4247e9a70622af97316531fca1c8cfb46fecfacf2d88ae2745200e83b9cc5",
+      "scrollY": 3266,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 1440,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-1440-viewport-question.png",
+      "sha256": "831f61bb2e25e3e242988aee79b3a09bbc4e2d68bf15ad9b8ee9f89cc1823848",
+      "scrollY": 1231,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 390,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-390-viewport-question.png",
+      "sha256": "af50a78fef57cf2606da326f8a84fd76585257d8b9d3f76c7a0256e1a9a39c19",
+      "scrollY": 1513,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 390,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-390-viewport-decision3.png",
+      "sha256": "34bc9a21e71b294694b7d12333f58028384b3152eed767f02e7dfc61ac9c4f53",
+      "scrollY": 2285,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 320,
+      "name": "question",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-320-viewport-question.png",
+      "sha256": "6ec8ea5848284281f13b771206326ec9617306d4fc8497f1beb12aa173a81912",
+      "scrollY": 2032,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 320,
+      "name": "decision3",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-320-viewport-decision3.png",
+      "sha256": "8124ff2c07138a0c688f5060a4531192f625cdd65468e8eba6da26c9f626ebcb",
+      "scrollY": 3284,
+      "overflow": 0,
+      "toolTextHits": []
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "name": "owner-focus",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-390-owner-focus.png",
+      "sha256": "b14dd664f2bd0b32046009463da97a84e871a087f17f7fead72c7162f2f4518e",
+      "focus": {
+        "isActive": true,
+        "outline": "rgb(255, 255, 255) solid 3px",
+        "top": 115,
+        "open": true
+      }
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "name": "owner-focus",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-owner-focus.png",
+      "sha256": "908d63b563300b8e6413c65228b99f6cf6c96eac1e5468e469df706b4ad97568",
+      "focus": {
+        "isActive": true,
+        "outline": "rgb(255, 255, 255) solid 3px",
+        "top": 114.96875,
+        "open": true
+      }
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "name": "sources-focus",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-390-sources-focus.png",
+      "sha256": "ce4afd01c279661cefd230ae52d0414a38d7a8b9337aeb2c2f3022e6625b612a",
+      "focus": {
+        "isActive": true,
+        "outline": "rgb(255, 255, 255) solid 3px",
+        "top": 115.0625,
+        "open": true
+      }
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "name": "owner-focus",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-390-owner-focus.png",
+      "sha256": "40680fbce0ce38e0f29a32cca8e0d646a7b3f4a766bc77d75a76461b9f811951",
+      "focus": {
+        "isActive": true,
+        "outline": "rgb(255, 255, 255) solid 3px",
+        "top": 114.8125,
+        "open": true
+      }
+    },
+    {
+      "route": "/areas/alabama/baldwin-county/",
+      "width": 1440,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/baldwin-county-1440-initial.png",
+      "sha256": "3632594fa16423f88e0e4b7a7998639aadb4f0c39a9f35e2aff8a3b7b44ff603"
+    },
+    {
+      "route": "/areas/alabama/jefferson-county/",
+      "width": 1440,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/jefferson-county-1440-initial.png",
+      "sha256": "fcf124c0cd0f76fa64353700cc9d1842ab62e0994d193c3fb2e8acf7a50ea66a"
+    },
+    {
+      "route": "/areas/alaska/aleutians-east-borough/",
+      "width": 1440,
+      "name": "initial",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/aleutians-east-borough-1440-initial.png",
+      "sha256": "14c5c545270884aacb32441e615f82ceec42c9b36c8ae72d9d922d9e3cc4f14e"
+    }
+  ],
+  "rawEvidenceFiles": [
+    "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/results.json",
+    "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/viewport-results.json",
+    "C:/Users/palat/AppData/Local/Temp/wm-local-pilot-review/focus-results.json"
+  ],
+  "limits": [
+    "Only these three rewritten briefs received this independent editorial and visual checkpoint. No quality scores or approval for all other local pages is implied.",
+    "No new external source-site verification, submission/email action, cross-browser coverage or full accessibility conformance audit.",
+    "Final bundled production build, Linux screenshot gate and broad route/interaction checks remain required after integration."
+  ],
+  "sourceEditsMade": false
+}

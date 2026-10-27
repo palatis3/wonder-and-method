@@ -1,0 +1,22 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 45,
+  "reviewedCount": 45,
+  "contentPassCount": 45,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "validation": {
+    "packets": 9,
+    "renderers": 5,
+    "currentDraftBindings": 45,
+    "currentSourceBindings": 45,
+    "currentNeighborBindings": 45,
+    "exactQuotes": 270,
+    "entirelyUnchangedCandidates": 44,
+    "manuallyRecheckedSourceSets": 1,
+    "currentCandidateBodyBindings": 45,
+    "validatedAt": "2026-10-27T23:18:09.088Z"
+  },
+  "evidenceScope": "44 exact final-delta reviews inherited after complete candidate/source equality proof. Saunders corrected disclosure manually reviewed with current context and only-observation-change proof; full prior review chain retained with exact hashes. No fresh whole-baseline reread.",
+  "limits": "Visuals/accessibility/final scores remain null. Historical full and delta audits unchanged; no source or draft edits."
+}

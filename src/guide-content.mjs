@@ -1,3 +1,5 @@
+import {reviseGuideSections} from './guide-editorial-revisions.mjs';
+import {consolidateReviewedGuide} from './guide-review-consolidations.mjs';
 import {countWords,titleCount} from './offer-catalog.mjs';
 import {reviewPageLimits,optionalBuildCall} from './offer-copy.mjs';
 import {formRepairHelp} from './guide-inquiry-actions.mjs';
@@ -212,5 +214,5 @@ const guideContent={
 
 export function guideContentSections(path,offers){
  const authored=semrushGuideContent[path]||floridaGuideContent[path]||operatingGuideContent[path]||longtailGuideContent[path]||researchGuideContent[path];
- return formatGuideSections(extendSemrushGuide(path,expandLongtailSections(path,withFloridaGuideExamples(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])])),offers));
+ return formatGuideSections(consolidateReviewedGuide(path,reviseGuideSections(path,extendSemrushGuide(path,expandLongtailSections(path,withFloridaGuideExamples(path,[...(typeof authored==='function'?authored(offers):authored||guideContent[path]?.(offers)||[]),...(researchGuideExpansions[path]||[])])),offers))));
 }

@@ -1,0 +1,334 @@
+{
+  "batch": "residual-checkpoint-recheck",
+  "reviewer": "Independent Astra",
+  "reviewedAt": "2026-10-27",
+  "status": "bounded-content-recheck-complete-pending-other-gates",
+  "assignedCount": 20,
+  "reviewedCount": 20,
+  "pendingInThisRecheck": 0,
+  "residualARemainingPending": 95,
+  "conclusion": "All 20 corrected candidates were reread completely. All cited checkpoint corrections are resolved; no unresolved material content defect or documented hard cap was found in this bounded recheck. This is not publication acceptance or a visual/accessibility signoff.",
+  "resolvedRoutes": [
+    {
+      "route": "/areas/broome-county/",
+      "candidateBodySha256": "56c3bdee5b70b70f918f2141606b0321ec27c782fbc362d142114eda079b042a",
+      "draftSha256": "b2f9891a544e07c50867e56d80bd7cc42679a04a9314f74883a764c150ca4880",
+      "priorCandidateBodySha256": "d111d5a37f6256b68f7c5b4e5b8ea6a049065a2df54352bce4963b8e22e22bb0",
+      "assessment": "The dense inventory is removed; delivery timing, paid-file entitlement, unfinished-items disclosure and checklist route remain. The conditional review promise is unchanged.",
+      "exactCandidateEvidence": [
+        "You receive the paid website files, publishing instructions and a record of completed checks and unfinished items. Use the linked handoff checklist to inspect the full delivery."
+      ]
+    },
+    {
+      "route": "/areas/delaware-county/",
+      "candidateBodySha256": "4f35c483961d4e8243418ac1ca1a52e7b7799d800bf1fe6598ce0e9fb0223041",
+      "draftSha256": "5df3aee0a55b8b015b36ccfba6a631a93c345eed07d53c43fd4fa796bb280828",
+      "priorCandidateBodySha256": "8eacd9ebed1625e033b0fef9735d921e6bdd75e2a8c6fca8460082be79f78ac7",
+      "assessment": "The replacement asks the owner for real review questions while retaining electrician assessment, sizing and permit responsibility.",
+      "exactCandidateEvidence": [
+        "For your page, supply the questions your team uses in the first review."
+      ]
+    },
+    {
+      "route": "/areas/delaware/sussex-county/",
+      "candidateBodySha256": "820c07c870a4ee0f0435e4c433db014b78d6b7be1388045f30756b0f3ed72350",
+      "draftSha256": "61bebc32e45f88f3cfe0975e4e41c423d21d31702fcf4bfe446e6227ed50e34f",
+      "priorCandidateBodySha256": "f604ec38780e29ad71ce69557cbd9dd38d811a6daaacb8c45cac4d18b54d65b3",
+      "assessment": "Removed the duplicate factual-approver paragraph from the decision while retaining permission and the complete dispute-resolution FAQ.",
+      "exactCandidateEvidence": [
+        "Caption the work your business delivered or coordinated and identify collaborators only with permission.",
+        "Choose one factual approver for the website and have the relevant parties resolve the disputed contribution before publication."
+      ]
+    },
+    {
+      "route": "/areas/essex-county/",
+      "candidateBodySha256": "47dac7cfdf86ad69bb4d9dbcabe61f3eea663cd9ef31949670e8b8b1c31e153f",
+      "draftSha256": "e11678fdf2d7b18ce8134ab1edb108dc0344f5265d7c5a69c109af1eca7e2e91",
+      "priorCandidateBodySha256": "98ba9b04114c58781d57027ab03af7fccd7072ffa5b05afd03e2035ab5403ef0",
+      "assessment": "Duplicate seasonal-update terms removed from limits; the retained FAQ still says the owner supplies facts and care does not monitor stock.",
+      "exactCandidateEvidence": [
+        "Live inventory, reservations, agreements and fitting systems need separate scope; an informational page can support telephone inquiries.",
+        "Care does not monitor stock, decide current terms or promise immediate publication whenever shop conditions change."
+      ]
+    },
+    {
+      "route": "/areas/florida/brevard-county/",
+      "candidateBodySha256": "a05ce6ef070189d3f2f5bc01d6caa143b117ed00d0cff17e217ef1c556e038d9",
+      "draftSha256": "ceb3fb828787ef143601e591fe4d932458e6daa127680b98efe52bc3b4039e3e",
+      "priorCandidateBodySha256": "a404e0bdaecc9e8ba511fc1f224677f003320ecff415a5e15c9160e122331880",
+      "assessment": "Owner-facing observation request replaces the stronger-case note; technical diagnosis and no-outcome promises remain unchanged.",
+      "exactCandidateEvidence": [
+        "For your page, send the observation prompts your technicians use and explain what happens during the assessment."
+      ]
+    },
+    {
+      "route": "/areas/florida/calhoun-county/",
+      "candidateBodySha256": "8a74625e4924d5f4fa9bfc725a1b8151318ad5283b6d7b65293ab7b324378624",
+      "draftSha256": "a59f0f6c1d1b9de1562ecdf8a317f6b66d0a5d51f70c1d76b9e2f74d4032f58e",
+      "priorCandidateBodySha256": "ce022102b7d6ba8c4e6db307431aeaf2c08756e4922d9ff0ead176eef48e6cc9",
+      "assessment": "The corrected sentence is grammatical and preserves the boundary; complete candidate has no new content conflict.",
+      "exactCandidateEvidence": [
+        "This does not provide site-preparation or permitting instructions."
+      ]
+    },
+    {
+      "route": "/areas/florida/clay-county/",
+      "candidateBodySha256": "6c7a6dd5df2f1bd76aa17450fdd8b497c8e6c9c758c63cbb3a7507d3455b3388",
+      "draftSha256": "53859c980bd762a5aa296ba37c4c9bb8710184153b394a9699dd1422ee554843",
+      "priorCandidateBodySha256": "a0425cd92911568bf2ea912f3f47787dd6682a0ee72d77930367e5d1f387fbf0",
+      "assessment": "The direct request names the exact evidence needed, with no fabricated repair example or new operator capability.",
+      "exactCandidateEvidence": [
+        "For your page, send one approved example naming the equipment, reported issue and work your team performed."
+      ]
+    },
+    {
+      "route": "/areas/florida/columbia-county/",
+      "candidateBodySha256": "33d8fc2674ed8bc099f055c2c2e06378449d5900ef719bb29ad5ee57e91753d2",
+      "draftSha256": "b03490abf78ec3c25f5cc08e002cc888f0156770a54101013ac58df822bb8573",
+      "priorCandidateBodySha256": "8880e5b7bede48abd567c6dd796173228da0ef4ee8b2765650f9390c38b3d027",
+      "assessment": "Duplicate optional-blog prose is removed, while the FAQ still states that publishing regular posts is not a purchase requirement.",
+      "exactCandidateEvidence": [
+        "The shop verifies dimensions and product suitability. Configurators, automated design, measured quotations and manufacturing tools require separate scope.",
+        "publishing regular posts is not a requirement for buying the website."
+      ]
+    },
+    {
+      "route": "/areas/florida/escambia-county/",
+      "candidateBodySha256": "e47f1c96fff3f3ba4bf32afd1a615014563f6f09a1410625da5f8beb29aecfbc",
+      "draftSha256": "c4ee3ebecca75eb22b122648bf032d279470161bc392232e0bbbeb29520e05b7",
+      "priorCandidateBodySha256": "3bfcb85821cba421be183d7177068fddfcfb11864221f391cd25362a8a9d43db",
+      "assessment": "Removed the duplicate trade-proposal test from limits while preserving audience, material/site and completion distinctions.",
+      "exactCandidateEvidence": [
+        "Site suitability and scheduling remain for operator review. Trade portals, fleet scheduling and asset tracking require separate scope."
+      ]
+    },
+    {
+      "route": "/areas/florida/gadsden-county/",
+      "candidateBodySha256": "39392f0f21b272b8105ee757d8bdcb033ed176982fcbcf36c1b9e394f0570c84",
+      "draftSha256": "a841c79398b1362d993db958e28c9488b891dc56634447d0c3a424ca6f5c7283",
+      "priorCandidateBodySha256": "31d4932279441ccbfc1781826b1626aea0a52677f1ba14b91bf358c304fe3308",
+      "assessment": "The stable-address and unchangeable-copy instructions no longer repeat in limits. Source-date and current-inventory distinctions remain intact.",
+      "exactCandidateEvidence": [
+        "Inventory synchronization, order processing and reservation systems need separate scope; the website can explain and link the existing tools.",
+        "Already downloaded copies cannot be updated remotely, so they still need a clear route to current availability."
+      ]
+    },
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "candidateBodySha256": "7b27f368d596cc5406725f3213814f8303c3d32b800ec033101d4a4237ef1005",
+      "draftSha256": "01f779a61d6caea9a03201523ecc4705bd4d6842fc98725800c4201f51522903",
+      "priorCandidateBodySha256": "53d171044bc6c829d31d29c48cda28fabe259a6dc30ddc4892f72602d4fcb9b9",
+      "assessment": "The required sample is present, directly answers the task, and twice identifies its fictional status. Source capability description remains unchanged in substance.",
+      "exactCandidateEvidence": [
+        "A fictional caption shows the distinction: “Made and fitted the timber mantel; the existing fireplace surround and hearth stayed unchanged.” This is an illustration, not a completed project."
+      ]
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "candidateBodySha256": "d477159329c7c95c710c5395ab2250b3709a91d6c65e7dc87f4547308d11cad5",
+      "draftSha256": "dbd5afc4fa14a1eb7b053f9313edc7e165425581c12efa9ffa49824edf4c8329",
+      "priorCandidateBodySha256": "5629629af944fc49b0e214c1f98335dc2664d4dbe951d41efcc51091bc5a735a",
+      "assessment": "A clearly fictional combined-function request now demonstrates the missing task; source coverage and technical-responsibility limits remain intact.",
+      "exactCandidateEvidence": [
+        "Fictional inquiry: “The lights started flickering and the cooling changed during the same trip. I do not know whether they are related.”",
+        "The grouped description must not become a diagnosis that the functions share one fault."
+      ]
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "candidateBodySha256": "240cf9b13b65e2ae6eaec0dad9984660f4b84b353bc71467584bae75f71ca309",
+      "draftSha256": "7380142ed7e62095cb8cee109ad14c1a6f257014cad1e2916e52fefecf73a480",
+      "priorCandidateBodySha256": "73426a874f684816075341b872131592e41a6f83b81214d71c465913c0c3c892",
+      "assessment": "Both component inquiry and workshop caption are explicitly fictional; the requested site/workshop distinction is demonstrated and connected to the initial task.",
+      "exactCandidateEvidence": [
+        "Fictional inquiry: “Our existing pump is marked [model]. I have a photograph of the damaged component, but do not know if it can be rebuilt. Can your workshop assess it?”",
+        "A fictional caption structure is: “Customer-supplied pump component, rebuilt in the workshop; site removal and installation were outside this job.” This is an illustration, not a completed project."
+      ]
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "candidateBodySha256": "e545b23b34e71402792890a7b1bb66ffd8277ea2607ee918c3403d6b2a0e4fd4",
+      "draftSha256": "94ad8bfce515a967be6d9bda48e422176cbc1654ce1dc31e3cf6cf8fe20261dc",
+      "priorCandidateBodySha256": "c76548af638c3384cad0a265ac334ce58564965d9bf470c454e074e9eaa937fa",
+      "assessment": "The required package distinction is now worked through as a fictional comparison, with real delivery arrangements left for confirmation.",
+      "exactCandidateEvidence": [
+        "Fictional comparison: “Twelve roofing sheets, cut to the agreed lengths, delivered to [address]” differs from “A complete barn kit to that address.”",
+        "Ask staff which delivery arrangement applies to each; do not carry an ordinary-delivery price, access assumption or inclusion into the kit request without confirmation."
+      ]
+    },
+    {
+      "route": "/areas/florida/lake-county/",
+      "candidateBodySha256": "185f975fa9e63128b3d951448c296fbc1a5c29e94aca23fc2a980b31b4a0746f",
+      "draftSha256": "e689d2fdb8579d53a7d00be12cd5c404ebc0eaaafd3616fc3febf03e85eb753c",
+      "priorCandidateBodySha256": "d0c6064fa5a447d922f14a92967675f6bb6bab7b19ad2f927bbcd9ee1832cec2",
+      "assessment": "The scoped-review explanation is no longer duplicated in limits, while the FAQ preserves the review deliverable and separately scoped redesign.",
+      "exactCandidateEvidence": [
+        "Installers assess suitability and agree the plan. Live stock, automated measurement and instant installed pricing require separate scope.",
+        "You receive prioritized recommendations; a larger redesign or new estimating system would require its own scope."
+      ]
+    },
+    {
+      "route": "/areas/florida/lee-county/",
+      "candidateBodySha256": "f27816ae3b580d8eb41a4e6cfc59dee287311bf03a02de49e774ee9fe7ca7295",
+      "draftSha256": "262118a51c0ba7d864ef5418e4410a73211e49dc5add93004d734236183c940c",
+      "priorCandidateBodySha256": "b42db4226852266e562f216e51e8b0047ae82fdc580bf6281a0171c7fba734c1",
+      "assessment": "Removed the duplicated photo-readiness setup while retaining the conditions for facts, approvals and access before build work.",
+      "exactCandidateEvidence": [
+        "CRM connections, portals, automatic qualification and design tools need separate scope.",
+        "Before build work starts, we need the agreed business facts, photographs and account access ready."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/bell-county/",
+      "candidateBodySha256": "597a89aee45abfb7523d66a0a8411b4d72f31efa20144d05c36db2bb8daf2792",
+      "draftSha256": "017193a739a7106e64563f6751e3948194eb9d9205f977a62210520a9fd47db9",
+      "priorCandidateBodySha256": "6107f599088d0a8314d40e2c2f51f98896bccd5ed65e9b16176c7bb226980820",
+      "assessment": "The requested heading is exact; reference submission remains separate from upload receipt and production approval.",
+      "exactCandidateEvidence": [
+        "Finish the job details, then upload the artwork.",
+        "Keep receiving artwork distinct from assessing it and approving production, using the shop’s actual correction and confirmation process."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/boyle-county/",
+      "candidateBodySha256": "2b822679b76103b4db1a922257a5bdbb83a804d92a41aa264669b4be44a35897",
+      "draftSha256": "9a6e5094d6924d40acf2c35f3ee272d86596ea64c63927b07c1cd8168dea060d",
+      "priorCandidateBodySha256": "62624ab8e824411b50ae85b7378cf4a7459fd5351f40a0874be6944ae9c35410",
+      "assessment": "The FAQ is shortened to scope and approval, with detailed faithfulness guidance retained once. The brief repeated new-photography boundary is a useful commercial condition, not substantial duplicated advice.",
+      "exactCandidateEvidence": [
+        "I can prepare supplied photographs for clear website use within the written proposal. You approve the finished images and factual captions. The guidance above explains how we preserve the material’s appearance; the linked scope describes the website design work. New photography is separate work."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/fayette-county/",
+      "candidateBodySha256": "3909a1a7ea61145b695f062ee6a2e45562e233beb468e25374c39df6b6d38724",
+      "draftSha256": "7ba0e7c80a993b7aea9d8c7a52d8055b2063aeb096e91646018c5764403ff9ab",
+      "priorCandidateBodySha256": "45e9726946d87aea0162f3a007019616356aaee9c6154368947309b1d961cc2c",
+      "assessment": "Changed coverage note explicitly identifies Buffalo remote work and denies a client/partner relationship. Supplied-item acceptance and design approval remain distinct.",
+      "exactCandidateEvidence": [
+        "For website projects in Lexington and Fayette County. Wonder and Method is based in Buffalo, New York, and works online with Kentucky businesses. The engraving business is a public planning example, not a studio client or partner."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/kenton-county/",
+      "candidateBodySha256": "87fed5a57b579b0e2204be18da0f2991a20f0f22e3ccfcff3f97c8bb7e99ebb1",
+      "draftSha256": "9b4f4dd10854b67f26a8e09fbd3c3a7cd2c3355b8f597ac923597d206ad67549",
+      "priorCandidateBodySha256": "698db8cd8251b75e5dd717157a3ec94e459303cd7ecc3ca919b7d06b7d60223d",
+      "assessment": "Requested heading is present; stage, site access, self-installation and no-capacity-reservation qualifications are preserved.",
+      "exactCandidateEvidence": [
+        "Separate a finished sign from an installed sign.",
+        "A finished sign waiting for building access is not yet an installed project."
+      ]
+    }
+  ],
+  "fictionalExampleAssessment": [
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "result": "Adds task value",
+      "reason": "The mantel-only caption identifies the unchanged surround/hearth and the additional whole-fireplace question. Fiction is labeled before and after the quote; no Hurst or studio project is invented."
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "result": "Adds task value",
+      "reason": "Two observations remain in one request, with separate onset questions and an explicit prohibition on inferring one shared fault. It is a fictional inquiry, not an actual RV diagnosis."
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "result": "Adds task value",
+      "reason": "A model/photo inquiry precedes assessment; the fictional workshop caption excludes site removal/installation. Neither fictional job scope nor successful rebuild is attributed to Ullrich or the studio."
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "result": "Adds task value",
+      "reason": "The paired roofing-sheet and complete-kit requests carry different references and require separate delivery confirmation. No real delivery price, access rule or inclusion is invented."
+    }
+  ],
+  "unresolvedMaterialContentDefects": [],
+  "caps": [],
+  "nonblockingReadingFriction": [
+    {
+      "route": "/areas/broome-county/",
+      "assessment": "Checklist detail is moved behind a purposeful link. Two substantial project FAQs still create limited reading friction, so scanability remains 3."
+    },
+    {
+      "route": "/areas/delaware/sussex-county/",
+      "assessment": "The duplicate is gone. Three project FAQs still make this longer than nearby briefs but add discrete purchasing information; limited friction remains."
+    },
+    {
+      "route": "/areas/essex-county/",
+      "assessment": "The care question remains a substantial but relevant paragraph; its earlier repeated setup is removed, leaving limited reading friction rather than duplication."
+    },
+    {
+      "route": "/areas/florida/columbia-county/",
+      "assessment": "A single relevant scope FAQ remains. It adds length but no longer repeats its own introduction in the limits."
+    },
+    {
+      "route": "/areas/florida/escambia-county/",
+      "assessment": "The remaining long FAQ adds limited friction, but the redundant preview is removed and the question is relevant to this trade audience."
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "assessment": "Two worked examples add useful substance, but their longer paragraphs create limited reading friction; scanability is 3 rather than 4."
+    },
+    {
+      "route": "/areas/florida/lake-county/",
+      "assessment": "One relevant review FAQ remains and adds limited reading burden; its earlier duplicate introduction has been removed."
+    },
+    {
+      "route": "/areas/florida/lee-county/",
+      "assessment": "The single FAQ adds relevant buying guidance with limited length; the duplicate limits wording is gone."
+    },
+    {
+      "route": "/areas/kentucky/fayette-county/",
+      "assessment": "The new coverage statement is direct and honest; two longer project FAQs still add limited reading friction."
+    },
+    {
+      "route": "/areas/kentucky/kenton-county/",
+      "assessment": "The important distinction is now visible in the heading and supported by a concrete example; longer stage paragraphs and the launch FAQ retain limited reading friction."
+    }
+  ],
+  "comparisonSelectionLimitation": "Supplied nearestSibling is usually a geographic/assignment neighbor, not asserted closest topical peer. Previously noted topical comparisons are retained where relevant; the separate family-overlap pass is still required. Fictional examples demonstrate decisions but are not fresh evidence of actual local projects or proof that every geographic URL merits independence.",
+  "retainedEvidence": {
+    "unchangedBaselineCount": 20,
+    "unchangedSourceEntryCount": 19,
+    "changedSourceEntries": [
+      {
+        "route": "/areas/kentucky/fayette-county/",
+        "change": "Coverage note only, checked against repair receipt and rendered candidate."
+      }
+    ],
+    "completeCandidateReread": 20,
+    "suppliedSiblingDraftCompared": 20,
+    "liveSourcesRefreshed": false
+  },
+  "contentOnlySubtotal": {
+    "maximumPossible": 80,
+    "normalized": false,
+    "minimum": 67.5,
+    "maximum": 75
+  },
+  "validation": {
+    "passed": true,
+    "uniqueAssignedCoverage": true,
+    "allPacketHashesRecomputed": true,
+    "allDraftHashesRecomputed": true,
+    "candidateBodyBindingsMatchAssignmentAndPacket": true,
+    "candidateBodyHashLimit": "Packet body hash binds rendered body bytes, not candidateMainText; compared exactly to both packet and assignment, not recomputed from text.",
+    "allDimensionAndFixQuotesMatchCandidate": true,
+    "repairReceiptHashesRecomputed": true,
+    "all17DraftChangesMatchCandidates": true,
+    "bothFAQChangesPresent": true,
+    "sourceChangeMatchesCandidateEntry": true,
+    "unknownDimensionsAndFinalScoresRemainNull": true
+  },
+  "visualEvidence": null,
+  "accessibilityEvidence": null,
+  "finalAcceptance": null,
+  "unresolvedChecks": [
+    "95 residual-a routes remain pending and were not resumed.",
+    "Separate family-overlap review using closest topical peers remains pending.",
+    "Page-specific narrow/wide visuals and keyboard/focus/contrast/reflow/action checks remain pending.",
+    "Live source status, operating behavior and receipt/transaction claims were not freshly tested."
+  ],
+  "stopReason": "Completed the authorized 20-route bounded recheck; no continuation into the residual-a remainder."
+}

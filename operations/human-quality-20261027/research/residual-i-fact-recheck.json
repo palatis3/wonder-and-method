@@ -1,0 +1,60 @@
+{
+  "checkedDate": "2026-10-27",
+  "scope": "Official public page checks for five diagnosed missing comparisons. No bookings or transactions tested.",
+  "checks": [
+    {
+      "route": "/areas/minnesota/dakota-county/",
+      "urls": [
+        "https://dakotacity.org/school-field-trips-tours-and-camps/"
+      ],
+      "facts": [
+        "Hands-On History grades K–2, 2h,10minimum60maximumstudents. Village Experience grades3–6,2h,10minimum70maximumstudents. One-Room School House grade2up,4h incl BYO picnic,10minimum50maximumstudents. Village lunch adds30–45min. Tourbooking3weeks ahead. Adult price/allowance separate fromstudent limits."
+      ],
+      "repair": "Compare Village3–6max70 with OneRoom2upmax50; preserve includedversusaddedlunch and student/adult aggregate counts."
+    },
+    {
+      "route": "/areas/minnesota/pine-county/",
+      "urls": [
+        "https://pinecountyhistory.org/",
+        "https://pinecountyhistory.org/index.php/shops/",
+        "https://pinecountyhistory.org/index.php/cafe/"
+      ],
+      "access": "Homepage direct open timed out twice; official indexed text crawled3daysago retrieved through search. Shop and cafe official search results retrieved.",
+      "facts": [
+        "Sunday museum/giftshopnoon–3pm; cafe9am–2:30pm. ThriftSaturday9–4, homepage midMay–midOctober versus shopspage May–September unresolvedseason. Homepage12plusgroupcontact vs cafe10pluscallahead are service-specific."
+      ],
+      "repair": "Sunday10am cafe doesnot imply exhibitsopen; noon–2:30overlap. Preserve seasonconflict and requestowner confirmation ratherthanchooseone. Distinguish museum12 and cafe10contact thresholds."
+    },
+    {
+      "route": "/areas/minnesota/scott-county/",
+      "urls": [
+        "https://www.scottcountyhistory.org/trunks",
+        "https://www.scottcountyhistory.org/trunks-then-and-now"
+      ],
+      "facts": [
+        "PiecesofthePastages4–7/Kindergarten: chores/games/school stations. WhatsForDinnergrades1–2: farms/stores/kitchens. ThenAndNowgrades3–5: mapsphotosobjects/discussionsgamesskits; grades3–4program45min versusgrade5 50min. Max30students or oneclass, outreach/trunk formats described. MinnesotaRiverFurTradegrades6–8 ages11–13: maps/artifacts/mocktrade."
+      ],
+      "repair": "Give exactgrade/topiccomparison and ThenAndNow45vs50minuteplanningdifference; do not invent grade-specificmappingdetails not documented."
+    },
+    {
+      "route": "/areas/missouri/scott-county/",
+      "urls": [
+        "https://www.scottcitymo.org/DocumentCenter/View/366"
+      ],
+      "facts": [
+        "Agreement2pagePDF: Mon–Sat6–8pm;Sunday11am–1pmor6–8pm. Reservingpartyonly mayenter up to30minutesearly; guestsnotbeforestart. Everyoneoutnolater10minutesafterend; pooldecklockerrooms cleanbeforedeparture."
+      ],
+      "repair": "Use illustrative6–8slot:organizer5:30earliest/guests6/everyoneout8:10 withcleanup. Do notreinterpretweather orcontracts."
+    },
+    {
+      "route": "/areas/nebraska/colfax-county/",
+      "urls": [
+        "https://missionmonks.squarespace.com/plan-your-event"
+      ],
+      "facts": [
+        "Fullbreakfast10plusrequestingmeals; otherwisecontinental. Lunch/dinner12plusrequestingmeals. Meetingassembly300 versus102beds. SignedreturnedFacilitiesReservationAgreementconfirms."
+      ],
+      "repair": "20meeting8overnight illustration:8breakfastbelowfullbreakfastthreshold,20dinnermeetsmealcountonly; staffconfirm. Keepstudent/personprivate data outsideinitial inquiry."
+    }
+  ]
+}

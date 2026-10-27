@@ -1,0 +1,1249 @@
+{
+  "status": "forty-pairs-reviewed-four-strengthenings-pending",
+  "screenedRoutes": 2266,
+  "triageCandidates": 100,
+  "manuallyComparedPairs": 40,
+  "selection": "Highest40 TF-IDF matches (all scores>=0.35) from full standard-local draft decision text. Similarity selected candidates only; judgments manual. Other60 triage pairs are not claimed directly reviewed. Every route retains its individual complete current-content and neighboring comparison separately.",
+  "findings": [
+    {
+      "pairIndex": 0,
+      "routes": [
+        "/areas/florida/suwannee-county/",
+        "/areas/kentucky/christian-county/"
+      ],
+      "draftSha256": [
+        "21b4d41ab909fc8e6a25e89014a2d819966ff5bcc06a875e703f466ee89813c3",
+        "bb280729a816d6e394b6b8b51e0c2079cb70393dcdfc7592bbcd50081e524a76"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.46069113113525495,
+      "verdict": "strengthen",
+      "assessment": "Suwannee and Christian both explain contents, binding and recipient-set quantities. Suwannee needs a concrete two-audience production brief that separates presenter and attendee versions; Christian can retain the assembled recipient packet task.",
+      "repairRoute": "/areas/florida/suwannee-county/",
+      "evidence": [
+        {
+          "route": "/areas/florida/suwannee-county/",
+          "question": "Should my separate appendix be included in every bound report, and how do I specify the number of complete sets?",
+          "sourceBridge": "The UPS Store location on Suwannee Plaza Lane in Live Oak lists presentation printing, binding, cover choices, collating and paper options. Those services support a useful explanation of what belongs in one complete document before quantities are multiplied."
+        },
+        {
+          "route": "/areas/kentucky/christian-county/",
+          "question": "Which pieces are bound together, which stay separate and how many complete sets do I need?",
+          "sourceBridge": "The UPS Store Hopkinsville lists document printing and several assembly or finishing options. That range supports a recipient-set brief rather than an undifferentiated request for copies."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 1,
+      "routes": [
+        "/areas/kentucky/marion-county/",
+        "/areas/north-carolina/pasquotank-county/"
+      ],
+      "draftSha256": [
+        "5628e33a8d95be8abb84291f9783826d42c500c66c2abdc02d18ed9263e49386",
+        "d5a024e82aa07dbae9f3f7a60e02213924799338b7f1736dae18f7d699f7451d"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.4574943344607509,
+      "verdict": "strengthen",
+      "assessment": "Both fleet pages repeat shared identity, per-vehicle details and approval. Reframe Pasquotank around the published measurement-to-design-approval production sequence and a partial-approval example; keep Marion as the initial mixed-fleet specification.",
+      "repairRoute": "/areas/north-carolina/pasquotank-county/",
+      "evidence": [
+        {
+          "route": "/areas/kentucky/marion-county/",
+          "question": "What should stay consistent across the fleet, and what needs a separate layout?",
+          "sourceBridge": "Nukem Graphics in Lebanon describes fleet graphics across semitrailers, box trucks, vans, enclosed trailers, food trucks and equipment, with full wraps, partial graphics and lettering. The varied bodies make a fleet list more informative than one representative picture."
+        },
+        {
+          "route": "/areas/north-carolina/pasquotank-county/",
+          "question": "Can we use one brand across vehicles that need different graphics?",
+          "sourceBridge": "F&H Print Sign Design in Elizabeth City offers graphics for vans, fleets, box trucks, trailers and boats and describes consultation through installation. That range provides a concrete example of one identity requiring several vehicle-specific reviews."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 2,
+      "routes": [
+        "/areas/tennessee/sequatchie-county/",
+        "/areas/virginia/franklin-city/"
+      ],
+      "draftSha256": [
+        "bf01e42cbaae30153938108748048d273da47f3b9016980779fc8a5477e0edec",
+        "4a551f18e42a287e1eac185b61a165a7944ba49b49f83b54fddce2c94a0d0785"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.44041135886290367,
+      "verdict": "distinct",
+      "assessment": "Sequatchie keeps independently requested paper and digital outputs visible through two handoffs; Franklin identifies intended source version and sheet-versus-set count, including scanning to USB. Topic overlap remains but the failure each checklist prevents differs.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/tennessee/sequatchie-county/",
+          "question": "Can I bring paper plans for a digital record and request physical sets separately?",
+          "sourceBridge": "PostalAnnex in Dunlap describes large-format plan printing and scanning with digital-file handling, packaging and delivery. These services support explaining an inquiry through the customer's starting document and desired outputs."
+        },
+        {
+          "route": "/areas/virginia/franklin-city/",
+          "question": "Which originals should be reproduced, how many sets do I need, and do I want paper or digital output?",
+          "sourceBridge": "Richwood Graphics in Franklin offers architectural-plan reproduction from digital files or physical originals, color or black-and-white output and scanning to USB. Its order information separates originals, sets and the needed date. The business is in Franklin city, distinct from Franklin County."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 3,
+      "routes": [
+        "/areas/kentucky/mason-county/",
+        "/areas/north-carolina/cabarrus-county/"
+      ],
+      "draftSha256": [
+        "f24f3889447bac14b56c765cf3be03c5c411189706887986b301ac74326798ca",
+        "63d2f6941c68e2f6cb02a82227843b82961ca75c2d059af9f4a6a610bee3b474"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.4279453981543715,
+      "verdict": "distinct",
+      "assessment": "Mason separates face, lighting, cabinet repair and removal on a pole installation; Cabarrus adds the actual sales-versus-maintenance routing and retained-component captions. Existing-sign topic is shared without losing the consequential contact distinction.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/kentucky/mason-county/",
+          "question": "Am I asking for a message update or other work on the installation?",
+          "sourceBridge": "Sun Sign Company describes new pole signs and existing-sign services including face replacement, lighting updates, cabinet repairs and removal. It is based in Wheelersburg, Ohio, and explicitly serves Maysville, with a Maysville project caption."
+        },
+        {
+          "route": "/areas/north-carolina/cabarrus-county/",
+          "question": "Can you assess a new sign face, or should this be a maintenance request?",
+          "sourceBridge": "Casco Signs in Concord describes replacement faces, retrofit or restoration and new fabrication, and separates sales from maintenance contacts. Its offer provides a concrete distinction between a new identity and an existing-sign fault."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 4,
+      "routes": [
+        "/areas/california/madera-county/",
+        "/areas/washington/yakima-county/"
+      ],
+      "draftSha256": [
+        "abd50ec86d05aa8eda4a62c273581df22f10cf0b01eb4e371feef871113f43cc",
+        "f790b16a1181157874a8b5978beacbd0f3d4a39ac2beaa7e5fe8d4c9709e4fd2"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.42243124617356004,
+      "verdict": "distinct",
+      "assessment": "Madera distinguishes customer wine, purchased bulk and shiners as different starting materials; Yakima follows material through packaging ownership and storage/release of bulk, cases and dry goods. Storage state is an additional independent decision.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/california/madera-county/",
+          "question": "Do I need wine supply, processing help or bottles ready for the next packaging step?",
+          "sourceBridge": "San Joaquin Wine Co. describes blending from its own or customer wine, bottling/keg services, bulk supply and shiners, supporting these distinct starting points."
+        },
+        {
+          "route": "/areas/washington/yakima-county/",
+          "question": "We have bulk wine for bottling—what should we explain about packaging and holding the finished cases?",
+          "sourceBridge": "Hyatt Vineyards describes full or selected winemaking services, bottling and storage for bulk wine, finished case goods and dry materials such as glass and labels. Its private-label offer separately identifies design, approval and production time, making the starting material and final state useful inquiry anchors."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 5,
+      "routes": [
+        "/areas/alaska/ketchikan-gateway-borough/",
+        "/areas/alaska/prince-of-wales-hyder-census-area/"
+      ],
+      "draftSha256": [
+        "429e892fa378b77e8f5187dc33f2f3c07bf9e3e3bb9007634d5c453e9e7d0765",
+        "868aeb0f5d8c8728331e3974622bd86fe1617c5dcc4147eeae696fc7bc242934"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.416436108387008,
+      "verdict": "distinct",
+      "assessment": "Ketchikan corrects a town-side ferry pickup mistaken for airport-terminal service; Prince of Wales preserves separate car pickup/return sites and fees across Hollis and Klawock. Similar travel terms lead to different provider handoffs.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/alaska/ketchikan-gateway-borough/",
+          "question": "Does the lodge collect me at the airport terminal or after the ferry?",
+          "sourceBridge": "Cape Fox Lodge places arrival pickup on the Ketchikan side of the ferry, while the borough publishes the separate ferry terminal and schedule."
+        },
+        {
+          "route": "/areas/alaska/prince-of-wales-hyder-census-area/",
+          "question": "Can I collect the car where I arrive and return it somewhere else?",
+          "sourceBridge": "Rainforest Auto Rentals describes arranged island-road pickup/drop-off with extra fees, while Inter-Island Ferry Authority identifies Hollis and its passenger travel instructions."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 6,
+      "routes": [
+        "/areas/indiana/warrick-county/",
+        "/areas/tennessee/dickson-county/"
+      ],
+      "draftSha256": [
+        "1e1f6262a4399c502d99033229e75efd96e8d4ed5b98306c9e405c68863da217",
+        "cbbc092f6146b9bf587ffc680a045a435b662ba393e1c170420a0f9ce6cb1cdd"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.40826293370013894,
+      "verdict": "distinct",
+      "assessment": "Warrick uses repair-component captions and two furniture items; Dickson explains the sourced outside-coverage workshop option with customer-arranged transport. The transport boundary adds meaningful preparation beyond the shared photograph advice.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/indiana/warrick-county/",
+          "question": "What should I show you about the chair and the problem?",
+          "sourceBridge": "Fibrenew Evansville lists seam, foam, frame and recliner-mechanism repairs and publishes an office-chair example in Newburgh. Its range makes component-specific captions useful for a seating-repair website serving similar inquiries."
+        },
+        {
+          "route": "/areas/tennessee/dickson-county/",
+          "question": "The chair will not recline; what should I show, and can it be assessed at home or must I arrange transport?",
+          "sourceBridge": "American Furniture Repair lists Dickson among served places and describes power, mechanism, upholstery and frame work. It requests whole-piece and affected-area photos and offers an appointment-based in-shop option for customers outside usual coverage who provide transport."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 7,
+      "routes": [
+        "/areas/iowa/muscatine-county/",
+        "/areas/missouri/callaway-county/"
+      ],
+      "draftSha256": [
+        "550afce1b4e26703abdb907072ad0e94d4ca0ce76292fa20f0bcc8b2b2c94c74",
+        "a9648dbdd1e5b6bb2f44c9155cdc624d692d9632fa6cbf77ec5a6671bdaa880a"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.4077337380922031,
+      "verdict": "distinct",
+      "assessment": "Muscatine combines outreach choice,1:10 supervision and three dates/ten-day notice; Callaway changes thresholds and lead time with guided,self-guided and outreach formats. Actual rules produce different teacher decisions.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/iowa/muscatine-county/",
+          "question": "What should our class prepare for a visit or outreach request?",
+          "sourceBridge": "Muscatine Art Center describes field trips and classroom outreach and requests counts, learning topics and three dates, with a one-adult-per-ten-students rule. Those details support a concise teacher-preparation checklist."
+        },
+        {
+          "route": "/areas/missouri/callaway-county/",
+          "question": "Which reservation and supervision rules apply to our chosen format?",
+          "sourceBridge": "America’s National Churchill Museum distinguishes guided and self-guided school reservations, a 25-student guided limit, adult supervision and a longer outreach preparation window. Those rules change together with the selected format."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 8,
+      "routes": [
+        "/areas/missouri/monroe-county/",
+        "/areas/virginia/essex-county/"
+      ],
+      "draftSha256": [
+        "781726608034480f195569612837ea58fdc014cae425275235f256122834810f",
+        "4808c43f3534f4fd093bc86b6fa076ed966199eead3216435dc1c9ec97e8e593"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.4054897234358917,
+      "verdict": "distinct",
+      "assessment": "Monroe includes total trailered length and electrical needs across storage products; Essex names pulpits,motor brackets and swim platforms in boat overall length and stacked storage. Measurement target differs materially.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/missouri/monroe-county/",
+          "question": "Which storage option fits our boat and trailer, and what measurements should we provide?",
+          "sourceBridge": "Indian Creek Marina near Monroe City distinguishes wet, dry, personal-watercraft and trailer arrangements. Its overall trailered-length and electrical details change the information needed for a storage inquiry."
+        },
+        {
+          "route": "/areas/virginia/essex-county/",
+          "question": "Which boat details should I provide when asking about a slip, dry-stack or trailer storage?",
+          "sourceBridge": "Garrett's Marina Boat Storage identifies its Bowlers Wharf property in Essex County and describes dry-stack, covered wet-slip and seasonal on-trailer arrangements. Its measurement note includes pulpits, motor brackets and platforms in overall length. That specific detail makes a useful example of information a model label alone may miss."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 9,
+      "routes": [
+        "/areas/missouri/monroe-county/",
+        "/areas/north-carolina/warren-county/"
+      ],
+      "draftSha256": [
+        "781726608034480f195569612837ea58fdc014cae425275235f256122834810f",
+        "51b2f5a666bc101957198608557e27b16736c6664029f837fc462476b6b77821"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.40409541137091337,
+      "verdict": "distinct",
+      "assessment": "Monroe concerns fit and power for boat storage; Warren separately locates off-site trailer storage and day parking and limits the trailer offer to boat-storage customers. Asset location and eligibility add an independent task.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/missouri/monroe-county/",
+          "question": "Which storage option fits our boat and trailer, and what measurements should we provide?",
+          "sourceBridge": "Indian Creek Marina near Monroe City distinguishes wet, dry, personal-watercraft and trailer arrangements. Its overall trailered-length and electrical details change the information needed for a storage inquiry."
+        },
+        {
+          "route": "/areas/north-carolina/warren-county/",
+          "question": "Where do the boat, trailer and car belong during storage and later visits?",
+          "sourceBridge": "Eaton Ferry Marina on Lake Gaston separately describes boat storage, day parking and off-site trailer storage for boat-storage customers. Its Warren County offer provides a concrete item-and-duration comparison."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 10,
+      "routes": [
+        "/areas/maryland/baltimore-area/",
+        "/areas/virginia/fairfax-area/"
+      ],
+      "draftSha256": [
+        "8c6f9a3c1cde5a3af0e4aeca9958248bdf9c166d27af871212aa1410ea2d14b4",
+        "678a08283f884e51e3836f69dbc4314b7193f510ce6dcb6f18d88b912f3c85f4"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.40232885658062784,
+      "verdict": "distinct",
+      "assessment": "Baltimore compares a visitable appointment store with traveling services and separate city/county identities; Fairfax accepts uncertain worksite jurisdictions across independent cities without inventing local offices. Different direction and coverage questions remain.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/maryland/baltimore-area/",
+          "question": "Should I arrange a visit to the business, or provide the location where I need work?",
+          "sourceBridge": "Seth Michael's public information describes a Fells Point store by appointment and online furniture offerings. Bailey Bros.' contact information describes traveling coverage and a scheduling-provider route. Together they illustrate different location questions a business website may need to answer."
+        },
+        {
+          "route": "/areas/virginia/fairfax-area/",
+          "question": "Can I describe where the work is needed without knowing whether the address falls in the county or an independent city?",
+          "sourceBridge": "SwiftPro's public site identifies a Chantilly shop while describing service across several Northern Virginia counties. That provides a concrete example of separating an operating base from wider coverage. The service area's exact boundaries still need owner approval; a postal label alone should not determine acceptance."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 11,
+      "routes": [
+        "/areas/kentucky/marion-county/",
+        "/areas/ohio/clark-county/"
+      ],
+      "draftSha256": [
+        "5628e33a8d95be8abb84291f9783826d42c500c66c2abdc02d18ed9263e49386",
+        "e650dbe3d5af2d698f46844eb35eba8d666e0f8f20ef73fdeedbbaa49040089f"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.39806768481563315,
+      "verdict": "distinct",
+      "assessment": "Marion prepares coordinated graphics across a fleet; Clark helps a single food-truck buyer choose lettering instead of a full wrap and distinguish artwork readiness. Different selection scale and first decision.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/kentucky/marion-county/",
+          "question": "What should stay consistent across the fleet, and what needs a separate layout?",
+          "sourceBridge": "Nukem Graphics in Lebanon describes fleet graphics across semitrailers, box trucks, vans, enclosed trailers, food trucks and equipment, with full wraps, partial graphics and lettering. The varied bodies make a fleet list more informative than one representative picture."
+        },
+        {
+          "route": "/areas/ohio/clark-county/",
+          "question": "Can I ask for lettering on my food truck without starting a full-wrap request?",
+          "sourceBridge": "Route 40 Signs lists 3191 E National Road in Springfield and presents lettering, partial and full wraps, including concession trailers and food trucks. These published services support a coverage comparison; they do not establish a tested quote process."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 12,
+      "routes": [
+        "/areas/florida/santa-rosa-county/",
+        "/areas/west-virginia/harrison-county/"
+      ],
+      "draftSha256": [
+        "4d6d284b79fb590b380f2a02356cc3eccae4b3a2831b69f50206488fc410aacf",
+        "deaed5de710517c034532129957fe0464560e6b4c704f9631bffee477d0b8bde"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.39778978897210365,
+      "verdict": "distinct",
+      "assessment": "Santa Rosa separates cake,filling,frosting and decoration already on menus; Harrison invites an unlisted flavor idea for baker review. The latter is proposal eligibility, not selection among known components.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/florida/santa-rosa-county/",
+          "question": "Can I choose one flavor inside and a different frosting without copying every detail of the gallery cake?",
+          "sourceBridge": "Bibi Cakes in Milton publishes cake flavors, frostings and fillings separately, alongside outside styles and decoration choices. Its inquiry requests event details, servings, design ideas and inspiration images. That structure gives a practical basis for separating taste preferences from the visible design."
+        },
+        {
+          "route": "/areas/west-virginia/harrison-county/",
+          "question": "Can I describe an unlisted flavor idea as well as the cake design I want?",
+          "sourceBridge": "Pixie Sweets identifies Clarksburg and invites custom flavor discussion alongside cake design. The Harrison County example supports an inquiry that separates an existing suggestion from a new idea without losing the complete dessert brief."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 13,
+      "routes": [
+        "/areas/kansas/stanton-county/",
+        "/areas/texas/knox-county/"
+      ],
+      "draftSha256": [
+        "6e7782bd8ccc15e088d738b97feb77d24cae2ff6d142ba61aff2565f5dfb0ff8",
+        "d1419f29bc72defa97d5347ce921461a95706134319799543ca7cb5e97b1dd15"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.39649124515291595,
+      "verdict": "distinct",
+      "assessment": "Stanton routes patient visiting,clinic appointments and long-term-care tours to different contacts; Knox distinguishes mobile recurring imaging schedules from hospital hours and clinical availability. They do not offer interchangeable navigation.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/kansas/stanton-county/",
+          "question": "Which service handles the visit I want to arrange?",
+          "sourceBridge": "Stanton County Hospital’s public guidance lists visiting hours, clinic hours and appointment contact, plus a separate long-term-care tour extension. Those facts support purpose-based navigation before a visitor uses a schedule or directions."
+        },
+        {
+          "route": "/areas/texas/knox-county/",
+          "question": "Which team can confirm the actual date for this service?",
+          "sourceBridge": "Separates normal business hours, after-hours on-call provision and recurring mobile-service schedules. Lists the main hospital address, hospital operating hours and separate patient-visiting hours. Clinic address variants on this page are not used in the example."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 14,
+      "routes": [
+        "/areas/idaho/jefferson-county/",
+        "/areas/iowa/jackson-county/"
+      ],
+      "draftSha256": [
+        "c21927d44ddd5ec6e21809559b6884d5119a3dba2d23e169e9e3474b81db0d16",
+        "451c499c068df2babb461888d536090c986d5cbdf186ac4b39b50200c0f2f623"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.39148994102298545,
+      "verdict": "distinct",
+      "assessment": "Jefferson’s large-versus-small shelter reservation contrast also depends on naturally seasonal lake filling; Jackson’s shelters cannot be reserved even with a camping confirmation. The lake-condition dependency is absent in Jackson.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/idaho/jefferson-county/",
+          "question": "If our large shelter is reserved for May, what still needs checking before we plan the lake activities?",
+          "sourceBridge": "Jefferson County describes large reservable shelters, smaller first-come shelters outside the campground fee area, and tent, RV and group camping at Jefferson Lake. The lake fills naturally and normally becomes full around early July. A May shelter plan therefore needs a separate conditions check."
+        },
+        {
+          "route": "/areas/iowa/jackson-county/",
+          "question": "Does our campsite booking also hold a picnic shelter?",
+          "sourceBridge": "Iowa DNR’s Maquoketa Caves State Park guidance requires camping reservations during the camping season while its two picnic shelters remain first-come and cannot be reserved. That opposite treatment makes facility-specific actions essential."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 15,
+      "routes": [
+        "/areas/ohio/marion-county/",
+        "/areas/vermont/washington-county/"
+      ],
+      "draftSha256": [
+        "3c5ec946554ef713dd7f48210994cafe54b3907978f2379a0e0e290afc708417",
+        "302524117fd044556434dfa80c21bb1e1cdddd98a74936fe8d6a1db003036a09"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3893180341469302,
+      "verdict": "strengthen",
+      "assessment": "Vermont Washington repeats Ohio Marion’s print-versus-distribution responsibility and later recipient-file handoff. Use Leahy’s actual internet-order fulfillment offer to distinguish one mailing campaign from recurring order releases and exceptions.",
+      "repairRoute": "/areas/vermont/washington-county/",
+      "evidence": [
+        {
+          "route": "/areas/ohio/marion-county/",
+          "question": "Can you print our inserts while we handle distribution ourselves?",
+          "sourceBridge": "Laipply’s lists 270 East Center Street in Marion. Its services include printing, design, bindery, mail assembly, addressing and delivery to the post office; it also asks customers to describe the job when transferring files. That makes the complete mailing unit a useful inquiry starting point."
+        },
+        {
+          "route": "/areas/vermont/washington-county/",
+          "question": "Will I distribute the finished copies, or am I asking the printer to handle mailing or fulfillment?",
+          "sourceBridge": "Leahy Press in Montpelier offers printing alongside mailing and fulfillment, including direct-mail work. That combination supports a practical website brief separating the physical piece from how it reaches its audience."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 16,
+      "routes": [
+        "/areas/florida/santa-rosa-county/",
+        "/areas/tennessee/hawkins-county/"
+      ],
+      "draftSha256": [
+        "4d6d284b79fb590b380f2a02356cc3eccae4b3a2831b69f50206488fc410aacf",
+        "7c0e9c83c67a67bc20fa9244f7eba9b29d9bfe5df7b2337a8c113aebf87db965"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.38669733715685906,
+      "verdict": "distinct",
+      "assessment": "Santa Rosa selects edible components independently of a photo; Hawkins prepares an appointment tasting,raises special requests and separates later event logistics. Tasting approval and final order are different stages.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/florida/santa-rosa-county/",
+          "question": "Can I choose one flavor inside and a different frosting without copying every detail of the gallery cake?",
+          "sourceBridge": "Bibi Cakes in Milton publishes cake flavors, frostings and fillings separately, alongside outside styles and decoration choices. Its inquiry requests event details, servings, design ideas and inspiration images. That structure gives a practical basis for separating taste preferences from the visible design."
+        },
+        {
+          "route": "/areas/tennessee/hawkins-county/",
+          "question": "What should we discuss before the tasting, and what will still need agreement after we choose flavors?",
+          "sourceBridge": "Faith Baked Cakes in Church Hill describes wedding tastings by appointment and asks customers to raise special requests in advance. Its custom-dessert offer includes cakes and other event desserts, making the tasting a distinct part of the broader event conversation."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 17,
+      "routes": [
+        "/areas/iowa/jackson-county/",
+        "/areas/missouri/madison-county/"
+      ],
+      "draftSha256": [
+        "451c499c068df2babb461888d536090c986d5cbdf186ac4b39b50200c0f2f623",
+        "54e1f6a281d5c421aa842041d8525ee39a463524e1a327e895d31855fd1a182d"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.37940187234605743,
+      "verdict": "distinct",
+      "assessment": "Jackson contrasts required camping reservations with non-reservable shelters; Madison contrasts a no-overnight day shelter with named overnight Site001 and different booking destinations. Different permission and contact decisions.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/iowa/jackson-county/",
+          "question": "Does our campsite booking also hold a picnic shelter?",
+          "sourceBridge": "Iowa DNR’s Maquoketa Caves State Park guidance requires camping reservations during the camping season while its two picnic shelters remain first-come and cannot be reserved. That opposite treatment makes facility-specific actions essential."
+        },
+        {
+          "route": "/areas/missouri/madison-county/",
+          "question": "Are we booking a daytime gathering or somewhere the group can camp overnight?",
+          "sourceBridge": "Silver Mines near Fredericktown distinguishes its day-use group shelter from overnight Site 001. The published information connects those uses to different booking instructions, making the facility choice consequential before a visitor checks dates."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 18,
+      "routes": [
+        "/areas/north-carolina/warren-county/",
+        "/areas/virginia/essex-county/"
+      ],
+      "draftSha256": [
+        "51b2f5a666bc101957198608557e27b16736c6664029f837fc462476b6b77821",
+        "4808c43f3534f4fd093bc86b6fa076ed966199eead3216435dc1c9ec97e8e593"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.37899380786809217,
+      "verdict": "distinct",
+      "assessment": "Warren distributes boat,trailer and day-visit vehicle across locations; Essex defines boat overall measurement for stacked,afloat or trailer storage. The common storage topic does not erase those distinct inputs.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/north-carolina/warren-county/",
+          "question": "Where do the boat, trailer and car belong during storage and later visits?",
+          "sourceBridge": "Eaton Ferry Marina on Lake Gaston separately describes boat storage, day parking and off-site trailer storage for boat-storage customers. Its Warren County offer provides a concrete item-and-duration comparison."
+        },
+        {
+          "route": "/areas/virginia/essex-county/",
+          "question": "Which boat details should I provide when asking about a slip, dry-stack or trailer storage?",
+          "sourceBridge": "Garrett's Marina Boat Storage identifies its Bowlers Wharf property in Essex County and describes dry-stack, covered wet-slip and seasonal on-trailer arrangements. Its measurement note includes pulpits, motor brackets and platforms in overall length. That specific detail makes a useful example of information a model label alone may miss."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 19,
+      "routes": [
+        "/areas/indiana/miami-county/",
+        "/areas/kentucky/bracken-county/"
+      ],
+      "draftSha256": [
+        "08e5c96bc5a2e35d1e50cce6b72c50da6a1f83cb7f1808409245b9f0c8eed18d",
+        "c8af156462391933337e589cb734793f1c0871926d6c020c37d893875997458d"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3783319227458457,
+      "verdict": "distinct",
+      "assessment": "Miami compares full rental access around a guest event; Bracken restricts setup around public distillery hours and later decoration removal. Public/private overlap adds a specific approval constraint.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/indiana/miami-county/",
+          "question": "Our guests will attend for a few hours, but suppliers need earlier access. Which hire option covers the complete plan?",
+          "sourceBridge": "Whitetail Woods Event Center in Peru presents an event package with Friday-to-Saturday access alongside hourly hire that includes time before and after the event. It also identifies shared facilities and separate extras. The useful comparison is the complete access arrangement, not merely the room or guest-event duration."
+        },
+        {
+          "route": "/areas/kentucky/bracken-county/",
+          "question": "When can suppliers enter, guests attend and belongings be removed?",
+          "sourceBridge": "Augusta Distillery’s private-event page distinguishes public hours, setup, later decoration removal and optional extras. Those separate windows support a practical inquiry that extends beyond the time guests attend."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 20,
+      "routes": [
+        "/areas/kentucky/marion-county/",
+        "/areas/tennessee/greene-county/"
+      ],
+      "draftSha256": [
+        "5628e33a8d95be8abb84291f9783826d42c500c66c2abdc02d18ed9263e49386",
+        "b0a244980a740de9ba81f371d68124f6ff2bed13bb35517b8ee5b4b23282f9ed"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.37698592307021667,
+      "verdict": "distinct",
+      "assessment": "Marion specifies a common identity across varied new fleet layouts; Greene documents which existing vehicles and graphics change during rebranding and which are outside scope. Current-to-proposed inventory is a distinct useful emphasis, albeit related.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/kentucky/marion-county/",
+          "question": "What should stay consistent across the fleet, and what needs a separate layout?",
+          "sourceBridge": "Nukem Graphics in Lebanon describes fleet graphics across semitrailers, box trucks, vans, enclosed trailers, food trucks and equipment, with full wraps, partial graphics and lettering. The varied bodies make a fleet list more informative than one representative picture."
+        },
+        {
+          "route": "/areas/tennessee/greene-county/",
+          "question": "Which vehicles and existing graphics should we document before asking for the new branding?",
+          "sourceBridge": "Greeneville Signs describes fleet rebranding with new vehicle-graphics design and customizable lettering, information and logos. Its public offer connects project planning and design discussion with delivery and installation, supporting a current-to-proposed fleet brief."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 21,
+      "routes": [
+        "/areas/colorado/moffat-county/",
+        "/areas/nebraska/polk-county/"
+      ],
+      "draftSha256": [
+        "58704bfbc252c9a7fa3bf8ae051b09b9a3c215f20ac61e0ed9f3b4c2dbb5bd78",
+        "cd1046b4717cf99a4cbff8ac06389ba75613c7cf8cc8ec6a6cc6a211b74b9e9c"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3765841634407476,
+      "verdict": "distinct",
+      "assessment": "Moffat handles inspection-driven changes in output and cost; Polk identifies processing batches separately from parcels and confines corrections to one batch. One is revision authority, the other physical instruction identity.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/colorado/moffat-county/",
+          "question": "What should I tell you about the fiber, and what might change after you inspect it?",
+          "sourceBridge": "Yampa Valley Fiberworks describes inspecting strength and staple length before recommending a finished product. Its custom-milling information covers blends, color and ply and explains that dirty or lower-quality fiber can add processing costs communicated to the customer."
+        },
+        {
+          "route": "/areas/nebraska/polk-county/",
+          "question": "How should we identify each batch and its requested result across the shipment and any later correction?",
+          "sourceBridge": "The Fiber Mill’s Polk County order form distinguishes a separate form per processing batch from parcel count. Its multiple output choices make that distinction essential when one shipment contains different intended results."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 22,
+      "routes": [
+        "/areas/iowa/montgomery-county/",
+        "/areas/wyoming/goshen-county/"
+      ],
+      "draftSha256": [
+        "a1c109fc17a4c73bbb362bc1733d6deba317896ae55eddb5be31569909b3c69f",
+        "c768a08478d911373ef0c03c00a1a007b032e033a306ab9e6b0e6206a4187aa6"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.37241646245466004,
+      "verdict": "distinct",
+      "assessment": "Montgomery evaluates proctoring suitability and finish buffer; Goshen separates CLEP/ETS and college payees from appointment and external exam-material receipt. Different services and transaction readiness.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/iowa/montgomery-county/",
+          "question": "Can this proctoring service meet my exam provider’s requirements?",
+          "sourceBridge": "Red Oak Public Library’s policy requires advance scheduling and director approval, a thirty-minute finish buffer and review of supervision and software needs. These are concrete suitability conditions for a proctoring-service page."
+        },
+        {
+          "route": "/areas/wyoming/goshen-county/",
+          "question": "Which organization do I pay for this exam, and what still needs confirming before I attend?",
+          "sourceBridge": "Eastern Wyoming College’s testing information distinguishes exam-specific provider and college payments, Torrington preparation and materials supplied by an originating institution."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 23,
+      "routes": [
+        "/areas/colorado/moffat-county/",
+        "/areas/washington-county/"
+      ],
+      "draftSha256": [
+        "58704bfbc252c9a7fa3bf8ae051b09b9a3c215f20ac61e0ed9f3b4c2dbb5bd78",
+        "38842cb2b7e7e8bc0cb05081f9c759fe39eaeb4b2173897b29398eb079436017"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3714314027121276,
+      "verdict": "distinct",
+      "assessment": "Moffat covers assessment-driven changes; New York Washington separates customer fiber ownership from mill/customer-supplied blending additions. Recipe contribution is different from inspection acceptance.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/colorado/moffat-county/",
+          "question": "What should I tell you about the fiber, and what might change after you inspect it?",
+          "sourceBridge": "Yampa Valley Fiberworks describes inspecting strength and staple length before recommending a finished product. Its custom-milling information covers blends, color and ply and explains that dirty or lower-quality fiber can add processing costs communicated to the customer."
+        },
+        {
+          "route": "/areas/washington-county/",
+          "question": "Will this batch use only my fiber, or is blending material part of the proposed work?",
+          "sourceBridge": "Battenkill Fibers in Greenwich describes processing customers' own fiber, blending wool supplied by either the customer or the mill, and roving and yarn outputs. Those distinctions suggest a practical explanation of ownership, additions and finished product."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 24,
+      "routes": [
+        "/areas/indiana/tipton-county/",
+        "/areas/michigan/arenac-county/"
+      ],
+      "draftSha256": [
+        "ae73dcf3e7141f5c182facb368baa33df85705ae099df1cedad0d11874eb1d0c",
+        "75a66b6e704b286f0da8c9d47b7c87d46cbf7efd4859b6d94d5b203ca221900d"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.37073264707756787,
+      "verdict": "distinct",
+      "assessment": "Tipton identifies owned dies,new tooling and replacement details; Arenac separates tooling,trial parts and a waterjet-cut component as distinct deliverables. Sourced contributions differ materially.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/indiana/tipton-county/",
+          "question": "What should I tell you about the parts and tooling I already have?",
+          "sourceBridge": "Progress Tool & Die in Tipton describes designing and building dies, running customer-owned dies and providing backup or replacement details. Those are distinct starting points worth making visible on a manufacturing website."
+        },
+        {
+          "route": "/areas/michigan/arenac-county/",
+          "question": "Do I need tooling, resulting parts, a cut component or a combination for review?",
+          "sourceBridge": "Pioneer Precision in Standish lists prototype stamping dies and parts alongside machining, stamping, fabrication and waterjet cutting. The services can meet in one project while remaining different deliverables."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 25,
+      "routes": [
+        "/areas/north-carolina/new-hanover-county/",
+        "/areas/north-carolina/warren-county/"
+      ],
+      "draftSha256": [
+        "a9a12cb20cad756c949fd7ee53c77d8847810d7cf5a1bf36d6f38ece3d645574",
+        "51b2f5a666bc101957198608557e27b16736c6664029f837fc462476b6b77821"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.36823190888045704,
+      "verdict": "distinct",
+      "assessment": "New Hanover assigns repair work/location to both boat and trailer; Warren locates boat storage,trailer storage and later day parking. Service scope versus storage eligibility and duration are distinct tasks.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/north-carolina/new-hanover-county/",
+          "question": "Can I request work on both the boat and trailer when they are in different places?",
+          "sourceBridge": "Seabreeze’s Wilmington inquiry distinguishes storage, service or both and asks whether work concerns the boat, trailer or both. Those separate choices make a two-asset brief more useful than one undifferentiated service request."
+        },
+        {
+          "route": "/areas/north-carolina/warren-county/",
+          "question": "Where do the boat, trailer and car belong during storage and later visits?",
+          "sourceBridge": "Eaton Ferry Marina on Lake Gaston separately describes boat storage, day parking and off-site trailer storage for boat-storage customers. Its Warren County offer provides a concrete item-and-duration comparison."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 26,
+      "routes": [
+        "/areas/new-hampshire/hillsborough-county/",
+        "/areas/ohio/fayette-county/"
+      ],
+      "draftSha256": [
+        "7bb2492bccb182fd274d7f7e53f63674d143ab5845f8dd8893972702d6bbdd58",
+        "aa877c61af5b61e18c90b7f00fa8f00a14389e3f6cdd44a15f0fa5ac106b8c5b"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3667681431664364,
+      "verdict": "strengthen",
+      "assessment": "Hillsborough repeats Fayette’s garment-group/color/placement breakdown without an additional worked decision. Reframe the catalog-driven inquiry around substituting one garment style while preserving other groups and requesting fresh print review.",
+      "repairRoute": "/areas/new-hampshire/hillsborough-county/",
+      "evidence": [
+        {
+          "route": "/areas/new-hampshire/hillsborough-county/",
+          "question": "Which details are shared across the order, and which vary by garment group?",
+          "sourceBridge": "Wicked Apparel’s Manchester catalogue and image-supported quote route provide the Hillsborough County starting point. The proposed content makes differences within a shared apparel brief visible before the shop assesses production."
+        },
+        {
+          "route": "/areas/ohio/fayette-county/",
+          "question": "How should I describe shirts and hats that share a brand but use different artwork placements?",
+          "sourceBridge": "Dixon Printing & Embroidery identifies its Washington Court House business and asks separately about print locations, colors at each location, garment colors and size quantities. The Fayette County Chamber also lists the local business, supporting the example’s geographic connection."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 27,
+      "routes": [
+        "/areas/california/mono-county/",
+        "/areas/vermont/lamoille-county/"
+      ],
+      "draftSha256": [
+        "10b050c9ef7b8950983646a2d0cea3edd369c23d18123a5aa556542abb36c16d",
+        "ea70e6433acfaa830aa3a1e8469388864c73f92ddd525ead42fa08278fddf091"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.36509587824638784,
+      "verdict": "distinct",
+      "assessment": "Mono distinguishes assessment,walk-in new/demo and accessory routes; Lamoille prepares new/existing fitting with boots,socks and footbeds plus skier observations. Visit-route selection and bring-list readiness differ.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/california/mono-county/",
+          "question": "Should I book a fit assessment, come in to try boots or ask about an accessory service?",
+          "sourceBridge": "Footloose Sports describes professional diagnosis before boot adjustments and identifies new-boot/demo and several accessory services for which walk-ins are accepted. Those differences support a visit comparison before the technical service list."
+        },
+        {
+          "route": "/areas/vermont/lamoille-county/",
+          "question": "Am I looking for new boots or help with existing ones, and what should I bring?",
+          "sourceBridge": "MountainOps in Stowe describes both new and existing boot assessments and asks customers to bring current boots, ski socks and custom footbeds. That specific preparation list supports a useful appointment page without requiring the skier to diagnose a technical fix."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 28,
+      "routes": [
+        "/areas/missouri/carroll-county/",
+        "/areas/missouri/grundy-county/"
+      ],
+      "draftSha256": [
+        "2182347ff296e993a8796ccac45ef5d9c5cc5310077c6dfe1b075c91cb6cec6e",
+        "75f87528107be2d0d11a3cd18f2435f29e52c48ab1569591a6b4c5cfe8e89b0e"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.36421139535320957,
+      "verdict": "distinct",
+      "assessment": "Carroll keeps several implements’ pricing units,agreement and hitch pin distinct; Grundy separates field-tractor requirements from collection towing restrictions. Transport suitability is an additional independent decision.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/missouri/carroll-county/",
+          "question": "What information and equipment must we provide for this particular rental?",
+          "sourceBridge": "Carroll County Soil and Water Conservation District lists different tractor requirements and pricing units and requires an agreement and renter-supplied hitch pin. Those details need to stay with the implement selected."
+        },
+        {
+          "route": "/areas/missouri/grundy-county/",
+          "question": "What should we tell staff about both the tractor and the transport plan?",
+          "sourceBridge": "Grundy County Soil and Water Conservation District distinguishes tractor specifications from transport restrictions for its rental drill. That tractor-versus-pickup distinction can add a specific collection example to a shared equipment guide."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 29,
+      "routes": [
+        "/areas/colorado/kiowa-county/",
+        "/areas/kansas/stanton-county/"
+      ],
+      "draftSha256": [
+        "910f2f21a8640c73d9a6f5919567694fb8a2eb8105f45f68029a6f007f8f002f",
+        "6e7782bd8ccc15e088d738b97feb77d24cae2ff6d142ba61aff2565f5dfb0ff8"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.36155546801429495,
+      "verdict": "distinct",
+      "assessment": "Kiowa identifies internal,visiting-partner and external providers with different addresses; Stanton separates the purpose of a visit inside one organization. Provider geography versus contact purpose.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/colorado/kiowa-county/",
+          "question": "Who provides the service already discussed with my professional, and where should I contact them?",
+          "sourceBridge": "Weisbrod Health separates Eads hospital imaging, periodic on-site partner services and external imaging in Lamar or Cheyenne Wells. It lists the clinic at 1211 Luther Street and hospital at 1208 Luther Street."
+        },
+        {
+          "route": "/areas/kansas/stanton-county/",
+          "question": "Which service handles the visit I want to arrange?",
+          "sourceBridge": "Stanton County Hospital’s public guidance lists visiting hours, clinic hours and appointment contact, plus a separate long-term-care tour extension. Those facts support purpose-based navigation before a visitor uses a schedule or directions."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 30,
+      "routes": [
+        "/areas/north-carolina/pitt-county/",
+        "/areas/puerto-rico/jayuya-municipio/"
+      ],
+      "draftSha256": [
+        "258393e6d41e8deea5a93c2c2ec5ea55e203e020f1a44704c9b464a214383842",
+        "eaab415495074fdcd5b24edff4da88c74e4c970389f5968125fe19f53c412de4"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3614827331872384,
+      "verdict": "distinct",
+      "assessment": "Pitt compares retail bags and brewed-service supply/support; Jayuya compares green/roasted forms and event-package count against coffee weight. Format and unit errors differ.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/north-carolina/pitt-county/",
+          "question": "Which supply arrangement fits how our business plans to sell or serve coffee?",
+          "sourceBridge": "Blackbeard Coffee Roasters describes a Greenville retail and wholesale operation, while its business listing discusses retail and bulk packaging and brewing support. These examples make product use and available assistance useful first-inquiry distinctions."
+        },
+        {
+          "route": "/areas/puerto-rico/jayuya-municipio/",
+          "question": "Can you supply this form of coffee in the amount and packaging I need?",
+          "sourceBridge": "Hacienda San Pedro separates green and roasted coffee, resale and special-event inquiries, with formats ranging from small event packages to hundred-pound sacks. Its Jayuya location makes this a concrete example of why product form and quantity units belong together."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 31,
+      "routes": [
+        "/areas/texas/trinity-county/",
+        "/areas/texas/uvalde-county/"
+      ],
+      "draftSha256": [
+        "c817a32ccc17ed31a7d727881f3229c693b723025128cbb3376fa0628e4c0e4f",
+        "dc0d978a32cba63311af4075fd8ad79f5f52d448ee0bd331fc95d5e033498463"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3596507309513749,
+      "verdict": "distinct",
+      "assessment": "Trinity requires an additional notarized under-eighteen internet agreement; Uvalde allows adult computer ID alternatives and uses current card status for ebooks. These policies cannot be swapped.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/texas/trinity-county/",
+          "question": "What must we complete before our child can use a library computer?",
+          "sourceBridge": "Blanche K Werner Public Library separates card preparation from computer agreements, including a notarized under-eighteen permission document. It shows why arriving ready to apply for a card does not necessarily mean arriving ready for computer use."
+        },
+        {
+          "route": "/areas/texas/uvalde-county/",
+          "question": "Which card, identification or permission do I need for this service?",
+          "sourceBridge": "El Progreso Memorial Library's FAQ distinguishes adult computer access, children's internet permission and current-card requirements for ebooks. Those three situations show why a general account checklist is insufficient."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 32,
+      "routes": [
+        "/areas/oklahoma/alfalfa-county/",
+        "/areas/puerto-rico/cabo-rojo-municipio/"
+      ],
+      "draftSha256": [
+        "8547cd939f043b438d0d36c162992ed3e250677e6de0f4aefb50f7e128b53d6c",
+        "14a1afeb913e6210370661dd537b57afe1859c2a05e074337e4e41154a11f806"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3550281964465187,
+      "verdict": "distinct",
+      "assessment": "Alfalfa ties digging season to its separate entrance and off-season tower observation; Cabo Rojo keeps a headquarters-road closure separate from Salt Flats facilities. Seasonal activity versus unit-specific disruption.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/oklahoma/alfalfa-county/",
+          "question": "Where can I view the salt flats in November when crystal digging is outside its season?",
+          "sourceBridge": "The U.S. Fish and Wildlife Service describes Salt Plains digging from April 1 through October 15 in the designated area, distinct from headquarters near Jet. Its reviewed visitor information describes off-season observation from the tower and lists the visitor center as closed for remodeling."
+        },
+        {
+          "route": "/areas/puerto-rico/cabo-rojo-municipio/",
+          "question": "Which unit and facility are we visiting, and where do we check current access?",
+          "sourceBridge": "The reviewed U.S. Fish and Wildlife Service notice distinguishes the Cabo Rojo headquarters-road closure from Salt Flats access and gives different tower and interpretive-center days. Older municipal hours are not used as current operating evidence."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 33,
+      "routes": [
+        "/areas/missouri/douglas-county/",
+        "/areas/texas/dickens-county/"
+      ],
+      "draftSha256": [
+        "3c76ad5471bb85c517750c4dbdfd0374d6e1571b872fde5ea514c49e2c384632",
+        "95db1aed56e7662a9453646a7b9bca085d8745efb0484b5dc932361d56939fa4"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3530401244146929,
+      "verdict": "distinct",
+      "assessment": "Douglas requires a physical card before an e-card and separates hold from physical checkout; Dickens scopes a nonresident digital card without inventing physical borrowing rights. Prerequisite and eligibility questions differ.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/missouri/douglas-county/",
+          "question": "What card do I need first, and what can the e-card actually do?",
+          "sourceBridge": "Douglas County Library distinguishes the required physical card, digital e-card services and physical-item holds from later checkout. Its catalog guidance supplies existing search, hold and renewal routes."
+        },
+        {
+          "route": "/areas/texas/dickens-county/",
+          "question": "Does this card route cover the digital or physical service I want to use?",
+          "sourceBridge": "Spur library’s card information distinguishes resident access to library services from nonresident cards for OverDrive ebooks and audiobooks. That stated distinction supports a service comparison before card instructions without deciding an individual reader’s eligibility."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 34,
+      "routes": [
+        "/areas/florida/osceola-county/",
+        "/areas/indiana/johnson-county/"
+      ],
+      "draftSha256": [
+        "70e881218544c84dcbb56ec6a819dc88e815bcd0a427dd10f80f05ce75e9a856",
+        "7f92334f3acdd5bfef0d1b7c17d311bc46980130a66b795f8236a2317e32ce37"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.35234757958398616,
+      "verdict": "distinct",
+      "assessment": "Osceola adds project edge/cutout/seam preparation before templating; Johnson sends full-slab seekers to Indianapolis rather than Greenwood’s sample display. Scope preparation and visit destination are independent.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/florida/osceola-county/",
+          "question": "What should I bring when choosing a slab for an island with a waterfall edge and several cutouts?",
+          "sourceBridge": "Kissimmee Granite & Marble lists its showroom at 500 N. Hoagland Boulevard and invites full-slab comparison. It describes measurement, templating, fabrication and installation, with cost factors including cutouts, seams and specialty work. Those details explain why area alone cannot establish a final project price."
+        },
+        {
+          "route": "/areas/indiana/johnson-county/",
+          "question": "I want to view full slabs. Should I contact Greenwood or the Indianapolis slab warehouse?",
+          "sourceBridge": "Peak Stone Company distinguishes Greenwood large-format samples from the slab warehouse at its Indianapolis showroom. Its Greenwood showroom is listed at 230 US 31 South in Johnson County. That specific location difference helps a customer seeking slabs choose the right conversation."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 35,
+      "routes": [
+        "/areas/california/placer-county/",
+        "/areas/virginia/greensville-county/"
+      ],
+      "draftSha256": [
+        "214a4078fab469ed6f6ce25c09badcb04aaea3050eeff490fa2ebab01ab93d38",
+        "f426f907051cc71b11ced38ad6c0419aca50d0c9b5d235a1deabd7f2d06136d6"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3521834905533151,
+      "verdict": "distinct",
+      "assessment": "Placer constrains100-guests against90 indoor plus conditional20 patio and reception/food rules; Greensville plans ceremony fallback into the reception room. Capacity contingency versus sequential room reuse.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/california/placer-county/",
+          "question": "Does our event fit the spaces and arrangements you can discuss?",
+          "sourceBridge": "High-Hand Nursery describes events after 5:30 p.m. Wednesday–Saturday, 90 conservatory dining seats and an additional 20 patio seats when weather and space permit. Ceremonies accompany receptions; food is prepared on site with a wedding cake/cupcake exception."
+        },
+        {
+          "route": "/areas/virginia/greensville-county/",
+          "question": "If our ceremony moves into the reception room, how will the two parts of our event fit together?",
+          "sourceBridge": "The BARN at Hillcrest Farm describes several outdoor ceremony settings and says its reception space can host an indoor ceremony in poor weather. That shared-room relationship makes the fallback a practical planning decision. The venue is on Hillcrest Road in Greensville County and uses an Emporia mailing address."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 36,
+      "routes": [
+        "/areas/missouri/barry-county/",
+        "/areas/missouri/benton-county/"
+      ],
+      "draftSha256": [
+        "a0a9ad467b32eda6a36964564c68efd27a97ac675bc18014db078bab436724d3",
+        "649c3daca6be9b5e3df17b933d1d228cc45c6c3962649abbed3674e3438c2f9f"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.35146914301759186,
+      "verdict": "distinct",
+      "assessment": "Barry’s winter campground retains showerhouse/frostfree shared water; Benton’s winter guidance shuts water/showers/dump station and adds carry-out waste. Similar season topic with opposite practical requirements.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/missouri/barry-county/",
+          "question": "Which campground operates in winter, and where will water and washing facilities be available?",
+          "sourceBridge": "Missouri State Parks distinguishes Roaring River’s three campground seasons and identifies year-round facilities in Campground 1. Its shared frost-free water points are different from individual site hookups."
+        },
+        {
+          "route": "/areas/missouri/benton-county/",
+          "question": "What will this open campground actually provide during our winter visit?",
+          "sourceBridge": "Missouri State Parks lists Devil’s Backbone at Harry S Truman State Park year-round while identifying off-season facility shutdowns and December–February waste arrangements. Being open is different from providing the summer facilities."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 37,
+      "routes": [
+        "/areas/kentucky/menifee-county/",
+        "/areas/michigan/ontonagon-county/"
+      ],
+      "draftSha256": [
+        "cfc78700678934d0c8bb5c8fce7ad36f3b33af8ba1f894a438ad2eaf407bee44",
+        "321b01f8cace4331e9e183f12c15a3e6be00a44ea43ad0d81def00fb0fbe2584"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3512752431802209,
+      "verdict": "distinct",
+      "assessment": "Menifee compares named cabin capacities,futon and construction status; Ontonagon locates a convertible bed specifically in shared sitting space and relates kitchen/living use. Related family topic, but inventory status and interior-use consequences differ.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/kentucky/menifee-county/",
+          "question": "How would our party use the sleeping spaces in this cabin?",
+          "sourceBridge": "Pumpkin Hollow Hideaway near Frenchburg describes cabins with differing bedroom and guest counts, explains Bumpkin Boo's futon and identifies Lumina's construction status. These details support a more useful comparison than capacity numbers alone."
+        },
+        {
+          "route": "/areas/michigan/ontonagon-county/",
+          "question": "Which sleeping places are in separate rooms, and which use shared space?",
+          "sourceBridge": "Sunshine Motel and Cabins describes separate bedrooms and a sitting-room futon in its large cabin, alongside kitchen and living space. The Ontonagon example shows why sleeping layout adds information that capacity alone cannot provide."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 38,
+      "routes": [
+        "/areas/florida/bradford-county/",
+        "/areas/ohio/madison-county/"
+      ],
+      "draftSha256": [
+        "0ba434edaa7a10558268eee6c04c71112ed3262eb8cb57790a95b7aeb1bdeb09",
+        "d71198750c2b10dfc961bf31187a21a191dbc55455ce39d9c2848ae90be5312e"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3509874361744367,
+      "verdict": "distinct",
+      "assessment": "Bradford separates floral/decorating service at another venue from the florist’s own room; Madison preserves provisional participant/table counts and two delivery settings. Package scope versus incomplete-brief readiness.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/florida/bradford-county/",
+          "question": "Can you provide flowers and decorating at our venue without booking your event room?",
+          "sourceBridge": "Julia’s Florist in Starke presents everyday ordering, wedding arrangements, on-site decorating and advance consultations. It also describes an event space and additional items. That combination makes it useful to distinguish a flower proposal from a broader event agreement."
+        },
+        {
+          "route": "/areas/ohio/madison-county/",
+          "question": "Can we discuss the flowers before the guest and table counts are final?",
+          "sourceBridge": "London Florist lists 196 W. Center Street in London. Its wedding planner asks about event date, venue and style alongside personal flowers, ceremony, reception and guest context, providing a practical structure for an incomplete first brief."
+        }
+      ],
+      "finalScore": null
+    },
+    {
+      "pairIndex": 39,
+      "routes": [
+        "/areas/indiana/wells-county/",
+        "/areas/north-carolina/yadkin-county/"
+      ],
+      "draftSha256": [
+        "e572529ee94fbb89d106d306d30291560afa208f7d21cec79c4200beb68467f5",
+        "b7f1492d435177015fc46a07c957e21515747a8247e6ab6e16273fc1432c9df3"
+      ],
+      "reviewer": "Codex primary",
+      "date": "2026-10-27",
+      "scope": "Full authored customer question, three decision paragraphs and source bridge compared; full-page source/FAQ reviews retained separately. Cross-state family supplement, not a new full-page score.",
+      "triageCosine": 0.3505171403840386,
+      "verdict": "distinct",
+      "assessment": "Wells makes doors,cord access and device-specific cabinet views clear; Yadkin keeps retained,replacement and undecided devices from prematurely fixing a media-wall design. Access operation versus unresolved equipment selection.",
+      "repairRoute": null,
+      "evidence": [
+        {
+          "route": "/areas/indiana/wells-county/",
+          "question": "What equipment and access needs should I include in my cabinet inquiry?",
+          "sourceBridge": "DS Woods Custom Cabinets describes device-specific media cabinets, sliding television doors and cord access, and explicitly serves Wells County. Its Decatur workshop is in Adams County; service coverage and workshop location should remain distinct."
+        },
+        {
+          "route": "/areas/north-carolina/yadkin-county/",
+          "question": "What equipment information should I bring with the style reference?",
+          "sourceBridge": "NC Cabinet Design in Yadkinville describes built-in bookshelves and media walls with integrated lighting and concealed cable arrangements. Its design and site-review process provides a concrete setting for keeping equipment choices visible."
+        }
+      ],
+      "finalScore": null
+    }
+  ]
+}

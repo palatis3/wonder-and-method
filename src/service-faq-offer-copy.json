@@ -20,13 +20,6 @@
       "template": "You supply the approved changes and identify the affected service descriptions. {{plans.keep_running.public_name}} can publish {{plans.keep_running.small_change_batches|words}} agreed {{plans.keep_running.small_change_batches|sets}} of small text, photo or link updates each month on existing parts of the site, with a dated report. Adding a new job calculator, routing process or substantial service section needs a separate scope rather than being treated as a small wording update."
     }
   ],
-  "/areas/pennsylvania/lancaster-county/": [
-    {
-      "question": "How would monthly SEO choose which of our two services to work on first?",
-      "sourceAnswer": "We agree on the business objective and review customer questions, current pages and available search evidence. Improve researches one active service or topic and delivers one substantial improvement; Grow can connect two improvements across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production.",
-      "template": "We agree on the business objective and review customer questions, current pages and available search evidence. {{plans.improve.public_name}} researches {{plans.improve.search_scope.active_topics|words}} active {{plans.improve.search_scope.active_topics|topicPhrase}} and delivers {{plans.improve.priorities|words}} substantial {{plans.improve.priorities|improvements}}; {{plans.grow.public_name}} can connect {{plans.grow.priorities|words}} {{plans.grow.priorities|improvements}} across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production."
-    }
-  ],
   "/areas/ohio/cuyahoga-county/": [
     {
       "question": "Would an SEO plan charge me again for routine website care?",

@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-10-27T16:07:40.995Z",
+  "status": "complete-current-render-verified",
+  "expected": 61,
+  "reviewed": 61,
+  "uniqueRoutes": 61,
+  "completeMainTextCharacters": 2285602,
+  "allQuotesMatched": true,
+  "allReadPartsPresent": true,
+  "unchangedReviewedRenderCount": 61,
+  "changedCurrentRenders": [],
+  "hashScope": "SHA256 of complete current renderPages HTML; text extracted from main including all disclosures and ordinary hidden interaction states; scripts/style/noscript omitted.",
+  "frozenAt": "2026-10-27T15:34:34.930Z",
+  "contentSubtotals": {
+    "maximum": 80,
+    "min": 65,
+    "max": 80,
+    "mean": 69.8360655737705
+  },
+  "finalScoresAllNull": true,
+  "visualsAllNull": true,
+  "accessibilityAllNull": true,
+  "findingsBySeverity": {
+    "minor": 59,
+    "moderate": 8
+  },
+  "routesWithFindings": 46,
+  "routesWithoutFindings": [
+    "/areas/alabama/",
+    "/areas/arizona/",
+    "/areas/arkansas/",
+    "/areas/delaware/",
+    "/areas/florida/",
+    "/areas/massachusetts/",
+    "/areas/mississippi/",
+    "/areas/new-mexico/",
+    "/areas/oregon/",
+    "/areas/rhode-island/",
+    "/areas/south-carolina/",
+    "/areas/virginia/",
+    "/areas/washington/",
+    "/areas/west-virginia/",
+    "/services/"
+  ],
+  "moderateFindings": [
+    {
+      "route": "/areas/hawaii/",
+      "severity": "moderate",
+      "issue": "The baseline source-definition duplication remains: the same Census scope and Honolulu/CDP distinction each appear twice, once with unexplained data abbreviations.",
+      "evidence": [
+        "January 1, 2026 Census geography with complete 2026 GRFC memberships.",
+        "Hawaii has no Census-recognized incorporated places."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/",
+      "severity": "moderate",
+      "issue": "The Monterey dissolution explanation remains long and duplicated, with its source-block version omitting the place name; technical identifier prose also remains in the entry.",
+      "evidence": [
+        "The retained GEOID identifies the source Census record, not an active government.",
+        "General place definitions\n\nThe Kentucky DLG final dissolution order was signed December 4, 2023 and filed with the Secretary of State on May 20, 2025."
+      ]
+    },
+    {
+      "route": "/areas/michigan/",
+      "severity": "moderate",
+      "issue": "Mechanical alias and charter-reconciliation explanations still repeat throughout many county entries rather than using one definition.",
+      "evidence": [
+        "Current local-government charter status supersedes the generic township suffix in Census geography.",
+        "Normalized spelling/abbreviation of source name."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/",
+      "severity": "moderate",
+      "issue": "The baseline status-note repetition and technical identifier wording remain despite new optional methodology disclosures.",
+      "evidence": [
+        "The retained GEOID identifies the January Census source, not an active government.",
+        "Spencer Mountain has a suspended charter through June 30, 2029; neither is counted as an active municipal government. The charter remains suspended until June 30, 2029 under S.L. 2026-50 section 6.2."
+      ]
+    },
+    {
+      "route": "/areas/ohio/",
+      "severity": "moderate",
+      "issue": "Source section repeats its dated inventory explanation and uses identical generic headings for detached county-specific exceptions.",
+      "evidence": [
+        "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties.",
+        "General place definitions\n\nWashington Township is the county portion of the township also extending across Franklin and Union counties.",
+        "General place definitions\n\nWashington Township extends into Delaware and Union counties."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/",
+      "severity": "moderate",
+      "issue": "Repeated General place definitions headings leave local exceptions without named county context and repeat cross-county caveats already explained above.",
+      "evidence": [
+        "General place definitions\n\nCross-county municipalities are listed in each county they touch: Ellwood City.",
+        "General place definitions\n\nCross-county municipalities are listed in each county they touch: Adamstown."
+      ]
+    },
+    {
+      "route": "/services/seo/",
+      "severity": "moderate",
+      "issue": "After adding the useful accounting list, the page still repeats the completed-improvement explanation and then walks through the same research/approval/publication/report cycle again.",
+      "evidence": [
+        "An improvement is one agreed, finished piece of work.",
+        "That is one finished improvement, including research, writing and checks.",
+        "How the work gets done."
+      ]
+    },
+    {
+      "route": "/services/website-care/",
+      "severity": "moderate",
+      "issue": "The complete rendered page still contains both the merged enrollment section and a later Check the platform first supplement, so the baseline consolidation is incomplete at the rendered-page level.",
+      "evidence": [
+        "Check your website before enrolling.",
+        "Send the platform, connected tools and who controls authorized access and recovery.",
+        "Check the platform first.",
+        "Tell me which website platform and connected tools you use."
+      ]
+    }
+  ],
+  "limitations": [
+    "Content subtotals are out of 80 and are never normalized to 100. No page receives a final score from this text-only pass.",
+    "All 61 pages were individually read completely; list length was not used as a quality proxy.",
+    "Geographic source labels and claimed dates were reviewed; external geography records were not comprehensively reopened.",
+    "Prior baseline findings were compared individually. Improvements can be real without crossing an integer rating anchor."
+  ],
+  "provenance": {
+    "snapshot": "output/human-quality-20261027/services-after-review/snapshot.json",
+    "readLedger": "output/human-quality-20261027/services-after-review/read-ledger.json",
+    "manualDecisions": [
+      "decisions-directories-01.json",
+      "decisions-directories-02.json",
+      "decisions-directories-03.json",
+      "decisions-directories-04.json",
+      "decisions-directories-05.json",
+      "decisions-directories-06.json",
+      "decisions-directories-07.json",
+      "decisions-directories-08.json",
+      "decisions-directories-09.json",
+      "decisions-directories-10.json",
+      "decisions-directories-11.json",
+      "decisions-directories-12.json",
+      "decisions-directories-13.json",
+      "decisions-directories-14.json",
+      "decisions-directories-15.json",
+      "decisions-directories-16.json",
+      "decisions-directories-17.json",
+      "decisions-directories-18.json",
+      "decisions-directories-19.json",
+      "decisions-directories-20.json",
+      "decisions-directories-21.json",
+      "decisions-directories-22.json",
+      "decisions-directories-23.json",
+      "decisions-directories-24.json",
+      "decisions-directories-25.json",
+      "decisions-directories-26.json",
+      "decisions-directories-27.json",
+      "decisions-directories-28.json",
+      "decisions-services.json"
+    ],
+    "rubric": "operations/human-quality-20261027/research-rubric.json"
+  }
+}

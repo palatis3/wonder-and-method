@@ -1,0 +1,36 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 150,
+  "reviewedCount": 150,
+  "nextCandidateIndex": 150,
+  "contentPassCount": 150,
+  "unresolvedMaterialContentDefects": 0,
+  "holds": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "counts": {
+      "packets": 30,
+      "renderers": 5,
+      "drafts": 150,
+      "sources": 150,
+      "siblings": 150,
+      "bodies": 150,
+      "quotes": 900,
+      "recommendationQuotes": 12
+    },
+    "errors": [],
+    "unique": 150,
+    "reviews": 150,
+    "checkedAt": "2026-10-27T21:22:37.139Z",
+    "scope": "Exact packets, renderer files, current drafts, source entries, supplied sibling drafts, reconstructed candidate bodies and all quoted passages."
+  },
+  "reviewLimitations": [
+    "No fresh live source retrieval.",
+    "Baseline rendered text not reread; supplied full source entry compared.",
+    "Supplied neighboring draft compared; broader topical-family overlap remains separately reviewable.",
+    "Visual, interaction, accessibility and overall scores remain null."
+  ]
+}

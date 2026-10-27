@@ -118,3 +118,22 @@ ul.county-hub-grid [data-cl]{display:flex;flex-wrap:wrap;align-items:center;gap:
 
 .county-reading #questions{margin:1rem 0;border-block:1px solid var(--line)}
 .county-reading #questions>summary{min-height:44px;padding:.75rem 0;font-weight:650;cursor:pointer}
+
+/* The example is one customer question followed by three concrete decisions. */
+.studio-site .local-example-intro{margin-inline:auto;max-width:900px}
+.studio-site .local-example-intro>p{max-width:72ch}
+.studio-site .local-customer-question{padding:1.4rem 1.6rem;background:var(--surface-sage);border-left:3px solid var(--blue);margin:1.5rem 0 2rem}
+.studio-site .local-customer-question .eyebrow{margin:0 0 .6rem}
+.studio-site .local-customer-question>p:last-child{max-width:48ch;font-size:clamp(1.25rem,2.3vw,1.65rem);line-height:1.45;margin:0;color:var(--ink)}
+.studio-site main ol.local-decision-steps{list-style:none;max-width:none;padding:0;margin:0 0 2rem}
+.studio-site .local-decision-steps>li{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:1rem;padding:1.5rem 0;margin:0;border-bottom:1px solid var(--line)}
+.studio-site .local-decision-number{color:var(--accent);font-size:1rem;font-weight:700;line-height:1.6}
+.studio-site .local-decision-steps h3{font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.35;margin:0 0 .65rem}
+.studio-site .local-decision-steps p{max-width:66ch;font-size:1.05rem;line-height:1.75;margin:0}
+.studio-site .local-example-reason{max-width:75ch;margin:2rem 0 1rem;padding-left:1.25rem;border-left:3px solid var(--line)}
+.studio-site .local-example-reason h3{font-size:1.05rem;line-height:1.5;margin:0 0 .5rem}
+.studio-site .local-example-reason p,.studio-site .local-example-boundary{font-size:1rem;line-height:1.75;max-width:75ch}
+.studio-site .local-example-reason p{margin:0}
+.studio-site .local-example-boundary{margin:1.5rem 0 0}
+@media(max-width:600px){.studio-site .local-customer-question{padding:1.2rem}.studio-site .local-decision-steps>li{grid-template-columns:1.7rem minmax(0,1fr);gap:.65rem;padding:1.3rem 0}.studio-site .local-decision-steps p{font-size:1rem}}
+@media(forced-colors:active){.studio-site .local-customer-question{background:Canvas;border-color:CanvasText}.studio-site .local-decision-number{color:CanvasText}}

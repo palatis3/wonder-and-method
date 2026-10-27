@@ -1,0 +1,462 @@
+{
+  "status": "complete",
+  "assigned": 300,
+  "reviewed": 300,
+  "complete": true,
+  "lastPacket": "packet-060.jsonl",
+  "reviewedSubtotals": {
+    "min": 35,
+    "max": 73.75,
+    "mean": 72.74166666666666,
+    "maximum": 80,
+    "notNormalized": true
+  },
+  "findings": [
+    {
+      "route": "/areas/alaska/haines-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "the University of Alaska community profile places Haines in Haines Borough",
+      "detail": "The coverage paragraph names an independent corroborating source, but the source disclosure links only the operator FAQ; readers cannot follow the claimed profile."
+    },
+    {
+      "route": "/areas/alaska/hoonah-angoon-census-area/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The University of Alaska profile places Hoonah in Hoonah-Angoon Census Area",
+      "detail": "The candidate asserts independent geographic corroboration but provides only the operator FAQ in its source disclosure."
+    },
+    {
+      "route": "/areas/alaska/juneau-city-and-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "independently identified by the University of Alaska as the City and Borough of Juneau",
+      "detail": "The claimed independent geographic source is named in coverage but absent from the linked source list."
+    },
+    {
+      "route": "/areas/alaska/kenai-peninsula-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "the University of Alaska profile places Seward in Kenai Peninsula Borough",
+      "detail": "Only the operator water-taxi page is linked; the independently claimed geographic profile cannot be followed from the source disclosure."
+    },
+    {
+      "route": "/areas/alaska/ketchikan-gateway-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "the University of Alaska profile places Ketchikan in Ketchikan Gateway Borough",
+      "detail": "The candidate source list links the lodge and borough ferry pages but not the named University geographic profile."
+    },
+    {
+      "route": "/areas/alaska/kodiak-island-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "the University of Alaska profile places Kodiak in Kodiak Island Borough",
+      "detail": "The claimed independent geographic profile is not among the public source links."
+    },
+    {
+      "route": "/areas/alaska/kusilvak-census-area/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The City of Emmonak community page places Emmonak in Kusilvak Census Area",
+      "detail": "The source list links the business directory and operator store page, not the specifically named community page supporting the census-area statement."
+    },
+    {
+      "route": "/areas/alaska/lake-and-peninsula-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Lake and Peninsula Borough independently lists Port Alsworth among its communities",
+      "detail": "Only resort pages appear in the source disclosure, leaving the independently named borough corroboration unlinked."
+    },
+    {
+      "route": "/areas/alaska/matanuska-susitna-borough/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The University of Alaska profile places Talkeetna in Matanuska-Susitna Borough",
+      "detail": "The source disclosure contains the operator FAQ but not the named independent geographic profile."
+    },
+    {
+      "route": "/areas/arkansas/newton-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Buffalo Outdoor Center and the Newton County Chamber identify the business at 4699 Arkansas 43 in Ponca, within Newton County.",
+      "detail": "The coverage attributes the address to the Newton County Chamber, but the public source list includes only Buffalo Outdoor Center's shuttle page. The named independent corroboration cannot be inspected from the supplied links."
+    },
+    {
+      "route": "/areas/iowa/allamakee-county/",
+      "id": "repeated-printable-guidance",
+      "severity": "minor",
+      "quote": "Can guests keep the arrival instructions when cell service is unavailable?",
+      "detail": "The following full FAQ repeats decision 03's dated printable arrival sheet and current-information source, plus the limits paragraph's offline-navigation/conditions boundary. This retains a noticeable duplicate explanation after the main compression."
+    },
+    {
+      "route": "/areas/iowa/dallas-county/",
+      "id": "repeated-payment-access-guidance",
+      "severity": "minor",
+      "quote": "Do you need access to our payment account to explain the statement name?",
+      "detail": "The full answer repeats the third decision's owner-approved descriptor/redacted confirmation example and the limits paragraph's no customer/card/transaction details and separate reconciliation scope."
+    },
+    {
+      "route": "/areas/iowa/fayette-county/",
+      "id": "repeated-external-listing-guidance",
+      "severity": "minor",
+      "quote": "Can the project include correcting directions on third-party listings?",
+      "detail": "Decision 03 and this later FAQ both explain agreed listing corrections and that website edits do not update external listings."
+    },
+    {
+      "route": "/areas/iowa/franklin-county/",
+      "id": "editorial-source-label-instruction",
+      "severity": "minor",
+      "quote": "Source labels should identify the fact supported rather than use a generic supporting-information caption.",
+      "detail": "The visitor-facing limits paragraph includes a production instruction, while the actual second source still has a generic supporting-information caption."
+    },
+    {
+      "route": "/areas/michigan/kalamazoo-county/",
+      "id": "repeated-service-area-guidance",
+      "severity": "minor",
+      "quote": "Should a finishing website have a page for every area we can visit?",
+      "detail": "Decision 03 already recommends a treatment page and accurate coverage instead of repeated place-name capabilities; the later FAQ restates that advice at length."
+    },
+    {
+      "route": "/areas/michigan/livingston-county/",
+      "id": "repeated-confidential-project-guidance",
+      "severity": "minor",
+      "quote": "Can you build our capabilities website if we cannot publish customer projects?",
+      "detail": "Decision 03 and the FAQ both recommend approved service descriptions and labeled illustrative diagrams when customer projects cannot be published."
+    },
+    {
+      "route": "/areas/michigan/macomb-county/",
+      "id": "repeated-confidential-planning-guidance",
+      "severity": "minor",
+      "quote": "Can we plan the website before client projects are cleared for publication?",
+      "detail": "Decision 02 already proposes service descriptions and anonymized buyer questions without confidential drawings; the later FAQ repeats those planning alternatives."
+    },
+    {
+      "route": "/areas/michigan/monroe-county/",
+      "id": "overlapping-glass-preparation-decision",
+      "severity": "minor",
+      "quote": "This guidance should be combined with related glass-project preparation when it does not add an independent visitor decision.",
+      "detail": "The page itself identifies consolidation, yet its preference, surrounding-space and professional-measurement sequence largely repeats Lapeer's enclosure preparation with mirror-specific nouns."
+    },
+    {
+      "route": "/areas/michigan/newaygo-county/",
+      "id": "overlapping-assembly-contribution-decision",
+      "severity": "minor",
+      "quote": "shared manufacturing contribution guidance should be consolidated where it serves the same decision.",
+      "detail": "The page retains the same fabricated component, added assembly and delivered-condition structure already used by Kent, while noting consolidation rather than carrying it out."
+    },
+    {
+      "route": "/areas/michigan/oakland-county/",
+      "id": "repeated-appointment-migration-guidance",
+      "severity": "minor",
+      "quote": "Will redesigning the website move my appointment records?",
+      "detail": "Decision 03, the limits paragraph and this FAQ all explain that public website changes do not transfer appointment-provider records automatically."
+    },
+    {
+      "route": "/areas/michigan/otsego-county/",
+      "id": "mismatched-equipment-guide",
+      "severity": "minor",
+      "quote": "For the operating details: Separate an equipment inspection request from approval to repair.",
+      "detail": "The jewelry brief explicitly says to use a jewelry-specific example rather than send readers to an equipment-repair guide, but the visible follow-up link still does exactly that."
+    },
+    {
+      "route": "/areas/michigan/wayne-county/",
+      "id": "repeated-portfolio-playback-guidance",
+      "severity": "minor",
+      "quote": "How would you present our films without making visitors load the whole portfolio at once?",
+      "detail": "Decision 03 already prescribes selected stills, deliberate play controls and agreed hosting/caption work; the later FAQ repeats the same website-media guidance."
+    },
+    {
+      "route": "/areas/niagara-county/",
+      "id": "unresolved-local-publication-evidence",
+      "severity": "major",
+      "quote": "The supplied source supports that general distinction but does not establish a Niagara-specific relationship or an independent local reason for this page.",
+      "detail": "The candidate acknowledges its unresolved local-purpose gate and still carries the standard claim that this is a local example. It is not ready for standalone local publication."
+    },
+    {
+      "route": "/areas/niagara-county/",
+      "id": "editorial-instructions-in-public-copy",
+      "severity": "major",
+      "quote": "The existing promise of correcting built work that fails agreed behavior for 30 calendar days after launch must remain accurately stated where retained.",
+      "detail": "This instructs an editor how to preserve another section instead of explaining an offer to the customer; the exact offer already appears in the FAQ."
+    },
+    {
+      "route": "/areas/north-carolina/alleghany-county/",
+      "id": "repeated-portfolio-care-guidance",
+      "severity": "minor",
+      "quote": "Do occasional portfolio updates mean I need monthly SEO?",
+      "detail": "The limits paragraph already explains supplied photo/caption care, researched stories as separate work and no automatic monthly SEO; the FAQ repeats all three."
+    },
+    {
+      "route": "/areas/north-carolina/ashe-county/",
+      "id": "repeated-external-listing-guidance",
+      "severity": "minor",
+      "quote": "Will updating our website also correct outdated information on other sites?",
+      "detail": "Decision 03 already explains identifying discrepancies, assigning publisher control, separately authorizing follow-up and no search-refresh promise. The FAQ repeats this full recommendation."
+    },
+    {
+      "route": "/areas/north-carolina/burke-county/",
+      "id": "repeated-later-project-story-guidance",
+      "severity": "minor",
+      "quote": "Can we add fuller project stories after the first website launches?",
+      "detail": "The limits paragraph already explains launch using approved examples and later stories needing evidence and separately agreed writing/production; the FAQ repeats that substantive advice."
+    },
+    {
+      "route": "/areas/north-carolina/craven-county/",
+      "id": "repeated-approval-review-guidance",
+      "severity": "minor",
+      "quote": "How will I approve the wording before the website goes live?",
+      "detail": "Decision three already requests a named approver, redacted documents, working-page review, version and consolidated corrections; the retained FAQ repeats those details. The other FAQ also repeats the contractual limit."
+    },
+    {
+      "route": "/areas/north-carolina/cumberland-county/",
+      "id": "repeated-sale-deadline-guidance",
+      "severity": "minor",
+      "quote": "Can the new website be ready before our announced sample sale?",
+      "detail": "The limits already ask for the announced sale date and approved material before booking and say the proposal confirms scope and schedule; this retained answer repeats that scheduling guidance."
+    },
+    {
+      "route": "/areas/pennsylvania/lancaster-county/",
+      "id": "repeated-seasonal-care-guidance",
+      "severity": "minor",
+      "quote": "Ordinary content care does not synchronize provider availability automatically.",
+      "detail": "The limits repeat the later seasonal synchronization FAQ and the monthly allowance qualification repeated in the SEO FAQ, retaining avoidable duplication after the rewrite."
+    },
+    {
+      "route": "/areas/pennsylvania/montgomery-county/",
+      "id": "repeated-migration-scope-guidance",
+      "severity": "minor",
+      "quote": "Does a redesign include finding and redirecting every old address?",
+      "detail": "This FAQ repeats decision 03's supplied page list, redirect limit, early saved links and separate archive assessment, while limits and the other FAQ also repeat the monthly-migration boundary."
+    },
+    {
+      "route": "/areas/pennsylvania/northampton-county/",
+      "id": "repeated-catalog-preservation-guidance",
+      "severity": "minor",
+      "quote": "What should survive a catalog redesign besides the page text?",
+      "detail": "The FAQ repeats decision 01's product references, existing destinations and no-account-migration warning plus decision 03's representative route checks; the care FAQ repeats the limits as well."
+    },
+    {
+      "route": "/areas/pennsylvania/philadelphia-county/",
+      "id": "repeated-assessment-example-guidance",
+      "severity": "minor",
+      "quote": "Can we show what an assessment report looks like without publishing a full client report?",
+      "detail": "The retained answer repeats decision 02's illustrative excerpt/outline, fictional labeling and confidential-report exclusions plus the limits' specialist-advice boundary."
+    },
+    {
+      "route": "/areas/pennsylvania/pike-county/",
+      "id": "repeated-branch-check-guidance",
+      "severity": "minor",
+      "quote": "How will you check that branch comparisons work on a phone?",
+      "detail": "The answer repeats decision 02's representative service-to-branch route and the limits' narrow-width, keyboard and link checks; the second FAQ similarly repeats decision 03's new-branch scope distinction."
+    },
+    {
+      "route": "/areas/pennsylvania/venango-county/",
+      "id": "repeated-tool-ownership-guidance",
+      "severity": "minor",
+      "quote": "Does the website handoff include ownership of an existing seat-design tool?",
+      "detail": "The retained FAQ repeats the limits paragraph's supplier ownership, access, continuing costs and separate rebuild assessment, reducing the benefit of the condensed rewrite."
+    },
+    {
+      "route": "/areas/texas/llano-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "independently matched to Llano County by the US Census geocoder",
+      "detail": "The coverage paragraph invokes an independent geocoder match, but the public source list contains only two Cooper's pages, so readers cannot inspect that geographic evidence."
+    },
+    {
+      "route": "/areas/texas/lynn-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The exact Census address match places the premises in Lynn County.",
+      "detail": "The coverage statement relies on a Census address match, but both public sources are operator pages and do not expose that independent match."
+    },
+    {
+      "route": "/areas/texas/marion-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "independently checked in Marion County",
+      "detail": "Only the operator tour page appears in the public source list, leaving the claimed independent county check uninspectable."
+    },
+    {
+      "route": "/areas/texas/martin-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "independently matched to Martin County by the US Census geocoder",
+      "detail": "The public sources contain only the park's rates and contact pages, not the independent geocoder result invoked in coverage."
+    },
+    {
+      "route": "/areas/texas/mason-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Seaquist House is on Broad Street in Mason, independently checked in Mason County.",
+      "detail": "The coverage asserts an independent county check, but the only listed source is the operator tour page; readers cannot inspect the independent evidence."
+    },
+    {
+      "route": "/areas/texas/maverick-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The exact Census address match identifies Maverick County.",
+      "detail": "The listed sources are the venue and its request form, with no inspectable Census match supporting the separate locality assertion."
+    },
+    {
+      "route": "/areas/texas/milam-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The exact Census matches for the event center at 9112 North FM 908 and RV park at 9119 North FM 908 both identify Milam County.",
+      "detail": "Coverage asserts two exact Census checks, but the public sources contain only the event and RV operator pages."
+    },
+    {
+      "route": "/areas/texas/nolan-county/",
+      "id": "ambiguous-hypothetical-source-attribution",
+      "severity": "minor",
+      "quote": "Its fifty-student example demonstrates why the chosen program must come before a generic group-size check.",
+      "detail": "The baseline explicitly calls the fifty-student group fictional. In the source bridge, 'Its' can attribute that authored scenario to the museum, while the supplied source observation supports group rules rather than a published fifty-student example."
+    },
+    {
+      "route": "/areas/texas/palo-pinto-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "an independent Census address match places that address in Palo Pinto County.",
+      "detail": "Coverage asserts an independent Census address match, but the visible source list contains only tourism and city park pages, so readers cannot inspect that separate county proof."
+    },
+    {
+      "route": "/areas/texas/real-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Frio Pecan Farm lists 144 Ranch Road 337 East in Leakey, independently verified in Real County.",
+      "detail": "The public source list contains only the operator homepage, leaving the claimed independent county check untraceable."
+    },
+    {
+      "route": "/areas/texas/red-river-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Lennox Woods Preserve is north of Clarksville in Red River County; the public trail location was independently checked.",
+      "detail": "Only the Nature Conservancy page is listed; the claimed independent trail-location check has no inspectable citation."
+    },
+    {
+      "route": "/areas/texas/reeves-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Balmorhea State Park lists 9207 TX-17 in the Toyahvale postal area, independently verified in Reeves County.",
+      "detail": "The public references list TPWD only, without the separately claimed independent county check."
+    },
+    {
+      "route": "/areas/texas/refugio-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "The Texas State Library directory independently lists the matching library and telephone in Refugio County.",
+      "detail": "All three public source links are library-owned; the named independent state directory entry is absent."
+    },
+    {
+      "route": "/areas/texas/rockwall-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Rockwall County Library lists 1215 East Yellowjacket Lane in Rockwall; the state library directory independently identifies Rockwall County.",
+      "detail": "Only the county card-policy page is listed, not the independent state directory used for geographic attribution."
+    },
+    {
+      "route": "/areas/texas/rockwall-county/",
+      "id": "repeated-identity-document-guidance",
+      "severity": "minor",
+      "quote": "Can the site explain card requirements without collecting identity documents?",
+      "detail": "The FAQ restates decision two's preparation-list, authorized-desk and no-identity-upload guidance, with separately scoped handling already covered in the limits."
+    },
+    {
+      "route": "/areas/texas/sabine-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Remembering Columbia Museum lists 375 Sabine Street in Hemphill, independently verified in Sabine County.",
+      "detail": "Both public links are museum pages; the independent county verification is not linked."
+    },
+    {
+      "route": "/areas/texas/san-augustine-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Mission Dolores lists 701 South Broadway Street in San Augustine, independently verified in San Augustine County.",
+      "detail": "The two public THC links do not identify the independent geographic check claimed in the coverage statement."
+    },
+    {
+      "route": "/areas/texas/san-jacinto-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "Double Lake Recreation Area lists 301 FM 2025 in the Coldspring postal area; its location was independently checked in San Jacinto County.",
+      "detail": "The source list contains only the federal campground listing, with no reference for the claimed independent geographic check."
+    },
+    {
+      "route": "/areas/texas/san-saba-county/",
+      "id": "unlinked-geography-source",
+      "severity": "minor",
+      "quote": "San Saba River RV Park lists 723 County Road 102 near San Saba; the park location was independently checked in San Saba County.",
+      "detail": "Only the operator's RV page is listed, without the independent location source claimed in coverage."
+    }
+  ],
+  "caps": [
+    {
+      "route": "/areas/niagara-county/",
+      "id": "noIndependentValue",
+      "maximum": 49,
+      "reason": "Draft explicitly lacks a verified Niagara relationship or independent local task; this remains a generic service funnel."
+    }
+  ],
+  "finalScores": null,
+  "remaining": 0,
+  "partitions": {
+    "1": 50,
+    "2": 50,
+    "3": 50,
+    "4": 50,
+    "5": 50,
+    "6": 50
+  },
+  "validation": {
+    "checkedAt": "2026-10-27T16:42:36.559Z",
+    "assignmentSha256": "60fdf8f4585d7047fed462876ef69edd01875d4b7f7b9d2fa71319ff0abe509a",
+    "auditSha256": "5765e3e28f7996c8c23866932fb67bcebc7abb7e26492827dbf269d36a56b163",
+    "packetHashesChecked": 60,
+    "baselineFilesChecked": 300,
+    "draftHashesChecked": 300,
+    "siblingHashesChecked": 300,
+    "candidateTextHashesChecked": 300,
+    "candidateBodyIdentitiesChecked": 300,
+    "evidenceQuotesChecked": 2400,
+    "findingQuotesChecked": 54,
+    "rendererChecks": [
+      {
+        "file": "src/location-service-pages.mjs",
+        "sha256": "d524d712813beb82b1387efcb11bb12b99f8badaad15b1669fac4d5b9d0c8a0c",
+        "currentSha256": "8a85d1562681bd9e00b618f7fdba0b4803664681654fcbb65bee1cda4efcb0f2"
+      },
+      {
+        "file": "src/human-location-brief.mjs",
+        "sha256": "86d795fcf1376bf4435aa225afac69b033a9db87226b7a5fb0bf67155a1e76e3",
+        "currentSha256": "86d795fcf1376bf4435aa225afac69b033a9db87226b7a5fb0bf67155a1e76e3"
+      },
+      {
+        "file": "src/service-faqs.mjs",
+        "sha256": "fabe9d422ee34a479b65536ca9b9bb8cb36bd978a6d64a51b9dc94a0a4a609e6",
+        "currentSha256": "fabe9d422ee34a479b65536ca9b9bb8cb36bd978a6d64a51b9dc94a0a4a609e6"
+      },
+      {
+        "file": "src/service-faqs.json",
+        "sha256": "79fe98e0b096fb6a0ecca8b4bc66ebf9773022b3bf20af3e2b9b778ca55a8c9a",
+        "currentSha256": "79fe98e0b096fb6a0ecca8b4bc66ebf9773022b3bf20af3e2b9b778ca55a8c9a"
+      },
+      {
+        "file": "config/offers.json",
+        "sha256": "641782ea16351bdbb5a4bd2931d6e9eebcdf25e9ba2ddeb6993c769f366702cc",
+        "currentSha256": "641782ea16351bdbb5a4bd2931d6e9eebcdf25e9ba2ddeb6993c769f366702cc"
+      }
+    ],
+    "errors": [],
+    "candidateBodyVerification": "All 300 audit body hashes match the immutable packet and assignment identities. Body HTML was not regenerated because src/location-service-pages.mjs changed after packet preparation. Complete candidate text, draft content, frozen packet bytes and baseline HTML were independently hash-checked."
+  },
+  "method": "Each full frozen baseline and candidate, source observations and nearest sibling was read and independently assessed. Six manual content ratings total a maximum of 80 without normalization. Visuals, accessibility and final scores remain null. No new external verification is claimed.",
+  "findingCounts": {
+    "total": 54,
+    "minor": 52,
+    "major": 2,
+    "affectedRoutes": 52,
+    "unlinkedGeography": 27
+  }
+}

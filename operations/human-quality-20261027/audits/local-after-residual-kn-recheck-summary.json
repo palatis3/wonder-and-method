@@ -1,0 +1,69 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 34,
+  "reviewedCount": 34,
+  "contentPassCount": 34,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "recommendedFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "batches": [
+    {
+      "batch": "residual-k-recheck",
+      "reviewed": 21,
+      "pass": 21,
+      "holds": 0
+    },
+    {
+      "batch": "residual-n-recheck",
+      "reviewed": 13,
+      "pass": 13,
+      "holds": 0
+    }
+  ],
+  "reviewScope": "Independent complete-current-candidate content review including FAQs, public-source disclosures and supplied neighboring drafts; all 34 original holds compared with current correction receipts. Shared exact text cross-referenced. Relevant preserved official extracts reviewed; no fresh public retrieval in this checkpoint. No source/draft/FAQ edits.",
+  "factualEvidence": [
+    "residual-k-fact-recheck.json",
+    "residual-k-official-fetches.json",
+    "residual-n-official-fetches.json"
+  ],
+  "validation": {
+    "packetCount": 8,
+    "rendererFileCount": 5,
+    "currentDraftCount": 34,
+    "sourceEntryCount": 34,
+    "siblingCount": 34,
+    "renderedBodyCount": 34,
+    "exactQuoteCount": 204,
+    "distinctPerRouteQuoteCount": 6,
+    "repairDraftBeforeAfterCount": 34,
+    "repairSourceBeforeAfterCount": 26,
+    "repairBreakdown": {
+      "k": {
+        "drafts": 21,
+        "sources": 17
+      },
+      "n": {
+        "drafts": 13,
+        "sources": 9
+      }
+    },
+    "faqMutationCount": 0,
+    "historicalFindingsPreserved": true,
+    "errors": []
+  },
+  "limitations": [
+    "Content passes do not establish visual, accessibility, interaction or publication acceptance.",
+    "Assigned neighboring drafts are not a complete topical-family audit.",
+    "Santa Museum holiday notice has no explicit year; the candidate does not assign it to 2026.",
+    "Duval retains the linked 2025 packet as dated evidence, not current shuttle confirmation.",
+    "Kansas Ellis uses an ended 2026 camp as a historical example, not future availability.",
+    "Colorado, Geary and Leavenworth rely on preserved indexed official evidence where direct retrieval failed or timed out.",
+    "Kauffman’s source gives loan periods but no universal return procedure; HorseThief gives no pavilion capacity. Neither omission is filled with an invented rule.",
+    "Operator facts remain bounded by the dated source evidence."
+  ],
+  "reviewFileSha256": "b3e2197265f31584e713e60b6e2d55803fccb3fd3988438988ae5187be57b7fa"
+}

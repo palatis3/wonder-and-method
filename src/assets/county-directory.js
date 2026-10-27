@@ -331,7 +331,8 @@ export async function bindCountyDirectory(root=document,prepared){
   if(stateLinks)stateLinks.hidden=active;
   const stateName=state?stateFilter.selectedOptions[0].textContent:'';
   const selectedPlural=serviceStateInfo.find(item=>item.id===state)?.areaPlural||areaPlural;
-  status.textContent=input.value.trim()?`${count} ${count===1?'area matches':'areas match'} your search${stateName?' in '+stateName:''}.`:stateName?`Showing ${count} ${stateName} ${selectedPlural}.`:`Showing all ${cards.length} ${areaPlural}.`;
+  const countedLabel=(amount,label)=>amount===1?({'counties':'county','service areas':'service area','parishes':'parish','municipios':'municipio','planning regions':'planning region'}[label]||label):label;
+  status.textContent=!input.value.trim()&&areaPlural==='district guide'?'Browse the Washington, DC guide below.':input.value.trim()?`${count} ${count===1?'area matches':'areas match'} your search${stateName?' in '+stateName:''}.`:stateName?`Showing ${count} ${stateName} ${countedLabel(count,selectedPlural)}.`:`Showing all ${cards.length} ${countedLabel(cards.length,areaPlural)}.`;
  };
  input.addEventListener('input',update);stateFilter?.addEventListener('change',update);
  clear.addEventListener('click',()=>{input.value='';if(stateFilter)stateFilter.value='';update();input.focus();});

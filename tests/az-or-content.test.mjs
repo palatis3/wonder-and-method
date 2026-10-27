@@ -5,6 +5,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
 import faqs from '../src/service-faqs.json' with {type:'json'};
+import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
+const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/az-or-approved-paths.json' with {type:'json'};
 import preservation from './fixtures/az-or-preservation.json' with {type:'json'};
 import decisions from '../operations/az-or-expansion-20261026/county-decisions.json' with {type:'json'};
@@ -23,9 +25,9 @@ test('Arizona/Oregon preserve all 1935 prior service records and FAQs with exact
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedAzOrCopyEdits(byPath.get(path))),hash,path);
  for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
- assert.equal(Object.keys(faqs).length,208);
+ assert.equal(Object.keys(historicalFaqs).length,208);
  assert.equal(Object.keys(preservation.newFaqs).length,2);
- assert.equal(Object.keys(preservation.newFaqs).reduce((n,path)=>n+faqs[path].length,0),2);
+ assert.equal(Object.keys(preservation.newFaqs).reduce((n,path)=>n+historicalFaqs[path].length,0),2);
  assert.deepEqual(['arizona','oregon'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[15,33]);
 });
 
@@ -52,3 +54,4 @@ test('every new brief has useful scope fields, valid directory links and truthfu
   assert.equal(schema.find(x=>x['@type']==='Organization').location.address.addressLocality,'Buffalo');
  }
 });
+

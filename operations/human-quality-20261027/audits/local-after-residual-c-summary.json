@@ -1,0 +1,181 @@
+{
+  "batch": "residual-c",
+  "reviewer": "Codex primary",
+  "date": "2026-10-27",
+  "assigned": 100,
+  "reviewed": 100,
+  "status": "complete-content-only",
+  "nextPacket": null,
+  "passContent": 81,
+  "reviseContent": 19,
+  "validatedEvidenceFields": 600,
+  "holds": [
+    {
+      "route": "/areas/missouri/bates-county/",
+      "candidateBodySha256": "05d12e2605039bede926819eff8ddfe2688e405ee16a5925b4a6e48aeac03950",
+      "requiredFixes": [
+        "Remove the redundant exhibit-access FAQ while retaining the existing main-text qualification, private-entrance directions, seasonal offer and owner confirmation of included areas."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/butler-county/",
+      "candidateBodySha256": "9631774c44e8959c2076e74c588a3e5eb75ae81594d9a372e26e240f0e830ccf",
+      "requiredFixes": [
+        "Keep the substantive migration and volume-validation guidance in the FAQ. Remove duplicate inventory/move advice from the first decision and duplicate preservation advice from the database-access decision, retaining clear file labels and access conditions."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/clay-county/",
+      "candidateBodySha256": "fe55cd595054c50299649204614516eaa94f16b49702e3ea669dd77513b476b0",
+      "requiredFixes": [
+        "Name Sailboat Cove explicitly in the third decision and correct the ambiguous source observation, retaining separate Camp Branch and Paradise Pointe offers. See research/clay-marina-access-recheck.json."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/gasconade-county/",
+      "candidateBodySha256": "e9cdba8801f0bb34a8a3200281fe94c74aacc956e83a9d50bd8aa369e67a8ffc",
+      "requiredFixes": [
+        "Consolidate changed-arrival notification responsibility into one substantive explanation. Remove the duplicate FAQ and trim the limits to actual scope/confirmation boundaries while retaining the Stone Barn start and vehicle requirement."
+      ],
+      "caps": [
+        {
+          "id": "majorBurden",
+          "maximum": 69,
+          "evidence": [
+            "Third decision: Editing a marketing page alone should not be treated as notice to everyone already booked.",
+            "Limits: This proposal does not assume public-page edits update existing emails or send notifications.",
+            "FAQ: the marketing page alone should not be treated as notice to every booked visitor."
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/areas/missouri/greene-county/",
+      "candidateBodySha256": "1b7dd978ebd5a9cfaa7acaab702b0a8c5870f6e7ad752eb8406b22ee51a59fdd",
+      "requiredFixes": [
+        "Replace unfinished notes with the supported school/general-group notice comparison and clear separation of notice from reply timing. Explain the observed school-page/form mismatch honestly without promising a reconciled deadline. Retain school supervision and separately arranged lunch space. Replace generic source observations with precise dated findings in research/greene-museum-timing-recheck.json."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/harrison-county/",
+      "candidateBodySha256": "1c46efe1ec9c928ff38a28a955ef6a3f831ae40d96a5ed86f2baced4cfbd8773",
+      "requiredFixes": [
+        "Use the verified named-unit comparison and a concrete guest-choice example from research/harrison-hickory-lodging-recheck.json. Remove unfinished capacity/consolidation instructions. Preserve separate cabin-site address, shared-use limits and staff confirmation. Replace generic source observations with precise checked facts."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/hickory-county/",
+      "candidateBodySha256": "8b15df513cf7069dcafc3c163830c316d5ecf971575e6a707adbc9a70c15105c",
+      "requiredFixes": [
+        "Use verified Cabin11 and ordinary/weekend/holiday distinctions from research/harrison-hickory-lodging-recheck.json, preserving separately reserved slips and check-in adjustments. Remove unfinished publication/consolidation notes and update source observations. Do not invent cabin capacities or availability."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/howell-county/",
+      "candidateBodySha256": "9ca731e595fa4b3945cbee762684e012d37014e82d8536fd0f832e3186a36d4e",
+      "requiredFixes": [
+        "Remove the internal consolidation instruction and demonstrate a bounded room/use comparison using verified facility facts or an explicitly fictional event request. Do not invent combined capacities or approvals."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/jasper-county/",
+      "candidateBodySha256": "b1233b4026c8f02dfd1b8659fd6cf800afe11f40f17f92ce75ed10886eeca06b",
+      "requiredFixes": [
+        "Resolve the unfinished timing instruction with checked source details for drop-off and cut instructions, or a clearly fictional timeline that demonstrates the website design without asserting operator times. Keep pickup contingent on the ready call."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/jefferson-county/",
+      "candidateBodySha256": "2e866655aaa47266d7a2a38ad833600f5c06c8f2ce5cf66f0bd5c0d1f9f7ddd5",
+      "requiredFixes": [
+        "Use checked official program facts to name the creek meeting point and at least one relevant program/day distinction. Replace unfinished obtain-directions wording; retain staff confirmation and conditional indoor alternative."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/lewis-county/",
+      "candidateBodySha256": "f80fc9abc2a47f2d2da50d1b131b5a871ad7c613b54496f3b77e4bd272a47eb1",
+      "requiredFixes": [
+        "Remove the internal consolidation instruction from limits. Retain the cart-specific gear-moving example and concise staff/availability boundary."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/lincoln-county/",
+      "candidateBodySha256": "84fed07aec39f0c9a9e5c8d2a7a9cce62f89b489e9ba5936eb5718460b020012",
+      "requiredFixes": [
+        "Check and name the published platform tent removal period or demonstrate an explicitly fictional before/after-season inquiry. Keep current status confirmation and do not invent inventory or group eligibility."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/livingston-county/",
+      "candidateBodySha256": "12352aa07ee3cf121a300153822bb907db84634f5eb8b54120ecbc1254ce9b5a",
+      "requiredFixes": [
+        "Resolve the exact child-age/in-person-signature rule from the official source and rewrite the unfinished publication sentence. Preserve category-specific checklists and staff authority; do not collect identity documents."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/marion-county/",
+      "candidateBodySha256": "88b53bf71daa44d1db254a8e430088bc1ccc71e32b190983633650882c7087a8",
+      "requiredFixes": [
+        "Check and name the two ticket-purchase/start locations and demonstrate the itinerary distinction with verified included buildings. Keep access-specific details and guided extras separate; do not invent coverage."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/miller-county/",
+      "candidateBodySha256": "e8f636d1f7aa451d4cc7b30143ea7f858923cbf601a199c177600881bb126f81",
+      "requiredFixes": [
+        "Recheck official current experience pages and align the named options, age/party limits and advance arrangement requirements with the actual sources. Replace unfinished publication language with a demonstrated comparison; retain staff confirmation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/new-hampshire/grafton-county/",
+      "candidateBodySha256": "09f46cc95a9d71d03707d0fd7aa98bff6ea41fab203e269888abd0620bb458c4",
+      "requiredFixes": [
+        "Keep the studio commitment and detailed section-link guidance in the FAQ; remove the repeated migration explanation from decision three so it focuses on checking current materials and preparing consultation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/new-hampshire/hillsborough-county/",
+      "candidateBodySha256": "6f8f2b655e07624f60d8b6679033d579b6210bce6744d97ce4bd4e6301921b4f",
+      "requiredFixes": [
+        "Retain the separate-page recommendation and studio proposal wording in the FAQ; trim that same page-count advice from decision three while retaining the existing quote route and unresolved-choice option."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/new-hampshire/strafford-county/",
+      "candidateBodySha256": "e203c4eadb2b405e107291ac348f6703fbdf7dda30c2ad4abbbf5e37f79131f6",
+      "requiredFixes": [
+        "Keep photography permissions, staged-image labeling, text fallback and studio delivery commitment in the FAQ. Remove their duplicate explanation from decision three, retaining the return-readiness and contact requirements."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/new-jersey/monmouth-county/",
+      "candidateBodySha256": "faef25e07d4a0c4904c773219143c9b5f822b10823e6775d2ea37d9a4d646788",
+      "requiredFixes": [
+        "Retain the directory/attendance explanation in the decision and concise source bridge; make coverage describe the county audience without repeating the design lesson. Keep printed-link/QR migration details and scoped studio commitment in the FAQ, trimming that explanation from decision three. Preserve exact monthly-care limits."
+      ],
+      "caps": []
+    }
+  ],
+  "limits": [
+    "Exact complete candidate reads; not independent.",
+    "Assigned neighbor compared; selected topical comparisons noted, comprehensive family audit pending.",
+    "Visuals/accessibility/final null; no publication acceptance."
+  ]
+}

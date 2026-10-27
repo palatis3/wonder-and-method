@@ -15,13 +15,22 @@ function publicSafe(name,text){
  assert.doesNotMatch(text,/terrance[\s_-]*ciszek|\bciszek\b|linkedin\.com\/in\/terrance/i,name+' private founder identity');
  // Dated source-document paths are citations, not private numerical ratings.
  const withoutUrlDates=text.replace(/https?:\/\/[^\s"'<>]+/g,url=>url.replace(/\/\d{4}\/(?:0[1-9]|1[0-2])(?=\/)/g,'/SOURCE-DATE/'));
- const matches=[...withoutUrlDates.matchAll(privateMechanics)].map(match=>match[0]);assert.deepEqual(matches,[],name);
+ // This complete, unit-labelled rack-size comparison expresses length/height,
+ // not a rating. Preserve detection in every other part of the citation.
+ const withoutRackDimensions=withoutUrlDates.replace(/\bTop Rack maximum \d+ feet length\/\d+ feet height, Middle \d+\/\d+ and Bottom \d+\/\d+\b/g,'rack dimensions');
+ const matches=[...withoutRackDimensions.matchAll(privateMechanics)].map(match=>match[0]);assert.deepEqual(matches,[],name);
 }
 async function textFiles(folder){const result=[];for(const entry of await readdir(folder,{withFileTypes:true})){const path=join(folder,entry.name);if(entry.isDirectory())result.push(...await textFiles(path));else if(['.html','.json','.txt','.csv','.js','.mjs'].includes(extname(path)))result.push(path);}return result;}
 
 test('private-score detection permits dated source URLs while retaining rating and metadata checks',()=>{
  publicSafe('dated citation','<a href="https://example.com/uploads/2025/10/application.pdf">Application</a>');
  for(const text of ['8/10','87 out of 100','2025/10','{"score":8}','weightedScoreOutOf100','https://example.com/uploads/2025/10/weightedScoreOutOf100.pdf','<a href="https://example.com/uploads/2025/10/application.pdf">8/10</a>'])assert.throws(()=>publicSafe('private scoring',text),assert.AssertionError);
+});
+
+test('private-score detection permits unit-labelled rack dimensions but still rejects adjacent scores',()=>{
+ const dimensions='Top Rack maximum 21 feet length/8 feet height, Middle 26/8 and Bottom 32/10';
+ publicSafe('rack dimensions',dimensions);
+ for(const text of ['32/10','Bottom 32/10',`${dimensions}; score 8/10`,`${dimensions}; 87 out of 100`,`${dimensions}; {"score":8}`])assert.throws(()=>publicSafe('private scoring',text),assert.AssertionError);
 });
 
 test('public review exposes all 22 useful area names and descriptions through a strict allowlist',()=>{

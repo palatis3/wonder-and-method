@@ -1,0 +1,2830 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/kansas/ellis-county/",
+    "/areas/kansas/finney-county/",
+    "/areas/kansas/geary-county/",
+    "/areas/kansas/hamilton-county/",
+    "/areas/kansas/harper-county/",
+    "/areas/kansas/harvey-county/",
+    "/areas/kansas/hodgeman-county/",
+    "/areas/kansas/johnson-county/",
+    "/areas/kansas/leavenworth-county/",
+    "/areas/kansas/neosho-county/",
+    "/areas/kansas/rawlins-county/",
+    "/areas/kansas/thomas-county/",
+    "/areas/kansas/trego-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-n.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/kansas/ellis-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate camp accommodation from an early-arrival night.",
+        "intro": "A residential program’s included meals, accommodation and transport apply to a particular interval. Show that interval before describing an optional earlier arrival so families can compare travel plans accurately.",
+        "customerQuestion": "Does our proposed arrival fall inside the program or need another arrangement?",
+        "decisions": [
+          {
+            "label": "Keep program, location and dates together",
+            "body": "Identify the selected session and year before giving travel guidance. Sternberg Museum’s Kansas lab programs are in Hays; their instructions should not be mixed with another state’s program. The reviewed 2026 summer sessions have ended, so present them as past material rather than an open booking opportunity."
+          },
+          {
+            "label": "Explain the separately charged night",
+            "body": "The Kansas guidance describes an optional Saturday arrival with staff pickup and a dormitory night charged separately. Put the actual option beside the standard camp-period inclusions. Accommodation during camp does not establish that the night before is included, and pre- or post-camp travel costs need their own explanation."
+          },
+          {
+            "label": "Confirm arrival through registration",
+            "body": "Name the person or approved registration route that accepts the arrangement and handles changes. A suggested travel plan remains unconfirmed until the provider agrees. Keep final travel details and participant records within that established process instead of collecting them in a general website inquiry."
+          }
+        ],
+        "ownerInputs": [
+          "Approved program roster, dates and interval-specific inclusions.",
+          "Current early-arrival option, charge and responsibility.",
+          "Registration route and process for confirming arrival changes."
+        ],
+        "sourceBridge": "Sternberg Museum’s reviewed high-school lab-program material separates included camp services from pre- and post-camp costs and describes an extra early-arrival arrangement. It illustrates a useful boundary for residential-program pages.",
+        "limits": "The example does not invite booking an ended session or promise the same option next year. Providers approve current dates and arrival terms. Registration records, payments and participant documents require separate scope.",
+        "route": "/areas/kansas/ellis-county/",
+        "inputHash": "f687a1b2d1672414f3e18cf4b8873743f540776018bdf024061a4af7cab5bad7"
+      },
+      "after": {
+        "heading": "Separate camp accommodation from an early-arrival night.",
+        "intro": "A residential program’s included meals, accommodation and transport apply to a particular interval. Show that interval before describing an optional earlier arrival so families can compare travel plans accurately.",
+        "customerQuestion": "Does our proposed arrival fall inside the program or need another arrangement?",
+        "decisions": [
+          {
+            "label": "Keep program, location and dates together",
+            "body": "Sternberg Museum’s program page, checked October 27, 2026, lists Museum Academy Kansas Session 1 in Hays from June 14–26, 2026. Its included meals, accommodation and transport apply during that camp interval. This session has ended: use it as a dated planning example, not an invitation to book or evidence of 2027 dates."
+          },
+          {
+            "label": "Explain the separately charged night",
+            "body": "For that 2026 session, the recommended Saturday-night arrival would have been June 13, before the June 14 start. The Kansas guidance describes staff airport pickup, an FHSU dormitory night and transport to the museum, with a separate $50 nightly charge for dorm use and pre-camp transport on the participant’s CampDoc account. Camp accommodation therefore does not make that earlier night free."
+          },
+          {
+            "label": "Confirm arrival through registration",
+            "body": "Name the person or approved registration route that accepts the arrangement and handles changes. A suggested travel plan remains unconfirmed until the provider agrees. Keep final travel details and participant records within that established process instead of collecting them in a general website inquiry."
+          }
+        ],
+        "ownerInputs": [
+          "Approved program roster, dates and interval-specific inclusions.",
+          "Current early-arrival option, charge and responsibility.",
+          "Registration route and process for confirming arrival changes."
+        ],
+        "sourceBridge": "Sternberg Museum’s reviewed high-school lab-program material separates included camp services from pre- and post-camp costs and describes an extra early-arrival arrangement. It illustrates a useful boundary for residential-program pages.",
+        "limits": "The example does not invite booking an ended session or promise the same option next year. Providers approve current dates and arrival terms. Registration records, payments and participant documents require separate scope.",
+        "route": "/areas/kansas/ellis-county/",
+        "inputHash": "f687a1b2d1672414f3e18cf4b8873743f540776018bdf024061a4af7cab5bad7"
+      },
+      "beforeSha256": "ac33de4ad178062d5c6a3b4ca6e3b92dd196e07533bccf6170a4548519569756",
+      "afterSha256": "68301a51964577f360a0c447bb2e4775e7c70d3c8314da7d3fd394cd5a320ff0",
+      "requiredFixes": [
+        "Verify and include one named 2026 Kansas session’s actual covered start/end interval beside the optional Saturday arrival and separately charged dormitory/pickup arrangement. Demonstrate the arrival comparison while retaining historical-session scope and provider approval; do not imply 2027 availability."
+      ]
+    },
+    {
+      "route": "/areas/kansas/finney-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Match a zoo recommendation to how guests will visit.",
+        "intro": "A walking visit and a drive-through visit can have different entry arrangements. A guest-information page should preserve that choice and direct visitors to current operator guidance before they leave.",
+        "customerQuestion": "Which entrance and operating window apply to the outing I want?",
+        "decisions": [
+          {
+            "label": "Separate walking from driving",
+            "body": "Lee Richardson Zoo publishes free pedestrian admission and a separate drive-through pass, with vehicle operating windows that differ from overall zoo hours. Keep the relevant entrance and current hours beside each mode. A guest planning a late walk should not receive the vehicle cutoff as though it were the universal closing time."
+          },
+          {
+            "label": "Identify optional attractions",
+            "body": "Seasonal attractions and rentals are operated by Friends of Lee Richardson Zoo and have their own availability contact. Explain which extras the business recommends and link to that operator. The zoo being open does not establish that a train ride or another seasonal offering is operating."
+          },
+          {
+            "label": "Keep guest arrangements distinct",
+            "body": "Connect the outing advice to the accommodation business’s own arrival and support information without implying a combined booking. A family asking about a seasonal rental should reach its operator, while hotel arrival questions remain with the lodging business. Assign someone to review the third-party links and descriptions."
+          }
+        ],
+        "ownerInputs": [
+          "Approved recommendations and official entrance sources.",
+          "Seasonal attraction operators and availability contacts.",
+          "Guest arrival instructions and responsibility for link updates."
+        ],
+        "sourceBridge": "Lee Richardson Zoo’s hours and amenities information separates pedestrian and vehicle visits from Friends-operated extras. That makes visit-mode guidance useful for a lodging business recommending a nearby outing.",
+        "limits": "A room reservation does not confirm zoo entry or an attraction’s availability. Operators provide current access information. One directions correction may be enough; live ticket connections or attraction availability require separately agreed scope.",
+        "route": "/areas/kansas/finney-county/",
+        "inputHash": "5323021cc5f646eb95c315f3868a1d3e6408dae965e68836dc958e3e4d5629f2"
+      },
+      "after": {
+        "heading": "Match a zoo recommendation to how guests will visit.",
+        "intro": "A walking visit and a drive-through visit can have different entry arrangements. A guest-information page should preserve that choice and direct visitors to current operator guidance before they leave.",
+        "customerQuestion": "Which entrance and operating window apply to the outing I want?",
+        "decisions": [
+          {
+            "label": "Separate walking from driving",
+            "body": "Lee Richardson Zoo’s pages, checked October 27, 2026, give free walking entry 8 a.m.–5 p.m. after Labor Day through March 31. Drive-through entry instead ends at 4 p.m.; it starts at 8 a.m. through October 31 and 10 a.m. November–March. The vehicle entrance is east of the pedestrian entrance on 4th Street. A fictional October 4:30 p.m. arrival is after the vehicle window but before pedestrian closing; check weather and event closures before travelling."
+          },
+          {
+            "label": "Identify optional attractions",
+            "body": "Seasonal attractions and rentals are operated by Friends of Lee Richardson Zoo and have their own availability contact. Explain which extras the business recommends and link to that operator. The zoo being open does not establish that a train ride or another seasonal offering is operating."
+          },
+          {
+            "label": "Keep guest arrangements distinct",
+            "body": "Connect the outing advice to the accommodation business’s own arrival and support information without implying a combined booking. A family asking about a seasonal rental should reach its operator, while hotel arrival questions remain with the lodging business. Assign someone to review the third-party links and descriptions."
+          }
+        ],
+        "ownerInputs": [
+          "Approved recommendations and official entrance sources.",
+          "Seasonal attraction operators and availability contacts.",
+          "Guest arrival instructions and responsibility for link updates."
+        ],
+        "sourceBridge": "Lee Richardson Zoo’s hours and amenities information separates pedestrian and vehicle visits from Friends-operated extras. That makes visit-mode guidance useful for a lodging business recommending a nearby outing.",
+        "limits": "A room reservation does not confirm zoo entry or an attraction’s availability. Operators provide current access information. One directions correction may be enough; live ticket connections or attraction availability require separately agreed scope.",
+        "route": "/areas/kansas/finney-county/",
+        "inputHash": "5323021cc5f646eb95c315f3868a1d3e6408dae965e68836dc958e3e4d5629f2"
+      },
+      "beforeSha256": "921acb5849c4c29dd64240ac301c91fecf55258dba3ed2a1586cea742c60c56b",
+      "afterSha256": "d5836ec3939631f4d5db0409cf3df1593e0dffd3329d5577c8c321467a06006b",
+      "requiredFixes": [
+        "Verify and include the dated pedestrian and vehicle entrance instructions and operating windows, then demonstrate one late-day walking-versus-driving comparison. Preserve seasonal scope, separate Friends-operated extras and the distinction from lodging confirmation."
+      ]
+    },
+    {
+      "route": "/areas/kansas/geary-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Choose the teaching setting before the activity.",
+        "intro": "A nature topic may be offered at a center, through outreach or as borrowed materials. Keep the delivery method and activity-specific limits visible so educators can ask about a suitable arrangement.",
+        "customerQuestion": "Does this activity fit our setting, group and method of participation?",
+        "decisions": [
+          {
+            "label": "Distinguish the delivery choices",
+            "body": "Milford Nature Center says many, but not all, programs can travel to another facility. Show center visits and actual outreach options separately. The existence of a topic in the program list should not imply that it can be delivered at a school or through every available format."
+          },
+          {
+            "label": "Attach limits to the named activity",
+            "body": "Keep each program’s age guidance, duration, season and any group maximum beside its description. Ask for the age range, group size, topic and proposed setting so staff can assess fit. Do not apply one activity’s limit to the whole catalog or substitute a general group description for its specific conditions."
+          },
+          {
+            "label": "Explain the materials-loan route",
+            "body": "Discovery Boxes are borrowed resources that educators collect and return at the nature center; they are not shipped. Describe the approved contents, loan terms and collection instructions with their own contact. Borrowing a box should not be represented as booking a staff-led lesson or arranging delivery."
+          }
+        ],
+        "ownerInputs": [
+          "Activity-specific limits and confirmed outreach options.",
+          "Information staff need to assess group and setting.",
+          "Discovery Box terms, collection instructions and contact."
+        ],
+        "sourceBridge": "Milford Nature Center’s program information combines individual activity guidance, limited outreach and a separate Discovery Box offer. These differences make delivery method a useful first choice for educators.",
+        "limits": "Staff confirm program suitability, availability and loan arrangements. A focused edit can improve descriptions; separate preparation pages are useful when the request routes differ. Scheduling or inventory software requires additional agreed scope.",
+        "route": "/areas/kansas/geary-county/",
+        "inputHash": "14c9fec1bf960236b26c704c1a64b78c03aaa60fa241637e8e7179a9ba32fe3b"
+      },
+      "after": {
+        "heading": "Choose the teaching setting before the activity.",
+        "intro": "A nature topic may be offered at a center, through outreach or as borrowed materials. Keep the delivery method and activity-specific limits visible so educators can ask about a suitable arrangement.",
+        "customerQuestion": "Does this activity fit our setting, group and method of participation?",
+        "decisions": [
+          {
+            "label": "Distinguish the delivery choices",
+            "body": "Milford Nature Center says many, but not all, programs can travel to another facility. Show center visits and actual outreach options separately. The existence of a topic in the program list should not imply that it can be delivered at a school or through every available format."
+          },
+          {
+            "label": "Attach limits to the named activity",
+            "body": "Milford’s program page, checked October 27, 2026, lists Sensory Hike as an outdoor forty-five-minute activity for pre-K through second grade, offered spring–fall with a maximum of twenty-five. A fictional first-grade group of thirty in October fits the age and season guidance but exceeds that maximum. Ask staff about an appropriate arrangement instead of quietly accepting the group or assuming the hike can travel to school."
+          },
+          {
+            "label": "Explain the materials-loan route",
+            "body": "Discovery Boxes are borrowed resources that educators collect and return at the nature center; they are not shipped. Describe the approved contents, loan terms and collection instructions with their own contact. Borrowing a box should not be represented as booking a staff-led lesson or arranging delivery."
+          }
+        ],
+        "ownerInputs": [
+          "Activity-specific limits and confirmed outreach options.",
+          "Information staff need to assess group and setting.",
+          "Discovery Box terms, collection instructions and contact."
+        ],
+        "sourceBridge": "Milford Nature Center’s program information combines individual activity guidance, limited outreach and a separate Discovery Box offer. These differences make delivery method a useful first choice for educators.",
+        "limits": "Staff confirm program suitability, availability and loan arrangements. A focused edit can improve descriptions; separate preparation pages are useful when the request routes differ. Scheduling or inventory software requires additional agreed scope.",
+        "route": "/areas/kansas/geary-county/",
+        "inputHash": "14c9fec1bf960236b26c704c1a64b78c03aaa60fa241637e8e7179a9ba32fe3b"
+      },
+      "beforeSha256": "fd6192c97a8faa159e415a6885b89165ab09ebf6d39f6ff8a40aa352aa1f2150",
+      "afterSha256": "3b3224b89d12d70747d0d2d8f42ee05bcd81c1b5404219f950c3e5063bdc5fc6",
+      "requiredFixes": [
+        "Verify and include at least one named Milford activity with its actual age, duration, season, group limit where applicable and confirmed setting/outreach scope. Demonstrate how an illustrative group request is assessed, while keeping Discovery Box collection/return distinct from a staffed lesson."
+      ]
+    },
+    {
+      "route": "/areas/kansas/hamilton-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Match the department and contact period to the request.",
+        "intro": "An equipment dealer’s after-hours number needs context. Help customers identify the right department, understand the applicable support conditions and prepare for staff to confirm availability and charges.",
+        "customerQuestion": "Who handles this equipment question, and what applies outside business hours?",
+        "decisions": [
+          {
+            "label": "Start with the department",
+            "body": "American Implement’s Syracuse page separates parts, service and precision-ag contacts. Label the purpose beside each route so customers do not have to guess from staff roles. A parts question should reach the parts team, while a planned repair inquiry can retain useful equipment and requested-work details."
+          },
+          {
+            "label": "Keep seasonal conditions visible",
+            "body": "Link the maintained after-hours policy beside the relevant contact. It describes seasonal support and different availability conditions outside that period. Do not present a seasonal arrangement as year-round service or describe a listed number as a guaranteed dispatch route."
+          },
+          {
+            "label": "Leave charge decisions with staff",
+            "body": "The policy includes call-out charges, minimum repair time and certain harvest or planting exceptions controlled by branch management. Explain the current approved conditions and who reviews them before work is agreed. An exception requiring judgment should not become an automatic waiver or a promise that the repair is free."
+          }
+        ],
+        "ownerInputs": [
+          "Current department contacts and monitored routes.",
+          "Branch hours, seasonal policy and update owner.",
+          "Approved charge explanations and staff confirmation process."
+        ],
+        "sourceBridge": "American Implement’s Syracuse contacts and after-hours policy connect department choice with seasonal availability and branch-managed conditions. Together they support a contact page that explains what a call can reasonably begin.",
+        "limits": "The branch decides availability, charges and operating arrangements. A contact correction may be sufficient; broader service content can explain routine and seasonal preparation. Dispatch systems, live response guarantees and repair-price calculations need separate scope.",
+        "route": "/areas/kansas/hamilton-county/",
+        "inputHash": "f87aed182ebefd3d8e1df3951b597e7f1282bffb5a147e93a4f98d78ef7214ec"
+      },
+      "after": {
+        "heading": "Match the department and contact period to the request.",
+        "intro": "An equipment dealer’s after-hours number needs context. Help customers identify the right department, understand the applicable support conditions and prepare for staff to confirm availability and charges.",
+        "customerQuestion": "Who handles this equipment question, and what applies outside business hours?",
+        "decisions": [
+          {
+            "label": "Start with the department",
+            "body": "American Implement’s Syracuse page separates parts, service and precision-ag contacts. Label the purpose beside each route so customers do not have to guess from staff roles. A parts question should reach the parts team, while a planned repair inquiry can retain useful equipment and requested-work details."
+          },
+          {
+            "label": "Keep seasonal conditions visible",
+            "body": "American Implement’s policy, checked October 27, 2026, identifies April 1–October 31 as its seasonal after-hours service period. November 1–March 31 support may depend on the individual location’s availability. A fictional November 2 request therefore needs the Syracuse branch’s availability answer rather than an assumption based on October’s support period."
+          },
+          {
+            "label": "Leave charge decisions with staff",
+            "body": "The policy lists travel, a two-hour minimum repair time and a $75 after-hours fee, rising to $125 on holidays. It also describes harvest/planting exceptions whose periods are decided by local management. Ask the branch which charges and exception apply before agreeing work; the published exception is not a blanket promise of free repair or guaranteed dispatch."
+          }
+        ],
+        "ownerInputs": [
+          "Current department contacts and monitored routes.",
+          "Branch hours, seasonal policy and update owner.",
+          "Approved charge explanations and staff confirmation process."
+        ],
+        "sourceBridge": "American Implement’s Syracuse contacts and after-hours policy connect department choice with seasonal availability and branch-managed conditions. Together they support a contact page that explains what a call can reasonably begin.",
+        "limits": "The branch decides availability, charges and operating arrangements. A contact correction may be sufficient; broader service content can explain routine and seasonal preparation. Dispatch systems, live response guarantees and repair-price calculations need separate scope.",
+        "route": "/areas/kansas/hamilton-county/",
+        "inputHash": "f87aed182ebefd3d8e1df3951b597e7f1282bffb5a147e93a4f98d78ef7214ec"
+      },
+      "beforeSha256": "76175aefb3279d189490d715707ce747fd3645b5531e037b101d59c1de7cf028",
+      "afterSha256": "4d9ee80a74740c6062b765d936c568cfa597f10e5bf89f5c8ae95fbb85bf3021",
+      "requiredFixes": [
+        "Verify and include the dated seasonal support period, the actual outside-period distinction and concise relevant call-out/minimum-repair conditions. Demonstrate one clearly illustrative contact-period comparison, retaining branch discretion over harvest/planting exceptions and no dispatch or fee-waiver guarantee."
+      ]
+    },
+    {
+      "route": "/areas/kansas/harper-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate the event area from the overnight campsite.",
+        "intro": "A recreation venue can host a daytime gathering without allowing campers beside it. Help organizers describe the event and overnight needs as distinct arrangements, with the right location and terms for each.",
+        "customerQuestion": "Where can the event happen, and where may attendees stay overnight?",
+        "decisions": [
+          {
+            "label": "Explain the event permission",
+            "body": "The City of Anthony’s lake information requires a stage permit and treats stage use separately from camping. Show the event-space description and permit route together. Permission to hold a gathering should not be described as permission to sleep or connect an RV at the same spot."
+          },
+          {
+            "label": "Direct vehicles to designated camping",
+            "body": "The lake instructions prohibit RVs or hookups around the stage except in designated camping areas. Link those actual areas and approved hookup arrangements beside the overnight question. A convenient space next to the stage should not look like an available campsite merely because it fits the event plan."
+          },
+          {
+            "label": "Attach stay terms to the chosen area",
+            "body": "Different camping areas have different maximum stays, with a required interval away after the limit. Use the operator’s current area-specific terms and an approved site plan. Do not apply one area’s longer allowance to every location; staff need the intended site and duration to review the overnight arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current stage and shelter terms with permit contacts.",
+          "Approved camping map, locations and hookup rules.",
+          "Area-specific duration limits and required departure interval."
+        ],
+        "sourceBridge": "The City of Anthony separates lake stage permission from designated camping and publishes area-specific stay conditions. This creates a useful website distinction between an event footprint and the accommodation needs of its attendees.",
+        "limits": "Staff confirm permissions and camping arrangements. A focused event-page correction may be enough when camping guidance is clear. Permit processing and campsite inventory require separate scope from explaining the actual locations and terms.",
+        "route": "/areas/kansas/harper-county/",
+        "inputHash": "191e074c3d5511c3a60786ddbe7ab8420a69c2a90960e0c099b9c5c4bf501c97"
+      },
+      "after": {
+        "heading": "Separate the event area from the overnight campsite.",
+        "intro": "A recreation venue can host a daytime gathering without allowing campers beside it. Help organizers describe the event and overnight needs as distinct arrangements, with the right location and terms for each.",
+        "customerQuestion": "Where can the event happen, and where may attendees stay overnight?",
+        "decisions": [
+          {
+            "label": "Explain the event permission",
+            "body": "The City of Anthony’s lake information requires a stage permit and treats stage use separately from camping. Show the event-space description and permit route together. Permission to hold a gathering should not be described as permission to sleep or connect an RV at the same spot."
+          },
+          {
+            "label": "Direct vehicles to designated camping",
+            "body": "The lake instructions prohibit RVs or hookups around the stage except in designated camping areas. Link those actual areas and approved hookup arrangements beside the overnight question. A convenient space next to the stage should not look like an available campsite merely because it fits the event plan."
+          },
+          {
+            "label": "Attach stay terms to the chosen area",
+            "body": "Anthony’s lake page, checked October 27, 2026, limits Campsites A, B and D to fourteen consecutive days and Campsite C to twenty-eight, subject to posted or city-authorized terms. At the limit, the camper and all property must leave city campgrounds for at least five days. A fictional twenty-day stay connected with an event exceeds A/B/D’s ordinary limit; ask about C and the actual permit rather than assuming the stage permit allows an RV beside the stage."
+          }
+        ],
+        "ownerInputs": [
+          "Current stage and shelter terms with permit contacts.",
+          "Approved camping map, locations and hookup rules.",
+          "Area-specific duration limits and required departure interval."
+        ],
+        "sourceBridge": "The City of Anthony separates lake stage permission from designated camping and publishes area-specific stay conditions. This creates a useful website distinction between an event footprint and the accommodation needs of its attendees.",
+        "limits": "Staff confirm permissions and camping arrangements. A focused event-page correction may be enough when camping guidance is clear. Permit processing and campsite inventory require separate scope from explaining the actual locations and terms.",
+        "route": "/areas/kansas/harper-county/",
+        "inputHash": "191e074c3d5511c3a60786ddbe7ab8420a69c2a90960e0c099b9c5c4bf501c97"
+      },
+      "beforeSha256": "a5bc02563007f84ba8fa0494f5846dcd78c90d70f787f3946b5b2f0415cd3156",
+      "afterSha256": "9a3d754c3ed4c8686fdef44c58356b69cc84f139115ca0bf4be2aba16489c8e5",
+      "requiredFixes": [
+        "Verify and include the named designated camping areas with their actual dated maximum stays and required departure interval. Use a concise illustrative event/overnight plan to show which area and terms apply while preserving separate stage permits and no adjacent-RV assumption."
+      ]
+    },
+    {
+      "route": "/areas/kansas/harvey-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Give teachers separate routes for visits, kits and trip support.",
+        "intro": "A museum’s educational offer can involve travel, borrowed materials or a later reimbursement request. Start with the intended learning arrangement, then explain the preparation and follow-up that belong to that route.",
+        "customerQuestion": "Are we arranging a visit or borrowing materials, and what happens afterward?",
+        "decisions": [
+          {
+            "label": "Choose the learning format",
+            "body": "Kauffman Museum offers field trips and teaching-kit loans. Let teachers identify their goal and format before asking for dates or travel details. A kit request should reach the materials-loan instructions rather than ask the teacher to supply bus-arrival information for a visit they are not planning."
+          },
+          {
+            "label": "Match the loan period to its use",
+            "body": "The museum gives different loan periods for a classroom and an entire school. Ask which use is intended and place the approved period and return instructions beside it. A school-wide loan should not inherit the classroom-only return period simply because the kit title is the same."
+          },
+          {
+            "label": "Show the reimbursement sequence",
+            "body": "Transportation reimbursement is limited and first-come. Schools reserve it with the visit, then submit the request and supporting expense information after the trip. Keep both stages and the availability condition visible, linking to the official form and review contact. Requesting a visit should not appear to guarantee funding."
+          }
+        ],
+        "ownerInputs": [
+          "Current teaching offers, kit list and availability process.",
+          "Classroom and whole-school loan periods with return instructions.",
+          "Funding terms, official form and accepted supporting records."
+        ],
+        "sourceBridge": "Kauffman Museum’s field-trip information connects teaching-kit loan arrangements with a before-and-after-visit reimbursement process. It supports distinct teacher routes while preserving the practical steps for each.",
+        "limits": "The provider confirms loans, visits and funding decisions through its approved process. A content edit can clarify links and sequence; any record-submission functionality requires an agreed scope and handling route.",
+        "route": "/areas/kansas/harvey-county/",
+        "inputHash": "b41ce8205d8a5c40c6a38804127d3852dc1689bcb57c49ef4e5891ff1a8b17ff"
+      },
+      "after": {
+        "heading": "Give teachers separate routes for visits, kits and trip support.",
+        "intro": "A museum’s educational offer can involve travel, borrowed materials or a later reimbursement request. Start with the intended learning arrangement, then explain the preparation and follow-up that belong to that route.",
+        "customerQuestion": "Are we arranging a visit or borrowing materials, and what happens afterward?",
+        "decisions": [
+          {
+            "label": "Choose the learning format",
+            "body": "Kauffman Museum offers field trips and teaching-kit loans. Let teachers identify their goal and format before asking for dates or travel details. A kit request should reach the materials-loan instructions rather than ask the teacher to supply bus-arrival information for a visit they are not planning."
+          },
+          {
+            "label": "Match the loan period to its use",
+            "body": "Kauffman Museum’s field-trip page, checked October 27, 2026, offers teaching kits free for two weeks per classroom or three weeks per school, first-come-first-served. A whole-school request therefore has a different loan period from one classroom using the same kit. Agree the collection, due date and return method with museum staff; the page gives the periods but does not specify a universal return procedure."
+          },
+          {
+            "label": "Show the reimbursement sequence",
+            "body": "Transportation reimbursement is limited and first-come. Schools reserve it with the visit, then submit the request and supporting expense information after the trip. Keep both stages and the availability condition visible, linking to the official form and review contact. Requesting a visit should not appear to guarantee funding."
+          }
+        ],
+        "ownerInputs": [
+          "Current teaching offers, kit list and availability process.",
+          "Classroom and whole-school loan periods with return instructions.",
+          "Funding terms, official form and accepted supporting records."
+        ],
+        "sourceBridge": "Kauffman Museum’s field-trip information connects teaching-kit loan arrangements with a before-and-after-visit reimbursement process. It supports distinct teacher routes while preserving the practical steps for each.",
+        "limits": "The provider confirms loans, visits and funding decisions through its approved process. A content edit can clarify links and sequence; any record-submission functionality requires an agreed scope and handling route.",
+        "route": "/areas/kansas/harvey-county/",
+        "inputHash": "b41ce8205d8a5c40c6a38804127d3852dc1689bcb57c49ef4e5891ff1a8b17ff"
+      },
+      "beforeSha256": "4ad7f70b84244adfcf0e5d8c5f95c44bcd005d02da35b4ea46b33ce7c9ae13e7",
+      "afterSha256": "35d7865df6a39b51221684c94b7bda3470cdbe90574b6c7abc0101030c88e321",
+      "requiredFixes": [
+        "Verify and show the dated classroom and whole-school kit loan periods with the relevant return arrangement. Preserve the separate field-trip route and before/after reimbursement steps, including limited first-come availability and no funding guarantee."
+      ]
+    },
+    {
+      "route": "/areas/kansas/hodgeman-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Plan the facility, rental period and arriving vehicles separately.",
+        "intro": "An event’s guest count does not describe all its venue needs. Help organizers choose the space, request the full period of use and discuss vehicle permits alongside the actual rental terms.",
+        "customerQuestion": "Which space, dates and arrival arrangements does this event need?",
+        "decisions": [
+          {
+            "label": "Choose the actual facility",
+            "body": "HorseThief Reservoir describes its lodge and open-air pavilion separately. Compare the approved features, capacity and available resources for each. An outdoor pavilion request should not inherit the lodge’s kitchen or furnishings simply because both spaces appear on the same event page."
+          },
+          {
+            "label": "Request the whole rental period",
+            "body": "The lodge page lists daily and weekend arrangements. Ask for setup, event and clearing-out dates using the current terms. A weekend event should not imply that an extra preparation day is included. Staff need the complete requested period before confirming which resources and dates the arrangement covers."
+          },
+          {
+            "label": "Separate people, vehicles and charges",
+            "body": "Vehicle-permit bundles are priced separately from the facility, and the lodge description includes a rental deposit. Keep the vehicle estimate distinct from attendance and explain the approved permit and deposit process. Guest capacity should not become a permit entitlement or automatically determine the bundle an organizer needs."
+          }
+        ],
+        "ownerInputs": [
+          "Current lodge and pavilion descriptions with resource limits.",
+          "Rental periods and approved setup arrangements.",
+          "Permit terms, deposit explanation and staff review process."
+        ],
+        "sourceBridge": "HorseThief Reservoir’s lodge and pavilion information combines distinct facilities, rental periods, a deposit and separate vehicle-permit bundles. Those details make a multi-part event inquiry more useful than one attendance field.",
+        "limits": "The venue confirms the facility, period, resources and charges. Clear comparison and inquiry wording may resolve the initial problem; confirmed-event instructions can follow when needed. Permit sales, payments and live reservations require separate scope.",
+        "route": "/areas/kansas/hodgeman-county/",
+        "inputHash": "e49607def690db4acd246239fd20f1396914ba2b0c74166cdc4bbc9a38654aaa"
+      },
+      "after": {
+        "heading": "Plan the facility, rental period and arriving vehicles separately.",
+        "intro": "An event’s guest count does not describe all its venue needs. Help organizers choose the space, request the full period of use and discuss vehicle permits alongside the actual rental terms.",
+        "customerQuestion": "Which space, dates and arrival arrangements does this event need?",
+        "decisions": [
+          {
+            "label": "Choose the actual facility",
+            "body": "HorseThief’s facility page, checked October 27, 2026, lists the lodge for up to 175 guests with a commercial kitchen, 175 chairs and round/rectangular tables. The open-air pavilion instead lists electricity and an $80 daily rental; it does not publish a pavilion capacity on that page. Ask about the outdoor arrangement rather than carrying the lodge’s capacity or kitchen into it."
+          },
+          {
+            "label": "Request the whole rental period",
+            "body": "The lodge lists a Friday–Sunday weekend package, with Thursday available for an additional charge. A fictional plan using Friday setup, a Saturday event and Sunday cleanup falls within those named package days, subject to staff-confirmed access times. Thursday decorating would need the extra arrangement; the package does not automatically include a preparation day."
+          },
+          {
+            "label": "Separate people, vehicles and charges",
+            "body": "Vehicle-permit bundles are priced separately from the facility, and the lodge description includes a rental deposit. Keep the vehicle estimate distinct from attendance and explain the approved permit and deposit process. Guest capacity should not become a permit entitlement or automatically determine the bundle an organizer needs."
+          }
+        ],
+        "ownerInputs": [
+          "Current lodge and pavilion descriptions with resource limits.",
+          "Rental periods and approved setup arrangements.",
+          "Permit terms, deposit explanation and staff review process."
+        ],
+        "sourceBridge": "HorseThief Reservoir’s lodge and pavilion information combines distinct facilities, rental periods, a deposit and separate vehicle-permit bundles. Those details make a multi-part event inquiry more useful than one attendance field.",
+        "limits": "The venue confirms the facility, period, resources and charges. Clear comparison and inquiry wording may resolve the initial problem; confirmed-event instructions can follow when needed. Permit sales, payments and live reservations require separate scope.",
+        "route": "/areas/kansas/hodgeman-county/",
+        "inputHash": "e49607def690db4acd246239fd20f1396914ba2b0c74166cdc4bbc9a38654aaa"
+      },
+      "beforeSha256": "a6544cbeb9c6951c52444e427b898dbfe32faf2cff0f4683435c7ad82d0b45d5",
+      "afterSha256": "e5db23a4754cf7e42173a1863e0c887bc43fd422bfc5a26626266bd5004aaac3",
+      "requiredFixes": [
+        "Verify and include a concise dated lodge-versus-pavilion comparison using actual supported capacity/resources and rental-period terms. Demonstrate how setup/event/cleanup fit one offered period, keeping vehicle permits and deposit separate and avoiding assumed extra preparation days."
+      ]
+    },
+    {
+      "route": "/areas/kansas/johnson-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Compare studio access with the cost of finishing the work.",
+        "intro": "A pottery membership’s time allowance does not describe every production cost. Put access, storage and firing terms together, then explain the experience and application steps needed to use the studio.",
+        "customerQuestion": "What does this membership include, and what remains separately charged or reviewed?",
+        "decisions": [
+          {
+            "label": "Compare the access allowances",
+            "body": "House of Clay describes membership levels with different studio-access allowances. Show each tier’s time, storage and equipment terms beside the actual open-hour boundaries. A higher allowance should not imply round-the-clock access or erase conditions that apply to independent studio use."
+          },
+          {
+            "label": "Keep firing charges adjacent",
+            "body": "The membership page includes bisque firing and prices glaze firing by cubic inch. Explain those stages in the same comparison as the membership price. A maker choosing more studio time should still see that finishing work can involve a separate volume-based charge; the membership is not an all-inclusive production budget."
+          },
+          {
+            "label": "Explain readiness and later opportunities",
+            "body": "The studio asks for basic pottery experience or an introductory class. Give beginners and experienced makers appropriate starting routes. Higher-tier gallery sales are described as an opportunity, and the FAQ says members can apply; distinguish the chance to apply from approval to sell."
+          }
+        ],
+        "ownerInputs": [
+          "Current tiers, storage terms and open-hour limits.",
+          "Included firing and approved separate charge basis.",
+          "Experience expectations, classes and application-review steps."
+        ],
+        "sourceBridge": "House of Clay in Overland Park combines access tiers, included bisque firing, volume-priced glaze firing and experience requirements. Its gallery application language adds a second decision that should remain distinct from membership selection.",
+        "limits": "The studio confirms membership and gallery applications under its actual terms. A focused comparison may be enough when class pages work. Billing, time tracking and kiln-charge calculators require separate scope.",
+        "route": "/areas/kansas/johnson-county/",
+        "inputHash": "a5ed1f1786a2ecdfdeb69031372b54b4f053dd1edd1b250c75654115ca3f8d98"
+      },
+      "after": {
+        "heading": "Compare studio access with the cost of finishing the work.",
+        "intro": "A pottery membership’s time allowance does not describe every production cost. Put access, storage and firing terms together, then explain the experience and application steps needed to use the studio.",
+        "customerQuestion": "What does this membership include, and what remains separately charged or reviewed?",
+        "decisions": [
+          {
+            "label": "Compare the access allowances",
+            "body": "House of Clay’s pages, checked October 27, 2026, list Potter’s Apprentice at $75/month for ten studio hours and an assigned cubby. Pottery Pro is $175/month, with access during opening hours, a four-foot shelf and wheel reservations. Ordinary hours are Monday–Saturday 10 a.m.–8 p.m. and Sunday noon–5 p.m.; classes or events may differ. Pro therefore does not mean round-the-clock access."
+          },
+          {
+            "label": "Keep firing charges adjacent",
+            "body": "Both tiers include bisque firing, while glaze firing is listed separately at five cents per cubic inch. Keep that charge beside the membership comparison so an applicant can distinguish studio time from the cost of finishing the work. Staff confirms how the actual pieces are measured and charged; more access does not create an all-inclusive production budget."
+          },
+          {
+            "label": "Explain readiness and later opportunities",
+            "body": "The studio asks for basic pottery experience or an introductory class. Give beginners and experienced makers appropriate starting routes. Higher-tier gallery sales are described as an opportunity, and the FAQ says members can apply; distinguish the chance to apply from approval to sell."
+          }
+        ],
+        "ownerInputs": [
+          "Current tiers, storage terms and open-hour limits.",
+          "Included firing and approved separate charge basis.",
+          "Experience expectations, classes and application-review steps."
+        ],
+        "sourceBridge": "House of Clay in Overland Park combines access tiers, included bisque firing, volume-priced glaze firing and experience requirements. Its gallery application language adds a second decision that should remain distinct from membership selection.",
+        "limits": "The studio confirms membership and gallery applications under its actual terms. A focused comparison may be enough when class pages work. Billing, time tracking and kiln-charge calculators require separate scope.",
+        "route": "/areas/kansas/johnson-county/",
+        "inputHash": "a5ed1f1786a2ecdfdeb69031372b54b4f053dd1edd1b250c75654115ca3f8d98"
+      },
+      "beforeSha256": "d2c3c1cc1315b1af9ac1e275e3e61f08c54ca792ceeb557a472840e12a2ba65d",
+      "afterSha256": "88fd5534754971b34ee826dc9812fc27227a8cb6cdd3a3f9a09e8f7ffc920cf6",
+      "requiredFixes": [
+        "Verify and include at least two named membership tiers with their actual dated access allowances, relevant storage terms and open-hour boundaries beside included bisque and separately charged glaze firing. Preserve experience requirements and application-versus-gallery-approval distinctions."
+      ]
+    },
+    {
+      "route": "/areas/kansas/leavenworth-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate an outing arrangement from official entry approval.",
+        "intro": "A business can confirm an itinerary without controlling access to the destination. Explain what its confirmation covers, then direct visitors to the maintained official process at the right stage of preparation.",
+        "customerQuestion": "What has been arranged, and what official access step remains?",
+        "decisions": [
+          {
+            "label": "Name the business’s own agreement",
+            "body": "Describe the actual reservation or planned activity before discussing installation entry. The Frontier Army Museum is within Fort Leavenworth, and access questions go to the Visitor Control Center. A confirmed outing should not be labeled an entry pass or imply that the installation has approved the guest."
+          },
+          {
+            "label": "Link the applicable registration timing",
+            "body": "The Army limits how far ahead online registration can begin. A booking made months in advance can link official guidance without claiming registration is already available. Assign someone to review the source links, while keeping exact gate schedules and eligibility decisions with the official authority."
+          },
+          {
+            "label": "Distinguish visitors from commercial drivers",
+            "body": "The visitor page directs most visitors toward online registration or the Visitor Control Center, while commercial vehicle drivers must register at the center. Use the appropriate official route for each actual guest or supplier situation. Do not duplicate the application or add identity-document uploads to a general business inquiry."
+          }
+        ],
+        "ownerInputs": [
+          "Actual booking terms and approved guest instructions.",
+          "Current official links and source-review responsibility.",
+          "Visitor and commercial-supplier situations needing separate guidance."
+        ],
+        "sourceBridge": "The Army’s Fort Leavenworth visitor information and the National Park Service museum listing establish a separate installation-access process. That supports a clear handoff from a local business’s itinerary to official preparation.",
+        "limits": "The installation decides access. The website project does not judge eligibility, collect pass-application records or promise entry. A focused guest-information edit can explain the boundary; multiple visitor types may need separate preparation content.",
+        "route": "/areas/kansas/leavenworth-county/",
+        "inputHash": "57ca10bc4307e08541798d2b828cc6279563d1106c49e093f76ac11d4518c91a"
+      },
+      "after": {
+        "heading": "Separate an outing arrangement from official entry approval.",
+        "intro": "A business can confirm an itinerary without controlling access to the destination. Explain what its confirmation covers, then direct visitors to the maintained official process at the right stage of preparation.",
+        "customerQuestion": "What has been arranged, and what official access step remains?",
+        "decisions": [
+          {
+            "label": "Name the business’s own agreement",
+            "body": "Describe the actual reservation or planned activity before discussing installation entry. The Frontier Army Museum is within Fort Leavenworth, and access questions go to the Visitor Control Center. A confirmed outing should not be labeled an entry pass or imply that the installation has approved the guest."
+          },
+          {
+            "label": "Link the applicable registration timing",
+            "body": "The Army’s visitor page, checked October 27, 2026, says online registration cannot begin more than ten days before a visit. For a fictional outing twenty days away, the business can share the official preparation link now, but that registration window has not opened. A visit five days away is within the stated timing window; this says nothing about a person’s eligibility or whether entry will be approved."
+          },
+          {
+            "label": "Distinguish visitors from commercial drivers",
+            "body": "The visitor page directs most visitors toward online registration or the Visitor Control Center, while commercial vehicle drivers must register at the center. Use the appropriate official route for each actual guest or supplier situation. Do not duplicate the application or add identity-document uploads to a general business inquiry."
+          }
+        ],
+        "ownerInputs": [
+          "Actual booking terms and approved guest instructions.",
+          "Current official links and source-review responsibility.",
+          "Visitor and commercial-supplier situations needing separate guidance."
+        ],
+        "sourceBridge": "The Army’s Fort Leavenworth visitor information and the National Park Service museum listing establish a separate installation-access process. That supports a clear handoff from a local business’s itinerary to official preparation.",
+        "limits": "The installation decides access. The website project does not judge eligibility, collect pass-application records or promise entry. A focused guest-information edit can explain the boundary; multiple visitor types may need separate preparation content.",
+        "route": "/areas/kansas/leavenworth-county/",
+        "inputHash": "57ca10bc4307e08541798d2b828cc6279563d1106c49e093f76ac11d4518c91a"
+      },
+      "beforeSha256": "bf71aeaf6ebef989708975c364d3dde11e0fe9b982db9200d4068c74f4de0487",
+      "afterSha256": "34d034bd98bd827797d00b1e26f9fdc3acdf1a547b861f6c26b2ab222e541103",
+      "requiredFixes": [
+        "Verify and state the dated official online advance-registration window, then show a clearly illustrative far-future versus eligible-timing comparison. Keep the official link and review date, preserve commercial-driver registration differences and leave eligibility and entry approval entirely with the installation."
+      ]
+    },
+    {
+      "route": "/areas/kansas/neosho-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep each teaching loan’s period and costs together.",
+        "intro": "An artifact trunk and a book kit can support the same unit while having different loan terms. Let teachers choose the exact resource and planned dates before staff confirm availability or extra services.",
+        "customerQuestion": "Which resource fits our teaching period, and which costs remain?",
+        "decisions": [
+          {
+            "label": "Compare the actual resource types",
+            "body": "Martin and Osa Johnson Safari Museum describes artifact travel trunks for up to two weeks and book kits for up to six weeks. A four-week unit should prompt a question about an artifact trunk rather than inherit the book-kit term. Customized literature-themed artifact kits need their own staff discussion instead of an assumed ordinary loan period."
+          },
+          {
+            "label": "Attach the correct charges and shipping",
+            "body": "Artifact trunks have a loan charge plus shipping, with a member exception to the loan charge. Book kits have a separate kit charge and round-trip shipping. Keep the membership wording with the offer it affects; waived loan charges should not make shipping disappear or automatically change another resource’s terms."
+          },
+          {
+            "label": "Arrange return and any presenter separately",
+            "body": "Ask for the audience, intended dates and responsible borrower, then explain approved dispatch and return instructions. Staff presentations are a separate arrangement. If a kit is temporarily unavailable, show an approved note and discuss alternatives rather than silently substitute one with different terms or imply a speaker has been scheduled."
+          }
+        ],
+        "ownerInputs": [
+          "Current resource inventory, loan periods and custom-kit process.",
+          "Charge components, membership wording and shipping terms.",
+          "Borrower responsibilities, return instructions and presenter contact."
+        ],
+        "sourceBridge": "The Safari Museum’s learning resources distinguish artifact trunks, book kits, custom resources and staff programs. Their different periods and charge wording make an offer-by-offer comparison useful.",
+        "limits": "The museum confirms the resource, actual loan period and availability. An inquiry is not an automatic hold. Inventory tracking, dispatch automation and payments require separate scope from clear resource descriptions and preparation instructions.",
+        "route": "/areas/kansas/neosho-county/",
+        "inputHash": "556213fa30f808e1dbf71b1c71285bb0988b6641704b90d74434932e68f79333"
+      },
+      "after": {
+        "heading": "Keep each teaching loan’s period and costs together.",
+        "intro": "An artifact trunk and a book kit can support the same unit while having different loan terms. Let teachers choose the exact resource and planned dates before staff confirm availability or extra services.",
+        "customerQuestion": "Which resource fits our teaching period, and which costs remain?",
+        "decisions": [
+          {
+            "label": "Compare the actual resource types",
+            "body": "Martin and Osa Johnson Safari Museum describes artifact travel trunks for up to two weeks and book kits for up to six weeks. A four-week unit should prompt a question about an artifact trunk rather than inherit the book-kit term. Customized literature-themed artifact kits need their own staff discussion instead of an assumed ordinary loan period."
+          },
+          {
+            "label": "Attach the correct charges and shipping",
+            "body": "Artifact trunks have a loan charge plus shipping, with a member exception to the loan charge. Book kits have a separate kit charge and round-trip shipping. Keep the membership wording with the offer it affects; waived loan charges should not make shipping disappear or automatically change another resource’s terms."
+          },
+          {
+            "label": "Arrange return and any presenter separately",
+            "body": "Ask for the teaching audience, intended dates and responsible borrower, then agree dispatch and return instructions with staff for the selected resource. A presenter is a separate request: carry the topic and desired presentation date into that discussion without treating the kit’s dispatch date as a speaker appointment."
+          }
+        ],
+        "ownerInputs": [
+          "Current resource inventory, loan periods and custom-kit process.",
+          "Charge components, membership wording and shipping terms.",
+          "Borrower responsibilities, return instructions and presenter contact."
+        ],
+        "sourceBridge": "The Safari Museum’s learning resources distinguish artifact trunks, book kits, custom resources and staff programs. Their different periods and charge wording make an offer-by-offer comparison useful.",
+        "limits": "The museum confirms the resource, actual loan period and availability. An inquiry is not an automatic hold. Inventory tracking, dispatch automation and payments require separate scope from clear resource descriptions and preparation instructions.",
+        "route": "/areas/kansas/neosho-county/",
+        "inputHash": "556213fa30f808e1dbf71b1c71285bb0988b6641704b90d74434932e68f79333"
+      },
+      "beforeSha256": "1255cbc2fdb850bb9a33e1b05156e8ea86c93a93481bece290d22e5e5855645f",
+      "afterSha256": "a3af938c40b160719f76b1cb043b1cfe756cbc0a3c72f1a86b100c39aec02739",
+      "requiredFixes": [
+        "Keep the dedicated unavailable-kit FAQ as the detailed procedure. Refocus the third decision on dispatch, responsible borrower, return and the separately requested presenter, removing its repeated unavailable-note/alternative/substitution instructions."
+      ]
+    },
+    {
+      "route": "/areas/kansas/rawlins-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Give each clinic task its approved public route.",
+        "intro": "A clinic contact page should help people find the existing refill, results or appointment process. Clear labels can prepare the next step without asking for private records in a general website inquiry.",
+        "customerQuestion": "Which existing channel handles this task?",
+        "decisions": [
+          {
+            "label": "Start refill requests with the pharmacy",
+            "body": "Rawlins Clinic tells patients seeking a prescription refill to contact their pharmacy, which sends the request to the healthcare provider for review and authorization. Put that approved instruction before a general contact form. A website message should not imply that medication has been authorized or that provider review is complete."
+          },
+          {
+            "label": "Keep result access separate",
+            "body": "The clinic describes laboratory results communicated by phone or mail and says they may be available through the patient portal. Link to the approved result and portal guidance without claiming that every result is already online. A portal destination is not evidence that a particular record is available."
+          },
+          {
+            "label": "Prepare appointments through current instructions",
+            "body": "Keep appointment preparation and the clinic’s approved early-arrival instruction on their own route. Public navigation can be checked with fictional task examples and destination links, without patient accounts, records or credentials. The authorized clinical team checks private workflows separately."
+          }
+        ],
+        "ownerInputs": [
+          "Approved refill instructions and clinical content reviewer.",
+          "Current portal link and result-communication wording.",
+          "Appointment preparation and approved public contact labels."
+        ],
+        "sourceBridge": "Rawlins Clinic’s public information separates pharmacy-first refill requests, provider authorization, results communication and appointment preparation. Those distinct channels support a task-based public menu using the systems the clinic already approves.",
+        "limits": "Clinical decisions and private records stay with responsible professionals and approved systems. Public navigation review does not verify portal activity. This content scope does not include patient portals, medical-data handling or clinical automation; those require separate assessment.",
+        "route": "/areas/kansas/rawlins-county/",
+        "inputHash": "3557d4e7cac8b24a2fd8ef11a63242558ab493d4c7757c0b50e5f579511aba9e"
+      },
+      "after": {
+        "heading": "Give each clinic task its approved public route.",
+        "intro": "A clinic contact page should help people find the existing refill, results or appointment process. Clear labels can prepare the next step without asking for private records in a general website inquiry.",
+        "customerQuestion": "Which existing channel handles this task?",
+        "decisions": [
+          {
+            "label": "Start refill requests with the pharmacy",
+            "body": "Rawlins Clinic tells patients seeking a prescription refill to contact their pharmacy, which sends the request to the healthcare provider for review and authorization. Put that approved instruction before a general contact form. A website message should not imply that medication has been authorized or that provider review is complete."
+          },
+          {
+            "label": "Keep result access separate",
+            "body": "The clinic describes laboratory results communicated by phone or mail and says they may be available through the patient portal. Link to the approved result and portal guidance without claiming that every result is already online. A portal destination is not evidence that a particular record is available."
+          },
+          {
+            "label": "Prepare appointments through current instructions",
+            "body": "Give appointment preparation its own route, with the clinic’s approved early-arrival instruction beside the appointment details. Keep any requested forms or preparation on the clinic’s established destination. Someone seeking an appointment should not have to follow the refill or results route to find the relevant arrival guidance."
+          }
+        ],
+        "ownerInputs": [
+          "Approved refill instructions and clinical content reviewer.",
+          "Current portal link and result-communication wording.",
+          "Appointment preparation and approved public contact labels."
+        ],
+        "sourceBridge": "Rawlins Clinic’s public information separates pharmacy-first refill requests, provider authorization, results communication and appointment preparation. Those distinct channels support a task-based public menu using the systems the clinic already approves.",
+        "limits": "Clinical decisions and private records stay with responsible professionals and approved systems. This content scope does not include patient portals, medical-data handling or clinical automation; those require separate assessment.",
+        "route": "/areas/kansas/rawlins-county/",
+        "inputHash": "3557d4e7cac8b24a2fd8ef11a63242558ab493d4c7757c0b50e5f579511aba9e"
+      },
+      "beforeSha256": "9602aec05d106728f734c16446998ea2e9ac22f16ac6b42a23b5739ea7047683",
+      "afterSha256": "26811cb9525a0478b60ca79b9428918d960f8643c540bc284fb95a54e2cbfadd",
+      "requiredFixes": [
+        "Keep the dedicated public-navigation FAQ as the detailed review-method explanation. Refocus the third decision on actual appointment preparation and the clinic-approved early-arrival instruction; remove repeated testing/private-workflow instructions and the adjacent repeated portal-verification sentence from limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/thomas-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Request archival help separately from the event room.",
+        "intro": "A reunion may need a meeting space and historical material, but those are separate requests. Help the organizer describe the event, intended display and full access period so staff can assess both parts.",
+        "customerQuestion": "What can the room booking include, and what archive work must be discussed?",
+        "decisions": [
+          {
+            "label": "Identify the room and historical request",
+            "body": "Prairie Museum offers the Garvey Educational Room with complimentary museum admission for event guests. With adequate notice, staff can research relevant photographs or documents, and additional costs may apply. Ask separately for the historical subject and useful references; a booked date does not establish that a particular family photograph exists."
+          },
+          {
+            "label": "Agree the intended output and use",
+            "body": "Describe the display, furniture and equipment needed alongside research or reproduction questions. Finding an image does not automatically include printing or permission to publish it online. For a proposed event webpage, identify the exact image, placement and any download option, then obtain the collection owner’s approved terms and credit before adding it."
+          },
+          {
+            "label": "Include installation and removal time",
+            "body": "Setup and cleanup belong within the booking period unless otherwise arranged. Keep the display’s installation and removal in the requested room-access interval. An evening reunion should not arrive with a display that lacks agreed space, equipment or time to install it."
+          }
+        ],
+        "ownerInputs": [
+          "Archive-service boundaries, subject references and contact.",
+          "Approved outputs, use terms, furniture and display options.",
+          "Access rules and process for additional setup or cleanup time."
+        ],
+        "sourceBridge": "Prairie Museum’s rental information connects event-room use with optional archive research and defined setup periods. Those facts support coordinated preparation while keeping the room, research and image-use decisions separate.",
+        "limits": "Staff confirm availability, research, charges and permitted uses. A room reservation or search does not grant publication rights. A focused room-page addition may suffice; broader content can connect event preparation and collection information.",
+        "route": "/areas/kansas/thomas-county/",
+        "inputHash": "590c9b082a2899596cead4cd833d00950db2e4b582a0cc5d6601cd3f3797f6be"
+      },
+      "after": {
+        "heading": "Request archival help separately from the event room.",
+        "intro": "A reunion may need a meeting space and historical material, but those are separate requests. Help the organizer describe the event, intended display and full access period so staff can assess both parts.",
+        "customerQuestion": "What can the room booking include, and what archive work must be discussed?",
+        "decisions": [
+          {
+            "label": "Identify the room and historical request",
+            "body": "Prairie Museum offers the Garvey Educational Room with complimentary museum admission for event guests. With adequate notice, staff can research relevant photographs or documents, and additional costs may apply. Ask separately for the historical subject and useful references; a booked date does not establish that a particular family photograph exists."
+          },
+          {
+            "label": "Agree the intended output and use",
+            "body": "Describe the proposed event display, its furniture and equipment, then separately ask what archive research or reproduction output staff could provide. For a fictional reunion display, an organizer might need a table, display boards and several reproduced photographs; each remains a request for staff review rather than an assumed inclusion in the room hire."
+          },
+          {
+            "label": "Include installation and removal time",
+            "body": "Setup and cleanup belong within the booking period unless otherwise arranged. Keep the display’s installation and removal in the requested room-access interval. An evening reunion should not arrive with a display that lacks agreed space, equipment or time to install it."
+          }
+        ],
+        "ownerInputs": [
+          "Archive-service boundaries, subject references and contact.",
+          "Approved outputs, use terms, furniture and display options.",
+          "Access rules and process for additional setup or cleanup time."
+        ],
+        "sourceBridge": "Prairie Museum’s rental information connects event-room use with optional archive research and defined setup periods. Those facts support coordinated preparation while keeping the room, research and image-use decisions separate.",
+        "limits": "Staff confirm availability, research, charges and permitted uses. A focused room-page addition may suffice; broader content can connect event preparation and collection information.",
+        "route": "/areas/kansas/thomas-county/",
+        "inputHash": "590c9b082a2899596cead4cd833d00950db2e4b582a0cc5d6601cd3f3797f6be"
+      },
+      "beforeSha256": "85058cec0730136f19eb6610cc2ea21f5963af41550b78081e40ae09bfa69596",
+      "afterSha256": "9087f96866478d241dfb11b27105c8f89327da64542326cb8946713ad609556e",
+      "requiredFixes": [
+        "Keep the dedicated historical-image FAQ as the detailed online-publication procedure. Refocus the second decision on the event display, furniture/equipment and separately agreed research/reproduction output; remove repeated webpage placement/download/credit steps and the adjacent publication-rights recap in limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/trego-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Connect the campground approach to the after-office handoff.",
+        "intro": "Finding the property and finding prepared arrival information are separate steps. Give guests current operator directions and a clear explanation of the after-office process before they travel.",
+        "customerQuestion": "How do I reach the campground, and where do I find my arrival instructions?",
+        "decisions": [
+          {
+            "label": "Show the property-specific approach",
+            "body": "WaKeeney KOA Journey warns that GPS may not recognize its address and gives directions through the north entrance of the Jump Start/Subway station onto South Interstate. Place owner-approved directions beside the verified map destination. Address recognition or a map pin alone should not promise a usable vehicle approach."
+          },
+          {
+            "label": "Identify the night-registration location",
+            "body": "The operator says after-office arrival information is in the Night Registration Box to the right of the store entrance. Explain which guests or reservations the current process covers. The presence of a box should not imply that an unreserved guest has a prepared packet or an available site."
+          },
+          {
+            "label": "Prepare the fallback before departure",
+            "body": "Ask the owner for the missing-information contact and one verified office schedule; the reviewed page contains differing office-hour wording, including a dated season reference. Offer concise dated instructions that can be saved or printed, with review responsibility when landmarks or procedures change. Keep private access codes out of public downloads."
+          }
+        ],
+        "ownerInputs": [
+          "Approved approach, landmarks and map destination.",
+          "Current packet process and reservations it covers.",
+          "Resolved office schedule and missing-information help route."
+        ],
+        "sourceBridge": "WaKeeney KOA Journey’s guidance separates a potentially unrecognized address from an exact after-office information point. Those details support a two-stage arrival page alongside the existing reservation system.",
+        "limits": "The operator confirms applicable arrival arrangements. Do not invent a cutoff, gate code or availability guarantee, and do not promise that an old saved copy remains current. Automatic messages and access systems require separate scope.",
+        "route": "/areas/kansas/trego-county/",
+        "inputHash": "6c0df1fde884bcc2843748e9dc9ed43c78fb7f713042d17b9ee7d7bec13b76c9"
+      },
+      "after": {
+        "heading": "Connect the campground approach to the after-office handoff.",
+        "intro": "Finding the property and finding prepared arrival information are separate steps. Give guests current operator directions and a clear explanation of the after-office process before they travel.",
+        "customerQuestion": "How do I reach the campground, and where do I find my arrival instructions?",
+        "decisions": [
+          {
+            "label": "Show the property-specific approach",
+            "body": "WaKeeney KOA Journey warns that GPS may not recognize its address and gives directions through the north entrance of the Jump Start/Subway station onto South Interstate. Place owner-approved directions beside the verified map destination. Address recognition or a map pin alone should not promise a usable vehicle approach."
+          },
+          {
+            "label": "Identify the night-registration location",
+            "body": "The operator says after-office arrival information is in the Night Registration Box to the right of the store entrance. Explain which guests or reservations the current process covers. The presence of a box should not imply that an unreserved guest has a prepared packet or an available site."
+          },
+          {
+            "label": "Resolve the office and help instructions",
+            "body": "Ask the owner to resolve the conflicting office-hour wording, including the dated seasonal reference, before publishing one current schedule. Pair it with the approved contact for a missing arrival packet. A guest finding an empty box needs a clear next step without being told that the box’s presence confirms a prepared reservation."
+          }
+        ],
+        "ownerInputs": [
+          "Approved approach, landmarks and map destination.",
+          "Current packet process and reservations it covers.",
+          "Resolved office schedule and missing-information help route."
+        ],
+        "sourceBridge": "WaKeeney KOA Journey’s guidance separates a potentially unrecognized address from an exact after-office information point. Those details support a two-stage arrival page alongside the existing reservation system.",
+        "limits": "The operator confirms applicable arrival arrangements. Do not invent a cutoff, gate code or availability guarantee. Automatic messages and access systems require separate scope.",
+        "route": "/areas/kansas/trego-county/",
+        "inputHash": "6c0df1fde884bcc2843748e9dc9ed43c78fb7f713042d17b9ee7d7bec13b76c9"
+      },
+      "beforeSha256": "240bf3ab227001ba8df31617af200c4c16ff0827296d23b70f0ae921363789ad",
+      "afterSha256": "32bc83c31cd8880552e5f674e1b14afb3f8f3f3dfe2d7a515e6b3f76c03cd8ea",
+      "requiredFixes": [
+        "Keep the lost-mobile-service FAQ as the detailed saved/printed-copy procedure. Refocus the third decision on resolving the inconsistent office schedule and missing-packet help route; remove its repeated offline-copy/update/private-code instructions and the repeated old-copy warning from limits."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "route": "/areas/kansas/ellis-county/",
+      "before": {
+        "areaId": "kansas/ellis",
+        "market": "Ellis County, KS",
+        "lead": "Accommodation included during camp does not automatically cover the night before it starts.",
+        "decisionTitle": "Separate camp inclusions from early-arrival arrangements.",
+        "decision": "Sternberg Museum’s high-school lab-program page identifies Kansas programs in Hays and distinguishes included camp meals, accommodation and transport from travel and accommodation before or after camp. Its Kansas travel guidance describes an optional Saturday arrival with staff pickup and a dormitory night charged separately. The listed 2026 summer sessions have already ended.\n\nFor a residential-program provider, I would prepare a page that keeps the selected program, its dates and its arrival arrangements together. First show the covered camp interval. Then explain any genuine early-arrival option, its separate charge and how it is arranged. A parent comparing travel plans needs to know whether a proposed arrival is part of the program or requires another agreement. Keep final travel details and participant records in the provider’s approved registration process rather than collecting them in a general website inquiry.\n\nThis is a planning example from the reviewed 2026 material, not an invitation to book an ended session or a promise that the same arrangement will operate next year.",
+        "scopes": [
+          {
+            "title": "Identify the selected program and interval",
+            "pages": [
+              "Keep the location, session year and start/end dates together; separate past sessions from future confirmed offerings.",
+              "Describe the actual early-arrival option beside what the standard camp fee covers, with its own arrangement and charge."
+            ],
+            "request": "Ask about an early-arrival arrangement for the selected program and session rather than assume it is included.",
+            "supplies": "Approved program roster and date-specific inclusions. Current early-arrival availability, responsibility, fee and approval route.",
+            "check": "Choosing a Kansas session does not copy travel guidance from a different state on the same program page."
+          },
+          {
+            "title": "Connect arrival approval to preparation",
+            "pages": [
+              "Tell families when and through which approved registration channel to confirm the arrival arrangement."
+            ],
+            "request": "Confirm the arrival plan through the provider’s approved registration channel.",
+            "supplies": "Who accepts the arrangement, how changes are handled and current participant instructions.",
+            "check": "A suggested arrival plan remains unconfirmed until the responsible provider accepts it."
+          }
+        ],
+        "scopeTrigger": "Start with the inclusions and arrival explanation for one program. Expand when multiple destinations and sessions need separate maintained preparation; registration records, payments and participant documents require their own scope.",
+        "quoteQuestions": [
+          "What exact interval do the included meals, accommodation and transport cover?",
+          "Which early or late arrangements are actually offered for this program?",
+          "Who confirms the arrival plan and maintains the session-specific instructions?"
+        ],
+        "coverageNote": "For website projects in Ellis County, Kansas. Wonder and Method is based in Buffalo, New York, and works online. Named organizations are public examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://sternberg.fhsu.edu/education-outreach/science-camps/hs-lab-programs.html",
+            "label": "Sternberg Museum: high-school lab programs",
+            "observation": "Kansas program descriptions separate camp-period inclusions from pre/post-camp costs and describe a separately charged early-arrival dormitory and transport arrangement."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections included.",
+        "areaIds": [
+          "kansas/ellis"
+        ],
+        "path": "/areas/kansas/ellis-county/",
+        "title": "Web Design for Ellis County, KS",
+        "description": "Web design for Ellis County, KS. Separate camp inclusions from early-arrival arrangements.",
+        "servedAreas": [
+          {
+            "name": "Ellis County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#ellis",
+            "label": "Ellis County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep arrival and booking instructions together"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Separate camp inclusions from early-arrival arrangements",
+          "intro": "Proposed website work for your own organization. The owner supplies and approves the operating details.",
+          "columns": [
+            "Decision",
+            "Proposed website content",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Identify the selected program and interval",
+              "Keep the location, session year and start/end dates together; separate past sessions from future confirmed offerings.",
+              "Approved program roster and date-specific inclusions.",
+              "Choosing a Kansas session does not copy travel guidance from a different state on the same program page."
+            ],
+            [
+              "Explain the extra night",
+              "Describe the actual early-arrival option beside what the standard camp fee covers, with its own arrangement and charge.",
+              "Current early-arrival availability, responsibility, fee and approval route.",
+              "The night before camp is not labeled included simply because the program includes dormitory accommodation during camp."
+            ],
+            [
+              "Connect arrival approval to preparation",
+              "Tell families when and through which approved registration channel to confirm the arrival arrangement.",
+              "Who accepts the arrangement, how changes are handled and current participant instructions.",
+              "A suggested arrival plan remains unconfirmed until the responsible provider accepts it."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/ellis",
+        "market": "Ellis County, KS",
+        "lead": "Accommodation included during camp does not automatically cover the night before it starts.",
+        "decisionTitle": "Separate camp inclusions from early-arrival arrangements.",
+        "decision": "Sternberg Museum’s high-school lab-program page identifies Kansas programs in Hays and distinguishes included camp meals, accommodation and transport from travel and accommodation before or after camp. Its Kansas travel guidance describes an optional Saturday arrival with staff pickup and a dormitory night charged separately. The listed 2026 summer sessions have already ended.\n\nFor a residential-program provider, I would prepare a page that keeps the selected program, its dates and its arrival arrangements together. First show the covered camp interval. Then explain any genuine early-arrival option, its separate charge and how it is arranged. A parent comparing travel plans needs to know whether a proposed arrival is part of the program or requires another agreement. Keep final travel details and participant records in the provider’s approved registration process rather than collecting them in a general website inquiry.\n\nThis is a planning example from the reviewed 2026 material, not an invitation to book an ended session or a promise that the same arrangement will operate next year.",
+        "scopes": [
+          {
+            "title": "Identify the selected program and interval",
+            "pages": [
+              "Keep the location, session year and start/end dates together; separate past sessions from future confirmed offerings.",
+              "Describe the actual early-arrival option beside what the standard camp fee covers, with its own arrangement and charge."
+            ],
+            "request": "Ask about an early-arrival arrangement for the selected program and session rather than assume it is included.",
+            "supplies": "Approved program roster and date-specific inclusions. Current early-arrival availability, responsibility, fee and approval route.",
+            "check": "Choosing a Kansas session does not copy travel guidance from a different state on the same program page."
+          },
+          {
+            "title": "Connect arrival approval to preparation",
+            "pages": [
+              "Tell families when and through which approved registration channel to confirm the arrival arrangement."
+            ],
+            "request": "Confirm the arrival plan through the provider’s approved registration channel.",
+            "supplies": "Who accepts the arrangement, how changes are handled and current participant instructions.",
+            "check": "A suggested arrival plan remains unconfirmed until the responsible provider accepts it."
+          }
+        ],
+        "scopeTrigger": "Start with the inclusions and arrival explanation for one program. Expand when multiple destinations and sessions need separate maintained preparation; registration records, payments and participant documents require their own scope.",
+        "quoteQuestions": [
+          "What exact interval do the included meals, accommodation and transport cover?",
+          "Which early or late arrangements are actually offered for this program?",
+          "Who confirms the arrival plan and maintains the session-specific instructions?"
+        ],
+        "coverageNote": "For website projects in Ellis County, Kansas. Wonder and Method is based in Buffalo, New York, and works online. Named organizations are public examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://sternberg.fhsu.edu/education-outreach/science-camps/hs-lab-programs.html",
+            "label": "Sternberg Museum: high-school lab programs",
+            "observation": "Museum Academy Kansas Session 1 ran June 14–26, 2026 in Hays. Kansas travel guidance recommends Saturday arrival before camp and lists $50 per night for dorm use and pre-camp transport, charged through CampDoc. Camp-period inclusions exclude pre/post-camp food and accommodation. Historical session, not future availability."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections included.",
+        "areaIds": [
+          "kansas/ellis"
+        ],
+        "path": "/areas/kansas/ellis-county/",
+        "title": "Web Design for Ellis County, KS",
+        "description": "Web design for Ellis County, KS. Separate camp inclusions from early-arrival arrangements.",
+        "servedAreas": [
+          {
+            "name": "Ellis County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#ellis",
+            "label": "Ellis County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep arrival and booking instructions together"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Separate camp inclusions from early-arrival arrangements",
+          "intro": "Proposed website work for your own organization. The owner supplies and approves the operating details.",
+          "columns": [
+            "Decision",
+            "Proposed website content",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Identify the selected program and interval",
+              "Keep the location, session year and start/end dates together; separate past sessions from future confirmed offerings.",
+              "Approved program roster and date-specific inclusions.",
+              "Choosing a Kansas session does not copy travel guidance from a different state on the same program page."
+            ],
+            [
+              "Explain the extra night",
+              "Describe the actual early-arrival option beside what the standard camp fee covers, with its own arrangement and charge.",
+              "Current early-arrival availability, responsibility, fee and approval route.",
+              "The night before camp is not labeled included simply because the program includes dormitory accommodation during camp."
+            ],
+            [
+              "Connect arrival approval to preparation",
+              "Tell families when and through which approved registration channel to confirm the arrival arrangement.",
+              "Who accepts the arrangement, how changes are handled and current participant instructions.",
+              "A suggested arrival plan remains unconfirmed until the responsible provider accepts it."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "278410af1e2897d15c7d2e2a6f3b7209e1961d794825df33b5005d3742b53a0f",
+      "afterSha256": "c3c0c0c4b637f1fbfc7c123263a1f1aa623b86efbe58c16be08240e1ef331d73"
+    },
+    {
+      "route": "/areas/kansas/finney-county/",
+      "before": {
+        "areaId": "kansas/finney",
+        "market": "Finney County, KS",
+        "lead": "A place can be open to walkers after its vehicle entrance closes. I help Finney County businesses turn that distinction into useful visitor directions.",
+        "decisionTitle": "Keep the visit mode attached to its entrance and operating window.",
+        "decision": "Lee Richardson Zoo publishes free pedestrian admission and a separate drive-through pass. Its vehicle operating windows differ from the overall zoo hours. The zoo also identifies seasonal attractions and rentals operated by Friends of Lee Richardson Zoo, with a separate availability contact.\n\nFor a visitor business recommending the zoo, I would organize the advice around walking, driving and optional attractions. Each choice needs its own arrival information and current operator link. A hotel guest choosing a late walk should not inherit vehicle-entry instructions; a family planning around a train ride needs the seasonal attraction contact. The website project can improve one local-information section or connect the recommendation to the business’s own guest directions. It should not imply that a room reservation confirms zoo entry or an attraction’s availability.",
+        "scopes": [
+          {
+            "title": "Clarify an existing visit recommendation",
+            "pages": [
+              "Walking or driving",
+              "Entrance and current hours"
+            ],
+            "request": "Connect the chosen visit mode to the right official information.",
+            "supplies": "The owner’s recommendation, official operating sources and actual guest arrival instructions.",
+            "check": "A late-day walking plan does not display the drive-through closing time as the zoo’s universal closing time."
+          },
+          {
+            "title": "Build a useful guest outing page",
+            "pages": [
+              "Visit modes",
+              "Optional attractions",
+              "Operator contacts and guest directions"
+            ],
+            "request": "Help guests prepare an outing without presenting third-party attractions as part of the accommodation booking.",
+            "supplies": "Approved outing descriptions, attraction operators, review responsibility and links.",
+            "check": "A seasonal rental question reaches its operator rather than an unrelated hotel booking form."
+          }
+        ],
+        "scopeTrigger": "A focused edit is enough when the problem is one recommendation or directions block. A fuller visitor page is useful when several visit modes and independently operated extras need explanation. Live availability and ticket connections require their own scope.",
+        "quoteQuestions": [
+          "Which visit modes do you recommend to guests?",
+          "Which extras have a different operator or season?",
+          "Who will maintain the third-party information links?"
+        ],
+        "coverageNote": "For Finney County website projects, using the public Garden City example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.leerichardsonzoo.org/hours",
+            "label": "Lee Richardson Zoo: hours and admission",
+            "observation": "Separates pedestrian admission from drive-through admission and gives different operating windows."
+          },
+          {
+            "url": "https://www.leerichardsonzoo.org/guest-amenities",
+            "label": "Lee Richardson Zoo: guest amenities",
+            "observation": "Identifies separate vehicle entry and Friends-operated seasonal attractions and rentals."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/finney"
+        ],
+        "path": "/areas/kansas/finney-county/",
+        "title": "Web Design for Finney County, KS",
+        "description": "Web design for Finney County, KS. Keep the visit mode attached to its entrance and operating window.",
+        "servedAreas": [
+          {
+            "name": "Finney County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#finney",
+            "label": "Finney County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain the experience a visitor is choosing"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Keep the visit mode attached to its entrance and operating window",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Walking or driving",
+              "Put the relevant entrance and hours beside each mode.",
+              "Current official entrance descriptions.",
+              "A reader sees that the two operating windows can differ."
+            ],
+            [
+              "Optional attraction",
+              "Identify its operator and availability route.",
+              "Seasonal offerings the owner actually recommends.",
+              "An open zoo is not shown as proof that every extra attraction is operating."
+            ],
+            [
+              "Guest arrangements",
+              "Keep accommodation directions beside the business’s own booking information.",
+              "Actual arrival and support arrangements.",
+              "The lodging confirmation makes no promise about the separate outing."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/finney",
+        "market": "Finney County, KS",
+        "lead": "A place can be open to walkers after its vehicle entrance closes. I help Finney County businesses turn that distinction into useful visitor directions.",
+        "decisionTitle": "Keep the visit mode attached to its entrance and operating window.",
+        "decision": "Lee Richardson Zoo publishes free pedestrian admission and a separate drive-through pass. Its vehicle operating windows differ from the overall zoo hours. The zoo also identifies seasonal attractions and rentals operated by Friends of Lee Richardson Zoo, with a separate availability contact.\n\nFor a visitor business recommending the zoo, I would organize the advice around walking, driving and optional attractions. Each choice needs its own arrival information and current operator link. A hotel guest choosing a late walk should not inherit vehicle-entry instructions; a family planning around a train ride needs the seasonal attraction contact. The website project can improve one local-information section or connect the recommendation to the business’s own guest directions. It should not imply that a room reservation confirms zoo entry or an attraction’s availability.",
+        "scopes": [
+          {
+            "title": "Clarify an existing visit recommendation",
+            "pages": [
+              "Walking or driving",
+              "Entrance and current hours"
+            ],
+            "request": "Connect the chosen visit mode to the right official information.",
+            "supplies": "The owner’s recommendation, official operating sources and actual guest arrival instructions.",
+            "check": "A late-day walking plan does not display the drive-through closing time as the zoo’s universal closing time."
+          },
+          {
+            "title": "Build a useful guest outing page",
+            "pages": [
+              "Visit modes",
+              "Optional attractions",
+              "Operator contacts and guest directions"
+            ],
+            "request": "Help guests prepare an outing without presenting third-party attractions as part of the accommodation booking.",
+            "supplies": "Approved outing descriptions, attraction operators, review responsibility and links.",
+            "check": "A seasonal rental question reaches its operator rather than an unrelated hotel booking form."
+          }
+        ],
+        "scopeTrigger": "A focused edit is enough when the problem is one recommendation or directions block. A fuller visitor page is useful when several visit modes and independently operated extras need explanation. Live availability and ticket connections require their own scope.",
+        "quoteQuestions": [
+          "Which visit modes do you recommend to guests?",
+          "Which extras have a different operator or season?",
+          "Who will maintain the third-party information links?"
+        ],
+        "coverageNote": "For Finney County website projects, using the public Garden City example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.leerichardsonzoo.org/hours",
+            "label": "Lee Richardson Zoo: hours and admission",
+            "observation": "Walking admission is free, with 8 a.m.–5 p.m. hours after Labor Day through March 31. Drive-through hours are 8–4 after Labor Day–October 31 and 10–4 November–March; summer windows differ. Weather/events may close the zoo."
+          },
+          {
+            "url": "https://www.leerichardsonzoo.org/guest-amenities",
+            "label": "Lee Richardson Zoo: guest amenities",
+            "observation": "Vehicle entry is east of the pedestrian entrance on 4th Street. Friends of Lee Richardson Zoo operates seasonal attractions and rentals with a separate availability contact."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/finney"
+        ],
+        "path": "/areas/kansas/finney-county/",
+        "title": "Web Design for Finney County, KS",
+        "description": "Web design for Finney County, KS. Keep the visit mode attached to its entrance and operating window.",
+        "servedAreas": [
+          {
+            "name": "Finney County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#finney",
+            "label": "Finney County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain the experience a visitor is choosing"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Keep the visit mode attached to its entrance and operating window",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Walking or driving",
+              "Put the relevant entrance and hours beside each mode.",
+              "Current official entrance descriptions.",
+              "A reader sees that the two operating windows can differ."
+            ],
+            [
+              "Optional attraction",
+              "Identify its operator and availability route.",
+              "Seasonal offerings the owner actually recommends.",
+              "An open zoo is not shown as proof that every extra attraction is operating."
+            ],
+            [
+              "Guest arrangements",
+              "Keep accommodation directions beside the business’s own booking information.",
+              "Actual arrival and support arrangements.",
+              "The lodging confirmation makes no promise about the separate outing."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "026a2ec8f3bd40859bdf33df3c57613d59e3188e9cf5e6e7e7526b9761bb0260",
+      "afterSha256": "a9f3963ea04426fe2c0e4a9d2a4e993b1f3aa8aa757fe36ddd74ed5b6359ba6c"
+    },
+    {
+      "route": "/areas/kansas/geary-county/",
+      "before": {
+        "areaId": "kansas/geary",
+        "market": "Geary County, KS",
+        "lead": "A nature program may happen at the center, at a school or through borrowed materials. I help Geary County organizations explain which offer fits the planned learning activity.",
+        "decisionTitle": "Choose the program setting before applying its age, season and group limits.",
+        "decision": "Milford Nature Center’s program information gives individual activities their own age guidance, duration, season and, in some cases, group maximum. It says many, but not all, programs can travel to another facility. Discovery Boxes are a different offer: educators collect and return the materials at the nature center rather than receiving them by shipment.\n\nFor an education provider, I would make setting and delivery method visible before a teacher chooses a topic. Each activity should carry its own applicable limits instead of inheriting a single general group description. The inquiry can name the age range, group size, topic and proposed setting so staff can assess fit. Borrowed materials need collection and return instructions; they should not be described as a staffed outreach visit. A focused project can improve program descriptions, while a fuller one connects them to the distinct request routes.",
+        "scopes": [
+          {
+            "title": "Clarify activity suitability",
+            "pages": [
+              "Program setting",
+              "Age, season and group guidance",
+              "Topic request"
+            ],
+            "request": "Help the organizer identify the activity and setting for staff review.",
+            "supplies": "Current activity-specific limits and actual outreach availability.",
+            "check": "An activity listed for the center is not automatically described as available at a school."
+          },
+          {
+            "title": "Explain the materials-loan route",
+            "pages": [
+              "Discovery Box contents",
+              "Collection and return",
+              "Educator contact"
+            ],
+            "request": "Show how borrowing resources differs from booking an educator.",
+            "supplies": "Current loan terms, collection instructions and staff contact.",
+            "check": "A teacher borrowing a box does not expect delivery or a staff-led lesson."
+          }
+        ],
+        "scopeTrigger": "Start with program descriptions when the contact route works. Expand when setting, activity selection and borrowing instructions need separate preparation content. Staff confirm program fit and availability; scheduling or inventory software is additional scope.",
+        "quoteQuestions": [
+          "Which programs can actually travel?",
+          "Which limits belong to individual activities?",
+          "What does the educator need to arrange for a materials loan?"
+        ],
+        "coverageNote": "For Geary County website projects, using the public Junction City example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.ksoutdoors.gov/about-kdwp/where-we-work/nature-centers/milford-nature-center",
+            "label": "KDWP: Milford Nature Center",
+            "observation": "Describes activity-specific guidance, limited outreach availability and Discovery Boxes collected and returned at the center."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/geary"
+        ],
+        "path": "/areas/kansas/geary-county/",
+        "title": "Web Design for Geary County, KS",
+        "description": "Web design for Geary County, KS. Choose the program setting before applying its age, season and group limits.",
+        "servedAreas": [
+          {
+            "name": "Geary County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#geary",
+            "label": "Geary County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Choose the program setting before applying its age, season and group limits",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Setting",
+              "Identify center, outreach or materials loan.",
+              "Actual delivery arrangements.",
+              "The topic does not imply all delivery methods."
+            ],
+            [
+              "Program fit",
+              "Keep age, duration and season attached to the named activity.",
+              "Current program descriptions.",
+              "One activity’s group limit does not become a universal limit."
+            ],
+            [
+              "Materials",
+              "Give pickup and return their own instructions.",
+              "Current borrowing process.",
+              "A loan is not represented as a shipped package."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/geary",
+        "market": "Geary County, KS",
+        "lead": "A nature program may happen at the center, at a school or through borrowed materials. I help Geary County organizations explain which offer fits the planned learning activity.",
+        "decisionTitle": "Choose the program setting before applying its age, season and group limits.",
+        "decision": "Milford Nature Center’s program information gives individual activities their own age guidance, duration, season and, in some cases, group maximum. It says many, but not all, programs can travel to another facility. Discovery Boxes are a different offer: educators collect and return the materials at the nature center rather than receiving them by shipment.\n\nFor an education provider, I would make setting and delivery method visible before a teacher chooses a topic. Each activity should carry its own applicable limits instead of inheriting a single general group description. The inquiry can name the age range, group size, topic and proposed setting so staff can assess fit. Borrowed materials need collection and return instructions; they should not be described as a staffed outreach visit. A focused project can improve program descriptions, while a fuller one connects them to the distinct request routes.",
+        "scopes": [
+          {
+            "title": "Clarify activity suitability",
+            "pages": [
+              "Program setting",
+              "Age, season and group guidance",
+              "Topic request"
+            ],
+            "request": "Help the organizer identify the activity and setting for staff review.",
+            "supplies": "Current activity-specific limits and actual outreach availability.",
+            "check": "An activity listed for the center is not automatically described as available at a school."
+          },
+          {
+            "title": "Explain the materials-loan route",
+            "pages": [
+              "Discovery Box contents",
+              "Collection and return",
+              "Educator contact"
+            ],
+            "request": "Show how borrowing resources differs from booking an educator.",
+            "supplies": "Current loan terms, collection instructions and staff contact.",
+            "check": "A teacher borrowing a box does not expect delivery or a staff-led lesson."
+          }
+        ],
+        "scopeTrigger": "Start with program descriptions when the contact route works. Expand when setting, activity selection and borrowing instructions need separate preparation content. Staff confirm program fit and availability; scheduling or inventory software is additional scope.",
+        "quoteQuestions": [
+          "Which programs can actually travel?",
+          "Which limits belong to individual activities?",
+          "What does the educator need to arrange for a materials loan?"
+        ],
+        "coverageNote": "For Geary County website projects, using the public Junction City example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.ksoutdoors.gov/about-kdwp/where-we-work/nature-centers/milford-nature-center",
+            "label": "KDWP: Milford Nature Center",
+            "observation": "Sensory Hike: outdoors, forty-five minutes, spring–fall, pre-K–second grade, maximum twenty-five. Many but not all programs can travel; individual outreach needs confirmation. Discovery Boxes must be collected and returned at the center and are not shipped."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/geary"
+        ],
+        "path": "/areas/kansas/geary-county/",
+        "title": "Web Design for Geary County, KS",
+        "description": "Web design for Geary County, KS. Choose the program setting before applying its age, season and group limits.",
+        "servedAreas": [
+          {
+            "name": "Geary County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#geary",
+            "label": "Geary County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Choose the program setting before applying its age, season and group limits",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Setting",
+              "Identify center, outreach or materials loan.",
+              "Actual delivery arrangements.",
+              "The topic does not imply all delivery methods."
+            ],
+            [
+              "Program fit",
+              "Keep age, duration and season attached to the named activity.",
+              "Current program descriptions.",
+              "One activity’s group limit does not become a universal limit."
+            ],
+            [
+              "Materials",
+              "Give pickup and return their own instructions.",
+              "Current borrowing process.",
+              "A loan is not represented as a shipped package."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "381432c45b4ff3b9dd4280271902f1966edb076632f3f205a456d4200252594d",
+      "afterSha256": "cb836c5c7001dab16039b6725019deea6a380f9d944a1477be3de8e1983d3079"
+    },
+    {
+      "route": "/areas/kansas/hamilton-county/",
+      "before": {
+        "areaId": "kansas/hamilton",
+        "market": "Hamilton County, KS",
+        "lead": "An after-hours number is useful only when the customer can tell which department and current conditions apply. I help Hamilton County businesses make that contact choice clear.",
+        "decisionTitle": "Connect the requested department to the applicable contact period.",
+        "decision": "American Implement’s Syracuse page separates parts, service and precision-ag contacts. Its after-hours policy describes seasonal support and different availability conditions outside that period, along with call-out charges and minimum repair time. The policy also places certain harvest and planting exceptions with branch management.\n\nFor an equipment dealer, I would keep the department choice, contact period and maintained policy link together. A planned service inquiry needs useful equipment context; a request outside business hours needs the actual supported contact route and the conditions staff must confirm. The website should not call a listed number a guaranteed dispatch service, or translate a policy exception into a promise that the repair is free. A focused contact-page project can establish the route. A fuller service section can connect routine requests, seasonal support and staff confirmation while leaving the operating decisions with the branch.",
+        "scopes": [
+          {
+            "title": "Clarify department contacts",
+            "pages": [
+              "Parts, service or precision ag",
+              "Business-hours inquiry",
+              "Maintained after-hours policy"
+            ],
+            "request": "Route the request by its purpose and contact period.",
+            "supplies": "Current department contacts, monitored routes and policy owner.",
+            "check": "A parts question does not default to the repair contact."
+          },
+          {
+            "title": "Explain after-hours preparation",
+            "pages": [
+              "Seasonal support conditions",
+              "Equipment and requested work",
+              "Staff confirmation and charges"
+            ],
+            "request": "Make relevant conditions visible before a customer assumes a call-out.",
+            "supplies": "Current policy, branch-specific availability and approved charge explanations.",
+            "check": "An after-hours inquiry does not promise dispatch or waive charges automatically."
+          }
+        ],
+        "scopeTrigger": "A contact-page edit is sufficient when service descriptions are clear. Expand when routine and seasonal support need connected preparation content. Dispatch systems, live response guarantees and repair-price calculations require separate scope.",
+        "quoteQuestions": [
+          "Which departments have distinct after-hours routes?",
+          "Who maintains the seasonal policy?",
+          "Which availability and charge questions require staff confirmation?"
+        ],
+        "coverageNote": "For Hamilton County website projects, using the public Syracuse example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.americanimplement.com/map-hours-directions-tractors-mowers-dealership--hours-syracuse",
+            "label": "American Implement: Syracuse",
+            "observation": "Separates branch contacts for parts, service and precision agriculture."
+          },
+          {
+            "url": "https://www.americanimplement.com/--after-hours-call-out-policy",
+            "label": "American Implement: after-hours call-out policy",
+            "observation": "Describes seasonal availability, call-out conditions and branch-managed exceptions."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/hamilton"
+        ],
+        "path": "/areas/kansas/hamilton-county/",
+        "title": "Web Design for Hamilton County, KS",
+        "description": "Web design for Hamilton County, KS. Connect the requested department to the applicable contact period.",
+        "servedAreas": [
+          {
+            "name": "Hamilton County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#hamilton",
+            "label": "Hamilton County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Connect the requested department to the applicable contact period",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Department",
+              "Label the purpose beside each contact.",
+              "Current responsible teams.",
+              "The customer can identify the relevant route without guessing a staff role."
+            ],
+            [
+              "Period",
+              "Point to maintained seasonal and after-hours conditions.",
+              "Current branch hours and policy source.",
+              "A seasonal arrangement is not described as year-round availability."
+            ],
+            [
+              "Confirmation",
+              "Explain what staff will determine before work is agreed.",
+              "Actual availability and charge-review process.",
+              "An exception requiring branch judgment is not offered as an automatic entitlement."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/hamilton",
+        "market": "Hamilton County, KS",
+        "lead": "An after-hours number is useful only when the customer can tell which department and current conditions apply. I help Hamilton County businesses make that contact choice clear.",
+        "decisionTitle": "Connect the requested department to the applicable contact period.",
+        "decision": "American Implement’s Syracuse page separates parts, service and precision-ag contacts. Its after-hours policy describes seasonal support and different availability conditions outside that period, along with call-out charges and minimum repair time. The policy also places certain harvest and planting exceptions with branch management.\n\nFor an equipment dealer, I would keep the department choice, contact period and maintained policy link together. A planned service inquiry needs useful equipment context; a request outside business hours needs the actual supported contact route and the conditions staff must confirm. The website should not call a listed number a guaranteed dispatch service, or translate a policy exception into a promise that the repair is free. A focused contact-page project can establish the route. A fuller service section can connect routine requests, seasonal support and staff confirmation while leaving the operating decisions with the branch.",
+        "scopes": [
+          {
+            "title": "Clarify department contacts",
+            "pages": [
+              "Parts, service or precision ag",
+              "Business-hours inquiry",
+              "Maintained after-hours policy"
+            ],
+            "request": "Route the request by its purpose and contact period.",
+            "supplies": "Current department contacts, monitored routes and policy owner.",
+            "check": "A parts question does not default to the repair contact."
+          },
+          {
+            "title": "Explain after-hours preparation",
+            "pages": [
+              "Seasonal support conditions",
+              "Equipment and requested work",
+              "Staff confirmation and charges"
+            ],
+            "request": "Make relevant conditions visible before a customer assumes a call-out.",
+            "supplies": "Current policy, branch-specific availability and approved charge explanations.",
+            "check": "An after-hours inquiry does not promise dispatch or waive charges automatically."
+          }
+        ],
+        "scopeTrigger": "A contact-page edit is sufficient when service descriptions are clear. Expand when routine and seasonal support need connected preparation content. Dispatch systems, live response guarantees and repair-price calculations require separate scope.",
+        "quoteQuestions": [
+          "Which departments have distinct after-hours routes?",
+          "Who maintains the seasonal policy?",
+          "Which availability and charge questions require staff confirmation?"
+        ],
+        "coverageNote": "For Hamilton County website projects, using the public Syracuse example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.americanimplement.com/map-hours-directions-tractors-mowers-dealership--hours-syracuse",
+            "label": "American Implement: Syracuse",
+            "observation": "Separates branch contacts for parts, service and precision agriculture."
+          },
+          {
+            "url": "https://www.americanimplement.com/--after-hours-call-out-policy",
+            "label": "American Implement: after-hours call-out policy",
+            "observation": "Seasonal after-hours support is April 1–October 31; November 1–March 31 depends on location availability. Policy lists travel, two-hour minimum repair time and $75 after-hours fee/$125 holidays. Local management determines harvest/planting exceptions; branch confirmation is needed."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/hamilton"
+        ],
+        "path": "/areas/kansas/hamilton-county/",
+        "title": "Web Design for Hamilton County, KS",
+        "description": "Web design for Hamilton County, KS. Connect the requested department to the applicable contact period.",
+        "servedAreas": [
+          {
+            "name": "Hamilton County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#hamilton",
+            "label": "Hamilton County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Connect the requested department to the applicable contact period",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Department",
+              "Label the purpose beside each contact.",
+              "Current responsible teams.",
+              "The customer can identify the relevant route without guessing a staff role."
+            ],
+            [
+              "Period",
+              "Point to maintained seasonal and after-hours conditions.",
+              "Current branch hours and policy source.",
+              "A seasonal arrangement is not described as year-round availability."
+            ],
+            [
+              "Confirmation",
+              "Explain what staff will determine before work is agreed.",
+              "Actual availability and charge-review process.",
+              "An exception requiring branch judgment is not offered as an automatic entitlement."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "9c0f5dd79470c051b91b5cce82d52c8955100f7b33afbd5317fb5c264e3d0b41",
+      "afterSha256": "cbefe834c65b441f61d669d69e6d575f4582372929963f7297fb5ac41472021e"
+    },
+    {
+      "route": "/areas/kansas/harper-county/",
+      "before": {
+        "areaId": "kansas/harper",
+        "market": "Harper County, KS",
+        "lead": "A place suitable for a daytime gathering may not allow an RV beside it overnight. I help Harper County venues explain where each part of an event can take place.",
+        "decisionTitle": "Keep the event area separate from the permitted overnight campsite.",
+        "decision": "The City of Anthony’s lake information treats stage use and camping as separate arrangements. It requires a stage permit and says RVs or hookups are not allowed around the stage except in designated camping areas. It also describes different maximum stays for particular camping areas and a required interval away after the limit.\n\nFor a recreation venue hosting events, I would show the event footprint and the separate overnight options together. An organizer should be able to ask about a stage while understanding that attendees who stay overnight need an appropriate campsite arrangement. Shelter or stage use should not imply permission to connect a camper nearby. A focused project can clarify the event inquiry and the camping link. A fuller venue section can explain the locations and current stay terms so staff receive a plan that distinguishes daytime use, overnight vehicles and duration.",
+        "scopes": [
+          {
+            "title": "Clarify the event and overnight request",
+            "pages": [
+              "Stage or gathering area",
+              "Overnight needs",
+              "Separate permit and camping contacts"
+            ],
+            "request": "Help organizers describe both components without treating them as one permission.",
+            "supplies": "Current event-use terms, designated camping information and staff contacts.",
+            "check": "A stage request does not promise adjacent RV parking or hookups."
+          },
+          {
+            "title": "Connect the site plan to stay terms",
+            "pages": [
+              "Event footprint",
+              "Designated camping areas",
+              "Area-specific duration limits"
+            ],
+            "request": "Explain where the requested uses can occur and which stay terms apply.",
+            "supplies": "Approved map, camping categories and current duration rules.",
+            "check": "The stay limit for one camping area is not applied to every site."
+          }
+        ],
+        "scopeTrigger": "Use a focused event-page edit when camping information is already clear. Expand when maps, event use and area-specific stays need connected explanations. Permit processing and campsite inventory require separate scope.",
+        "quoteQuestions": [
+          "Which parts of the event need separate permission?",
+          "Where may overnight vehicles actually stay?",
+          "Which camping terms vary by area?"
+        ],
+        "coverageNote": "For Harper County website projects, using the public Anthony example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.anthonykansas.org/community",
+            "label": "City of Anthony: community and lake facilities",
+            "observation": "Separates stage permits and designated camping, restricts nearby RV hookups and describes area-specific stay terms."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/harper"
+        ],
+        "path": "/areas/kansas/harper-county/",
+        "title": "Web Design for Harper County, KS",
+        "description": "Web design for Harper County, KS. Keep the event area separate from the permitted overnight campsite.",
+        "servedAreas": [
+          {
+            "name": "Harper County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#harper",
+            "label": "Harper County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain separate uses and inclusions"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Keep the event area separate from the permitted overnight campsite",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Gathering",
+              "Describe the event space and permit route.",
+              "Current stage and shelter terms.",
+              "Permission for an event is not called permission to camp there."
+            ],
+            [
+              "Overnight vehicles",
+              "Direct attendees to designated camping arrangements.",
+              "Actual camping locations and hookup terms.",
+              "A convenient space beside the stage is not presented as an available campsite."
+            ],
+            [
+              "Duration",
+              "Attach stay terms to the selected area.",
+              "Current area-specific limits and departure interval.",
+              "A longer stay is not promised in an area with a shorter limit."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/harper",
+        "market": "Harper County, KS",
+        "lead": "A place suitable for a daytime gathering may not allow an RV beside it overnight. I help Harper County venues explain where each part of an event can take place.",
+        "decisionTitle": "Keep the event area separate from the permitted overnight campsite.",
+        "decision": "The City of Anthony’s lake information treats stage use and camping as separate arrangements. It requires a stage permit and says RVs or hookups are not allowed around the stage except in designated camping areas. It also describes different maximum stays for particular camping areas and a required interval away after the limit.\n\nFor a recreation venue hosting events, I would show the event footprint and the separate overnight options together. An organizer should be able to ask about a stage while understanding that attendees who stay overnight need an appropriate campsite arrangement. Shelter or stage use should not imply permission to connect a camper nearby. A focused project can clarify the event inquiry and the camping link. A fuller venue section can explain the locations and current stay terms so staff receive a plan that distinguishes daytime use, overnight vehicles and duration.",
+        "scopes": [
+          {
+            "title": "Clarify the event and overnight request",
+            "pages": [
+              "Stage or gathering area",
+              "Overnight needs",
+              "Separate permit and camping contacts"
+            ],
+            "request": "Help organizers describe both components without treating them as one permission.",
+            "supplies": "Current event-use terms, designated camping information and staff contacts.",
+            "check": "A stage request does not promise adjacent RV parking or hookups."
+          },
+          {
+            "title": "Connect the site plan to stay terms",
+            "pages": [
+              "Event footprint",
+              "Designated camping areas",
+              "Area-specific duration limits"
+            ],
+            "request": "Explain where the requested uses can occur and which stay terms apply.",
+            "supplies": "Approved map, camping categories and current duration rules.",
+            "check": "The stay limit for one camping area is not applied to every site."
+          }
+        ],
+        "scopeTrigger": "Use a focused event-page edit when camping information is already clear. Expand when maps, event use and area-specific stays need connected explanations. Permit processing and campsite inventory require separate scope.",
+        "quoteQuestions": [
+          "Which parts of the event need separate permission?",
+          "Where may overnight vehicles actually stay?",
+          "Which camping terms vary by area?"
+        ],
+        "coverageNote": "For Harper County website projects, using the public Anthony example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.anthonykansas.org/community",
+            "label": "City of Anthony: community and lake facilities",
+            "observation": "Stage use requires its own permit; camping/hookups around stage and shelter are limited to designated camping areas. A/B/D allow fourteen consecutive days; C twenty-eight unless posted/authorized otherwise. At the limit, people and all property must vacate city campgrounds for at least five days."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/harper"
+        ],
+        "path": "/areas/kansas/harper-county/",
+        "title": "Web Design for Harper County, KS",
+        "description": "Web design for Harper County, KS. Keep the event area separate from the permitted overnight campsite.",
+        "servedAreas": [
+          {
+            "name": "Harper County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#harper",
+            "label": "Harper County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain separate uses and inclusions"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Keep the event area separate from the permitted overnight campsite",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Gathering",
+              "Describe the event space and permit route.",
+              "Current stage and shelter terms.",
+              "Permission for an event is not called permission to camp there."
+            ],
+            [
+              "Overnight vehicles",
+              "Direct attendees to designated camping arrangements.",
+              "Actual camping locations and hookup terms.",
+              "A convenient space beside the stage is not presented as an available campsite."
+            ],
+            [
+              "Duration",
+              "Attach stay terms to the selected area.",
+              "Current area-specific limits and departure interval.",
+              "A longer stay is not promised in an area with a shorter limit."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "419f658e3c2c44b9e7a79ab5b9f4ad9a59685ee6536717c4e49a2b8360c743a6",
+      "afterSha256": "792701699985bde378b60f9feed3419f72f1202d226742143724f44416d28c65"
+    },
+    {
+      "route": "/areas/kansas/harvey-county/",
+      "before": {
+        "areaId": "kansas/harvey",
+        "market": "Harvey County, KS",
+        "lead": "An educational offer can involve a trip, borrowed materials or paperwork after a visit. I help Harvey County organizations explain what each route asks of a teacher.",
+        "decisionTitle": "Separate a museum visit, a classroom loan and the reimbursement follow-up.",
+        "decision": "Kauffman Museum offers field trips and teaching-kit loans. Its field-trip page gives different kit loan periods for a classroom and a whole school. It also describes limited, first-come transportation reimbursement: schools reserve it with the visit and submit the request with supporting expense information after the trip.\n\nFor an education provider, I would make the learning format the first choice. A teacher borrowing a kit needs loan and return information; a teacher bringing students needs group preparation and any reimbursement sequence. These should remain connected without turning a visit request into a claim that funding is guaranteed. A focused edit can add the two routes and the before-and-after-trip steps. A fuller project can connect age-appropriate topics, preparation resources and the staff contact so a teacher can assemble a complete plan.",
+        "scopes": [
+          {
+            "title": "Clarify the learning route",
+            "pages": [
+              "Field trip or teaching kit",
+              "Classroom or school loan",
+              "Staff inquiry"
+            ],
+            "request": "Help a teacher identify the intended learning arrangement before asking for dates.",
+            "supplies": "Current program themes, kit list, loan periods and availability arrangements.",
+            "check": "A school-wide loan is not described with a classroom-only return period."
+          },
+          {
+            "title": "Connect the visit to its follow-up",
+            "pages": [
+              "Visit preparation",
+              "Reimbursement reservation",
+              "Post-visit form and supporting records"
+            ],
+            "request": "Show what must be discussed before travel and what is submitted afterward.",
+            "supplies": "Current funding terms, official form, acceptable supporting records and review contact.",
+            "check": "A teacher can find the post-visit submission step without assuming the visit request secured reimbursement."
+          }
+        ],
+        "scopeTrigger": "Use a focused content edit for clear routes and links. A fuller education section is warranted when themes, loan instructions and trip follow-up are spread across several pages. Funding decisions and record submission remain with the provider’s approved process.",
+        "quoteQuestions": [
+          "Which teacher questions change between a trip and a loan?",
+          "Does a classroom or whole school borrow the materials?",
+          "Which support steps happen before and after the visit?"
+        ],
+        "coverageNote": "For Harvey County website projects, using the public North Newton example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://kauffmanmuseum.org/education/field-trips/",
+            "label": "Kauffman Museum: field trips",
+            "observation": "Describes teaching-kit loan periods and the reservation, documentation and post-visit transportation reimbursement sequence."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/harvey"
+        ],
+        "path": "/areas/kansas/harvey-county/",
+        "title": "Web Design for Harvey County, KS",
+        "description": "Web design for Harvey County, KS. Separate a museum visit, a classroom loan and the reimbursement follow-up.",
+        "servedAreas": [
+          {
+            "name": "Harvey County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#harvey",
+            "label": "Harvey County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Separate a museum visit, a classroom loan and the reimbursement follow-up",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Learning format",
+              "Offer a trip route and a materials-loan route.",
+              "Current teaching offers.",
+              "A kit request does not ask for bus arrival details."
+            ],
+            [
+              "Loan scope",
+              "Explain the classroom and whole-school arrangements.",
+              "Approved loan periods and return instructions.",
+              "The intended use determines which period is described."
+            ],
+            [
+              "Trip support",
+              "Place reservation and later expense submission in order.",
+              "Current reimbursement terms and form.",
+              "Availability and post-trip documentation remain visible."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/harvey",
+        "market": "Harvey County, KS",
+        "lead": "An educational offer can involve a trip, borrowed materials or paperwork after a visit. I help Harvey County organizations explain what each route asks of a teacher.",
+        "decisionTitle": "Separate a museum visit, a classroom loan and the reimbursement follow-up.",
+        "decision": "Kauffman Museum offers field trips and teaching-kit loans. Its field-trip page gives different kit loan periods for a classroom and a whole school. It also describes limited, first-come transportation reimbursement: schools reserve it with the visit and submit the request with supporting expense information after the trip.\n\nFor an education provider, I would make the learning format the first choice. A teacher borrowing a kit needs loan and return information; a teacher bringing students needs group preparation and any reimbursement sequence. These should remain connected without turning a visit request into a claim that funding is guaranteed. A focused edit can add the two routes and the before-and-after-trip steps. A fuller project can connect age-appropriate topics, preparation resources and the staff contact so a teacher can assemble a complete plan.",
+        "scopes": [
+          {
+            "title": "Clarify the learning route",
+            "pages": [
+              "Field trip or teaching kit",
+              "Classroom or school loan",
+              "Staff inquiry"
+            ],
+            "request": "Help a teacher identify the intended learning arrangement before asking for dates.",
+            "supplies": "Current program themes, kit list, loan periods and availability arrangements.",
+            "check": "A school-wide loan is not described with a classroom-only return period."
+          },
+          {
+            "title": "Connect the visit to its follow-up",
+            "pages": [
+              "Visit preparation",
+              "Reimbursement reservation",
+              "Post-visit form and supporting records"
+            ],
+            "request": "Show what must be discussed before travel and what is submitted afterward.",
+            "supplies": "Current funding terms, official form, acceptable supporting records and review contact.",
+            "check": "A teacher can find the post-visit submission step without assuming the visit request secured reimbursement."
+          }
+        ],
+        "scopeTrigger": "Use a focused content edit for clear routes and links. A fuller education section is warranted when themes, loan instructions and trip follow-up are spread across several pages. Funding decisions and record submission remain with the provider’s approved process.",
+        "quoteQuestions": [
+          "Which teacher questions change between a trip and a loan?",
+          "Does a classroom or whole school borrow the materials?",
+          "Which support steps happen before and after the visit?"
+        ],
+        "coverageNote": "For Harvey County website projects, using the public North Newton example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://kauffmanmuseum.org/education/field-trips/",
+            "label": "Kauffman Museum: field trips",
+            "observation": "Teaching kits are free and first-come: two weeks per classroom or three weeks per school. Collection/return details need staff agreement. Bus-visit reimbursement is up to $100 per school per visit, first-come, reserved with the visit; the post-visit form requires expense verification."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/harvey"
+        ],
+        "path": "/areas/kansas/harvey-county/",
+        "title": "Web Design for Harvey County, KS",
+        "description": "Web design for Harvey County, KS. Separate a museum visit, a classroom loan and the reimbursement follow-up.",
+        "servedAreas": [
+          {
+            "name": "Harvey County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#harvey",
+            "label": "Harvey County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Separate a museum visit, a classroom loan and the reimbursement follow-up",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Learning format",
+              "Offer a trip route and a materials-loan route.",
+              "Current teaching offers.",
+              "A kit request does not ask for bus arrival details."
+            ],
+            [
+              "Loan scope",
+              "Explain the classroom and whole-school arrangements.",
+              "Approved loan periods and return instructions.",
+              "The intended use determines which period is described."
+            ],
+            [
+              "Trip support",
+              "Place reservation and later expense submission in order.",
+              "Current reimbursement terms and form.",
+              "Availability and post-trip documentation remain visible."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "eed9b829e7ae49bd5a27b2a57143e3c814a12745506831ac79d35faf028dd924",
+      "afterSha256": "216b738dd3e93ee9f14f2bdd14b3fb4313d32a01b683fe7fdfc4ea7cfc740de8"
+    },
+    {
+      "route": "/areas/kansas/hodgeman-county/",
+      "before": {
+        "areaId": "kansas/hodgeman",
+        "market": "Hodgeman County, KS",
+        "lead": "An event’s attendance, rental period and arriving vehicles answer different planning questions. I help Hodgeman County venues explain them before an organizer asks for a booking.",
+        "decisionTitle": "Plan the facility period and vehicle permits alongside the guest count.",
+        "decision": "HorseThief Reservoir describes its lodge and open-air pavilion as separate event facilities. The lodge page lists daily and weekend rental arrangements, a rental deposit and vehicle-permit bundles priced separately from the facility. It also gives the lodge’s guest capacity and available tables and chairs.\n\nFor an event venue, I would connect the selected space to the time required for setup, the event and clearing out, then explain which arrival-permit arrangement needs discussion. The organizer can estimate guests and vehicles separately; a guest count alone should not silently select a permit bundle. The owner approves which periods and resources the proposal actually includes. A focused page edit can clarify those choices, while a fuller project can connect the facility comparison, planning inquiry and confirmed-event instructions.",
+        "scopes": [
+          {
+            "title": "Clarify the facility and rental period",
+            "pages": [
+              "Lodge or pavilion",
+              "Event and preparation dates",
+              "Current rental terms"
+            ],
+            "request": "Help an organizer describe the space and time being requested.",
+            "supplies": "Current facility descriptions, rental periods and approved setup arrangements.",
+            "check": "A weekend event request does not assume that an extra setup day is included."
+          },
+          {
+            "title": "Explain event arrivals and separate charges",
+            "pages": [
+              "Guest and vehicle estimates",
+              "Permit arrangement",
+              "Deposit and staff confirmation"
+            ],
+            "request": "Keep the arrival and charge questions attached to the event plan.",
+            "supplies": "Current permit terms, deposit explanation and booking-review process.",
+            "check": "A room capacity figure is not treated as the number of vehicle permits supplied."
+          }
+        ],
+        "scopeTrigger": "A focused comparison and inquiry edit can establish the choices. A fuller event section is useful when preparation and arrival instructions need to stay consistent with the agreement. Permit sales, payments and live reservations require separate scope.",
+        "quoteQuestions": [
+          "Which facility and dates does the organizer need?",
+          "How should preparation time be requested?",
+          "Which arrival permits or deposits are separate from facility rental?"
+        ],
+        "coverageNote": "For Hodgeman County website projects, using the public HorseThief Reservoir west of Jetmore example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://horsethiefreservoir.com/facilities-lodging/lodge-open-air-pavilion/",
+            "label": "HorseThief Reservoir: lodge and pavilion",
+            "observation": "Describes separate facilities, rental periods, deposit and separately priced vehicle-permit bundles."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/hodgeman"
+        ],
+        "path": "/areas/kansas/hodgeman-county/",
+        "title": "Web Design for Hodgeman County, KS",
+        "description": "Web design for Hodgeman County, KS. Plan the facility period and vehicle permits alongside the guest count.",
+        "servedAreas": [
+          {
+            "name": "Hodgeman County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#hodgeman",
+            "label": "Hodgeman County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Plan the facility period and vehicle permits alongside the guest count",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Facility",
+              "Compare the actual spaces and their facilities.",
+              "Approved lodge and pavilion descriptions.",
+              "An outdoor booking does not inherit the lodge’s kitchen description."
+            ],
+            [
+              "Period",
+              "Ask about the dates needed for the whole event arrangement.",
+              "Current rental-period terms.",
+              "Preparation time is discussed rather than assumed."
+            ],
+            [
+              "Vehicles",
+              "Keep the vehicle estimate separate from attendance.",
+              "Current permit arrangements.",
+              "Guest capacity does not become a permit entitlement."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/hodgeman",
+        "market": "Hodgeman County, KS",
+        "lead": "An event’s attendance, rental period and arriving vehicles answer different planning questions. I help Hodgeman County venues explain them before an organizer asks for a booking.",
+        "decisionTitle": "Plan the facility period and vehicle permits alongside the guest count.",
+        "decision": "HorseThief Reservoir describes its lodge and open-air pavilion as separate event facilities. The lodge page lists daily and weekend rental arrangements, a rental deposit and vehicle-permit bundles priced separately from the facility. It also gives the lodge’s guest capacity and available tables and chairs.\n\nFor an event venue, I would connect the selected space to the time required for setup, the event and clearing out, then explain which arrival-permit arrangement needs discussion. The organizer can estimate guests and vehicles separately; a guest count alone should not silently select a permit bundle. The owner approves which periods and resources the proposal actually includes. A focused page edit can clarify those choices, while a fuller project can connect the facility comparison, planning inquiry and confirmed-event instructions.",
+        "scopes": [
+          {
+            "title": "Clarify the facility and rental period",
+            "pages": [
+              "Lodge or pavilion",
+              "Event and preparation dates",
+              "Current rental terms"
+            ],
+            "request": "Help an organizer describe the space and time being requested.",
+            "supplies": "Current facility descriptions, rental periods and approved setup arrangements.",
+            "check": "A weekend event request does not assume that an extra setup day is included."
+          },
+          {
+            "title": "Explain event arrivals and separate charges",
+            "pages": [
+              "Guest and vehicle estimates",
+              "Permit arrangement",
+              "Deposit and staff confirmation"
+            ],
+            "request": "Keep the arrival and charge questions attached to the event plan.",
+            "supplies": "Current permit terms, deposit explanation and booking-review process.",
+            "check": "A room capacity figure is not treated as the number of vehicle permits supplied."
+          }
+        ],
+        "scopeTrigger": "A focused comparison and inquiry edit can establish the choices. A fuller event section is useful when preparation and arrival instructions need to stay consistent with the agreement. Permit sales, payments and live reservations require separate scope.",
+        "quoteQuestions": [
+          "Which facility and dates does the organizer need?",
+          "How should preparation time be requested?",
+          "Which arrival permits or deposits are separate from facility rental?"
+        ],
+        "coverageNote": "For Hodgeman County website projects, using the public HorseThief Reservoir west of Jetmore example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://horsethiefreservoir.com/facilities-lodging/lodge-open-air-pavilion/",
+            "label": "HorseThief Reservoir: lodge and pavilion",
+            "observation": "Lodge accommodates 175 with commercial kitchen, 175 chairs and tables. Friday–Sunday package costs $1,000; Thursday adds $200; $500 deposit and vehicle-permit bundles are separate. Pavilion lists electricity and $80/day but no capacity on this page."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/hodgeman"
+        ],
+        "path": "/areas/kansas/hodgeman-county/",
+        "title": "Web Design for Hodgeman County, KS",
+        "description": "Web design for Hodgeman County, KS. Plan the facility period and vehicle permits alongside the guest count.",
+        "servedAreas": [
+          {
+            "name": "Hodgeman County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#hodgeman",
+            "label": "Hodgeman County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Prepare the information needed for a useful request"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Plan the facility period and vehicle permits alongside the guest count",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Facility",
+              "Compare the actual spaces and their facilities.",
+              "Approved lodge and pavilion descriptions.",
+              "An outdoor booking does not inherit the lodge’s kitchen description."
+            ],
+            [
+              "Period",
+              "Ask about the dates needed for the whole event arrangement.",
+              "Current rental-period terms.",
+              "Preparation time is discussed rather than assumed."
+            ],
+            [
+              "Vehicles",
+              "Keep the vehicle estimate separate from attendance.",
+              "Current permit arrangements.",
+              "Guest capacity does not become a permit entitlement."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "36701573b1d7ff3f3df386c013d4656defb11e5c4a901c67a207e9860611fd88",
+      "afterSha256": "0de69161fa3c74644cf4431ae33df94a447c5acd33d047033ef668ba61edad39"
+    },
+    {
+      "route": "/areas/kansas/johnson-county/",
+      "before": {
+        "areaId": "kansas/johnson",
+        "market": "Johnson County, KS",
+        "lead": "A studio membership can include time at the wheel while charging separately for part of the firing process. I help Johnson County businesses explain that offer before an application.",
+        "decisionTitle": "Compare studio access and firing charges as separate membership decisions.",
+        "decision": "House of Clay in Overland Park describes membership levels with different studio-access allowances. Its membership page includes bisque firing and prices glaze firing by cubic inch. It asks for basic pottery experience or an introductory class, and describes higher-tier gallery sales as an opportunity; its FAQ says members can apply to sell work.\n\nFor a creative studio, I would compare access, storage and separately charged production steps in adjacent rows. A maker should be able to choose a time allowance without treating that allowance as an all-inclusive finished-work budget. The application page should also explain the experience needed and distinguish an opportunity to apply from approval. A small project can improve the membership comparison; a fuller project connects beginner classes, independent studio use and the application so each reader reaches the appropriate starting point.",
+        "scopes": [
+          {
+            "title": "Clarify membership inclusions",
+            "pages": [
+              "Access allowance",
+              "Storage and equipment",
+              "Included and separately charged firing"
+            ],
+            "request": "Make the membership comparison usable without hiding production charges in a distant FAQ.",
+            "supplies": "Approved tiers, open-hour limits, firing terms and current application link.",
+            "check": "A reader choosing more studio time still sees that glaze firing has a separate volume-based charge."
+          },
+          {
+            "title": "Connect readiness to the application",
+            "pages": [
+              "Beginner classes",
+              "Independent studio experience",
+              "Membership and gallery next steps"
+            ],
+            "request": "Help a beginner and an experienced maker choose different starting routes.",
+            "supplies": "Current experience expectations, introductory offers and application review steps.",
+            "check": "A gallery opportunity is not described as automatic permission to sell."
+          }
+        ],
+        "scopeTrigger": "Use a focused membership-table edit when classes and contact already work. Expand when the beginner-to-independent-use route needs explanation. Membership billing, time tracking and kiln-charge calculators require separate scope.",
+        "quoteQuestions": [
+          "Which costs are included in the membership?",
+          "Which access benefits vary by tier?",
+          "What should a beginner do before applying?"
+        ],
+        "coverageNote": "For Johnson County website projects, using the public Overland Park example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.houseofclaykc.com/memberships/",
+            "label": "House of Clay: memberships",
+            "observation": "Lists access allowances, included bisque firing, volume-priced glaze firing and experience expectations."
+          },
+          {
+            "url": "https://www.houseofclaykc.com/frequently-asked-questions/",
+            "label": "House of Clay: questions and answers",
+            "observation": "Explains independent studio use and applying to sell work in the gallery."
+          },
+          {
+            "url": "https://www.houseofclaykc.com/contact/",
+            "label": "House of Clay: contact",
+            "observation": "Lists the studio at 7811 Marty Street in Overland Park."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/johnson"
+        ],
+        "path": "/areas/kansas/johnson-county/",
+        "title": "Web Design for Johnson County, KS",
+        "description": "Web design for Johnson County, KS. Compare studio access and firing charges as separate membership decisions.",
+        "servedAreas": [
+          {
+            "name": "Johnson County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#johnson",
+            "label": "Johnson County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain what a participant is choosing"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Compare studio access and firing charges as separate membership decisions",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Studio time",
+              "Describe each access allowance and open-hour boundary.",
+              "Current tier terms.",
+              "The highest allowance is not presented as round-the-clock access."
+            ],
+            [
+              "Production cost",
+              "Keep included bisque and separate glaze firing together.",
+              "Approved charge basis.",
+              "The membership price is not called the entire cost of finished work."
+            ],
+            [
+              "Readiness and opportunity",
+              "Show experience expectations and the later application steps.",
+              "Actual review process.",
+              "Applying for membership or gallery access does not become automatic approval."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/johnson",
+        "market": "Johnson County, KS",
+        "lead": "A studio membership can include time at the wheel while charging separately for part of the firing process. I help Johnson County businesses explain that offer before an application.",
+        "decisionTitle": "Compare studio access and firing charges as separate membership decisions.",
+        "decision": "House of Clay in Overland Park describes membership levels with different studio-access allowances. Its membership page includes bisque firing and prices glaze firing by cubic inch. It asks for basic pottery experience or an introductory class, and describes higher-tier gallery sales as an opportunity; its FAQ says members can apply to sell work.\n\nFor a creative studio, I would compare access, storage and separately charged production steps in adjacent rows. A maker should be able to choose a time allowance without treating that allowance as an all-inclusive finished-work budget. The application page should also explain the experience needed and distinguish an opportunity to apply from approval. A small project can improve the membership comparison; a fuller project connects beginner classes, independent studio use and the application so each reader reaches the appropriate starting point.",
+        "scopes": [
+          {
+            "title": "Clarify membership inclusions",
+            "pages": [
+              "Access allowance",
+              "Storage and equipment",
+              "Included and separately charged firing"
+            ],
+            "request": "Make the membership comparison usable without hiding production charges in a distant FAQ.",
+            "supplies": "Approved tiers, open-hour limits, firing terms and current application link.",
+            "check": "A reader choosing more studio time still sees that glaze firing has a separate volume-based charge."
+          },
+          {
+            "title": "Connect readiness to the application",
+            "pages": [
+              "Beginner classes",
+              "Independent studio experience",
+              "Membership and gallery next steps"
+            ],
+            "request": "Help a beginner and an experienced maker choose different starting routes.",
+            "supplies": "Current experience expectations, introductory offers and application review steps.",
+            "check": "A gallery opportunity is not described as automatic permission to sell."
+          }
+        ],
+        "scopeTrigger": "Use a focused membership-table edit when classes and contact already work. Expand when the beginner-to-independent-use route needs explanation. Membership billing, time tracking and kiln-charge calculators require separate scope.",
+        "quoteQuestions": [
+          "Which costs are included in the membership?",
+          "Which access benefits vary by tier?",
+          "What should a beginner do before applying?"
+        ],
+        "coverageNote": "For Johnson County website projects, using the public Overland Park example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.houseofclaykc.com/memberships/",
+            "label": "House of Clay: memberships",
+            "observation": "Potter’s Apprentice: $75/month, ten hours, cubby. Pottery Pro: $175/month, access during opening hours, four-foot shelf, wheel reservations. Both include bisque; glaze firing is $0.05 per cubic inch. Adults need basic experience or an introductory class."
+          },
+          {
+            "url": "https://www.houseofclaykc.com/frequently-asked-questions/",
+            "label": "House of Clay: questions and answers",
+            "observation": "Explains independent studio use and applying to sell work in the gallery."
+          },
+          {
+            "url": "https://www.houseofclaykc.com/contact/",
+            "label": "House of Clay: contact",
+            "observation": "Lists the studio at 7811 Marty Street in Overland Park."
+          },
+          {
+            "url": "https://www.houseofclaykc.com/store-hours/",
+            "label": "House of Clay: studio opening hours",
+            "observation": "Ordinary studio/gallery hours Monday–Saturday 10 a.m.–8 p.m., Sunday noon–5 p.m.; scheduled classes/events may differ."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/johnson"
+        ],
+        "path": "/areas/kansas/johnson-county/",
+        "title": "Web Design for Johnson County, KS",
+        "description": "Web design for Johnson County, KS. Compare studio access and firing charges as separate membership decisions.",
+        "servedAreas": [
+          {
+            "name": "Johnson County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#johnson",
+            "label": "Johnson County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Explain what a participant is choosing"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Compare studio access and firing charges as separate membership decisions",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Studio time",
+              "Describe each access allowance and open-hour boundary.",
+              "Current tier terms.",
+              "The highest allowance is not presented as round-the-clock access."
+            ],
+            [
+              "Production cost",
+              "Keep included bisque and separate glaze firing together.",
+              "Approved charge basis.",
+              "The membership price is not called the entire cost of finished work."
+            ],
+            [
+              "Readiness and opportunity",
+              "Show experience expectations and the later application steps.",
+              "Actual review process.",
+              "Applying for membership or gallery access does not become automatic approval."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "ac42d1d5fc73724d3794438aa324654f10d4999e92bc3d636c33395f5ef2690c",
+      "afterSha256": "92e17bd5cc57df8d7ff9c496512c2220e586ef54b07b860fbfdb4640827828c1"
+    },
+    {
+      "route": "/areas/kansas/leavenworth-county/",
+      "before": {
+        "areaId": "kansas/leavenworth",
+        "market": "Leavenworth County, KS",
+        "lead": "A confirmed activity at a controlled-entry destination does not itself grant entry. I help Leavenworth County businesses keep that distinction clear in visitor preparation.",
+        "decisionTitle": "Separate the visit arrangement from official installation access.",
+        "decision": "The Army’s Fort Leavenworth visitor page directs most visitors toward online registration or the Visitor Control Center, while commercial vehicle drivers must register at the center. It also limits how far ahead online registration can begin. The National Park Service places the Frontier Army Museum within Fort Leavenworth and directs access questions to the Visitor Control Center.\n\nFor a local visitor business, I would explain its own reservation or itinerary first, then provide the official access-information handoff at the point when the guest can use it. The page should distinguish an ordinary visitor question from commercial vehicle access, with the Army controlling current instructions and approval. A business confirming an outing months ahead can link the maintained official guidance without claiming registration is already available or collecting identification itself. Exact gate schedules and eligibility decisions should remain with the official source.",
+        "scopes": [
+          {
+            "title": "Clarify the official access handoff",
+            "pages": [
+              "Business arrangement",
+              "Official visitor information",
+              "Access-question contact"
+            ],
+            "request": "Make clear which arrangement the business confirms and which decision belongs to the installation.",
+            "supplies": "The business’s actual booking terms, approved guest instructions and current official links.",
+            "check": "An outing confirmation is not presented as an entry pass."
+          },
+          {
+            "title": "Prepare visitors and service providers",
+            "pages": [
+              "Visit timing",
+              "Visitor or commercial-vehicle route",
+              "Current official instructions"
+            ],
+            "request": "Connect each reader to the relevant official process without duplicating its application.",
+            "supplies": "Actual guest and supplier situations, source-review owner and contact sequence.",
+            "check": "A delivery driver is not sent through the ordinary visitor route as though it covers all vehicle types."
+          }
+        ],
+        "scopeTrigger": "A focused edit suits an existing guest-information page. A fuller preparation section is useful when visitors and commercial service providers need different handoffs. The installation decides access; the website project does not evaluate eligibility or collect pass-application records.",
+        "quoteQuestions": [
+          "What part of the visit can your business actually confirm?",
+          "When should guests check the official access process?",
+          "Do suppliers or commercial drivers need a separate information route?"
+        ],
+        "coverageNote": "For Leavenworth County website projects, using the public Leavenworth example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://home.army.mil/leavenworth/about/visitor-information/gate-information",
+            "label": "U.S. Army: Fort Leavenworth visitor and gate information",
+            "observation": "Separates ordinary visitor registration and commercial vehicle registration, and describes the online advance-registration window."
+          },
+          {
+            "url": "https://www.nps.gov/places/frontier-army-museum.htm",
+            "label": "National Park Service: Frontier Army Museum",
+            "observation": "Places the museum within Fort Leavenworth in Leavenworth, Kansas and directs access questions to the Visitor Control Center."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/leavenworth"
+        ],
+        "path": "/areas/kansas/leavenworth-county/",
+        "title": "Web Design for Leavenworth County, KS",
+        "description": "Web design for Leavenworth County, KS. Separate the visit arrangement from official installation access.",
+        "servedAreas": [
+          {
+            "name": "Leavenworth County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#leavenworth",
+            "label": "Leavenworth County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Prepare the handoff after a visit arrangement"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Separate the visit arrangement from official installation access",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Arrangement",
+              "Name what the business has actually agreed.",
+              "Approved booking or itinerary wording.",
+              "Confirmation does not claim installation approval."
+            ],
+            [
+              "Timing",
+              "Link the official registration window from preparation instructions.",
+              "Current source and review responsibility.",
+              "A far-future booking does not imply immediate pass registration."
+            ],
+            [
+              "Access type",
+              "Point ordinary visitors and commercial drivers to the appropriate official guidance.",
+              "Actual visit and delivery contexts.",
+              "No identity-document upload is added to the business inquiry."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "kansas/leavenworth",
+        "market": "Leavenworth County, KS",
+        "lead": "A confirmed activity at a controlled-entry destination does not itself grant entry. I help Leavenworth County businesses keep that distinction clear in visitor preparation.",
+        "decisionTitle": "Separate the visit arrangement from official installation access.",
+        "decision": "The Army’s Fort Leavenworth visitor page directs most visitors toward online registration or the Visitor Control Center, while commercial vehicle drivers must register at the center. It also limits how far ahead online registration can begin. The National Park Service places the Frontier Army Museum within Fort Leavenworth and directs access questions to the Visitor Control Center.\n\nFor a local visitor business, I would explain its own reservation or itinerary first, then provide the official access-information handoff at the point when the guest can use it. The page should distinguish an ordinary visitor question from commercial vehicle access, with the Army controlling current instructions and approval. A business confirming an outing months ahead can link the maintained official guidance without claiming registration is already available or collecting identification itself. Exact gate schedules and eligibility decisions should remain with the official source.",
+        "scopes": [
+          {
+            "title": "Clarify the official access handoff",
+            "pages": [
+              "Business arrangement",
+              "Official visitor information",
+              "Access-question contact"
+            ],
+            "request": "Make clear which arrangement the business confirms and which decision belongs to the installation.",
+            "supplies": "The business’s actual booking terms, approved guest instructions and current official links.",
+            "check": "An outing confirmation is not presented as an entry pass."
+          },
+          {
+            "title": "Prepare visitors and service providers",
+            "pages": [
+              "Visit timing",
+              "Visitor or commercial-vehicle route",
+              "Current official instructions"
+            ],
+            "request": "Connect each reader to the relevant official process without duplicating its application.",
+            "supplies": "Actual guest and supplier situations, source-review owner and contact sequence.",
+            "check": "A delivery driver is not sent through the ordinary visitor route as though it covers all vehicle types."
+          }
+        ],
+        "scopeTrigger": "A focused edit suits an existing guest-information page. A fuller preparation section is useful when visitors and commercial service providers need different handoffs. The installation decides access; the website project does not evaluate eligibility or collect pass-application records.",
+        "quoteQuestions": [
+          "What part of the visit can your business actually confirm?",
+          "When should guests check the official access process?",
+          "Do suppliers or commercial drivers need a separate information route?"
+        ],
+        "coverageNote": "For Leavenworth County website projects, using the public Leavenworth example. Wonder and Method works online from Buffalo, New York. Named organizations are examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://home.army.mil/leavenworth/about/visitor-information/gate-information",
+            "label": "U.S. Army: Fort Leavenworth visitor and gate information",
+            "observation": "Online visitor registration cannot start more than ten days before the visit. Most visitors use that official route or the Visitor Control Center; commercial drivers must register at the center. Timing eligibility does not grant installation access."
+          },
+          {
+            "url": "https://www.nps.gov/places/frontier-army-museum.htm",
+            "label": "National Park Service: Frontier Army Museum",
+            "observation": "Places the museum within Fort Leavenworth in Leavenworth, Kansas and directs access questions to the Visitor Control Center."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal identifies the pages, forms and connections.",
+        "areaIds": [
+          "kansas/leavenworth"
+        ],
+        "path": "/areas/kansas/leavenworth-county/",
+        "title": "Web Design for Leavenworth County, KS",
+        "description": "Web design for Leavenworth County, KS. Separate the visit arrangement from official installation access.",
+        "servedAreas": [
+          {
+            "name": "Leavenworth County",
+            "state": "Kansas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kansas/#leavenworth",
+            "label": "Leavenworth County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Prepare the handoff after a visit arrangement"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Separate the visit arrangement from official installation access",
+          "intro": "Proposed website content and review checks. The owner supplies current terms and approves the arrangements described.",
+          "columns": [
+            "Reader choice",
+            "Website work",
+            "Owner supplies",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Arrangement",
+              "Name what the business has actually agreed.",
+              "Approved booking or itinerary wording.",
+              "Confirmation does not claim installation approval."
+            ],
+            [
+              "Timing",
+              "Link the official registration window from preparation instructions.",
+              "Current source and review responsibility.",
+              "A far-future booking does not imply immediate pass registration."
+            ],
+            [
+              "Access type",
+              "Point ordinary visitors and commercial drivers to the appropriate official guidance.",
+              "Actual visit and delivery contexts.",
+              "No identity-document upload is added to the business inquiry."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "f453fd75a3859479e2968eaefae1460ae521be5c7d6cd6f68667aa7265541b0d",
+      "afterSha256": "cfe134ef9e7043ae0452976a7415f5563d9ab11aa2abdfd0e1c0a1585a1b34e3"
+    }
+  ],
+  "faqs": [],
+  "sourceChecks": [
+    "operations/human-quality-20261027/research/residual-n-official-fetches.json"
+  ],
+  "limits": "13 drafts, 9 source records. No FAQs or imported briefs changed. Geary and Leavenworth use indexed official content after direct fetch failures; Harvey return procedure and pavilion capacity remain explicitly unprovided. Historical 2026 Ellis session is not future availability.",
+  "acceptance": {
+    "reviewFiles": [
+      {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-kn-recheck.jsonl",
+        "sha256": "b3e2197265f31584e713e60b6e2d55803fccb3fd3988438988ae5187be57b7fa"
+      }
+    ],
+    "exactCandidates": 13,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  },
+  "importVerification": {
+    "routes": 13,
+    "exactProjection": true,
+    "projectionFields": [
+      "route",
+      "inputHash",
+      "heading",
+      "intro",
+      "customerQuestion",
+      "decisions",
+      "ownerInputs",
+      "sourceBridge",
+      "limits"
+    ],
+    "preservationTests": "10 passed after combined MKN acceptance and import; rendered/global checks pending"
+  }
+}

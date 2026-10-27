@@ -1,0 +1,626 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/greene-county/",
+    "/areas/iowa/wapello-county/",
+    "/areas/kansas/cloud-county/",
+    "/areas/kansas/ellsworth-county/",
+    "/areas/kansas/grant-county/",
+    "/areas/kansas/greenwood-county/",
+    "/areas/kansas/haskell-county/",
+    "/areas/kansas/stanton-county/",
+    "/areas/texas/knox-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/greene-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/greene-county/",
+        "inputHash": "ea8a0fbcc5db1ab724a4b98e039adb5f7b0cb098509ab964d1cb73ed171c994d",
+        "heading": "Help customers check the stand before planning a trip.",
+        "intro": "A crop list explains what a farm grows across the season. A dated notice and current hours help a customer decide whether to visit now. Your stand page can give those facts separate purposes and a realistic way to keep changing details current.",
+        "customerQuestion": "The farm grows tomatoes. How can I check whether they are available before I drive over?",
+        "decisions": [
+          {
+            "label": "Label the seasonal range",
+            "body": "Present owner-approved crops and photographs as general context. Avoid wording that turns every listed crop into a promise of stock on the customer’s next visit."
+          },
+          {
+            "label": "Make the latest approved notice recognizable",
+            "body": "Give a current harvest or stand highlight its date and useful duration. Agree who approves replacement wording when a crop ends, so an old highlight does not conflict with the permanent introduction."
+          },
+          {
+            "label": "Connect the update to a visit",
+            "body": "Keep actual hours, changes and a contact route nearby. Explain what staff can confirm before travel, including uncertainty about a particular item, without implying live inventory or immediate replies."
+          }
+        ],
+        "ownerInputs": [
+          "Approved crop list, photographs and current notice.",
+          "Stand schedule and contact for availability questions.",
+          "Named updater, approval process and publishing arrangement."
+        ],
+        "sourceBridge": "Story Farms publishes a homegrown produce list, farm news and stand hours from its Catskill address at 4640 NY-32. Those pieces answer different questions: the farm’s range, its latest message and when to arrive. Their usefulness depends on keeping each kind of information clear.",
+        "limits": "Ordinary website care is not an instant or round-the-clock harvest-news service. Agree the work window and supply approved wording, intended dates and related hours changes together. Frequent same-day publishing needs assessment before booking; live stock, preorders and automated feeds require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/greene-county/",
+        "inputHash": "ea8a0fbcc5db1ab724a4b98e039adb5f7b0cb098509ab964d1cb73ed171c994d",
+        "heading": "Help customers check the stand before planning a trip.",
+        "intro": "A crop list explains what a farm grows across the season. A dated notice and current hours help a customer decide whether to visit now. Your stand page can give those facts separate purposes and a realistic way to keep changing details current.",
+        "customerQuestion": "The farm grows tomatoes. How can I check whether they are available before I drive over?",
+        "decisions": [
+          {
+            "label": "Label the seasonal range",
+            "body": "Present owner-approved crops and photographs as general context. Avoid wording that turns every listed crop into a promise of stock on the customer’s next visit."
+          },
+          {
+            "label": "Show what happens when a notice expires",
+            "body": "Fictional notice: “Tomatoes available Friday afternoon; check with the stand before a special trip.” Put the actual publication date beside it. When that notice expires, remove it or replace it with approved wording; keep tomatoes in the seasonal crop list if that remains accurate. An expired highlight should not silently become today’s stock promise."
+          },
+          {
+            "label": "Connect the update to a visit",
+            "body": "Keep actual hours, changes and a contact route nearby. Explain what staff can confirm before travel, including uncertainty about a particular item, without implying live inventory or immediate replies."
+          }
+        ],
+        "ownerInputs": [
+          "Approved crop list and one current notice with its publication and removal dates.",
+          "Stand schedule and contact for availability questions.",
+          "Named updater, approval process and publishing arrangement."
+        ],
+        "sourceBridge": "Story Farms publishes a homegrown produce list, farm news and stand hours from its Catskill address at 4640 NY-32. Those pieces answer different questions: the farm’s range, its latest message and when to arrive. Their usefulness depends on keeping each kind of information clear.",
+        "limits": "A dated notice can clarify a visit without measuring stock. Live inventory, preorders and automated feeds require separate scope; the care FAQ below explains how ordinary updates are arranged.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "790104005fc55cf2511919fb11fb3ffc21b018005d3eb0644e393358aadf6676",
+      "afterSha256": "6bdfd2105a9fd542cb4bc7db1192310aa8ab8f648c1eec27ea08b25f1da3f810",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/iowa/wapello-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Ask about the event before suggesting a room.",
+        "intro": "For a venue website, attendance alone cannot identify a suitable space. Help organizers describe the activity, seating arrangement and food service so staff can discuss a realistic room plan.",
+        "customerQuestion": "What does the venue need to understand my event?",
+        "decisions": [
+          {
+            "label": "Connect attendance to layout",
+            "body": "Explain the differences between the theater, meeting rooms and exposition hall using approved examples. An audience seated for a performance has different space requirements from a banquet. Use each room’s relevant layout and approved capacity rather than applying a building-wide attendance range to every event."
+          },
+          {
+            "label": "Invite a catering conversation",
+            "body": "Show what the published menu describes and how to ask about an adapted menu when the event or budget calls for one. Keep dietary and budget questions with the food-service contact. An invitation to discuss changes is not confirmation that a particular menu or accommodation is available."
+          },
+          {
+            "label": "Keep the first inquiry manageable",
+            "body": "Ask for proposed dates, event format, expected attendance and essential room requirements. Include the catering request in the same staff conversation. The organizer should be able to explain the event goal without preparing or uploading a complete request for proposals."
+          }
+        ],
+        "ownerInputs": [
+          "Approved room layouts and capacities.",
+          "Current menus and catering-question contact.",
+          "Essential inquiry fields and the existing sales route."
+        ],
+        "sourceBridge": "Bridge View Center distinguishes its venue spaces and requests event details; its food-and-beverage page describes in-house catering and discussion of customized menus. Those facts support an inquiry organized around how the event will work.",
+        "limits": "Staff confirm the room arrangement, menu and price. A submitted inquiry does not reserve a room or guarantee dietary accommodation. File uploads, booking tools and payment handling require separate assessment.",
+        "route": "/areas/iowa/wapello-county/",
+        "inputHash": "baeb1dfdf57787518dfb9f5240f59f8a2588b6640f05b83fa1fc6739afca5555"
+      },
+      "after": {
+        "heading": "Ask about the event before suggesting a room.",
+        "intro": "For a venue website, attendance alone cannot identify a suitable space. Help organizers describe the activity, seating arrangement and food service so staff can discuss a realistic room plan.",
+        "customerQuestion": "We expect eighty people for a talk and a meal. What should our venue inquiry say?",
+        "decisions": [
+          {
+            "label": "Describe the layout change",
+            "body": "Fictional inquiry: eighty guests need a seated presentation followed by a meal. State whether people can move to another room or whether the same room must change from audience seating to tables. Eighty is an example, not a published room capacity. Bridge View Center’s theater, meeting rooms and exposition hall need their own approved layout and capacity checks."
+          },
+          {
+            "label": "Invite a catering conversation",
+            "body": "Show what the published menu describes and how to ask about an adapted menu when the event or budget calls for one. Keep dietary and budget questions with the food-service contact. An invitation to discuss changes is not confirmation that a particular menu or accommodation is available."
+          },
+          {
+            "label": "Send one workable event outline",
+            "body": "For that example, send the preferred date, talk and meal times, eighty-person estimate, and whether a room change is acceptable. Add food requirements for the catering conversation. Staff can then assess a room plan and customized menu without the organizer uploading a complete request for proposals. A shared attendance number alone leaves the transition unresolved."
+          }
+        ],
+        "ownerInputs": [
+          "Approved room layouts and capacities.",
+          "Current menus and catering-question contact.",
+          "Essential inquiry fields and the existing sales route."
+        ],
+        "sourceBridge": "Bridge View Center distinguishes its venue spaces and requests event details; its food-and-beverage page describes in-house catering and discussion of customized menus. Those facts support an inquiry organized around how the event will work.",
+        "limits": "Staff confirm the room arrangement, menu and price. A submitted inquiry does not reserve a room or guarantee dietary accommodation. File uploads, booking tools and payment handling require separate assessment.",
+        "route": "/areas/iowa/wapello-county/",
+        "inputHash": "baeb1dfdf57787518dfb9f5240f59f8a2588b6640f05b83fa1fc6739afca5555"
+      },
+      "beforeSha256": "0d1a8583165512f7bfdd81d311a2e0d620579f00fe0d8304998e9e202da66d2d",
+      "afterSha256": "75334d5557e57465fe656fb9957f48ad8d52cad97e252f480c1cfb83c5ae5a34",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/cloud-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep a free name check separate from paid research.",
+        "intro": "An archive can help readers understand what staff check for free and what requires a further commission. Explain each stage and let the requester explicitly choose the additional work.",
+        "customerQuestion": "What will the initial check cover, and how do I request further research?",
+        "decisions": [
+          {
+            "label": "Explain the free staff check",
+            "body": "Describe the information staff look for in existing holdings and the form or email route for requesting it. The National Orphan Train Complex’s free name check concerns information already held about a historical rider, which varies by person. Sending the request is not an instant search of a public database."
+          },
+          {
+            "label": "Give paid research its own choice",
+            "body": "Present the approved work description, fee basis, approximate timing and limits beside the separate commissioned-research route. A missing name in the existing database does not establish that no evidence exists elsewhere. Opening a page or making an inquiry should not automatically charge a fee or start further research."
+          },
+          {
+            "label": "Carry previous findings forward",
+            "body": "Ask for the historical subject, question and sources already checked, including the earlier name-check response. Explain that FamilySearch links lead to a separate external resource. Direct supporting family documents through an agreed later channel so staff can distinguish earlier findings from the work now being requested."
+          }
+        ],
+        "ownerInputs": [
+          "Scope and response process for the free check.",
+          "Approved paid-research terms and acceptance process.",
+          "Necessary historical identifiers and document-handling route."
+        ],
+        "sourceBridge": "The National Orphan Train Complex separates a free staff database check, external records and a paid research request with its own form and terms. That distinction supports clear stages without recreating its internal database.",
+        "limits": "Staff accept and perform the research; neither stage guarantees a result. Payment collection and document handling require separate assessment. A general contact form should not invite private family documents without an approved handling process.",
+        "route": "/areas/kansas/cloud-county/",
+        "inputHash": "04bd507992a5919824d30250db73eab32b5ce038b61c03220074cfdcd5d2783e"
+      },
+      "after": {
+        "heading": "Keep a free name check separate from paid research.",
+        "intro": "An archive can help readers understand what staff check for free and what requires a further commission. Explain each stage and let the requester explicitly choose the additional work.",
+        "customerQuestion": "What will the initial check cover, and how do I request further research?",
+        "decisions": [
+          {
+            "label": "Explain the free staff check",
+            "body": "Describe the information staff look for in existing holdings and the form or email route for requesting it. The National Orphan Train Complex’s free name check concerns information already held about a historical rider, which varies by person. Sending the request is not an instant search of a public database."
+          },
+          {
+            "label": "Give paid research its own choice",
+            "body": "Present the approved work description, fee basis, approximate timing and limits beside the separate commissioned-research route. A missing name in the existing database does not establish that no evidence exists elsewhere. Opening a page or making an inquiry should not automatically charge a fee or start further research."
+          },
+          {
+            "label": "Turn the first response into a research question",
+            "body": "Fictional example: the free check finds a rider’s name, but leaves their arrival location unanswered. The next request can quote the earlier response and ask specifically about that location, identifying sources already checked. Staff can decide whether a separate paid commission fits. This is a sample question, not a historical finding or a promise of further evidence. FamilySearch links lead to an external resource."
+          }
+        ],
+        "ownerInputs": [
+          "Scope and response process for the free check.",
+          "Approved paid-research terms and acceptance process.",
+          "Historical identifiers, the earlier response and a precise unanswered question; agree a later route for supporting documents."
+        ],
+        "sourceBridge": "The National Orphan Train Complex separates a free staff database check, external records and a paid research request with its own form and terms. That distinction supports clear stages without recreating its internal database.",
+        "limits": "Staff accept and perform the research; neither stage guarantees a result. Payment collection and document handling require separate assessment. A general contact form should not invite private family documents without an approved handling process.",
+        "route": "/areas/kansas/cloud-county/",
+        "inputHash": "04bd507992a5919824d30250db73eab32b5ce038b61c03220074cfdcd5d2783e"
+      },
+      "beforeSha256": "c369095540d9df9837a38d0d397915177204ba6aa246e0793e336b89bc560e7d",
+      "afterSha256": "5e809bb963662b11e4cac6f9c600d65f887407465ada29db12fbdad01718e6be",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/ellsworth-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Compare the meeting package with the room and meal needs.",
+        "intro": "A meeting venue can help organizers distinguish included preparation from additional requests. Put package services beside room choices, then ask separately about food and any overnight stay.",
+        "customerQuestion": "What does the meeting package cover, and what else should I request?",
+        "decisions": [
+          {
+            "label": "List the included services",
+            "body": "Midland Railroad Hotel describes a package with room setup and teardown, coffee and hot tea, break items and meeting supplies. Explain the current inclusions and exceptions together. An organizer should be able to identify the preparation tasks the venue handles before arranging the rest of the meeting."
+          },
+          {
+            "label": "Describe each room’s use and access",
+            "body": "Place approved room descriptions and layout options beside the space choices. The venue identifies different access arrangements for its lower-level Sample Room, so generic hotel directions are insufficient. Provide the actual access route and relevant arrival details before the organizer selects that room."
+          },
+          {
+            "label": "Keep additional needs distinct",
+            "body": "Breakfast and lunch are available, but should appear as meal requests rather than assumed package inclusions. Let the organizer state the event, arrangement and food requirements through the meeting contact. If an overnight stay is wanted, direct it through the actual accommodation route; an event inquiry does not reserve a guest room."
+          }
+        ],
+        "ownerInputs": [
+          "Current package inclusions and exceptions.",
+          "Room layouts and verified access information.",
+          "Meal options, accommodation route and staff review questions."
+        ],
+        "sourceBridge": "Midland Railroad Hotel in Wilson describes different meeting spaces, a service package, available meals and lower-level room access. Those choices support a package comparison linked to the actual room and organizer’s requirements.",
+        "limits": "The owner confirms room suitability, inclusions and availability before acceptance. A focused package explanation may be sufficient when room pages already work. Live meeting-room availability and accommodation booking require separately agreed scope.",
+        "route": "/areas/kansas/ellsworth-county/",
+        "inputHash": "d3416bcaab69a43e7e79dbfab068960737d3ab0461942925d70b4a772ffb9f4f"
+      },
+      "after": {
+        "heading": "Compare the meeting package with the room and meal needs.",
+        "intro": "A meeting venue can help organizers distinguish included preparation from additional requests. Put package services beside room choices, then ask separately about food and any overnight stay.",
+        "customerQuestion": "What does the meeting package cover, and what else should I request?",
+        "decisions": [
+          {
+            "label": "List the included services",
+            "body": "Midland Railroad Hotel describes a package with room setup and teardown, coffee and hot tea, break items and meeting supplies. Explain the current inclusions and exceptions together. An organizer should be able to identify the preparation tasks the venue handles before arranging the rest of the meeting."
+          },
+          {
+            "label": "Describe each room’s use and access",
+            "body": "Place approved room descriptions and layout options beside the space choices. The venue identifies different access arrangements for its lower-level Sample Room, so generic hotel directions are insufficient. Provide the actual access route and relevant arrival details before the organizer selects that room."
+          },
+          {
+            "label": "Separate a meeting package from meals and lodging",
+            "body": "Fictional request: a one-day meeting needs the listed setup, drinks and supplies, plus lunch and six overnight guest rooms. Put lunch in the meal request and send the six-room requirement through the accommodation route; neither becomes included merely because the meeting package is selected. These are invented planning quantities, not a room-capacity or availability claim. Ask staff to confirm each part before accepting the arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current package inclusions and exceptions.",
+          "Room layouts and verified access information.",
+          "Separate meal and overnight-room requests, with the responsible contact for each."
+        ],
+        "sourceBridge": "Midland Railroad Hotel in Wilson describes different meeting spaces, a service package, available meals and lower-level room access. Those choices support a package comparison linked to the actual room and organizer’s requirements.",
+        "limits": "The owner confirms room suitability, inclusions and availability before acceptance. A focused package explanation may be sufficient when room pages already work. Live meeting-room availability and accommodation booking require separately agreed scope.",
+        "route": "/areas/kansas/ellsworth-county/",
+        "inputHash": "d3416bcaab69a43e7e79dbfab068960737d3ab0461942925d70b4a772ffb9f4f"
+      },
+      "beforeSha256": "53031056fbb07ed3a08cec91cd511098486472b4ac5ee9e0b83e4e02671f153e",
+      "afterSha256": "5c704afbb66f80fd74980126c754ff12db2157e29cb3ed113ff390cc1fe89c30",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/grant-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Start custom potting with the planter the customer owns.",
+        "intro": "A retail purchase and a custom service using a customer’s container need different preparation. Make that distinction clear so the first conversation describes the starting item and the result the customer wants.",
+        "customerQuestion": "What should I tell the garden center before bringing my planter?",
+        "decisions": [
+          {
+            "label": "Identify the existing container",
+            "body": "Koehn’s Country Gardens describes custom potting in which customers bring a planter and choose flowers. Let the inquiry identify that owned container using the size or reference details staff find useful. Do not route the customer only toward buying a new planter or treat the supplied item as another retail product."
+          },
+          {
+            "label": "Describe the intended display",
+            "body": "Ask for the desired planting or display in plain language using owner-approved preparation questions. Staff can decide which further information and plant choices are appropriate. A photograph can help describe the request, but should not be treated as proof of suitability or a basis for an automatic planting decision."
+          },
+          {
+            "label": "Explain review and collection",
+            "body": "Show the actual drop-off, staff review and collection sequence once the business supplies it. State what to bring and how choices are agreed. Keep a preferred collection date distinguishable from an accepted completion arrangement so a submitted inquiry does not promise a finished planter on that day."
+          }
+        ],
+        "ownerInputs": [
+          "Useful container details and accepted custom services.",
+          "Approved questions about the intended display.",
+          "Drop-off, review and collection instructions."
+        ],
+        "sourceBridge": "Koehn’s Country Gardens in the Ulysses area offers garden-center retail and customer-supplied planter potting. That existing-container service provides a concrete reason for a distinct inquiry and preparation section.",
+        "limits": "Garden-center staff assess the container, planting choices and timing. The website explains their process rather than calculating suitability. Plant-selection advice, ordering, payments and scheduling require separately agreed scope.",
+        "route": "/areas/kansas/grant-county/",
+        "inputHash": "468a7177441028b6fa48a5937f369a92de2fec058b2d50cb601e5f5dbb891727"
+      },
+      "after": {
+        "heading": "Start custom potting with the planter the customer owns.",
+        "intro": "A retail purchase and a custom service using a customer’s container need different preparation. Make that distinction clear so the first conversation describes the starting item and the result the customer wants.",
+        "customerQuestion": "What should I tell the garden center before bringing my planter?",
+        "decisions": [
+          {
+            "label": "Identify the existing container",
+            "body": "Koehn’s Country Gardens describes custom potting in which customers bring a planter and choose flowers. Let the inquiry identify that owned container using the size or reference details staff find useful. Do not route the customer only toward buying a new planter or treat the supplied item as another retail product."
+          },
+          {
+            "label": "Describe the display without choosing plants automatically",
+            "body": "Fictional first message: “I own two matching planters, want them to look like a pair at the entrance, and would like to discuss flowers.” Add each container’s dimensions and any differences the customer can describe. Two is an example, not a service minimum. Staff can ask about the setting and assess suitable plants; a matching appearance does not prove the containers need identical planting."
+          },
+          {
+            "label": "Explain review and collection",
+            "body": "Show the actual drop-off, staff review and collection sequence once the business supplies it. State what to bring and how choices are agreed. Keep a preferred collection date distinguishable from an accepted completion arrangement so a submitted inquiry does not promise a finished planter on that day."
+          }
+        ],
+        "ownerInputs": [
+          "Each owned container’s dimensions and reference details, plus whether the customer wants matching or different displays.",
+          "Approved questions about the intended display.",
+          "Drop-off, review and collection instructions."
+        ],
+        "sourceBridge": "Koehn’s Country Gardens in the Ulysses area offers garden-center retail and customer-supplied planter potting. That existing-container service provides a concrete reason for a distinct inquiry and preparation section.",
+        "limits": "Garden-center staff assess the container, planting choices and timing. The website explains their process rather than calculating suitability. Plant-selection advice, ordering, payments and scheduling require separately agreed scope.",
+        "route": "/areas/kansas/grant-county/",
+        "inputHash": "468a7177441028b6fa48a5937f369a92de2fec058b2d50cb601e5f5dbb891727"
+      },
+      "beforeSha256": "7e92030152e97a2e82621cfef49426b3536586917e05692e4c24b597d325bf6d",
+      "afterSha256": "ddaa936fa7e127343cc096b9b16af36eaa040828cf8e62570cfb15d2b23fec6f",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/greenwood-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep current cattle offers separate from past sale results.",
+        "intro": "An auction catalog, a historical report and a private-treaty inquiry serve different buying decisions. Organize the sales section around the current route and label each document before the reader opens it.",
+        "customerQuestion": "Is this material about a current sale, a past result or a private-treaty offering?",
+        "decisions": [
+          {
+            "label": "Choose the current selling route",
+            "body": "Dalebanks Angus describes an annual production auction and private-treaty sales beginning in spring. Give each route its actual preparation and contact instructions. A reader asking about private-treaty availability should not receive only directions for the annual auction or assume the two routes have identical terms."
+          },
+          {
+            "label": "Label documents by year and purpose",
+            "body": "Keep the current sale information and sale-book request separate from reports of previous auctions. Display the sale year beside each download or link. Historical results can provide useful background, but a lot appearing in a past report should not look like current inventory."
+          },
+          {
+            "label": "Explain what a request accomplishes",
+            "body": "State the seller-approved follow-up for a sale-book request or availability inquiry. Requesting a catalog does not place a bid or reserve an animal. Identify who replaces current links after each sale so the archive stays useful without continuing to present ended offers as available."
+          }
+        ],
+        "ownerInputs": [
+          "Current selling methods, offering descriptions and contacts.",
+          "Dated catalogs, reports and approved archive labels.",
+          "Request follow-up and responsibility for replacing sale links."
+        ],
+        "sourceBridge": "Dalebanks Angus near Eureka separates its current sale and sale-book request from previous auction reports, alongside a private-treaty route. Those distinctions support clearer sales navigation and accurate document labels.",
+        "limits": "The seller determines animal availability, suitability, prices, terms and acceptance. A focused edit can clarify current routes; recurring sales may need a maintained archive. Bidding, animal inventory, payments and sales acceptance require separate scope.",
+        "route": "/areas/kansas/greenwood-county/",
+        "inputHash": "e2bde2858e496ca3fe6aa0722c9334564dc2167eba264e7a91b223e34e2455fa"
+      },
+      "after": {
+        "heading": "Keep current cattle offers separate from past sale results.",
+        "intro": "An auction catalog, a historical report and a private-treaty inquiry serve different buying decisions. Organize the sales section around the current route and label each document before the reader opens it.",
+        "customerQuestion": "Is this material about a current sale, a past result or a private-treaty offering?",
+        "decisions": [
+          {
+            "label": "Choose the current selling route",
+            "body": "Dalebanks Angus describes an annual production auction and private-treaty sales beginning in spring. Give each route its actual preparation and contact instructions. A reader asking about private-treaty availability should not receive only directions for the annual auction or assume the two routes have identical terms."
+          },
+          {
+            "label": "Make the year and purpose visible before opening",
+            "body": "Illustrative link labels: “2025 auction results — archive” and “Request the current sale book.” The year is a fictional labeling example, not a report of a particular sale. A buyer looking at an old lot should see its historical status before following the current availability contact. Give private-treaty inquiries their own link rather than routing them through the archived auction report."
+          },
+          {
+            "label": "Explain what a request accomplishes",
+            "body": "State the seller-approved follow-up for a sale-book request or availability inquiry. Requesting a catalog does not place a bid or reserve an animal. Identify who replaces current links after each sale so the archive stays useful without continuing to present ended offers as available."
+          }
+        ],
+        "ownerInputs": [
+          "Current selling methods, offering descriptions and contacts.",
+          "Dated catalogs and reports, with each link marked current information or historical results.",
+          "Request follow-up and responsibility for replacing sale links."
+        ],
+        "sourceBridge": "Dalebanks Angus near Eureka separates its current sale and sale-book request from previous auction reports, alongside a private-treaty route. Those distinctions support clearer sales navigation and accurate document labels.",
+        "limits": "The seller determines animal availability, suitability, prices, terms and acceptance. A focused edit can clarify current routes; recurring sales may need a maintained archive. Bidding, animal inventory, payments and sales acceptance require separate scope.",
+        "route": "/areas/kansas/greenwood-county/",
+        "inputHash": "e2bde2858e496ca3fe6aa0722c9334564dc2167eba264e7a91b223e34e2455fa"
+      },
+      "beforeSha256": "0a65df90f185d6a8e8fb02645486f88665b5b57131b1087821633e61574ff967",
+      "afterSha256": "72fbe877e8694e2d7e1eff1686027d6c3744b81c9c9a34f66e25f1151ea91101",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/haskell-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Start an earthwork inquiry with the information already available.",
+        "intro": "An owner with approved plans and an owner with a site idea need different introductions. Help each describe the starting point and the contractor’s requested role before technical requirements are discussed.",
+        "customerQuestion": "Do I need planning help, work from existing plans or coordination with my project team?",
+        "decisions": [
+          {
+            "label": "Describe the starting material",
+            "body": "Ask for the intended site use and whether survey information, drawings or an existing professional team are available. An early inquiry should work without finished plans or invented technical quantities. Identify useful record types and an approved later exchange route rather than requiring private drawings in the public form."
+          },
+          {
+            "label": "Clarify the requested contractor role",
+            "body": "Stoppel Dirt describes building-site preparation, livestock facilities, drone surveying and in-house project design. Explain which services the business actually offers and which details require assessment. A survey or design question should remain distinguishable from an accepted construction scope."
+          },
+          {
+            "label": "Explain professional coordination",
+            "body": "Describe how the contractor works with an existing architect or designer and where responsibility changes. An architect-led project should be able to identify its plans without implying that the contractor must redesign it. Use approved project examples and handoff descriptions to help the owner understand who resolves technical questions."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted project types and useful preliminary questions.",
+          "Actual survey, design and earthwork responsibilities.",
+          "Approved examples and coordination or file-exchange process."
+        ],
+        "sourceBridge": "Stoppel Dirt’s services in the Sublette area combine site work, surveying, in-house design and coordination with other professionals. Those offerings provide a concrete reason to ask which planning stage an inquiry has reached.",
+        "limits": "The contractor and relevant professionals assess technical requirements and agree the work. A focused inquiry edit may be enough when service pages are clear. Technical calculations and drawing uploads require separate assessment.",
+        "route": "/areas/kansas/haskell-county/",
+        "inputHash": "e4dd30ab02b20a2d2aa5e7699597188b9067750b2f5c0950213e6261f250baf4"
+      },
+      "after": {
+        "heading": "Start an earthwork inquiry with the information already available.",
+        "intro": "An owner with approved plans and an owner with a site idea need different introductions. Help each describe the starting point and the contractor’s requested role before technical requirements are discussed.",
+        "customerQuestion": "Do I need planning help, work from existing plans or coordination with my project team?",
+        "decisions": [
+          {
+            "label": "Offer two clear starting points",
+            "body": "Fictional inquiry A: “We have a proposed livestock site but no survey or plans; we want to discuss the planning work.” Inquiry B: “Our architect has drawings; we want to discuss site preparation from those plans.” Both can name the site and intended use without inventing excavation quantities. The first asks about developing information; the second identifies an existing design and professional contact."
+          },
+          {
+            "label": "Clarify the requested contractor role",
+            "body": "Stoppel Dirt describes building-site preparation, livestock facilities, drone surveying and in-house project design. Explain which services the business actually offers and which details require assessment. A survey or design question should remain distinguishable from an accepted construction scope."
+          },
+          {
+            "label": "Keep the existing designer in the conversation",
+            "body": "For inquiry B, identify the current drawing revision and the architect or designer responsible for questions. Ask how the contractor wants to receive the plans later and which work it is being asked to price. A question about a drawing should reach the responsible professional; it should not silently turn into permission to redesign or start construction."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted project types and useful preliminary questions.",
+          "Actual survey, design and earthwork responsibilities.",
+          "Approved examples and coordination or file-exchange process."
+        ],
+        "sourceBridge": "Stoppel Dirt’s services in the Sublette area combine site work, surveying, in-house design and coordination with other professionals. Those offerings provide a concrete reason to ask which planning stage an inquiry has reached.",
+        "limits": "The contractor and relevant professionals assess technical requirements and agree the work. A focused inquiry edit may be enough when service pages are clear. Technical calculations and drawing uploads require separate assessment.",
+        "route": "/areas/kansas/haskell-county/",
+        "inputHash": "e4dd30ab02b20a2d2aa5e7699597188b9067750b2f5c0950213e6261f250baf4"
+      },
+      "beforeSha256": "2011a21e3fce2e5d025cf080fe8577b0aa7d897a213999ec755ae9e6d42bc8a4",
+      "afterSha256": "21e892a7ffedb538dc4435678195809461e195585b32b16288144d545d5d4380",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/kansas/stanton-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Choose the hospital visit purpose before using its hours.",
+        "intro": "Visiting a patient, booking a clinic appointment and arranging a care-unit tour are different administrative tasks. Give each its own contact, relevant schedule and verified arrival information.",
+        "customerQuestion": "Which service handles the visit I want to arrange?",
+        "decisions": [
+          {
+            "label": "Name the task and responsible contact",
+            "body": "Stanton County Hospital’s What to Expect page separates patient visiting, family-practice appointments and long-term-care tours. The tour has its own extension rather than the clinic appointment number. Put purpose labels beside contacts so a person can find the right route without guessing which department handles the request."
+          },
+          {
+            "label": "Keep hours attached to their purpose",
+            "body": "Show hospital visiting hours separately from clinic operating hours and appointment instructions. Visiting hours should not appear to establish clinic appointment availability. Use owner-approved schedules and identify who updates temporary changes so the distinction stays clear across public pages."
+          },
+          {
+            "label": "Verify the actual arrival destination",
+            "body": "Ask the owner to confirm the facility, address, entrance and parking guidance for each route. A shared organization name does not establish one shared entrance. A direct link to clinic preparation should identify its actual destination rather than automatically copy the hospital’s general address."
+          }
+        ],
+        "ownerInputs": [
+          "Current purpose labels, facility names and contacts.",
+          "Approved schedules and responsibility for changes.",
+          "Verified addresses, parking and arrival instructions."
+        ],
+        "sourceBridge": "Stanton County Hospital’s public guidance lists visiting hours, clinic hours and appointment contact, plus a separate long-term-care tour extension. Those facts support purpose-based navigation before a visitor uses a schedule or directions.",
+        "limits": "This is administrative information, not clinical triage. A tour request should not collect patient histories or imply an eligibility decision for care. Appointment software and patient intake are separate work from a focused visit-page or location-content revision.",
+        "route": "/areas/kansas/stanton-county/",
+        "inputHash": "91f0e8215ccbd03d3de8e3bc39d4e53103c218085727e058bf6799b4ff9716d5"
+      },
+      "after": {
+        "heading": "Choose the hospital visit purpose before using its hours.",
+        "intro": "Visiting a patient, booking a clinic appointment and arranging a care-unit tour are different administrative tasks. Give each its own contact, relevant schedule and verified arrival information.",
+        "customerQuestion": "I want to tour long-term care. Should I use the clinic appointment number or patient visiting hours?",
+        "decisions": [
+          {
+            "label": "Name the task and responsible contact",
+            "body": "Stanton County Hospital’s What to Expect page separates patient visiting, family-practice appointments and long-term-care tours. The tour has its own extension rather than the clinic appointment number. Put purpose labels beside contacts so a person can find the right route without guessing which department handles the request."
+          },
+          {
+            "label": "Follow the tour route before planning arrival",
+            "body": "Worked administrative example: a relative wants a long-term-care tour and sees hospital visiting hours. Those hours describe patient visits; they do not confirm that a tour is arranged. Use the separately published tour extension to ask about a suitable time. The family-practice appointment route serves a different purpose. This example adds no new hours or promise that staff can give a tour on arrival."
+          },
+          {
+            "label": "Verify the actual arrival destination",
+            "body": "Ask the owner to confirm the facility, address, entrance and parking guidance for each route. A shared organization name does not establish one shared entrance. A direct link to clinic preparation should identify its actual destination rather than automatically copy the hospital’s general address."
+          }
+        ],
+        "ownerInputs": [
+          "Current purpose labels, facility names and contacts.",
+          "Approved schedules and responsibility for changes.",
+          "Verified addresses, parking and arrival instructions."
+        ],
+        "sourceBridge": "Stanton County Hospital’s public guidance lists visiting hours, clinic hours and appointment contact, plus a separate long-term-care tour extension. Those facts support purpose-based navigation before a visitor uses a schedule or directions.",
+        "limits": "This is administrative information, not clinical triage. A tour request should not collect patient histories or imply an eligibility decision for care. Appointment software and patient intake are separate work from a focused visit-page or location-content revision.",
+        "route": "/areas/kansas/stanton-county/",
+        "inputHash": "91f0e8215ccbd03d3de8e3bc39d4e53103c218085727e058bf6799b4ff9716d5"
+      },
+      "beforeSha256": "6e7782bd8ccc15e088d738b97feb77d24cae2ff6d142ba61aff2565f5dfb0ff8",
+      "afterSha256": "e3c45cf7bd5d11e4046ba994d053230cbd97419470b761e66d3f0a4edcff8275",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    },
+    {
+      "route": "/areas/texas/knox-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/texas/knox-county/",
+        "heading": "Give each service its own schedule and contact.",
+        "intro": "A continuously operating building does not make every service continuously available. Attach the relevant schedule and next confirmation step to the service being discussed.",
+        "customerQuestion": "Which team can confirm the actual date for this service?",
+        "decisions": [
+          {
+            "label": "Name the service and type of provision",
+            "body": "Distinguish radiology’s weekday business hours, after-hours on-call provision, in-house imaging and the different recurring mobile ultrasound and MRI schedules. Do not apply a single hospital-open-24-hours label to every option."
+          },
+          {
+            "label": "Confirm the date behind the recurring description",
+            "body": "An every-other-Saturday MRI description does not identify which date is available or promise walk-in service. Direct the person to the approved scheduling contact for the actual appointment and authorized preparation. The page does not choose a test, assess urgency or confirm clinical availability."
+          },
+          {
+            "label": "Keep patient visiting on its own route",
+            "body": "Separate a service inquiry from visiting a patient and use the approved visiting instructions rather than copying hospital operating hours. Keep patient-specific preparation and health records in the authorized process. The source’s clinic-address variants are not used as directions in this example."
+          }
+        ],
+        "ownerInputs": [
+          "Approved named-service categories and normal/on-call/mobile schedule wording.",
+          "Actual scheduling contacts and owner confirming recurring-service dates.",
+          "Current patient-visiting information and authorized patient-specific preparation route."
+        ],
+        "sourceBridge": "Separates normal business hours, after-hours on-call provision and recurring mobile-service schedules. Lists the main hospital address, hospital operating hours and separate patient-visiting hours. Clinic address variants on this page are not used in the example.",
+        "limits": "A focused edit can distinguish the hours and schedule labels already published. A fuller project can connect the service directory, visitor information and staff handoffs. Scheduling systems, patient portals, clinical advice and medical-record handling require separate assessment and appropriate professional responsibility.",
+        "inputHash": "f0ef130ea054ff1aea9f3b16302a396cc97e5a1ce3b01e70ae72a54db02ae2a9",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/texas/knox-county/",
+        "heading": "Give each service its own schedule and contact.",
+        "intro": "A continuously operating building does not make every service continuously available. Attach the relevant schedule and next confirmation step to the service being discussed.",
+        "customerQuestion": "The page says MRI every other Saturday. Does that confirm an appointment this Saturday?",
+        "decisions": [
+          {
+            "label": "Name the service and type of provision",
+            "body": "Distinguish radiology’s weekday business hours, after-hours on-call provision, in-house imaging and the different recurring mobile ultrasound and MRI schedules. Do not apply a single hospital-open-24-hours label to every option."
+          },
+          {
+            "label": "Distinguish a recurring pattern from a confirmed visit",
+            "body": "No: “every other Saturday” does not identify the next date, an available slot or walk-in permission. A useful administrative question is: “Which scheduled MRI date has been confirmed for my visit, and where will the authorized team send preparation instructions?” The staff confirmation must supply the actual date and next step. This example does not choose a test, assess urgency or establish clinical availability."
+          },
+          {
+            "label": "Keep patient visiting on its own route",
+            "body": "Separate a service inquiry from visiting a patient and use the approved visiting instructions rather than copying hospital operating hours. Keep patient-specific preparation and health records in the authorized process. The source’s clinic-address variants are not used as directions in this example."
+          }
+        ],
+        "ownerInputs": [
+          "Approved named-service categories and normal/on-call/mobile schedule wording.",
+          "Actual scheduling contacts and owner confirming recurring-service dates.",
+          "Current patient-visiting information and authorized patient-specific preparation route."
+        ],
+        "sourceBridge": "Knox County Hospital District distinguishes normal radiology hours, after-hours on-call provision and recurring mobile imaging schedules. The example uses those different schedule types to show why a calendar pattern needs a separate appointment confirmation.",
+        "limits": "A focused edit can distinguish the hours and schedule labels already published. A fuller project can connect the service directory, visitor information and staff handoffs. Scheduling systems, patient portals, clinical advice and medical-record handling require separate assessment and appropriate professional responsibility.",
+        "inputHash": "f0ef130ea054ff1aea9f3b16302a396cc97e5a1ce3b01e70ae72a54db02ae2a9",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "d1419f29bc72defa97d5347ce921461a95706134319799543ca7cb5e97b1dd15",
+      "afterSha256": "0276073b3264629f77a8aab8ac1cc825d383bf7241799491f74117529fd590cc",
+      "requiredFixes": [
+        "Strengthen practical task clarity with an explicit worked example; preserve factual and commercial limits."
+      ]
+    }
+  ],
+  "records": [],
+  "faqs": [],
+  "limits": "Existing verified factual scope unchanged. Worked examples are illustrative, with no new provider terms, dates, capacities or clinical advice. Final ratings remain for independent review.",
+  "acceptance": {
+    "reviewFiles": [
+      {
+        "file": "operations/human-quality-20261027/audits/local-after-final-nine-recheck.jsonl",
+        "sha256": "afdb805a39b51800c2297ba00e78cd776fc884e8fb25712cbb78b224559bd5e9"
+      }
+    ],
+    "exactCandidates": 9,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  },
+  "import": {
+    "routesFile": "operations/human-quality-20261027/research/residual-op-family-import-routes.json",
+    "verifiedProjection": true,
+    "evidence": "output/human-quality-20261027/release-content/summary.json"
+  }
+}

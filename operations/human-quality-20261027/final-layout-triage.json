@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-27",
+  "rawResultsSha256": "cca6948ee9fc7cec1a5ae274ad1efba9cc84a4f2d0d2a54ce180b489697f8a82",
+  "rawAnomalies": 1,
+  "confirmedVisibleDefects": 0,
+  "findings": [
+    {
+      "route": "/guides/custom-website-or-template/",
+      "width": 390,
+      "renderedHtmlSha256": "5164833344f29234bb5fc9a0041e99d817a4f3dbf695377e41a6a5d588ee0e8b",
+      "type": "floating-tool-text-collision",
+      "verdict": "false-positive-visually-hidden-table-header",
+      "evidence": "The flagged Custom direction TH belongs to a responsive table THEAD rendered as display:block, width:1px, height:1px, overflow:hidden at x19,y786.96875. The text Range is x335,y804.96875, entirely outside that clipping box. The mobile table presents its visible per-cell labels separately. Screenshot inspection and current DOM geometry confirm the reported text is not visually painted under the chat control.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/05585605a57fdaaa-390-firstscreen.jpg",
+          "sha256": "c9e7384c172cd7bd87c7c015a1ca2518e10cbead4bff1e5b5adef8df2bf40dba"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/05585605a57fdaaa-390-content.jpg",
+          "sha256": "6cafbf7a4c1e0ba6f802dc095c32d671a0a3f22828628a8136b4ca269af7e1c8"
+        },
+        {
+          "path": "output/human-quality-20261027/custom-table-collision-recheck.png",
+          "sha256": "998b985095b4c4bf66e36d8776be4c5dd92d0202bc75a45dea7417b9508affb9"
+        }
+      ],
+      "reviewer": "Codex primary, screenshot and DOM ancestor clipping review"
+    }
+  ],
+  "limits": [
+    "Original raw anomaly remains intact.",
+    "This triage covers only this exact clipped-table-header collision, not all possible scroll positions.",
+    "Geometry and screenshot review do not establish accessibility conformance."
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "reviewer": "Codex primary",
+  "reviewedAt": "2026-10-27T23:39:18.300Z",
+  "status": "complete-primary-delta-review",
+  "scope": "All14 actual rendered introductions read; deterministic equality proves remaining article text unchanged after the separately reviewed update-date change. Six content ratings are retained, never raised.",
+  "rows": [
+    {
+      "route": "/guides/website-not-showing-on-google/",
+      "sourceArticleSha256": "bc6f827095e13d8c83ecdcd3079e3f74822c9f9a02f760125d5979bb9e9b60e9",
+      "emittedTextSha256": "02897ed740f9102625bb28afb368d73f5fdffe42c31a9ca0c7f9688f9eb80d31",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Separate discovery, indexing, search relevance and Maps eligibility when a small business website is missing from Google. Includes a practical evidence worksheet.",
+      "renderedIntroduction": "Record the missing page and search. Check Google indexing and relevance, with clear next steps for you and your web person.",
+      "firstOtherDifference": null,
+      "assessment": "The opening names the missing page/search and indexing/relevance checks, matching the diagnostic article without promising ranking.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/contact-form-not-working/",
+      "sourceArticleSha256": "65db2b42aabd2d8550d9a8857ec0d22ecc42754f944cf598c5fdd665d68ab98a",
+      "emittedTextSha256": "93d5a8bef235608b7cbd253050e133ddbdf7784531c64c9f3424719b997fc6f5",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Find where a website inquiry stops: submission, saved receipt, email notification, inbox or reply. A business-owner checklist with a clearly labeled test worksheet.",
+      "renderedIntroduction": "Check your form, notification settings and inbox. Follow a missing inquiry from submission to reply, with optional technical checks and a scoped repair request.",
+      "firstOtherDifference": null,
+      "assessment": "The submission-to-reply sequence preserves the full inquiry path and distinguishes optional technical checks from a scoped repair.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/service-area-pages/",
+      "sourceArticleSha256": "3f72701ac0d0a6970b196331b96c6720cc3702ffc3d6846d283870505ac85e9d",
+      "emittedTextSha256": "8daca77e0df32eab0ee08de6b5b6766db45bc8dfecfa30f35d54ede464b7ab0a",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Decide when a service-area page helps customers, what local facts belong on it and when one county coverage page is enough. Includes a planning worksheet.",
+      "renderedIntroduction": "Decide which locations need their own page. Use real service coverage, customer questions and facts, with a simple planning worksheet.",
+      "firstOtherDifference": null,
+      "assessment": "The opening asks whether separate locations deserve pages and retains real coverage and factual inputs.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-maintenance-checklist/",
+      "sourceArticleSha256": "493f609d7bc96e1a199b8b103d6be6417da93f6a01152f264e23867dbd468ae5",
+      "emittedTextSha256": "da18115ad072e2aff1906cdda47a1d74fe172b854c3f2fe679663cf36b0ea2a1",
+      "onlyDescription": true,
+      "reviewedIntroduction": "A practical website maintenance schedule for forms, content, accounts, recovery and supported updates, with a downloadable work log and clear ownership.",
+      "renderedIntroduction": "Check forms, pages, certificates and website responsibilities. Separate the checks you can make from work for your web person.",
+      "firstOtherDifference": null,
+      "assessment": "Forms, pages, certificates and responsibilities match the maintenance checks; owner versus specialist work remains clear.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/contractor-website-checklist/",
+      "sourceArticleSha256": "317e72154cdf8cf8c2457a68519a109bfe5e568502a3068a5b46410917bdcd9b",
+      "emittedTextSha256": "97e792275933df0cf694685218930764d926ee4b920f0472b703e58cc9b9fdb7",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Plan contractor website content around accepted jobs, project evidence, service areas and estimate requests. Includes a content and inquiry worksheet for a real project brief.",
+      "renderedIntroduction": "Plan clear services, accepted jobs, project examples, service areas and estimate requests for your contractor website.",
+      "firstOtherDifference": null,
+      "assessment": "Accepted jobs, real project examples, territory and estimate requests match the contractor checklist.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-project-cost/",
+      "sourceArticleSha256": "6ca8065ba38a628e12682b03365e9e3862468ca2a54ea7e271b05b07e29a8df3",
+      "emittedTextSha256": "23d4679aa05965d2022ab364ccba387fe7f7dda94f1d153c2c1b582c1c14e5e0",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Plan a small business website or redesign budget with current studio prices, ongoing costs, migration work and a practical quote checklist. Based in Buffalo; serving 50 states, Washington, DC, and Puerto Rico.",
+      "renderedIntroduction": "Plan build fees, hosting, domains and optional monthly work. Compare package scope and use the worksheet to budget with clear assumptions.",
+      "firstOtherDifference": null,
+      "assessment": "Build and recurring provider costs are separated, with package scope and assumptions rather than a universal price promise.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-redesign-brief/",
+      "sourceArticleSha256": "7b3c438c85c26959d3cba52b293954c1eeeeabff9b8710f10d7e9c9b3e0b4cf8",
+      "emittedTextSha256": "7c0dc67efa8f00c12575b9492f48f38fc57edcf36f46e5e3eeb929ff5c4af266",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Prepare a redesign brief for your service business, with a download covering pages, facts, account ownership and launch checks.",
+      "renderedIntroduction": "Gather your business facts, customer tasks, pages, content and decision makers before asking for a website redesign proposal.",
+      "firstOtherDifference": null,
+      "assessment": "Business facts, tasks, pages, content and decision makers match the redesign-brief preparation.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/local-seo-profile-eligibility/",
+      "sourceArticleSha256": "ad6e291cfe0e0615d5da66a08fbc691c27c6893bd2fd64cd62c77800f8eda70a",
+      "emittedTextSha256": "643a4e13d6c2d389cefb74bbf6065d2f413c57e039e975d31fdff7da4d263802",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Local SEO and Google Business Profile eligibility for small service businesses: online-only work, service areas, address choices and useful website content.",
+      "renderedIntroduction": "Check Google Business Profile eligibility, real customer contact and service areas before making a local-search plan.",
+      "firstOtherDifference": null,
+      "assessment": "Eligibility and actual customer contact precede local-search planning; no automatic eligibility is claimed.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/seo-work-and-reporting/",
+      "sourceArticleSha256": "a436fe34c1abed3af6b324174e21415de9b474796d6acefc6961f23d8947ed58",
+      "emittedTextSha256": "b3e2eb89e25e130bab647476b3d61f87dcb275c6c82ddc2b4158642c09f342bf",
+      "onlyDescription": true,
+      "reviewedIntroduction": "See how search research becomes a finished page improvement, what the monthly plans include and how to read the report.",
+      "renderedIntroduction": "See how research leads to a completed improvement and a monthly report. Separate the work delivered from rankings, clicks and business results.",
+      "firstOtherDifference": null,
+      "assessment": "Delivered work is explicitly separated from rankings, clicks and business outcomes.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-migration-checklist/",
+      "sourceArticleSha256": "c2cd811169c6938bf2cf6f6c761681e002cf52392187263a14aabb579c53ad29",
+      "emittedTextSha256": "b3f359f3c9a9472e7e3520c4cbc8df225cf769f4a778cd6dbac7accd9cf36ff4",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Plan a website migration with an old-to-new URL map, redirects, form checks, account ownership and a measured launch review. Includes a CSV worksheet.",
+      "renderedIntroduction": "Map old pages to their new destinations, check redirects and test contact forms. Includes an example and a website-migration worksheet.",
+      "firstOtherDifference": null,
+      "assessment": "URL mapping, redirects, forms and the worked worksheet match the migration article.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/custom-website-or-template/",
+      "sourceArticleSha256": "50450f127fd3a147c55d3234ef075f0fefaa01f9b747deef0b385804708f647b",
+      "emittedTextSha256": "eca72d505b4679e61703b860113ce5a45396826103c77a97c4d8cb2c4533153e",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Compare a custom website and a template around content, editing, accessibility, ongoing cost and the customer journey for a small service business.",
+      "renderedIntroduction": "Compare design, content, editing, ongoing costs and handoff. Choose the approach that fits the work your business website needs to do.",
+      "firstOtherDifference": null,
+      "assessment": "Design, content, editing, cost and handoff are the actual decision dimensions; no claim of universal superiority.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-care-versus-seo/",
+      "sourceArticleSha256": "8ba8fa35c91eaa7360a9c8e7563ce950694add384ed13c489d64ebf5278c11f4",
+      "emittedTextSha256": "8badb5757db5b19be844a4bbe39a39aabf19edf3581911382429e6c56714e975",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Compare routine checks and small edits with work to improve a service page. Includes plan prices and a worksheet for choosing the job you need.",
+      "renderedIntroduction": "Compare website checks and changes you send with researched improvements. See which problem each plan solves and choose a useful next step.",
+      "firstOtherDifference": null,
+      "assessment": "Owner-supplied changes and researched improvements preserve the care-versus-SEO distinction.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-audit-checklist/",
+      "sourceArticleSha256": "efc8b39fa24c28a187ff3ec8d60daf94fce4696ef972e4f9f5438d616f2c7fd2",
+      "emittedTextSha256": "307d9c700a81a3a7f75b8d274c6bcdf815023b2fbb04a57e5a25e97a8e59df52",
+      "onlyDescription": true,
+      "reviewedIntroduction": "Start with a customer task that fails, use the checklist and see two small fixes made to this website.",
+      "renderedIntroduction": "Start with a failing customer task. Use the checklist, inspect two documented studio fixes and record what still needs checking.",
+      "firstOtherDifference": null,
+      "assessment": "The failing task, documented studio examples and remaining checks match the bounded evidence in the audit guide.",
+      "findings": [],
+      "ratingsChanged": false
+    },
+    {
+      "route": "/guides/website-repair-or-redesign/",
+      "sourceArticleSha256": "e403a289c804ae0d93ee4dd6b7d3db7d6a748ef534219969a38d4f1c16e63c17",
+      "emittedTextSha256": "c9a5ca15a3732a6dd2e7942537387cd38d44dfadaef7d06d0d76c1f2a7768bd5",
+      "onlyDescription": true,
+      "reviewedIntroduction": "For small service businesses deciding whether an existing website needs a small fix, broader changes or a rebuild. Includes practical examples and a decision worksheet.",
+      "renderedIntroduction": "Choose a small repair, broader rework or rebuild. Compare examples and use the worksheet to find the smallest change that solves the problem.",
+      "firstOtherDifference": null,
+      "assessment": "Repair, rework and rebuild remain distinct; the worksheet supports the smallest effective scope rather than an assumed rebuild.",
+      "findings": [],
+      "ratingsChanged": false
+    }
+  ],
+  "updatedDates": {
+    "count": 48,
+    "scope": "Only Updated time element changed to October27,2026 after the article revisions. Publication dates and all other article content unchanged.",
+    "evidence": "output/human-quality-20261027/release-content/guide-date-bindings.json"
+  },
+  "limits": "The full article review remains the earlier independent review; this is a primary review of the exact rendered-introduction and date deltas. Visuals and accessibility remain separate."
+}

@@ -45,7 +45,7 @@ test('published guides have unique metadata, visible authorship and matching art
   const image=config.origin+journalImage(guide);assert.deepEqual(article.image,guide.diagram?[image]:['square','4x3','16x9'].map(ratio=>config.origin+guideIllustration(guide)+'-'+ratio+'.png'));assert.ok(html.includes(`property="og:image" content="${image}"`));
   const crumbs=data.find(x=>x['@type']==='BreadcrumbList').itemListElement;assert.equal(crumbs.at(-1).item,article.mainEntityOfPage);assert.equal(crumbs[1].item,config.origin+'/guides/');
   assertArticleOutsideDisclosures(html,guide.path);
-  assert.equal(html.includes('aria-label="In this guide"'),journalSections(guide.path,offers).length>=6,guide.path);assert.match(html,/class="journal-byline"/);
+  if(journalSections(guide.path,offers).length>=6||guide.path==='/guides/website-content-template/')assert.ok(html.includes('aria-label="In this guide"'),guide.path+' long guide contents');assert.match(html,/class="journal-byline"/);
   for(const match of html.matchAll(/href="#([^"]+)"/g))assert.ok(html.includes(`id="${match[1]}"`),match[1]);
  }
 });
@@ -79,7 +79,7 @@ test('repair-or-redesign guide supports the earlier decision with bounded owned 
  const hidden=renderPages({config:{...config,guideApprovals:config.guideApprovals.filter(x=>x.path!==path)},offers,map,geography});assert.ok(!hidden.some(page=>page.path===path));
  for(const target of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/','/guides/website-project-cost/','/work/','/assets/buyer-packs/owned-audit-two-fixes'])assert.ok(html.includes(`href="${target}"`),target);
  for(const source of ['/services/website-audit/','/services/web-design/','/guides/website-audit-checklist/','/guides/website-redesign-brief/'])assert.ok(pages.find(page=>page.path===source).html.includes(`href="${path}"`),source);
- assert.match(html,/Doing nothing is fine if the site works/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/Illustrative examples/);assert.match(html,/two real fixes I made to my own website/);assert.doesNotMatch(html,/CA-03/);
+ assert.match(html,/Keep the current site when its important visitor tasks work, its content matches the business and the ownership and operating arrangements are sound/);assert.match(html,/does not need a new project simply because another design is fashionable/);assert.match(html,/Hypothetical scenario — not a client project/);assert.match(html,/Illustrative examples/);assert.match(html,/two real fixes I made to my own website/);assert.doesNotMatch(html,/CA-03/);
  const revised=structuredClone(offers);revised.audit_sprint.one_time_price=775;assert.match(journalSections(path,revised).map(x=>x.body).join(''),/\$775/);
  const csv=await readFile(new URL('../src/assets/guides/website-repair-or-redesign-worksheet.csv',import.meta.url),'utf8');
  for(const field of ['What is going wrong','Evidence (link and date)','Useful content and accounts to keep','Platform and access check','Small fix to try and how to check it','Keep, fix or rebuild?'])assert.ok(csv.split('\n')[0].includes(`"${field}"`),field);

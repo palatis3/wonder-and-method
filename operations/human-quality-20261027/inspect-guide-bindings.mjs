@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import {journal,journalArticle} from '../../src/journal.mjs';
+import offers from '../../config/offers.json' with {type:'json'};
+const root='operations/human-quality-20261027',out='output/human-quality-20261027',read=p=>JSON.parse(fs.readFileSync(p,'utf8')),lines=p=>fs.readFileSync(p,'utf8').trim().split(/\r?\n/).map(JSON.parse),sha=x=>createHash('sha256').update(x).digest('hex');
+const reviews=lines(root+'/audits/guides-final-independent.jsonl'),fixes=read(root+'/guide-service-corrections-review.json').results;
+const snapshots=['guides-final-independent/current.jsonl','guides-final-independent/latest.jsonl','corrections-review/guides.jsonl'].flatMap(f=>lines(out+'/'+f).map(r=>({...r,file:out+'/'+f})));
+const normalize=html=>html.replace(/<span class="byline-date">Updated <time datetime="[^"]+">[^<]+<\/time><\/span>/g,'<span class="byline-date">Updated [REVIEWED DATE]</span>');
+const rows=journal.map(item=>{const review=fixes.find(r=>r.route===item.path)||reviews.find(r=>r.route===item.path),current=journalArticle(item,offers,journal),before=snapshots.find(r=>r.route===item.path&&r.inputHash===review.inputHash);if(!before)return {route:item.path,error:'No exact prior reviewed snapshot'};let i=0;while(i<current.length&&current[i]===before.bodyHtml[i])i++;return {route:item.path,reviewedHash:review.inputHash,currentHash:sha(current),exact:current===before.bodyHtml,dateOnly:normalize(current)===normalize(before.bodyHtml),snapshot:before.file,beforeDate:before.bodyHtml.match(/<span class="byline-date">Updated[^]*?<\/span>/)?.[0],currentDate:current.match(/<span class="byline-date">Updated[^]*?<\/span>/)?.[0],difference:current===before.bodyHtml?null:{before:before.bodyHtml.slice(Math.max(0,i-50),i+150),current:current.slice(Math.max(0,i-50),i+150)}};});
+fs.writeFileSync(out+'/release-content/guide-date-bindings.json',JSON.stringify(rows,null,2)+'\n');console.log(JSON.stringify({exact:rows.filter(r=>r.exact).length,dateOnly:rows.filter(r=>!r.exact&&r.dateOnly).length,other:rows.filter(r=>!r.dateOnly),example:rows.find(r=>!r.exact)},null,2));

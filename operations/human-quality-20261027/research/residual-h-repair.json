@@ -1,0 +1,1906 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/iowa/henry-county/",
+    "/areas/iowa/louisa-county/",
+    "/areas/iowa/marshall-county/",
+    "/areas/iowa/osceola-county/",
+    "/areas/iowa/sac-county/",
+    "/areas/iowa/tama-county/",
+    "/areas/kentucky/jackson-county/",
+    "/areas/kentucky/johnson-county/",
+    "/areas/kentucky/knott-county/",
+    "/areas/kentucky/lee-county/",
+    "/areas/kentucky/lincoln-county/",
+    "/areas/kentucky/livingston-county/",
+    "/areas/kentucky/shelby-county/",
+    "/areas/louisiana/east-feliciana-parish/",
+    "/areas/louisiana/rapides-parish/",
+    "/areas/maine/washington-county/",
+    "/areas/maryland/caroline-county/",
+    "/areas/maryland/prince-georges-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-h.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/iowa/henry-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Name the museum building before showing visit hours.",
+        "intro": "A photograph of a collection can lead a visitor to expect access to a building that is only conditionally available. Keep each building, its visit arrangements and its last-entry information together.",
+        "customerQuestion": "Can I see this collection on the date I am planning?",
+        "decisions": [
+          {
+            "label": "Identify where the collection is displayed",
+            "body": "Label photographs and descriptions by building. In the public example, the Heritage Museum information identifies Museum A while Museum B access depends on availability. A general museum-hours line should not silently promise both."
+          },
+          {
+            "label": "Separate last entry from other hours",
+            "body": "Use the museum’s approved seasonal visiting and last-entry times rather than business-office hours. Visitors planning a particular collection need the relevant admission window, not simply a time when someone may be working in the office."
+          },
+          {
+            "label": "Include practical building conditions",
+            "body": "State that the museums are not climate controlled where that is the current description, and give specific-collection or group questions a staff route. A building comparison can put access, last entry and indoor conditions beside the correct museum."
+          }
+        ],
+        "ownerInputs": [
+          "Current building-specific access and collection locations.",
+          "Seasonal dates, closing and last-entry information.",
+          "Approved building-condition wording and visit-question contact."
+        ],
+        "sourceBridge": "Midwest Old Threshers in Mount Pleasant distinguishes Museum A, conditional Museum B access, museum last entry and office hours, and notes the lack of climate control. Those facts support a building-specific visit introduction.",
+        "limits": "Staff confirm access and any arranged visit. An office opening time is not museum admission, and an image does not guarantee the depicted collection is available. Seasonal updates should preserve each building’s own conditions.",
+        "route": "/areas/iowa/henry-county/",
+        "inputHash": "231a12a0e63ea1db1fb2909b11552b2a6c18d7a3093980453c97990fb0e29edc"
+      },
+      "after": {
+        "heading": "Name the museum building before showing visit hours.",
+        "intro": "A photograph of a collection can lead a visitor to expect access to a building that is only conditionally available. Keep each building, its visit arrangements and its last-entry information together.",
+        "customerQuestion": "Which building holds the collection I want, and how should I check access before visiting?",
+        "decisions": [
+          {
+            "label": "Identify where the collection is displayed",
+            "body": "Label photographs and descriptions by building. In the public example, the Heritage Museum information identifies Museum A while Museum B access depends on availability. A general museum-hours line should not silently promise both."
+          },
+          {
+            "label": "Separate last entry from other hours",
+            "body": "Use the museum’s approved seasonal visiting and last-entry times rather than business-office hours. Visitors planning a particular collection need the relevant admission window, not simply a time when someone may be working in the office."
+          },
+          {
+            "label": "Include practical building conditions",
+            "body": "State that the museums are not climate controlled where that is the current description, and give specific-collection or group questions a staff route. A building comparison can put access, last entry and indoor conditions beside the correct museum."
+          }
+        ],
+        "ownerInputs": [
+          "Current building-specific access and collection locations.",
+          "Seasonal dates, closing and last-entry information.",
+          "Approved building-condition wording and visit-question contact."
+        ],
+        "sourceBridge": "Midwest Old Threshers in Mount Pleasant distinguishes Museum A, conditional Museum B access, museum last entry and office hours, and notes the lack of climate control. Those facts support a building-specific visit introduction.",
+        "limits": "Staff confirm access and any arranged visit. An office opening time is not museum admission, and an image does not guarantee the depicted collection is available. Seasonal updates should preserve each building’s own conditions.",
+        "route": "/areas/iowa/henry-county/",
+        "inputHash": "231a12a0e63ea1db1fb2909b11552b2a6c18d7a3093980453c97990fb0e29edc"
+      },
+      "beforeSha256": "8f30c3c46a0c86b4a45e08fdd0ca063c4ac702055436ff340f1ca414cebceadf",
+      "afterSha256": "e739a63d532262181151b119d10acf9a5f0bb6e4c6e50fefd1701cb83f3dbbbd",
+      "recommendedFixes": [
+        "Consider phrasing the customer question around checking the desired collection rather than implying the brief answers availability for a particular date."
+      ]
+    },
+    {
+      "route": "/areas/iowa/louisa-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Distinguish an outdoor visit from a visit including the center.",
+        "intro": "A heritage site can offer outdoor grounds while its visitor center follows a narrower season. Show what each visit includes so photographs of indoor interpretation do not promise access on every date.",
+        "customerQuestion": "What can we see outside the visitor center’s season?",
+        "decisions": [
+          {
+            "label": "Describe the outdoor option",
+            "body": "Identify the approved features available on the grounds and the applicable access hours. In the public example, Toolesboro Mounds grounds are open from sunrise to sunset. Keep that statement attached to the outdoor visit rather than the whole property’s indoor facilities."
+          },
+          {
+            "label": "Label the seasonal indoor experience",
+            "body": "Show the current visitor-center season and days beside its images and descriptions. A visitor choosing an outdoor-only date should understand which interpretation is not included. Keep reused indoor photographs labeled with their building and seasonal context."
+          },
+          {
+            "label": "Give groups an advance contact",
+            "body": "Ask for the desired experience and date through the current staff route. Staff can discuss what is possible and supply instructions for the arrangement they confirm. A concise outdoor/center-included comparison is more useful than repeating the distinction through several planning sections."
+          }
+        ],
+        "ownerInputs": [
+          "Approved outdoor features and access wording.",
+          "Current center season, days and image locations.",
+          "Group contact and confirmed-visit instructions."
+        ],
+        "sourceBridge": "The State Historical Society’s Toolesboro information separates sunrise-to-sunset grounds access from the visitor center’s seasonal schedule and asks groups to arrange visits ahead. Those differences support a short, accurately labeled visit comparison.",
+        "limits": "The owner confirms current dates and group arrangements. Outdoor access does not imply entry to locked facilities. The reusable lesson belongs in concise guidance; a long local page should not repeat it without additional useful detail.",
+        "route": "/areas/iowa/louisa-county/",
+        "inputHash": "00853d478c9b9788a17b67f53b40c32e516c30da81d355f56e748468acd771de"
+      },
+      "after": {
+        "heading": "Distinguish an outdoor visit from a visit including the center.",
+        "intro": "A heritage site can offer outdoor grounds while its visitor center follows a narrower season. Show what each visit includes so photographs of indoor interpretation do not promise access on every date.",
+        "customerQuestion": "What can we see outside the visitor center’s season?",
+        "decisions": [
+          {
+            "label": "Describe the outdoor option",
+            "body": "Identify the approved features available on the grounds and the applicable access hours. In the public example, Toolesboro Mounds grounds are open from sunrise to sunset. Keep that statement attached to the outdoor visit rather than the whole property’s indoor facilities."
+          },
+          {
+            "label": "Label the seasonal indoor experience",
+            "body": "Show the current visitor-center season and days beside its images and descriptions. A visitor choosing an outdoor-only date should understand which interpretation is not included. Keep reused indoor photographs labeled with their building and seasonal context."
+          },
+          {
+            "label": "Give groups an advance contact",
+            "body": "Ask for the desired experience and date through the current staff route. Staff can discuss what is possible and supply instructions for the arrangement they confirm. Keep the request clear about whether the group wants the outdoor grounds, the visitor center or both."
+          }
+        ],
+        "ownerInputs": [
+          "Approved outdoor features and access wording.",
+          "Current center season, days and image locations.",
+          "Group contact and confirmed-visit instructions."
+        ],
+        "sourceBridge": "The State Historical Society’s Toolesboro information separates sunrise-to-sunset grounds access from the visitor center’s seasonal schedule and asks groups to arrange visits ahead. Those differences support a short, accurately labeled visit comparison.",
+        "limits": "The owner confirms current dates and group arrangements. Outdoor access does not imply entry to locked facilities.",
+        "route": "/areas/iowa/louisa-county/",
+        "inputHash": "00853d478c9b9788a17b67f53b40c32e516c30da81d355f56e748468acd771de"
+      },
+      "beforeSha256": "a2214c90386dc3778fa6abda353491af8cbf98cb7e20b40605437f61fdd587ac",
+      "afterSha256": "60d7595bb3c053dd194acb4ee73f8b5c61302423c60f97662a4c50bf9317efb2",
+      "recommendedFixes": [
+        "Replace the editorial comment about long local pages with a concrete visit-planning limit; consider one named outdoor feature and checked center season."
+      ]
+    },
+    {
+      "route": "/areas/iowa/marshall-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Prepare refreshments for the outdoor shelter’s actual facilities.",
+        "intro": "An open-air shelter may not include the kitchen or restrooms associated with a nearby indoor center. Show the shelter’s own equipment and facilities before a group chooses it for a meal.",
+        "customerQuestion": "What should our group know about food preparation and restrooms here?",
+        "decisions": [
+          {
+            "label": "Identify the outdoor space clearly",
+            "body": "Use photographs and captions that name the shelter. A visitor should not have to inspect an indoor venue page to work out which facilities belong to the outdoor rental."
+          },
+          {
+            "label": "State the practical omissions and locations",
+            "body": "In the public example, Grimes Farm Shelter has picnic tables, no refrigerator and an unattached restroom nearby. Put those facts beside refreshment preparation so a general park amenity list does not imply indoor facilities come with the shelter."
+          },
+          {
+            "label": "Prepare a specific telephone inquiry",
+            "body": "Ask the organizer to name the shelter and describe unresolved meal or access questions when calling. If the site compares several venues, keep each venue’s own capacities, rental details and equipment with its name. A concise facilities card may be the whole useful change."
+          }
+        ],
+        "ownerInputs": [
+          "Current shelter photographs and its own equipment inventory.",
+          "Verified restroom location and approved refreshment guidance.",
+          "The shelter reservation contact and separate indoor-venue information."
+        ],
+        "sourceBridge": "Marshall County Conservation describes Grimes Farm Shelter as open-air, without a refrigerator, with a nearby separate restroom and telephone reservations. Those facts support a short preparation card specific to the shelter.",
+        "limits": "Staff confirm permitted food arrangements and the rental. Do not borrow an indoor center’s capacity, price or equipment. The general meal-preparation lesson should remain concise rather than become another long local explanation.",
+        "route": "/areas/iowa/marshall-county/",
+        "inputHash": "55367a245908a9c33b649ffab62eed89ee7fa208c74301f693810cc754c09af3"
+      },
+      "after": {
+        "heading": "Prepare refreshments for the outdoor shelter’s actual facilities.",
+        "intro": "An open-air shelter may not include the kitchen or restrooms associated with a nearby indoor center. Show the shelter’s own equipment and facilities before a group chooses it for a meal.",
+        "customerQuestion": "What should our group know about food preparation and restrooms here?",
+        "decisions": [
+          {
+            "label": "Identify the outdoor space clearly",
+            "body": "Use photographs and captions that name the shelter. A visitor should not have to inspect an indoor venue page to work out which facilities belong to the outdoor rental."
+          },
+          {
+            "label": "State the practical omissions and locations",
+            "body": "In the public example, Grimes Farm Shelter has picnic tables, no refrigerator and an unattached restroom nearby. Put those facts beside refreshment preparation so a general park amenity list does not imply indoor facilities come with the shelter."
+          },
+          {
+            "label": "Prepare a specific telephone inquiry",
+            "body": "Ask the organizer to name the shelter and describe unresolved meal or access questions when calling. If the site compares several venues, keep each venue’s own capacities, rental details and equipment with its name. A concise facilities card may be the whole useful change."
+          }
+        ],
+        "ownerInputs": [
+          "Current shelter photographs and its own equipment inventory.",
+          "Verified restroom location and approved refreshment guidance.",
+          "The shelter reservation contact and separate indoor-venue information."
+        ],
+        "sourceBridge": "Marshall County Conservation describes Grimes Farm Shelter as open-air, without a refrigerator, with a nearby separate restroom and telephone reservations. Those facts support a short preparation card specific to the shelter.",
+        "limits": "Staff confirm permitted food arrangements and the rental. Do not borrow an indoor center’s capacity, price or equipment.",
+        "route": "/areas/iowa/marshall-county/",
+        "inputHash": "55367a245908a9c33b649ffab62eed89ee7fa208c74301f693810cc754c09af3"
+      },
+      "beforeSha256": "ec8fa60c055228ef61f30e85ebf24c3f9d217c1060d9e436b01d30f8010c6915",
+      "afterSha256": "26b38676b476c8aff8f3c65e5b6c3c9dd9c6576001dca26f9d1183b3c88a396a",
+      "recommendedFixes": [
+        "Remove the meta-comment about long local explanations from limits; retain staff permissions and the no-borrowed-facilities boundary."
+      ]
+    },
+    {
+      "route": "/areas/iowa/osceola-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep each park’s booking method and visit address together.",
+        "intro": "A shared list of campgrounds can accidentally make one park’s reservation link look applicable to another. Give each place a clear action and label arrival addresses separately from correspondence addresses.",
+        "customerQuestion": "Do I reserve this park, and which address do I use to get there?",
+        "decisions": [
+          {
+            "label": "Show the park-specific action",
+            "body": "Use a short named comparison. In the public example, Hawkeye Point is first-come and accepts no reservations, while Sam Robinson Memorial Park has a reservation link. Selecting Hawkeye Point should not send the visitor into another park’s calendar."
+          },
+          {
+            "label": "Explain the first-come expectation",
+            "body": "Use the operator’s approved wording and current-information contact. A question about availability should remain an inquiry rather than an acknowledgment that a campsite is held. Keep that distinction beside the park name."
+          },
+          {
+            "label": "Separate visit and mailing addresses",
+            "body": "Give the physical destination a clearly labeled map action and mark correspondence details as mailing information. A foundation’s postal address should not become the travel destination. Approved arrival cards can provide both without repeating the whole park explanation."
+          }
+        ],
+        "ownerInputs": [
+          "Current park names, booking methods and responsible operators.",
+          "Approved first-come wording and information contacts.",
+          "Verified physical and mailing addresses."
+        ],
+        "sourceBridge": "Osceola County distinguishes first-come Hawkeye Point from Sam Robinson Memorial Park’s reservation route and separately lists Hawkeye Point’s physical and foundation mailing addresses. That supports two simple park-specific arrival cards.",
+        "limits": "Operators confirm current arrangements. A map or inquiry does not reserve a first-come site. The reusable booking-method lesson should remain concise; new reservation systems or live availability connections require separate scope.",
+        "route": "/areas/iowa/osceola-county/",
+        "inputHash": "c556473123ba0833b85e18e0533eedf5ce95f26e48d6583162852fc24a0b2d80"
+      },
+      "after": {
+        "heading": "Keep each park’s booking method and visit address together.",
+        "intro": "A shared list of campgrounds can accidentally make one park’s reservation link look applicable to another. Give each place a clear action and label arrival addresses separately from correspondence addresses.",
+        "customerQuestion": "Do I reserve this park, and which address do I use to get there?",
+        "decisions": [
+          {
+            "label": "Show the park-specific action",
+            "body": "Use a short named comparison. In the public example, Hawkeye Point is first-come and accepts no reservations, while Sam Robinson Memorial Park has a reservation link. Selecting Hawkeye Point should not send the visitor into another park’s calendar."
+          },
+          {
+            "label": "Explain the first-come expectation",
+            "body": "Use the operator’s approved wording and current-information contact. A question about availability should remain an inquiry rather than an acknowledgment that a campsite is held. Keep that distinction beside the park name."
+          },
+          {
+            "label": "Separate visit and mailing addresses",
+            "body": "Give the physical destination a clearly labeled map action and mark correspondence details as mailing information. A foundation’s postal address should not become the travel destination. Approved arrival cards can provide both without repeating the whole park explanation."
+          }
+        ],
+        "ownerInputs": [
+          "Current park names, booking methods and responsible operators.",
+          "Approved first-come wording and information contacts.",
+          "Verified physical and mailing addresses."
+        ],
+        "sourceBridge": "Osceola County distinguishes first-come Hawkeye Point from Sam Robinson Memorial Park’s reservation route and separately lists Hawkeye Point’s physical and foundation mailing addresses. That supports two simple park-specific arrival cards.",
+        "limits": "Operators confirm current arrangements. A map or inquiry does not reserve a first-come site. New reservation systems or live availability connections require separate scope.",
+        "route": "/areas/iowa/osceola-county/",
+        "inputHash": "c556473123ba0833b85e18e0533eedf5ce95f26e48d6583162852fc24a0b2d80"
+      },
+      "beforeSha256": "e873d0b7ccf5f745f83f1d3fea9be3ffa0412cda4ca5dbfd788074a695f703ab",
+      "afterSha256": "ad2fd13ce43285d467374a2a15c98a881fca0dff56c4babaaaf5fd639cf064eb",
+      "recommendedFixes": [
+        "Omit the editorial reusable-lesson aside; a checked visit/mailing address pair would make the arrival comparison more concrete."
+      ]
+    },
+    {
+      "route": "/areas/iowa/sac-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Show the steps that establish first-come campsite occupancy.",
+        "intro": "A completed form or payment receipt can be one part of occupying a campsite rather than the whole arrangement. Present the operator’s short arrival sequence and keep it separate from any advance cabin reservation route.",
+        "customerQuestion": "What must we do before treating this campsite as claimed?",
+        "decisions": [
+          {
+            "label": "Identify the first-come option",
+            "body": "State that the campsite does not accept advance reservations where that is the rule. Give cabins their own booking and check-in instructions rather than reusing a cabin-account action for camping."
+          },
+          {
+            "label": "Show the actual arrival sequence",
+            "body": "For the public example, explain three steps in order: complete registration and deposit the fee; display the receipt on the post; place the camping unit on the site. Have the operator approve the sequence and identify where the required materials are available."
+          },
+          {
+            "label": "Keep exceptions and uncertainty with staff",
+            "body": "Provide the current question route for changed plans or unclear circumstances. A visitor who has only filled out a form should not receive wording saying the site is occupied. Avoid inventing a remote hold or a rule permitting an empty place to be kept."
+          }
+        ],
+        "ownerInputs": [
+          "Approved methods for campsites and cabins.",
+          "Current registration, payment, receipt and physical-unit instructions.",
+          "Materials location and the staff contact for exceptions."
+        ],
+        "sourceBridge": "Sac County Conservation defines campsite occupancy through registration, deposited fee, posted receipt and a camping unit on site, while separately describing cabin reservations. That supports one concise arrival checklist.",
+        "limits": "The operator determines actual occupancy and availability. The website does not reserve a first-come pitch or authorize an empty-site hold. Keep this reusable explanation brief rather than repeating it through multiple planning sections.",
+        "route": "/areas/iowa/sac-county/",
+        "inputHash": "c77c13251a8b31d9eb1a3e3665c07e98bbc46824a840273ef8189963321a8e35"
+      },
+      "after": {
+        "heading": "Show the steps that establish first-come campsite occupancy.",
+        "intro": "A completed form or payment receipt can be one part of occupying a campsite rather than the whole arrangement. Present the operator’s short arrival sequence and keep it separate from any advance cabin reservation route.",
+        "customerQuestion": "What must we do before treating this campsite as claimed?",
+        "decisions": [
+          {
+            "label": "Identify the first-come option",
+            "body": "State that the campsite does not accept advance reservations where that is the rule. Give cabins their own booking and check-in instructions rather than reusing a cabin-account action for camping."
+          },
+          {
+            "label": "Show the actual arrival sequence",
+            "body": "For the public example, explain three steps in order: complete registration and deposit the fee; display the receipt on the post; place the camping unit on the site. Have the operator approve the sequence and identify where the required materials are available."
+          },
+          {
+            "label": "Keep exceptions and uncertainty with staff",
+            "body": "Provide the current question route for changed plans or unclear circumstances. A visitor who has only filled out a form should not receive wording saying the site is occupied. Avoid inventing a remote hold or a rule permitting an empty place to be kept."
+          }
+        ],
+        "ownerInputs": [
+          "Approved methods for campsites and cabins.",
+          "Current registration, payment, receipt and physical-unit instructions.",
+          "Materials location and the staff contact for exceptions."
+        ],
+        "sourceBridge": "Sac County Conservation defines campsite occupancy through registration, deposited fee, posted receipt and a camping unit on site, while separately describing cabin reservations. That supports one concise arrival checklist.",
+        "limits": "The operator determines actual occupancy and availability. The website does not reserve a first-come pitch or authorize an empty-site hold.",
+        "route": "/areas/iowa/sac-county/",
+        "inputHash": "c77c13251a8b31d9eb1a3e3665c07e98bbc46824a840273ef8189963321a8e35"
+      },
+      "beforeSha256": "2a41486c0d822267875dfd5f2d2a5afea73cf62699f79200d7e63b7255a7b189",
+      "afterSha256": "70252b65347d6b5621bafa65411e4ebedce3ee8a32458b227dd6a1b4b64a50f9",
+      "recommendedFixes": [
+        "Remove the editorial sentence about repeating the explanation; retain the operator and no-empty-hold limits."
+      ]
+    },
+    {
+      "route": "/areas/iowa/tama-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Choose outdoor access, an interior appointment or room rental.",
+        "intro": "A park-open notice does not necessarily mean the nature center is open for walk-in visits. Separate the three purposes so visitors can find the appointment or rental conversation that applies to their plan.",
+        "customerQuestion": "Do we need an appointment to enter the building or arrange an event?",
+        "decisions": [
+          {
+            "label": "Describe the outdoor visit independently",
+            "body": "Keep camping and outdoor recreation information clear without transferring its access status to indoor exhibits. A person reading that camping is open should not infer that the diorama room accepts walk-in entry."
+          },
+          {
+            "label": "Show the interior appointment route",
+            "body": "Use the approved instruction that nature-center entry is by appointment, generally during weekday daytime hours in the public example. Ask for a proposed time through the existing contact and explain that staff must confirm the visit."
+          },
+          {
+            "label": "Explain the room’s programming priority",
+            "body": "State that rental use depends on the center’s camps, educational programs and park events. An empty-looking weekday is not proof that the space can be hired. A concise outdoor/interior/rental comparison can replace repeated planning paragraphs."
+          }
+        ],
+        "ownerInputs": [
+          "Approved outdoor and building-entry information.",
+          "Current appointment contact and preparation questions.",
+          "Rental process, program priority and availability reviewer."
+        ],
+        "sourceBridge": "Tama County’s Otter Creek Lake and Park distinguishes outdoor recreation from appointment-only nature-center entry and rentals subject to the center’s own programming. That supports three clear actions rather than one general opening message.",
+        "limits": "Staff confirm interior entry and room use. An appointment inquiry is not admission, and a calendar gap is not rental acceptance. Keep the common open-grounds/limited-building lesson brief unless additional local decisions need explanation.",
+        "route": "/areas/iowa/tama-county/",
+        "inputHash": "66be05150027a42c1056bf04d57b78866327b979685929699c66321ed28cf0f7"
+      },
+      "after": {
+        "heading": "Choose outdoor access, an interior appointment or room rental.",
+        "intro": "A park-open notice does not necessarily mean the nature center is open for walk-in visits. Separate the three purposes so visitors can find the appointment or rental conversation that applies to their plan.",
+        "customerQuestion": "Do we need an appointment to enter the building or arrange an event?",
+        "decisions": [
+          {
+            "label": "Describe the outdoor visit independently",
+            "body": "Keep camping and outdoor recreation information clear without transferring its access status to indoor exhibits. A person reading that camping is open should not infer that the diorama room accepts walk-in entry."
+          },
+          {
+            "label": "Show the interior appointment route",
+            "body": "Use the approved instruction that nature-center entry is by appointment, generally during weekday daytime hours in the public example. Ask for a proposed time through the existing contact and explain that staff must confirm the visit."
+          },
+          {
+            "label": "Explain the room’s programming priority",
+            "body": "State that rental use depends on the center’s camps, educational programs and park events. An empty-looking weekday is not proof that the space can be hired. Keep the proposed event date and purpose with the room inquiry for staff review."
+          }
+        ],
+        "ownerInputs": [
+          "Approved outdoor and building-entry information.",
+          "Current appointment contact and preparation questions.",
+          "Rental process, program priority and availability reviewer."
+        ],
+        "sourceBridge": "Tama County’s Otter Creek Lake and Park distinguishes outdoor recreation from appointment-only nature-center entry and rentals subject to the center’s own programming. That supports three clear actions rather than one general opening message.",
+        "limits": "Staff confirm interior entry and room use. An appointment inquiry is not admission, and a calendar gap is not rental acceptance.",
+        "route": "/areas/iowa/tama-county/",
+        "inputHash": "66be05150027a42c1056bf04d57b78866327b979685929699c66321ed28cf0f7"
+      },
+      "beforeSha256": "acb3600f74ba53eb9200ee77773652b6762236890b812867d0bc2dda7cd2efe5",
+      "afterSha256": "0b621bb2082ef702e44e6832f7615a0cc2aa5cf466cf896653e3872154029e44",
+      "recommendedFixes": [
+        "Remove the editorial sentence about keeping the common lesson brief."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/jackson-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate the mowing visit from a one-time yard project",
+        "intro": "A homeowner can want regular lawn care and also need a stump or particular obstacle assessed. The website should let them discuss both while keeping recurring service and additional work distinct.",
+        "customerQuestion": "What belongs in regular mowing, and what needs a separate scope discussion?",
+        "decisions": [
+          {
+            "label": "Describe the ongoing care",
+            "body": "Explain what the provider actually includes in routine visits and which property details help begin the conversation. Keep the recurring offer clear enough that a customer can ask about mowing without assuming every obstacle or neglected area will be resolved as part of each visit."
+          },
+          {
+            "label": "Identify the separate concern",
+            "body": "Give the customer room to describe a stump or other particular area and where it sits within the yard. Use approved examples and useful site or access questions. The homeowner should not need to select machinery or a removal method to explain what they want the team to consider."
+          },
+          {
+            "label": "Confirm the two scopes",
+            "body": "Keep the ongoing and one-time requests together for context, then explain how each is reviewed and agreed. A combined inquiry can make the property easier to understand without turning additional work into a routine inclusion. Show the current contact and assessment process so the customer knows which questions remain open."
+          }
+        ],
+        "ownerInputs": [
+          "Actual routine-service inclusions and current coverage.",
+          "Additional work offered and useful site-description prompts.",
+          "Assessment, access and separate scope-confirmation process."
+        ],
+        "sourceBridge": "LawnCat Lawn Care describes recurring mowing in Annville and separately offers stump-removal work, with a specialist assessing the situation before recommending a method. The two services share a property but require different expectations.",
+        "limits": "The provider determines suitable work and access arrangements. A recurring-service description does not include stump removal by implication or approve a technical treatment for the site.",
+        "route": "/areas/kentucky/jackson-county/",
+        "inputHash": "b6c99c30fdc81dcd32a602c976fe5004f3efa0deab5a584fc029c9b19db657fc"
+      },
+      "after": {
+        "heading": "Separate the mowing visit from a one-time yard project",
+        "intro": "A homeowner can want regular lawn care and also need a stump or particular obstacle assessed. The website should let them discuss both while keeping recurring service and additional work distinct.",
+        "customerQuestion": "What belongs in regular mowing, and what needs a separate scope discussion?",
+        "decisions": [
+          {
+            "label": "Describe the ongoing care",
+            "body": "Explain what the provider actually includes in routine visits and which property details help begin the conversation. Keep the recurring offer clear enough that a customer can ask about mowing without assuming every obstacle or neglected area will be resolved as part of each visit."
+          },
+          {
+            "label": "Identify the separate concern",
+            "body": "Give the customer room to describe a stump or other particular area and where it sits within the yard. Use approved examples and useful site or access questions. The homeowner should not need to select machinery or a removal method to explain what they want the team to consider."
+          },
+          {
+            "label": "Confirm the two scopes",
+            "body": "Keep the ongoing and one-time requests together for context, then explain how each is reviewed and agreed. A combined inquiry can make the property easier to understand without turning additional work into a routine inclusion. Show the current contact and assessment process so the customer knows which questions remain open."
+          }
+        ],
+        "ownerInputs": [
+          "Actual routine-service inclusions and current coverage.",
+          "Additional work offered and useful site-description prompts.",
+          "Assessment, access and separate scope-confirmation process."
+        ],
+        "sourceBridge": "LawnCat Lawn Care describes recurring mowing in Annville and separately offers stump-removal work, with a specialist assessing the situation before recommending a method. The two services share a property but require different expectations.",
+        "limits": "The provider determines suitable work, technical methods and access arrangements for the actual property.",
+        "route": "/areas/kentucky/jackson-county/",
+        "inputHash": "b6c99c30fdc81dcd32a602c976fe5004f3efa0deab5a584fc029c9b19db657fc"
+      },
+      "beforeSha256": "a8957ebeb2700593493fb4e8f159af8f913e242dabfb7791532c355fbe896c0f",
+      "afterSha256": "449ef0a93358d351026338a28cd9c4dfa5e80a92622c2041cf89434e6fa75d90",
+      "recommendedFixes": [
+        {
+          "passage": "The provider determines suitable work and access arrangements. A recurring-service description does not include stump removal by implication or approve a technical treatment for the site.",
+          "issue": "The recurring-service exclusion repeats the third decision.",
+          "fix": "If tightening, retain provider responsibility and omit the repeated mowing-versus-stump exclusion."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/johnson-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate the occasion date from a requested delivery time",
+        "intro": "A flower sender may need an arrangement for a birthday while also hoping it arrives before a particular event. The website should keep both instructions visible and explain the difference between a timing preference and the florist's actual arrangement.",
+        "customerQuestion": "What timing information should I discuss before relying on the delivery?",
+        "decisions": [
+          {
+            "label": "Identify the occasion and recipient",
+            "body": "Connect the selected arrangement to the date that matters and the intended recipient. A reason for sending flowers helps explain the request, but it does not by itself describe when the arrangement needs to reach the receiving location."
+          },
+          {
+            "label": "Describe the destination and preferred timing",
+            "body": "Ask for the address and receiving-contact details the florist uses, together with any event-related timing concern. Keep a request to arrive before an activity separate from the occasion date. Williams Floral says requested delivery times cannot be guaranteed, so a note containing a preferred hour must not look like a confirmed appointment."
+          },
+          {
+            "label": "Use the appropriate confirmation route",
+            "body": "Show how time-sensitive questions reach the florist through the existing order-help process. Explain the actual distinction between local delivery and wider orders fulfilled through a florist network. Customers should understand who reviews the destination and arrangements instead of assuming that every order follows the same local handoff."
+          }
+        ],
+        "ownerInputs": [
+          "Current local and wider-delivery descriptions.",
+          "Useful recipient, destination and receiving-contact details.",
+          "Approved timing wording and direct order-question route."
+        ],
+        "sourceBridge": "Williams Floral's Paintsville information addresses delivery-time requests separately from general delivery arrangements and distinguishes local service from wider florist-network orders. These details make date, timing and fulfillment responsibility useful content distinctions.",
+        "limits": "A preferred delivery hour is a request, not a guarantee. The florist's actual process determines the arrangement; entering a time in an order note does not establish acceptance.",
+        "route": "/areas/kentucky/johnson-county/",
+        "inputHash": "90872df956b1d775ebf9b8a258268ad226f5209cc2b37072a1b1e12f314f6cb6"
+      },
+      "after": {
+        "heading": "Separate the occasion date from a requested delivery time",
+        "intro": "A flower sender may need an arrangement for a birthday while also hoping it arrives before a particular event. The website should keep both instructions visible and explain the difference between a timing preference and the florist's actual arrangement.",
+        "customerQuestion": "What timing information should I discuss before relying on the delivery?",
+        "decisions": [
+          {
+            "label": "Identify the occasion and recipient",
+            "body": "Connect the selected arrangement to the date that matters and the intended recipient. A reason for sending flowers helps explain the request, but it does not by itself describe when the arrangement needs to reach the receiving location."
+          },
+          {
+            "label": "Describe the destination and preferred timing",
+            "body": "Ask for the address and receiving-contact details the florist uses, together with any event-related timing concern. Keep a request to arrive before an activity separate from the occasion date. Williams Floral says requested delivery times cannot be guaranteed, so a note containing a preferred hour must not look like a confirmed appointment."
+          },
+          {
+            "label": "Use the appropriate confirmation route",
+            "body": "Show how time-sensitive questions reach the florist through the existing order-help process. Explain the actual distinction between local delivery and wider orders fulfilled through a florist network. Customers should understand who reviews the destination and arrangements instead of assuming that every order follows the same local handoff."
+          }
+        ],
+        "ownerInputs": [
+          "Current local and wider-delivery descriptions.",
+          "Useful recipient, destination and receiving-contact details.",
+          "Approved timing wording and direct order-question route."
+        ],
+        "sourceBridge": "Williams Floral's Paintsville information addresses delivery-time requests separately from general delivery arrangements and distinguishes local service from wider florist-network orders. These details make date, timing and fulfillment responsibility useful content distinctions.",
+        "limits": "The florist confirms the delivery arrangement through its actual order-review process.",
+        "route": "/areas/kentucky/johnson-county/",
+        "inputHash": "90872df956b1d775ebf9b8a258268ad226f5209cc2b37072a1b1e12f314f6cb6"
+      },
+      "beforeSha256": "d62d0555d4278e9549cce6b86d23913bd5ed6a47d51fb86a5d12afb81b4db78b",
+      "afterSha256": "cb363905379682d4e14460041afbc8415cebaf363d9db55f911dd1fc09a44dcb",
+      "recommendedFixes": [
+        {
+          "passage": "A preferred delivery hour is a request, not a guarantee. The florist's actual process determines the arrangement; entering a time in an order note does not establish acceptance.",
+          "issue": "Timing-request caveat repeats the second decision.",
+          "fix": "Condense to the florist-confirmation responsibility while retaining the visible no-guarantee wording once."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/knott-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep the instrument model visible when explaining how to buy",
+        "intro": "A maker's catalog, direct store and dealer directory serve different purposes. The website should help a customer carry the particular instrument they are considering into the appropriate purchase or availability conversation.",
+        "customerQuestion": "Where should I ask about obtaining this model?",
+        "decisions": [
+          {
+            "label": "Identify the instrument and version",
+            "body": "Introduce the current instrument families and explain model differences using approved facts and photographs. Keep the specific model name visible beside buying information. A visitor should not have to reconstruct their selection after moving from a craft or product description to an order route."
+          },
+          {
+            "label": "Connect the applicable sales route",
+            "body": "Show the actual direct-purchase destination for the relevant product line and explain dealer inquiries separately. Troublesome Creek's Uncle Ed dulcimer information provides a direct route alongside a separate authorized-dealer directory. That does not establish that every instrument follows the same path or that every dealer carries each model."
+          },
+          {
+            "label": "Explain what to confirm",
+            "body": "Give customers the current process for checking a model's availability and any intended shop visit. A catalog photograph describes the maker's product, while a dealer listing identifies a contact. Keep product questions and the selected model together so a customer can ask about stock without treating the listing as confirmation."
+          }
+        ],
+        "ownerInputs": [
+          "Current model names and accurate comparison facts.",
+          "Verified direct-store and dealer destinations for each line.",
+          "Availability, visit and product-update responsibilities."
+        ],
+        "sourceBridge": "Troublesome Creek Stringed Instrument Co. describes two Hindman-made Uncle Ed dulcimer models with a direct-purchase link and separately lists authorized dealers. The example demonstrates why model information and sales-channel guidance need to remain connected.",
+        "limits": "Neither a maker's catalog nor a dealer directory confirms a particular shop's inventory. The appropriate seller confirms availability and purchase arrangements for the selected model.",
+        "route": "/areas/kentucky/knott-county/",
+        "inputHash": "3c6f551dce441ae466dd830d39fa0e4996785e32133843ca46d3322905a01666"
+      },
+      "after": {
+        "heading": "Keep the instrument model visible when explaining how to buy",
+        "intro": "A maker's catalog, direct store and dealer directory serve different purposes. The website should help a customer carry the particular instrument they are considering into the appropriate purchase or availability conversation.",
+        "customerQuestion": "Where should I ask about obtaining this model?",
+        "decisions": [
+          {
+            "label": "Identify the instrument and version",
+            "body": "Introduce the current instrument families and explain model differences using approved facts and photographs. Keep the specific model name visible beside buying information. A visitor should not have to reconstruct their selection after moving from a craft or product description to an order route."
+          },
+          {
+            "label": "Connect the applicable sales route",
+            "body": "Show the actual direct-purchase destination for the relevant product line and explain dealer inquiries separately. Troublesome Creek's Uncle Ed dulcimer information provides a direct route alongside a separate authorized-dealer directory. That does not establish that every instrument follows the same path or that every dealer carries each model."
+          },
+          {
+            "label": "Explain what to confirm",
+            "body": "Give customers the current process for checking a model's availability and any intended shop visit. A catalog photograph describes the maker's product, while a dealer listing identifies a contact. Keep product questions and the selected model together so a customer can ask about stock without treating the listing as confirmation."
+          }
+        ],
+        "ownerInputs": [
+          "Current model names and accurate comparison facts.",
+          "Verified direct-store and dealer destinations for each line.",
+          "Availability, visit and product-update responsibilities."
+        ],
+        "sourceBridge": "Troublesome Creek Stringed Instrument Co. describes two Hindman-made Uncle Ed dulcimer models with a direct-purchase link and separately lists authorized dealers. The example demonstrates why model information and sales-channel guidance need to remain connected.",
+        "limits": "The appropriate seller confirms availability and purchase arrangements for the selected model.",
+        "route": "/areas/kentucky/knott-county/",
+        "inputHash": "3c6f551dce441ae466dd830d39fa0e4996785e32133843ca46d3322905a01666"
+      },
+      "beforeSha256": "94ceb625e6a84d7f810a9f82d473183d0f220a40618bdbf370ef162a51b53cd6",
+      "afterSha256": "c0f8bb7ef828a3a7295b8925048029ccac468443055b7c185a67bfc63e02a3d9",
+      "recommendedFixes": [
+        {
+          "passage": "Neither a maker's catalog nor a dealer directory confirms a particular shop's inventory. The appropriate seller confirms availability and purchase arrangements for the selected model.",
+          "issue": "Inventory caveat repeats the third decision.",
+          "fix": "Shorten the final limit to who confirms availability, keeping the explanatory distinction in the decision."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/lee-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Make clear that boat transport does not include passenger travel",
+        "intro": "Equipment delivery can sound like a complete shuttle arrangement unless the website states its boundaries. An outfitter should explain whose boat moves, the equipment handoff points and what the paddlers must arrange for themselves.",
+        "customerQuestion": "Can you move the boat, and how will our group travel separately?",
+        "decisions": [
+          {
+            "label": "Identify the equipment",
+            "body": "Distinguish rental equipment from customer-owned kayaks or canoes using the operator's actual accepted categories. Keep the boat description attached to the request. Someone bringing their own kayak needs a clear way to ask about moving it without being sent through an equipment-rental choice."
+          },
+          {
+            "label": "Confirm the boat handoffs",
+            "body": "Explain the proposed delivery and collection points and which details the operator reviews. Keep the current handoff instructions with the relevant service. A general transport description should not make every location or arrangement appear automatically available."
+          },
+          {
+            "label": "State the separate people plan",
+            "body": "Place the passenger-transport exclusion beside the equipment offer. Three Forks Adventure Company explicitly does not provide passenger transportation, so participants must make their own travel arrangements. When comparing rentals, private guided paddles and scheduled adventures, show the actual inclusions for each instead of letting the word transport carry different unstated meanings."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted owned and rented equipment categories.",
+          "Current equipment delivery and collection arrangements.",
+          "Exact passenger exclusion and outing-format descriptions."
+        ],
+        "sourceBridge": "Three Forks Adventure Company in Beattyville describes rental-equipment delivery and transport of customers' own boats while explicitly excluding passenger transportation. Its separate rental, guided and scheduled offerings make clear comparisons useful.",
+        "limits": "The operator confirms current equipment services and handoffs. A boat-transport inquiry does not arrange a ride for the paddlers or establish every inclusion of a guided or scheduled outing.",
+        "route": "/areas/kentucky/lee-county/",
+        "inputHash": "c5a7d1974a378ddece226ec0a0d93722d1c24ab7d7de9a65a986ac6cc18c62a3"
+      },
+      "after": {
+        "heading": "Make clear that boat transport does not include passenger travel",
+        "intro": "Equipment delivery can sound like a complete shuttle arrangement unless the website states its boundaries. An outfitter should explain whose boat moves, the equipment handoff points and what the paddlers must arrange for themselves.",
+        "customerQuestion": "Can you move the boat, and how will our group travel separately?",
+        "decisions": [
+          {
+            "label": "Identify the equipment",
+            "body": "Distinguish rental equipment from customer-owned kayaks or canoes using the operator's actual accepted categories. Keep the boat description attached to the request. Someone bringing their own kayak needs a clear way to ask about moving it without being sent through an equipment-rental choice."
+          },
+          {
+            "label": "Confirm the boat handoffs",
+            "body": "Explain the proposed delivery and collection points and which details the operator reviews. Keep the current handoff instructions with the relevant service. A general transport description should not make every location or arrangement appear automatically available."
+          },
+          {
+            "label": "State the separate people plan",
+            "body": "Place the passenger-transport exclusion beside the equipment offer. Three Forks Adventure Company explicitly does not provide passenger transportation, so participants must make their own travel arrangements. When comparing rentals, private guided paddles and scheduled adventures, show the actual inclusions for each instead of letting the word transport carry different unstated meanings."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted owned and rented equipment categories.",
+          "Current equipment delivery and collection arrangements.",
+          "Exact passenger exclusion and outing-format descriptions."
+        ],
+        "sourceBridge": "Three Forks Adventure Company in Beattyville describes rental-equipment delivery and transport of customers' own boats while explicitly excluding passenger transportation. Its separate rental, guided and scheduled offerings make clear comparisons useful.",
+        "limits": "The operator confirms current equipment services, handoffs and the inclusions of each outing.",
+        "route": "/areas/kentucky/lee-county/",
+        "inputHash": "c5a7d1974a378ddece226ec0a0d93722d1c24ab7d7de9a65a986ac6cc18c62a3"
+      },
+      "beforeSha256": "c194a6857b1da1a8ffaf3403b5d7259de5d4be12579d077fa82e683b4c281e84",
+      "afterSha256": "89762988bebfaea695993733d81e52e01a265f53900e12be8dd64a74e989f327",
+      "recommendedFixes": [
+        {
+          "passage": "The operator confirms current equipment services and handoffs. A boat-transport inquiry does not arrange a ride for the paddlers or establish every inclusion of a guided or scheduled outing.",
+          "issue": "Passenger exclusion repeats the third decision and source bridge.",
+          "fix": "Condense final limits to operator confirmation of equipment arrangements and outing inclusions."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/lincoln-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Connect the cabinet accessory to the job it should do",
+        "intro": "A customer browsing cabinet accessories may be thinking about storage, appearance or both. The website should connect each reference to the room and intended use before treating an appealing supplier image as a final selection.",
+        "customerQuestion": "Am I choosing a storage function, decorative hardware or both for this cabinet?",
+        "decisions": [
+          {
+            "label": "Describe the practical need",
+            "body": "Ask where the cabinet will be used and what should become easier to store or reach. Use approved explanations of organizers, pullouts and dividers to help visitors recognize relevant functions. The customer should be able to describe the problem before knowing the supplier's exact product name."
+          },
+          {
+            "label": "Keep the visual reference identifiable",
+            "body": "Distinguish decorative knobs and pulls from internal storage accessories while allowing both in the same project conversation. Explain how to share the current supplier reference or identify the pictured option. Keep it attached to the room and cabinet context so an attractive image does not arrive as an isolated specification."
+          },
+          {
+            "label": "Explain the design review",
+            "body": "Show how a preference is considered for the actual cabinet and when it becomes part of the agreed design. Caption project examples accurately and keep current accessory information maintained. A visitor should understand that seeing an option on a supplier page does not establish its fit or inclusion in the proposed cabinetry."
+          }
+        ],
+        "ownerInputs": [
+          "Current functional accessory and decorative hardware examples.",
+          "Useful room, storage and supplier-reference prompts.",
+          "Actual suitability and final-specification review process."
+        ],
+        "sourceBridge": "Luxwood Interiors separates organizers, pullouts and dividers from decorative knobs and pulls and provides supplier references for exploration. Its stated Stanford service makes this a relevant example of connecting product browsing to a cabinet-project inquiry.",
+        "limits": "The cabinet designer reviews fit and suitability. A shared reference expresses a preference without confirming that the accessory is available, included or part of the final specification.",
+        "route": "/areas/kentucky/lincoln-county/",
+        "inputHash": "039da2e87f963495881f4c71f766deef7874499e3ffb91de6d157cdc2b95a5eb"
+      },
+      "after": {
+        "heading": "Connect the cabinet accessory to the job it should do",
+        "intro": "A customer browsing cabinet accessories may be thinking about storage, appearance or both. The website should connect each reference to the room and intended use before treating an appealing supplier image as a final selection.",
+        "customerQuestion": "Am I choosing a storage function, decorative hardware or both for this cabinet?",
+        "decisions": [
+          {
+            "label": "Describe the practical need",
+            "body": "Ask where the cabinet will be used and what should become easier to store or reach. Use approved explanations of organizers, pullouts and dividers to help visitors recognize relevant functions. The customer should be able to describe the problem before knowing the supplier's exact product name."
+          },
+          {
+            "label": "Keep the visual reference identifiable",
+            "body": "Distinguish decorative knobs and pulls from internal storage accessories while allowing both in the same project conversation. Explain how to share the current supplier reference or identify the pictured option. Keep it attached to the room and cabinet context so an attractive image does not arrive as an isolated specification."
+          },
+          {
+            "label": "Explain the design review",
+            "body": "Show how a preference is considered for the actual cabinet and when it becomes part of the agreed design. Caption project examples accurately and keep current accessory information maintained. A visitor should understand that seeing an option on a supplier page does not establish its fit or inclusion in the proposed cabinetry."
+          }
+        ],
+        "ownerInputs": [
+          "Current functional accessory and decorative hardware examples.",
+          "Useful room, storage and supplier-reference prompts.",
+          "Actual suitability and final-specification review process."
+        ],
+        "sourceBridge": "Luxwood Interiors separates organizers, pullouts and dividers from decorative knobs and pulls and provides supplier references for exploration. Its stated Stanford service makes this a relevant example of connecting product browsing to a cabinet-project inquiry.",
+        "limits": "The cabinet designer confirms fit, suitability and the final accessory specification.",
+        "route": "/areas/kentucky/lincoln-county/",
+        "inputHash": "039da2e87f963495881f4c71f766deef7874499e3ffb91de6d157cdc2b95a5eb"
+      },
+      "beforeSha256": "f8a71b9e5097b915047477bf96e903ff30958b3bd1296bfddbca0833b155ee3d",
+      "afterSha256": "7c335ac29ec54bd3405e77d7a3cf69b3e5eb9db07c8ae7b85c0204adbc3cba10",
+      "recommendedFixes": [
+        {
+          "passage": "The cabinet designer reviews fit and suitability. A shared reference expresses a preference without confirming that the accessory is available, included or part of the final specification.",
+          "issue": "Fit and final specification caveat overlaps the third decision.",
+          "fix": "Tighten the limits to designer confirmation without repeating the full preference-versus-inclusion distinction."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/livingston-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Help visitors choose sailing instruction or a scenic cruise",
+        "intro": "Similar sailboat photographs can represent very different experiences. A sailing website should explain the visitor's purpose and expected participation before presenting the details of a course or leisure outing.",
+        "customerQuestion": "Do I want to learn to sail or enjoy a recreational cruise?",
+        "decisions": [
+          {
+            "label": "Compare the purpose",
+            "body": "Give the two offers plain descriptions beside their images. Someone interested in learning needs to recognize the instruction route, while a visitor planning a scenic outing needs the cruise introduction. A shared setting on the water should not make the experiences look interchangeable."
+          },
+          {
+            "label": "Explain participation and format",
+            "body": "Use the owner's current course description to explain classroom and on-water learning, and distinguish course completion and an examination from ordinary recreational participation. Describe the cruise using its actual format and participant expectations. Avoid implying that enjoying a cruise produces the same learning outcome as completing instruction."
+          },
+          {
+            "label": "Connect each next step",
+            "body": "Keep the appropriate course-contact and cruise-reservation routes beside their respective descriptions. State which current arrangements customers should confirm before planning the visit. Approved captions and a named update owner can help keep course information from being accidentally presented as cruise requirements, or the reverse."
+          }
+        ],
+        "ownerInputs": [
+          "Current instruction and cruise descriptions.",
+          "Approved participation, course and examination explanations.",
+          "Separate inquiry or reservation routes and update responsibility."
+        ],
+        "sourceBridge": "Lighthouse Landing in Grand Rivers presents sailing instruction involving classroom and on-water learning separately from a scenic sailboat cruise with advance reservations. The distinction gives the website a useful comparison beyond photographs of boats.",
+        "limits": "The operator confirms the current format and arrangements for each offer. A recreational outing does not imply course completion, and the website should not promise an instructional outcome merely from participation.",
+        "route": "/areas/kentucky/livingston-county/",
+        "inputHash": "3303ba9dbff2cfc7d5c5b6cc81d94ca6008c224d5e3ed6393772b635dfb822c8"
+      },
+      "after": {
+        "heading": "Help visitors choose sailing instruction or a scenic cruise",
+        "intro": "Similar sailboat photographs can represent very different experiences. A sailing website should explain the visitor's purpose and expected participation before presenting the details of a course or leisure outing.",
+        "customerQuestion": "Do I want to learn to sail or enjoy a recreational cruise?",
+        "decisions": [
+          {
+            "label": "Compare the purpose",
+            "body": "Give the two offers plain descriptions beside their images. Someone interested in learning needs to recognize the instruction route, while a visitor planning a scenic outing needs the cruise introduction. A shared setting on the water should not make the experiences look interchangeable."
+          },
+          {
+            "label": "Explain participation and format",
+            "body": "Use the owner's current course description to explain classroom and on-water learning, and distinguish course completion and an examination from ordinary recreational participation. Describe the cruise using its actual format and participant expectations. Avoid implying that enjoying a cruise produces the same learning outcome as completing instruction."
+          },
+          {
+            "label": "Connect each next step",
+            "body": "Keep the appropriate course-contact and cruise-reservation routes beside their respective descriptions. State which current arrangements customers should confirm before planning the visit. Approved captions and a named update owner can help keep course information from being accidentally presented as cruise requirements, or the reverse."
+          }
+        ],
+        "ownerInputs": [
+          "Current instruction and cruise descriptions.",
+          "Approved participation, course and examination explanations.",
+          "Separate inquiry or reservation routes and update responsibility."
+        ],
+        "sourceBridge": "Lighthouse Landing in Grand Rivers presents sailing instruction involving classroom and on-water learning separately from a scenic sailboat cruise with advance reservations. The distinction gives the website a useful comparison beyond photographs of boats.",
+        "limits": "The operator confirms the current format, participation requirements and arrangements for each offer.",
+        "route": "/areas/kentucky/livingston-county/",
+        "inputHash": "3303ba9dbff2cfc7d5c5b6cc81d94ca6008c224d5e3ed6393772b635dfb822c8"
+      },
+      "beforeSha256": "7dfee82722ad61f6eeace5aba6d7374295549f25123a74105a782d4834a1a4bf",
+      "afterSha256": "9f0d07cfe1529c48d72f73527b7041d9b93d7cdbd913f86dc6a699a6baeaecb4",
+      "recommendedFixes": [
+        {
+          "passage": "The operator confirms the current format and arrangements for each offer. A recreational outing does not imply course completion, and the website should not promise an instructional outcome merely from participation.",
+          "issue": "The instructional-outcome caveat repeats the second decision.",
+          "fix": "Keep operator confirmation here and retain the course-versus-cruise outcome explanation in the comparison."
+        }
+      ]
+    },
+    {
+      "route": "/areas/kentucky/shelby-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Keep the award's display setting connected to its wording",
+        "intro": "An organizer may know where an award will be displayed before choosing the object. A recognition website can use that setting to guide a selection conversation and keep the proposed engraving open for review when the product changes.",
+        "customerQuestion": "Where will this recognition be displayed, and how does that affect the object and message?",
+        "decisions": [
+          {
+            "label": "Begin with the recognition",
+            "body": "Ask what the organizer wants to acknowledge and who will receive it. Explain the occasions and orders the business serves so a customer can begin without selecting a catalog item. Keep purpose and budget available to staff when discussing suitable options."
+          },
+          {
+            "label": "Show how the object is displayed",
+            "body": "Distinguish wall-mounted plaques from freestanding forms for a shelf, desk or case. Use accurate photographs and relevant size information. Someone with a fixed wall space should be able to explain that constraint without mistaking a trophy photograph for the same arrangement or assuming that a pictured item is in stock."
+          },
+          {
+            "label": "Review personalization with the selection",
+            "body": "Keep the proposed message attached to the item being discussed and explain engraving-space and approval guidance. If the object changes, show that the wording may need another review. A customer should be able to seek selection help before preparing final text for a product that has not yet been agreed."
+          }
+        ],
+        "ownerInputs": [
+          "Current award choices and selection-support process.",
+          "Accurate display descriptions and useful dimensions.",
+          "Engraving preparation and approval guidance."
+        ],
+        "sourceBridge": "Kile Signs in Shelbyville distinguishes wall-mounted plaques, trophies and freestanding award forms and describes selection help and engraving. That offer supports explaining the relationship between intended display, object choice and personalization.",
+        "limits": "The business confirms current availability and engraving requirements. Examples should not promise stock or automatic text fit; live catalogs, engraving previews and production-ordering systems need separate scope.",
+        "route": "/areas/kentucky/shelby-county/",
+        "inputHash": "2b92f519c955e350ff41b37c3096bbe8a6997ee7bd2e1cce6211f3622d912063"
+      },
+      "after": {
+        "heading": "Recheck the engraved message when the award format changes",
+        "intro": "An organizer may know where an award will be displayed before choosing the object. A recognition website can use that setting to guide a selection conversation and keep the proposed engraving open for review when the product changes.",
+        "customerQuestion": "If we choose a different award size or format, what wording needs another review?",
+        "decisions": [
+          {
+            "label": "Begin with the recognition",
+            "body": "Ask what the organizer wants to acknowledge and who will receive it. Explain the occasions and orders the business serves so a customer can begin without selecting a catalog item. Keep purpose and budget available to staff when discussing suitable options."
+          },
+          {
+            "label": "Show how the object is displayed",
+            "body": "Use accurate photographs to distinguish a wall plaque from a freestanding award and record the intended display space. Keep the selected size and format beside the proposed message so a later product change is visible to the person reviewing engraving."
+          },
+          {
+            "label": "Review personalization with the selection",
+            "body": "For an illustrative request, an organizer first considers a large wall plaque, then chooses a smaller freestanding award. Carry the recognition message into a fresh engraving review rather than assuming the earlier layout will fit. Ask staff whether wording, line breaks or another approved format needs discussion before final text is accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Current award choices and selection-support process.",
+          "Accurate display descriptions and useful dimensions.",
+          "Engraving preparation and approval guidance."
+        ],
+        "sourceBridge": "Kile Signs in Shelbyville distinguishes wall-mounted plaques, trophies and freestanding award forms and describes selection help and engraving. That offer supports explaining the relationship between intended display, object choice and personalization.",
+        "limits": "The business confirms current availability and engraving requirements. Examples should not promise stock or automatic text fit; live catalogs, engraving previews and production-ordering systems need separate scope.",
+        "route": "/areas/kentucky/shelby-county/",
+        "inputHash": "2b92f519c955e350ff41b37c3096bbe8a6997ee7bd2e1cce6211f3622d912063"
+      },
+      "beforeSha256": "88f999e0115cb4a8de0f0e3ffbc2caf6415e494bc39f0f98b94f0b4a0dd69a1a",
+      "afterSha256": "abdd4951ee2f2e2a135bd3f655c408aeb1c61ddbaa0665c1ed3db4f3254bc33e",
+      "recommendedFixes": [
+        {
+          "passage": "Distinguish wall-mounted plaques from freestanding forms for a shelf, desk or case. Use accurate photographs and relevant size information. Someone with a fixed wall space should be able to explain that constraint without mistaking a trophy photograph for the same arrangement or assuming that a pictured item is in stock.",
+          "issue": "Display-led award selection overlaps the reviewed Oldham plaque brief.",
+          "fix": "Emphasize the effect of changing award size or format on engraving review and trim shared wall-versus-freestanding explanation where possible."
+        }
+      ]
+    },
+    {
+      "route": "/areas/louisiana/east-feliciana-parish/",
+      "partition": 2,
+      "before": {
+        "heading": "Give existing bookings their own route after a name change",
+        "intro": "Someone holding a confirmation under a former business name needs different help from a first-time visitor. A transition page should connect the names and explain the approved continuity statement before separating existing-booking help from new bookings.",
+        "customerQuestion": "Do I already have a booking covered by the notice, or do I need to make a new one?",
+        "decisions": [
+          {
+            "label": "Make the organization recognizable",
+            "body": "Connect the current public name with the relevant former names using approved wording. Place that explanation where someone arriving from an older confirmation will see it. A familiar former name should help identify the organization without implying that every earlier service or term remains unchanged."
+          },
+          {
+            "label": "State the exact existing-booking coverage",
+            "body": "Identify only the booking types and qualifications the operator has approved. Provide the responsible help route for someone with an earlier confirmation. A confused booked visitor should be able to ask about their arrangement without being directed to purchase again as the default next step."
+          },
+          {
+            "label": "Label new bookings separately",
+            "body": "Give first-time visitors the current booking destination and explain the confirmation process. A general continuity notice is not a confirmation for someone who has never booked. Assign responsibility for reviewing temporary wording, identity references and links as the transition progresses."
+          }
+        ],
+        "ownerInputs": [
+          "Approved current/former identity and continuity wording.",
+          "Exact booking types covered and existing-customer help route.",
+          "New-booking destination and transition-review owner."
+        ],
+        "sourceBridge": "Sanctuary Hill's notice identifies the former Barn Hill Preserve/Magnolia Wilds property in Ethel and says previously scheduled tours and otter swims are honored. It also provides help and new-booking information; the baseline notice was checked October 24, 2026.",
+        "limits": "Recheck this temporary notice before publication. The operator resolves individual arrangements; the statement does not imply transferred accounts or unchanged deposit/refund terms. Record migration, reservation changes and payment handling need separate scope.",
+        "route": "/areas/louisiana/east-feliciana-parish/",
+        "inputHash": "58f05d822285e21802e05b8fd2bfd92895c9794324962cb8fc51e27f52ad760c"
+      },
+      "after": {
+        "heading": "Give existing bookings their own route after a name change",
+        "intro": "Someone holding a confirmation under a former business name needs different help from a first-time visitor. A transition page should connect the names and explain the approved continuity statement before separating existing-booking help from new bookings.",
+        "customerQuestion": "Do I already have a booking covered by the notice, or do I need to make a new one?",
+        "decisions": [
+          {
+            "label": "Make the organization recognizable",
+            "body": "Connect the current public name with the relevant former names using approved wording. Place that explanation where someone arriving from an older confirmation will see it. A familiar former name should help identify the organization without implying that every earlier service or term remains unchanged."
+          },
+          {
+            "label": "State the exact existing-booking coverage",
+            "body": "Identify only the booking types and qualifications the operator has approved. Provide the responsible help route for someone with an earlier confirmation. A confused booked visitor should be able to ask about their arrangement without being directed to purchase again as the default next step."
+          },
+          {
+            "label": "Label new bookings separately",
+            "body": "Give first-time visitors the current booking destination and explain the confirmation process. A general continuity notice is not a confirmation for someone who has never booked. Assign responsibility for reviewing temporary wording, identity references and links as the transition progresses."
+          }
+        ],
+        "ownerInputs": [
+          "Approved current/former identity and continuity wording.",
+          "Exact booking types covered and existing-customer help route.",
+          "New-booking destination and transition-review owner."
+        ],
+        "sourceBridge": "Sanctuary Hill's notice identifies the former Barn Hill Preserve/Magnolia Wilds property in Ethel and says previously scheduled tours and otter swims are honored. It also provides help and new-booking information; the public notice was checked October 27, 2026.",
+        "limits": "Keep the temporary notice dated and assign its next review. The operator resolves individual arrangements; the statement does not imply transferred accounts or unchanged deposit/refund terms. Record migration, reservation changes and payment handling need separate scope.",
+        "route": "/areas/louisiana/east-feliciana-parish/",
+        "inputHash": "58f05d822285e21802e05b8fd2bfd92895c9794324962cb8fc51e27f52ad760c"
+      },
+      "beforeSha256": "420751a6fcf3079ded0160c7c1b8e3b4037e10f828cb5ccec290139eb27902ea",
+      "afterSha256": "ca1b7fcdffed0ae3e0b68a79e820df11249650831c967e7d396f9ed624d1e905",
+      "recommendedFixes": [
+        {
+          "passage": "Sanctuary Hill's notice identifies the former Barn Hill Preserve/Magnolia Wilds property in Ethel and says previously scheduled tours and otter swims are honored. It also provides help and new-booking information; the baseline notice was checked October 24, 2026.",
+          "issue": "The phrase baseline notice sounds like internal audit terminology.",
+          "fix": "Say the notice was checked October 24, 2026, omitting baseline."
+        }
+      ]
+    },
+    {
+      "route": "/areas/louisiana/rapides-parish/",
+      "partition": 2,
+      "before": {
+        "heading": "Separate the school-rate qualifying count from the whole party",
+        "intro": "The number arriving can exceed the number that qualifies for a group rate. A school-visit page should explain the operator's categories and separate payment responsibilities before an organizer relies on a total headcount.",
+        "customerQuestion": "Which visitors count toward this rate's minimum, and which adults pay separately?",
+        "decisions": [
+          {
+            "label": "Identify the selected visit category",
+            "body": "Keep school-group conditions distinct from ordinary admission and other visit options. Explain the approved categories without asking for student identities. A minimum attached to a school rate should not become a requirement for every visit to the venue."
+          },
+          {
+            "label": "Show the qualifying paying count",
+            "body": "Keep total attendance, qualifying paying visitors and staff-confirmed free places separate. In the published example, fourteen qualifying paying visitors plus four accompanying parents is eighteen attendees but remains below the fifteen-paying-person minimum. The extra parents do not automatically satisfy that condition."
+          },
+          {
+            "label": "Explain separate adult payment and staff review",
+            "body": "Show which accompanying adults follow a payment route separate from the organizer's group payment. Provide a contact for uncertain classifications and free-place questions. A submitted request should not decide admission entitlement, supervision eligibility or whether a reservation has been accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Current visit categories and qualifying paying-count definitions.",
+          "Free-place conditions and separate adult-payment instructions.",
+          "Staff contact and actual reservation-confirmation wording."
+        ],
+        "sourceBridge": "Alexandria Zoo's school field-trip page requires fifteen qualifying paying people for the school-group rate. It excludes parents, chaperones and additional adults from that count and directs them to pay separately; school-personnel free places have their own conditions.",
+        "limits": "Staff confirms classifications, free places and supervision questions. Conflicting membership wording must be clarified before promising entitlement. Website explanations do not calculate a rate; rosters, payment splitting and reservation connections need separate assessment.",
+        "route": "/areas/louisiana/rapides-parish/",
+        "inputHash": "b959ec3c3a20818556e44dc4809deb381c166e497a848d92c13aee0ddc617ce7"
+      },
+      "after": {
+        "heading": "Separate the school-rate qualifying count from the whole party",
+        "intro": "The number arriving can exceed the number that qualifies for a group rate. A school-visit page should explain the operator's categories and separate payment responsibilities before an organizer relies on a total headcount.",
+        "customerQuestion": "Which visitors count toward this rate's minimum, and which adults pay separately?",
+        "decisions": [
+          {
+            "label": "Identify the selected visit category",
+            "body": "Keep school-group conditions distinct from ordinary admission and other visit options. Explain the approved categories without asking for student identities. A minimum attached to a school rate should not become a requirement for every visit to the venue."
+          },
+          {
+            "label": "Show the qualifying paying count",
+            "body": "Keep total attendance, qualifying paying visitors and staff-confirmed free places separate. In an illustrative example, fourteen qualifying paying visitors plus four accompanying parents is eighteen attendees but remains below the fifteen-paying-person minimum. The extra parents do not automatically satisfy that condition."
+          },
+          {
+            "label": "Explain separate adult payment and staff review",
+            "body": "Show which accompanying adults follow a payment route separate from the organizer's group payment. Provide a contact for uncertain classifications and free-place questions. A submitted request should not decide admission entitlement, supervision eligibility or whether a reservation has been accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Current visit categories and qualifying paying-count definitions.",
+          "Free-place conditions and separate adult-payment instructions.",
+          "Staff contact and actual reservation-confirmation wording."
+        ],
+        "sourceBridge": "Alexandria Zoo's school field-trip page requires fifteen qualifying paying people for the school-group rate. It excludes parents, chaperones and additional adults from that count and directs them to pay separately; school-personnel free places have their own conditions.",
+        "limits": "Staff confirms classifications, free places and supervision questions. Conflicting membership wording must be clarified before promising entitlement. Website explanations do not calculate a rate; rosters, payment splitting and reservation connections need separate assessment.",
+        "route": "/areas/louisiana/rapides-parish/",
+        "inputHash": "b959ec3c3a20818556e44dc4809deb381c166e497a848d92c13aee0ddc617ce7"
+      },
+      "beforeSha256": "99623cb34dd8221cd4a338caff448308dfc8d3454ff0b7bfc2f0f6d6377bfd0f",
+      "afterSha256": "1484c2de528286f9c02dca87d296022eb566bcdb14d142fc56fcdb5a46b26e78",
+      "recommendedFixes": [
+        {
+          "passage": "Keep total attendance, qualifying paying visitors and staff-confirmed free places separate. In the published example, fourteen qualifying paying visitors plus four accompanying parents is eighteen attendees but remains below the fifteen-paying-person minimum. The extra parents do not automatically satisfy that condition.",
+          "issue": "In the published example could imply that the operator supplied the hypothetical fourteen-plus-four scenario.",
+          "fix": "Change to In an illustrative example or For example, preserving the staff-confirmed category assumption."
+        }
+      ]
+    },
+    {
+      "route": "/areas/maine/washington-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Connect the maker's history to the visit available now",
+        "intro": "A production story can make readers want to visit even when access arrangements have changed. A producer's website should connect that interest to current shopping and tour information wherever the story begins to influence travel plans.",
+        "customerQuestion": "Can I shop, see production or arrange another kind of visit at present?",
+        "decisions": [
+          {
+            "label": "Keep the enduring story accurate",
+            "body": "Use approved history and process descriptions without making a production photograph imply visitor access. Identify the place and work being described. Historical accounts of tours can remain useful context, but they should not override the current position on visits."
+          },
+          {
+            "label": "Separate retail from production access",
+            "body": "Show the actual shopping location, hours and contact as its own offer, alongside the owner-confirmed status of tours or production access. A reader interested in how the product is made should find that status before making travel plans. Shopping availability should not silently imply entry to the mill or workshop."
+          },
+          {
+            "label": "Update every invitation to visit",
+            "body": "Identify the story pages, contact information and links that encourage visitors to come. Assign someone to review those points when arrangements change. A notice on one contact page is less useful if a production-story link elsewhere continues to promise an unavailable experience."
+          }
+        ],
+        "ownerInputs": [
+          "Approved maker history and process descriptions.",
+          "Current retail information and production-access status.",
+          "Visit-invitation page list and named update responsibility."
+        ],
+        "sourceBridge": "Raye's Mustard tells the story of its Eastport mill, while the contact information in the baseline separately describes the gift shop and says tours are paused until further notice. That split illustrates the need to connect history with practical access information.",
+        "limits": "The owner confirms current visitor arrangements before publication. The example does not promise a reopening date; tour operations, ticketing, retail inventory and booking connections require separate assessment.",
+        "route": "/areas/maine/washington-county/",
+        "inputHash": "4cdc3edab3f69fd45d3dc05498aa3c1463f7e76cf20fc093b402085ecb0c7d53"
+      },
+      "after": {
+        "heading": "Connect the maker's history to the visit available now",
+        "intro": "A production story can make readers want to visit even when access arrangements have changed. A producer's website should connect that interest to current shopping and tour information wherever the story begins to influence travel plans.",
+        "customerQuestion": "Can I shop, see production or arrange another kind of visit at present?",
+        "decisions": [
+          {
+            "label": "Keep the enduring story accurate",
+            "body": "Use approved history and process descriptions without making a production photograph imply visitor access. Identify the place and work being described. Historical accounts of tours can remain useful context, but they should not override the current position on visits."
+          },
+          {
+            "label": "Separate retail from production access",
+            "body": "Show the actual shopping location, hours and contact as its own offer, alongside the owner-confirmed status of tours or production access. A reader interested in how the product is made should find that status before making travel plans. Shopping availability should not silently imply entry to the mill or workshop."
+          },
+          {
+            "label": "Update every invitation to visit",
+            "body": "Identify the story pages, contact information and links that encourage visitors to come. Assign someone to review those points when arrangements change. A notice on one contact page is less useful if a production-story link elsewhere continues to promise an unavailable experience."
+          }
+        ],
+        "ownerInputs": [
+          "Approved maker history and process descriptions.",
+          "Current retail information and production-access status.",
+          "Visit-invitation page list and named update responsibility."
+        ],
+        "sourceBridge": "Raye’s Mustard tells the story of its Eastport mill. Its public contact page, checked October 27, 2026, separately lists gift-shop hours, labels the production mill closed to the public and says tours remain paused until further notice. Retail visiting and production access therefore need distinct explanations.",
+        "limits": "The owner confirms visitor arrangements and approves later status updates. The example does not promise a reopening date; tour operations, ticketing, retail inventory and booking connections require separate assessment.",
+        "route": "/areas/maine/washington-county/",
+        "inputHash": "4cdc3edab3f69fd45d3dc05498aa3c1463f7e76cf20fc093b402085ecb0c7d53"
+      },
+      "beforeSha256": "12c8ff9274fd3de9f4a482167151166c2f636a53e347ae8470bc07c1bfe7cda9",
+      "afterSha256": "c95fba37920db8c9c52096ecc62c0288e7b1ad0236c7e8858e6eb5bd9b372ba4",
+      "recommendedFixes": [
+        {
+          "passage": "Raye's Mustard tells the story of its Eastport mill, while the contact information in the baseline separately describes the gift shop and says tours are paused until further notice. That split illustrates the need to connect history with practical access information.",
+          "issue": "The phrase contact information in the baseline sounds like audit metadata.",
+          "fix": "Replace it with dated public contact information, using the checked date already disclosed."
+        }
+      ]
+    },
+    {
+      "route": "/areas/maryland/caroline-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Preserve existing plans and design relationships in the builder inquiry",
+        "intro": "A homeowner may arrive with architect-prepared drawings or an idea that still needs development. A builder's website should recognize both starting points and help the customer explain the work requested without judging whether their plans are construction-ready.",
+        "customerQuestion": "What design work already exists, what has changed and what help do I need from the builder?",
+        "decisions": [
+          {
+            "label": "Describe the project and current design material",
+            "body": "Explain accepted starting information for custom homes, renovations and additions. Allow an idea without plans to begin a conversation, and help customers identify existing drawings and their author. An outside architect relationship should remain visible rather than being replaced by an assumed new design process."
+          },
+          {
+            "label": "Keep revised intentions explicit",
+            "body": "Ask whether the desired project differs from the available drawings. A homeowner may have an addition plan but now want another layout. Preserve both the supplied material and the new question so the drawing set is not silently treated as the customer's final intention."
+          },
+          {
+            "label": "Explain the requested contribution",
+            "body": "Distinguish construction discussion from additional design help using accurate portfolio roles and current collaboration arrangements. Keep one general inquiry available for situations that do not fit an example. A project photograph should not imply that every design and construction responsibility is included together."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted starting information and drawing-set identifiers.",
+          "Current outside-designer and design-partner arrangements.",
+          "Approved project-role captions and first-response questions."
+        ],
+        "sourceBridge": "Nuttle Builders in Denton describes custom homes, renovations and additions using architect-provided plans or collaboration with design partners. Its offer supports an inquiry that retains the existing design work and identifies the builder's requested role.",
+        "limits": "The construction business and its specialists review plans and manage the work. Website content prepares the first discussion; document-version systems, estimating and project-management connections need separate scope.",
+        "route": "/areas/maryland/caroline-county/",
+        "inputHash": "1f41d7fd579688af3bee7d1a74505c93fac234ff727b129d85b462a280881936"
+      },
+      "after": {
+        "heading": "Preserve existing plans and design relationships in the builder inquiry",
+        "intro": "A homeowner may arrive with architect-prepared drawings or an idea that still needs development. A builder's website should recognize both starting points and help the customer explain the work requested without judging whether their plans are construction-ready.",
+        "customerQuestion": "What design work already exists, what has changed and what help do I need from the builder?",
+        "decisions": [
+          {
+            "label": "Describe the project and current design material",
+            "body": "Begin with the work already planned: custom home, renovation or addition, the available drawing set and its author. If an outside architect is involved, keep that relationship visible when asking the builder about the project. Someone without plans can still describe an idea without inventing a completed design."
+          },
+          {
+            "label": "Keep revised intentions explicit",
+            "body": "Ask what has changed since the drawings were prepared. In an illustrative addition inquiry, the homeowner now wants a different room layout from the architect’s existing plan. Keep the original reference, proposed change and architect’s role together for discussion; the old drawing should not silently become the customer’s final intention or imply that the builder has accepted design responsibility."
+          },
+          {
+            "label": "Explain the requested contribution",
+            "body": "Distinguish construction discussion from additional design help using accurate portfolio roles and current collaboration arrangements. Keep one general inquiry available for situations that do not fit an example. A project photograph should not imply that every design and construction responsibility is included together."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted starting information and drawing-set identifiers.",
+          "Current outside-designer and design-partner arrangements.",
+          "Approved project-role captions and first-response questions."
+        ],
+        "sourceBridge": "Nuttle Builders in Denton describes custom homes, renovations and additions using architect-provided plans or collaboration with design partners. Its offer supports an inquiry that retains the existing design work and identifies the builder's requested role.",
+        "limits": "The construction business and its specialists review plans and manage the work. Website content prepares the first discussion; document-version systems, estimating and project-management connections need separate scope.",
+        "route": "/areas/maryland/caroline-county/",
+        "inputHash": "1f41d7fd579688af3bee7d1a74505c93fac234ff727b129d85b462a280881936"
+      },
+      "beforeSha256": "1aea712ed3ece50ecd0a295978c53093f194ff212496ab6fb266bd4c28232537",
+      "afterSha256": "03fd638da67701fe5592b49cd59cd94832edd77c295531f0be82314afb64f383",
+      "recommendedFixes": [
+        {
+          "passage": "Explain accepted starting information for custom homes, renovations and additions. Allow an idea without plans to begin a conversation, and help customers identify existing drawings and their author. An outside architect relationship should remain visible rather than being replaced by an assumed new design process.",
+          "issue": "Existing plans versus design support overlaps Ohio County Kentucky’s reviewed project-starting-point brief.",
+          "fix": "Foreground changes since the existing drawing set and preserving the outside architect relationship to strengthen the distinct task."
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "route": "/areas/louisiana/east-feliciana-parish/",
+      "before": {
+        "areaId": "louisiana/east-feliciana",
+        "lead": "A visitor arriving with a confirmation under an old business name needs a different next step from someone booking for the first time. I help East Feliciana Parish organizations explain that distinction during a change of operator or name.",
+        "decisionTitle": "Separate existing-booking help from new bookings after a name change.",
+        "decision": "The former Magnolia Wilds website now leads to Sanctuary Hill. Its transition notice identifies the former Barn Hill Preserve/Magnolia Wilds property and says previously scheduled tours and otter swims are honored under the new organization. It separately says visitors can make new bookings and provides a direct help route. For a proposed transition page, I would make those two paths clear at the start. In a hypothetical example, one visitor has an earlier confirmation bearing the former name while another has no booking. The first should find the operator-approved continuity explanation and help without being sent to buy again by default. The second should reach the new-booking instructions without mistaking the notice for their own confirmation. The owner must approve exactly which existing arrangements the statement covers; the website should not infer transferred accounts or unchanged terms beyond that statement.",
+        "scopes": [
+          {
+            "title": "Clarify the transition on an existing website",
+            "pages": [
+              "Current and former names",
+              "Existing-booking notice",
+              "Help for booked visitors",
+              "New-booking route"
+            ],
+            "request": "Choose help with an existing booking or instructions for a new one, using the owner-approved explanation for each.",
+            "supplies": "Approved transition wording, booking types covered, existing-customer help route and current new-booking destination.",
+            "check": "A visitor holding an old-name confirmation is not directed to make another purchase as the default next step."
+          },
+          {
+            "title": "Build a replacement site around both visitor needs",
+            "pages": [
+              "Current organization",
+              "Existing reservations",
+              "New visits",
+              "Contact and transition updates"
+            ],
+            "request": "Recognize the organization and find the next step appropriate to whether a booking already exists.",
+            "supplies": "Current public identity, approved continuity statement, contact ownership and the actual booking routes to retain or replace.",
+            "check": "A new visitor is not told that a general continuity notice confirms a booking they have never made."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when an existing site needs a clear transition notice and two distinct routes. Choose a fuller build when the name, navigation and booking information need coordinated replacement. Customer-record migration, account transfers, reservation-system changes and payment handling require separate scope. The operator confirms the actual arrangements; a name change alone does not establish booking, deposit or refund terms.",
+        "quoteQuestions": [
+          "Which existing bookings does your approved notice cover?",
+          "Where should a customer with an older confirmation ask for help?",
+          "What route should a visitor with no booking use now?"
+        ],
+        "coverageNote": "Sanctuary Hill lists 11342 Highway 955 East in Ethel, within East Feliciana Parish. This is a public planning example, not a studio client. Wonder and Method works remotely from Buffalo, New York, with organizations and businesses in East Feliciana Parish.",
+        "sources": [
+          {
+            "url": "https://www.sanctuaryhillla.org/",
+            "label": "Sanctuary Hill: operator transition notice",
+            "observation": "Identifies the former property names, explains continuity for already scheduled tours and otter swims and provides help alongside new-booking information. The notice was rechecked on October 24, 2026 and needs review before publication."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-migration-checklist/",
+            "label": "Plan the pages and customer routes that must survive a website change"
+          }
+        ],
+        "planningTable": {
+          "title": "Give existing and new visitors the right next step",
+          "intro": "These are proposed website decisions. Only the operator can approve the scope of a continuity statement and resolve an individual booking question.",
+          "columns": [
+            "Planning decision",
+            "Website content",
+            "Owner input",
+            "Acceptance example"
+          ],
+          "rows": [
+            [
+              "Recognizable identity",
+              "Connect the current name with the relevant former public names.",
+              "Approved identity and transition wording.",
+              "A visitor arriving from an older confirmation can recognize the intended organization."
+            ],
+            [
+              "Existing booking",
+              "State exactly which earlier arrangements the notice covers.",
+              "Operator-confirmed booking types and any actual qualifications.",
+              "The page does not expand a limited notice into a promise about every prior term."
+            ],
+            [
+              "Booked-customer help",
+              "Provide the actual route for questions about an earlier booking.",
+              "Responsible staff and approved contact instructions.",
+              "A confused visitor can ask for help without being instructed to purchase again."
+            ],
+            [
+              "New booking",
+              "Label the current booking route separately.",
+              "Actual destination and confirmation process.",
+              "The continuity statement is not treated as confirmation for a first-time visitor."
+            ],
+            [
+              "Ongoing updates",
+              "Assign responsibility for revising temporary notices and links.",
+              "Owner review process and current destinations.",
+              "Outdated transition wording can be identified for review without silently changing customer terms."
+            ]
+          ]
+        },
+        "market": "East Feliciana Parish, LA",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "louisiana/east-feliciana"
+        ],
+        "path": "/areas/louisiana/east-feliciana-parish/",
+        "title": "Web Design for East Feliciana Parish, LA",
+        "description": "Web design for East Feliciana Parish, LA. Example brief: separate existing-booking help from new bookings after a name change.",
+        "servedAreas": [
+          {
+            "name": "East Feliciana Parish",
+            "state": "Louisiana",
+            "type": "Parish"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/louisiana/#east-feliciana",
+            "label": "East Feliciana Parish place directory"
+          }
+        ],
+        "checkedDate": "2026-10-24"
+      },
+      "after": {
+        "areaId": "louisiana/east-feliciana",
+        "lead": "A visitor arriving with a confirmation under an old business name needs a different next step from someone booking for the first time. I help East Feliciana Parish organizations explain that distinction during a change of operator or name.",
+        "decisionTitle": "Separate existing-booking help from new bookings after a name change.",
+        "decision": "The former Magnolia Wilds website now leads to Sanctuary Hill. Its transition notice identifies the former Barn Hill Preserve/Magnolia Wilds property and says previously scheduled tours and otter swims are honored under the new organization. It separately says visitors can make new bookings and provides a direct help route. For a proposed transition page, I would make those two paths clear at the start. In a hypothetical example, one visitor has an earlier confirmation bearing the former name while another has no booking. The first should find the operator-approved continuity explanation and help without being sent to buy again by default. The second should reach the new-booking instructions without mistaking the notice for their own confirmation. The owner must approve exactly which existing arrangements the statement covers; the website should not infer transferred accounts or unchanged terms beyond that statement.",
+        "scopes": [
+          {
+            "title": "Clarify the transition on an existing website",
+            "pages": [
+              "Current and former names",
+              "Existing-booking notice",
+              "Help for booked visitors",
+              "New-booking route"
+            ],
+            "request": "Choose help with an existing booking or instructions for a new one, using the owner-approved explanation for each.",
+            "supplies": "Approved transition wording, booking types covered, existing-customer help route and current new-booking destination.",
+            "check": "A visitor holding an old-name confirmation is not directed to make another purchase as the default next step."
+          },
+          {
+            "title": "Build a replacement site around both visitor needs",
+            "pages": [
+              "Current organization",
+              "Existing reservations",
+              "New visits",
+              "Contact and transition updates"
+            ],
+            "request": "Recognize the organization and find the next step appropriate to whether a booking already exists.",
+            "supplies": "Current public identity, approved continuity statement, contact ownership and the actual booking routes to retain or replace.",
+            "check": "A new visitor is not told that a general continuity notice confirms a booking they have never made."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when an existing site needs a clear transition notice and two distinct routes. Choose a fuller build when the name, navigation and booking information need coordinated replacement. Customer-record migration, account transfers, reservation-system changes and payment handling require separate scope. The operator confirms the actual arrangements; a name change alone does not establish booking, deposit or refund terms.",
+        "quoteQuestions": [
+          "Which existing bookings does your approved notice cover?",
+          "Where should a customer with an older confirmation ask for help?",
+          "What route should a visitor with no booking use now?"
+        ],
+        "coverageNote": "Sanctuary Hill lists 11342 Highway 955 East in Ethel, within East Feliciana Parish. This is a public planning example, not a studio client. Wonder and Method works remotely from Buffalo, New York, with organizations and businesses in East Feliciana Parish.",
+        "sources": [
+          {
+            "url": "https://www.sanctuaryhillla.org/",
+            "label": "Sanctuary Hill: operator transition notice",
+            "observation": "The public notice, rechecked October 27, 2026, identifies the former Barn Hill Preserve/Magnolia Wilds property, honors previously scheduled tours and otter swims, and provides help alongside new-booking information. Individual terms beyond that notice remain for the operator."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-migration-checklist/",
+            "label": "Plan the pages and customer routes that must survive a website change"
+          }
+        ],
+        "planningTable": {
+          "title": "Give existing and new visitors the right next step",
+          "intro": "These are proposed website decisions. Only the operator can approve the scope of a continuity statement and resolve an individual booking question.",
+          "columns": [
+            "Planning decision",
+            "Website content",
+            "Owner input",
+            "Acceptance example"
+          ],
+          "rows": [
+            [
+              "Recognizable identity",
+              "Connect the current name with the relevant former public names.",
+              "Approved identity and transition wording.",
+              "A visitor arriving from an older confirmation can recognize the intended organization."
+            ],
+            [
+              "Existing booking",
+              "State exactly which earlier arrangements the notice covers.",
+              "Operator-confirmed booking types and any actual qualifications.",
+              "The page does not expand a limited notice into a promise about every prior term."
+            ],
+            [
+              "Booked-customer help",
+              "Provide the actual route for questions about an earlier booking.",
+              "Responsible staff and approved contact instructions.",
+              "A confused visitor can ask for help without being instructed to purchase again."
+            ],
+            [
+              "New booking",
+              "Label the current booking route separately.",
+              "Actual destination and confirmation process.",
+              "The continuity statement is not treated as confirmation for a first-time visitor."
+            ],
+            [
+              "Ongoing updates",
+              "Assign responsibility for revising temporary notices and links.",
+              "Owner review process and current destinations.",
+              "Outdated transition wording can be identified for review without silently changing customer terms."
+            ]
+          ]
+        },
+        "market": "East Feliciana Parish, LA",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "louisiana/east-feliciana"
+        ],
+        "path": "/areas/louisiana/east-feliciana-parish/",
+        "title": "Web Design for East Feliciana Parish, LA",
+        "description": "Web design for East Feliciana Parish, LA. Example brief: separate existing-booking help from new bookings after a name change.",
+        "servedAreas": [
+          {
+            "name": "East Feliciana Parish",
+            "state": "Louisiana",
+            "type": "Parish"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/louisiana/#east-feliciana",
+            "label": "East Feliciana Parish place directory"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "c4296d0402bcae39cbe47d48e97d9b14b62fd332194479dc52784e9a9d2428aa",
+      "afterSha256": "23e3574cb61f64785635c4b88983da98e7bab83cd154567d0d435bdfee414244"
+    },
+    {
+      "route": "/areas/maine/washington-county/",
+      "before": {
+        "areaId": "maine/washington",
+        "market": "Calais / Washington County, ME",
+        "lead": "A maker’s history can inspire a visit while leaving the practical visit offer unclear. I help Calais and Washington County businesses connect their story to current shopping and access information so customers can plan the experience actually available.",
+        "decisionTitle": "Keep the maker’s story connected to current visit information.",
+        "decision": "Raye’s Mustard tells the story of its Eastport mill, while its current contact page separately provides gift-shop information and says tours are paused. For an illustrative producer with a retail offer, the website should make the present visitor experience clear wherever the production story invites interest. I can clarify those connections on an existing site or build a fuller introduction joining the product story, shopping and visit planning. The owner confirms current access and updates the relevant pages when arrangements change.",
+        "scopes": [
+          {
+            "title": "Clarify the current visit offer",
+            "pages": [
+              "Production story and visitor interest",
+              "Current shopping and access information",
+              "Visit questions and contact"
+            ],
+            "request": "Help readers understand what they can currently arrange.",
+            "supplies": "Owner-confirmed visitor access, shopping details and responsibility for updates.",
+            "check": "A reader interested in the production process can find the current visit position before making travel plans."
+          },
+          {
+            "title": "Connect product history, shopping and visits",
+            "pages": [
+              "Maker and product introduction",
+              "Retail visit information",
+              "Production or tour access status",
+              "Current instructions and general inquiry"
+            ],
+            "request": "Keep the story useful while making its practical invitation accurate.",
+            "supplies": "Approved history, current retail information and a list of pages that invite visits.",
+            "check": "An access change can be reflected in the story links as well as on the contact page."
+          }
+        ],
+        "planningTable": {
+          "title": "A producer-visit content brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "The enduring story",
+              "Explain the product and place without implying a visit entitlement.",
+              "Approved history and accurate process descriptions.",
+              "A production photograph is not presented as a tour booking."
+            ],
+            [
+              "Shopping visit",
+              "Describe the retail experience currently offered.",
+              "The actual retail location, hours and contact to publish.",
+              "A customer can identify shopping as its own purpose."
+            ],
+            [
+              "Production access",
+              "Make the current arrangement easy to find.",
+              "Owner-confirmed access status and instructions.",
+              "Historical visitor language does not override current arrangements."
+            ],
+            [
+              "Content upkeep",
+              "Identify every page that encourages a visit.",
+              "A named update responsibility and review routine.",
+              "A change is reflected at the point where a visitor starts planning."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business determines tour operations and visitor arrangements. Ticketing, retail-inventory and booking connections need separate website scope. Accurate visit content can improve the existing website and inquiry.",
+        "quoteQuestions": [
+          "Where does your story lead readers to expect a visit?",
+          "Which current shopping and production-access details belong beside that invitation?",
+          "Who updates the connected pages when visitor arrangements change?"
+        ],
+        "coverageNote": "This page serves Calais and Washington County, Maine businesses. Raye’s Mustard identifies Eastport as the home of its mill. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://rayesmustard.com/pages/about",
+            "label": "Raye’s Mustard: Eastport mill story",
+            "observation": "Describes the Eastport mill and its production history, including language about visitors."
+          },
+          {
+            "url": "https://rayesmustard.com/pages/contact-us",
+            "label": "Raye’s Mustard: current visit information",
+            "observation": "Separates gift-shop information from the production mill and states that tours are not being offered until further notice."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-maintenance-checklist/",
+            "label": "A website maintenance checklist for a small business"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "maine/washington"
+        ],
+        "path": "/areas/maine/washington-county/",
+        "title": "Web Design for Calais / Washington County, ME",
+        "description": "Web design for Calais / Washington County, ME. Example brief: keep the maker’s story connected to current visit information.",
+        "servedAreas": [
+          {
+            "name": "Washington County",
+            "state": "Maine",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/maine/#washington",
+            "label": "Washington County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/maine-washington.txt"
+      },
+      "after": {
+        "areaId": "maine/washington",
+        "market": "Calais / Washington County, ME",
+        "lead": "A maker’s history can inspire a visit while leaving the practical visit offer unclear. I help Calais and Washington County businesses connect their story to current shopping and access information so customers can plan the experience actually available.",
+        "decisionTitle": "Keep the maker’s story connected to current visit information.",
+        "decision": "Raye’s Mustard tells the story of its Eastport mill, while its current contact page separately provides gift-shop information and says tours are paused. For an illustrative producer with a retail offer, the website should make the present visitor experience clear wherever the production story invites interest. I can clarify those connections on an existing site or build a fuller introduction joining the product story, shopping and visit planning. The owner confirms current access and updates the relevant pages when arrangements change.",
+        "scopes": [
+          {
+            "title": "Clarify the current visit offer",
+            "pages": [
+              "Production story and visitor interest",
+              "Current shopping and access information",
+              "Visit questions and contact"
+            ],
+            "request": "Help readers understand what they can currently arrange.",
+            "supplies": "Owner-confirmed visitor access, shopping details and responsibility for updates.",
+            "check": "A reader interested in the production process can find the current visit position before making travel plans."
+          },
+          {
+            "title": "Connect product history, shopping and visits",
+            "pages": [
+              "Maker and product introduction",
+              "Retail visit information",
+              "Production or tour access status",
+              "Current instructions and general inquiry"
+            ],
+            "request": "Keep the story useful while making its practical invitation accurate.",
+            "supplies": "Approved history, current retail information and a list of pages that invite visits.",
+            "check": "An access change can be reflected in the story links as well as on the contact page."
+          }
+        ],
+        "planningTable": {
+          "title": "A producer-visit content brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "The enduring story",
+              "Explain the product and place without implying a visit entitlement.",
+              "Approved history and accurate process descriptions.",
+              "A production photograph is not presented as a tour booking."
+            ],
+            [
+              "Shopping visit",
+              "Describe the retail experience currently offered.",
+              "The actual retail location, hours and contact to publish.",
+              "A customer can identify shopping as its own purpose."
+            ],
+            [
+              "Production access",
+              "Make the current arrangement easy to find.",
+              "Owner-confirmed access status and instructions.",
+              "Historical visitor language does not override current arrangements."
+            ],
+            [
+              "Content upkeep",
+              "Identify every page that encourages a visit.",
+              "A named update responsibility and review routine.",
+              "A change is reflected at the point where a visitor starts planning."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business determines tour operations and visitor arrangements. Ticketing, retail-inventory and booking connections need separate website scope. Accurate visit content can improve the existing website and inquiry.",
+        "quoteQuestions": [
+          "Where does your story lead readers to expect a visit?",
+          "Which current shopping and production-access details belong beside that invitation?",
+          "Who updates the connected pages when visitor arrangements change?"
+        ],
+        "coverageNote": "This page serves Calais and Washington County, Maine businesses. Raye’s Mustard identifies Eastport as the home of its mill. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://rayesmustard.com/pages/about",
+            "label": "Raye’s Mustard: Eastport mill story",
+            "observation": "Describes the Eastport mill and its production history, including language about visitors."
+          },
+          {
+            "url": "https://rayesmustard.com/pages/contact-us",
+            "label": "Raye’s Mustard: current visit information",
+            "observation": "The contact page, rechecked October 27, 2026, gives gift-shop fall hours separately, labels the production mill closed to the public and states that tours are not offered until further notice."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-maintenance-checklist/",
+            "label": "A website maintenance checklist for a small business"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "maine/washington"
+        ],
+        "path": "/areas/maine/washington-county/",
+        "title": "Web Design for Calais / Washington County, ME",
+        "description": "Web design for Calais / Washington County, ME. Example brief: keep the maker’s story connected to current visit information.",
+        "servedAreas": [
+          {
+            "name": "Washington County",
+            "state": "Maine",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/maine/#washington",
+            "label": "Washington County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/maine-washington.txt"
+      },
+      "beforeSha256": "402cb9917b22c3ced344f303a9a29f085fbce4a6c3b3638ca4d5e97740a739ec",
+      "afterSha256": "72f9e24d09635fd4c1094618562fa3b1238690c190e52b63ebf7c480deef2f80"
+    },
+    {
+      "route": "/areas/maryland/prince-georges-county/",
+      "before": {
+        "areaId": "maryland/prince-georges",
+        "market": "Bowie / Prince George's County, MD",
+        "lead": "Previous experience and permission to use a particular studio are different pieces of an inquiry. I help Upper Marlboro and Prince George’s County businesses explain how a new participant moves from interest to an agreed form of access.",
+        "decisionTitle": "Explain assessment separately from independent studio access.",
+        "decision": "Pyramid Atlantic Art Center in Hyattsville requires certification for each studio an artist wants to use independently, including artists with experience elsewhere. Its published process says a certification session may lead to further instruction instead of approval. For a studio website, I can clarify that decision or build a fuller introduction to learning and independent work. The visitor should understand what they are requesting, which studio it concerns and why booking an assessment does not itself grant access.",
+        "scopes": [
+          {
+            "title": "Clarify the assessment request",
+            "pages": [
+              "Studio and process of interest",
+              "Prior experience and assessment",
+              "Possible next steps after review"
+            ],
+            "request": "Improve the explanation beside an existing certification or inquiry route. Distinguish describing experience, attending an assessment and receiving permission to work independently.",
+            "supplies": "Current studio-specific prerequisites, the actual assessment process and the next steps offered when someone needs more instruction.",
+            "check": "An experienced artist new to your facility can explain their background and request the correct assessment without the website implying automatic access."
+          },
+          {
+            "title": "Introduce learning and independent-work options",
+            "pages": [
+              "Studios and supported processes",
+              "Instruction and preparation",
+              "Assessment and continuing access",
+              "Questions and existing application route"
+            ],
+            "request": "Connect the studio offer to the route a visitor can realistically take. Use owner-approved explanations for first-time, experienced and returning participants.",
+            "supplies": "Current activity descriptions, access rules for each studio, accurate examples and the process for confirming a returning artist’s status.",
+            "check": "An artist who previously used one studio can ask about another, while a returning artist can check what review is needed after a gap rather than assuming one approval covers everything indefinitely."
+          }
+        ],
+        "planningTable": {
+          "title": "A studio-access explanation worksheet",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "New to the process",
+              "Explain the teaching or preparation offered.",
+              "Current instruction options and starting guidance.",
+              "A beginner sees a useful next conversation before requesting independent access."
+            ],
+            [
+              "Experienced elsewhere",
+              "Keep prior practice visible without replacing the local assessment.",
+              "What your staff need to know about experience.",
+              "An experienced visitor understands why the facility still reviews readiness."
+            ],
+            [
+              "Another studio requested",
+              "Identify the particular process or equipment area.",
+              "The scope of each studio’s approval.",
+              "Approval in one area is not described as unrestricted access everywhere."
+            ],
+            [
+              "Returning after a gap",
+              "Explain how current status is checked.",
+              "Your actual renewal or reassessment conditions.",
+              "A past participant can ask what is needed now before reserving work time."
+            ]
+          ]
+        },
+        "scopeTrigger": "Certification records, access control, booking eligibility and renewal reminders need separate scope. Clear content can explain the process and link to the existing application or inquiry route.",
+        "quoteQuestions": [
+          "Which activities require a separate readiness assessment?",
+          "What should experienced visitors understand before requesting independent access?",
+          "How do returning participants confirm whether their previous approval still applies?"
+        ],
+        "coverageNote": "For Upper Marlboro and Prince George’s County website projects. Pyramid Atlantic Art Center lists its studios on Gallatin Street in Hyattsville. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://pyramidatlanticartcenter.org/studios/studio-certification/",
+            "label": "Pyramid Atlantic: studio certification",
+            "observation": "Explains studio-specific assessment, possible further instruction, requirements for experienced visitors and conditions for continued certification; lists the Hyattsville address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "A website content template for your small business"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "maryland/prince-georges"
+        ],
+        "path": "/areas/maryland/prince-georges-county/",
+        "title": "Web Design for Bowie / Prince George's County, MD",
+        "description": "Web design for Bowie / Prince George's County, MD. Example brief: explain assessment separately from independent studio access.",
+        "servedAreas": [
+          {
+            "name": "Prince George's County",
+            "state": "Maryland",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/maryland/#prince-georges",
+            "label": "Prince George's County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/maryland-prince-georges.txt"
+      },
+      "after": {
+        "areaId": "maryland/prince-georges",
+        "market": "Bowie / Prince George's County, MD",
+        "lead": "Previous experience and permission to use a particular studio are different pieces of an inquiry. I help Upper Marlboro and Prince George’s County businesses explain how a new participant moves from interest to an agreed form of access.",
+        "decisionTitle": "Explain assessment separately from independent studio access.",
+        "decision": "Pyramid Atlantic Art Center in Hyattsville requires certification for each studio an artist wants to use independently, including artists with experience elsewhere. Its published process says a certification session may lead to further instruction instead of approval. For a studio website, I can clarify that decision or build a fuller introduction to learning and independent work. The visitor should understand what they are requesting, which studio it concerns and why booking an assessment does not itself grant access.",
+        "scopes": [
+          {
+            "title": "Clarify the assessment request",
+            "pages": [
+              "Studio and process of interest",
+              "Prior experience and assessment",
+              "Possible next steps after review"
+            ],
+            "request": "Improve the explanation beside an existing certification or inquiry route. Distinguish describing experience, attending an assessment and receiving permission to work independently.",
+            "supplies": "Current studio-specific prerequisites, the actual assessment process and the next steps offered when someone needs more instruction.",
+            "check": "An experienced artist new to your facility can explain their background and request the correct assessment without the website implying automatic access."
+          },
+          {
+            "title": "Introduce learning and independent-work options",
+            "pages": [
+              "Studios and supported processes",
+              "Instruction and preparation",
+              "Assessment and continuing access",
+              "Questions and existing application route"
+            ],
+            "request": "Connect the studio offer to the route a visitor can realistically take. Use owner-approved explanations for first-time, experienced and returning participants.",
+            "supplies": "Current activity descriptions, access rules for each studio, accurate examples and the process for confirming a returning artist’s status.",
+            "check": "An artist who previously used one studio can ask about another, while a returning artist can check what review is needed after a gap rather than assuming one approval covers everything indefinitely."
+          }
+        ],
+        "planningTable": {
+          "title": "A studio-access explanation worksheet",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "New to the process",
+              "Explain the teaching or preparation offered.",
+              "Current instruction options and starting guidance.",
+              "A beginner sees a useful next conversation before requesting independent access."
+            ],
+            [
+              "Experienced elsewhere",
+              "Keep prior practice visible without replacing the local assessment.",
+              "What your staff need to know about experience.",
+              "An experienced visitor understands why the facility still reviews readiness."
+            ],
+            [
+              "Another studio requested",
+              "Identify the particular process or equipment area.",
+              "The scope of each studio’s approval.",
+              "Approval in one area is not described as unrestricted access everywhere."
+            ],
+            [
+              "Returning after a gap",
+              "Explain how current status is checked.",
+              "Your actual renewal or reassessment conditions.",
+              "A past participant can ask what is needed now before reserving work time."
+            ]
+          ]
+        },
+        "scopeTrigger": "Certification records, access control, booking eligibility and renewal reminders need separate scope. Clear content can explain the process and link to the existing application or inquiry route.",
+        "quoteQuestions": [
+          "Which activities require a separate readiness assessment?",
+          "What should experienced visitors understand before requesting independent access?",
+          "How do returning participants confirm whether their previous approval still applies?"
+        ],
+        "coverageNote": "For website projects across Prince George’s County, including Bowie and Upper Marlboro. Pyramid Atlantic Art Center’s Hyattsville studios provide the public planning example. Wonder and Method works online from Buffalo, New York. Named organizations are public examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://pyramidatlanticartcenter.org/studios/studio-certification/",
+            "label": "Pyramid Atlantic: studio certification",
+            "observation": "Explains studio-specific assessment, possible further instruction, requirements for experienced visitors and conditions for continued certification; lists the Hyattsville address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "A website content template for your small business"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "maryland/prince-georges"
+        ],
+        "path": "/areas/maryland/prince-georges-county/",
+        "title": "Web Design for Bowie / Prince George's County, MD",
+        "description": "Web design for Bowie / Prince George's County, MD. Example brief: explain assessment separately from independent studio access.",
+        "servedAreas": [
+          {
+            "name": "Prince George's County",
+            "state": "Maryland",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/maryland/#prince-georges",
+            "label": "Prince George's County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/maryland-prince-georges.txt"
+      },
+      "beforeSha256": "7c8fecabf6df876ef6e39f142711d0ceb253e4799172d2551cc786ad4a745c8b",
+      "afterSha256": "52f4ab11c80c8b7e878c69d811b0e46a3c17910b4cdd8d30a27ed34569b4b886"
+    }
+  ],
+  "faqs": [],
+  "sourceChecks": [
+    {
+      "url": "https://www.sanctuaryhillla.org/",
+      "checkedDate": "2026-10-27",
+      "fact": "Previous tours/otter swims honored; current/former names and existing-help/new-booking routes retained."
+    },
+    {
+      "url": "https://rayesmustard.com/pages/contact-us",
+      "checkedDate": "2026-10-27",
+      "fact": "Gift-shop hours separate; production mill closed to public; tours paused until further notice."
+    }
+  ],
+  "limits": "Eighteen selected optional precision/coherence improvements: seventeen drafts, three source records. No FAQs or imported briefs changed. Hypothetical engraving and revised-plan examples explicitly illustrative. Independent exact-body recheck required.",
+  "acceptance": {
+    "reviewFiles": [
+      {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-hi-recheck.jsonl",
+        "sha256": "0b58856927b1efd20066c1be9a79c3c356ef191483ff616ea164d58ec6751d2d"
+      }
+    ],
+    "exactCandidates": 18,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  },
+  "importVerification": {
+    "checkedAt": "2026-10-27T21:45:22.605Z",
+    "method": "All selected route projections exactly equal src/human-location-briefs.json after guarded import.",
+    "routes": 18
+  }
+}

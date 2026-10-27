@@ -599,16 +599,6 @@
           "label": "Plan the redesign sequence"
         }
       ]
-    },
-    {
-      "question": "Does a website need redesigning after a fixed number of years?",
-      "answer": "Age alone does not decide it. Start with what no longer works: changed services, confusing page structure, difficult updates or a platform that cannot support an important customer task. A focused repair may be enough. I use the current site's condition and your next requirements to define the work, rather than recommending replacement simply because a date has passed.",
-      "links": [
-        {
-          "path": "/guides/website-repair-or-redesign/",
-          "label": "Compare repair and redesign"
-        }
-      ]
     }
   ],
   "/services/website-care/": [
@@ -771,22 +761,22 @@
   ],
   "/areas/new-jersey/morris-county/": [
     {
-      "question": "Does website care provide emergency repairs around the clock?",
-      "answer": "No. Automated website monitoring is not continuous human staffing. Before enrollment, we agree on the supported site, covered tools and review and contact windows. Problems are recorded and routed within that coverage, with no guaranteed restoration deadline. If your business needs a staffed emergency support service, that requirement must be addressed separately before choosing a care arrangement.",
+      "question": "Can you start with my existing service page?",
+      "answer": "Yes. We can assess the current page, identify what customers need to understand before requesting a visit, and agree on a focused change. The written scope names the content, affected links and checks. A review does not automatically commit you to a rebuild or a monthly plan.",
       "links": [
         {
-          "path": "/services/website-care/",
-          "label": "Care coverage and response terms"
+          "path": "/services/website-audit/",
+          "label": "Start with a focused website review"
         }
       ]
     },
     {
-      "question": "Can you measure whether visitors use the phone link?",
-      "answer": "An agreed analytics setup may record a click on the phone link, subject to the available tools, access and privacy review. That event does not prove a call connected, became a customer or required urgent service. We identify the question the measurement should answer and its limits before using it to evaluate a website change.",
+      "question": "Who approves the wording about charges and membership?",
+      "answer": "You supply the current terms and identify the person authorized to approve them. Complete writing for the agreed pages is included, and you review the draft before publication. The website proposal does not create your pricing policy, interpret a customer contract or change membership records.",
       "links": [
         {
-          "path": "/services/seo/",
-          "label": "Reporting and measurement limits"
+          "path": "/process/",
+          "label": "Content approval and review rounds"
         }
       ]
     }
@@ -970,7 +960,7 @@
   "/areas/westchester-county/": [
     {
       "question": "What can delay a website redesign after the page list is agreed?",
-      "answer": "Missing approved facts, photographs, working account access or decisions about the two customer routes can delay production. Your review time also sits outside the planned build days. We agree on a named approver and review dates in the proposal, and you send each review round as one list. New features or a changed direction need a revised agreement.",
+      "answer": "Missing approved facts, photographs, working account access or decisions about the business information and page content can delay production. Your review time also sits outside the planned build days. We agree on a named approver and review dates in the proposal, and you send each review round as one list. New features or a changed direction need a revised agreement.",
       "links": [
         {
           "path": "/guides/website-redesign-brief/",
@@ -992,7 +982,7 @@
   "/areas/broome-county/": [
     {
       "question": "How can I check what I receive at website handoff?",
-      "answer": "Check the source and content files, approved assets, dependency and non-secret configuration files, licenses, account inventory, completed checks and build and publishing instructions. The delivery should identify unfinished items too. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
+      "answer": "You receive the paid website files, publishing instructions and a record of completed checks and unfinished items. Use the linked handoff checklist to inspect the full delivery. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
       "links": [
         {
           "path": "/work/source-handoff/",
@@ -1299,16 +1289,6 @@
   ],
   "/areas/pennsylvania/lancaster-county/": [
     {
-      "question": "How would monthly SEO choose which of our two services to work on first?",
-      "answer": "We agree on the business objective and review customer questions, current pages and available search evidence. Improve researches one active service or topic and delivers one substantial improvement; Grow can connect two improvements across related topics. That is a work allowance, not a promise that both services receive new pages every month. Facts and priorities need approval before production.",
-      "links": [
-        {
-          "path": "/services/seo/",
-          "label": "Choose monthly research and improvements"
-        }
-      ]
-    },
-    {
       "question": "Will website care automatically synchronize seasonal information with our provider?",
       "answer": "No. Ordinary care does not create a live connection between the website and a scheduling service. You supply approved changes and identify the repeated details; an agreed small-update batch can change the supported website content and check affected links. Automated synchronization or changes to the provider’s setup need their own assessment and scope.",
       "links": [
@@ -1329,26 +1309,16 @@
           "label": "Monthly improvement scope"
         }
       ]
-    },
-    {
-      "question": "Does a redesign include finding and redirecting every old address?",
-      "answer": "No. The chosen package has a defined redirect limit and uses the old-page list you supply. We agree which addresses stay, combine or move and check those destinations. Discovering a large archive, repairing redirect chains or handling a wider migration needs separate assessment. Bring important saved links early so that work is included in the proposal where needed.",
-      "links": [
-        {
-          "path": "/guides/website-migration-checklist/",
-          "label": "Define the migration scope"
-        }
-      ]
     }
   ],
   "/areas/pennsylvania/northampton-county/": [
     {
-      "question": "What should survive a catalog redesign besides the page text?",
-      "answer": "Identify useful page addresses, product references and the destinations buyers already use for orders or inquiries. We include the agreed preservation work in the page map and check representative standard, custom and installation paths. A provider connection may have its own limits; changing a public page does not automatically migrate the provider’s products or customer accounts.",
+      "question": "What should survive a print-shop website redesign?",
+      "answer": "Identify useful page addresses, product references and the order or custom-quote destinations customers already use. We agree which paths to preserve and check how a small apparel order reaches the appropriate printing method and proof-approval explanation. Changing the public pages does not automatically move the provider’s products, orders or customer accounts; any such migration needs its own scope.",
       "links": [
         {
           "path": "/guides/website-migration-checklist/",
-          "label": "Plan catalog preservation"
+          "label": "Plan the pages and ordering paths to preserve"
         }
       ]
     },
@@ -1767,18 +1737,6 @@
         {
           "path": "/guides/website-care-versus-seo/",
           "label": "Compare website care and SEO work"
-        }
-      ]
-    }
-  ],
-  "/areas/north-carolina/ashe-county/": [
-    {
-      "question": "Will updating our website also correct outdated information on other sites?",
-      "answer": "Updating your own pages does not change an association listing, search result or someone else's seasonal guide. We can identify important discrepancies while agreeing the website content, then list who controls each external source and what follow-up is needed. Any authorized listing work is separately defined. We cannot promise another publisher's response or the time search results take to refresh.",
-      "links": [
-        {
-          "path": "/guides/seo-work-and-reporting/",
-          "label": "Define search work and remaining dependencies"
         }
       ]
     }
@@ -2302,7 +2260,7 @@
   "/areas/kentucky/boyle-county/": [
     {
       "question": "Can you improve our wood photographs without misrepresenting the material?",
-      "answer": "I can prepare supplied photographs for clear website use, with the edits agreed in the written proposal. We should preserve the grain, weathering and other details the example is meant to show, and explain relevant lighting or sample differences in the caption. Screens cannot guarantee an exact color match. You approve the images and factual descriptions; new photography is separate work.",
+      "answer": "I can prepare supplied photographs for clear website use within the written proposal. You approve the finished images and factual captions. The guidance above explains how we preserve the material’s appearance; the linked scope describes the website design work. New photography is separate work.",
       "links": [
         {
           "path": "/services/web-design/",
@@ -2483,13 +2441,6 @@
       ]
     }
   ],
-  "/areas/indiana/adams-county/": [
-    {
-      "question": "Can the website show wood and stain samples without promising an exact color match?",
-      "answer": "Yes. I can label each reference with its wood species and stain, then place your approved explanation of sample limitations beside it. You supply the actual process for reviewing physical samples and confirming the finish. The website presents those steps; a photograph or screen comparison should not be described as the final material approval.",
-      "links": []
-    }
-  ],
   "/areas/tennessee/henderson-county/": [
     {
       "question": "Can a redesigned flooring website explain our new business name to returning customers?",
@@ -2553,18 +2504,6 @@
         {
           "path": "/services/website-care/",
           "label": "Review ongoing website care"
-        }
-      ]
-    }
-  ],
-  "/areas/pennsylvania/philadelphia-county/": [
-    {
-      "question": "Can we show what an assessment report looks like without publishing a full client report?",
-      "answer": "Yes. We can use an owner-approved illustrative excerpt or contents outline to show the report's structure and purpose. Label it as an example and keep fictional material distinct from completed client work. Your business approves what the sample demonstrates and removes confidential information. Preparing a new specialist assessment or giving professional advice is outside the website-writing scope.",
-      "links": [
-        {
-          "path": "/services/web-design/",
-          "label": "Plan the content and examples for your website"
         }
       ]
     }
@@ -2659,12 +2598,6 @@
       "answer": "Agree which approved room record is the reference, then list every place that repeats its bathroom and amenity information. The owner supplies changes; the website scope states which website fields and provider fields I can update. A link to an existing booking service does not include ongoing management of that service. Check the destination after a room name changes so the two descriptions still refer to the same option."
     }
   ],
-  "/areas/texas/rockwall-county/": [
-    {
-      "question": "Can the site explain card requirements without collecting identity documents?",
-      "answer": "Yes. We can publish an approved preparation list and direct applicants to the library’s existing desk or authorized process. The informational site does not need an identity-upload field to explain what to bring. If you later want online applications or document handling, we assess that separately with the responsible staff before choosing tools or collecting information."
-    }
-  ],
   "/areas/texas/stephens-county/": [
     {
       "question": "Can an ended workshop remain as a record of the arts center’s work?",
@@ -2683,40 +2616,10 @@
       "answer": "Yes, if the existing website supports the agreed changes. We can keep catalog and account tasks in their current system while improving the public explanation and links. Before quoting, identify who approves library policy and who can publish the website change; a catalog vendor and a website editor may have different responsibilities."
     }
   ],
-  "/areas/missouri/bates-county/": [
-    {
-      "question": "Should a hall rental page also promise access to the museum exhibits?",
-      "answer": "Only if the museum confirms that access is part of the event arrangement. A private hall entrance and an evening rental do not establish gallery admission. For your website brief, specify whether the event includes exhibits, which areas open and who confirms that separately."
-    }
-  ],
   "/areas/missouri/butler-county/": [
     {
       "question": "What should happen to old yearbook download links when we reorganize an archive page?",
       "answer": "Include the existing file addresses in the project inventory before renaming or moving anything. Keep useful public links working where possible, and agree on redirects or a clear replacement page when a file moves. Also check the school and year labels against the actual file; a cleaner catalog is not useful if it leads to the wrong volume."
-    }
-  ],
-  "/areas/missouri/gasconade-county/": [
-    {
-      "question": "How should a changed meeting point reach customers who have already booked?",
-      "answer": "Updating the public tour page may not update an existing reservation email. The website brief should identify who maintains each message and how the operator will contact affected guests through its current booking process. Agree on that handoff before adding automation; the marketing page alone should not be treated as notice to every booked visitor."
-    }
-  ],
-  "/areas/iowa/allamakee-county/": [
-    {
-      "question": "Can guests keep the arrival instructions when cell service is unavailable?",
-      "answer": "Yes. We can scope a compact printable or downloadable arrival sheet using your approved check-in location and directions. Give it a revision date and a clear source for current trip information so an older copy is not mistaken for a live operating update. The sheet can support the existing booking process; it does not provide offline navigation or certify river conditions."
-    }
-  ],
-  "/areas/iowa/dallas-county/": [
-    {
-      "question": "Do you need access to our payment account to explain the statement name?",
-      "answer": "For a content explanation, an owner-approved statement descriptor and a sample of the public confirmation wording are usually enough. We can review a redacted example without customer names, card details or transaction identifiers. Access to payment records or a connection that checks whether a deposit arrived would be separate work."
-    }
-  ],
-  "/areas/iowa/fayette-county/": [
-    {
-      "question": "Can the project include correcting directions on third-party listings?",
-      "answer": "It can if the proposal names the listings, who controls them and the changes to request. Correcting your website does not automatically update a booking provider, map listing or another organization’s page. Supply the authoritative facility addresses first, then we can agree which external destinations to check and who will submit each change."
     }
   ],
   "/areas/minnesota/aitkin-county/": [
@@ -2885,12 +2788,6 @@
     {
       "question": "Does a school-group visit need its own reservation form?",
       "answer": "Only if that is how the operator actually handles school visits. Jelly Belly’s current school-group instructions do not require advance reservations, describe splitting larger parties into smaller tour groups and specify the payment and receipt arrangements. For your website, a compact school section can prepare an organizer without sending them through the separate small guided-tour booking route. Ask the owner to approve group, payment and paperwork instructions before adding a form."
-    }
-  ],
-  "/areas/california/yuba-county/": [
-    {
-      "question": "Can a group-planning page promise neighboring campsites?",
-      "answer": "Only when the campground can actually confirm that arrangement. Collins Lake says requested site numbers are not guaranteed and assignments can change. For your website, explain how to ask staff about staying near one another, preserve each household’s separate reservation and distinguish a preference from a confirmed allocation. A map or shared trip plan should not make the promise on its own."
     }
   ],
   "/areas/new-mexico/roosevelt-county/": [

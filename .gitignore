@@ -4,6 +4,11 @@ node_modules/
 .env.*
 !.env.example
 output/
+# Large raw audit geometry stays local; committed summaries retain its hashes.
+operations/human-quality-20261027/baseline-layout-results.jsonl
+operations/human-quality-20261027/final-layout-results.jsonl
+operations/human-quality-20261027/release-layout-results.jsonl
+operations/human-quality-20261027/CURRENT-CHECKPOINT.md
 public/waterfront-frames/
 public/waterfront-fonts/
 .playwright-cli/

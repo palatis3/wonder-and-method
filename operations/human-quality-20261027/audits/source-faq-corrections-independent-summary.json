@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "scope": "Exact 39 source/coverage corrections supported only by geography-citation-repairs.json and 6 FAQ removals supported only by repetition-repairs.json. All candidate main text read for these corrections. No numeric full-page scores, visual/accessibility verdict or publication approval.",
+  "auditFile": "operations/human-quality-20261027/audits/source-faq-corrections-independent.json",
+  "auditSha256": "40c0efd4ccdb275c6859c8218119d8300e65087895e8b868fd81e3ba28e2ad47",
+  "records": {
+    "reviewed": 39,
+    "accept": 39,
+    "hold": 0
+  },
+  "faqs": {
+    "reviewed": 6,
+    "accept": 6,
+    "hold": 0
+  },
+  "checks": "All 45 ledger before/after hashes verified against current records/FAQ values and reconstructed predecessors. Each candidate main text read. Each added source URL appears in the candidate rendered links. All recorded receipt hashes checked where supplied. Exact geography support independently read from saved receipts or primary/attributed secondary sources.",
+  "unresolvedChecks": [],
+  "limitations": [
+    "Correction-only acceptance; not a full numerical page-quality audit or release approval.",
+    "Marion and Mason direct fetches were blocked/timed out; official indexed record contents were used and explicitly identified in route evidence.",
+    "Saved source receipts are dated evidence; this review does not claim fresh operating-policy verification of unchanged operator sources."
+  ]
+}

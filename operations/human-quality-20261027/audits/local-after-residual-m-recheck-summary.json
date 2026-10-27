@@ -1,0 +1,51 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 25,
+  "reviewedCount": 25,
+  "contentPassCount": 25,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "recommendedFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "reviewScope": "Independent editorial review of all 25 current candidate main bodies, FAQs, public-source disclosures, draft decisions and supplied neighboring drafts; original 25 findings checked against repair receipt. Shared exact commercial lines read once then cross-referenced. No source edits.",
+  "factualEvidence": [
+    "residual-m-fact-recheck.json",
+    "residual-m-official-fetches.json"
+  ],
+  "independentLiveOfficialUrls": [
+    "https://www.nols.org/reserve/",
+    "https://www.pse.com/en/pages/tours-and-recreation/lower-snake-river-tours",
+    "https://tulipvalley.com/pages/about-faqs",
+    "https://www.wyomingfrontierprison.org/explore/guided-tours",
+    "https://ewc.wy.edu/student-resources/testing-services/",
+    "https://www.botanic.org/reserve/showers-and-celebrations/",
+    "https://www.botanic.org/reserve/corporate-events/"
+  ],
+  "validation": {
+    "packetCount": 5,
+    "rendererFileCount": 5,
+    "currentDraftCount": 25,
+    "sourceEntryCount": 25,
+    "siblingCount": 25,
+    "renderedBodyCount": 25,
+    "exactQuoteCount": 150,
+    "repairDraftBeforeAfterCount": 25,
+    "repairSourceBeforeAfterCount": 22,
+    "faqMutationCount": 0,
+    "historicalFindingsPreserved": true,
+    "errors": [],
+    "distinctPerRouteQuoteCount": 6
+  },
+  "limitations": [
+    "Content-only acceptance does not grant visual, accessibility, interaction or publication approval.",
+    "Assigned neighboring drafts are not a complete topical-family audit.",
+    "Topaz is supported by preserved indexed official evidence; direct-page fetches were blocked.",
+    "No universal NOLS staff-breakdown duration is stated or inferred.",
+    "Carbon retains the official conflicting ordinary timetable and suspension rather than promising current access.",
+    "Dated facts and source observations do not establish future operator terms."
+  ],
+  "reviewFileSha256": "ce3399aa0d605aa514f8886a3daebd97f8c4657c2b1c43ef5c504f782a2f42b1"
+}

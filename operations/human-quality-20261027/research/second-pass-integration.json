@@ -1,0 +1,155 @@
+{
+  "checkedDate": "2026-10-27",
+  "changes": [
+    {
+      "route": "/areas/nassau-county/",
+      "previousSourceSha256": "36341fcbba25596a40be6ed0acc953159015b0035cb967e2dd2f5b52783682a2",
+      "sourceSha256": "06babc08cab8acd1c174fda073d54897763cb7b5863cdd3728516443585b93a6",
+      "previousDraftSha256": "c105ae8ac3a06c1a8275ae5bc403d530fcc60280b93238095f8fef0c7cc181f0",
+      "draftSha256": "ef275ab456d30bbdfc71fa078c6f3125fa589b0a1628c25fc240816624733e30",
+      "baselineRenderedSha256": "ae7493413432897ca3745a592097253c0dfbd46970ce003b1253634f6531c568",
+      "researchNote": "Both operator pages read directly through web extraction. Payment statements differ between the contact and Nassau pages, so no universal payment rule is used.",
+      "check": "Compare a domestic arrival, an international arrival and a changed reservation. Each retains the appropriate instruction and next step.",
+      "sources": [
+        "https://liaccesslimo.com/nassau-county/",
+        "https://liaccesslimo.com/contact/"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/atlantic-county/",
+      "previousSourceSha256": "a47272d61b4f0503870257110d8eacecb984f49f5b231ec18d96d1c5fee026a4",
+      "sourceSha256": "85f4b07aaeb92f3fb0a0b0bc05d6ffa673b07df9149ef0ed037293c606eca205",
+      "previousDraftSha256": "808c482bfd76500917bf5ab2891afc98d39debff0ebf9f67f29f02a3a83c6d24",
+      "draftSha256": "66a6eea79eb86a66978496782f52c5d2dc25035bc28c7a2929a4479abde16bc2",
+      "baselineRenderedSha256": "6feacbe89e2214c51eaf9d7ba67c83572b48460eba9ab9704d9960ac0766c546",
+      "researchNote": "Listing and both service pages read. Generic deposit cancellation text appears even on the complimentary return listing; do not infer a charge or resolve that ambiguity for the operator.",
+      "check": "A first visitor, a previously fitted shopper and a pair of shoppers can identify their intended listing without submitting a booking.",
+      "sources": [
+        "https://www.brafittingsnewjersey.com/book-online",
+        "https://www.brafittingsnewjersey.com/service-page/one-person-bra-fitting",
+        "https://www.brafittingsnewjersey.com/service-page/return-customer-appointment"
+      ],
+      "retiredWorksheet": false
+    },
+    {
+      "route": "/areas/new-jersey/burlington-county/",
+      "previousSourceSha256": "32f9f29531b42cb9a2c0024c550f0ce3884ab714bbb30fdfcad2c96ccc90d427",
+      "sourceSha256": "27823dcb11ee801e590bc4019d338580435b92d30dfbcb200a0860fe6e7782ec",
+      "previousDraftSha256": "0e99ad029432ac68eb503334d71e4c2234f15d0fd902b36ae816a919ad952e6e",
+      "draftSha256": "8d49ea623df44542d927e1f4cfa4c05461b84a191bc48172c6399b9a9cb30c60",
+      "baselineRenderedSha256": "c26a2fc4c8fd148f9f18b9f7e00784b248a83701e4ebfa1598cc09e8095dda41",
+      "researchNote": "Direct fetch timed out; the official homepage’s indexed text was available and read. No private shop or actual order was inspected. The index was six months old, so the example is explicitly a published model, not verified present availability.",
+      "check": "An organization representative reaches the setup inquiry; a member reaches the named shop; a deadline remains subject to supplier review.",
+      "sources": [
+        "https://a2zemblems.com/"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/camden-county/",
+      "previousSourceSha256": "eac1cbd952f37cf54c5fa78129167a67eff7164667a8f1e3231ae601fec692d7",
+      "sourceSha256": "f35c772b000640c7f37b77b05cd2204e31fa74c63a1e7651d1610e656d13bb28",
+      "previousDraftSha256": "3748ce0104c878051d51a2b19207607e002d1278f1470352a1d443db417a6ea2",
+      "draftSha256": "34b5a090b69a7705ca99130a72be80769611c5d1cd723d77c8bbbe6c2f8ca3a2",
+      "baselineRenderedSha256": "9ee53e1b91bca648b02a9e9a69d50bc137cfb1b6838b2781bbbf567730385c8e",
+      "researchNote": "Makerspace page read through web extraction; registration page timed out. No claim is made about current workshop inventory or unanswered FAQ details.",
+      "check": "A monthly-pass visitor can distinguish access, the workshop benefit and the action needed to arrange a visit.",
+      "sources": [
+        "https://jypseagoods.wixsite.com/mysite-1/makerspace"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/cape-may-county/",
+      "previousSourceSha256": "9e4f854c8b5221a14fc4811235637d4a23feb527ac8473bcbbc58c385726da6e",
+      "sourceSha256": "d0d7f4bf227fa7ec042b7f7967b0dbef3010d1dbdc40094e37c52f24f18ffbc1",
+      "previousDraftSha256": "ff6443e91770dec3b70e56fc0886e65972380508acef412d834079e74d2dd514",
+      "draftSha256": "1bda54b16b08d9ef61fe745550681c9a0638882624770c6149c7c04e9e8a70f6",
+      "baselineRenderedSha256": "a8dd8e10b2d0847697cc5dec7e1c5c1bb667f8ed8d047f1269692fb4e72b9b0f",
+      "researchNote": "Homepage and contact page read. No location-level stock claim or private inventory was verified.",
+      "check": "An evening gallery visit and an online product purchase retain their different destinations and information needs.",
+      "sources": [
+        "https://whalestale.com/pages/contact-us-1",
+        "https://whalestale.com/"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/essex-county/",
+      "previousSourceSha256": "322604825c9df834f426d5dd5d0529f8f5856942e4cf544eadaa702635ab19b3",
+      "sourceSha256": "037204a0d205dac516b13c5f4283763255c5a246e6ef13dba8d48c55a944d6aa",
+      "previousDraftSha256": "e5f1eed12b32b0c162859d081d5fdfd3f1d3baf05af1fa17d52bf2d399a57dbf",
+      "draftSha256": "99df85309be07108ae3bdef9e59213d385841c9e5ba93a1a7079fcd5d3b82549",
+      "baselineRenderedSha256": "87fd6ba8233c8d5f9e2e3469c236467f1dbad2c3dea112132b74f3625d025a94",
+      "researchNote": "Homepage and empty RFQ cart read. Separate quote form and FAQ returned 429; no form-field requirements or successful submission are claimed.",
+      "check": "A catalog selection stays identifiable; a custom inquiry can proceed without a made-up part number; neither is called an approved purchase.",
+      "sources": [
+        "https://www.minorrubber.com/",
+        "https://www.minorrubber.com/product-catalog.html?page=cart"
+      ],
+      "retiredWorksheet": false
+    },
+    {
+      "route": "/areas/new-jersey/gloucester-county/",
+      "previousSourceSha256": "7c1c8e7e118861725a74e1c13f497be8afec2a32adf81de47793f874ae0c6de5",
+      "sourceSha256": "c20dd36313dc46c6a52ac35cb8b0ed2a0ab94e28718bab630e37bab0bb599ffc",
+      "previousDraftSha256": "e7492778a814cabbb45f60216740780569d46790df71f5c5936c23f43e0c99f6",
+      "draftSha256": "e14cf51098c05b6b17e61e14b55b1c6e47038cdb53475b6490382403f6d59301",
+      "baselineRenderedSha256": "cd9eb7bc61ae5dbeba483437b8632ebb3f2b7f7796b48ac3ec26b5c09d364ea6",
+      "researchNote": "Complete public page read. Decorative check/cross icons in package lists are not reliably represented in text, so no detailed package-inclusion list is reused. Shop address and mobile utility requirements remain unverified and are excluded.",
+      "check": "A larger vehicle with a condition concern retains both facts when the request reaches the operator.",
+      "sources": [
+        "https://adamsautoshine.com/"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/hunterdon-county/",
+      "previousSourceSha256": "36dfdef11f1e61e344edd6495e2d7189f7e0a5870a095f150ffd021f905418e4",
+      "sourceSha256": "8eae1ce2319851a69c70a4d3318ac95719ab4843ba4f7d2e015642faa690ae33",
+      "previousDraftSha256": "c0bd03ed129968a4a390f625c94c9a8c6e1a79c705fa0a25cf6c6c54dc8485ea",
+      "draftSha256": "8475297b9ba3fe6944e38c94debc80c41e1b5ee46e6e902a60dab962584efc50",
+      "baselineRenderedSha256": "a5cb395abb72f7aaf03ac58e4f06c0654119b00fb5b45ab2b991a1a6f97817c3",
+      "researchNote": "Complete page read. The earlier brief lacked supporting details that are now visible. No ratings, environmental-compliance claims or private booking behavior are reused.",
+      "check": "An interior-only request does not inherit the exterior-weather message, and the acknowledgment does not promise an automatic confirmed date.",
+      "sources": [
+        "https://rivervalleydetailco.com/"
+      ],
+      "retiredWorksheet": false
+    },
+    {
+      "route": "/areas/new-jersey/morris-county/",
+      "previousSourceSha256": "8bd7af3cd9866df8e3802ab96d6dcd057d740f987bec8df8e2f7f465048089fe",
+      "sourceSha256": "f7e3ac18d6c15af46a43168daea5a7196b50032dfa963a9a17efe9df5dd042da",
+      "previousDraftSha256": "060b52b623c46e88da5d94ca9251010e07c374309b33af3a221ca968da9f5e88",
+      "draftSha256": "b3046acdef556f6dea7aab8f82cd54d7a50767893ce81ef5e7fa07b9107dbe2a",
+      "baselineRenderedSha256": "05f966643237902faf228d6857d1754b8981b28647d52f96f908fa9658b7168c",
+      "researchNote": "Complete homepage read; explicit current process replaces the old unsupported emergency-channel distinction. No booking or membership lookup was performed.",
+      "check": "A reader can distinguish the initial visit, a covered-address waiver and approval of additional work.",
+      "sources": [
+        "https://sidekickplumbing.com/"
+      ],
+      "retiredWorksheet": true
+    },
+    {
+      "route": "/areas/new-jersey/union-county/",
+      "previousSourceSha256": "3afc6c8bc77c6f9b9256049f4015fc15481c8c3736e48087b48006185050d71a",
+      "sourceSha256": "0ab60ee8a198857124a65d7c4f0f06b107cdaf81f2df5cfd7037622bc78caa10",
+      "previousDraftSha256": "33c37492226ecc2f5bd6222a4a7a26ffc6f33d231e03d07f661a2f528bcab3e6",
+      "draftSha256": "f4cbf14ea498ac9c5f3e0f437c48db7bae33deeea4f1a8cec217313f8ef8f38b",
+      "baselineRenderedSha256": "084429ebe19a38440d3eaa55699d17cfeb01638395747200c01e33fe148f9f7f",
+      "researchNote": "Official indexed article and service-page text read. Direct article fetch returned cache miss and homepage extraction was empty. No live provider booking flow was tested; do not claim a particular consultation calendar link works.",
+      "check": "An undecided visitor can ask for a consultation while an ordinary service request is not forced through an unsupported prerequisite.",
+      "sources": [
+        "https://www.merakisalon-nj.com/blog/what-happens-during-a-professional-hair-consultation",
+        "https://www.merakisalon-nj.com/services/blowouts-styling"
+      ],
+      "retiredWorksheet": false
+    }
+  ],
+  "unchangedSources": 2256,
+  "imported": false,
+  "originalAuditFindingsPreserved": true,
+  "status": "Source and draft replacements staged; independent review and visual checks pending."
+}

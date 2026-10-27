@@ -1,0 +1,93 @@
+{
+  "assignment": "local-3",
+  "assigned": 378,
+  "completedAudits": 378,
+  "completedDrafts": 378,
+  "status": "complete",
+  "complete": true,
+  "reviewScope": "Individual full-mainText reading of every assigned page and relevant actually-read sibling comparisons. Judgments and drafts authored individually. Source descriptions assessed as published; no new external verification, browser rendering, accessibility or action testing.",
+  "validation": {
+    "exactAssignmentRouteSet": true,
+    "uniqueAuditRoutes": 378,
+    "uniqueDraftRoutes": 378,
+    "allBaselineHashesMatch": true,
+    "allDraftInputHashesMatch": true,
+    "threeDecisionsAndThreeOwnerInputsEveryDraft": true,
+    "allVisualAndAccessibilityScoresNull": true,
+    "allFinalScoresNull": true
+  },
+  "caps": {
+    "majorBurden": 170,
+    "seriousClarity": 7,
+    "noIndependentValue": 1,
+    "thinLocalRelevance": 11,
+    "missingEvidence": 1
+  },
+  "pendingAuditRoutes": [],
+  "pendingDraftRoutes": [],
+  "publicationHolds": [
+    {
+      "route": "/areas/missouri/jackson-county/",
+      "reason": "No meaningful independent local value established; obtain a concrete program distinction or consolidate. Existing draft is a nonpublishable research/consolidation brief."
+    },
+    {
+      "route": "/areas/monroe-county/",
+      "reason": "Draft acknowledges that a clearer repair example does not establish independent county-page purpose. Resolve local evidence or consolidate before publication."
+    },
+    {
+      "route": "/areas/nassau-county/",
+      "reason": "Transport inquiry advice lacks a meaningful local distinction. Establish county-specific value or consolidate before publication."
+    },
+    {
+      "route": "/areas/new-jersey/atlantic-county/",
+      "reason": "Named appointment source does not establish the proposed first/return workflow or actual link behavior. Verify owner facts and strengthen local purpose."
+    },
+    {
+      "route": "/areas/new-jersey/burlington-county/",
+      "reason": "Public personalization and shop categories do not establish the proposed operational distinctions. Obtain actual workflow evidence before using the editorial draft."
+    },
+    {
+      "route": "/areas/new-jersey/camden-county/",
+      "reason": "Workshop, series, party and studio categories alone do not establish the proposed participation rules. Verify concrete local behavior or consolidate."
+    },
+    {
+      "route": "/areas/new-jersey/cape-may-county/",
+      "reason": "Retail/gallery presence does not establish the inventory problem used by the draft. Obtain concrete stock or viewing facts and local value."
+    },
+    {
+      "route": "/areas/new-jersey/essex-county/",
+      "reason": "Named manufacturing categories do not establish enough local operating detail for the proposed inquiry distinctions. Verify factual process before publication."
+    },
+    {
+      "route": "/areas/new-jersey/gloucester-county/",
+      "reason": "Mobile/shop categories do not establish actual customer preparation or service requirements. Obtain concrete operator facts or consolidate."
+    },
+    {
+      "route": "/areas/new-jersey/hunterdon-county/",
+      "reason": "Coverage across Bucks and Hunterdon does not establish the weather/readiness workflow proposed. Obtain source-backed conditions before publication."
+    },
+    {
+      "route": "/areas/new-jersey/morris-county/",
+      "reason": "Public plumbing categories and contact routes do not establish monitored urgent response. Do not publish an invented emergency pathway."
+    },
+    {
+      "route": "/areas/new-jersey/union-county/",
+      "reason": "Advance phone/text/online booking does not establish a mandatory complex-service consultation. Obtain evidence or replace the unsupported example."
+    }
+  ],
+  "draftStatus": "All 378 remediation drafts exist; 12 explicitly held for research or consolidation. Remaining 366 are review drafts, not verified production releases.",
+  "highestValueFixes": [
+    "Replace repeated brief/table/options/closing questions with the authored three-decision sequence instead of appending more content.",
+    "Repair concatenated planning labels and malformed action prose in Minnesota variants.",
+    "Preserve the concrete source-specific distinctions in capacity, timing, permissions, arrival and purchase preparation.",
+    "Resolve the 12 publication holds through real evidence or consolidation rather than treating editorial research prose as a finished page."
+  ],
+  "unknown": [
+    "Narrow/wide visual rendering",
+    "Keyboard and accessibility behavior",
+    "Contact and other action behavior",
+    "Independent current-source verification"
+  ],
+  "scoring": "Content subtotal is out of 80 only. Visuals, accessibility and final 100-point scores remain null; caps are audit findings, not final scores.",
+  "finalScores": null
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-27",
+  "status": "complete-eight-page-content-review",
+  "assignedCount": 8,
+  "reviewedCount": 8,
+  "pendingCount": 0,
+  "passCount": 6,
+  "holdCount": 2,
+  "reviewedRoutes": [
+    "/areas/west-virginia/webster-county/",
+    "/areas/west-virginia/wirt-county/",
+    "/areas/westchester-county/",
+    "/areas/wyoming/lincoln-county/",
+    "/areas/wyoming/natrona-county/",
+    "/areas/erie-county/",
+    "/areas/wyoming/sweetwater-county/",
+    "/areas/wyoming/washakie-county/"
+  ],
+  "passRoutes": [
+    "/areas/west-virginia/webster-county/",
+    "/areas/west-virginia/wirt-county/",
+    "/areas/wyoming/lincoln-county/",
+    "/areas/wyoming/natrona-county/",
+    "/areas/erie-county/",
+    "/areas/wyoming/washakie-county/"
+  ],
+  "holdRoutes": [
+    "/areas/westchester-county/",
+    "/areas/wyoming/sweetwater-county/"
+  ],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "packetValidation": [
+      {
+        "file": "output/human-quality-20261027/after-review/final-local-replacements/packet-002.jsonl",
+        "sha256": "6f751af4ec46460bc467cd748b9cc102ec0ad4a12d7bfcd19683859b65fffe31",
+        "matchesAssignment": true
+      },
+      {
+        "file": "output/human-quality-20261027/after-review/final-local-replacements/packet-003.jsonl",
+        "sha256": "a0361ef1af75d6d89e1fc63b78f43c727e290a2ff566e474cb0ba1df017bb239",
+        "matchesAssignment": true
+      },
+      {
+        "file": "output/human-quality-20261027/after-review/last-two-local-replacements/packet-001.jsonl",
+        "sha256": "5950afea07a611c21353e8ca393458c385914396d33b91cd0fdc3810231f3802",
+        "matchesAssignment": true
+      }
+    ],
+    "exactDraftAndCandidateHashBindings": 7,
+    "exactBuiltMainHashBindings": 1,
+    "exactEvidenceQuotes": 48,
+    "duplicateRoutes": 0,
+    "issues": []
+  },
+  "findings": [
+    "Six pages pass content-only review.",
+    "Westchester requires removal of stale two-customer-routes wording in its expanded redesign FAQ.",
+    "Sweetwater requires a more independent task after comparison with Nicollet MN, not merely the less similar Lavaca/Stevens archive examples.",
+    "No hard cap applied: Sweetwater retains a useful fee distinction, but substantial overlap remains unresolved."
+  ],
+  "limits": "Only these eight exact candidate versions reviewed. Previous nine-page review preserved unchanged. Content-ready does not establish final rubric score, browser/accessibility acceptance or publication permission. No sources, drafts, routes, offer terms or publication gates modified."
+}

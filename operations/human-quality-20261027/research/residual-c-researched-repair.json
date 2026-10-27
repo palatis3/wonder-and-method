@@ -1,0 +1,1404 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/missouri/howell-county/",
+    "/areas/missouri/jasper-county/",
+    "/areas/missouri/jefferson-county/",
+    "/areas/missouri/lincoln-county/",
+    "/areas/missouri/livingston-county/",
+    "/areas/missouri/marion-county/",
+    "/areas/missouri/miller-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/missouri/howell-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Compare the room layout and support needs before relying on capacity.",
+        "intro": "The same attendance can require different space for a seated meeting and an exhibition. Show approved room combinations and the staff or equipment needed, then let the venue review the proposed arrangement.",
+        "customerQuestion": "Which room or combination supports the way our event will use the space?",
+        "decisions": [
+          {
+            "label": "Show the actual room choices",
+            "body": "Distinguish the arena, exhibit hall, theatre and combinable Dogwood rooms with their approved descriptions and diagrams. Use current layout-specific capacities supplied by the venue. Do not infer attendance from dimensions or add separate room figures to invent a combined capacity."
+          },
+          {
+            "label": "Describe the event’s working layout",
+            "body": "Ask for event format, approximate attendance, intended room combination and setup time. A seated presentation and an exhibit layout at the same headcount should remain different requests. Keep the selected combination visible so a later contact step does not lose the plan the organizer was comparing."
+          },
+          {
+            "label": "Include support requirements",
+            "body": "Explain the actual audiovisual equipment and staffing responsibilities associated with the proposed use. Let the organizer describe those needs for review rather than assuming every room includes the same support. The venue confirms configuration, capacity and required staffing before the arrangement is accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Approved room and combination diagrams and capacities.",
+          "Current equipment and layout requirements.",
+          "Staffing responsibilities and rental-review process."
+        ],
+        "sourceBridge": "West Plains Civic Center distinguishes several event spaces and combinable Dogwood rooms, with separate facility and support information. Its actual approved layouts are needed to make the comparison more useful than a generic room list.",
+        "limits": "Venue staff approve suitability and the arrangement. A dimension or attendance figure does not establish capacity. Consolidate overlapping layout advice if useful; room calculators, staffing schedules and automated bookings require separate assessment.",
+        "route": "/areas/missouri/howell-county/",
+        "inputHash": "2dbf6bf687c79588b9c7dad3443f19b0f59f092862c2dc8e41460de1e2f05abb"
+      },
+      "after": {
+        "heading": "Compare the room layout and support needs before relying on capacity.",
+        "intro": "The same attendance can require different space for a seated meeting and an exhibition. Show approved room combinations and the staff or equipment needed, then let the venue review the proposed arrangement.",
+        "customerQuestion": "Which room or combination supports the way our event will use the space?",
+        "decisions": [
+          {
+            "label": "Show the actual room choices",
+            "body": "The Civic Center presents its Exhibit Hall for uses including art exhibits, its Theater for performances and ceremonies, and named Dogwood room combinations for meetings. Keep these options distinct. Published floor area is not an approved attendance limit, and separate room figures should not be added to invent a combined capacity."
+          },
+          {
+            "label": "Describe the event’s working layout",
+            "body": "Fictional comparison: an organizer asks about the Exhibit Hall for an art exhibit with display space; another asks staff to review Dogwood 1 & 2 for a seated presentation with audiovisual support. Each request needs its own attendance, layout and setup time. These are discussion examples, not room recommendations or approved configurations."
+          },
+          {
+            "label": "Include support requirements",
+            "body": "Explain the actual audiovisual equipment and staffing responsibilities associated with the proposed use. Let the organizer describe those needs for review rather than assuming every room includes the same support. The venue confirms configuration, capacity and required staffing before the arrangement is accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Approved room and combination diagrams and capacities.",
+          "Current equipment and layout requirements.",
+          "Staffing responsibilities and rental-review process."
+        ],
+        "sourceBridge": "West Plains Civic Center publishes named event spaces, combinable Dogwood rooms and separate equipment and staffing information. The fictional requests show how event format changes the review even before a capacity is confirmed.",
+        "limits": "Venue staff approve configuration, capacity, support and staffing. A room dimension does not establish attendance. Room calculators, staffing schedules and automated bookings require separate assessment.",
+        "route": "/areas/missouri/howell-county/",
+        "inputHash": "2dbf6bf687c79588b9c7dad3443f19b0f59f092862c2dc8e41460de1e2f05abb"
+      },
+      "beforeSha256": "40cd8d9621036cb141e0034524011c62c6a7393be4943da8a73539070d671f14",
+      "afterSha256": "bd08a27d07d4146200609e9ceb48ced0ec7ae6b7e62b93aad0e7c640f57b8d6f"
+    },
+    {
+      "route": "/areas/missouri/jasper-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Keep cut instructions visible after the processing appointment is arranged.",
+        "intro": "An appointment, animal drop-off, processing instructions and collection are separate stages. Show the timing and contact for each so completing one step does not hide what the customer still needs to do.",
+        "customerQuestion": "What happens before drop-off, what instructions are due afterward, and when should we collect?",
+        "decisions": [
+          {
+            "label": "Prepare the appointment request",
+            "body": "Ask for species, approximate quantity and preferred timing through the processor’s current scheduling route. Explain that a requested date is not a booked appointment. Keep the initial contact focused on information useful for staff review rather than collecting detailed private processing records in a public form."
+          },
+          {
+            "label": "Connect drop-off and cut instructions",
+            "body": "Show the owner-confirmed animal drop-off window and the separate deadline and accepted method for cut instructions. The public example distinguishes those stages, so arriving at the facility should not appear to complete all customer requirements. Obtain the actual current times before publishing a detailed timeline."
+          },
+          {
+            "label": "Wait for the ready notification",
+            "body": "Explain the later ready-for-pickup call and current collection instructions. A completed drop-off or submitted cut request should not imply that the order is ready. Name the staff contact for special questions and keep the processor’s own instruction process authoritative."
+          }
+        ],
+        "ownerInputs": [
+          "Current appointment and animal drop-off arrangements.",
+          "Cut-instruction method and exact deadline.",
+          "Ready-notification and collection instructions."
+        ],
+        "sourceBridge": "Cloud’s Meats near Carthage separates appointment-based processing, a defined drop-off window, a cut-instruction deadline and a later pickup call. That sequence is the practical reason for the website example.",
+        "limits": "The processor confirms scheduling, instructions and readiness. This content does not advise on food handling or replace processing records. A clear timeline can support existing communication; scheduling, record management and notifications require separate scope.",
+        "route": "/areas/missouri/jasper-county/",
+        "inputHash": "792aaf16f449b0a11a986689f9c464ea4f6dd8d68433d7207c1a277deb7f7ffc"
+      },
+      "after": {
+        "heading": "Keep cut instructions visible after the processing appointment is arranged.",
+        "intro": "An appointment, animal drop-off, processing instructions and collection are separate stages. Show the timing and contact for each so completing one step does not hide what the customer still needs to do.",
+        "customerQuestion": "What happens before drop-off, what instructions are due afterward, and when should we collect?",
+        "decisions": [
+          {
+            "label": "Prepare the appointment request",
+            "body": "Ask for species, approximate quantity and preferred timing through the processor’s current scheduling route. Explain that a requested date is not a booked appointment. Keep the initial contact focused on information useful for staff review rather than collecting detailed private processing records in a public form."
+          },
+          {
+            "label": "Connect drop-off and cut instructions",
+            "body": "For a confirmed processing appointment, the published sequence places animal drop-off on the evening before the scheduled day or by 8 a.m. that day, unless staff arrange otherwise. Cutting instructions are then called in within 24 hours of drop-off. Show these as separate steps so arrival does not appear to complete the customer’s instructions."
+          },
+          {
+            "label": "Wait for the ready notification",
+            "body": "Explain the later ready-for-pickup call and current collection instructions. A completed drop-off or submitted cut request should not imply that the order is ready. Name the staff contact for special questions and keep the processor’s own instruction process authoritative."
+          }
+        ],
+        "ownerInputs": [
+          "Current appointment and animal drop-off arrangements.",
+          "Cut-instruction method and exact deadline.",
+          "Ready-notification and collection instructions."
+        ],
+        "sourceBridge": "Cloud’s Meats near Carthage publishes appointment-based processing, evening-before or by-8-a.m. arrival, a separate 24-hour cutting-instruction deadline and a later ready-for-pickup call. The sequence demonstrates why an appointment and drop-off do not finish the customer’s part of the process.",
+        "limits": "The processor confirms scheduling, instructions and readiness. This content does not advise on food handling or replace processing records. A clear timeline can support existing communication; scheduling, record management and notifications require separate scope.",
+        "route": "/areas/missouri/jasper-county/",
+        "inputHash": "792aaf16f449b0a11a986689f9c464ea4f6dd8d68433d7207c1a277deb7f7ffc"
+      },
+      "beforeSha256": "ce39865596a262e766c626ffa493aa87b0631d4ed780f6a4063e95a637842cef",
+      "afterSha256": "820a5bc5f2c3176ffb7b1d95f5d64d54dbab16018fd2cfa5934db99138237e98"
+    },
+    {
+      "route": "/areas/missouri/jefferson-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Send each school program to its own meeting point and available day.",
+        "intro": "A museum activity and creek ecology program can require different arrival plans. Compare the actual program, group arrangement and weekday before a teacher sends buses to a general site address.",
+        "customerQuestion": "Where does this program meet, and can it run on our preferred day?",
+        "decisions": [
+          {
+            "label": "Compare the program arrangements",
+            "body": "Describe standard and specialized school programs using their current grade guidance, durations and group limits. Show any program-specific weekdays beside the activity. A date suitable for one program should not automatically appear suitable for another simply because the historic site is open."
+          },
+          {
+            "label": "Attach the exact meeting point",
+            "body": "The public example gives the creek program a meeting point different from the museum. Obtain and display the precise approved directions with that program. Keep the selected activity visible in the school request and eventual arrival instructions rather than defaulting every bus to the museum address."
+          },
+          {
+            "label": "Explain alternatives through staff",
+            "body": "Describe the published indoor alternative for the hike with its actual conditions. Do not promise that a film or every alternative is always available. Ask for program, grade, aggregate headcount, preferred date and practical access questions so staff can confirm the whole visit plan."
+          }
+        ],
+        "ownerInputs": [
+          "Current program limits, durations and available weekdays.",
+          "Exact program-specific arrival points.",
+          "Approved indoor alternatives and confirmation contact."
+        ],
+        "sourceBridge": "Mastodon State Historic Site near Imperial distinguishes specialized program days, the creek meeting point and an indoor hike alternative. The program choice changes logistics beyond a general school-tour inquiry.",
+        "limits": "Staff confirm programs, alternatives and access arrangements. A request does not reserve the date or guarantee an indoor replacement. Clear program cards can support existing contacts; automated scheduling or itinerary changes require separate assessment.",
+        "route": "/areas/missouri/jefferson-county/",
+        "inputHash": "9333cfd256689a845a5ba604dfd9557823cec0a1657f3aff6744363e37b2d650"
+      },
+      "after": {
+        "heading": "Send each school program to its own meeting point and available day.",
+        "intro": "A museum activity and creek ecology program can require different arrival plans. Compare the actual program, group arrangement and weekday before a teacher sends buses to a general site address.",
+        "customerQuestion": "Where does this program meet, and can it run on our preferred day?",
+        "decisions": [
+          {
+            "label": "Compare the program arrangements",
+            "body": "The published specialized programs run for 90 minutes and encourage groups of 30 students or fewer. Geology and Paleontology and Archaeology are offered only on Mondays and Tuesdays. Attach those weekdays to the named programs; do not transfer them to Creek Ecology or assume every program runs whenever the historic site is open."
+          },
+          {
+            "label": "Attach the exact meeting point",
+            "body": "Creek Ecology meets at the picnic shelter off Seckman Road for work at Rock Creek. Keep that destination with the selected program instead of sending every group to the museum. Use the operator’s directions and confirm the group’s arrival plan; a location label alone does not verify bus routing."
+          },
+          {
+            "label": "Explain alternatives through staff",
+            "body": "The standard hike may have an accessible indoor alternative, while the museum film can be unavailable when the auditorium hosts programming. Ask for program, grade, aggregate headcount, preferred date and access questions so staff can confirm the arrangement. Neither alternative should be presented as guaranteed."
+          }
+        ],
+        "ownerInputs": [
+          "Current program limits, durations and available weekdays.",
+          "Exact program-specific arrival points.",
+          "Approved indoor alternatives and confirmation contact."
+        ],
+        "sourceBridge": "Mastodon State Historic Site near Imperial publishes a separate Creek Ecology shelter meeting point and Monday/Tuesday restrictions for named geology and archaeology programs. The selected activity changes both arrival and date planning.",
+        "limits": "Staff confirm programs, alternatives and access arrangements. A request does not reserve the date or guarantee an indoor replacement. Clear program cards can support existing contacts; automated scheduling or itinerary changes require separate assessment.",
+        "route": "/areas/missouri/jefferson-county/",
+        "inputHash": "9333cfd256689a845a5ba604dfd9557823cec0a1657f3aff6744363e37b2d650"
+      },
+      "beforeSha256": "a2d7fc19de8cea310cc3ed1e5376baae536392d0cff1f72fed6d6d7841bd0b22",
+      "afterSha256": "5d24e42b3a02ceca79a65db53dd8e164a73c8de39dfc2903cced32cf436fb0b1"
+    },
+    {
+      "route": "/areas/missouri/lincoln-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Check what is supplied on the date of your camping stay.",
+        "intro": "A platform site may not include a tent throughout the year, and some camping areas have specific eligibility conditions. Keep the date, equipment and party requirements with the chosen option before booking.",
+        "customerQuestion": "Will a tent be supplied, and does our party meet this camping option’s requirements?",
+        "decisions": [
+          {
+            "label": "Explain the seasonal platform equipment",
+            "body": "The published platform-site offer removes provided tents seasonally. Show the actual current removal period beside the site description once confirmed. A platform booking after that period should not appear to include the same supplied equipment as a stay during the tent season."
+          },
+          {
+            "label": "State the equestrian condition",
+            "body": "Explain that equestrian camping requires a horse under the published guidance. Put the condition with that site category rather than relying on its name to communicate eligibility. A request without a horse should lead to the appropriate staff question or another actual option, not an assumed exception."
+          },
+          {
+            "label": "Keep organized groups and current notices distinct",
+            "body": "Describe organized group camps with their own approved size ranges and facilities. Keep the relevant booking route, gate timing and dated closure information with the chosen stay. A general site description should not override a current notice or imply that ordinary campsite rules cover every group arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current supplied-tent season and platform preparation.",
+          "Approved equestrian and group-camp conditions.",
+          "Booking routes, gate timing and maintained status notices."
+        ],
+        "sourceBridge": "Cuivre River State Park near Troy distinguishes seasonally supplied platform tents, a horse requirement for equestrian camping and separate organized-group conditions. The option’s name alone does not explain the stay.",
+        "limits": "The park confirms eligibility, current equipment and availability. A request does not create an exception or reserve a group facility. Clear option descriptions can support existing systems; automated eligibility checks or live bookings require separate assessment.",
+        "route": "/areas/missouri/lincoln-county/",
+        "inputHash": "2ee5d297af50a5192bd7cbbbca32ad95d2e418f46933632b03477a2ea66c0b4e"
+      },
+      "after": {
+        "heading": "Check what is supplied on the date of your camping stay.",
+        "intro": "A platform site may not include a tent throughout the year, and some camping areas have specific eligibility conditions. Keep the date, equipment and party requirements with the chosen option before booking.",
+        "customerQuestion": "Will a tent be supplied, and does our party meet this camping option’s requirements?",
+        "decisions": [
+          {
+            "label": "Explain the seasonal platform equipment",
+            "body": "Provided tents are removed from the platform sites November 1 through April 14; guests reserving a platform in that season bring their own tent. Put that equipment condition beside the selected stay, subject to current notices and availability. A reservable platform does not imply that a tent is supplied or that every date is open."
+          },
+          {
+            "label": "State the equestrian condition",
+            "body": "Explain that equestrian camping requires a horse under the published guidance. Put the condition with that site category rather than relying on its name to communicate eligibility. A request without a horse should lead to the appropriate staff question or another actual option, not an assumed exception."
+          },
+          {
+            "label": "Keep organized groups and current notices distinct",
+            "body": "Organized group camps have their own approved size ranges, facilities and booking routes. Dated notices can override ordinary arrangements: the October 27 source check found camping closed October 30–November 1, 2026, with a broader park closure from 3 p.m. October 30 until 7:30 a.m. November 2. This dated example does not confirm another stay’s availability; keep current notices with the chosen option."
+          }
+        ],
+        "ownerInputs": [
+          "Current supplied-tent season and platform preparation.",
+          "Approved equestrian and group-camp conditions.",
+          "Booking routes, gate timing and maintained status notices."
+        ],
+        "sourceBridge": "Cuivre River State Park near Troy distinguishes the November 1–April 14 bring-your-own-tent period, a horse requirement for equestrian camping and separate organized-group conditions. Seasonal equipment information and dated closures answer different planning questions.",
+        "limits": "The park confirms eligibility, current equipment and availability. A request does not create an exception or reserve a group facility. Clear option descriptions can support existing systems; automated eligibility checks or live bookings require separate assessment.",
+        "route": "/areas/missouri/lincoln-county/",
+        "inputHash": "2ee5d297af50a5192bd7cbbbca32ad95d2e418f46933632b03477a2ea66c0b4e"
+      },
+      "beforeSha256": "a9664b14e56a63c137ee22a26f38317efa4e2f403a2f35fff975e6832d07143c",
+      "afterSha256": "e4d89ba29db9b614e02e99ee160ad802e3ea6c66a1f41f878cfdf780e991aa78"
+    },
+    {
+      "route": "/areas/missouri/livingston-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Show the library-card checklist for the applicant’s category.",
+        "intro": "Residents, property taxpayers, paid nonresidents and children may follow different application steps. Compare the routes and explain what to bring while keeping eligibility decisions and identity documents in the library’s approved process.",
+        "customerQuestion": "Which application route applies, and what evidence or signature should we prepare?",
+        "decisions": [
+          {
+            "label": "Compare resident and nonresident routes",
+            "body": "Explain resident or property-taxpayer eligibility separately from paid nonresident options. A nonresident property owner should not automatically be sent to the same payment route as every other nonresident. Use the library’s current categories and refer uncertain cases to staff rather than deciding eligibility on the marketing page."
+          },
+          {
+            "label": "Attach the correct evidence checklist",
+            "body": "Show the approved identity and address evidence and the additional tax-receipt route where it applies. Keep each checklist with its applicant category. Visitors should know what to prepare before traveling without uploading identity documents or sending detailed personal records through an ordinary contact form."
+          },
+          {
+            "label": "Explain the child’s in-person step",
+            "body": "The published guidance requires a parent to sign in person for children in a stated age range. Obtain that exact current range and signature wording before publication. Make the required visit clear so an online inquiry or a parent’s message is not mistaken for completion of the application."
+          }
+        ],
+        "ownerInputs": [
+          "Approved applicant categories and nonresident term options.",
+          "Accepted identity, address and tax evidence.",
+          "Exact child-age signature rule and staff-help contact."
+        ],
+        "sourceBridge": "Livingston County Library near Chillicothe distinguishes residency or property-taxpayer routes, paid nonresident options and an in-person parent signature. Different applicants therefore need different preparation.",
+        "limits": "Library staff determine eligibility and accept evidence through their approved process. A checklist or contact request does not issue a card. Clear route comparisons can support existing applications; identity checks, uploads or account administration require separate scope.",
+        "route": "/areas/missouri/livingston-county/",
+        "inputHash": "f8dd28de7a4e883babb20bc9aaa6b412110ae7bfa2dea2888f3ad558aa1d7a0f"
+      },
+      "after": {
+        "heading": "Show the library-card checklist for the applicant’s category.",
+        "intro": "Residents, property taxpayers, paid nonresidents and children may follow different application steps. Compare the routes and explain what to bring while keeping eligibility decisions and identity documents in the library’s approved process.",
+        "customerQuestion": "Which application route applies, and what evidence or signature should we prepare?",
+        "decisions": [
+          {
+            "label": "Compare resident and nonresident routes",
+            "body": "Explain resident or property-taxpayer eligibility separately from paid nonresident options. A nonresident property owner should not automatically be sent to the same payment route as every other nonresident. Use the library’s current categories and refer uncertain cases to staff rather than deciding eligibility on the marketing page."
+          },
+          {
+            "label": "Attach the correct evidence checklist",
+            "body": "Show the approved identity and address evidence and the additional tax-receipt route where it applies. Keep each checklist with its applicant category. Visitors should know what to prepare before traveling without uploading identity documents or sending detailed personal records through an ordinary contact form."
+          },
+          {
+            "label": "Explain the child’s in-person step",
+            "body": "For a child aged 5–17, a parent or legal guardian signs the application in front of library staff and accepts responsibility for the materials. Children under five use a parent’s card under the published guidance. Keep the in-person step with the child’s route so a completed form or ordinary online message does not appear to finish the application."
+          }
+        ],
+        "ownerInputs": [
+          "Approved applicant categories and nonresident term options.",
+          "Accepted identity, address and tax evidence.",
+          "Exact child-age signature rule and staff-help contact."
+        ],
+        "sourceBridge": "Livingston County Library near Chillicothe distinguishes residency or property-taxpayer routes, paid nonresident options and an in-person parent signature. Different applicants therefore need different preparation.",
+        "limits": "Library staff determine eligibility and accept evidence through their approved process. A checklist or contact request does not issue a card. Clear route comparisons can support existing applications; identity checks, uploads or account administration require separate scope.",
+        "route": "/areas/missouri/livingston-county/",
+        "inputHash": "f8dd28de7a4e883babb20bc9aaa6b412110ae7bfa2dea2888f3ad558aa1d7a0f"
+      },
+      "beforeSha256": "252e6d0b7b010323e5ea8865700ecabc242cd6a5a67b92fc8ee9834535f3e2eb",
+      "afterSha256": "ba14215cc95c3a071f82ff8d14566e4bf6bdceda5b041f3dafcd107136c46528"
+    },
+    {
+      "route": "/areas/missouri/marion-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Show the ticket’s buildings, valid days and starting points together.",
+        "intro": "A multi-building visit needs more preparation than a single admission link. Explain what the ticket covers and where to begin, then keep access differences with the relevant buildings so visitors can plan their route.",
+        "customerQuestion": "Which buildings can we visit with this ticket, and where should we start?",
+        "decisions": [
+          {
+            "label": "Explain coverage and the second day",
+            "body": "List the approved buildings included in admission and the ticket’s current validity. The public example covers seven buildings across two days. Make the return-day arrangement clear rather than leaving visitors to infer that the ticket is single-day or that every nearby attraction is included."
+          },
+          {
+            "label": "Identify purchase and starting locations",
+            "body": "Show the two published purchase locations with their approved addresses and visit instructions. Explain where a visitor can begin without implying that every included building sells tickets. A simple map can connect the actual stops once the museum confirms the locations and any current changes."
+          },
+          {
+            "label": "Describe access and guided arrangements by option",
+            "body": "Keep building-specific access information with each stop. A visitor unable to use stairs should not receive one blanket statement for all seven buildings. Explain guided arrangements and other experiences separately, with their current inquiry or booking route, so independent admission does not appear to include every guided extra."
+          }
+        ],
+        "ownerInputs": [
+          "Current included-building list and ticket-validity rules.",
+          "Approved purchase points and start-location instructions.",
+          "Building-specific access and separately arranged experiences."
+        ],
+        "sourceBridge": "The Mark Twain Boyhood Home and Museum in Hannibal describes seven buildings across two days, two ticket-purchase points and different access conditions. These details shape an itinerary rather than merely decorate a general visit page.",
+        "limits": "The museum confirms current ticket coverage, access and guided availability. Do not bundle nearby attractions, performances or extras without approval. An itinerary summary can support current ticketing; live availability, sales or route-planning functionality requires separate scope.",
+        "route": "/areas/missouri/marion-county/",
+        "inputHash": "acffac2538b98abfeb371cb16fc91c3831f48eae2f9b78216797859da4997d76"
+      },
+      "after": {
+        "heading": "Show the ticket’s buildings, valid days and starting points together.",
+        "intro": "A multi-building visit needs more preparation than a single admission link. Explain what the ticket covers and where to begin, then keep access differences with the relevant buildings so visitors can plan their route.",
+        "customerQuestion": "Which buildings can we visit with this ticket, and where should we start?",
+        "decisions": [
+          {
+            "label": "Explain coverage and the second day",
+            "body": "The published two-day admission includes the Interpretive Center, Museum Gallery, Mark Twain Boyhood Home, Huckleberry Finn House, Becky Thatcher House, Justice of the Peace Office and Grant’s Drug Store. Keep the seven-building list with the return-day rule. Nearby map points do not automatically become included attractions."
+          },
+          {
+            "label": "Identify purchase and starting locations",
+            "body": "Tickets are sold at the Interpretive Center, 415 North Main Street, and Museum Gallery, 120 North Main Street. The museum’s directions recommend starting at the Interpretive Center. Mark the purchase points and recommended start separately, so a visitor can plan a first day and return day without assuming each building sells tickets."
+          },
+          {
+            "label": "Describe access and guided arrangements by option",
+            "body": "The Boyhood Home and Grant’s Drug Store have stair-related limits with video alternatives. Keep building-specific access information beside each stop and invite questions about the actual visit. Self-guided admission and separately charged guided arrangements should have distinct descriptions and contact routes."
+          }
+        ],
+        "ownerInputs": [
+          "Current included-building list and ticket-validity rules.",
+          "Approved purchase points and start-location instructions.",
+          "Building-specific access and separately arranged experiences."
+        ],
+        "sourceBridge": "The Mark Twain Boyhood Home and Museum in Hannibal names seven included buildings across two days and two purchase locations, while recommending the Interpretive Center as the start. Its building-specific access guidance makes an itinerary more useful than one general ticket link.",
+        "limits": "The museum confirms current ticket coverage, access and guided availability. Do not bundle nearby attractions, performances or extras without approval. An itinerary summary can support current ticketing; live availability, sales or route-planning functionality requires separate scope.",
+        "route": "/areas/missouri/marion-county/",
+        "inputHash": "acffac2538b98abfeb371cb16fc91c3831f48eae2f9b78216797859da4997d76"
+      },
+      "beforeSha256": "1e669ced1e4ee93f1afa5e151e20ced2f51a5cfcd95e4653aed4e5e64615fe46",
+      "afterSha256": "594a959e5ce8af757fbfc76c576721baee739e309abad6f431dc4ad4f21b2b2d"
+    },
+    {
+      "route": "/areas/missouri/miller-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Check the party requirements for the specific cave experience.",
+        "intro": "A standard cave visit and a specialty experience can have different age, group-size and advance-booking conditions. Compare those requirements before a family or group chooses an attraction by name alone.",
+        "customerQuestion": "Does this experience fit our participants, and how far ahead must we arrange it?",
+        "decisions": [
+          {
+            "label": "Distinguish the actual experiences",
+            "body": "Give the standard visit, black-light tour and escape-room experience their own approved descriptions and durations. Keep the relevant dates and booking destinations with each one. An appealing attraction name should not imply that specialty activities run on the standard tour’s schedule or use its admission process."
+          },
+          {
+            "label": "Show age and participant limits",
+            "body": "The public example identifies a black-light age minimum and an escape-room participant range. Obtain the exact current values before publishing the comparison. A family below a minimum or a party outside the range should find a clear operator-help route rather than being encouraged to continue with an unsuitable selection."
+          },
+          {
+            "label": "Explain advance preparation",
+            "body": "State the confirmed lead time and booking process for each specialty option. Collect only the experience, date, participant count and relevant age range needed for the initial inquiry. Keep the distinction between asking about a suitable experience and receiving an accepted booking visible at the handoff."
+          }
+        ],
+        "ownerInputs": [
+          "Approved experience descriptions, durations and dates.",
+          "Exact current age and participant limits.",
+          "Advance-booking deadlines and correct booking destinations."
+        ],
+        "sourceBridge": "Stark Caverns near Eldon distinguishes a standard cave visit from specialty options with separate age, participant and advance-booking requirements. These differences make a side-by-side preparation guide useful, but their actual limits still need confirmation.",
+        "limits": "The operator confirms suitability, exceptions and availability. Do not invent missing ages, group ranges or lead times, or imply a request has been accepted. Clear comparisons can use current booking tools; automated eligibility decisions and reservation connections require separate assessment.",
+        "route": "/areas/missouri/miller-county/",
+        "inputHash": "d1cbb87be70828a7e3aeaae66c23ff0a981207c699ab558892b714c07f31b13d"
+      },
+      "after": {
+        "heading": "Check the party requirements for the specific cave experience.",
+        "intro": "A standard cave visit and a specialty experience can have different age, group-size and advance-booking conditions. Compare those requirements before a family or group chooses an attraction by name alone.",
+        "customerQuestion": "Does this experience fit our participants, and how far ahead must we arrange it?",
+        "decisions": [
+          {
+            "label": "Distinguish the actual experiences",
+            "body": "Daily Tours are approximately one-hour guided visits open to all ages. The approximately one-hour Black Light Tour has different preparation, while Bootlegger’s Bequest is a 60-minute escape game for a private party of 4–10. Name each experience and its own booking route so a specialty game does not inherit ordinary tour admission."
+          },
+          {
+            "label": "Show age and participant limits",
+            "body": "Black Light excludes children under eight. The escape-game overview lists ages ten and older, but its same-page age FAQ discusses younger players. That disagreement needs an operator answer; do not promise an exception. A fictional three-person party also falls below the listed escape-game range and should ask about another arrangement."
+          },
+          {
+            "label": "Explain advance preparation",
+            "body": "Black Light requires online booking at least three hours ahead. The escape game requires advance online booking, but the checked page did not specify a numeric cutoff. Keep that distinction visible rather than copying one rule across both. Ask staff about participant questions and availability before treating the selected option as accepted."
+          }
+        ],
+        "ownerInputs": [
+          "Approved experience descriptions, durations and dates.",
+          "Exact current age and participant limits.",
+          "Advance-booking deadlines and correct booking destinations."
+        ],
+        "sourceBridge": "Stark Caverns near Eldon publishes different Daily Tour, Black Light and Bootlegger’s Bequest conditions. The October 27, 2026 check found conflicting escape-game age wording; the comparison therefore directs that question to the operator rather than inventing a resolved rule.",
+        "limits": "The operator confirms suitability, age questions, current booking terms and availability. This example does not test checkout or approve an exception. Automated eligibility decisions and reservation connections require separate assessment.",
+        "route": "/areas/missouri/miller-county/",
+        "inputHash": "d1cbb87be70828a7e3aeaae66c23ff0a981207c699ab558892b714c07f31b13d"
+      },
+      "beforeSha256": "b2a7058ecc7b62616949ce553c2aba2b1d78724e3b9c3df7510311b6fb9b3748",
+      "afterSha256": "f328d4a9794ae7fc210da2ca0b78ca60e06cbe27deba381f7d6f261547f6753d"
+    }
+  ],
+  "sourceChanges": [
+    {
+      "route": "/areas/missouri/howell-county/",
+      "before": {
+        "areaId": "missouri/howell",
+        "market": "Howell County, MO",
+        "lead": "For a Howell County website project, start with the choice a customer needs to make. An organizer needs to narrow the event space using the proposed layout and support requirements rather than one building-wide capacity number.",
+        "decisionTitle": "Choose an event room by layout and operating needs.",
+        "decision": "West Plains Civic Center distinguishes the arena, exhibit hall, theatre and combinable Dogwood rooms. Its facility information lists room dimensions and separately described staffing or equipment needs. For your website, I can organize room and combination comparison, layout requirements, event support inquiry so the next step follows the selected option. Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+        "scopes": [
+          {
+            "title": "Choose an event room by layout and operating needs",
+            "pages": [
+              "Room and combination comparison",
+              "Layout requirements",
+              "Event support inquiry"
+            ],
+            "request": "Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+            "supplies": "Approved room dimensions and layout-specific capacities, which rooms can combine, equipment inventories, staffing responsibilities and the current rental review process.",
+            "check": "Compare a seated meeting with an exhibit layout at the same headcount. Each inquiry should preserve its room combination and support needs without inventing capacity by adding figures together."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect room and combination comparison with event support inquiry. Agree the content owner and review process before selecting forms or connections. Venue staff must approve capacity, room configuration and required staffing; do not infer them from dimensions.",
+        "quoteQuestions": [
+          "Approved room dimensions and layout-specific capacities, which rooms can combine, equipment inventories, staffing responsibilities and the current rental review process — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+          "Who should approve the result of this check: Compare a seated meeting with an exhibit layout at the same headcount. Each inquiry should preserve its room combination and support needs without inventing capacity by adding figures together."
+        ],
+        "coverageNote": "Website project planning for Howell County, including the public example in or near West Plains. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://westplains.gov/departments/community-services/civic-center/",
+            "label": "Civic Center – City of West Plains",
+            "observation": "Published information used to plan room and combination comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://westplains.gov/departments/community-services/civic-center/facility/",
+            "label": "Facility – City of West Plains",
+            "observation": "Published information used to plan room and combination comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/howell"
+        ],
+        "path": "/areas/missouri/howell-county/",
+        "title": "Web Design for Howell County, MO",
+        "description": "Web design for Howell County, MO. Plan room and combination comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Howell County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#howell",
+            "label": "Howell County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/howell",
+        "market": "Howell County, MO",
+        "lead": "For a Howell County website project, start with the choice a customer needs to make. An organizer needs to narrow the event space using the proposed layout and support requirements rather than one building-wide capacity number.",
+        "decisionTitle": "Choose an event room by layout and operating needs.",
+        "decision": "West Plains Civic Center distinguishes the arena, exhibit hall, theatre and combinable Dogwood rooms. Its facility information lists room dimensions and separately described staffing or equipment needs. For your website, I can organize room and combination comparison, layout requirements, event support inquiry so the next step follows the selected option. Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+        "scopes": [
+          {
+            "title": "Choose an event room by layout and operating needs",
+            "pages": [
+              "Room and combination comparison",
+              "Layout requirements",
+              "Event support inquiry"
+            ],
+            "request": "Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+            "supplies": "Approved room dimensions and layout-specific capacities, which rooms can combine, equipment inventories, staffing responsibilities and the current rental review process.",
+            "check": "Compare a seated meeting with an exhibit layout at the same headcount. Each inquiry should preserve its room combination and support needs without inventing capacity by adding figures together."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect room and combination comparison with event support inquiry. Agree the content owner and review process before selecting forms or connections. Venue staff must approve capacity, room configuration and required staffing; do not infer them from dimensions.",
+        "quoteQuestions": [
+          "Approved room dimensions and layout-specific capacities, which rooms can combine, equipment inventories, staffing responsibilities and the current rental review process — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Describe the event format, attendance range, room combination, setup time and AV or staffing needs for venue review.",
+          "Who should approve the result of this check: Compare a seated meeting with an exhibit layout at the same headcount. Each inquiry should preserve its room combination and support needs without inventing capacity by adding figures together."
+        ],
+        "coverageNote": "Website project planning for Howell County, including the public example in or near West Plains. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://westplains.gov/departments/community-services/civic-center/facility/",
+            "label": "West Plains Civic Center: spaces and support",
+            "observation": "Lists Exhibit Hall uses including art exhibits, Theater performance uses, named Dogwood combinations, audiovisual services and staffing. No layout-specific attendance chart was found in the checked page."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/howell"
+        ],
+        "path": "/areas/missouri/howell-county/",
+        "title": "Web Design for Howell County, MO",
+        "description": "Web design for Howell County, MO. Plan room and combination comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Howell County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#howell",
+            "label": "Howell County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "8a882cdda8c0fbb7105f99e07ceba2b21fb974ae0688d715f428996e8bcc689b",
+      "afterSha256": "b850dfb33d673f4ba4a0ab126ba1b065375f5c82a507df56a481afbedc1eaf7b"
+    },
+    {
+      "route": "/areas/missouri/jasper-county/",
+      "before": {
+        "areaId": "missouri/jasper",
+        "market": "Jasper County, MO",
+        "lead": "For a Jasper County website project, start with the choice a customer needs to make. A livestock customer needs to understand which action belongs before drop-off, immediately afterward and after processing is complete.",
+        "decisionTitle": "Separate processing appointments, cut instructions and collection.",
+        "decision": "Cloud's Meats publishes appointment-based processing, a defined animal drop-off window, a deadline for cut instructions and a later ready-for-pickup call. For your website, I can organize appointment preparation, drop-off and cut instructions, ready-for-pickup process so the next step follows the selected option. Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+        "scopes": [
+          {
+            "title": "Separate processing appointments, cut instructions and collection",
+            "pages": [
+              "Appointment preparation",
+              "Drop-off and cut instructions",
+              "Ready-for-pickup process"
+            ],
+            "request": "Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+            "supplies": "Current drop-off windows, how cut instructions are accepted, their deadline, ready-notification method and a staff contact for special requests.",
+            "check": "Follow a hypothetical appointment from inquiry to collection. Submitting a date request must not mark it booked, and passing the drop-off stage must not hide the instruction deadline."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect appointment preparation with ready-for-pickup process. Agree the content owner and review process before selecting forms or connections. Do not collect detailed private processing records in the initial public form or advise on food handling.",
+        "quoteQuestions": [
+          "Current drop-off windows, how cut instructions are accepted, their deadline, ready-notification method and a staff contact for special requests — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+          "Who should approve the result of this check: Follow a hypothetical appointment from inquiry to collection. Submitting a date request must not mark it booked, and passing the drop-off stage must not hide the instruction deadline."
+        ],
+        "coverageNote": "Website project planning for Jasper County, including the public example in or near Carthage. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://cloudsmeats.com/processing/",
+            "label": "Processing - Clouds Meats",
+            "observation": "Published information used to plan appointment preparation. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/jasper"
+        ],
+        "path": "/areas/missouri/jasper-county/",
+        "title": "Web Design for Jasper County, MO",
+        "description": "Web design for Jasper County, MO. Plan appointment preparation, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Jasper County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#jasper",
+            "label": "Jasper County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/jasper",
+        "market": "Jasper County, MO",
+        "lead": "For a Jasper County website project, start with the choice a customer needs to make. A livestock customer needs to understand which action belongs before drop-off, immediately afterward and after processing is complete.",
+        "decisionTitle": "Separate processing appointments, cut instructions and collection.",
+        "decision": "Cloud's Meats publishes appointment-based processing, a defined animal drop-off window, a deadline for cut instructions and a later ready-for-pickup call. For your website, I can organize appointment preparation, drop-off and cut instructions, ready-for-pickup process so the next step follows the selected option. Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+        "scopes": [
+          {
+            "title": "Separate processing appointments, cut instructions and collection",
+            "pages": [
+              "Appointment preparation",
+              "Drop-off and cut instructions",
+              "Ready-for-pickup process"
+            ],
+            "request": "Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+            "supplies": "Current drop-off windows, how cut instructions are accepted, their deadline, ready-notification method and a staff contact for special requests.",
+            "check": "Follow a hypothetical appointment from inquiry to collection. Submitting a date request must not mark it booked, and passing the drop-off stage must not hide the instruction deadline."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect appointment preparation with ready-for-pickup process. Agree the content owner and review process before selecting forms or connections. Do not collect detailed private processing records in the initial public form or advise on food handling.",
+        "quoteQuestions": [
+          "Current drop-off windows, how cut instructions are accepted, their deadline, ready-notification method and a staff contact for special requests — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Ask about a processing appointment with species, approximate quantity and preferred timing, then follow the processor's separate instruction process.",
+          "Who should approve the result of this check: Follow a hypothetical appointment from inquiry to collection. Submitting a date request must not mark it booked, and passing the drop-off stage must not hide the instruction deadline."
+        ],
+        "coverageNote": "Website project planning for Jasper County, including the public example in or near Carthage. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://cloudsmeats.com/processing/",
+            "label": "Cloud’s Meats: processing sequence",
+            "observation": "Requires an appointment; gives evening-before or by-8-a.m. drop-off unless otherwise arranged, cutting instructions by phone within 24 hours after drop-off, and pickup after a ready call. No fixed completion deadline is stated."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/jasper"
+        ],
+        "path": "/areas/missouri/jasper-county/",
+        "title": "Web Design for Jasper County, MO",
+        "description": "Web design for Jasper County, MO. Plan appointment preparation, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Jasper County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#jasper",
+            "label": "Jasper County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "b2588543fbc74bec62c69ee1e4814fdffda88e6136e26d85ecc4b1b81b73c172",
+      "afterSha256": "27014582ed16c7b9225af01bc0a6ea64967328cd65de90f905949c67a48bbff0"
+    },
+    {
+      "route": "/areas/missouri/jefferson-county/",
+      "before": {
+        "areaId": "missouri/jefferson",
+        "market": "Jefferson County, MO",
+        "lead": "For a Jefferson County website project, start with the choice a customer needs to make. A teacher needs to select a program that fits the group and logistics before sending buses to a general museum address.",
+        "decisionTitle": "Match the school program to group size, meeting point and available days.",
+        "decision": "Mastodon State Historic Site describes standard and specialized school programs with different group arrangements. Some programs have specific weekdays, and the creek program uses a different meeting point from the museum; an indoor alternative is described for the hike. For your website, I can organize program comparison, program-specific meeting points, school trip request so the next step follows the selected option. Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+        "scopes": [
+          {
+            "title": "Match the school program to group size, meeting point and available days",
+            "pages": [
+              "Program comparison",
+              "Program-specific meeting points",
+              "School trip request"
+            ],
+            "request": "Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+            "supplies": "Current program durations and size limits, available weekdays, exact arrival points, indoor alternatives and who approves exceptions.",
+            "check": "Compare a museum program with creek ecology and change the date to a day that does not fit a specialized program. The request should retain the correct meeting point and require staff confirmation."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect program comparison with school trip request. Agree the content owner and review process before selecting forms or connections. Do not claim that the film or every program is always available; staff resolve access and scheduling questions.",
+        "quoteQuestions": [
+          "Current program durations and size limits, available weekdays, exact arrival points, indoor alternatives and who approves exceptions — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+          "Who should approve the result of this check: Compare a museum program with creek ecology and change the date to a day that does not fit a specialized program. The request should retain the correct meeting point and require staff confirmation."
+        ],
+        "coverageNote": "Website project planning for Jefferson County, including the public example in or near Imperial. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://mostateparks.com/park/mastodon-state-historic-site/interpretive-programs",
+            "label": "Interpretive Programs - Mastodon State Historic Site | Missouri State Parks",
+            "observation": "Published information used to plan program comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://mostateparks.com/historic-site/mastodon-state-historic-site",
+            "label": "Mastodon State Historic Site | Missouri State Parks",
+            "observation": "Published information used to plan program comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/jefferson"
+        ],
+        "path": "/areas/missouri/jefferson-county/",
+        "title": "Web Design for Jefferson County, MO",
+        "description": "Web design for Jefferson County, MO. Plan program comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Jefferson County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#jefferson",
+            "label": "Jefferson County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/jefferson",
+        "market": "Jefferson County, MO",
+        "lead": "For a Jefferson County website project, start with the choice a customer needs to make. A teacher needs to select a program that fits the group and logistics before sending buses to a general museum address.",
+        "decisionTitle": "Match the school program to group size, meeting point and available days.",
+        "decision": "Mastodon State Historic Site describes standard and specialized school programs with different group arrangements. Some programs have specific weekdays, and the creek program uses a different meeting point from the museum; an indoor alternative is described for the hike. For your website, I can organize program comparison, program-specific meeting points, school trip request so the next step follows the selected option. Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+        "scopes": [
+          {
+            "title": "Match the school program to group size, meeting point and available days",
+            "pages": [
+              "Program comparison",
+              "Program-specific meeting points",
+              "School trip request"
+            ],
+            "request": "Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+            "supplies": "Current program durations and size limits, available weekdays, exact arrival points, indoor alternatives and who approves exceptions.",
+            "check": "Compare a museum program with creek ecology and change the date to a day that does not fit a specialized program. The request should retain the correct meeting point and require staff confirmation."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect program comparison with school trip request. Agree the content owner and review process before selecting forms or connections. Do not claim that the film or every program is always available; staff resolve access and scheduling questions.",
+        "quoteQuestions": [
+          "Current program durations and size limits, available weekdays, exact arrival points, indoor alternatives and who approves exceptions — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Identify the program, grade level, headcount, preferred date and any access questions, then ask staff to confirm the visit plan.",
+          "Who should approve the result of this check: Compare a museum program with creek ecology and change the date to a day that does not fit a specialized program. The request should retain the correct meeting point and require staff confirmation."
+        ],
+        "coverageNote": "Website project planning for Jefferson County, including the public example in or near Imperial. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://mostateparks.com/park/mastodon-state-historic-site/interpretive-programs",
+            "label": "Mastodon: program-specific arrangements",
+            "observation": "Creek Ecology meets at the picnic shelter off Seckman Road. Geology and Paleontology and Archaeology are Monday/Tuesday programs. Specialized programs last 90 minutes and encourage 30 or fewer students; indoor alternatives have their own conditions."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/jefferson"
+        ],
+        "path": "/areas/missouri/jefferson-county/",
+        "title": "Web Design for Jefferson County, MO",
+        "description": "Web design for Jefferson County, MO. Plan program comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Jefferson County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#jefferson",
+            "label": "Jefferson County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "7308bd6de72073ee4da4d53273fb9475cd91cc077963ee5b8b8947fc27e00265",
+      "afterSha256": "c846460c015254815352bd8090935cb485dc78b33e2e99e1be4a8a7540af8ede"
+    },
+    {
+      "route": "/areas/missouri/lincoln-county/",
+      "before": {
+        "areaId": "missouri/lincoln",
+        "market": "Lincoln County, MO",
+        "lead": "For a Lincoln County website project, start with the choice a customer needs to make. A guest needs to check what is supplied on the chosen date and whether the party qualifies for that camping option.",
+        "decisionTitle": "Keep seasonal equipment and eligibility beside each camping option.",
+        "decision": "Cuivre River State Park's camping information distinguishes platform sites whose provided tents are removed seasonally from other camping options. Equestrian camping requires a horse, and organized group camps have their own group-size and facility conditions. For your website, I can organize camping option comparison, seasonal supplied equipment, equestrian and group requirements so the next step follows the selected option. Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+        "scopes": [
+          {
+            "title": "Keep seasonal equipment and eligibility beside each camping option",
+            "pages": [
+              "Camping option comparison",
+              "Seasonal supplied equipment",
+              "Equestrian and group requirements"
+            ],
+            "request": "Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+            "supplies": "The current tent-removal season, horse requirement, group-camp size ranges, gate timing and dated closure notices maintained independently of evergreen descriptions.",
+            "check": "Test a platform stay after seasonal tent removal and an equestrian request without a horse. Both must show the unresolved requirement before a booking handoff."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect camping option comparison with equestrian and group requirements. Agree the content owner and review process before selecting forms or connections. The owner supplies the facilities included with each stay and assigns responsibility for dated closure notices.",
+        "quoteQuestions": [
+          "The current tent-removal season, horse requirement, group-camp size ranges, gate timing and dated closure notices maintained independently of evergreen descriptions — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+          "Who should approve the result of this check: Test a platform stay after seasonal tent removal and an equestrian request without a horse. Both must show the unresolved requirement before a booking handoff."
+        ],
+        "coverageNote": "Website project planning for Lincoln County, including the public example in or near Troy. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://mostateparks.com/park/cuivre-river/camping",
+            "label": "Camping - Cuivre River | Missouri State Parks",
+            "observation": "Published information used to plan camping option comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://mostateparks.com/page/cuivre-river-state-park/organized-group-camps-cuivre-river",
+            "label": "Organized Group Camps - Cuivre River | Missouri State Parks",
+            "observation": "Published information used to plan camping option comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://mostateparks.com/park/cuivre-river-state-park",
+            "label": "Cuivre River State Park | Missouri State Parks",
+            "observation": "Published information used to plan camping option comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/lincoln"
+        ],
+        "path": "/areas/missouri/lincoln-county/",
+        "title": "Web Design for Lincoln County, MO",
+        "description": "Web design for Lincoln County, MO. Plan camping option comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Lincoln County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#lincoln",
+            "label": "Lincoln County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/lincoln",
+        "market": "Lincoln County, MO",
+        "lead": "For a Lincoln County website project, start with the choice a customer needs to make. A guest needs to check what is supplied on the chosen date and whether the party qualifies for that camping option.",
+        "decisionTitle": "Keep seasonal equipment and eligibility beside each camping option.",
+        "decision": "Cuivre River State Park's camping information distinguishes platform sites whose provided tents are removed seasonally from other camping options. Equestrian camping requires a horse, and organized group camps have their own group-size and facility conditions. For your website, I can organize camping option comparison, seasonal supplied equipment, equestrian and group requirements so the next step follows the selected option. Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+        "scopes": [
+          {
+            "title": "Keep seasonal equipment and eligibility beside each camping option",
+            "pages": [
+              "Camping option comparison",
+              "Seasonal supplied equipment",
+              "Equestrian and group requirements"
+            ],
+            "request": "Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+            "supplies": "The current tent-removal season, horse requirement, group-camp size ranges, gate timing and dated closure notices maintained independently of evergreen descriptions.",
+            "check": "Test a platform stay after seasonal tent removal and an equestrian request without a horse. Both must show the unresolved requirement before a booking handoff."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect camping option comparison with equestrian and group requirements. Agree the content owner and review process before selecting forms or connections. The owner supplies the facilities included with each stay and assigns responsibility for dated closure notices.",
+        "quoteQuestions": [
+          "The current tent-removal season, horse requirement, group-camp size ranges, gate timing and dated closure notices maintained independently of evergreen descriptions — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Choose the site or group-camp type, dates, party size and relevant equipment, then follow the park's specific booking route.",
+          "Who should approve the result of this check: Test a platform stay after seasonal tent removal and an equestrian request without a horse. Both must show the unresolved requirement before a booking handoff."
+        ],
+        "coverageNote": "Website project planning for Lincoln County, including the public example in or near Troy. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://mostateparks.com/park/cuivre-river/camping",
+            "label": "Cuivre River: seasonal equipment and camping notices",
+            "observation": "Provided platform tents are removed November 1–April 14; campers bring their own. Equestrian campers need a horse. Checked October 27: a dated managed-hunt notice closes camping October 30–November 1, 2026 and the park from 3 p.m. October 30 to 7:30 a.m. November 2."
+          },
+          {
+            "url": "https://mostateparks.com/page/cuivre-river-state-park/organized-group-camps-cuivre-river",
+            "label": "Cuivre River: organized group camps",
+            "observation": "Separate published group-camp arrangements; the operator must confirm current conditions and availability for a proposed group."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/lincoln"
+        ],
+        "path": "/areas/missouri/lincoln-county/",
+        "title": "Web Design for Lincoln County, MO",
+        "description": "Web design for Lincoln County, MO. Plan camping option comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Lincoln County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#lincoln",
+            "label": "Lincoln County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "d2c75dd66fb4323b2773fc75e3968ac8bf17f65f421f37d57fd93ba2679d08e1",
+      "afterSha256": "f9acc626527645c7f5731fb4acb939c74c838e4803bef27d66c0efe7d1e3685b"
+    },
+    {
+      "route": "/areas/missouri/livingston-county/",
+      "before": {
+        "areaId": "missouri/livingston",
+        "market": "Livingston County, MO",
+        "lead": "Different customers may need different preparation before they apply or visit. I help Livingston County organizations compare those routes, explain what to bring and keep questions connected to the right staff contact. Library-card applications offer one example.",
+        "decisionTitle": "Show the preparation that applies to each customer.",
+        "decision": "Local planning example. Livingston County Library distinguishes resident or property-taxpayer eligibility from paid nonresident options. Its application guidance asks for identity and address evidence, has an additional tax-receipt route, and requires a parent to sign in person for children in the stated age range. For your website, I can compare applicant categories and attach the correct preparation checklist to each. Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
+        "scopes": [
+          {
+            "title": "Show which library-card preparation route applies to each applicant",
+            "pages": [
+              "Applicant route comparison",
+              "What to bring",
+              "Child and nonresident applications"
+            ],
+            "request": "Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
+            "supplies": "Approved eligibility wording, accepted evidence, current nonresident term options, child-signature instructions and the branch contact for disputed cases.",
+            "check": "Test a nonresident property owner, a paid nonresident and a parent applying for a child. Each should see the relevant evidence and in-person step without the website deciding eligibility."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify an existing application page. A fuller project can compare customer categories, attach the right preparation checklist and explain the staff review. Identity documents and detailed child information remain in the organization’s approved process.",
+        "quoteQuestions": [
+          "Which customer groups need different instructions?",
+          "What is unclear on your current website?",
+          "Who approves each process and handles exceptions?"
+        ],
+        "coverageNote": "Website project planning for Livingston County, including the public example in or near Chillicothe. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://www.livcolib.org/get-a-library-card/",
+            "label": "Get a Library Card – Livingston County Library",
+            "observation": "Published information used to plan applicant route comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://www.livcolib.org/library-board/",
+            "label": "Library Board Members & Bylaws & Policies – Livingston County Library",
+            "observation": "Published information used to plan applicant route comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/livingston"
+        ],
+        "path": "/areas/missouri/livingston-county/",
+        "title": "Web Design for Livingston County, MO",
+        "description": "Web design for Livingston County, MO. Plan applicant route comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Livingston County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#livingston",
+            "label": "Livingston County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/livingston",
+        "market": "Livingston County, MO",
+        "lead": "Different customers may need different preparation before they apply or visit. I help Livingston County organizations compare those routes, explain what to bring and keep questions connected to the right staff contact. Library-card applications offer one example.",
+        "decisionTitle": "Show the preparation that applies to each customer.",
+        "decision": "Local planning example. Livingston County Library distinguishes resident or property-taxpayer eligibility from paid nonresident options. Its application guidance asks for identity and address evidence, has an additional tax-receipt route, and requires a parent to sign in person for children in the stated age range. For your website, I can compare applicant categories and attach the correct preparation checklist to each. Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
+        "scopes": [
+          {
+            "title": "Show which library-card preparation route applies to each applicant",
+            "pages": [
+              "Applicant route comparison",
+              "What to bring",
+              "Child and nonresident applications"
+            ],
+            "request": "Choose the applicant category and read the corresponding preparation checklist; contact staff about uncertainty without uploading identity documents.",
+            "supplies": "Approved eligibility wording, accepted evidence, current nonresident term options, child-signature instructions and the branch contact for disputed cases.",
+            "check": "Test a nonresident property owner, a paid nonresident and a parent applying for a child. Each should see the relevant evidence and in-person step without the website deciding eligibility."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify an existing application page. A fuller project can compare customer categories, attach the right preparation checklist and explain the staff review. Identity documents and detailed child information remain in the organization’s approved process.",
+        "quoteQuestions": [
+          "Which customer groups need different instructions?",
+          "What is unclear on your current website?",
+          "Who approves each process and handles exceptions?"
+        ],
+        "coverageNote": "Website project planning for Livingston County, including the public example in or near Chillicothe. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://www.livcolib.org/get-a-library-card/",
+            "label": "Livingston County Library: applicant checklists",
+            "observation": "Separates resident/property-taxpayer and paid nonresident routes, with identity/address evidence and a tax receipt where applicable. Ages 5–17 require a parent/legal guardian’s signature before library staff; under-fives use a parent’s card."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/livingston"
+        ],
+        "path": "/areas/missouri/livingston-county/",
+        "title": "Web Design for Livingston County, MO",
+        "description": "Web design for Livingston County, MO. Plan applicant route comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Livingston County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#livingston",
+            "label": "Livingston County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "A quote-request form that asks useful questions"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "f4814b8b5c2680c823b7ea88fcf599b7a8e6eb68ea3c05d2e161138a3284743b",
+      "afterSha256": "40a36a51a6726677ce691aae9c5a173135f8616f54464e09d593854f7771fd23"
+    },
+    {
+      "route": "/areas/missouri/marion-county/",
+      "before": {
+        "areaId": "missouri/marion",
+        "market": "Marion County, MO",
+        "lead": "For a Marion County website project, start with the choice a customer needs to make. A visitor needs to understand the ticket's scope, starting point and building access before arranging a multi-stop day.",
+        "decisionTitle": "Show what a multi-building ticket covers and where a visit begins.",
+        "decision": "The Mark Twain Boyhood Home and Museum describes a ticket covering seven buildings across two days, two ticket-purchase locations and access differences between buildings. Guided arrangements and some other experiences are described separately. For your website, I can organize buildings included with admission, where to buy and start, building access and guided options so the next step follows the selected option. Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+        "scopes": [
+          {
+            "title": "Show what a multi-building ticket covers and where a visit begins",
+            "pages": [
+              "Buildings included with admission",
+              "Where to buy and start",
+              "Building access and guided options"
+            ],
+            "request": "Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+            "supplies": "The approved included-building list, ticket validity, purchase points, current access details and precise descriptions of any separately arranged experiences.",
+            "check": "Test a visitor returning on the second day and one unable to use stairs. Both must understand which buildings and alternatives apply without being told every building has the same access."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect buildings included with admission with building access and guided options. Agree the content owner and review process before selecting forms or connections. Do not bundle nearby attractions, guided extras or performances into the museum ticket without explicit approval.",
+        "quoteQuestions": [
+          "The approved included-building list, ticket validity, purchase points, current access details and precise descriptions of any separately arranged experiences — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+          "Who should approve the result of this check: Test a visitor returning on the second day and one unable to use stairs. Both must understand which buildings and alternatives apply without being told every building has the same access."
+        ],
+        "coverageNote": "Website project planning for Marion County, including the public example in or near Hannibal. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://marktwainmuseum.org/plan-your-visit/visiting-faqs/",
+            "label": "Visiting FAQs | The Mark Twain Boyhood Home & Museum",
+            "observation": "Published information used to plan buildings included with admission. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/marion"
+        ],
+        "path": "/areas/missouri/marion-county/",
+        "title": "Web Design for Marion County, MO",
+        "description": "Web design for Marion County, MO. Plan buildings included with admission, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Marion County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#marion",
+            "label": "Marion County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/marion",
+        "market": "Marion County, MO",
+        "lead": "For a Marion County website project, start with the choice a customer needs to make. A visitor needs to understand the ticket's scope, starting point and building access before arranging a multi-stop day.",
+        "decisionTitle": "Show what a multi-building ticket covers and where a visit begins.",
+        "decision": "The Mark Twain Boyhood Home and Museum describes a ticket covering seven buildings across two days, two ticket-purchase locations and access differences between buildings. Guided arrangements and some other experiences are described separately. For your website, I can organize buildings included with admission, where to buy and start, building access and guided options so the next step follows the selected option. Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+        "scopes": [
+          {
+            "title": "Show what a multi-building ticket covers and where a visit begins",
+            "pages": [
+              "Buildings included with admission",
+              "Where to buy and start",
+              "Building access and guided options"
+            ],
+            "request": "Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+            "supplies": "The approved included-building list, ticket validity, purchase points, current access details and precise descriptions of any separately arranged experiences.",
+            "check": "Test a visitor returning on the second day and one unable to use stairs. Both must understand which buildings and alternatives apply without being told every building has the same access."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect buildings included with admission with building access and guided options. Agree the content owner and review process before selecting forms or connections. Do not bundle nearby attractions, guided extras or performances into the museum ticket without explicit approval.",
+        "quoteQuestions": [
+          "The approved included-building list, ticket validity, purchase points, current access details and precise descriptions of any separately arranged experiences — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Choose an independent or guided visit, review building-specific access information and follow the museum's current ticket or group instructions.",
+          "Who should approve the result of this check: Test a visitor returning on the second day and one unable to use stairs. Both must understand which buildings and alternatives apply without being told every building has the same access."
+        ],
+        "coverageNote": "Website project planning for Marion County, including the public example in or near Hannibal. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://marktwainmuseum.org/plan-your-visit/visiting-faqs/",
+            "label": "Mark Twain Museum: admission and access",
+            "observation": "Lists seven included buildings, two-day admission, ticket sales at the Interpretive Center or Gallery, and building-specific access alternatives. Guided arrangements are separate."
+          },
+          {
+            "url": "https://marktwainmuseum.org/plan-your-visit/interactive-map/",
+            "label": "Mark Twain Museum: purchase-point addresses",
+            "observation": "Places the Interpretive Center at 415 North Main Street and Museum Gallery at 120 North Main Street. The map has additional points beyond the admission list."
+          },
+          {
+            "url": "https://marktwainmuseum.org/plan-your-visit/directions-parking/",
+            "label": "Mark Twain Museum: recommended start",
+            "observation": "Directs visitors to start at the Interpretive Center."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/marion"
+        ],
+        "path": "/areas/missouri/marion-county/",
+        "title": "Web Design for Marion County, MO",
+        "description": "Web design for Marion County, MO. Plan buildings included with admission, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Marion County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#marion",
+            "label": "Marion County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "0fcd0e4bef834a30b12da9d54919447c823ba5262ab1719d4128f8791dc07757",
+      "afterSha256": "dc1d8b31856bcbbde9ae531ec3052087c161fb1cd3997a7b696737ec49c85812"
+    },
+    {
+      "route": "/areas/missouri/miller-county/",
+      "before": {
+        "areaId": "missouri/miller",
+        "market": "Miller County, MO",
+        "lead": "For a Miller County website project, start with the choice a customer needs to make. A party needs to choose an experience that fits its members and booking preparation rather than selecting only by the attraction name.",
+        "decisionTitle": "Compare cave experiences by age, party size and advance booking.",
+        "decision": "Stark Caverns distinguishes its standard cave visit from specialty experiences. Its black-light tour has an age minimum, and its escape-room experience specifies a participant range; the specialty offerings have their own advance-booking instructions. For your website, I can organize experience comparison, age and group-size requirements, specialty booking preparation so the next step follows the selected option. Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+        "scopes": [
+          {
+            "title": "Compare cave experiences by age, party size and advance booking",
+            "pages": [
+              "Experience comparison",
+              "Age and group-size requirements",
+              "Specialty booking preparation"
+            ],
+            "request": "Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+            "supplies": "Approved descriptions, current age and party-size limits, durations, required lead times and the correct booking destination for each experience.",
+            "check": "Try a family below the specialty age minimum and a party outside the escape-room size range. The page should surface the mismatch and invite operator advice rather than accept an unsuitable selection."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect experience comparison with specialty booking preparation. Agree the content owner and review process before selecting forms or connections. The owner supplies current specialty-event dates and visitor requirements and approves their future updates.",
+        "quoteQuestions": [
+          "Approved descriptions, current age and party-size limits, durations, required lead times and the correct booking destination for each experience — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+          "Who should approve the result of this check: Try a family below the specialty age minimum and a party outside the escape-room size range. The page should surface the mismatch and invite operator advice rather than accept an unsuitable selection."
+        ],
+        "coverageNote": "Website project planning for Miller County, including the public example in or near Eldon. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://www.starkcaverns.com/daily-tours-1",
+            "label": "Location, Hours and Rates | Visit and Discover Today — Stark Caverns",
+            "observation": "Published information used to plan experience comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          },
+          {
+            "url": "https://www.starkcaverns.com/ozark-howler",
+            "label": "Ozark Howler Ghost Walk | Explore Ozark Legends– Book Your Tour — Stark Caverns",
+            "observation": "Published information used to plan experience comparison. The example in the main text draws on the linked source set; current terms should be checked with the operator."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/miller"
+        ],
+        "path": "/areas/missouri/miller-county/",
+        "title": "Web Design for Miller County, MO",
+        "description": "Web design for Miller County, MO. Plan experience comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Miller County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#miller",
+            "label": "Miller County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "after": {
+        "areaId": "missouri/miller",
+        "market": "Miller County, MO",
+        "lead": "For a Miller County website project, start with the choice a customer needs to make. A party needs to choose an experience that fits its members and booking preparation rather than selecting only by the attraction name.",
+        "decisionTitle": "Compare cave experiences by age, party size and advance booking.",
+        "decision": "Stark Caverns distinguishes its standard cave visit from specialty experiences. Its black-light tour has an age minimum, and its escape-room experience specifies a participant range; the specialty offerings have their own advance-booking instructions. For your website, I can organize experience comparison, age and group-size requirements, specialty booking preparation so the next step follows the selected option. Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+        "scopes": [
+          {
+            "title": "Compare cave experiences by age, party size and advance booking",
+            "pages": [
+              "Experience comparison",
+              "Age and group-size requirements",
+              "Specialty booking preparation"
+            ],
+            "request": "Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+            "supplies": "Approved descriptions, current age and party-size limits, durations, required lead times and the correct booking destination for each experience.",
+            "check": "Try a family below the specialty age minimum and a party outside the escape-room size range. The page should surface the mismatch and invite operator advice rather than accept an unsuitable selection."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify this decision on an existing site. A fuller project can connect experience comparison with specialty booking preparation. Agree the content owner and review process before selecting forms or connections. The owner supplies current specialty-event dates and visitor requirements and approves their future updates.",
+        "quoteQuestions": [
+          "Approved descriptions, current age and party-size limits, durations, required lead times and the correct booking destination for each experience — which of these can you supply?",
+          "Which parts of this proposed request should your team change: Identify the experience, date, participant count and relevant age range before following the appropriate booking route.",
+          "Who should approve the result of this check: Try a family below the specialty age minimum and a party outside the escape-room size range. The page should surface the mismatch and invite operator advice rather than accept an unsuitable selection."
+        ],
+        "coverageNote": "Website project planning for Miller County, including the public example in or near Eldon. Wonder and Method works online from Buffalo, New York. The named organization is a public example, not a client or partner.",
+        "sources": [
+          {
+            "url": "https://www.starkcaverns.com/daily-tours",
+            "label": "Stark Caverns: Daily Tours",
+            "observation": "Approximately one-hour guided tour open to all ages; ordinary tours have their own admission route."
+          },
+          {
+            "url": "https://www.starkcaverns.com/blacklight-tours",
+            "label": "Stark Caverns: Black Light requirements",
+            "observation": "Excludes children under eight and requires online purchase at least three hours ahead."
+          },
+          {
+            "url": "https://www.starkcaverns.com/escape-room",
+            "label": "Stark Caverns: Bootlegger’s Bequest",
+            "observation": "Lists a 60-minute game for 4–10, with ages ten-plus in the overview but younger-player discussion in its FAQ. Advance online booking is required; no numeric cutoff was found. Age exceptions need operator confirmation."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "missouri/miller"
+        ],
+        "path": "/areas/missouri/miller-county/",
+        "title": "Web Design for Miller County, MO",
+        "description": "Web design for Miller County, MO. Plan experience comparison, prepare useful inquiries and test the customer decision.",
+        "servedAreas": [
+          {
+            "name": "Miller County",
+            "state": "Missouri",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/missouri/#miller",
+            "label": "Miller County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/experience-product-choice/",
+            "label": "Tour booking pages: compare access and options"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "fed09dd5d96109c0eac9ae5b404ebf61c83f9238ccaa16d74c48850a90cf637c",
+      "afterSha256": "c47501e646295416327ce9477f07b19b79747f3f0a5af054621ad6a72c42baa9"
+    }
+  ],
+  "faqChanges": [],
+  "research": "operations/human-quality-20261027/research/missouri-residual-fact-recheck.json",
+  "limits": "Drafts not imported. Current source observations changed; exact independent recheck and guarded acceptance remain pending. Unresolved operator facts are explicitly bounded.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-combined-recheck.jsonl",
+    "reviewFileSha256": "89f1fadbb9fdb8f1d991818c8e5709050a40c5f9550413c63c0ec350cb1c9ffb",
+    "exactCandidates": 7,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

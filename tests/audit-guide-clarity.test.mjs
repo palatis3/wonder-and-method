@@ -315,9 +315,9 @@ test('form troubleshooting finishes owner checks before help and points to the B
  assert.match(sections('contact-form-not-working').at(-1).body,/^<details>/);
 });
 
-test('Google diagnosis defines terms, gives the first check, and keeps server detail closed',()=>{
+test('Google diagnosis identifies the missing result, gives the first check, and keeps server detail closed',()=>{
  const content=sections('website-not-showing-on-google');
- assert.deepEqual(content.slice(0,3).map(x=>x.id),['define','plain-search-terms','inspection-steps']);
+ assert.deepEqual(content.slice(0,3).map(x=>x.id),['define','inspection-steps','specific-index-checks']);
  assert.match(content[0].body,/page.*search.*date/i);assert.match(content.find(x=>x.id==='plain-search-terms').body,/Google’s free tool/);
  assert.match(content.find(x=>x.id==='inspection-steps').body,/leave it hidden/);
  assert.doesNotMatch(content.slice(0,-1).map(x=>x.body).join(''),/X-Robots-Tag|HTML robots directive/);
@@ -388,9 +388,15 @@ test('guide figures remain fully present, short answers align with prose, and na
   assert.ok(html.indexOf('class="guide-decision"')<html.indexOf('<section id="'));
   for(const marker of ['<figure class="journal-hero','<ol class="guide-steps'])if(html.includes(marker))assert.ok(html.indexOf(marker)>html.indexOf('</section>'),item.path+' owner step precedes the supporting visual');
   assert.doesNotMatch(html,/journal-visual|Get help with this decision/);
-  assert.equal(html.includes('class="journal-toc"'),journalSections(item.path,offers).length>=6,item.path);
+  const sections=journalSections(item.path,offers);
+  if(sections.length>=6)assert.ok(html.includes('class="journal-toc"'),item.path);
+  const toc=html.match(/<details class="journal-toc">([\s\S]*?)<\/details>/)?.[1];
+  if(toc){
+   assert.equal((toc.match(/<li>/g)||[]).length,sections.length,item.path+' table of contents has one link per consolidated topic');
+   for(const section of sections)assert.ok(toc.includes(`href="#${section.id}"`),item.path+' links its current topics');
+  }
   assert.equal((html.match(/<article class="journal-card journal-card-text">/g)||[]).length,2,item.path);
-  assert.match(item.category,/Fix a problem|Plan a website|Search visibility|Ongoing care|Business workflows|Local website cases/);
+  assert.match(item.category,/Fix a problem|Plan a website|Search visibility|Ongoing care|Forms, bookings and customer instructions|Local website cases/);
  }
  const index=journalIndex(journal);
  assert.match(index,/href="#planning-tools">Planning tool/);

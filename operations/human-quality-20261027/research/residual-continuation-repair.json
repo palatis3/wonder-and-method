@@ -1,0 +1,277 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/florida/liberty-county/",
+    "/areas/florida/manatee-county/",
+    "/areas/florida/palm-beach-county/",
+    "/areas/massachusetts/plymouth-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-a.jsonl",
+    "operations/human-quality-20261027/audits/local-after-residual-b.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/florida/liberty-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/liberty-county/",
+        "inputHash": "707eebff43d0c496321cfea003478fc3e6106969dbd2af7d254edf576a7ef75b",
+        "heading": "Pair each stake size with its own quantity.",
+        "intro": "A buyer may need a listed wooden stake and a custom size in one order. Your product page can explain dimension conventions and keep the quantities separate so staff do not have to divide an ambiguous combined total.",
+        "customerQuestion": "How should I describe two sizes and the quantity needed for each?",
+        "decisions": [
+          {
+            "label": "Use consistent dimension labels",
+            "body": "Publish the supplier’s approved size descriptions with clear dimension order and units. A customer should be able to identify a listed product without guessing which measurement refers to which side."
+          },
+          {
+            "label": "Keep listed and custom lines separate",
+            "body": "Invite one record for each requested size, its quantity and any custom requirement. Let intended use or uncertainty accompany a custom line while the supplier confirms whether it can be supplied."
+          },
+          {
+            "label": "Attach the fulfillment question",
+            "body": "Keep the actual destination and timing question with the complete list. Explain what staff need for delivery review without implying that published sizes establish current stock, production capacity or an accepted quote."
+          }
+        ],
+        "ownerInputs": [
+          "Approved size list, dimension terminology and units.",
+          "Custom-order boundaries and an accurate mixed-size example.",
+          "Destination information and current quote/delivery review process."
+        ],
+        "sourceBridge": "Whitfield Stakes identifies a Bristol base and publishes common wooden-stake sizes with custom cutting, delivery and phone quotes. Its published PO box is a mailing address, not arrival directions. The useful website improvement is a clear mixed-size request connected to the existing quote route.",
+        "limits": "The supplier verifies specifications, quantities and fulfillment. A stronger published example should use actual approved size labels instead of invented dimensions. Automatic estimates, live stock counts and delivery scheduling need separate scope; a prepared list can support ordinary contact.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/liberty-county/",
+        "inputHash": "707eebff43d0c496321cfea003478fc3e6106969dbd2af7d254edf576a7ef75b",
+        "heading": "Pair each stake size with its own quantity.",
+        "intro": "A buyer may need a listed wooden stake and a custom size in one order. Your product page can explain dimension conventions and keep the quantities separate so staff do not have to divide an ambiguous combined total.",
+        "customerQuestion": "How should I describe two sizes and the quantity needed for each?",
+        "decisions": [
+          {
+            "label": "Use consistent dimension labels",
+            "body": "Publish the supplier’s approved size descriptions with clear dimension order and units. A customer should be able to identify a listed product without guessing which measurement refers to which side."
+          },
+          {
+            "label": "Keep listed and custom lines separate",
+            "body": "Invite one record for each requested size, its quantity and any custom requirement. Fictional request with placeholders: “Listed item: [supplier’s published size label], quantity 40. Custom item: [requested dimensions, order and units], quantity 15; please review whether this size can be supplied.” The quantities illustrate two separate lines, not minimum-order terms. Leave unknown dimensions visible for staff to clarify."
+          },
+          {
+            "label": "Attach the fulfillment question",
+            "body": "Keep the actual destination and timing question with the complete list. Explain what staff need for delivery review without implying that published sizes establish current stock, production capacity or an accepted quote."
+          }
+        ],
+        "ownerInputs": [
+          "Approved size list, dimension terminology and units.",
+          "Custom-order boundaries and an accurate mixed-size example.",
+          "Destination information and current quote/delivery review process."
+        ],
+        "sourceBridge": "Whitfield Stakes identifies a Bristol base and publishes common wooden-stake sizes with custom cutting, delivery and phone quotes. Its published PO box is a mailing address, not arrival directions. The useful website improvement is a clear mixed-size request connected to the existing quote route.",
+        "limits": "The supplier verifies specifications, quantities and fulfillment. Use the supplier’s approved dimension labels when completing the illustrative request. Automatic estimates, live stock counts and delivery scheduling need separate scope; a prepared list can support ordinary contact.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "8f4a8f1bb3ccd8b3c2b57fa9bbe87f5fafa8d40065a0046278bb7956f48e2fdc",
+      "afterSha256": "fddd476a04a1beab595f9e1f062a0fee91d5169c33764cea5351a06cbf990f8e"
+    },
+    {
+      "route": "/areas/florida/manatee-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/manatee-county/",
+        "inputHash": "aaca2af30bd55a635cae80489605a13b586ac81a9de256c7bdf1a0851c13cc39",
+        "heading": "Separate the condition of a cover from what its replacement must do.",
+        "intro": "A boat owner with damaged canvas may be unsure whether to ask for restitching, a repair or a new cover. Your service page can prepare that conversation without asking the owner to judge the material’s remaining life.",
+        "customerQuestion": "Can you assess my damaged cover, or should I ask about a replacement?",
+        "decisions": [
+          {
+            "label": "Describe the existing item",
+            "body": "Ask for the overall cover, enclosure or cushion and the detail photographs your team finds useful. Keep the boat and current arrangement identifiable, including the frame or attachment details needed for an initial conversation."
+          },
+          {
+            "label": "Explain the intended result",
+            "body": "Distinguish keeping an existing item in service from changing protection, shade or seating. Organize examples by those functions so a visitor does not select a storage cover when seeking an enclosure."
+          },
+          {
+            "label": "Arrange the specialist review",
+            "body": "Explain how to discuss boat access and what happens after an inquiry. Make clear that a photograph can introduce the problem while reuse of fabric, hardware or patterns depends on the fabricator’s assessment."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted repair types and useful photo guidance.",
+          "Approved examples labeled by function and actual fitting work.",
+          "Initial assessment and boat-access arrangements."
+        ],
+        "sourceBridge": "KTM Custom Marine Canvas in Bradenton lists storage covers, enclosures, upholstery, repairs, restitching and pattern fabrication. The service range supports a practical distinction between describing an existing item and defining a new one’s purpose. Its published contact address provides local context.",
+        "limits": "An owner-approved example would make the explanation stronger: show what the initial pictures revealed and which decisions required inspection. Pattern suitability, material condition and fitting remain specialist decisions. Automated boat-fit recommendations and job tracking require separate scope; concise preparation guidance can support the current contact route.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/manatee-county/",
+        "inputHash": "aaca2af30bd55a635cae80489605a13b586ac81a9de256c7bdf1a0851c13cc39",
+        "heading": "Separate the condition of a cover from what its replacement must do.",
+        "intro": "A boat owner with damaged canvas may be unsure whether to ask for restitching, a repair or a new cover. Your service page can prepare that conversation without asking the owner to judge the material’s remaining life.",
+        "customerQuestion": "Can you assess my damaged cover, or should I ask about a replacement?",
+        "decisions": [
+          {
+            "label": "Describe the existing item",
+            "body": "Ask for the overall cover, enclosure or cushion and the detail photographs your team finds useful. Keep the boat and current arrangement identifiable, including the frame or attachment details needed for an initial conversation."
+          },
+          {
+            "label": "Explain the intended result",
+            "body": "Distinguish keeping an existing item in service from changing protection, shade or seating. Fictional comparison: “The seam has opened on this storage cover; can you assess a repair?” asks about an existing function. “I want an enclosure for a different use” asks about a new result. Label examples by the function involved so the first request does not silently become the second."
+          },
+          {
+            "label": "Arrange the specialist review",
+            "body": "Explain how to discuss boat access and what happens after an inquiry. In the fictional repair request, an overall photograph identifies the cover and a close-up shows the reported seam. Neither establishes the fabric’s remaining life or whether a pattern can be reused; those decisions need the fabricator’s assessment."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted repair types and useful photo guidance.",
+          "Approved examples labeled by function and actual fitting work.",
+          "Initial assessment and boat-access arrangements."
+        ],
+        "sourceBridge": "KTM Custom Marine Canvas in Bradenton lists storage covers, enclosures, upholstery, repairs, restitching and pattern fabrication. The service range supports a practical distinction between describing an existing item and defining a new one’s purpose. Its published contact address provides local context.",
+        "limits": "The comparison is fictional, not an account of KTM’s completed work. Pattern suitability, material condition and fitting remain specialist decisions. Automated boat-fit recommendations and job tracking require separate scope; preparation guidance can support the current contact route.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "610afea97d1428b6a8a49829c44d8f3995a75e8d8bc399984c3cb0c88aed5947",
+      "afterSha256": "bc4f3b1b079f59a154843d830af0a496a2e388b68e53043543fa62197ef42e3a"
+    },
+    {
+      "route": "/areas/florida/palm-beach-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/palm-beach-county/",
+        "inputHash": "7e9d9fc56497fa4a323db559dd0efd05295d107ad38361cc28090892d5f982b3",
+        "heading": "Keep each property identifiable inside a shared sign program.",
+        "intro": "A company may want consistent branding at several addresses while each property starts with different signs and installation questions. Your website can explain how customers prepare the overall brief and the details that belong to each location.",
+        "customerQuestion": "How should I describe one new location and one replacement-sign project under the same brand?",
+        "decisions": [
+          {
+            "label": "Set out the shared purpose",
+            "body": "Ask for approved brand references, program goals and the overall decision-maker. Identify what should remain consistent while allowing for location-specific wording or business-name differences."
+          },
+          {
+            "label": "Keep a separate record for each site",
+            "body": "Retain each address, existing conditions, requested change and local contact. A new opening and a replacement project should remain distinguishable even when both use the same logo and are discussed in one request."
+          },
+          {
+            "label": "Explain survey and installation responsibilities",
+            "body": "Describe your team’s actual coordination role, site review and completion communication. Keep timing and access questions attached to the relevant property rather than present one accepted design as a complete installation plan everywhere."
+          }
+        ],
+        "ownerInputs": [
+          "Actual program coordination and client-contact responsibilities.",
+          "Useful site details, survey arrangements and installation roles.",
+          "An approved example showing different starting conditions at two properties."
+        ],
+        "sourceBridge": "West Palm Beach Signs describes site surveys, sign acquisition and installation, including coordination across multiple locations. Its contact page identifies West Palm Beach. This supports the general program-versus-site distinction; a real approved project example would show how that distinction works in practice.",
+        "limits": "The sign company and project professionals establish requirements at each property. Do not invent a standard sequence from broad service descriptions. Live dashboards, permit tracking and production scheduling require separate scope; accurate project explanations can support the current inquiry and coordination process.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/palm-beach-county/",
+        "inputHash": "7e9d9fc56497fa4a323db559dd0efd05295d107ad38361cc28090892d5f982b3",
+        "heading": "Keep each property identifiable inside a shared sign program.",
+        "intro": "A company may want consistent branding at several addresses while each property starts with different signs and installation questions. Your website can explain how customers prepare the overall brief and the details that belong to each location.",
+        "customerQuestion": "How should I describe one new location and one replacement-sign project under the same brand?",
+        "decisions": [
+          {
+            "label": "Set out the shared purpose",
+            "body": "Ask for approved brand references, program goals and the overall decision-maker. Identify what should remain consistent while allowing for location-specific wording or business-name differences."
+          },
+          {
+            "label": "Keep a separate record for each site",
+            "body": "Retain each address, existing conditions, requested change and local contact. Fictional request: “Both sites use the approved logo. Site A is a new opening with no existing sign; please review the proposed location. Site B needs its existing sign replaced; please assess what can remain.” Keep each property’s photographs, access contact and requested date with its own record. The shared logo does not establish identical site requirements."
+          },
+          {
+            "label": "Explain survey and installation responsibilities",
+            "body": "Describe your team’s actual coordination role, site review and completion communication. Keep timing and access questions attached to the relevant property rather than present one accepted design as a complete installation plan everywhere."
+          }
+        ],
+        "ownerInputs": [
+          "Actual program coordination and client-contact responsibilities.",
+          "Useful site details, survey arrangements and installation roles.",
+          "An approved example showing different starting conditions at two properties."
+        ],
+        "sourceBridge": "West Palm Beach Signs describes site surveys, sign acquisition and installation, including coordination across multiple locations. Its contact page identifies West Palm Beach. Those services support the distinction between a shared brand program and the conditions at each property.",
+        "limits": "The two-property request is fictional, not a completed client project or the operator’s standard sequence. The sign company and project professionals establish requirements at each property. Live dashboards, permit tracking and production scheduling require separate scope.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "dd2a2d4cb529cfbbc931013c9ace8a9d99802b60cc57156d3694258a6fa7f6c8",
+      "afterSha256": "02eae740e6a70d013410af364852ef2b617bd202d7eff66a63a0a085a3b42c7d"
+    },
+    {
+      "route": "/areas/massachusetts/plymouth-county/",
+      "partition": 2,
+      "before": {
+        "heading": "Explain whether the project starts with an existing piece",
+        "intro": "Work fitted to furniture a customer owns begins differently from a request for something new. A custom-work website should identify that starting point before asking for details that assume an object already exists.",
+        "customerQuestion": "Am I asking about an existing piece, or describing a new result I want to discuss?",
+        "decisions": [
+          {
+            "label": "State the work the business actually accepts",
+            "body": "Use current service descriptions and approved examples to explain the relevant starting situations. For a business offering both, fitted work and new custom items can have separate explanations within one site. Verify the offer before attributing either service to a named operator."
+          },
+          {
+            "label": "Ask for a useful initial description",
+            "body": "An existing-piece inquiry can identify the item and requested change; a new-item discussion begins with the intended result. Do not require the second customer to describe furniture that does not yet exist. Keep dimensions or visual references as preliminary context rather than final production specifications."
+          },
+          {
+            "label": "Show the later consultation and review",
+            "body": "Explain what the business must inspect, measure or select and how customers arrange the appropriate discussion. Connect approved examples to that process. One ordinary inquiry may begin both conversations when the team can identify the type of request and provide the correct next step."
+          }
+        ],
+        "ownerInputs": [
+          "Verified accepted work and first questions for each starting point.",
+          "Approved examples with accurate service descriptions.",
+          "Actual inspection, measurement and consultation arrangements."
+        ],
+        "sourceBridge": "Plymouth Upholstery & Decor's cited public information supports fabric browsing, showroom visits and an in-home consultation route. The existing-piece versus new-item comparison here is a proposed content pattern; the cited summary alone does not establish a new custom-furniture offer.",
+        "limits": "Confirm any new-item service before publication or attribution. The owner determines fit, measurements and final selections; photo uploads, configuration tools and calculated custom prices need separate assessment.",
+        "route": "/areas/massachusetts/plymouth-county/",
+        "inputHash": "4dd7a7ba19001aeb7d01e1293495ab88970c992a6cbccbab3a97782dbd165539"
+      },
+      "after": {
+        "heading": "Choose how to discuss the fabric and the room it will sit in",
+        "intro": "Browsing fabric can help a customer identify a preference while leaving questions about an existing piece and its room. An upholstery website should explain showroom and in-home consultation routes so customers can ask which discussion fits their needs.",
+        "customerQuestion": "Should I start by browsing fabrics, visit the showroom or ask about a consultation at home?",
+        "decisions": [
+          {
+            "label": "Keep the fabric reference with the existing piece",
+            "body": "Explain how the business identifies a fabric the customer has seen online and what initial item details are useful. Keep a style preference separate from confirmation that the material suits the proposed work. A photograph of a fabric is a starting reference, not a verified match for an existing chair."
+          },
+          {
+            "label": "Make the two consultation routes clear",
+            "body": "Describe current showroom visiting arrangements and how to request an in-home consultation. A fictional inquiry makes the choice concrete: “I have an existing chair and a fabric reference. Would a showroom discussion be a useful first step, or should I ask about seeing the chair in its room?” Staff can explain what they need before arranging either route; the example does not establish a required sequence."
+          },
+          {
+            "label": "Explain what needs confirmation before a visit",
+            "body": "Ask the owner to supply the preparation instructions, consultation coverage and appointment terms that apply. Tell customers whether to send initial photographs or wait for staff guidance, using the actual process. Keep the requested visit distinct from a confirmed appointment, and leave inspection, measurements and final fabric choices with the business."
+          }
+        ],
+        "ownerInputs": [
+          "Current fabric-reference and initial item-description guidance.",
+          "Showroom visiting arrangements and in-home consultation coverage.",
+          "Approved preparation instructions, appointment terms and confirmation route."
+        ],
+        "sourceBridge": "Plymouth Upholstery & Decor invites fabric browsing, showroom visits and requests for an in-home consultation. Those documented routes support helping a customer choose how to discuss an existing piece and fabric preference. The inquiry above is fictional, not the business’s published form or a client project.",
+        "limits": "The business confirms accepted work, visit coverage, fit, measurements and final selections. The example does not promise a home visit or establish consultation charges. Photo uploads, appointment tools and calculated custom prices need separate website assessment.",
+        "route": "/areas/massachusetts/plymouth-county/",
+        "inputHash": "4dd7a7ba19001aeb7d01e1293495ab88970c992a6cbccbab3a97782dbd165539"
+      },
+      "beforeSha256": "0208fb156a56e8cdb0e94fc76ec63123dc87fcbd1fdaebb01ee4418f510b398c",
+      "afterSha256": "bcb27b2b47861d53dac0068aa1f1c40643799e558856303119f7dbb6e3531c83"
+    }
+  ],
+  "limits": "Drafts only. Source records, FAQs and imported briefs unchanged; exact recheck required before import.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-combined-recheck.jsonl",
+    "reviewFileSha256": "89f1fadbb9fdb8f1d991818c8e5709050a40c5f9550413c63c0ec350cb1c9ffb",
+    "exactCandidates": 4,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

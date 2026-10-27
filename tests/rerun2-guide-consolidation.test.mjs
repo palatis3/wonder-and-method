@@ -28,9 +28,9 @@ test('every guide has an ordered section definition and unique rendered bookmark
 });
 
 test('consolidation keeps historical section bookmarks at their final reading positions',()=>{
- assert.equal(sections('website-project-cost')[0].id,'dated-price-example');
- assert.match(sections('website-project-cost')[0].body,/^<span id="start-with-scope"><\/span>/);
- assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['define','plain-search-terms','inspection-steps']);
+ assert.equal(sections('website-project-cost')[0].id,'ongoing-costs');
+ assert.match(sections('website-project-cost').find(section=>section.id==='dated-price-example').body,/^<span id="start-with-scope"><\/span>/);
+ assert.deepEqual(sections('website-not-showing-on-google').slice(0,3).map(section=>section.id),['define','inspection-steps','specific-index-checks']);
  assert.match(sections('website-not-showing-on-google').find(section=>section.id==='inspection-steps').body,/^<span id="index"><\/span><span id="intent"><\/span>/);
  assert.match(sections('website-not-showing-on-google').find(section=>section.id==='define').body,/^<span id="discovery"><\/span>/);
  assert.deepEqual(sections('contact-form-not-working').slice(0,5).map(section=>section.id),['five-minute-check','page','platform-settings','verify','review-options']);
@@ -40,7 +40,9 @@ test('consolidation keeps historical section bookmarks at their final reading po
  for(const id of ['receipt','notification'])assert.ok(technical.body.includes(`<div id="${id}">`));
  assert.match(sections('website-launch-checklist')[0].body,/^<span id="launch-check-tools"><\/span>/);
  const migration=sections('website-migration-checklist').map(section=>section.id);
- assert.equal(migration.indexOf('redirect-example')+1,migration.indexOf('before'));
+ assert.equal(migration.indexOf('content-inventory')+1,migration.indexOf('map'));
+ assert.match(sections('website-migration-checklist').find(section=>section.id==='content-inventory').body,/<span id="redirect-example"><\/span>/);
+ assert.equal(migration.indexOf('map')+1,migration.indexOf('before'));
 });
 
 test('guide renders do not share mutable section objects or mutate offer inputs',()=>{

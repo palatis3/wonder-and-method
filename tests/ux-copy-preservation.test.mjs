@@ -6,12 +6,13 @@ import faqs from '../src/service-faqs.json' with {type:'json'};
 import fixture from './fixtures/ux-copy-edits.json' with {type:'json'};
 import ledger from '../operations/ux-improvements-20261027/local-copy-changes.json' with {type:'json'};
 import {beforeReviewedUxCopyEdits,beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
+import {beforeReviewedHumanQualityEdits} from './fixtures/reviewed-human-quality-edits.mjs';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 test('UX copy acceptance restores only the 49 reviewed records and one multilingual FAQ',()=>{
  assert.equal(fixture.records.length,49);assert.equal(fixture.records.reduce((n,r)=>n+r.edits.length,0),295);
  assert.deepEqual(fixture.records.map(r=>r.path).sort(),ledger.changes.map(r=>r.path).sort());
  for(const change of fixture.records){
-  const current=records.find(r=>r.path===change.path),before=beforeReviewedUxCopyEdits(current);
+  const live=records.find(r=>r.path===change.path),current=beforeReviewedHumanQualityEdits(live),before=beforeReviewedUxCopyEdits(live);
   assert.equal(hash(before),change.beforeSha256);assert.equal(hash(current),change.afterSha256);
   const logged=ledger.changes.find(r=>r.path===change.path);
   assert.deepEqual(change.edits.map(e=>'/'+e.path.join('/')).sort(),logged.fields.map(e=>e.field).sort());

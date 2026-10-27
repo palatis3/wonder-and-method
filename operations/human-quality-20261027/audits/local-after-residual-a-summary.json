@@ -1,0 +1,2331 @@
+{
+  "batch": "residual-a",
+  "reviewer": "Independent Astra",
+  "reviewedAt": "2026-10-27",
+  "status": "complete-content-review",
+  "assignedCount": 150,
+  "reviewedCount": 150,
+  "pendingCount": 0,
+  "stopReason": null,
+  "completedPackets": [
+    "packet-001.jsonl",
+    "packet-002.jsonl",
+    "packet-003.jsonl",
+    "packet-004.jsonl",
+    "packet-005.jsonl",
+    "packet-006.jsonl",
+    "packet-007.jsonl",
+    "packet-008.jsonl",
+    "packet-009.jsonl",
+    "packet-010.jsonl",
+    "packet-011.jsonl",
+    "packet-012.jsonl",
+    "packet-013.jsonl",
+    "packet-014.jsonl",
+    "packet-015.jsonl",
+    "packet-016.jsonl",
+    "packet-017.jsonl",
+    "packet-018.jsonl",
+    "packet-019.jsonl",
+    "packet-020.jsonl",
+    "packet-021.jsonl",
+    "packet-022.jsonl",
+    "packet-023.jsonl",
+    "packet-024.jsonl",
+    "packet-025.jsonl",
+    "packet-026.jsonl",
+    "packet-027.jsonl",
+    "packet-028.jsonl",
+    "packet-029.jsonl",
+    "packet-030.jsonl"
+  ],
+  "reviewedRoutes": [
+    {
+      "route": "/areas/broome-county/",
+      "candidateBodySha256": "d111d5a37f6256b68f7c5b4e5b8ea6a049065a2df54352bce4963b8e22e22bb0",
+      "draftSha256": "b2f9891a544e07c50867e56d80bd7cc42679a04a9314f74883a764c150ca4880"
+    },
+    {
+      "route": "/areas/chautauqua-county/",
+      "candidateBodySha256": "0307f3f51fb35c3fdb3fa83e79db62ef28aff93dbad94c5b5cb5ea41b7e54ff1",
+      "draftSha256": "33c4a1044f08caf64a1661954b1ca49b838271408f3fec569c0b175dd202ffd6"
+    },
+    {
+      "route": "/areas/columbia-county/",
+      "candidateBodySha256": "559a0a48c6862581fdc6bbf14114d1f25783765b7d08b68f939264143a60236d",
+      "draftSha256": "77f1f12921416f32159a6cf15f3d38de66c580f29127a070f8e700376b361056"
+    },
+    {
+      "route": "/areas/connecticut/capitol-planning-region/",
+      "candidateBodySha256": "233e19e375ef58268260570c172cb29ad2cf9a0ee7e822d5d245992642a17f08",
+      "draftSha256": "3fee3c53f6e5c1d39bf1271f1c647ead6c8f823a2769241e25088e82dc7c92af"
+    },
+    {
+      "route": "/areas/connecticut/greater-bridgeport-planning-region/",
+      "candidateBodySha256": "4cc6d4308d141b806795f75d3725bda5042e9ed80899148492b90d87f6c83eeb",
+      "draftSha256": "a1b1372277a5fe9ffab9655e788eec77953aba360160ef1cdaad0842045b5ddf"
+    },
+    {
+      "route": "/areas/connecticut/lower-connecticut-river-valley-planning-region/",
+      "candidateBodySha256": "22aa59402c26cb786ff05ab67a164b237139abf30b8725b6086ff762f69ce207",
+      "draftSha256": "90298d8aff902d1fc4ad4da6e7401a931ab39e3102d29aa0fd6a47e9fb08e4ac"
+    },
+    {
+      "route": "/areas/connecticut/naugatuck-valley-planning-region/",
+      "candidateBodySha256": "13d0ef4002f630c0a435d412d806c5539e0770e4b7285982714e41112d5e33ab",
+      "draftSha256": "73752ddb99c5809d925d639f96b02ed2abd523299de3d7a201898048b894c0ae"
+    },
+    {
+      "route": "/areas/connecticut/northeastern-connecticut-planning-region/",
+      "candidateBodySha256": "70ae57fd317fb9e74e2c4c0618b3ffd95915e909f6192d44f276da0cbfa45237",
+      "draftSha256": "7ad56498cef9594d1f0222cf6ba2efac390f23234abc37d01fb89305e85699cb"
+    },
+    {
+      "route": "/areas/connecticut/northwest-hills-planning-region/",
+      "candidateBodySha256": "d475593aa2e5270599db5751c0ab71773a6eafdb346e327a6100d35d102ce8f7",
+      "draftSha256": "ddae7f06b5c088757c901b1222b119df7a7a8482814472d32fb6b92153ed9db9"
+    },
+    {
+      "route": "/areas/connecticut/south-central-connecticut-planning-region/",
+      "candidateBodySha256": "e59e1eed2f541efcf33c22f30e48af26b5e01f735b77a39ba7eca7f144c03813",
+      "draftSha256": "aa05918b2af83dcd6a9696fb1075d1f5dd3b83aeed11289e3954a5f6688a16c4"
+    },
+    {
+      "route": "/areas/connecticut/southeastern-connecticut-planning-region/",
+      "candidateBodySha256": "b3e2472fc4fec2fc10318aa5d0f9da9f546288d4297a251cbf16fe0f2713f13b",
+      "draftSha256": "c79ee50ea0f8a5baca555bf94f7a9d9c45eba10e268035055602970e75f141a3"
+    },
+    {
+      "route": "/areas/connecticut/western-connecticut-planning-region/",
+      "candidateBodySha256": "16ea50ecc8347ff9431f62ba0e8ff48d9b6a933a047ee758ce4a2742e90894d4",
+      "draftSha256": "d72cd763a6f9a28e73f2135723d16d080b4ec2c9e1c6e025350a7aa7bf7774b4"
+    },
+    {
+      "route": "/areas/cortland-county/",
+      "candidateBodySha256": "3b22d95b99142b2062a6c2437673462ee948f2ba8b09de2d2891823543f2175f",
+      "draftSha256": "aee5b8c74ec786bda15eb9b358c1e9ea12377ed9c1f64b02559d3e14e084f7e5"
+    },
+    {
+      "route": "/areas/delaware-county/",
+      "candidateBodySha256": "8eacd9ebed1625e033b0fef9735d921e6bdd75e2a8c6fca8460082be79f78ac7",
+      "draftSha256": "6dde51a4aa1d741a0dd76c8c75ac3ce827d9baca3c5b052197206824d8d4a586"
+    },
+    {
+      "route": "/areas/delaware/kent-county/",
+      "candidateBodySha256": "648d19e4d5550faeaa3fe13a6c671596a44f920011d1b588790ee8a0552700e7",
+      "draftSha256": "eee0967b0ff51514fcd4914ce32f84620051c444d1d9834e4dac2197dae20bdb"
+    },
+    {
+      "route": "/areas/delaware/new-castle-county/",
+      "candidateBodySha256": "a17e8f632eff69bb184358eebe6463a6bccc8b3e6ed0b7a00032bd7520cddb84",
+      "draftSha256": "8963368043c663cdc110ffbedf57afd2bf863daf1cd187f418eb035c6b7345fd"
+    },
+    {
+      "route": "/areas/delaware/sussex-county/",
+      "candidateBodySha256": "f604ec38780e29ad71ce69557cbd9dd38d811a6daaacb8c45cac4d18b54d65b3",
+      "draftSha256": "684c564e9aa5cf95c769ddf884fc940f2347794c06d75103080dc902444b0611"
+    },
+    {
+      "route": "/areas/district-of-columbia/district-of-columbia/",
+      "candidateBodySha256": "7b84802f49f6c9d0d43001a750ae87873e392756696d459fef483cf6325cbf1d",
+      "draftSha256": "53e86fab1c2b5779d0e1031d5dfb2c8492888f27d00c295bb2894eb9f7c79a5b"
+    },
+    {
+      "route": "/areas/dutchess-county/",
+      "candidateBodySha256": "529fa70a2180964084181aaf9c6506c7a9c61ad7d1d17bfecb4ac236911fdcca",
+      "draftSha256": "ee9024c6432fcfd1f3f3fb68af299c524e099b9c1472493f6955fba3edfe2bd5"
+    },
+    {
+      "route": "/areas/essex-county/",
+      "candidateBodySha256": "98ba9b04114c58781d57027ab03af7fccd7072ffa5b05afd03e2035ab5403ef0",
+      "draftSha256": "2099d9faad4756a0d34df7623aaaea9909e1b3a2f00beae5659998926812eb6a"
+    },
+    {
+      "route": "/areas/florida/alachua-county/",
+      "candidateBodySha256": "56ac996f1896efd0a7467e2c13339e8e94590951a299dcec98abd6bae20739db",
+      "draftSha256": "bc64465b27b90bae5f403b1ef37728bf5126ec11b9ef6e3e14b63865de12725b"
+    },
+    {
+      "route": "/areas/florida/baker-county/",
+      "candidateBodySha256": "7d2150f15fcf7cb131046aacf2a183dcaf21d9914136722f132f089b31b55ba1",
+      "draftSha256": "60562b0d91d39fc210d6861d17c7a406d257239e9a5deabca12415ea497db6fc"
+    },
+    {
+      "route": "/areas/florida/bay-county/",
+      "candidateBodySha256": "14cb4422ca17d4cab08506c8712c61b89a490da007a764b1b48f18a7b6f32311",
+      "draftSha256": "be18b013d99255e8794d81c67f4fcee2e13d6479ac54cb6234200493d035d8b2"
+    },
+    {
+      "route": "/areas/florida/bradford-county/",
+      "candidateBodySha256": "64c552819856ef7cd78001920e08fa694196c73044e29812a03e478107b17ae2",
+      "draftSha256": "0ba434edaa7a10558268eee6c04c71112ed3262eb8cb57790a95b7aeb1bdeb09"
+    },
+    {
+      "route": "/areas/florida/brevard-county/",
+      "candidateBodySha256": "a404e0bdaecc9e8ba511fc1f224677f003320ecff415a5e15c9160e122331880",
+      "draftSha256": "0bac335b248ac176ad45f4d8e05b648c9c3b07725abfa265bc635088d922f280"
+    },
+    {
+      "route": "/areas/florida/broward-county/",
+      "candidateBodySha256": "b0825706b8a6159cb199257cbb9ad7bca91b8ce33ecebaebcf13837e3400bc27",
+      "draftSha256": "4908a629697639787c02713cc5bc52b7e46098130dc90e512a1c06345d59b8c7"
+    },
+    {
+      "route": "/areas/florida/calhoun-county/",
+      "candidateBodySha256": "ce022102b7d6ba8c4e6db307431aeaf2c08756e4922d9ff0ead176eef48e6cc9",
+      "draftSha256": "0453a97ecf91712a220f242c5ebb63d0edafa1327e54ba0c7d0e9f9d54599186"
+    },
+    {
+      "route": "/areas/florida/charlotte-county/",
+      "candidateBodySha256": "ba5ff6591302434e539566cdd97902512c8a5752fba55b40db632513cbcdb7fd",
+      "draftSha256": "4aef90153c072510ea72a0d66fe0f602db76ac62d6ecb8df15af868f840836f5"
+    },
+    {
+      "route": "/areas/florida/citrus-county/",
+      "candidateBodySha256": "e4de1342e5f1f2ac743979dd74ced35b312f7605974d69e6500aba199731f275",
+      "draftSha256": "71e2afe9cabcce14b8cfc49a60435883a16ffbbe34f1b873c016f86981a57366"
+    },
+    {
+      "route": "/areas/florida/clay-county/",
+      "candidateBodySha256": "a0425cd92911568bf2ea912f3f47787dd6682a0ee72d77930367e5d1f387fbf0",
+      "draftSha256": "c2a959811488daf591057e7d36adb82724beb856ba20a169e430ff52eaadb121"
+    },
+    {
+      "route": "/areas/florida/collier-county/",
+      "candidateBodySha256": "d316b66bd4efadc5336d08a1a0c08126526949a4d34a040a173e9691a04abad8",
+      "draftSha256": "0c8b7fc384e6e50fa60891db7355203df2527e2bf3f911f96ce752c0f941a45b"
+    },
+    {
+      "route": "/areas/florida/columbia-county/",
+      "candidateBodySha256": "8880e5b7bede48abd567c6dd796173228da0ef4ee8b2765650f9390c38b3d027",
+      "draftSha256": "3212e228c426ce02a18a3f444895909ad39141fe5c531800cd78e32a619628cd"
+    },
+    {
+      "route": "/areas/florida/desoto-county/",
+      "candidateBodySha256": "8a0f1f3b7817c1dbb437f8013d82009a23e38a8fbdd2062fcf3a9b72eaed3507",
+      "draftSha256": "6b55956fb09c5bb4a57164bd8f7e0023c307e763f53bda7d0550fb6b8fd41248"
+    },
+    {
+      "route": "/areas/florida/dixie-county/",
+      "candidateBodySha256": "3e6b9837bf3621ca9fca41dabed45128d3b2c3ce729d314a08e91b8d8a560f74",
+      "draftSha256": "03c2f2c871e62869e6be96a79f7c21b1885ef72a9be54de969176ddc59b358b3"
+    },
+    {
+      "route": "/areas/florida/duval-county/",
+      "candidateBodySha256": "929918d4055a3f89b61f1a488844f126f28299a7c3792e3316592a59ce2677a1",
+      "draftSha256": "36741a1be5694aa2532b9419cf6fbdf5ad144ff1a28937da508d414e6a25b473"
+    },
+    {
+      "route": "/areas/florida/escambia-county/",
+      "candidateBodySha256": "3bfcb85821cba421be183d7177068fddfcfb11864221f391cd25362a8a9d43db",
+      "draftSha256": "0a20bd62d68afe21809869c3472883c26ce5eb820c4c73d6337493f4e9e1259e"
+    },
+    {
+      "route": "/areas/florida/flagler-county/",
+      "candidateBodySha256": "bb27615a45266bba567c32f5db1781a66ab84cf34a68f44e18c91baa177476ea",
+      "draftSha256": "1bb66d89f42df3812a860b30c4d80d129057c0368d08d3712d4931e7bb418782"
+    },
+    {
+      "route": "/areas/florida/franklin-county/",
+      "candidateBodySha256": "3ba2575c69dbfbf1aefcd2de3450cd4fa2738fae5ce5041542867b9b2df15f95",
+      "draftSha256": "8cd6cedd621eaef5acbc62bdeba669e327f6c17a9921b588f6690e2174c0cd3d"
+    },
+    {
+      "route": "/areas/florida/gadsden-county/",
+      "candidateBodySha256": "31d4932279441ccbfc1781826b1626aea0a52677f1ba14b91bf358c304fe3308",
+      "draftSha256": "920542bfc3e806188f90f63f2d52ede6e8fc83e4508ea6cb2246d06e87592e3f"
+    },
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "candidateBodySha256": "53d171044bc6c829d31d29c48cda28fabe259a6dc30ddc4892f72602d4fcb9b9",
+      "draftSha256": "dba89e60c5b174c022c75316249337e8db5f1e692856b954af5b840903bd2d73"
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "candidateBodySha256": "5629629af944fc49b0e214c1f98335dc2664d4dbe951d41efcc51091bc5a735a",
+      "draftSha256": "16f3ecacdc64ad9548e6717a92e05167d054115b7d8ac7e53e516c96a567e52d"
+    },
+    {
+      "route": "/areas/florida/gulf-county/",
+      "candidateBodySha256": "ee190ded27b321567ffc47d7c0cb3ab6d6f7a7a6de9d2b6858be19d66b773189",
+      "draftSha256": "28e98f5f6422a600d177e6526080daef21cc23a998f987f1ebc688c7e1c4b71b"
+    },
+    {
+      "route": "/areas/florida/hamilton-county/",
+      "candidateBodySha256": "f1db5bec8a3d2028b2ac464920e69414943b9157cb33ff184003a8a5d4c2ee12",
+      "draftSha256": "930f47ca50b0fb343be0260017d388b45631bf0b62de9e73649c6f58b9bed2a9"
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "candidateBodySha256": "73426a874f684816075341b872131592e41a6f83b81214d71c465913c0c3c892",
+      "draftSha256": "64d2a02d730c2481fd8b32c28a7022c8314e16911c687b8ba0e1253713f7ece7"
+    },
+    {
+      "route": "/areas/florida/hendry-county/",
+      "candidateBodySha256": "00e517c96f474233d4b49690ec54c3b5138d815b1f804686b5ae375686f0a58e",
+      "draftSha256": "de74ff4a97171cb86a92b1a8a6b4d449e29dcf6aaf0851706a29859a4e6f16e7"
+    },
+    {
+      "route": "/areas/florida/hernando-county/",
+      "candidateBodySha256": "72c49a4d3306f212884a129821a622e30ffd799b7fe7d81c8754758edc385ced",
+      "draftSha256": "e7a7d6fd6811f0eb5e6455fea3942a5beee8a5ebb585f71fe3be671746248f5f"
+    },
+    {
+      "route": "/areas/florida/highlands-county/",
+      "candidateBodySha256": "eacdc2339f308f84b43536954b26cebba9eb95300b11ed3bd16e2eaa6bacc1f1",
+      "draftSha256": "a1a160155b811f82ca0585b385a242beb5d97e94d18c087c38b23ed9a17af46a"
+    },
+    {
+      "route": "/areas/florida/hillsborough-county/",
+      "candidateBodySha256": "71a34c041535ee001b594f7fec8f2273430587281dff7a771f4b36626caa3395",
+      "draftSha256": "02dc27d60c39b92fb93af8849cda93afb80097eec65b0c17f8db502159534e07"
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "candidateBodySha256": "c76548af638c3384cad0a265ac334ce58564965d9bf470c454e074e9eaa937fa",
+      "draftSha256": "f81e583da0619716fa01e503d16617dd42e69cf5190dc6cb8a9c0b8b2cedf80b"
+    },
+    {
+      "route": "/areas/florida/indian-river-county/",
+      "candidateBodySha256": "867c46214621681c23e466ad815b268dee8ec70f735a8112a48a4e00867ba816",
+      "draftSha256": "dff81bae462b581f2440728d039b745caca7ce7a72ad51f97f2b42fe036b8a78"
+    },
+    {
+      "route": "/areas/florida/jackson-county/",
+      "candidateBodySha256": "43368a1fa5f746013ab93796abd73736fb2116f1761e0918507caf1b05c27179",
+      "draftSha256": "0aaed3f28db039fb5a408f89db3c8766e84880753dc386852a33ce2ea64efb27"
+    },
+    {
+      "route": "/areas/florida/jefferson-county/",
+      "candidateBodySha256": "7936e709c9a05a51d555f86daecfd1f56917aba850e6ebc09e6207614e91ee24",
+      "draftSha256": "a0e48bee7facb0fee9c293a1bbffbf75ce63a19ebdd228e534bd6831290396e0"
+    },
+    {
+      "route": "/areas/florida/lafayette-county/",
+      "candidateBodySha256": "167d9f0a4a0d39ba55ec4faa59b1c29a0ee30a135accb1f52fc0dacd8edff778",
+      "draftSha256": "1cce8a8abfc9cf8abc21c4f2cf18b5e74fdc667ef93cb2e43bb911454995c4ec"
+    },
+    {
+      "route": "/areas/florida/lake-county/",
+      "candidateBodySha256": "d0c6064fa5a447d922f14a92967675f6bb6bab7b19ad2f927bbcd9ee1832cec2",
+      "draftSha256": "231c441460a7f055ceca852faa80ea376294b5cdbd9b5beababcf01df52f84ca"
+    },
+    {
+      "route": "/areas/florida/lee-county/",
+      "candidateBodySha256": "b42db4226852266e562f216e51e8b0047ae82fdc580bf6281a0171c7fba734c1",
+      "draftSha256": "363297217205bd43d092bf9909e67a6aa10be92fbe3dde205bda105223a04831"
+    },
+    {
+      "route": "/areas/florida/leon-county/",
+      "candidateBodySha256": "bbff347bf1925bac0ca64e8307aea373a8a1ad41c0c5b334c7fe38a20b435ecf",
+      "draftSha256": "dfe70be1237792c73f4caf2c595aa097368fb67b2dffecae9a116f8193f4e4c3"
+    },
+    {
+      "route": "/areas/florida/levy-county/",
+      "candidateBodySha256": "b4e6a420d52b62cbc73fadc40f998c8f3263e147e37a049d242741c70878eb45",
+      "draftSha256": "4c7a0c89ebabc9687f6e07ca0c5e8c95f0c372d3622ee50e462f8888e205bb63"
+    },
+    {
+      "route": "/areas/florida/liberty-county/",
+      "candidateBodySha256": "e309e972e880841e832c68b3b16585a979b8ada1a17b17c20aeb9812d1f6c5a6",
+      "draftSha256": "8f4a8f1bb3ccd8b3c2b57fa9bbe87f5fafa8d40065a0046278bb7956f48e2fdc"
+    },
+    {
+      "route": "/areas/florida/madison-county/",
+      "candidateBodySha256": "8f3ec38de022813c49a6b2ca43ba1ec7a347d563c18059ef05d78c96424b2148",
+      "draftSha256": "359db34dc7513ac7cc880b75644d16d09020812342f7ff8e10559d7db9fcfe7c"
+    },
+    {
+      "route": "/areas/florida/manatee-county/",
+      "candidateBodySha256": "13aed541047053bf168a0c85a13e1bcbfeda90785ccc299e0982129538e196a0",
+      "draftSha256": "610afea97d1428b6a8a49829c44d8f3995a75e8d8bc399984c3cb0c88aed5947"
+    },
+    {
+      "route": "/areas/florida/marion-county/",
+      "candidateBodySha256": "361d82928358e46dfc0fc7a8520458765752aa680c0dccca6ab5925ed30e5dea",
+      "draftSha256": "8bd6cfbe58d80eff0adef951c159a28b119cc91dbd822e87dd544b3602a581ac"
+    },
+    {
+      "route": "/areas/florida/martin-county/",
+      "candidateBodySha256": "f2454d5febbf61cd93bbd5a48f04f898487d3d503941893f69ca22248c8ae39d",
+      "draftSha256": "bf7887fef17cc9a4c06546b2689352cf1754603e7ff1f88e95a59f23593061a0"
+    },
+    {
+      "route": "/areas/florida/miami-dade-county/",
+      "candidateBodySha256": "47ece31f955b1cf3a0e69c1af54231272515e2f3fe9f40d83e71a53aae27b3e0",
+      "draftSha256": "5d79589af7c790e8747cefb66c9ae3adc57a618ff8dd9968bfea6e3e5a48526f"
+    },
+    {
+      "route": "/areas/florida/monroe-county/",
+      "candidateBodySha256": "728d91b3472d58fb65b71f6509933a1937f500130f7420e270d8300c84d78541",
+      "draftSha256": "dbbc27faff0c70e630d71e5f95599d245314b00f15d1f7128829fe2ff816ac25"
+    },
+    {
+      "route": "/areas/florida/nassau-county/",
+      "candidateBodySha256": "c0664a00f9144d51546bb35a2c0d3c8e575abf33d1afedabd78f44906978d626",
+      "draftSha256": "19522271122c81e7da7da98947def8f6ab9225d3c7c0cd3cc3f6247022921a0f"
+    },
+    {
+      "route": "/areas/florida/okaloosa-county/",
+      "candidateBodySha256": "e9889ec2666e4f0695d87b51845f7803278b89cdbbc2c46fd650b2b69804f1f3",
+      "draftSha256": "9f70dfc2f1b70b090536c055bb396f4b3c8984c12ae4e67b49f31edc98d9abbb"
+    },
+    {
+      "route": "/areas/florida/okeechobee-county/",
+      "candidateBodySha256": "9e0ff8214c662433b76230d03c8239d58cb77f67b96e4213b06b2b7762a5d2b9",
+      "draftSha256": "4bfa53f82d1b593543bd8d24b4949f490844bac229b5046d39917cd5d225d04f"
+    },
+    {
+      "route": "/areas/florida/orange-county/",
+      "candidateBodySha256": "a2935a69fa931b6496662796aa5b0a3c565b256df565926b55840fb025b95ca2",
+      "draftSha256": "d917b35e700f90056c9f444ed81683e965cd29946a5459db59813f43a13c3c1d"
+    },
+    {
+      "route": "/areas/florida/osceola-county/",
+      "candidateBodySha256": "da5a13c1036571fc7cf0d1654d996df5da9acb74b9fd6dac618296014178472a",
+      "draftSha256": "70e881218544c84dcbb56ec6a819dc88e815bcd0a427dd10f80f05ce75e9a856"
+    },
+    {
+      "route": "/areas/florida/palm-beach-county/",
+      "candidateBodySha256": "9a989c61c666a2b6d5c361ffd5018a15d92e87be52aa67653686f252906d4c73",
+      "draftSha256": "dd2a2d4cb529cfbbc931013c9ace8a9d99802b60cc57156d3694258a6fa7f6c8"
+    },
+    {
+      "route": "/areas/florida/pasco-county/",
+      "candidateBodySha256": "056e38b7fa3ce0b94c284d37a291eeea0d4b8df391c19d6fadfff8e37f9aafb6",
+      "draftSha256": "10c875ab098de425bd5ba67b4f597b0857b891dea5fe2aa799f944f03b7f85de"
+    },
+    {
+      "route": "/areas/florida/pinellas-county/",
+      "candidateBodySha256": "f1e5d4ec7df2940974361fad0c8d3dedbcf1bc3f2332f0bb3902d3ec9e9ca2b6",
+      "draftSha256": "6351b8227237b8a44f11d3f7d4de4f13c03b18f70d1dbc54f13a910a11d19997"
+    },
+    {
+      "route": "/areas/florida/polk-county/",
+      "candidateBodySha256": "e931fa1c9b6925a91b7665052cdfc6cf615d415fb5ef6a310d9af55c90ab91eb",
+      "draftSha256": "ac2502e606d0a2fdf9472c7ca7742e0fed2e1b0e85ecdd90b90e9dedd90168da"
+    },
+    {
+      "route": "/areas/florida/putnam-county/",
+      "candidateBodySha256": "0e1fd82746163b02d239f9c27466f847dac4b3eb1f5f0dbe4034f260d175c791",
+      "draftSha256": "fae3c0f12d10229498b0aa1b533216da5971b06a241de67780386e2bc627159f"
+    },
+    {
+      "route": "/areas/florida/santa-rosa-county/",
+      "candidateBodySha256": "70111f20538ca7971317eac488144fc22f90bafded90d708832d4ac45a0f2692",
+      "draftSha256": "4d6d284b79fb590b380f2a02356cc3eccae4b3a2831b69f50206488fc410aacf"
+    },
+    {
+      "route": "/areas/florida/sarasota-county/",
+      "candidateBodySha256": "8cd1e59568c152365ab8bff0ceb4f930ce6cd1e277bbf9eef54bf53a0753406d",
+      "draftSha256": "1c8381cb12181bcc4c060b4f737e493603c6e4d1dfeadcd94ab7db703987b170"
+    },
+    {
+      "route": "/areas/florida/seminole-county/",
+      "candidateBodySha256": "f8200906ccb6e2f5af6e677f3c352f07a349807581b06fdf4ea072d862f814ca",
+      "draftSha256": "0a89094d29c337ec6a700b9c9fc42b10f9457ce03296dcbc60f7c0782920e9db"
+    },
+    {
+      "route": "/areas/florida/st-johns-county/",
+      "candidateBodySha256": "476e1d9e42d17edce6aa1ac75868f0a32e8d0af67537231786df92bd3fc69d4a",
+      "draftSha256": "7e45bb4965d82d6e65564ad072a5b4afd0955e026477082ef8d5a458a0122285"
+    },
+    {
+      "route": "/areas/florida/st-lucie-county/",
+      "candidateBodySha256": "1f804969f9284d206323fd8bdc52b51871a09e9813a5ae1f569cd5d342e2f17c",
+      "draftSha256": "aae8dd528d3d903119f9b7380b62c403ab7940c5ab8b5def2f8c8079e2995f8a"
+    },
+    {
+      "route": "/areas/florida/sumter-county/",
+      "candidateBodySha256": "46171c3320e2fda846dc6e11b4d2e6d35d71f1814913b86176b8e53472fd2a0c",
+      "draftSha256": "356a788154bb93413f46b665896791a4dafaf023abf81779da06bd7796be7997"
+    },
+    {
+      "route": "/areas/florida/suwannee-county/",
+      "candidateBodySha256": "2aaa9763135287eb4313277d840fdff5c97403d7a2bbf6f969eb4b73e12e62e5",
+      "draftSha256": "21b4d41ab909fc8e6a25e89014a2d819966ff5bcc06a875e703f466ee89813c3"
+    },
+    {
+      "route": "/areas/florida/taylor-county/",
+      "candidateBodySha256": "97820d1bc6a20b36f44fa106b623394429af7f9a40e72a99c5be8ab27e35f3c2",
+      "draftSha256": "85b6c74a53ebe48d5f0836a060d4a70aa652dd38e767b8742ea18db025bf3706"
+    },
+    {
+      "route": "/areas/florida/union-county/",
+      "candidateBodySha256": "325b9f943d9947c416f2511eeaceb50b7827f830a5d60001956f20f61b2e8de9",
+      "draftSha256": "ca4b588b5ea65016c0ef0db500887c84e9ad9febea74b5992a3054de7d4ed58c"
+    },
+    {
+      "route": "/areas/florida/volusia-county/",
+      "candidateBodySha256": "eaeea441fcd7a4528a253b996113508dd04e40387db650430540a01b74ab725f",
+      "draftSha256": "8fe41d5963be08a9f37ac04d5797e82a7bcf19139fa2201eb4cf4be8667d5189"
+    },
+    {
+      "route": "/areas/florida/wakulla-county/",
+      "candidateBodySha256": "6d404109b77d9fcc8bf1c38dd0874ee1b8b76d47ca22337d7441ef892081c755",
+      "draftSha256": "973ddc20d6c8b909b32441fd78a7e69ace8f8e940d4f08757fa81f8803c52006"
+    },
+    {
+      "route": "/areas/florida/walton-county/",
+      "candidateBodySha256": "eeccab8fc4fd8da97dadb0b9cdb3ccf422f346980b009c5888d52afa639928ec",
+      "draftSha256": "78504ac9ac8a4bc776f121887d77aa8549fff4bfff533fb1b0c277159446fb19"
+    },
+    {
+      "route": "/areas/florida/washington-county/",
+      "candidateBodySha256": "dda424a43d2671eab5303ae43095b8268e4184553de9ac9cf2a545c0149cdadf",
+      "draftSha256": "192cb5ea9fbd5735794606368d99948c594529adbfd87c7ed306614cae4479d1"
+    },
+    {
+      "route": "/areas/franklin-county/",
+      "candidateBodySha256": "b7019d590fea9041484119933f82bab068bf2054413ba81b84d1d914839c03ec",
+      "draftSha256": "7e44a2b8910a214357e58b8d5e6dd75693479254277dd4ba771318c62d3af1d3"
+    },
+    {
+      "route": "/areas/fulton-county/",
+      "candidateBodySha256": "27114355937cb2185b375a9191e1f5495f49ac778003d313cb121843123c161a",
+      "draftSha256": "a8b654ace4c36182d92cf5af1cc81a1d5e3ad9be17ce0a33efb1ec06be649af3"
+    },
+    {
+      "route": "/areas/genesee-county/",
+      "candidateBodySha256": "b86c9c48a0525fd45d14e55323102e46116aef03b47ae3de8bd07099ad06a15a",
+      "draftSha256": "2663a01ff7ad2895524e06c21ed0d152316fb672f785cb1d53178b08aba3582f"
+    },
+    {
+      "route": "/areas/greene-county/",
+      "candidateBodySha256": "53a2db4eb09f33402a76822e053a344065f8b5fcbbf5a7f690402ab5486bd84d",
+      "draftSha256": "790104005fc55cf2511919fb11fb3ffc21b018005d3eb0644e393358aadf6676"
+    },
+    {
+      "route": "/areas/hamilton-county/",
+      "candidateBodySha256": "86d586f510cfc7b64edd7b4aed9f0ccba29ff4cb490dd09262b01dfc957f761d",
+      "draftSha256": "d3cfa0ee442f04e0b46edc033b3a27c894e4da5f6c1bfda0cfccd3197af6a8d0"
+    },
+    {
+      "route": "/areas/herkimer-county/",
+      "candidateBodySha256": "ed364e30d64acf220246c1c5a941122f291560f8fcc3c461dd743952ebc4b467",
+      "draftSha256": "cb9b6c5bc186d6532accc55de4f1cdbd767b2d510d94a736a1bb435abbca1ee0"
+    },
+    {
+      "route": "/areas/indiana/adams-county/",
+      "candidateBodySha256": "0f1e0c7d213cd08dda0602a34e003246d17f24ce22adec512826574eb79d226b",
+      "draftSha256": "0299febea709bab075623163b15c8f2ce04ddc5acbb42a13cda0ec20ba5f5a69"
+    },
+    {
+      "route": "/areas/indiana/allen-county/",
+      "candidateBodySha256": "9e98f19c726117385754f192c08ed6b6bde68c1ce751501a8bd45a505c523d3a",
+      "draftSha256": "19897582fa0cfacf33c2aac3e0b1aa1227b2288ef22e397b0a8d84562fc5208a"
+    },
+    {
+      "route": "/areas/indiana/bartholomew-county/",
+      "candidateBodySha256": "f2e3517a083e1ecfeaec1c146b08e0f286d9f438e711a6698ca29272d52068cf",
+      "draftSha256": "96c130dbb16dd8b42ab434fe9d1e4dfcaa9f3036766f061f4752120a04c25d36"
+    },
+    {
+      "route": "/areas/indiana/benton-county/",
+      "candidateBodySha256": "3f70e0c9b2d542d42f105f3d1019f6a8090f01dc855a62cb8b4d86b2a94fd36c",
+      "draftSha256": "7e3ff52c9342cb3fdc3a984fced7f29ea526bab1b0d3939ba540550c8eb51b83"
+    },
+    {
+      "route": "/areas/indiana/blackford-county/",
+      "candidateBodySha256": "5f483f19e4c0bb454baf1a26daed4a96fe8f51e6e2063486eff4b9a6a4a06edd",
+      "draftSha256": "b7d1fcaa97c0021da35282872dd2057c4158920c624d547f211da1a2473f2d03"
+    },
+    {
+      "route": "/areas/indiana/boone-county/",
+      "candidateBodySha256": "daaa53edf54f660cb8aa506ce84093018d37263e9906594d99cd82e9e35ff6db",
+      "draftSha256": "30f49bf55338447ee3eabbfe7878085063b35b0b60d53614889232753753cfb6"
+    },
+    {
+      "route": "/areas/indiana/brown-county/",
+      "candidateBodySha256": "c804abb9736d7e058a3379250ec9bcc86506d3009e4e97a1f44eb17a7dd81749",
+      "draftSha256": "7731e638954de0bcd6e131191080c15462c7568f3d68bf8e9886b2c8d88c9a71"
+    },
+    {
+      "route": "/areas/indiana/carroll-county/",
+      "candidateBodySha256": "f938d0f22f39a24c8a883f5feab232f6fc1d973254de0b68fd7a38538f7a50e7",
+      "draftSha256": "61f59cb845f47bcbed6eb734b55a90f0ba09b855f6b17f96739b66ac32f51c10"
+    },
+    {
+      "route": "/areas/indiana/cass-county/",
+      "candidateBodySha256": "89241847308e66881a8feff5166387d2482be082779e3a4ef059a970ded2ff85",
+      "draftSha256": "e44f6a88a5fe0779422242606de0da8cffbbbaf7b4e7f3a9b4ad4be719e08eb9"
+    },
+    {
+      "route": "/areas/indiana/clark-county/",
+      "candidateBodySha256": "54ffa45f65d71fa8e5e83f2548e5b64392cfe23c767f15663dbaab3e492571e3",
+      "draftSha256": "bfc6f2a17105f93d252c0e29b7fc519c4336811e4252703607df945b04ad3ff2"
+    },
+    {
+      "route": "/areas/indiana/clay-county/",
+      "candidateBodySha256": "d6374591155eedcdd21d2adffc0252aa52c2bc9ea80ab13b01ff4bb5aaf7f110",
+      "draftSha256": "17f753f000ec927f3d68fdd4a82d3b2cda1938d02be84b74ceb9875959fcff9d"
+    },
+    {
+      "route": "/areas/indiana/clinton-county/",
+      "candidateBodySha256": "e6c67b080ecf4616beee048af79f688655ecfed8efb90199d50073d73232042f",
+      "draftSha256": "5a6c7b7aba2b57372fdd8f9b16821f70e291f622c350d456d800f3f829ade435"
+    },
+    {
+      "route": "/areas/indiana/crawford-county/",
+      "candidateBodySha256": "dc58ac3fb6907d40333c5ef904b04bc24dda597a0b05c5dd0f9fbc47254c3daa",
+      "draftSha256": "ab7eaca379cfa68f41de3fec1da7002a870e129c109851dd8892bdabdaa83a62"
+    },
+    {
+      "route": "/areas/indiana/daviess-county/",
+      "candidateBodySha256": "212d26655ba4d8749985e70ef5934b98b5d705ea5ae34f2476d0b74f3c6480d4",
+      "draftSha256": "a50cea6c0905131b6807e73f7e2d5a9d617248df69cdff1c97208fcff347676f"
+    },
+    {
+      "route": "/areas/indiana/dearborn-county/",
+      "candidateBodySha256": "1ae35dbff3b3eba44cead91c629608110c81bc082e3c4a2da3754e3ffe2bf099",
+      "draftSha256": "8f0baf399ea9f695e2d2d41440555be1d60c364fba92a7272dd572c36e9d7b8c"
+    },
+    {
+      "route": "/areas/indiana/decatur-county/",
+      "candidateBodySha256": "082d5c928a96e8a9c528e416e36c634c8fb62e88bca7e73c4283c5303dc87948",
+      "draftSha256": "e8e0b95af1f19586d170bf3d391e2abacb517657edcb1bc37c3d28aeb3487a17"
+    },
+    {
+      "route": "/areas/indiana/dekalb-county/",
+      "candidateBodySha256": "dbebc99b9106d6d5fd609680a12f4916a53b641d5c73cb01f054faf66b1ca3c4",
+      "draftSha256": "81af56c4c0a096e7cc9aac6da537ab2f2b4f32af41c1ab23de14e60f1b882fdf"
+    },
+    {
+      "route": "/areas/indiana/delaware-county/",
+      "candidateBodySha256": "c540fad7299beb4ebdff290a92e2f9f73ca5130de8a040cf219b4dc69e47efd1",
+      "draftSha256": "bdfac6a5fc505f2d05da2e95354ce2c4ea6357e27e663710266b01bde1d52c23"
+    },
+    {
+      "route": "/areas/indiana/dubois-county/",
+      "candidateBodySha256": "df92399f0a7ed82d3b00e0fb4cc7c936d86fdd592267292c69bc12d215293452",
+      "draftSha256": "83159b72f16046dced54c2b8ff59fab020b01b10c310acc66bdadefe00187398"
+    },
+    {
+      "route": "/areas/indiana/elkhart-county/",
+      "candidateBodySha256": "553f00ecc823d46095579c797dc5ac0ab89e8f6d92d0edf595a960f55e06b882",
+      "draftSha256": "f04f6551b5a981f9bab6aa2c372a4f1d6673030af169aa35df91bdc0f38826ba"
+    },
+    {
+      "route": "/areas/indiana/fayette-county/",
+      "candidateBodySha256": "1ffc228e6d65e359f383cdc8f22cae127564e503de57eecc0e05b254b7f06e7a",
+      "draftSha256": "d15ca51fcebb61d66b6d3b8b4451c5d6d4f86b2a2a235582ff3abf181153e350"
+    },
+    {
+      "route": "/areas/indiana/floyd-county/",
+      "candidateBodySha256": "259cccff1581cc0eb71f5abacb5d5fbadaa666e038edb859e84546f5b9a35523",
+      "draftSha256": "c2660b60c3242370c76fffe14b6f1cb7b2070b67dbf9aabde48f0ff1cf146c53"
+    },
+    {
+      "route": "/areas/indiana/fountain-county/",
+      "candidateBodySha256": "e2cb683c4fbe5f2f33cd0e30880ac5f1210dcf5534cd3ec2bcdbb012d90ed85b",
+      "draftSha256": "f27afd375ab03ffe2ac45a611b6ba13bf39fe4ce972807330942977ddbec7a1c"
+    },
+    {
+      "route": "/areas/indiana/franklin-county/",
+      "candidateBodySha256": "3a13b19647eb262537f79a5996fd3983c37f45cd9a2eb87734debfd575217737",
+      "draftSha256": "5f484a950a81d1e833eef7e95d29c62c87fdb14966095afcc4c37937b3b3217d"
+    },
+    {
+      "route": "/areas/indiana/fulton-county/",
+      "candidateBodySha256": "19feedc95b061ea6d2c838a0cdf92b3a4f58bef0fde502d97bf11b2dbbbba2be",
+      "draftSha256": "e5f3e7a8146e891efc397f95cf4ea191a55967aa27fbceb9d8f24006291b1fbc"
+    },
+    {
+      "route": "/areas/indiana/gibson-county/",
+      "candidateBodySha256": "1964afdc0e1e1f7b87de28408d41aef1275c893df624890504fb1e79820f35dd",
+      "draftSha256": "47d29c350bc29e0230c9983c32446e0447bcac4eb548b78fe90a7757474981cc"
+    },
+    {
+      "route": "/areas/indiana/grant-county/",
+      "candidateBodySha256": "10ec08df998a0f27c916a1d3d6583e4789b32341abee607525212d6f1ebb1b4a",
+      "draftSha256": "89633e7308871a74c5d2ef0321a1ee60efab0504502852194beb5956b9ef5457"
+    },
+    {
+      "route": "/areas/indiana/greene-county/",
+      "candidateBodySha256": "df11e0fb30741fb5da2eb6b9f1c55e91df67c154ad47a2f5a8be2e169f0ea7ad",
+      "draftSha256": "5de60be909c89f9653c071bf20e1c48b97008cff1dc082b7ef8d2b03127717b4"
+    },
+    {
+      "route": "/areas/indiana/hamilton-county/",
+      "candidateBodySha256": "1a8c42a3fec0cbf7e7dc55346dd56d5f5731415d1ce7f5f3470ee81535b7870b",
+      "draftSha256": "eea115a89b91e028883a9d6ad6ab80d8971a7a8d70085ae5d838813a5a8749f9"
+    },
+    {
+      "route": "/areas/indiana/hancock-county/",
+      "candidateBodySha256": "8fc8f7dc35f42eb56b8e821a9d8ffb7eee7183afe708c6b8deb10ac88d8fd947",
+      "draftSha256": "cc9f316aa1d171daae07660c871bf3aa5930a525ca45bf51614f3316a53940a1"
+    },
+    {
+      "route": "/areas/indiana/harrison-county/",
+      "candidateBodySha256": "c005f66de11291bbb271a7608ed520ec8e2a529d2b319994ba581250bf9c6237",
+      "draftSha256": "b5d214471b7acb9c167ccd087993fe4be99cba13dd8fa0651a4e90fad55908e0"
+    },
+    {
+      "route": "/areas/indiana/hendricks-county/",
+      "candidateBodySha256": "6027ef975556487b49808338a4ad82b65c86d4644b6c7865b2c6855c53c9e98c",
+      "draftSha256": "d51839bd8c5b35c01bd1da88931e79ff7d072744807b2c4f935804867467c92b"
+    },
+    {
+      "route": "/areas/indiana/henry-county/",
+      "candidateBodySha256": "261eb464b4719b0ef2d8073f513ca29729f1a67db0375ab986d127dfa61ba869",
+      "draftSha256": "2adb54018d15b26967fa9d7520dec67d45cfac7e7aaa31d10574ab6b9e68189a"
+    },
+    {
+      "route": "/areas/indiana/howard-county/",
+      "candidateBodySha256": "d21f3199d516831ec3875bb936c5efdea4bc938a9561bae793db61b300ab9b85",
+      "draftSha256": "9be5ed9579326d3401b4a9a1d0e018fa03d2cbf073eb6e01a4a6e6335538c749"
+    },
+    {
+      "route": "/areas/indiana/huntington-county/",
+      "candidateBodySha256": "ef2d242d3e55040d151675486a103053c1ca23fc6b5ae2cb50a3d5c3478c888d",
+      "draftSha256": "becd4985c07bc63b13def0f1d083a5ceaef621f2eab9c15a92be4a8238edece2"
+    },
+    {
+      "route": "/areas/indiana/jackson-county/",
+      "candidateBodySha256": "bb94b4cdf9cdaa93d3149229eba0f88ccb03251072ed9c8d7a85bb30651fadf4",
+      "draftSha256": "bd3942d169905fc8f7b82eafef8b057012ab757ded58cd70e55e7db19832471e"
+    },
+    {
+      "route": "/areas/indiana/jasper-county/",
+      "candidateBodySha256": "434affe6da00b0cf1afd82c024f905dbe22df152e18f3e18c363c2eff2f9e943",
+      "draftSha256": "208eb175638e928bdc0a04cf529ea9aa34c266895d16f2e1e22df957aa1567d3"
+    },
+    {
+      "route": "/areas/indiana/jay-county/",
+      "candidateBodySha256": "caf407b39121cb0cfa5eecfd42e24c08e5dc169f7b9ca49c1d26931975c60515",
+      "draftSha256": "77e7e62ca4e32e766de668b7ccc1c1437ce2aeac67744dc49198738de97a2a11"
+    },
+    {
+      "route": "/areas/indiana/jefferson-county/",
+      "candidateBodySha256": "55c53a61f258679c00d799dadbcc0eb62196fec8f7fcc40c932e1b211a719fa4",
+      "draftSha256": "45762dc9ad8cdd83af744f94a1f10057665f19668e9ef8d898cacd9e873e2b27"
+    },
+    {
+      "route": "/areas/indiana/jennings-county/",
+      "candidateBodySha256": "461ee12b0db610397098356149ae505100b4be59dded4e52a8f337f66450fd81",
+      "draftSha256": "b4d61c9db5b7b3519491a9c6dcca4ead0cad24f0374a2f129fdd466f56a4225b"
+    },
+    {
+      "route": "/areas/indiana/johnson-county/",
+      "candidateBodySha256": "360febb31e92abe502a1f970f4ca6703c59f15cd54ba419dbf75b88709e1f865",
+      "draftSha256": "7f92334f3acdd5bfef0d1b7c17d311bc46980130a66b795f8236a2317e32ce37"
+    },
+    {
+      "route": "/areas/indiana/knox-county/",
+      "candidateBodySha256": "d008c7ec1765e4f405416390575c8285aff396bae2ad8cb4fb69a3f662770ab3",
+      "draftSha256": "d86c9a36a78e4cd8b3fc357296f1493d534ec0d4d445392d2e62365bd5ac64ce"
+    },
+    {
+      "route": "/areas/indiana/kosciusko-county/",
+      "candidateBodySha256": "eb4967cd7813f9cf5902d874f98599c41724b35eab3587630328f97f628c772b",
+      "draftSha256": "aa67a1eba53235d3c7f72b72348862deffab7787b0ff678b7d162325f4a8567f"
+    },
+    {
+      "route": "/areas/indiana/lagrange-county/",
+      "candidateBodySha256": "4394ca29dd7bd84fb1cd600cd3c2bdfb7016c1cf23ab9342795d888b3d44112b",
+      "draftSha256": "cfcbdc00cc138c952647426de1733dc8427b9cb6a3b88676684c5bdb43bad2eb"
+    },
+    {
+      "route": "/areas/indiana/lake-county/",
+      "candidateBodySha256": "a0aac711644ce9d71ea3f54eaba4b7f8522c63c1185833c2be2b5f5c75d2408c",
+      "draftSha256": "d782ce86487fb61b52160c3dd848da3bb23e9475bbfe43e47cf0a2e9f4186a9f"
+    },
+    {
+      "route": "/areas/indiana/laporte-county/",
+      "candidateBodySha256": "392171b6348adaf14aae49794c2dea09b9edf590777ad61f07cb318b92a7b283",
+      "draftSha256": "c8b7281fcd3360803c3a53926614f58d0b12db1dabb5433caba606a57fb1c6ae"
+    },
+    {
+      "route": "/areas/indiana/lawrence-county/",
+      "candidateBodySha256": "776028daa3780fceaa54e821d841c54edb80aa5a057ec1f5e2e075484a43416b",
+      "draftSha256": "e2ca6e2635a90296010f47185fae21a41769a9c08403ebc045a5a24110932ce7"
+    },
+    {
+      "route": "/areas/indiana/madison-county/",
+      "candidateBodySha256": "490d77b539cfbb7c6c789b043b6a55abd5572b97f6b467a13357954581ed74d7",
+      "draftSha256": "b352eb87491d33fa2aeb282d0722233435d6a8422ec818f27f8e0902e55ca7d3"
+    },
+    {
+      "route": "/areas/indiana/marion-county/",
+      "candidateBodySha256": "f8cb7026cd2a639550dfc3828d58e5ab7950ef2a3b34935d26a21d92fa8576c6",
+      "draftSha256": "15138c9ecf237cdf0807ba1b71480d8cee6495c5068d3ab2e228b72a30d407ba"
+    },
+    {
+      "route": "/areas/indiana/marshall-county/",
+      "candidateBodySha256": "31367ad17aa9a502bf09c57263c516994aaa790c027c42973ba3a69acfc5e8a7",
+      "draftSha256": "4c4cd5fb022639967a4ed89abd3f66894ace50ab628f40c59ddf02a2454b5216"
+    },
+    {
+      "route": "/areas/indiana/martin-county/",
+      "candidateBodySha256": "3be9df55d82d24b37cc34c682a2b6b2f1243bca3d4f283ddd87b097c5d95dd69",
+      "draftSha256": "42dc8f332f2140a776636866c479de7940cb21183c483598388a7c5509719956"
+    },
+    {
+      "route": "/areas/indiana/miami-county/",
+      "candidateBodySha256": "10eb589621f71a8b34fe53e8906d727adac71970e6917289e3b256608b5849c4",
+      "draftSha256": "331be59229925dfe479c4894805e6f0aeb3d31f6feca8e03d7aca85c38a21643"
+    },
+    {
+      "route": "/areas/indiana/monroe-county/",
+      "candidateBodySha256": "5f846f58bd00ce7a09c1abecfbef4039931a7f6ce1158955487f940abb1bd593",
+      "draftSha256": "ee3c9f8875a771b5a4ba40b39525ca268312be999e4b449e6c7bccad1f44e229"
+    },
+    {
+      "route": "/areas/indiana/montgomery-county/",
+      "candidateBodySha256": "4749e9dce7069725922b24dd9837f9e87ad243220536ccc48036e1c79f2e1a5e",
+      "draftSha256": "43db97a3c5bc09e5ade45ffe46d260dca6883358d8407f50c4eac97cd95383e5"
+    },
+    {
+      "route": "/areas/indiana/morgan-county/",
+      "candidateBodySha256": "0f3fbd2449df7d8898b0d7de2cc68a78f2e62b764c5d6814f77151dd76397aa5",
+      "draftSha256": "6ccfb7cef01b87316b697b4a431b7191240f511a6c43aa8f8412d5ccc079ef6f"
+    },
+    {
+      "route": "/areas/indiana/porter-county/",
+      "candidateBodySha256": "fb74ca90d3803d3e8c95ffddd0f8d5e912a258b9ad9936ef627e6d551c79dfff",
+      "draftSha256": "d3378c483c9d03ab6239372358e23ca865be4f0e5779592eb754acfd5eb9fd97"
+    },
+    {
+      "route": "/areas/indiana/st-joseph-county/",
+      "candidateBodySha256": "6c9030eae7a751c52fad1dfcab387a342e16538762a8cd7eef45be5c74f06d40",
+      "draftSha256": "8401d22bf08bed9baacfc7374450ca3b2d4ea89d9178faa9989259bff5801d2a"
+    }
+  ],
+  "pendingRoutes": [],
+  "requiredFixRouteCount": 31,
+  "recommendedFixRouteCount": 49,
+  "issues": [
+    {
+      "route": "/areas/broome-county/",
+      "candidateBodySha256": "d111d5a37f6256b68f7c5b4e5b8ea6a049065a2df54352bce4963b8e22e22bb0",
+      "draftSha256": "b2f9891a544e07c50867e56d80bd7cc42679a04a9314f74883a764c150ca4880",
+      "requiredFixes": [
+        "Shorten the handoff FAQ to the delivery promise and link to its full file checklist."
+      ],
+      "recommendedFixes": [
+        "Shorten the handoff FAQ to the delivery promise and link to its full file checklist."
+      ],
+      "exactCandidateEvidence": [
+        "How can I check what I receive at website handoff?",
+        "Check the source and content files, approved assets, dependency and non-secret configuration files, licenses, account inventory, completed checks and build and publishing instructions. The delivery should identify unfinished items too. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period."
+      ],
+      "findings": [
+        "The rewrite removes the duplicated scope blocks while preserving a real cross-state test.",
+        "The handoff inventory FAQ remains a dense, tangential interruption."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/delaware-county/",
+      "candidateBodySha256": "8eacd9ebed1625e033b0fef9735d921e6bdd75e2a8c6fca8460082be79f78ac7",
+      "draftSha256": "6dde51a4aa1d741a0dd76c8c75ac3ce827d9baca3c5b052197206824d8d4a586",
+      "requiredFixes": [
+        "Replace the editorial note about a stronger published example with a direct owner-facing request for actual first-review questions."
+      ],
+      "recommendedFixes": [
+        "Replace the editorial note about a stronger published example with a direct owner-facing request for actual first-review questions."
+      ],
+      "exactCandidateEvidence": [
+        "A stronger published example needs the contractor’s actual first-review questions. Electricians handle assessment, sizing and permits; this website brief supplies no engineering advice, monitoring or emergency response. Wider coverage does not establish additional offices."
+      ],
+      "findings": [
+        "The practical unknown option survives the compression, but a first-review example would make the result more concrete."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/delaware/sussex-county/",
+      "candidateBodySha256": "f604ec38780e29ad71ce69557cbd9dd38d811a6daaacb8c45cac4d18b54d65b3",
+      "draftSha256": "684c564e9aa5cf95c769ddf884fc940f2347794c06d75103080dc902444b0611",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Combine the repeated disputed-contribution advice in the decision and FAQ."
+      ],
+      "exactCandidateEvidence": [
+        "Caption the work your business delivered or coordinated and identify collaborators only with permission. If parties disagree about the contribution, resolve it with a factual approver before publication or use a different example.",
+        "What if trade partners disagree about how a project is described?",
+        "Choose one factual approver for the website and have the relevant parties resolve the disputed contribution before publication. I can draft from verified notes, but an unresolved role should not become a marketing claim. We can agree on different approved examples or adjust the page plan; new content work or delayed approvals may affect the quoted scope and dates."
+      ],
+      "findings": [
+        "The role distinction is useful, but three project-process FAQs make this appreciably longer than neighboring briefs."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/essex-county/",
+      "candidateBodySha256": "98ba9b04114c58781d57027ab03af7fccd7072ffa5b05afd03e2035ab5403ef0",
+      "draftSha256": "2099d9faad4756a0d34df7623aaaea9909e1b3a2f00beae5659998926812eb6a",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep the brief seasonal-update boundary and put detailed care workflow in the linked care explanation."
+      ],
+      "exactCandidateEvidence": [
+        "Seasonal facts come from the owner and need an agreed publishing window. Website care does not monitor stock or decide current terms. Live inventory, reservations, agreements and fitting systems need separate scope; an informational page can support telephone inquiries.",
+        "Will care automatically update our seasonal rental information?",
+        "No. You supply and approve changed rental facts, and we agree on the website edits and publishing window. Care does not monitor stock, decide current terms or promise immediate publication whenever shop conditions change. If opening information, package descriptions and return instructions must change together, send them as one related request and identify any deadline before work is scheduled."
+      ],
+      "findings": [
+        "No-reservation wording, separate items and pickup/use distinction remain useful; the seasonal care FAQ repeats the limits paragraph in more detail."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/brevard-county/",
+      "candidateBodySha256": "a404e0bdaecc9e8ba511fc1f224677f003320ecff415a5e15c9160e122331880",
+      "draftSha256": "0bac335b248ac176ad45f4d8e05b648c9c3b07725abfa265bc635088d922f280",
+      "requiredFixes": [
+        "Replace “A stronger case needs owner-approved observations and process detail.” with an owner-facing request for actual assessment prompts."
+      ],
+      "recommendedFixes": [
+        "Replace “A stronger case needs owner-approved observations and process detail.” with an owner-facing request for actual assessment prompts."
+      ],
+      "exactCandidateEvidence": [
+        "Launchpad Services lists duct, insulation, thermostat and airflow services alongside air conditioning, and describes assessing the issue before discussing options. Its Palm Bay address and stated Brevard coverage establish the example’s local connection. A stronger case needs owner-approved observations and process detail."
+      ],
+      "findings": [
+        "The line about a stronger case reads like an internal review instruction."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/calhoun-county/",
+      "candidateBodySha256": "ce022102b7d6ba8c4e6db307431aeaf2c08756e4922d9ff0ead176eef48e6cc9",
+      "draftSha256": "0453a97ecf91712a220f242c5ebb63d0edafa1327e54ba0c7d0e9f9d54599186",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Use “This does not provide site-preparation or permitting instructions” in the limits sentence."
+      ],
+      "exactCandidateEvidence": [
+        "The dealer and delivery team determine suitability and arrangements. This is no site-preparation or permitting instruction. Configurators, synchronized inventory, finance applications and delivery scheduling require separate scope; the public explanation can link existing systems."
+      ],
+      "findings": [
+        "The rewrite preserves a specific inventory-to-custom-order consequence."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/clay-county/",
+      "candidateBodySha256": "a0425cd92911568bf2ea912f3f47787dd6682a0ee72d77930367e5d1f387fbf0",
+      "draftSha256": "c2a959811488daf591057e7d36adb82724beb856ba20a169e430ff52eaadb121",
+      "requiredFixes": [
+        "Replace “A stronger published example requires an actual approved repair caption rather than relying on the capability list alone.” with a direct request for an owner-approved contextual repair example."
+      ],
+      "recommendedFixes": [
+        "Replace “A stronger published example requires an actual approved repair caption rather than relying on the capability list alone.” with a direct request for an owner-approved contextual repair example."
+      ],
+      "exactCandidateEvidence": [
+        "Wright’s Welding & Fabrication describes equipment repairs serving Green Cove Springs, including cracks, reinforcement, realignment and on-site inspection. It lists an Orange Park office. A stronger published example requires an actual approved repair caption rather than relying on the capability list alone."
+      ],
+      "findings": [
+        "The phrase about a stronger published example reads like an internal editorial recommendation."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/columbia-county/",
+      "candidateBodySha256": "8880e5b7bede48abd567c6dd796173228da0ef4ee8b2765650f9390c38b3d027",
+      "draftSha256": "3212e228c426ce02a18a3f444895909ad39141fe5c531800cd78e32a619628cd",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep optional-blog scope in the linked content explanation or the FAQ, rather than repeating it in the limits paragraph."
+      ],
+      "exactCandidateEvidence": [
+        "The shop verifies dimensions and product suitability. Configurators, automated design, measured quotations and manufacturing tools require separate scope. Useful service information may be enough initially; a blog is optional and additional articles need an agreed page plan and price.",
+        "Do we need a blog as well as pages for our cabinetry services?",
+        "Only if there are useful customer questions that the service pages do not already answer. Clear kitchen, closet and built-in information may be the first priority. Research can identify a worthwhile preparation guide, but publishing regular posts is not a requirement for buying the website. We agree on any articles inside the page plan and price later content separately."
+      ],
+      "findings": [
+        "Core product distinctions remain useful; optional-blog guidance repeats in the limits and FAQ."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/escambia-county/",
+      "candidateBodySha256": "3bfcb85821cba421be183d7177068fddfcfb11864221f391cd25362a8a9d43db",
+      "draftSha256": "0a20bd62d68afe21809869c3472883c26ce5eb820c4c73d6337493f4e9e1259e",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Avoid repeating the trade-audience proposal test in both limits and the designer-selection FAQ."
+      ],
+      "exactCandidateEvidence": [
+        "Site suitability and scheduling remain for operator review. Trade portals, fleet scheduling and asset tracking require separate scope. When comparing website proposals, check whether the page plan and inquiry actually serve this trade relationship as well as showing an attractive portfolio.",
+        "How should we judge a website proposal aimed at trade partners?",
+        "Ask the designer to show how a sign company would identify your installation role, find relevant evidence and make a useful request. The proposed page map and checks should reflect that commercial relationship. Compare the included writing, review stages, migration work and ongoing costs in the written proposal. A visually impressive portfolio alone does not demonstrate that the trade audience has been understood."
+      ],
+      "findings": [
+        "Preserves the direct-consumer exclusion and distinguishes supplied artwork from an install-ready site."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/gadsden-county/",
+      "candidateBodySha256": "31d4932279441ccbfc1781826b1626aea0a52677f1ba14b91bf358c304fe3308",
+      "draftSha256": "920542bfc3e806188f90f63f2d52ede6e8fc83e4508ea6cb2246d06e87592e3f",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Shorten the repeated stable-address and downloaded-copy explanation across limits and FAQ."
+      ],
+      "exactCandidateEvidence": [
+        "Previously downloaded files cannot be changed remotely. Agree which download addresses stay stable, which versions remain dated and who replaces them. Inventory synchronization, order processing and reservation systems need separate scope; the website can explain and link the existing tools.",
+        "Can you update availability downloads without breaking links buyers already use?",
+        "I can review the existing download links and agree which addresses should stay stable and which files need dated versions. Each link should show the document date and lead to the intended file. Already downloaded copies cannot be updated remotely, so they still need a clear route to current availability. Ongoing replacements need an agreed update process."
+      ],
+      "findings": [
+        "The filename-date rule and unchangeable downloaded copies provide unusually specific source-grounded value; the care FAQ repeats that value rather than adding much."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "candidateBodySha256": "53d171044bc6c829d31d29c48cda28fabe259a6dc30ddc4892f72602d4fcb9b9",
+      "draftSha256": "dba89e60c5b174c022c75316249337e8db5f1e692856b954af5b840903bd2d73",
+      "requiredFixes": [
+        "Replace the internal strengthening note with an owner-facing request and add a clearly labeled sample caption or grounded project distinction to demonstrate mantel-only versus surrounding work."
+      ],
+      "recommendedFixes": [
+        "Compare this page with the Kent County DE woodworking brief when deciding whether both merit separate long-term pages."
+      ],
+      "exactCandidateEvidence": [
+        "Hurst Carpentry’s Trenton millwork introduction lists mantels, faux beams, doors, tables and ceiling work alongside broader room and built-in services. The range supports a contribution-led gallery, but a stronger example needs a real owner-approved caption rather than a list of capabilities.",
+        "Caption what the shop designed, made or installed, with permission to publish the project. Keep an inspiration image distinct from completed work and avoid implying responsibility for every visible element of the room.",
+        "Let someone interested in a table and matching ceiling feature describe one design direction while preserving two work items and their separate installation questions. Explain which room context starts review and what the workshop later verifies."
+      ],
+      "findings": [
+        "The example remains largely a capability-to-caption recommendation shared with other woodworking pages.",
+        "The source bridge says a stronger example needs an actual caption rather than providing one."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "candidateBodySha256": "5629629af944fc49b0e214c1f98335dc2664d4dbe951d41efcc51091bc5a735a",
+      "draftSha256": "16f3ecacdc64ad9548e6717a92e05167d054115b7d8ac7e53e516c96a567e52d",
+      "requiredFixes": [
+        "Replace the editorial strengthening sentence and show a clearly labeled combined-function inquiry example or actual owner-approved review prompts."
+      ],
+      "recommendedFixes": [
+        "Replace the editorial strengthening sentence and show a clearly labeled combined-function inquiry example or actual owner-approved review prompts."
+      ],
+      "exactCandidateEvidence": [
+        "Major’s Truck Repair describes engine, electrical, cooling, brake and suspension services and explicitly includes Moore Haven in its mobile RV area. Its contact address is in Okeechobee. A more distinctive published case needs the operator’s actual multi-function review questions.",
+        "Use the service team’s approved prompts for what stopped working and when. Leave a route for uncertain or combined concerns instead of forcing separate, disconnected requests for every service category."
+      ],
+      "findings": [
+        "The explicit sentence about a more distinctive published case signals unfinished editorial work.",
+        "The combined-functions idea needs a concrete grouped inquiry example to distinguish the page from other symptom-led mobile-service briefs."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "candidateBodySha256": "73426a874f684816075341b872131592e41a6f83b81214d71c465913c0c3c892",
+      "draftSha256": "64d2a02d730c2481fd8b32c28a7022c8314e16911c687b8ba0e1253713f7ece7",
+      "requiredFixes": [
+        "Add a clearly labeled workshop-caption example or owner-approved component/rebuild distinction, and connect it explicitly to the initial customer question."
+      ],
+      "recommendedFixes": [
+        "Add a clearly labeled workshop-caption example or owner-approved component/rebuild distinction, and connect it explicitly to the initial customer question."
+      ],
+      "exactCandidateEvidence": [
+        "Ullrich Water Services in Wauchula offers treatment and analysis alongside wells and pumps. Its pump page describes custom components, an in-house machine shop and rebuild work. That workshop detail can strengthen the page if supported by an accurate owner-approved example rather than a category list alone.",
+        "Use a permissioned example to explain what the business assessed and performed. Keep a new-property or supply request distinct, with intended use and location available for the team’s feasibility discussion."
+      ],
+      "findings": [
+        "The in-house machine-shop detail could distinguish this page but remains unillustrated; the source bridge itself acknowledges that limitation."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "candidateBodySha256": "c76548af638c3384cad0a265ac334ce58564965d9bf470c454e074e9eaa937fa",
+      "draftSha256": "f81e583da0619716fa01e503d16617dd42e69cf5190dc6cb8a9c0b8b2cedf80b",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence and provide a clearly labeled package-versus-ordinary-delivery example or owner-approved distinction that changes the inquiry."
+      ],
+      "recommendedFixes": [
+        "Replace the internal strengthening sentence and provide a clearly labeled package-versus-ordinary-delivery example or owner-approved distinction that changes the inquiry."
+      ],
+      "exactCandidateEvidence": [
+        "Panhandle Lumber & Supply’s Bonifay service page lists metal-roof cutting, special orders, contractor support and delivery, with barn-kit arrangements treated separately. It explicitly identifies the Bonifay store and Holmes County service. The stronger example would explain the owner’s actual package-delivery distinction.",
+        "Ask about collection or the actual delivery location. Identify packages needing their own arrangement so a barn-kit buyer does not assume that a general local-delivery description applies unchanged."
+      ],
+      "findings": [
+        "The proposed differentiator is a separate barn-kit delivery arrangement, but the page does not explain what changes for the buyer.",
+        "The stronger-example sentence reads as unfinished editorial work."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/lake-county/",
+      "candidateBodySha256": "d0c6064fa5a447d922f14a92967675f6bb6bab7b19ad2f927bbcd9ee1832cec2",
+      "draftSha256": "231c441460a7f055ceca852faa80ea376294b5cdbd9b5beababcf01df52f84ca",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Leave the detailed scoped-review explanation in one place rather than both limits and FAQ."
+      ],
+      "exactCandidateEvidence": [
+        "Installers assess suitability and agree the plan. Live stock, automated measurement and instant installed pricing require separate scope. An ineffective estimate page can first receive a scoped review of its explanation, request path and delivery evidence before a broader redesign is considered.",
+        "Can you investigate an ineffective estimate page before we rebuild?",
+        "We can agree on a website review that checks the page explanation, request path and available delivery evidence. Bring examples of where customers get stuck and access to the supported receiving route. The findings distinguish website problems from questions about your estimating process. You receive prioritized recommendations; a larger redesign or new estimating system would require its own scope."
+      ],
+      "findings": [
+        "The earlier estimate stage differs from Gulf's pre-installation checklist, but the commercial review FAQ repeats its introduction."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/lee-county/",
+      "candidateBodySha256": "b42db4226852266e562f216e51e8b0047ae82fdc580bf6281a0171c7fba734c1",
+      "draftSha256": "363297217205bd43d092bf9909e67a6aa10be92fbe3dde205bda105223a04831",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep website-photo readiness advice in the FAQ or linked scope page, rather than repeating it in the limits paragraph."
+      ],
+      "exactCandidateEvidence": [
+        "CRM connections, portals, automatic qualification and design tools need separate scope. Website planning can also begin before all project photos are ready, but agreed facts, publishable photographs and access must be ready for build work or the page plan and schedule need adjustment.",
+        "Can we discuss the website before all our project photos are ready?",
+        "Yes. An initial conversation can identify the pages, usable material and missing approvals. Before build work starts, we need the agreed business facts, photographs and account access ready. If some cabinetry projects cannot yet be shown, we agree on a smaller publishable selection or revise the schedule. The written proposal records what will be delivered and when."
+      ],
+      "findings": [
+        "The source's explicit unfinished-details invitation supports the task; duplicated website-start material should be trimmed."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/liberty-county/",
+      "candidateBodySha256": "e309e972e880841e832c68b3b16585a979b8ada1a17b17c20aeb9812d1f6c5a6",
+      "draftSha256": "8f4a8f1bb3ccd8b3c2b57fa9bbe87f5fafa8d40065a0046278bb7956f48e2fdc",
+      "requiredFixes": [
+        "Replace the internal strengthening note with a worked, clearly labeled listed/custom request using verified dimension labels or explicit placeholder fields and separate quantities."
+      ],
+      "recommendedFixes": [
+        "Replace the internal strengthening note with a worked, clearly labeled listed/custom request using verified dimension labels or explicit placeholder fields and separate quantities."
+      ],
+      "exactCandidateEvidence": [
+        "How should I describe two sizes and the quantity needed for each?",
+        "Invite one record for each requested size, its quantity and any custom requirement. Let intended use or uncertainty accompany a custom line while the supplier confirms whether it can be supplied.",
+        "Whitfield Stakes identifies a Bristol base and publishes common wooden-stake sizes with custom cutting, delivery and phone quotes. Its published PO box is a mailing address, not arrival directions. The useful website improvement is a clear mixed-size request connected to the existing quote route.",
+        "Use consistent dimension labels / Keep listed and custom lines separate / Attach the fulfillment question",
+        "Invite one record for each requested size, its quantity and any custom requirement. Let intended use or uncertainty accompany a custom line while the supplier confirms whether it can be supplied.",
+        "Approved size list, dimension terminology and units. | Custom-order boundaries and an accurate mixed-size example. | Destination information and current quote/delivery review process. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The sentence 'A stronger published example should use actual approved size labels instead of invented dimensions.' exposes unfinished example development."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/manatee-county/",
+      "candidateBodySha256": "13aed541047053bf168a0c85a13e1bcbfeda90785ccc299e0982129538e196a0",
+      "draftSha256": "610afea97d1428b6a8a49829c44d8f3995a75e8d8bc399984c3cb0c88aed5947",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled repair-versus-new-function inquiry example, showing what photos establish and what inspection must decide."
+      ],
+      "recommendedFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled repair-versus-new-function inquiry example, showing what photos establish and what inspection must decide."
+      ],
+      "exactCandidateEvidence": [
+        "Can you assess my damaged cover, or should I ask about a replacement?",
+        "Distinguish keeping an existing item in service from changing protection, shade or seating. Organize examples by those functions so a visitor does not select a storage cover when seeking an enclosure.",
+        "KTM Custom Marine Canvas in Bradenton lists storage covers, enclosures, upholstery, repairs, restitching and pattern fabrication. The service range supports a practical distinction between describing an existing item and defining a new one’s purpose. Its published contact address provides local context.",
+        "Describe the existing item / Explain the intended result / Arrange the specialist review",
+        "Distinguish keeping an existing item in service from changing protection, shade or seating. Organize examples by those functions so a visitor does not select a storage cover when seeking an enclosure.",
+        "Accepted repair types and useful photo guidance. | Approved examples labeled by function and actual fitting work. | Initial assessment and boat-access arrangements. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The example is still proposed in 'An owner-approved example would make the explanation stronger' rather than demonstrated."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/palm-beach-county/",
+      "candidateBodySha256": "9a989c61c666a2b6d5c361ffd5018a15d92e87be52aa67653686f252906d4c73",
+      "draftSha256": "dd2a2d4cb529cfbbc931013c9ace8a9d99802b60cc57156d3694258a6fa7f6c8",
+      "requiredFixes": [
+        "Replace the editorial strengthening sentence and add a clearly labeled two-property request example, preserving shared brand details while showing distinct new-opening and replacement conditions and review questions."
+      ],
+      "recommendedFixes": [
+        "Replace the editorial strengthening sentence and add a clearly labeled two-property request example, preserving shared brand details while showing distinct new-opening and replacement conditions and review questions."
+      ],
+      "exactCandidateEvidence": [
+        "How should I describe one new location and one replacement-sign project under the same brand?",
+        "Retain each address, existing conditions, requested change and local contact. A new opening and a replacement project should remain distinguishable even when both use the same logo and are discussed in one request.",
+        "West Palm Beach Signs describes site surveys, sign acquisition and installation, including coordination across multiple locations. Its contact page identifies West Palm Beach. This supports the general program-versus-site distinction; a real approved project example would show how that distinction works in practice.",
+        "Set out the shared purpose / Keep a separate record for each site / Explain survey and installation responsibilities",
+        "Retain each address, existing conditions, requested change and local contact. A new opening and a replacement project should remain distinguishable even when both use the same logo and are discussed in one request.",
+        "Actual program coordination and client-contact responsibilities. | Useful site details, survey arrangements and installation roles. | An approved example showing different starting conditions at two properties. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The source bridge says 'a real approved project example would show how that distinction works in practice' instead of demonstrating the promised new-versus-replacement distinction."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/polk-county/",
+      "candidateBodySha256": "e931fa1c9b6925a91b7665052cdfc6cf615d415fb5ef6a310d9af55c90ab91eb",
+      "draftSha256": "ac2502e606d0a2fdf9472c7ca7742e0fed2e1b0e85ecdd90b90e9dedd90168da",
+      "requiredFixes": [
+        "Add a clearly labeled worked damaged-equipment versus new-component inquiry showing different initial evidence, and replace the internal capability-strengthening instruction with owner-facing scope language."
+      ],
+      "recommendedFixes": [
+        "Add a clearly labeled worked damaged-equipment versus new-component inquiry showing different initial evidence, and replace the internal capability-strengthening instruction with owner-facing scope language."
+      ],
+      "exactCandidateEvidence": [
+        "Can I describe damaged equipment before knowing which repair or machining process it needs?",
+        "Invite a drawing, sketch, existing item reference or description of the observed problem as appropriate. Explain how technical files are shared later through the shop’s approved route, with changes to a previous job identified for review.",
+        "Independent Machine Works at 2810 Parkway Street in Lakeland introduces CNC machining, fabrication and welding, and equipment repair. Those categories support different starting conversations; the source does not by itself supply a detailed worked example or acceptance limit.",
+        "Choose the request’s purpose / Describe the available evidence / Show a substantiated shop contribution",
+        "Invite a drawing, sketch, existing item reference or description of the observed problem as appropriate. Explain how technical files are shared later through the shop’s approved route, with changes to a previous job identified for review.",
+        "Accepted project types and preliminary review information. | Approved technical-file sharing arrangements. | Permitted examples with accurate roles and capability limits. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The source bridge explicitly says it does not supply a detailed worked example; the recommendations remain a general machine-shop inquiry template."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/st-lucie-county/",
+      "candidateBodySha256": "1f804969f9284d206323fd8bdc52b51871a09e9813a5ae1f569cd5d342e2f17c",
+      "draftSha256": "aae8dd528d3d903119f9b7380b62c403ab7940c5ab8b5def2f8c8079e2995f8a",
+      "requiredFixes": [
+        "Add a clearly labeled use-led closet inquiry or owner-approved project example that distinguishes overflow, daily-use access and room constraints; replace the internal evidence-needed note with reader-facing explanation."
+      ],
+      "recommendedFixes": [
+        "Add a clearly labeled use-led closet inquiry or owner-approved project example that distinguishes overflow, daily-use access and room constraints; replace the internal evidence-needed note with reader-facing explanation."
+      ],
+      "exactCandidateEvidence": [
+        "How should I describe a crowded reach-in closet before the home consultation?",
+        "Use an approved example to explain the particular storage problem and how the agreed design addressed it. Label 3D renderings separately from finished installations and describe the actual selection, installation and walkthrough process.",
+        "Chalet’s Custom Closets describes in-home consultation, 3D design, selection, manufacture, installation and walkthrough. It names Port St. Lucie and Fort Pierce among served places. The source supports that broad process; owner evidence is needed to demonstrate a particular functional improvement.",
+        "Describe the contents and difficulty / Add the room context / Show a functional project example",
+        "Explain which photographs or other preparation help the designer understand doors, equipment and shared room uses. Keep preferences and undecided finishes visible alongside practical needs so the consultation can address competing priorities.",
+        "Room types served and consultation preparation guidance. | An approved example with a specific use problem and outcome. | Material choices, image-stage labels and installation responsibilities. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The source bridge explicitly limits evidence to a broad process, and the page's functional-improvement example remains unshown."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/taylor-county/",
+      "candidateBodySha256": "97820d1bc6a20b36f44fa106b623394429af7f9a40e72a99c5be8ab27e35f3c2",
+      "draftSha256": "85b6c74a53ebe48d5f0836a060d4a70aa652dd38e767b8742ea18db025bf3706",
+      "requiredFixes": [
+        "Replace the internal strengthening note and add a clearly labeled partial-record replacement inquiry showing known identifiers, unknown details, current concern and desired change without inventing compatibility."
+      ],
+      "recommendedFixes": [
+        "Replace the internal strengthening note and add a clearly labeled partial-record replacement inquiry showing known identifiers, unknown details, current concern and desired change without inventing compatibility."
+      ],
+      "exactCandidateEvidence": [
+        "What should I send about my existing frame if I no longer have all the project records?",
+        "Explain which maker, project references or records help your team begin. Use approved whole-structure and detail photograph guidance while allowing customers to distinguish known information from details they cannot confirm.",
+        "Big Top Manufacturing identifies its headquarters in Perry and describes replacement fabric membranes designed around existing frames alongside new-structure work. The source supports keeping an existing asset reference attached to replacement questions; an approved record example would make the preparation more concrete.",
+        "Identify what is already there / Separate condition from the requested change / Explain the initial review and handoff",
+        "Invite a plain description of the current concern and whether the customer wants replacement in kind or a different appearance or feature. Keep that desired outcome distinct from an option the manufacturer has accepted.",
+        "Useful structure identifiers and record examples. | Approved photograph guidance and replacement categories. | Initial-review, supply and installation responsibilities. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "An approved record example is explicitly deferred even though incomplete paperwork is the central customer question."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/washington-county/",
+      "candidateBodySha256": "dda424a43d2671eab5303ae43095b8268e4184553de9ac9cf2a545c0149cdadf",
+      "draftSha256": "192cb5ea9fbd5735794606368d99948c594529adbfd87c7ed306614cae4479d1",
+      "requiredFixes": [
+        "Add a clearly labeled older-machine request showing known model/reference details, unknown part identity and condition/assessment questions; remove the internal strengthening note without inventing compatibility."
+      ],
+      "recommendedFixes": [
+        "Add a clearly labeled older-machine request showing known model/reference details, unknown part identity and condition/assessment questions; remove the internal strengthening note without inventing compatibility."
+      ],
+      "exactCandidateEvidence": [
+        "What details should I send about an older saw when I do not know the part number?",
+        "Use the model and other identifiers your staff actually need to distinguish versions. Explain helpful photographs or records, with an ordinary description route for customers who cannot supply every detail.",
+        "Lanes Outdoor Equipment in Chipley describes older Husqvarna parts and parts-saws alongside mower and small-engine service. Its store is on Highway 277. That offer makes the condition and identity of the particular replacement more useful than a broad statement that older equipment is supported.",
+        "Start with the machine identity / Describe the proposed replacement accurately / Separate buying from assessment and fitting",
+        "State how staff confirm the component, availability and condition of an offered item. A general statement about older parts or parts-saws should not appear to guarantee stock or compatibility for a particular request.",
+        "Useful model identifiers and approved reference photographs. | Actual parts sources and publishable condition descriptions. | Uncertain-request review, repair boundaries and handoff instructions. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph explicitly defers an owner-approved identification example central to the question."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/franklin-county/",
+      "candidateBodySha256": "b7019d590fea9041484119933f82bab068bf2054413ba81b84d1d914839c03ec",
+      "draftSha256": "7e44a2b8910a214357e58b8d5e6dd75693479254277dd4ba771318c62d3af1d3",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep URL-preservation and redirect advice in the FAQ rather than repeating it in the example limits paragraph."
+      ],
+      "exactCandidateEvidence": [
+        "If our private outing includes rental equipment, where do guests collect it and who confirms added lessons?",
+        "Pair rental needs with the actual collection instructions. If equipment is obtained away from the event venue, explain that distinction before guests plan their arrival and identify who confirms the practical arrangement.",
+        "Titus Mountain’s Own the Upper page describes a private Upper Mountain outing with equipment, lesson and food options, while rental equipment is at the Lower Mountain. It lists 215 Johnson Road in Malone. The different event and equipment locations make this a practical group-planning example.",
+        "Identify the core event / Show the equipment handoff / Keep later changes attached to the group",
+        "Pair rental needs with the actual collection instructions. If equipment is obtained away from the event venue, explain that distinction before guests plan their arrival and identify who confirms the practical arrangement.",
+        "Current event inclusions and optional components. | Equipment collection and meeting-point instructions. | Organizer contact and confirmation responsibility for changes. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The scope paragraph's URL/redirect recommendation is repeated in the following search/referral FAQ."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/fulton-county/",
+      "candidateBodySha256": "27114355937cb2185b375a9191e1f5495f49ac778003d313cb121843123c161a",
+      "draftSha256": "a8b654ace4c36182d92cf5af1cc81a1d5e3ad9be17ce0a33efb1ec06be649af3",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Remove the duplicate sample-account sentence from limits and shorten the FAQ inventory by linking the sample handoff."
+      ],
+      "exactCandidateEvidence": [
+        "How do I ask for this texture in a different color without treating the sample request as production approval?",
+        "Explain the actual color, embossing or pattern-development capabilities and the reference inputs your team needs. A sketch or image can start a discussion without becoming tooling approval or evidence that the variation is already stocked.",
+        "Townsend Leather in Johnstown links an existing sample store separately from custom-sample inquiries and describes color matching, embossing and other capabilities. Its visit address is 4 Grove Street; its ship-to address is 45–49 Townsend Avenue. Their different purposes should remain explicit.",
+        "Identify the existing reference / Describe the variation separately / Include application and destination details",
+        "Explain the actual color, embossing or pattern-development capabilities and the reference inputs your team needs. A sketch or image can start a discussion without becoming tooling approval or evidence that the variation is already stocked.",
+        "Stable sample references and current customization capabilities. | Preferred reference inputs and technical-review responsibilities. | Accurate sample, visit and ship-to instructions. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "Sample-store account separation appears in limits and again in a long handoff inventory FAQ."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/genesee-county/",
+      "candidateBodySha256": "b86c9c48a0525fd45d14e55323102e46116aef03b47ae3de8bd07099ad06a15a",
+      "draftSha256": "2663a01ff7ad2895524e06c21ed0d152316fb672f785cb1d53178b08aba3582f",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Leave the inquiry-diagnosis sequence in the FAQ and keep limits focused on rental and website scope."
+      ],
+      "exactCandidateEvidence": [
+        "Our venue opens only on the event morning. Can I flag that before discussing a tent and tables?",
+        "Explain which site-access dates and constraints the rental team needs. A venue unavailable until the event morning should be recognizable as a review question instead of being hidden behind the event date alone.",
+        "Sterling Tents at 150 Pearl Street in Batavia describes customer pickup and company-installed tents, with setup and removal around the event. Its wider installation reach does not imply offices elsewhere. The useful distinction is the equipment handling and access window around the occasion.",
+        "Choose the handling arrangement / Keep access separate from event time / Confirm what happens afterward",
+        "Explain which site-access dates and constraints the rental team needs. A venue unavailable until the event morning should be recognizable as a review question instead of being hidden behind the event date alone.",
+        "Current pickup/setup options and preparation instructions. | Approved site-review questions and timing process. | Removal/return terms and contact for changes. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph and FAQ both repeat the missing-content/confusing-fields/message-delivery diagnostic sequence."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/greene-county/",
+      "candidateBodySha256": "53a2db4eb09f33402a76822e053a344065f8b5fcbbf5a7f690402ab5486bd84d",
+      "draftSha256": "790104005fc55cf2511919fb11fb3ffc21b018005d3eb0644e393358aadf6676",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep the detailed care window and notice-supply instructions in the FAQ; shorten the limits paragraph to the integration boundary."
+      ],
+      "exactCandidateEvidence": [
+        "The farm grows tomatoes. How can I check whether they are available before I drive over?",
+        "Give a current harvest or stand highlight its date and useful duration. Agree who approves replacement wording when a crop ends, so an old highlight does not conflict with the permanent introduction.",
+        "Story Farms publishes a homegrown produce list, farm news and stand hours from its Catskill address at 4640 NY-32. Those pieces answer different questions: the farm’s range, its latest message and when to arrive. Their usefulness depends on keeping each kind of information clear.",
+        "Label the seasonal range / Make the latest approved notice recognizable / Connect the update to a visit",
+        "Give a current harvest or stand highlight its date and useful duration. Agree who approves replacement wording when a crop ends, so an old highlight does not conflict with the permanent introduction.",
+        "Approved crop list, photographs and current notice. | Stand schedule and contact for availability questions. | Named updater, approval process and publishing arrangement. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "Care response scope and notice-preparation instructions are repeated almost verbatim in the limits paragraph and FAQ."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/hamilton-county/",
+      "candidateBodySha256": "86d586f510cfc7b64edd7b4aed9f0ccba29ff4cb490dd09262b01dfc957f761d",
+      "draftSha256": "d3cfa0ee442f04e0b46edc033b3a27c894e4da5f6c1bfda0cfccd3197af6a8d0",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep detailed public-site versus app-care responsibilities in the FAQ, avoiding the same exclusion list twice."
+      ],
+      "exactCandidateEvidence": [
+        "If my boat is in dry storage, what do I need to request before it can be ready at the dock?",
+        "Link to the established customer tool with current instructions about requests and confirmation. A new-customer inquiry should not appear to dispatch the launch crew or promise immediate dock access.",
+        "Indian Lake Marina at 204 Lakeshore Drive in Sabael describes wet slips, dry storage on a customer’s trailer, launch requests through SpeedyDock and annual storage/service packages. The distinction connects the boat’s location to the request an owner must make before using it.",
+        "Compare the physical arrangements / Name the launch and pickup process / Identify additional seasonal work",
+        "Link to the established customer tool with current instructions about requests and confirmation. A new-customer inquiry should not appear to dispatch the launch crew or promise immediate dock access.",
+        "Current storage options and customer-trailer requirements. | Operating-tool link, instructions and confirmation wording. | Package inclusions and contact for added work. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph and FAQ repeat the same app administration, launch monitoring and storage-record exclusions."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/herkimer-county/",
+      "candidateBodySha256": "ed364e30d64acf220246c1c5a941122f291560f8fcc3c461dd743952ebc4b467",
+      "draftSha256": "cb9b6c5bc186d6532accc55de4f1cdbd767b2d510d94a736a1bb435abbca1ee0",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Keep search-research explanation in the FAQ and leave limits focused on participation and website systems."
+      ],
+      "exactCandidateEvidence": [
+        "Does the activity we choose include making jewelry, or is the finished piece in the photograph a separate option?",
+        "Associate bag types, materials and finished examples with the option that actually provides them. An illustrative find should not promise the same result, and a gallery should not imply every pictured item is included.",
+        "Herkimer Diamond Mines at 4626 State Route 28 North presents above-ground prospecting, purchased sluice-bag activities and jewelry making. The useful comparison is what a visitor does and takes home in each option. It describes one operator rather than every regional mine.",
+        "Describe the activity itself / Name the selected materials and inclusions / Keep the next step attached to the choice",
+        "Associate bag types, materials and finished examples with the option that actually provides them. An illustrative find should not promise the same result, and a gallery should not imply every pictured item is included.",
+        "Current activity descriptions and preparation. | Approved materials, photographs and package boundaries. | Admission route and seasonal-update owner. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph introduces the same one-comparison/no-page-per-phrase/no-sales-guarantee advice expanded in the FAQ."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/adams-county/",
+      "candidateBodySha256": "0f1e0c7d213cd08dda0602a34e003246d17f24ce22adec512826574eb79d226b",
+      "draftSha256": "0299febea709bab075623163b15c8f2ce04ddc5acbb42a13cda0ec20ba5f5a69",
+      "requiredFixes": [
+        "Consolidate physical-sample approval and screen-image limitations into one concise explanation; use the FAQ only for a distinct website-project question or remove it."
+      ],
+      "recommendedFixes": [
+        "Consolidate physical-sample approval and screen-image limitations into one concise explanation; use the FAQ only for a distinct website-project question or remove it."
+      ],
+      "exactCandidateEvidence": [
+        "I like this stain on the wood shown, but need a different size. What references should I bring to the conversation?",
+        "Label the stain together with the wood species shown. If the customer has chosen a color but not the wood, keep that uncertainty explicit rather than completing a combination on their behalf.",
+        "Bernhaus Furniture in Berne invites product references, sketches and inspiration photographs and guides size, wood, stain and hardware selection. Its comparison tool pairs wood species with stains, making the complete combination a useful reference for the first inquiry.",
+        "Identify the intended piece / Preserve the material pairing / Keep changes and final approval distinct",
+        "Label the stain together with the wood species shown. If the customer has chosen a color but not the wood, keep that uncertainty explicit rather than completing a combination on their behalf.",
+        "Product identifiers and current wood/stain labels. | Approved examples and choices allowed to remain open. | Physical-sample review and order-confirmation process. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "Physical-sample review and screen-image limitations recur across the last decision, limits and FAQ; the FAQ offers little new decision value."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/allen-county/",
+      "candidateBodySha256": "9e98f19c726117385754f192c08ed6b6bde68c1ce751501a8bd45a505c523d3a",
+      "draftSha256": "19897582fa0cfacf33c2aac3e0b1aa1227b2288ef22e397b0a8d84562fc5208a",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Remove duplicate writing and image-license explanations from limits, leaving each once in its relevant FAQ."
+      ],
+      "exactCandidateEvidence": [
+        "I like this collection, but need an altered corner unit. Which parts can your workshop assess and what does this project photograph show?",
+        "Use approved project notes to say which components were supplied, customized or installed. A photograph should support a specific role description instead of implying every pictured cabinet was manufactured locally.",
+        "Brookwood Cabinet Company describes a Fort Wayne dealership and workshop combination. Its process includes planning, sourcing cabinets and accessories, workshop customization and installation oversight. That combination provides a reason to distinguish product references from evidence of completed local work.",
+        "Identify the reference image / Describe the shop’s actual contribution / Prepare the alteration discussion",
+        "Use approved project notes to say which components were supplied, customized or installed. A photograph should support a specific role description instead of implying every pictured cabinet was manufactured locally.",
+        "Permissioned photographs and source/usage information. | Project notes identifying products and the team’s contribution. | Current customization boundaries and inquiry process. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph previews both writing/photography scope and third-party-image restrictions, which the two following FAQs repeat."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/crawford-county/",
+      "candidateBodySha256": "dc58ac3fb6907d40333c5ef904b04bc24dda597a0b05c5dd0f9fbc47254c3daa",
+      "draftSha256": "ab7eaca379cfa68f41de3fec1da7002a870e129c109851dd8892bdabdaa83a62",
+      "requiredFixes": [
+        "Replace the supplied-summary sentence with owner-facing wording requesting current duration and start instructions; retain the distinction between tour time and whole-visit time without inventing numbers."
+      ],
+      "recommendedFixes": [
+        "Replace the supplied-summary sentence with owner-facing wording requesting current duration and start instructions; retain the distinction between tour time and whole-visit time without inventing numbers."
+      ],
+      "exactCandidateEvidence": [
+        "If we choose both walking tours, does adding their durations tell us exactly when we can leave?",
+        "Put the operator-approved time with the relevant tour and state whether it describes the activity itself. Do not turn the sum into a guaranteed arrival-to-departure timetable.",
+        "Marengo Cave describes two walking tours with different durations and a combined ticket. Its visitor information says departures are arranged as needed. That combination makes time on each tour different from the complete time a family may spend at the attraction in Marengo.",
+        "Compare the experiences and inclusions / Explain what each duration covers / Describe how the visit gets started",
+        "Put the operator-approved time with the relevant tour and state whether it describes the activity itself. Do not turn the sum into a guaranteed arrival-to-departure timetable.",
+        "Current tour names, inclusions and duration wording. | Actual departure/waiting arrangements. | Combined-ticket guidance and contact for limited-time visits. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits sentence refers to 'the supplied summary', exposing internal evidence-processing language."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/daviess-county/",
+      "candidateBodySha256": "212d26655ba4d8749985e70ef5934b98b5d705ea5ae34f2476d0b74f3c6480d4",
+      "draftSha256": "a50cea6c0905131b6807e73f7e2d5a9d617248df69cdff1c97208fcff347676f",
+      "requiredFixes": [
+        "Replace the editorial strengthening note with a clearly labeled drywall-package versus whole-project inquiry example showing supplied plans, lead contact and the requested contribution."
+      ],
+      "recommendedFixes": [
+        "Replace the editorial strengthening note with a clearly labeled drywall-package versus whole-project inquiry example showing supplied plans, lead contact and the requested contribution."
+      ],
+      "exactCandidateEvidence": [
+        "We already have plans and a lead builder. Can I ask specifically about the drywall package rather than the whole house?",
+        "Distinguish broader construction or remodeling help from a particular service. Explain actual role boundaries so a defined package remains recognizable in the first conversation.",
+        "J&L Home Center near Washington describes general construction and remodeling alongside subcontractor services such as painting, drywall and framing. It separately lists custom cabinetry. Those capabilities make the requested role useful information before discussing the work at its Daviess County location.",
+        "Identify the larger project / Name the contribution being requested / Keep existing information and other participants visible",
+        "Distinguish broader construction or remodeling help from a particular service. Explain actual role boundaries so a defined package remains recognizable in the first conversation.",
+        "Accepted whole-project and trade-specific roles. | Approved examples identifying actual contributions. | Initial plan information and coordination questions. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph explicitly says an actual approved role example would strengthen the explanation."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/dearborn-county/",
+      "candidateBodySha256": "1ae35dbff3b3eba44cead91c629608110c81bc082e3c4a2da3754e3ffe2bf099",
+      "draftSha256": "8f0baf399ea9f695e2d2d41440555be1d60c364fba92a7272dd572c36e9d7b8c",
+      "requiredFixes": [
+        "Replace internal supplied-page/obtain-route prose with an owner-facing planning boundary; add a clearly labeled generic three-stop example or verified current venue labels so the handoff is demonstrated without invented timings."
+      ],
+      "recommendedFixes": [
+        "Replace internal supplied-page/obtain-route prose with an owner-facing planning boundary; add a clearly labeled generic three-stop example or verified current venue labels so the handoff is demonstrated without invented timings."
+      ],
+      "exactCandidateEvidence": [
+        "I have purchased access and need rental equipment. Where do I go before meeting for the first lesson?",
+        "Use the operator’s actual redemption and collection labels and directions. Keep fitting or collection visible before the activity meeting point where the selected arrangement requires it.",
+        "Perfect North Slopes separately explains ticket redemption, rental collection and the first-lesson meeting area at its Lawrenceburg-area destination. That supports a connected first-visit sequence. The supplied page does not give the exact on-site counter names or timings; those details must come from current operator instructions.",
+        "Start with what the guest has arranged / Explain the arrival and equipment handoffs / Name the meeting place after preparation",
+        "Use the operator’s actual redemption and collection labels and directions. Keep fitting or collection visible before the activity meeting point where the selected arrangement requires it.",
+        "Current offer inclusions and applicable arrival steps. | Verified venue labels, directions and equipment guidance. | Lesson meeting instructions and update responsibility. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The source bridge refers to 'the supplied page' and defers the exact venue guide, leaving editorial scaffolding in the candidate."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/dubois-county/",
+      "candidateBodySha256": "df92399f0a7ed82d3b00e0fb4cc7c936d86fdd592267292c69bc12d215293452",
+      "draftSha256": "83159b72f16046dced54c2b8ff59fab020b01b10c310acc66bdadefe00187398",
+      "requiredFixes": [
+        "Replace the supplied-evidence note with a clearly labeled surface-and-task inquiry example or verified owner-approved category comparison; leave equipment suitability to staff."
+      ],
+      "recommendedFixes": [
+        "Replace the supplied-evidence note with a clearly labeled surface-and-task inquiry example or verified owner-approved category comparison; leave equipment suitability to staff."
+      ],
+      "exactCandidateEvidence": [
+        "I know the floor I need to work on, but not whether a scrubber, floor machine or burnisher is appropriate. What should I tell staff?",
+        "Ask what cleaning or finish-care task is being discussed. Obtain owner-approved category descriptions and real task examples so the catalogue helps visitors ask useful questions without prescribing a method.",
+        "Jasper Equipment & Supply lists extractors, vacuums, scrubbers, floor machines and burnishers, alongside janitorial supplies. Its rental information asks for advance reservation when possible and mentions delivery or pickup. The supplied evidence does not define a worked surface-to-machine choice, so that explanation needs owner input.",
+        "Describe the surface and work area / Explain the intended result / Discuss the rental after selection review",
+        "Ask what cleaning or finish-care task is being discussed. Obtain owner-approved category descriptions and real task examples so the catalogue helps visitors ask useful questions without prescribing a method.",
+        "Current equipment categories and approved task descriptions. | Surface/setting questions used by the rental team. | Rental periods, reservation guidance and handoff process. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The public source bridge says 'The supplied evidence does not define a worked surface-to-machine choice' rather than providing a useful example."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/franklin-county/",
+      "candidateBodySha256": "3a13b19647eb262537f79a5996fd3983c37f45cd9a2eb87734debfd575217737",
+      "draftSha256": "5f484a950a81d1e833eef7e95d29c62c87fdb14966095afcc4c37937b3b3217d",
+      "requiredFixes": [
+        "Replace supplied-evidence and missing-details-before-publication wording with a direct owner-facing request for actual exceptions, additional-work approval and readiness communication."
+      ],
+      "recommendedFixes": [
+        "Replace supplied-evidence and missing-details-before-publication wording with a direct owner-facing request for actual exceptions, additional-work approval and readiness communication."
+      ],
+      "exactCandidateEvidence": [
+        "Will the watch be worked on here, and is the approximate repair time a confirmed date for collecting it?",
+        "State the real on-site role and any owner-confirmed exceptions. Keep proposed work and approximate timing distinct from an accepted scope or guaranteed completion date.",
+        "Ritzi Jewelers in Brookville describes on-site watch repair, an estimate with approximate timing and maintenance that may lead to further recommendations. Brookville supplies the Franklin County example; Batesville itself spans Franklin and Ripley counties. The supplied evidence does not define every exception or authorization step.",
+        "Prepare the intake conversation / Describe the workshop and estimate / Explain further recommendations and readiness",
+        "State the real on-site role and any owner-confirmed exceptions. Keep proposed work and approximate timing distinct from an accepted scope or guaranteed completion date.",
+        "Current intake details and workshop responsibilities. | Estimate wording and process for additional recommendations. | Actual completion notification and return arrangements. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "Internal evidence-gap prose appears in the source bridge and the following publication instruction."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/hendricks-county/",
+      "candidateBodySha256": "6027ef975556487b49808338a4ad82b65c86d4644b6c7865b2c6855c53c9e98c",
+      "draftSha256": "d51839bd8c5b35c01bd1da88931e79ff7d072744807b2c4f935804867467c92b",
+      "requiredFixes": [
+        "Replace internal supplied-summary wording and demonstrate one verified shared-versus-added task distinction or a clearly labeled comparison structure, preserving parts and check-in boundaries."
+      ],
+      "recommendedFixes": [
+        "Replace internal supplied-summary wording and demonstrate one verified shared-versus-added task distinction or a clearly labeled comparison structure, preserving parts and check-in boundaries."
+      ],
+      "exactCandidateEvidence": [
+        "What extra work does the larger package include, and how will a possible replacement part be discussed?",
+        "Explain the check-in agreement and how additional work or charges are discussed. A routine-service request that reveals another concern should reach assessment without silently expanding the accepted package.",
+        "Gear Up Cyclery in Plainfield lists tune-up packages with different adjustment, cleaning and overhaul work. Its service information says parts are additional and requires agreed work and estimates at check-in. Those boundaries help the customer use the comparison without treating a package as an all-inclusive repair.",
+        "Show the tasks shared by the packages / Describe the added cleaning or overhaul work / Keep parts and further recommendations separate",
+        "Name the actual components and tasks that change with the option. Obtain approved lists rather than relying on a broad premium label or implying every service is included.",
+        "Current shared and added task lists. | Parts/additional-service boundaries. | Actual check-in, estimate and communication process. / Ask about your website Compare all prices"
+      ],
+      "findings": [
+        "The limits paragraph refers to 'the supplied summary' and admits it does not enumerate the tasks being compared."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/howard-county/",
+      "candidateBodySha256": "d21f3199d516831ec3875bb936c5efdea4bc938a9561bae793db61b300ab9b85",
+      "draftSha256": "9be5ed9579326d3401b4a9a1d0e018fa03d2cbf073eb6e01a4a6e6335538c749",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Replace supplied public notice and evidence-review phrasing with natural dated attribution to the published notice."
+      ],
+      "exactCandidateEvidence": [
+        "Can I still visit the shop or take another class if manufacturing tours and glass-blowing activities are unavailable?",
+        "Place the relevant change beside older activity references as well as the main notice. Preserve the difference between ended, temporarily unavailable and continuing when the owner supplies those meanings.",
+        "Kokomo Opalescent Glass’s supplied public notice says manufacturing and tours have ended while the Op Shop remains open. Its class information says glass-blowing classes are not offered and other classes are unaffected. The evidence was reviewed October 23, 2026; it supports an offer-specific status explanation.",
+        "Keep dated listings aligned with the notice and identify the maintained inquiry route. A continuing class category should not imply that every listed date is still available.",
+        "Keep retail, tours and named class types distinct. A general opening-hours block should not answer a question about every service or experience under the same business name.",
+        "Exact current status and effective wording for each offer."
+      ],
+      "findings": [
+        "The precise retail/tours/glass-blowing/other-classes split provides useful status interpretation absent from Huntington fundraising duties."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/huntington-county/",
+      "candidateBodySha256": "ef2d242d3e55040d151675486a103053c1ca23fc6b5ae2cb50a3d5c3478c888d",
+      "draftSha256": "becd4985c07bc63b13def0f1d083a5ceaef621f2eab9c15a92be4a8238edece2",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Add a concise owner-approved online-versus-paper responsibility example so the who-combines-totals question receives a direct comparison."
+      ],
+      "exactCandidateEvidence": [
+        "If we choose paper order forms instead of the online store, who combines garment totals and handles the final order information?",
+        "Describe who gathers individual requests, consolidates totals and handles the applicable payment information. Obtain the real method-specific requirements rather than assuming a shopping link and a form produce the same handoff.",
+        "Cause Printing Network in Huntington describes online fundraiser stores and a separate order-form method. Its instructions give organizers different tasks for collecting orders, combining garment totals and handling payment. That change in responsibility is more useful to explain than treating the methods as interchangeable advertisements.",
+        "Keep deadline, combined information and distribution questions attached to the chosen method. Individual promises from supporters should not appear to be an accepted production order.",
+        "Keep the existing online and form-based options distinct. Show the approved garment, color and size choices using the supplier’s current instructions so the group does not distribute inconsistent offers.",
+        "Current program methods and organizer/supplier roles."
+      ],
+      "findings": [
+        "Online fundraiser links versus consolidated paper totals create a method-specific organizer responsibility; Jackson concerns retained cabinetry."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/jackson-county/",
+      "candidateBodySha256": "bb94b4cdf9cdaa93d3149229eba0f88ccb03251072ed9c8d7a85bb30651fadf4",
+      "draftSha256": "bd3942d169905fc8f7b82eafef8b057012ab757ded58cd70e55e7db19832471e",
+      "requiredFixes": [],
+      "recommendedFixes": [
+        "Consider a clearly labeled retained-countertop or surrounding-finish example, without asserting feasibility."
+      ],
+      "exactCandidateEvidence": [
+        "What should I show about the current cabinets and surrounding finishes before asking about the new installation?",
+        "Let the customer name surrounding fixtures or finishes expected to stay. Keep those retention goals visible while the business assesses removal and preparation rather than assuming a completely empty room.",
+        "Aria Construction Group describes measurement, removal and preparation before cabinet installation, trim and hardware. It explicitly serves Seymour from a Scottsburg base. That service-area example supports giving the existing room a place in the inquiry without implying premises in Seymour.",
+        "Describe the actual sequence through fitting, trim and hardware with accurate project captions. A finished-room image should not imply every visible operation belongs to the cabinet quote.",
+        "Use approved room and photo prompts to identify existing cabinetry. A finished-project gallery should not replace information about the room the customer actually has.",
+        "Current removal/preparation role and useful room prompts."
+      ],
+      "findings": [
+        "Retained fixtures and removal/preparation separate this replacement brief from Jasper photo printing, though a concrete retained-item example would deepen value."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/jennings-county/",
+      "candidateBodySha256": "461ee12b0db610397098356149ae505100b4be59dded4e52a8f337f66450fd81",
+      "draftSha256": "b4d61c9db5b7b3519491a9c6dcca4ead0cad24f0374a2f129fdd466f56a4225b",
+      "requiredFixes": [
+        "Replace the internal supplied-evidence note and demonstrate a clearly labeled displayed-versus-wearable award inquiry with shared event and recipient-specific fields, leaving exact specifications to the supplier."
+      ],
+      "recommendedFixes": [
+        "Replace the internal supplied-evidence note and demonstrate a clearly labeled displayed-versus-wearable award inquiry with shared event and recipient-specific fields, leaving exact specifications to the supplier."
+      ],
+      "exactCandidateEvidence": [
+        "Should this championship recognition be a trophy, plaque, ring or belt, and which details will change with that choice?",
+        "Use approved examples to distinguish displayed and wearable pieces. Obtain real product-specific selection questions rather than imply every format uses the same sizes, materials or requirements.",
+        "Premier Sports Group in North Vernon presents trophies and plaques alongside rings and championship belts and invites custom-award inquiries for events and tournaments. This range supports comparing the object’s presentation role, but the supplied evidence does not establish detailed selection rules for each format.",
+        "The supplier confirms suitable options, specifications and timing. Add owner-approved examples before making format-specific claims. Content can prepare a general inquiry; configurators, recipient-data systems, automated proofs and new ordering integrations require separate assessment.",
+        "Ask about the event, achievement and recipients using the kinds of work the supplier actually accepts. Keep the purpose visible before narrowing the design to a familiar catalogue image.",
+        "Current award categories and actual format examples."
+      ],
+      "findings": [
+        "Displayed versus wearable recognition is useful, but actual format-specific differences are deferred; Johnson directly resolves showroom choice."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/knox-county/",
+      "candidateBodySha256": "d008c7ec1765e4f405416390575c8285aff396bae2ad8cb4fb69a3f662770ab3",
+      "draftSha256": "d86c9a36a78e4cd8b3fc357296f1493d534ec0d4d445392d2e62365bd5ac64ce",
+      "requiredFixes": [
+        "Move the supplied-research/site-maintenance provenance out of the main planning narrative and use owner-facing wording about confirming current finishing and mailing arrangements. Retain accurate source limitations in the source notes."
+      ],
+      "recommendedFixes": [
+        "Move the supplied-research/site-maintenance provenance out of the main planning narrative and use owner-facing wording about confirming current finishing and mailing arrangements. Retain accurate source limitations in the source notes.",
+        "Consider a clearly labeled folded-piece pickup versus mailing inquiry example."
+      ],
+      "exactCandidateEvidence": [
+        "Do I want the pieces handed back to me, or should the shop also review folding and mailing as part of the job?",
+        "Let the customer state how finished pieces should be used and grouped. Ask about quantities in terms the printer approves rather than assuming the file determines folding or other preparation.",
+        "Vincennes Printing presents Haven Solutions print products alongside folding, mailing and finishing capabilities and invites a job-specification inquiry. The linked Haven site was under maintenance in the supplied research and corroborates company identity and location rather than supplying a complete operating process.",
+        "The printer confirms production methods, finishing and any mailing arrangement. Clear examples can prepare the existing inquiry without assuming post-print work is included. Distribution integrations, mailing-data systems, automated quotations and production tracking require separate assessment.",
+        "Use the shop’s actual product descriptions and artwork-reference instructions. Make clear what is being printed before discussing the operations or destination that follow.",
+        "Current products and approved finishing examples."
+      ],
+      "findings": [
+        "Folding, mailing and customer receipt define a real print handoff task, but the main source bridge contains an internal evidence audit; Kosciusko concerns current versus future boat work."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/lawrence-county/",
+      "candidateBodySha256": "776028daa3780fceaa54e821d841c54edb80aa5a057ec1f5e2e075484a43416b",
+      "draftSha256": "e2ca6e2635a90296010f47185fae21a41769a9c08403ebc045a5a24110932ce7",
+      "requiredFixes": [
+        "Replace the internal sentence about an owner-approved example making the comparison more useful with a direct owner-facing request for approved repair and upgrade examples. The existing flickering-sign/outdated-logo illustration can remain."
+      ],
+      "recommendedFixes": [
+        "Replace the internal sentence about an owner-approved example making the comparison more useful with a direct owner-facing request for approved repair and upgrade examples. The existing flickering-sign/outdated-logo illustration can remain."
+      ],
+      "exactCandidateEvidence": [
+        "I want the lighting problem assessed and am also considering a new appearance. How do I keep those goals separate?",
+        "Let customers explain what changed in the lighting or visible condition. They should not have to identify a failed component or choose a repair method to make contact.",
+        "Johnny’s Signs in Bedford describes lighting and other repairs separately from LED retrofits and design modernization, with assessment before work. Those services support retaining both restoration and change goals. An owner-approved example of how the scopes differ would make the comparison more useful.",
+        "Johnny’s Signs in Bedford describes lighting and other repairs separately from LED retrofits and design modernization, with assessment before work. Those services support retaining both restoration and change goals. An owner-approved example of how the scopes differ would make the comparison more useful.",
+        "Ask for the site, sign reference and approved photographs needed for review. Keep the same installation recognizable when the inquiry includes several concerns.",
+        "Current repair and upgrade categories."
+      ],
+      "findings": [
+        "Flickering operation versus outdated appearance already gives a concrete repair/upgrade distinction; Madison instead concerns removed boat-interior delivery."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/marion-county/",
+      "candidateBodySha256": "f8cb7026cd2a639550dfc3828d58e5ab7950ef2a3b34935d26a21d92fa8576c6",
+      "draftSha256": "15138c9ecf237cdf0807ba1b71480d8cee6495c5068d3ab2e228b72a30d407ba",
+      "requiredFixes": [
+        "Remove the internal Keep the existing website-project FAQs instruction from the public limits paragraph. Retain the actual approval and paid-file-handoff FAQs or concise linked answers in their proper section."
+      ],
+      "recommendedFixes": [
+        "Remove the internal Keep the existing website-project FAQs instruction from the public limits paragraph. Retain the actual approval and paid-file-handoff FAQs or concise linked answers in their proper section.",
+        "Consider shortening the paid-file handoff FAQ to its core promise with the existing terms link for accounting detail."
+      ],
+      "exactCandidateEvidence": [
+        "We have discussed the room but have not chosen materials. What do we need to decide before the project can enter production?",
+        "Use the business’s actual design, quotation and approval steps. Show what the customer supplies and what the company reviews, so an early conversation is not mistaken for fabrication already in progress.",
+        "Indianapolis examples support this distinction: Nathan Alan Design describes scope, materials and customer availability for meetings and decisions as timing factors; Rines Design places design and a written quote before approval, fabrication and installation. Their sequence can inform the explanation without becoming another company’s promise.",
+        "A public process page does not report live project status. Dashboards, approval records, reminders and internal scheduling need separate requirements. Keep the existing website-project FAQs about one named approver, consolidated feedback, written approval and paid-file handoff if work stops.",
+        "Explain what the business needs to understand the room and intended result. Distinguish useful initial context from decisions that can be made later with the designer.",
+        "Actual stages and required customer decisions."
+      ],
+      "findings": [
+        "Material decisions and written design/quote approval explain why production has not started; Marshall compares pottery instruction and access."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/miami-county/",
+      "candidateBodySha256": "10eb589621f71a8b34fe53e8906d727adac71970e6917289e3b256608b5849c4",
+      "draftSha256": "331be59229925dfe479c4894805e6f0aeb3d31f6feca8e03d7aca85c38a21643",
+      "requiredFixes": [
+        "Replace the internal supplied-source/before-publishing wording with a direct request for owner-approved setup and departure allowances, preserving the rule that the venue confirms extra time and access."
+      ],
+      "recommendedFixes": [
+        "Replace the internal supplied-source/before-publishing wording with a direct request for owner-approved setup and departure allowances, preserving the rule that the venue confirms extra time and access.",
+        "A clearly labeled before/during/after access example could demonstrate the comparison without inventing hours."
+      ],
+      "exactCandidateEvidence": [
+        "Our guests will attend for a few hours, but suppliers need earlier access. Which hire option covers the complete plan?",
+        "Publish the actual before-and-after allowances for each offer. Keep setup, supplier entry and removal needs visible so shared furniture or facilities do not make different time arrangements look identical.",
+        "Whitetail Woods Event Center in Peru presents an event package with Friday-to-Saturday access alongside hourly hire that includes time before and after the event. It also identifies shared facilities and separate extras. The useful comparison is the complete access arrangement, not merely the room or guest-event duration.",
+        "The supplied source description does not state precise hourly setup or departure allowances. Confirm current terms before publishing a worked timetable. Additional time, availability and supplier access remain for the venue to agree; booking and access-management systems need separate scope.",
+        "Ask when guests arrive and leave, then show that as one part of the proposed arrangement. Do not use the celebration’s duration as shorthand for the whole rental.",
+        "Current access terms for every hire option."
+      ],
+      "findings": [
+        "Friday-to-Saturday access versus hourly before/after periods distinguishes full venue use from guest attendance; Monroe compares landscape plan output and coverage."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/monroe-county/",
+      "candidateBodySha256": "5f846f58bd00ce7a09c1abecfbef4039931a7f6ce1158955487f940abb1bd593",
+      "draftSha256": "ee3c9f8875a771b5a4ba40b39525ca268312be999e4b449e6c7bccad1f44e229",
+      "requiredFixes": [
+        "Remove the internal Preserve the website-project FAQ instruction from public limits prose. Keep the actual expansion and written-approval answers in their proper FAQ section."
+      ],
+      "recommendedFixes": [
+        "Remove the internal Preserve the website-project FAQ instruction from public limits prose. Keep the actual expansion and written-approval answers in their proper FAQ section."
+      ],
+      "exactCandidateEvidence": [
+        "We want the front garden now and a patio later. Which service helps us plan those areas together, and will we receive a drawing?",
+        "Connect each service to its actual boundary: one project, a defined area or several related areas. Use approved examples to explain how a broader plan can support work considered in phases.",
+        "Bloomington’s Abell Nursery distinguishes discussions without a drawn design, a single-project design and a broader master plan. Nature’s Way describes an initial site conversation followed by a design and installation presentation. These examples support comparing output and coverage without inventing another business’s packages.",
+        "The landscape business approves fees, timing, deliverables and drawing-use rights. Archives, plan-review tools and customer portals need separate requirements. Preserve the website-project FAQ explaining that a useful first scope can expand later through a separate quote, and that design approval is written.",
+        "State whether each service provides advice, a drawn design or another agreed deliverable. An initial conversation should not imply that a whole-property drawing is included.",
+        "Current service names and deliverables."
+      ],
+      "findings": [
+        "Advice versus drawing and one-area versus multi-project planning directly answer the phased garden/patio scenario; Montgomery distinguishes conversion from design work."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/morgan-county/",
+      "candidateBodySha256": "0f3fbd2449df7d8898b0d7de2cc68a78f2e62b764c5d6814f77151dd76397aa5",
+      "draftSha256": "6ccfb7cef01b87316b697b4a431b7191240f511a6c43aa8f8412d5ccc079ef6f",
+      "requiredFixes": [
+        "Rewrite the audit-relative instruction as a plain dated historical-example statement for the October 24–25, 2026 course, with current offerings and eligibility confirmed by the instructor."
+      ],
+      "recommendedFixes": [
+        "Rewrite the audit-relative instruction as a plain dated historical-example statement for the October 24–25, 2026 course, with current offerings and eligibility confirmed by the instructor."
+      ],
+      "exactCandidateEvidence": [
+        "I am new to jewelry making and hope to use open studio later. Which introductory course prepares me for that next step?",
+        "Use instructor-approved objectives and the actual session commitment. Keep materials and preparation attached to the specific class rather than allowing one introductory listing to stand for every offer.",
+        "StudioPhD at The Sterling Butterfly in Martinsville describes a beginner jewelry skills intensive intended to complete prerequisites for advanced classes and open studio. A separate beginner make-and-take listing offers a project with materials provided without that stated prerequisite role. The distinction concerns what the learner is preparing to do next.",
+        "The cited intensive listing is for October 24–25, 2026, dates already past at this audit. Use it as a historical example and verify current offers before presenting a booking choice. The instructor confirms eligibility; class registration and prerequisite tracking need separate scope.",
+        "Describe the project or learning experience each offer provides. A beginner label alone does not tell someone whether the class centers on a finished object or a broader set of skills.",
+        "Current learning objectives and project descriptions."
+      ],
+      "findings": [
+        "An intensive explicitly serving later prerequisites differs from a make-and-take project; Newton concerns recurring seasonal flower choices."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/porter-county/",
+      "candidateBodySha256": "fb74ca90d3803d3e8c95ffddd0f8d5e912a258b9ad9936ef627e6d551c79dfff",
+      "draftSha256": "d3378c483c9d03ab6239372358e23ca865be4f0e5779592eb754acfd5eb9fd97",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled observation-led inquiry example using known and unknown instrument details, location and the reported touch concern; keep service selection with the technician."
+      ],
+      "recommendedFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled observation-led inquiry example using known and unknown instrument details, location and the reported touch concern; keep service selection with the technician."
+      ],
+      "exactCandidateEvidence": [
+        "Some keys feel different from the others. What should I tell you before deciding which service to request?",
+        "Use technician-approved prompts for changes in sound, touch or visible condition. Customers can explain what they experience and when it occurs without selecting a technical diagnosis.",
+        "Adam Gratz Piano Tuning and Repair lists a Valparaiso address and Northwest Indiana coverage, with tuning, pitch raise, voicing, regulation and repairs. Those categories establish the range, but the owner should supply accurate explanations and a worked example to make the page more useful than a list of names.",
+        "Adam Gratz Piano Tuning and Repair lists a Valparaiso address and Northwest Indiana coverage, with tuning, pitch raise, voicing, regulation and repairs. Those categories establish the range, but the owner should supply accurate explanations and a worked example to make the page more useful than a list of names.",
+        "Ask for the piano details, known history and location the technician finds useful. An inherited or unfamiliar instrument should still have a contact route when some information is unknown.",
+        "Confirmed acoustic instruments and service boundaries."
+      ],
+      "findings": [
+        "Uneven key touch is a useful observation-first piano scenario, but the page defers the promised service explanations and worked example; Posey concerns class and piece-finishing scope."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/st-joseph-county/",
+      "candidateBodySha256": "6c9030eae7a751c52fad1dfcab387a342e16538762a8cd7eef45be5c74f06d40",
+      "draftSha256": "8401d22bf08bed9baacfc7374450ca3b2d4ea89d9178faa9989259bff5801d2a",
+      "requiredFixes": [
+        "Replace the internal improvement note with a clearly labeled sample brief or owner-approved output caption showing purpose, covered area, prior-data reference and requested comparison, while leaving method and accuracy to the specialist."
+      ],
+      "recommendedFixes": [
+        "Replace the internal improvement note with a clearly labeled sample brief or owner-approved output caption showing purpose, covered area, prior-data reference and requested comparison, while leaving method and accuracy to the specialist."
+      ],
+      "exactCandidateEvidence": [
+        "We need an update for a stockpile comparison. What previous information and project area should we discuss before choosing the deliverable?",
+        "Use an approved sample to state its coverage and what the customer receives. Keep collection and processing roles clear without turning a published example into a specification for another project.",
+        "Williams Aerial & Mapping in South Bend describes LiDAR collection, photogrammetric mapping and orthophotography, including corridor work and stockpile updates. It lists 4483 Corporate Drive, Building 301. A labeled real output would make those capabilities more useful than an unexplained list of technical names.",
+        "Williams Aerial & Mapping in South Bend describes LiDAR collection, photogrammetric mapping and orthophotography, including corridor work and stockpile updates. It lists 4483 Corporate Drive, Building 301. A labeled real output would make those capabilities more useful than an unexplained list of technical names.",
+        "Describe the decision or comparison the information needs to support. A request for elevation information should remain distinguishable from an image used mainly as visual reference.",
+        "Approved plain-language product explanations."
+      ],
+      "findings": [
+        "A stockpile update requires prior-data and coverage context, but the promised labeled output remains absent; Spencer concerns names mapped to ornament positions."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    }
+  ],
+  "coverage": {
+    "completeCandidateMainTextRead": 150,
+    "baselineAndSourceComparison": 150,
+    "suppliedSiblingDraftComparison": 150,
+    "sharedText": "Repeated exact prose was read once and cross-referenced; unique candidate prose, expanded FAQs, baseline-only material and source-entry prose were inspected. No normalized acceptance scores were generated.",
+    "comparisonSelectionLimitation": "Supplied nearestSibling is usually a geographic/assignment neighbor, not asserted to be the closest topical peer. Some additional topical comparisons are recorded in independentValue. A separate family-overlap pass is pending.",
+    "visuals": null,
+    "accessibility": null,
+    "finalAcceptance": null
+  },
+  "contentOnlySubtotalRange": {
+    "minimum": 55,
+    "maximum": 75,
+    "maximumPossible": 80,
+    "normalized": false
+  },
+  "caps": [],
+  "familyOverlapCandidates": [
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "compareWith": [
+        "/areas/delaware/kent-county/"
+      ],
+      "reason": "Contribution-led woodworking gallery advice needs a worked mantel/surrounding-work or coordinated-object example."
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "compareWith": [
+        "/areas/florida/brevard-county/",
+        "/areas/florida/broward-county/"
+      ],
+      "reason": "Symptom, vehicle identity and current worksite largely repeat adjacent repair-intake tasks; combined-function review needs demonstration."
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "compareWith": [
+        "/areas/florida/clay-county/",
+        "/areas/delaware-county/"
+      ],
+      "reason": "Workshop component/rebuild evidence is a promising distinction, but remains a capability reference."
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "compareWith": [
+        "/areas/florida/hillsborough-county/"
+      ],
+      "reason": "Material/preparation/delivery advice overlaps supply brief; package-specific delivery difference remains unarticulated."
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "reviewRows": 150,
+    "uniqueRoutes": 150,
+    "packetChecksumsVerified": 30,
+    "draftObjectHashesVerified": 150,
+    "packetReviewHashBindingsVerified": 450,
+    "evidenceFieldsVerified": 900,
+    "exactEvidenceSegmentsVerified": 1320,
+    "quotePolicy": "Each stored passage was tested as a contiguous exact candidate quotation. Compound passages use space-slash-space or space-pipe-space separators; each quoted segment was verified independently, not treated as one contiguous quote.",
+    "weightedSubtotalsVerified": 150,
+    "unknownVisualAccessibilityAndFinalScoresPreserved": true,
+    "errors": [],
+    "currentState": {
+      "matchingDraftAndBodyCount": 131,
+      "changedSincePacketReviewCount": 19,
+      "changedSincePacketReview": [
+        {
+          "route": "/areas/broome-county/",
+          "draftChanged": false,
+          "bodyChanged": true,
+          "currentDraftSha256": "b2f9891a544e07c50867e56d80bd7cc42679a04a9314f74883a764c150ca4880",
+          "currentCandidateBodySha256": "56c3bdee5b70b70f918f2141606b0321ec27c782fbc362d142114eda079b042a",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/delaware-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "5df3aee0a55b8b015b36ccfba6a631a93c345eed07d53c43fd4fa796bb280828",
+          "currentCandidateBodySha256": "4f35c483961d4e8243418ac1ca1a52e7b7799d800bf1fe6598ce0e9fb0223041",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/delaware/sussex-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "61bebc32e45f88f3cfe0975e4e41c423d21d31702fcf4bfe446e6227ed50e34f",
+          "currentCandidateBodySha256": "820c07c870a4ee0f0435e4c433db014b78d6b7be1388045f30756b0f3ed72350",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/essex-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "e11678fdf2d7b18ce8134ab1edb108dc0344f5265d7c5a69c109af1eca7e2e91",
+          "currentCandidateBodySha256": "47dac7cfdf86ad69bb4d9dbcabe61f3eea663cd9ef31949670e8b8b1c31e153f",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/brevard-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "ceb3fb828787ef143601e591fe4d932458e6daa127680b98efe52bc3b4039e3e",
+          "currentCandidateBodySha256": "a05ce6ef070189d3f2f5bc01d6caa143b117ed00d0cff17e217ef1c556e038d9",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/calhoun-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "a59f0f6c1d1b9de1562ecdf8a317f6b66d0a5d51f70c1d76b9e2f74d4032f58e",
+          "currentCandidateBodySha256": "8a74625e4924d5f4fa9bfc725a1b8151318ad5283b6d7b65293ab7b324378624",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/clay-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "53859c980bd762a5aa296ba37c4c9bb8710184153b394a9699dd1422ee554843",
+          "currentCandidateBodySha256": "6c7a6dd5df2f1bd76aa17450fdd8b497c8e6c9c758c63cbb3a7507d3455b3388",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/columbia-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "b03490abf78ec3c25f5cc08e002cc888f0156770a54101013ac58df822bb8573",
+          "currentCandidateBodySha256": "33d8fc2674ed8bc099f055c2c2e06378449d5900ef719bb29ad5ee57e91753d2",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/escambia-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "c4ee3ebecca75eb22b122648bf032d279470161bc392232e0bbbeb29520e05b7",
+          "currentCandidateBodySha256": "e47f1c96fff3f3ba4bf32afd1a615014563f6f09a1410625da5f8beb29aecfbc",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/gadsden-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "a841c79398b1362d993db958e28c9488b891dc56634447d0c3a424ca6f5c7283",
+          "currentCandidateBodySha256": "39392f0f21b272b8105ee757d8bdcb033ed176982fcbcf36c1b9e394f0570c84",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/gilchrist-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "01f779a61d6caea9a03201523ecc4705bd4d6842fc98725800c4201f51522903",
+          "currentCandidateBodySha256": "7b27f368d596cc5406725f3213814f8303c3d32b800ec033101d4a4237ef1005",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/glades-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "dbd5afc4fa14a1eb7b053f9313edc7e165425581c12efa9ffa49824edf4c8329",
+          "currentCandidateBodySha256": "d477159329c7c95c710c5395ab2250b3709a91d6c65e7dc87f4547308d11cad5",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/hardee-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "7380142ed7e62095cb8cee109ad14c1a6f257014cad1e2916e52fefecf73a480",
+          "currentCandidateBodySha256": "240cf9b13b65e2ae6eaec0dad9984660f4b84b353bc71467584bae75f71ca309",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/holmes-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "94ad8bfce515a967be6d9bda48e422176cbc1654ce1dc31e3cf6cf8fe20261dc",
+          "currentCandidateBodySha256": "e545b23b34e71402792890a7b1bb66ffd8277ea2607ee918c3403d6b2a0e4fd4",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/lake-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "e689d2fdb8579d53a7d00be12cd5c404ebc0eaaafd3616fc3febf03e85eb753c",
+          "currentCandidateBodySha256": "185f975fa9e63128b3d951448c296fbc1a5c29e94aca23fc2a980b31b4a0746f",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/lee-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "262118a51c0ba7d864ef5418e4410a73211e49dc5add93004d734236183c940c",
+          "currentCandidateBodySha256": "f27816ae3b580d8eb41a4e6cfc59dee287311bf03a02de49e774ee9fe7ca7295",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/liberty-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "fddd476a04a1beab595f9e1f062a0fee91d5169c33764cea5351a06cbf990f8e",
+          "currentCandidateBodySha256": "e6373aab07393acf5e2962b4f0f53444d104075f9fa4c5cb1efe826f1eaad95a",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/manatee-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "bc4f3b1b079f59a154843d830af0a496a2e388b68e53043543fa62197ef42e3a",
+          "currentCandidateBodySha256": "8ab5c2a2738a62b90bf18836f8f1212ee36e957c8b324d17ef4d3a69e9a7e41f",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        },
+        {
+          "route": "/areas/florida/palm-beach-county/",
+          "draftChanged": true,
+          "bodyChanged": true,
+          "currentDraftSha256": "02eae740e6a70d013410af364852ef2b617bd202d7eff66a63a0a085a3b42c7d",
+          "currentCandidateBodySha256": "e508cbc2cd9a445ac8a6c808165536803e871a36082cd27f0d60ce76d6011675",
+          "reviewScope": "Historical packet review; changed current version is not judged by this row."
+        }
+      ],
+      "currentMatchingRequiredFixRouteCount": 20,
+      "note": "Historical packet findings are preserved. Changed current bodies require their separate exact recheck record; no earlier hold is silently removed by this report."
+    }
+  },
+  "unresolvedChecks": [
+    "Implement and independently recheck required fixes on exact current candidates; historical changed rows retain their separate follow-up review history.",
+    "Dedicated closest-topical-peer family-overlap review pending.",
+    "Page-specific visual, accessibility and working-action checks pending.",
+    "Fresh live operating-source verification pending."
+  ],
+  "assigned": 150,
+  "reviewed": 150,
+  "remaining": 0,
+  "completePackets": [
+    "packet-001.jsonl",
+    "packet-002.jsonl",
+    "packet-003.jsonl",
+    "packet-004.jsonl",
+    "packet-005.jsonl",
+    "packet-006.jsonl",
+    "packet-007.jsonl",
+    "packet-008.jsonl",
+    "packet-009.jsonl",
+    "packet-010.jsonl",
+    "packet-011.jsonl",
+    "packet-012.jsonl",
+    "packet-013.jsonl",
+    "packet-014.jsonl",
+    "packet-015.jsonl",
+    "packet-016.jsonl",
+    "packet-017.jsonl",
+    "packet-018.jsonl",
+    "packet-019.jsonl",
+    "packet-020.jsonl",
+    "packet-021.jsonl",
+    "packet-022.jsonl",
+    "packet-023.jsonl",
+    "packet-024.jsonl",
+    "packet-025.jsonl",
+    "packet-026.jsonl",
+    "packet-027.jsonl",
+    "packet-028.jsonl",
+    "packet-029.jsonl",
+    "packet-030.jsonl"
+  ],
+  "contentOnly": true,
+  "finalScore": null,
+  "visuals": null,
+  "accessibility": null,
+  "contentSubtotalRange": [
+    55,
+    75
+  ],
+  "pagesRequiringContentFixes": [
+    {
+      "route": "/areas/broome-county/",
+      "requiredFixes": [
+        "Shorten the handoff FAQ to the delivery promise and link to its full file checklist."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/delaware-county/",
+      "requiredFixes": [
+        "Replace the editorial note about a stronger published example with a direct owner-facing request for actual first-review questions."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/brevard-county/",
+      "requiredFixes": [
+        "Replace “A stronger case needs owner-approved observations and process detail.” with an owner-facing request for actual assessment prompts."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/clay-county/",
+      "requiredFixes": [
+        "Replace “A stronger published example requires an actual approved repair caption rather than relying on the capability list alone.” with a direct request for an owner-approved contextual repair example."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/gilchrist-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening note with an owner-facing request and add a clearly labeled sample caption or grounded project distinction to demonstrate mantel-only versus surrounding work."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/glades-county/",
+      "requiredFixes": [
+        "Replace the editorial strengthening sentence and show a clearly labeled combined-function inquiry example or actual owner-approved review prompts."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/hardee-county/",
+      "requiredFixes": [
+        "Add a clearly labeled workshop-caption example or owner-approved component/rebuild distinction, and connect it explicitly to the initial customer question."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/holmes-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence and provide a clearly labeled package-versus-ordinary-delivery example or owner-approved distinction that changes the inquiry."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/liberty-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening note with a worked, clearly labeled listed/custom request using verified dimension labels or explicit placeholder fields and separate quantities."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/manatee-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled repair-versus-new-function inquiry example, showing what photos establish and what inspection must decide."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/palm-beach-county/",
+      "requiredFixes": [
+        "Replace the editorial strengthening sentence and add a clearly labeled two-property request example, preserving shared brand details while showing distinct new-opening and replacement conditions and review questions."
+      ],
+      "currentBodyMatchesReviewedPacket": false
+    },
+    {
+      "route": "/areas/florida/polk-county/",
+      "requiredFixes": [
+        "Add a clearly labeled worked damaged-equipment versus new-component inquiry showing different initial evidence, and replace the internal capability-strengthening instruction with owner-facing scope language."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/st-lucie-county/",
+      "requiredFixes": [
+        "Add a clearly labeled use-led closet inquiry or owner-approved project example that distinguishes overflow, daily-use access and room constraints; replace the internal evidence-needed note with reader-facing explanation."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/taylor-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening note and add a clearly labeled partial-record replacement inquiry showing known identifiers, unknown details, current concern and desired change without inventing compatibility."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/florida/washington-county/",
+      "requiredFixes": [
+        "Add a clearly labeled older-machine request showing known model/reference details, unknown part identity and condition/assessment questions; remove the internal strengthening note without inventing compatibility."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/adams-county/",
+      "requiredFixes": [
+        "Consolidate physical-sample approval and screen-image limitations into one concise explanation; use the FAQ only for a distinct website-project question or remove it."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/crawford-county/",
+      "requiredFixes": [
+        "Replace the supplied-summary sentence with owner-facing wording requesting current duration and start instructions; retain the distinction between tour time and whole-visit time without inventing numbers."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/daviess-county/",
+      "requiredFixes": [
+        "Replace the editorial strengthening note with a clearly labeled drywall-package versus whole-project inquiry example showing supplied plans, lead contact and the requested contribution."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/dearborn-county/",
+      "requiredFixes": [
+        "Replace internal supplied-page/obtain-route prose with an owner-facing planning boundary; add a clearly labeled generic three-stop example or verified current venue labels so the handoff is demonstrated without invented timings."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/dubois-county/",
+      "requiredFixes": [
+        "Replace the supplied-evidence note with a clearly labeled surface-and-task inquiry example or verified owner-approved category comparison; leave equipment suitability to staff."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/franklin-county/",
+      "requiredFixes": [
+        "Replace supplied-evidence and missing-details-before-publication wording with a direct owner-facing request for actual exceptions, additional-work approval and readiness communication."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/hendricks-county/",
+      "requiredFixes": [
+        "Replace internal supplied-summary wording and demonstrate one verified shared-versus-added task distinction or a clearly labeled comparison structure, preserving parts and check-in boundaries."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/jennings-county/",
+      "requiredFixes": [
+        "Replace the internal supplied-evidence note and demonstrate a clearly labeled displayed-versus-wearable award inquiry with shared event and recipient-specific fields, leaving exact specifications to the supplier."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/knox-county/",
+      "requiredFixes": [
+        "Move the supplied-research/site-maintenance provenance out of the main planning narrative and use owner-facing wording about confirming current finishing and mailing arrangements. Retain accurate source limitations in the source notes."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/lawrence-county/",
+      "requiredFixes": [
+        "Replace the internal sentence about an owner-approved example making the comparison more useful with a direct owner-facing request for approved repair and upgrade examples. The existing flickering-sign/outdated-logo illustration can remain."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/marion-county/",
+      "requiredFixes": [
+        "Remove the internal Keep the existing website-project FAQs instruction from the public limits paragraph. Retain the actual approval and paid-file-handoff FAQs or concise linked answers in their proper section."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/miami-county/",
+      "requiredFixes": [
+        "Replace the internal supplied-source/before-publishing wording with a direct request for owner-approved setup and departure allowances, preserving the rule that the venue confirms extra time and access."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/monroe-county/",
+      "requiredFixes": [
+        "Remove the internal Preserve the website-project FAQ instruction from public limits prose. Keep the actual expansion and written-approval answers in their proper FAQ section."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/morgan-county/",
+      "requiredFixes": [
+        "Rewrite the audit-relative instruction as a plain dated historical-example statement for the October 24–25, 2026 course, with current offerings and eligibility confirmed by the instructor."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/porter-county/",
+      "requiredFixes": [
+        "Replace the internal strengthening sentence with a clearly labeled observation-led inquiry example using known and unknown instrument details, location and the reported touch concern; keep service selection with the technician."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    },
+    {
+      "route": "/areas/indiana/st-joseph-county/",
+      "requiredFixes": [
+        "Replace the internal improvement note with a clearly labeled sample brief or owner-approved output caption showing purpose, covered area, prior-data reference and requested comparison, while leaving method and accuracy to the specialist."
+      ],
+      "currentBodyMatchesReviewedPacket": true
+    }
+  ],
+  "appliedCaps": [],
+  "scope": "Individual complete candidate main-text reviews; no universal pass, visual/a11y signoff, publication approval or normalized score.",
+  "recoveryCheckpoint": "Completed 150/150 packet reviews and deterministic validation. 900 evidence fields / 1320 exact segments; 30 packet checksums; all packet hashes, ratings and subtotals valid. Summary distinguishes changed-since-packet current bodies. No source/draft edits. Hand back to primary; follow-up requires an explicit bounded new task."
+}

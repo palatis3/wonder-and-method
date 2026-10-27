@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
 import faqs from '../src/service-faqs.json' with {type:'json'};
+import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
+const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import preservation from './fixtures/wy-hi-ak-preservation.json' with {type:'json'};
 import decisions from './fixtures/wy-hi-ak-decisions.json' with {type:'json'};
@@ -24,9 +26,9 @@ test('WY/HI/AK preserve all 2215 prior services and 278 FAQ pairs while adding e
  assert.deepEqual(approved.slice(3).sort(),Object.keys(preservation.newServices).sort());
  assert.deepEqual([...byPath.keys()].sort(),[...Object.keys(preservation.services),...Object.keys(preservation.newServices)].sort());
  for(const group of [preservation.services,preservation.newServices])for(const [p,h]of Object.entries(group))assert.equal(digest(beforeReviewedUxCopyEdits(byPath.get(p))),h,p);
- assert.deepEqual(Object.keys(faqs).sort(),Object.keys(preservation.faqs).sort());
+ assert.deepEqual(Object.keys(historicalFaqs).sort(),Object.keys(preservation.faqs).sort());
  for(const [p,h]of Object.entries(preservation.faqs))assert.equal(digest(beforeReviewedUxFaqEdits(p,faqs[p])),h,p);
- assert.equal(Object.keys(faqs).length,208);assert.equal(Object.values(faqs).flat().length,278);
+ assert.equal(Object.keys(historicalFaqs).length,208);assert.equal(Object.values(historicalFaqs).flat().length,278);
  assert.equal(pages.size,2424);assert.equal((crawlFiles(config,rendered).sitemap.match(/<loc>/g)||[]).length,2412);
  assert.equal([...pages.keys()].filter(p=>/^\/guides\/[^/]+\/$/.test(p)).length,65);
 });
@@ -57,3 +59,4 @@ test('new briefs preserve complete scopes, valid sources and links without inven
   assert(!schema.some(x=>x['@type']==='LocalBusiness'));assert.equal(schema.find(x=>x['@type']==='Organization').location.address.addressLocality,'Buffalo');assert(!schema.some(x=>x['@type']==='FAQPage'));assert.equal(faqs[path],undefined);
  }
 });
+

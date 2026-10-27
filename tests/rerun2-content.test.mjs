@@ -358,7 +358,7 @@ test('form and search guides start with owner checks and preserve the deeper dia
  assert.match(form,/A site may not store a separate inquiry record/);
  assert.match(form,/<details><summary>Trace receiving-system and email-delivery failures/);
  const search=journalSections('/guides/website-not-showing-on-google/',offers);
- assert.deepEqual(search.slice(0,3).map(x=>x.id),['define','plain-search-terms','inspection-steps']);
+ assert.deepEqual(search.slice(0,3).map(x=>x.id),['define','inspection-steps','specific-index-checks']);
  assert.match(search.map(x=>x.body).join(''),/Test live URL/);assert.match(search.map(x=>x.body).join(''),/Request indexing/);
  assert.match(search.map(x=>x.body).join(''),/Distinguish robots.txt crawling restrictions from noindex/);assert.match(search.map(x=>x.body).join(''),/Preserve private-preview controls/);
 });
@@ -385,7 +385,7 @@ test('all sixty-two New York entries retain complete place lists, applicable sou
  const titles=new Set();
  for(const county of state.counties){
   const {slug}=county,g=countyGeography[slug],entry=hub.slice(hub.indexOf(`id="${slug}"`)).split('</details>')[0],task=countyBuyerTasks[slug];
-  const note=countyLocalNotes['new-york/'+slug]||county.geographyNote;if(note)assert.ok(entry.includes(e(note)),slug+' local distinction');
+  const note=countyLocalNotes['new-york/'+slug]||county.geographyNote;for(const sentence of factualLocalSentences(note))assert.ok(entry.includes(e(sentence)),slug+' '+sentence);
   for(const name of [...Object.values(g.municipalities).flat(),...g.communities.map(place=>place.name)])assert.ok(entry.includes(e(name)),slug+' place '+name);
   const reference=entry.match(/href="#(geography-reference-\d+)"/);assert.ok(reference,slug+' source reference');
   const referenceEntry=hub.slice(hub.indexOf(`id="${reference[1]}"`)).split('</li>')[0];
@@ -433,3 +433,6 @@ test('guide hub keeps all routes with concise copy and original article titles',
  assert.equal(descriptions.length,65);
  for(const text of descriptions)assert.ok(text.split(/\s+/).length<=14,text);
 });
+
+// Address reminders are editorial guidance; every declarative local distinction remains required.
+const factualLocalSentences=note=>(note||'').split(/(?<=\.)\s+/).filter(sentence=>! /^(?:Use |Confirm |Keep |A city named in service coverage )/.test(sentence));

@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-27T17:27:24.812Z",
+  "changes": [
+    {
+      "route": "/areas/niagara-county/",
+      "previousSourceSha256": "f79eac78f09517384aa9dd749726fcd324d407678b6d468e0a8cfee81a381ab8",
+      "sourceSha256": "8be18611578384545c1a4286e72ba91926ca8bb5706728ef464e9310b45db886",
+      "previousDraftSha256": "e7ee50934d7027fbc85628c3e871661d730df39a7d88e5251154945203a8ea8a",
+      "draftSha256": "8d05e4ed8c995f9371373e08836da20d9f468511b187bde9b4faba6d75a27ffe",
+      "baselineRenderedSha256": "7568a516dc27725e8ca54fd0f4403501cd8ac2c5b4240a28f1ee47851bad8c9b",
+      "status": "integrated-locally-awaiting-independent-page-review"
+    },
+    {
+      "route": "/areas/missouri/jackson-county/",
+      "previousSourceSha256": "46504717c7693ebb51e88b5cbb7e63534edf3e700140a02dba1f70fb317fd5d0",
+      "sourceSha256": "7c42a175b6c064b606ed42f406282ca098f8213a7bc8e2b2a2f1469553d42bc0",
+      "previousDraftSha256": "679574cc57ea72d0644353aa3940b0178726800a4f79068d6917b006686a6e35",
+      "draftSha256": "ef2296b72fb0a75c80950011b25c7202678c56a1d015d5f4d174e367e054274b",
+      "baselineRenderedSha256": "9c45151c67d29d04a0c160c8a8b34ee80890dd7c3d8a42c95c558ab0c2fd044c",
+      "status": "integrated-locally-awaiting-independent-page-review"
+    },
+    {
+      "route": "/areas/florida/walton-county/",
+      "previousSourceSha256": "761c3ca0fa046f8321a08b8f28503681172beb697fe72e60df6d79353c0af3e8",
+      "sourceSha256": "22417885ca928fa18f71ce64851334d8dad20db7179cf5c9f43926d4d44ba580",
+      "previousDraftSha256": "6ddcfae8a91de3a9f01cdfe6c52dfe03c3fb1d4ce82795e79fa20834846eff12",
+      "draftSha256": "6438cc6c4b07003904e264dcd400768b60bf84ce8e140766875975d4bf4c9d61",
+      "baselineRenderedSha256": "aae0f157273b60d61401d333129ce58fd7b7c948c529d1dfa234ab7f480047ba",
+      "status": "integrated-locally-awaiting-independent-page-review"
+    },
+    {
+      "route": "/areas/monroe-county/",
+      "previousSourceSha256": "8c0b97d39ddb5240014da2144c35f43e58f4af941f4213b3d32336be11084058",
+      "sourceSha256": "da09099ede132c8ac0579771381a919e3dbaa9498dbeeda8bbbefd8ea48b9e09",
+      "previousDraftSha256": "0237e8728a0c4a85e9a7d4fe6c073b7ea4cba8ded9d339722be3b625b30456fb",
+      "draftSha256": "d49d2901cca02eae5195eadbc6ae98bf668e94b28dbc6597bab6233f0413bb71",
+      "baselineRenderedSha256": "1ed6b072600d4ea4bd5c1be45e835c5b42cbae0fbbcc0bb6e9909879babb1a6a",
+      "status": "integrated-locally-awaiting-independent-page-review"
+    }
+  ],
+  "unchangedRouteCount": 2262,
+  "originalAuditFindingsPreserved": true,
+  "sourceCheck": "research/local-holds-root-check.json",
+  "remaining": "Independent full candidate/sibling review, final visual/accessibility checks and release checks.",
+  "legacyWorksheets": "Original file URLs and files retained; unrelated links retired from the two replaced example bodies."
+}

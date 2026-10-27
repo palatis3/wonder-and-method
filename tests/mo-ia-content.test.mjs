@@ -5,6 +5,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
 import faqs from '../src/service-faqs.json' with {type:'json'};
+import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
+const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import preservation from './fixtures/mo-ia-preservation.json' with {type:'json'};
 import {renderPages} from '../src/pages.mjs';
@@ -22,7 +24,7 @@ test('Missouri/Iowa retain every prior service and FAQ and exactly the independe
  assert.deepEqual(approved.slice(2).sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedSourceCorrections(byPath.get(path))),hash,path);
  for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
- assert.equal(Object.keys(faqs).length,Object.keys(preservation.faqs).length+37);
+ assert.equal(Object.keys(historicalFaqs).length,Object.keys(preservation.faqs).length+37);
  assert.equal(Object.values(preservation.newFaqs).length,6);
  const counts=['missouri','iowa'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length);
  assert.deepEqual(counts,[85,81]);
@@ -41,3 +43,4 @@ test('all 166 new briefs have discoverable directory links, concrete scopes and 
   assert.equal(schema.find(x=>x['@type']==='Organization').location.address.addressLocality,'Buffalo');
  }
 });
+

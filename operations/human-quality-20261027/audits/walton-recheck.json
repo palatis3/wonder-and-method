@@ -1,0 +1,75 @@
+{
+  "route": "/areas/florida/walton-county/",
+  "reviewedAt": "2026-10-27",
+  "reviewer": "independent Astra checkpoint",
+  "reviewType": "Complete frozen candidate prose re-read; bounded re-review of sole prior material finding",
+  "packetSha256": "57d160f182a2b2f6285b8c8a94cdfd304cfd16b2eb3cbab8566c63ead30e0701",
+  "baselineRenderedSha256": "aae0f157273b60d61401d333129ce58fd7b7c948c529d1dfa234ab7f480047ba",
+  "candidateBodySha256": "eeccab8fc4fd8da97dadb0b9cdb3ccf422f346980b009c5888d52afa639928ec",
+  "draftSha256": "d959bb06833df0486be1ce83ad853b5c6694ef2ff3f41976238370d6067cdf7a",
+  "priorCandidateBodySha256": "c0cc0eb505b368cc6665751473b59e60404159280f768b09603a373d1c6dcc04",
+  "priorDraftSha256": "6438cc6c4b07003904e264dcd400768b60bf84ce8e140766875975d4bf4c9d61",
+  "solePriorFindingResolved": true,
+  "resolutionEvidence": {
+    "quote": "In the capacity notice reviewed on October 27, 2026, reserved campers are admitted during capacity closures; day visitors, including pedestrians and cyclists, are excluded. This exception does not override an emergency closure. Confirm current park status before using these instructions.",
+    "judgment": "The capacity rule now explicitly admits reserved campers and excludes day visitors including pedestrians and cyclists. It is dated by review and immediately bounded by emergency-closure and current-status instructions. The source disclosure retains the notice effective date. The normal pre-5 p.m. contact requirement for after-sunset arrival still applies only once overnight operations are confirmed."
+  },
+  "contentVerdict": "pass",
+  "contentReady": true,
+  "finalAcceptance": null,
+  "nearestSiblingCompared": {
+    "route": "/areas/colorado/summit-county/",
+    "draftSha256": "256f20969da8e4aa19c5801a65f96c6f794e0fea7336886ee09d001cd07bba4b",
+    "heading": "Separate check-in, shore transfer and the rental boat’s departure.",
+    "comparison": "Grayton distinguishes capacity entry categories from emergency overnight closure and a pre-5 p.m. action for after-sunset arrival. Summit instead separates dated check-in, walk, shuttle and rental departure during a seasonal closure."
+  },
+  "independentValue": "Grayton distinguishes capacity entry categories from emergency overnight closure and a pre-5 p.m. action for after-sunset arrival. Summit instead separates dated check-in, walk, shuttle and rental departure during a seasonal closure.",
+  "dimensionRatings": {
+    "intent": 4,
+    "distinctiveness": 4,
+    "trust": 4,
+    "coherence": 3,
+    "scanability": 3,
+    "nextStep": 3,
+    "visuals": null,
+    "accessibility": null
+  },
+  "dimensionEvidence": {
+    "intent": "The revised second decision directly resolves the reservation-versus-capacity question.",
+    "distinctiveness": {
+      "quote": "Florida State Parks publishes a Grayton Beach capacity notice and separate overnight-arrival instructions. At this review, its indexed storm page also showed an October 11, 2026 notice covering overnight closures and identified the park in Walton County. These different notices support separating closure types rather than merging their instructions.",
+      "judgment": "Grayton distinguishes capacity entry categories from emergency overnight closure and a pre-5 p.m. action for after-sunset arrival. Summit instead separates dated check-in, walk, shuttle and rental departure during a seasonal closure."
+    },
+    "trust": {
+      "quote": "Current park status remains unverified; direct pages returned access errors. This dated planning example does not say the park is open or that a reservation overrides an emergency closure. The operator confirms entry. Live alerts, access control and reservation connections require separate scope.",
+      "judgment": "The dated October 11 storm notice, indexed-source access errors and unverified current status are explicit. No reopening or emergency override is promised."
+    },
+    "coherence": "Operating notice, exact visitor exception and late-arrival preparation now advance the answer without an implied middle step.",
+    "scanability": "The operative exception and emergency limit sit together under Explain who the exception covers. Source details remain visible in the complete candidate.",
+    "nextStep": {
+      "quote": "Dated closure types and the exact scope of each exception. | Current operating-status source and update responsibility. | Confirmed visitor categories and late-arrival instructions.",
+      "judgment": "Status source, precise categories and current arrival instructions are useful inputs for a website discussion, pending the direct answer."
+    },
+    "visuals": null,
+    "accessibility": null
+  },
+  "provisionalContentSubtotal": 72.5,
+  "provisionalContentMaximum": 80,
+  "rawScore": null,
+  "finalScore": null,
+  "caps": [],
+  "materialFindings": [],
+  "sourceEvidenceLimit": "Official indexed text only; direct Florida State Parks pages returned 403. Current operations are unverified.",
+  "remainingChecks": [
+    "Actual narrow and wide browser layout",
+    "Keyboard, focus, semantics, contrast, zoom/reflow and relevant manual accessibility states",
+    "Built route and source/CTA destinations and project interactions"
+  ],
+  "verification": {
+    "completeCandidateRead": true,
+    "onlyCandidateChangeIsRevisedSecondDecision": true,
+    "sourceAndSiblingEvidenceReused": true,
+    "noNewLiveSourceFetch": true
+  },
+  "limits": "Content-only staged-render re-review. Subtotal is out of 80 and is not normalized to 100. No visual, accessibility or final release acceptance. No sources, previous audit records, holds, imports or builds modified by this reviewer."
+}

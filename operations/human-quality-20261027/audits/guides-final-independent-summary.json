@@ -1,0 +1,541 @@
+{
+  "generatedAt": "2026-10-27T17:08:08.047Z",
+  "status": "complete-current-article-and-source-verified",
+  "expected": 65,
+  "reviewed": 65,
+  "uniqueRoutes": 65,
+  "completeMainTextCharacters": 452345,
+  "allQuotesMatched": true,
+  "allFullBodyReadsPresent": true,
+  "currentArticleHashesMatched": 65,
+  "currentSectionHashesMatched": 65,
+  "changedCurrentRenders": [],
+  "contentSubtotals": {
+    "maximum": 80,
+    "min": 63.75,
+    "max": 80,
+    "mean": 74.34615384615384
+  },
+  "finalScoresAllNull": true,
+  "visualsAllNull": true,
+  "accessibilityAllNull": true,
+  "findingsBySeverity": {
+    "minor": 7
+  },
+  "routesWithFindings": 7,
+  "findings": [
+    {
+      "route": "/guides/ai-website-or-custom/",
+      "severity": "minor",
+      "issue": "The generated-copy disclosure still repeats its heading with an awkward Read review construction.",
+      "evidence": [
+        "Read review generated copy like any other draft"
+      ]
+    },
+    {
+      "route": "/guides/contact-form-not-working/",
+      "severity": "minor",
+      "issue": "New platform subheadings leave each following sentence starting with a lowercase word from the former inline list.",
+      "evidence": [
+        "Squarespace\n\nopen the form’s storage and email settings",
+        "Wix\n\nin the site dashboard, open Automations",
+        "WordPress\n\nidentify the form plugin"
+      ]
+    },
+    {
+      "route": "/guides/departure-address/",
+      "severity": "minor",
+      "issue": "The older illustrative table remains directly after the reusable arrival card, preserving the duplicate specimen that consolidation was intended to remove.",
+      "evidence": [
+        "Arrival card fields",
+        "A layout to adapt to your business"
+      ]
+    },
+    {
+      "route": "/guides/local-seo-audit/",
+      "severity": "minor",
+      "issue": "Unqualified external listing management exclusion can read as excluding the limited authorized Improve/Grow profile task offered by the profile-eligibility guide.",
+      "evidence": [
+        "This is not an offer of profile verification, account recovery or external listing management."
+      ]
+    },
+    {
+      "route": "/guides/timed-booking-handoff/",
+      "severity": "minor",
+      "issue": "Merged evidence library retains two nested disclosures, so the prior two-expansion defect persists.",
+      "evidence": [
+        "Operator evidence library",
+        "Optional operator evidence library"
+      ]
+    },
+    {
+      "route": "/guides/website-care-versus-seo/",
+      "severity": "minor",
+      "issue": "Plan limits and renewal terms labels the prices/questions disclosure while actual renewal/pause terms remain under the uninformative Choose work disclosure, which still repeats task examples.",
+      "evidence": [
+        "Read choose work before choosing a plan",
+        "Plan limits and renewal terms",
+        "there is no automatic $150 care charge."
+      ]
+    },
+    {
+      "route": "/guides/website-project-cost/",
+      "severity": "minor",
+      "issue": "Removed comparison rows became one dense Also confirm paragraph containing four distinct A/B comparisons, leaving important conditions difficult to scan.",
+      "evidence": [
+        "Also confirm: The same six-page list"
+      ]
+    }
+  ],
+  "verifiedHardCaps": 0,
+  "consolidationAssessment": "Substantial requested consolidation implemented across the guide family. No material lost operational nuance or new contradiction found in complete article rereads. Residual minor defects listed individually require correction before claiming clean editorial acceptance.",
+  "missingLeadsNavigation": {
+    "route": "/guides/website-not-generating-leads/",
+    "completeChangedArticleReread": true,
+    "fragmentTargets": [
+      "find-the-bottleneck",
+      "worked-example",
+      "measurement",
+      "lead-record"
+    ],
+    "allTargetsPresent": true,
+    "operationTested": false
+  },
+  "limitations": [
+    "Scores are content subtotals out of 80; every final score remains null until independent visual/accessibility evidence exists.",
+    "All 65 guide bodies including optional disclosures were individually read; no sampling or length proxy substituted for reading.",
+    "Dated source instructions were not independently reopened at this checkpoint; unchanged prior findings remain bounded.",
+    "Residual minor findings are not inflated into hard-cap triggers.",
+    "This audit covers guide articles, not the /guides/ index or shared site chrome."
+  ],
+  "provenance": {
+    "rubric": "operations/human-quality-20261027/research-rubric.json",
+    "priorAudit": "operations/human-quality-20261027/audits/guides-after-independent.jsonl",
+    "implementation": "operations/human-quality-20261027/guide-consolidation-implementation.json",
+    "frozenInitialSnapshot": "output/human-quality-20261027/guides-final-independent/snapshot.json",
+    "finalSourceSnapshot": "output/human-quality-20261027/guides-final-independent/latest-snapshot.json",
+    "readLedger": "output/human-quality-20261027/guides-final-independent/read-ledger.json",
+    "manualDecisions": [
+      "decisions-01.json",
+      "decisions-02.json",
+      "decisions-03.json",
+      "decisions-04.json",
+      "decisions-05.json",
+      "decisions-06.json",
+      "decisions-07.json",
+      "decisions-08.json",
+      "decisions-09.json",
+      "decisions-10.json",
+      "decisions-11.json",
+      "decisions-12.json",
+      "decisions-13.json",
+      "decisions-14.json",
+      "decisions-15.json",
+      "decisions-16.json",
+      "decisions-17.json",
+      "decisions-18.json",
+      "decisions-19.json",
+      "decisions-20.json",
+      "decisions-21.json",
+      "decisions-22.json"
+    ],
+    "date": "2026-10-27T17:06:52.489Z",
+    "consolidationSha256": "c68a23d2d0811fec280bb5e7c4f7a38ea100714200a65161125a771e3300bc16",
+    "integrationSha256": "4e9e2119321ccd2ae01b1050068aa0b058ae9c7f9b10b9d78f69eed0df6569e6",
+    "sourceRevisionSha256": "b8c86d25cad35c0cdc7f8464d4b559e69c7fb300f0c366500b00e8eed9dddb2b",
+    "journalSha256": "8fb1adbeb7900f2906989da541842c0fa5e469fc55c2f3cf8d862a7daec0b591",
+    "offersSha256": "641782ea16351bdbb5a4bd2931d6e9eebcdf25e9ba2ddeb6993c769f366702cc",
+    "routes": [
+      {
+        "route": "/guides/ai-website-content-review/",
+        "characters": 7745,
+        "inputHash": "2fb0d1cd60f30b2d48370308f4c9533ab8519d82d015bf84f291d4842946e320",
+        "sourceContentSha256": "1118734d7260441719153b089c49b9246c8331469f6a703a019bfbcb93d826ca"
+      },
+      {
+        "route": "/guides/ai-website-or-custom/",
+        "characters": 6856,
+        "inputHash": "55531a5a15e6a62ca47fdb2b6107844c937c9b708781bfce6e03eeb1fd274276",
+        "sourceContentSha256": "04ce033d46de492cbfde115363928f0877fe18db82320a0dbdafda98720644df"
+      },
+      {
+        "route": "/guides/alexandria-sign-project-website/",
+        "characters": 8725,
+        "inputHash": "9cefdd5e70ab4a36ea502f46ae32c0f8d522c81db6a913e2219762ed0a1def20",
+        "sourceContentSha256": "affa46bae72b48d4d52b5ed1c441e80cb8fc9c023c691687b65e0bc41be80294"
+      },
+      {
+        "route": "/guides/approved-buyer-account-flow/",
+        "characters": 7802,
+        "inputHash": "0e5d6b2315f37870be097756bd17186abdf409d78ea3db5a85ae250c117a4e11",
+        "sourceContentSha256": "6c66751c42b8ddafd6faee9b409b8bb896b801623e5690e9d6cfde0142d1bb5d"
+      },
+      {
+        "route": "/guides/brevard-county-launch-tour-website/",
+        "characters": 8026,
+        "inputHash": "e1912e177d736d3b874ea5b6a58f6872f7d3ff0673f5689cb1e3798dc1e9df16",
+        "sourceContentSha256": "bf9ce47f86c12174bda2c8639631011a0e5406d21badc3f410a7b785ac0b8bd3"
+      },
+      {
+        "route": "/guides/citrus-county-manatee-tour-website/",
+        "characters": 8472,
+        "inputHash": "2653ec48b76e5a6587cc9ac20d9d7e7efdfe0d6f11b5fc9859dd71a9a30bcdf1",
+        "sourceContentSha256": "48eb507d7ea12dff63dae302343242f4eda3764a327ebfb73e9cb0d1960f9b10"
+      },
+      {
+        "route": "/guides/class-take-home/",
+        "characters": 4964,
+        "inputHash": "74b7b85e6f45b615f891914c125dd1330687f3c716008ca3aea89c8441845b58",
+        "sourceContentSha256": "7fbdb2c75efcc414ecf93a5c1cc01fe44ece1a1a7a2866273b719543033ef3a5"
+      },
+      {
+        "route": "/guides/contact-form-not-working/",
+        "characters": 9865,
+        "inputHash": "20a3ee5908b80f21000267732919fa027311b3dc2bbfcc83e64a92f956d6d3a8",
+        "sourceContentSha256": "42a6bc573aa39d75bf7502a3c82d88af831043d7c9ceaa970f223cdbf9e1e0ec"
+      },
+      {
+        "route": "/guides/contractor-website-checklist/",
+        "characters": 7803,
+        "inputHash": "7997ecfec36c149bbe50ca2d17df3b481f6bd39aeced30bb843e5de16a9c674a",
+        "sourceContentSha256": "a49b8768b158e5a863b9328cffbbaf483167f2141fe7bd824095aa042f4be6de"
+      },
+      {
+        "route": "/guides/custom-print-order/",
+        "characters": 5485,
+        "inputHash": "e9acbebee798786b383a354d2d020f40046cb308422bd01c5deb81dbbd476ba8",
+        "sourceContentSha256": "069410eb07688db31df35c2b4573019fdb5f8c92f85601a9c9e47118014d0c8d"
+      },
+      {
+        "route": "/guides/custom-website-or-template/",
+        "characters": 5460,
+        "inputHash": "50450f127fd3a147c55d3234ef075f0fefaa01f9b747deef0b385804708f647b",
+        "sourceContentSha256": "00556c9d5b973975078ec161aa36d1bddaaec4e017de6274a3b2ee28eda2f9f8"
+      },
+      {
+        "route": "/guides/ai-search-visibility/",
+        "characters": 9657,
+        "inputHash": "f39c1993727cfd3d82903964d61d5654f8aba85c9837189bf45c9a87c46d64d3",
+        "sourceContentSha256": "14c2cc572eac9eb86d6fdacaf009e92bcb22855f57b5e65288d2183c29b20617"
+      },
+      {
+        "route": "/guides/customer-case-study-template/",
+        "characters": 7147,
+        "inputHash": "7b5221a68ceace1dd8a4c36fa2bf5a0a7c407abede6e85b022bcbcb119e6592e",
+        "sourceContentSha256": "1d582ca8dda85b36a5a644b9775807c38c4d7e45ff11ab86a4d67c297c65124d"
+      },
+      {
+        "route": "/guides/departure-address/",
+        "characters": 6957,
+        "inputHash": "c177f9f09d1a4c3b9f96ff65a8e76efdb59eb4f37cfae4ed1a28f0bb418b6735",
+        "sourceContentSha256": "e663989368be080997df1d4eebae62c0b924cd638f8a12cb2505d9edc6dd3526"
+      },
+      {
+        "route": "/guides/experience-product-choice/",
+        "characters": 5392,
+        "inputHash": "96db1a1670aab5674965890e59aa3209fad5ce530a10d467c29a746bcaed5884",
+        "sourceContentSha256": "e7c9dea871bb9eba710127a0035e31a20ca4ae08f6e3fc4fb1fcff37c7c0f316"
+      },
+      {
+        "route": "/guides/farm-event-website-updates/",
+        "characters": 4938,
+        "inputHash": "ce922872954835b89bc6fe13542435fd3b9379e90fede578f3a5aed2e87b50a6",
+        "sourceContentSha256": "d8db3705a5f3b6437d68309feaf1da268aff0b6f45a3388f768e581e187fccfb"
+      },
+      {
+        "route": "/guides/ferry-booking-status/",
+        "characters": 7268,
+        "inputHash": "51ebe7d8889adfa64e1b5555036d55d3eb79dedd8d324083a89b505030f9afca",
+        "sourceContentSha256": "2f83f3f80f058b4184a905069065f832e0e5e402c3b36956f0a5c2040bc2b457"
+      },
+      {
+        "route": "/guides/ferry-route-and-last-mile/",
+        "characters": 5987,
+        "inputHash": "f68bd1e5ad648e669ed53ffce1308de05cdf6249578a151900c5ac13204068e5",
+        "sourceContentSha256": "304b2de47ca8edf81ee5c411672ea579762d86144c6d2571f37b53912ee02580"
+      },
+      {
+        "route": "/guides/franklin-county-canoe-rental-website/",
+        "characters": 5432,
+        "inputHash": "4ccc25bf44d2049ae99b96860bb0d2540808bbfb6bf6e20111537b4fc671f1a6",
+        "sourceContentSha256": "eb80e623804db36b116e802001ff530e892c1a129be06e972b4e64f1223f1ead"
+      },
+      {
+        "route": "/guides/how-to-choose-a-web-designer/",
+        "characters": 7540,
+        "inputHash": "5704989eb62de98086c7e8511daa3716bcf37f07c335b9229ba267576eb00fce",
+        "sourceContentSha256": "8a19b308f7be30ac609036b8e5a7dfe1dae192589eb31277769b574c9b33f7fe"
+      },
+      {
+        "route": "/guides/industrial-website-planning/",
+        "characters": 7462,
+        "inputHash": "e021461501527a7b5ffad673d9cde2160ebbc5b29edadba071869a8c56497270",
+        "sourceContentSha256": "764407d8425598658a35f3ee98fbb65601ea25e62499b402596b52f8e43b4b64"
+      },
+      {
+        "route": "/guides/inquiry-confirmation-examples/",
+        "characters": 6719,
+        "inputHash": "7087873ecc2ca8de6c3aad73ea1158273693e17ffa062cce2b9897cdb3d6e67e",
+        "sourceContentSha256": "738a8860e9ff078d5de49f3b3574b9105b1d758b685d34559877f69d0786898a"
+      },
+      {
+        "route": "/guides/island-payment-preparation/",
+        "characters": 4834,
+        "inputHash": "651e713c9d29040bdccf9ee8babe08e346f5c3a77f47b6e630c014ea51aa126e",
+        "sourceContentSha256": "2d3fa398d4043ce55ed93212f41aca1b612fa78cb1de1e2176b036d6df17fc70"
+      },
+      {
+        "route": "/guides/itinerary-dependency-review/",
+        "characters": 5713,
+        "inputHash": "106b60a939f5c001d3893be0ff9dae2b899997357eb89e1493bb01280cbb4cd6",
+        "sourceContentSha256": "cb94233622fa697cea1aa00b7d519493a5e9790e3aedd26f0d7b80ce4a2600c5"
+      },
+      {
+        "route": "/guides/kayak-rental-access-information/",
+        "characters": 5524,
+        "inputHash": "4c7753e3451e1dde1abe95319ea6da2c591c2a5fa1c2cc971d1f67f8a81156d2",
+        "sourceContentSha256": "00e5519269e17eda2a34284ebd30bc8723029fac9b5533294733f1fffad01df8"
+      },
+      {
+        "route": "/guides/local-seo-audit/",
+        "characters": 8271,
+        "inputHash": "7fd5b41d1e2c6fdb67d95209755fd97c57bc84ecae5fea63aa849fb74df3f7ba",
+        "sourceContentSha256": "a2afd3524d7578a3087110c86d187858293f0c2950ba680b9460a8d3931e297a"
+      },
+      {
+        "route": "/guides/local-seo-profile-eligibility/",
+        "characters": 5018,
+        "inputHash": "8bb6cae7da829d129e01a02c5c7fa3d460f68773a5e6fceae0323936fc8884ea",
+        "sourceContentSha256": "4b609b10e0b5515c34644cafa6b1b0642a19a70526ca8b5eb8632b191c9073c3"
+      },
+      {
+        "route": "/guides/manufacturing-rfq-form/",
+        "characters": 8487,
+        "inputHash": "9d4d40a28eb5f58f82470377808a6947a99a383372c16add38cbfcce7cbd6cdc",
+        "sourceContentSha256": "46432d72727bb335ed2a681e85153809a1441f81278f142bdfa99c5668e2722b"
+      },
+      {
+        "route": "/guides/marine-service-intake/",
+        "characters": 9125,
+        "inputHash": "ae7be4e4591775c022b234c32607aaa85de2531e0c983e19a400ad05e27ff78a",
+        "sourceContentSha256": "89b28b9351a2c88b58aa48eacc54d82f48f6cef572c791f2aa8a7890a1985ade"
+      },
+      {
+        "route": "/guides/marion-county-equestrian-stay-website/",
+        "characters": 8219,
+        "inputHash": "3628d6a9806ea0270b1afd104409ceb63b128f67d0d99500899417e3f2c3566b",
+        "sourceContentSha256": "ebd0cd50af5a34ab77a291167a5f98078ed0419d214781c2a4251a2d951875ba"
+      },
+      {
+        "route": "/guides/niagara-county-hotel-transport-information/",
+        "characters": 5898,
+        "inputHash": "0ee8dc5fb90b62fcef715984997b517650437ab7987f856908b29d9ad5b682d1",
+        "sourceContentSha256": "f994ca7bef60edd2224983668bfa6f119e6ce2d9ffbdcf3a53dd613a15182c57"
+      },
+      {
+        "route": "/guides/one-page-website-seo/",
+        "characters": 7405,
+        "inputHash": "775e94c5ed9cbb16ae5dfe8eb636018138b6cbf82f3c0ef5395ca036486322bf",
+        "sourceContentSha256": "4ae85c4c042a14cf35d101cd504ac855b49bb45b5a8ff418d057b96fbfac09a7"
+      },
+      {
+        "route": "/guides/otsego-county-baseball-lodging-website/",
+        "characters": 5703,
+        "inputHash": "5e650fe8b007a98ec4b91e2128eea48fd183f540c8d087961bbf8dfd25a9ce03",
+        "sourceContentSha256": "fba6659de8761088898b0eddfe3d8390143c42ac1e0655e1f8c96a5e8ed7f742"
+      },
+      {
+        "route": "/guides/parts-compatibility-inquiry/",
+        "characters": 7398,
+        "inputHash": "f57969fd93aae8d0bd01344f105bf559bc4cb4873a31af7aec210348770c153c",
+        "sourceContentSha256": "54e79d40c45ff283c687240eec4aba3252aac1ef96e058673874bdc8c01ea6e9"
+      },
+      {
+        "route": "/guides/personalization-preview/",
+        "characters": 5347,
+        "inputHash": "d17adb2edffa4c5b8d54071f91b761b98757f25682fb8e26f4da427cddbc44c8",
+        "sourceContentSha256": "21d0ea6709d5cf8c44bce770aa294bee42da57fbdda31b44accd60a8c415e1fa"
+      },
+      {
+        "route": "/guides/philadelphia-moving-website/",
+        "characters": 8285,
+        "inputHash": "c3ea1ffd61e2e8b117f4a6ee0dbf754ad5a3930642fe02a5b0a3c411c6132d8d",
+        "sourceContentSha256": "5cad49624b8bd01c42804809601b51ae423e99bedacff2f604071f777f2b586b"
+      },
+      {
+        "route": "/guides/photography-location-confirmation/",
+        "characters": 5945,
+        "inputHash": "2dae8947438dfdca3dda04a2c9bb32b8970326db4347b744e047874a9dca29ad",
+        "sourceContentSha256": "564bd95633a8c5af96861896b9e732ad9fe462f2a4b9ffd6c1fffdb59adce5da"
+      },
+      {
+        "route": "/guides/quote-request-form/",
+        "characters": 7500,
+        "inputHash": "87cd1415d90bb348dc94257a1fdc293119f486add4681de3737ff50f8584e31f",
+        "sourceContentSha256": "a1866ee434dcec7302a1fd718530759c217b804f82663b6080d8112d28271fc6"
+      },
+      {
+        "route": "/guides/repair-authorization-form/",
+        "characters": 7324,
+        "inputHash": "3b43091f6f66bea07332e5c88b91c2a5df7b6f5f2258d2330ffd55c7d1282792",
+        "sourceContentSha256": "92dee90756c05ff64efebb6d754da2b19805d93417a7266184f3224907621e9d"
+      },
+      {
+        "route": "/guides/river-section-and-release/",
+        "characters": 5242,
+        "inputHash": "0fcc58ef9b45016995b694310212a7e6ecfb8fbf69ea84d3a4001bce9466d7c3",
+        "sourceContentSha256": "064afb2a8f3a7b3487014afe2e2ebbf701cc0df0a0f7ee5fdd4f4decdb7a0c10"
+      },
+      {
+        "route": "/guides/seo-work-and-reporting/",
+        "characters": 9317,
+        "inputHash": "a436fe34c1abed3af6b324174e21415de9b474796d6acefc6961f23d8947ed58",
+        "sourceContentSha256": "deb60abc251062d95f79204e67e3ecde8380b1e51eb0ca5545cc12f4bbba8d5d"
+      },
+      {
+        "route": "/guides/service-area-pages/",
+        "characters": 7529,
+        "inputHash": "2e8bee74f22c593ee53a5c4aca2c33c7338a68cde76d59dfa6b7993a6a82688a",
+        "sourceContentSha256": "a6b105969e26e07d2e364b144246041d02232921519cb1a40e2f83a9276e0c28"
+      },
+      {
+        "route": "/guides/shared-kitchen-inquiry/",
+        "characters": 8084,
+        "inputHash": "4142f27e7e4673d93048577f0cd8f867042cdbac5f43cb1c51a8c3e30bc5f612",
+        "sourceContentSha256": "dd67a2a07f6a4c1769e49378c9ed9ce53243d36b6374932627057d340f7200cc"
+      },
+      {
+        "route": "/guides/shipping-date-and-quote/",
+        "characters": 5343,
+        "inputHash": "c4e1c3d565419fc5dee37ecca0a63b1fc7e4c58cfd08db40929b9c23b3d8c175",
+        "sourceContentSha256": "856f81d6a18582e3c07fef216da8cf05879ac0b63ebce7b1991f73e2eaf8ee3f"
+      },
+      {
+        "route": "/guides/slow-website-on-mobile/",
+        "characters": 7274,
+        "inputHash": "cd92810e6926c53692bccc35e856770146a2e09be9a8addff1cef5f484218007",
+        "sourceContentSha256": "4f0c507b86a90a71e107559674668ca80d6ced0f3913efc87bd1222d998d3633"
+      },
+      {
+        "route": "/guides/small-business-faq-examples/",
+        "characters": 6723,
+        "inputHash": "882515ab534399bf0dc9f06ed2eaee8204c3e6aae3b8d9142ea129c4ceabfbb5",
+        "sourceContentSha256": "db9a34c4c0e138a193066799bd89315ccbdcb929be7719028e32137797d5c1b4"
+      },
+      {
+        "route": "/guides/timed-booking-handoff/",
+        "characters": 9293,
+        "inputHash": "912eb03b0c14b19aa96a346bcdca26187dcfc1d236e37ac013013dba74d7c2ee",
+        "sourceContentSha256": "47e4b86c06a8af6cad27e069698c84143262aeac2a2ac7273d1d4f4f5c7ee8c4"
+      },
+      {
+        "route": "/guides/vacation-rental-property-fit/",
+        "characters": 7057,
+        "inputHash": "808fe54ded5dc7a79a6c6ea55f40dc05d014a5f49aebe2753547bc2600ada15a",
+        "sourceContentSha256": "70479bb97a6d4c77b6d0e50681f8872a776d8cad650c2b2a80db896b37ae47f2"
+      },
+      {
+        "route": "/guides/walton-county-bonfire-booking-website/",
+        "characters": 7790,
+        "inputHash": "9231ebd88291690038199fae953b3be9e05839abd118c90497ea6f9cff644d44",
+        "sourceContentSha256": "204d5b55fb106ab772bb3a3f0f0eb87f41af12e810d4f37fc31a4ca1c2b89e8e"
+      },
+      {
+        "route": "/guides/website-audit-checklist/",
+        "characters": 6151,
+        "inputHash": "db9162df556eed9f3ba94de2c6f209ea6bfcf85813ad2ef26232049f34159791",
+        "sourceContentSha256": "eb23ed599c7ef2dc7253323ca5918f1a88686cb8fe4994f8b3e2acfee74b2f82"
+      },
+      {
+        "route": "/guides/website-care-versus-seo/",
+        "characters": 4927,
+        "inputHash": "24c92e1b8726235b76a089adb0390bac6dfac4152ff1538a2a694dd66e5de1cc",
+        "sourceContentSha256": "b58a5344491a7be43085da8cf6dc1dbe40e00fd9fdff9778f179174328f757d2"
+      },
+      {
+        "route": "/guides/website-content-template/",
+        "characters": 7353,
+        "inputHash": "35b6df1580364dc9205f81c46636bb91172b8cd0fcd0ffc7ddf800d3609db81f",
+        "sourceContentSha256": "9159787b03e2d4f4325e3d8fffc3fb56f763e99f5fc7e25468da40a766849b19"
+      },
+      {
+        "route": "/guides/website-handover-checklist/",
+        "characters": 6443,
+        "inputHash": "4bee3faa166707bda984c68fcbbf9e7a1d2b922aeca3e39ce0dbfddffdcdbbc5",
+        "sourceContentSha256": "cbafc72347c80bbb01bec5ea8694309309b68f5161fd3108ff17879be87ea802"
+      },
+      {
+        "route": "/guides/website-launch-announcement/",
+        "characters": 6168,
+        "inputHash": "deec49f2e8ee4d0536acbfba97d00ddf7259a2502f5da080e8333ccb6fd8fe4a",
+        "sourceContentSha256": "1dceb70940ac7b9c2b2b88d28baa214a6ea2f9202b7dc4075fa6b3cc5d7c20fa"
+      },
+      {
+        "route": "/guides/website-launch-checklist/",
+        "characters": 4806,
+        "inputHash": "54ff873dbdf8a321272e76a1174bf516b24ae8ae3814b82cac620068ef11f542",
+        "sourceContentSha256": "9dd7de54a14652bc1f7d2d6c9adddcc31a969a9ae299298a00e173e20f561c2f"
+      },
+      {
+        "route": "/guides/website-maintenance-checklist/",
+        "characters": 5160,
+        "inputHash": "81843ac6303d116567eaaa2e12401b2026fcbd44aa832f4ebd5f27a802f4780f",
+        "sourceContentSha256": "3da40ee1b04899b85fbc6ba2bd518229d303c6d38b247a246e81ed7596c5ad66"
+      },
+      {
+        "route": "/guides/website-maintenance-cost/",
+        "characters": 7022,
+        "inputHash": "4ee6a76a3185e02b49d91e2fb35de68586c18610aafe35fa8b3fbf02d542ea8b",
+        "sourceContentSha256": "981d04ac4727261e184e156ee081f234dcd04ba103bd27c6f334d2d415c626b7"
+      },
+      {
+        "route": "/guides/website-migration-checklist/",
+        "characters": 7138,
+        "inputHash": "c944e67c3c55408ba0bcac099a34868259900fae061c6561df35d670d6540280",
+        "sourceContentSha256": "1a17e5507b6c2889bf14ae20d9eab25cbd0fff1f9c1764b081911a7b6740211f"
+      },
+      {
+        "route": "/guides/website-not-generating-leads/",
+        "characters": 6166,
+        "inputHash": "f6c5734d1314e55fa54ca92543e91c1ba1ddceb57e0c6cea2376a626547ec210",
+        "sourceContentSha256": "617f454e9521784dc80e2c46c145da7fb412fa43e9a98e70d484f2f0bb03ab8e"
+      },
+      {
+        "route": "/guides/website-not-showing-on-google/",
+        "characters": 7139,
+        "inputHash": "39529ab7d6c8a840b973c3b8b5ff82ea809aa9485ca373c1dfff1cc2f0619a4e",
+        "sourceContentSha256": "f8a453d14d98065a285b681137ff8e3d467c4538880555b993f44ff492672b55"
+      },
+      {
+        "route": "/guides/website-project-cost/",
+        "characters": 8811,
+        "inputHash": "25b53be17bea7e25ae33ecb6a537c56fdb2837878496a36c6061e78e909b0675",
+        "sourceContentSha256": "3949177d5af659a9356f3ab63ffe4c4c16deefdec4ac40f2cb470379c7ef69d3"
+      },
+      {
+        "route": "/guides/website-redesign-brief/",
+        "characters": 7737,
+        "inputHash": "92acff50650a9f6ddedb54855bfa899e3207a434b38fd96e62ed6fbc90ff4e41",
+        "sourceContentSha256": "d937b07d897d1154746f614829dff6af52667d2fad514b857de0506ed7b90818"
+      },
+      {
+        "route": "/guides/website-redesign-timeline/",
+        "characters": 7183,
+        "inputHash": "9b48cd62c47344468e60d494ca65c15efe4ee2a866c26d543b222dc52b370d50",
+        "sourceContentSha256": "e67923716e17dd9013f387fa996bc86bc23db2c779836c7a3cf44ef4166ed103"
+      },
+      {
+        "route": "/guides/website-repair-or-redesign/",
+        "characters": 7573,
+        "inputHash": "b4a50627aa446e143d57aaf546814a4b538b51fba6d7eae434a792732cc12387",
+        "sourceContentSha256": "a38d58eaa382f8a8f872f1c5977bda296dcebd65935631f4ea402269d7a6af4d"
+      },
+      {
+        "route": "/guides/wholesale-order-readiness/",
+        "characters": 7218,
+        "inputHash": "1776065c30598e9ecd07e87c189fc85582bee5c66883b5777e16c05998450b55",
+        "sourceContentSha256": "305b6019ff4ad70a5a8b8849820419025c6fec16a019e483abbb6d3c2fb52198"
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "date": "2026-10-27",
+  "issue": "V1: mobile floating page controls overlap ordinary prose",
+  "status": "implemented; targeted Windows Chromium verification passed; coordinated build and Linux visual gate required",
+  "files": {
+    "tests/browser/audit-layout-regression.spec.mjs": "fde01d2b245af0c21ff36fd8d184bf772880e18dec7d86382bc40100670eb101",
+    "src/assets/page-navigation.js": "d09b3b18d083e1824acca80cf14b172db8ecb08977654573fedc09132be859e4",
+    "tests/browser/ux-improvements.spec.mjs": "c56b2282d7bdaf6a3770c84bbdbcebcc06101fccf65d9e77c8d780ea69a332d7",
+    "tests/browser/shared-controls.spec.mjs": "de8757318c964c26242179bc55fbfe59e62f1cb1130a4e0c49c6e879cabe8c0f"
+  },
+  "behavior": [
+    "On viewports <=767px wide or <=520px high, move individual controls upward within their existing left/right columns to a clear text-line gap.",
+    "Keep a safe current slot to avoid paragraph-by-paragraph movement; return to default with extra clearance. Hide temporarily only when no clear gap fits.",
+    "Focused controls, loading chat and open chat retain stable placement; desktop corner placement and existing inquiry/focus protections remain.",
+    "Observe viewport candidates and cache document-coordinate text rectangles; invalidate for viewport, fonts, disclosure, DOM/layout and nested-scroll changes.",
+    "Ignore noninteractive decorative media and hidden closed-disclosure content."
+  ],
+  "tests": {
+    "method": "Temporary Playwright suite copies against existing localhost:4198 build, intercepting page-navigation.js with current source; no shared dist modification. Chat provider mock URL changed only in temporary harness.",
+    "coverage": [
+      "320/390px text collision at multiple scroll depths on about, pricing, work and county content",
+      "dense enlarged prose hide and footer recovery",
+      "keyboard focus stability, inquiry fields, disclosure and resize",
+      "portrait/landscape/tiny/desktop legacy tool matrix",
+      "chat loading/provider/fallback, menu/footer, back-to-top activation and focus return"
+    ],
+    "combinedFinalCoverage": {
+      "skipped": 16,
+      "unresolvedFailures": 0,
+      "passed": 36
+    },
+    "checks": [
+      "node --check src/assets/page-navigation.js",
+      "git diff --check (four owned source/test paths)"
+    ],
+    "limitations": "Source-overlay verification on Windows Chromium, not a fresh production build or Linux screenshot acceptance.",
+    "finalAffectedRerun": {
+      "failed": 0,
+      "suite": "back-to-top and chat follow each viewport and page type",
+      "projects": [
+        "desktop",
+        "phone"
+      ],
+      "routes": [
+        "/",
+        "/pricing/",
+        "/services/",
+        "/services/seo/",
+        "/areas/",
+        "/contact/",
+        "/checkout/focused-site/",
+        "/guides/ai-search-visibility/",
+        "/work/hearthside/"
+      ],
+      "passed": 2
+    },
+    "expandedRun": {
+      "skipped": 16,
+      "failed": 1,
+      "failure": "Mobile visibility/read race in legacy route-matrix assertion; assertion now checks visibility and bounds atomically.",
+      "passed": 35
+    }
+  },
+  "performance": {
+    "createdRanges": 6,
+    "afterTenStationaryScrollEvents": 6,
+    "textNodes": 6298
+  },
+  "screenshots": [
+    {
+      "review": "visually inspected; visible controls clear of prose",
+      "name": "about",
+      "viewport": "390x844",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-floating-fix-tests/about.png",
+      "sha256": "686cd3f856876049de0f882bdb951379d2690968526a187c1151c25320cfabdd"
+    },
+    {
+      "review": "visually inspected; visible controls clear of prose",
+      "name": "pricing",
+      "viewport": "390x844",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-floating-fix-tests/pricing.png",
+      "sha256": "8c029b4154140a691a33e976e7e666c3d7c596e91a456e4da58591612bf08816"
+    },
+    {
+      "review": "visually inspected; visible controls clear of prose",
+      "name": "work",
+      "viewport": "390x844",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-floating-fix-tests/work.png",
+      "sha256": "703c9030c1514c0600feb265e3d44f736e1717c4bddad70ededfac36d467cef2"
+    },
+    {
+      "review": "visually inspected; visible controls clear of prose",
+      "name": "floating-tools-content",
+      "viewport": "390x844",
+      "path": "C:/Users/palat/AppData/Local/Temp/wm-floating-fix-tests/floating-tools-content.png",
+      "sha256": "9f3be155482b17eacf820432265e043e4f33db04f179c294402c4443e45ae755"
+    }
+  ],
+  "requiredReleaseChecks": [
+    "Coordinated production build after all owned edits merge.",
+    "Relevant browser suites and complete route/site-health checks against built output.",
+    "Capture and review the four affected phone screenshot states on the Linux baseline runner. Do not autoaccept unreviewed baseline changes."
+  ],
+  "commit": "No commit created by this worker."
+}

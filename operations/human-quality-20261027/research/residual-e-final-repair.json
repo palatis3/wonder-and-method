@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/texas/bosque-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/texas/bosque-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/texas/bosque-county/",
+        "heading": "Explain the award's price consequences before entry.",
+        "intro": "An award that purchases a work differs from an award added to its sale price. Keep the selected award's entry requirements, accepted-price restrictions and later artwork delivery stages connected.",
+        "customerQuestion": "Does this award buy my work or add to its sale, and which conditions follow from choosing it?",
+        "decisions": [
+          {
+            "label": "Describe the award relationship precisely",
+            "body": "Use the current call's exact wording to distinguish a purchase amount from an additional award. Keep any minimum-entry requirement attached only to the applicable award. Do not calculate a net payment where commission or award treatment remains ambiguous; obtain the organization's explanation."
+          },
+          {
+            "label": "Separate entry from accepted-work handling",
+            "body": "Explain when prices become fixed and identify the instructions that apply after acceptance. Entry-mail and physical-artwork addresses may differ. Carry approved carrier, return and pickup requirements with the artwork stage so an artist does not reuse entry instructions for shipment."
+          },
+          {
+            "label": "Keep each annual call accurately dated",
+            "body": "Mark concluded calls closed and retain useful past results under their year. A new call needs approved dates, award terms and submission instructions. Agree which details require annual review so a reused layout does not silently carry forward old deadlines or conditions."
+          }
+        ],
+        "ownerInputs": [
+          "Current approved prospectus, exact award terms and entry requirements.",
+          "Accepted-price and commission explanations, with ambiguities resolved.",
+          "Current dates, separate entry/artwork addresses, carrier and return instructions."
+        ],
+        "sourceBridge": "The concluded 2026 Bosque Arts Center Art Classic is a historical example: the John Steven Jones Purchase Award buys one piece for its stated amount regardless of listed price, while an Art Patrons award adds to a sale. The prospectus also distinguishes award-entry requirements and artwork delivery.",
+        "limits": "The 2026 event is not an open submission opportunity. The organization approves current financial and shipping terms. Secure submissions, file uploads and payments require separate assessment.",
+        "inputHash": "d578da279e0281f3600c6459daac8773c1db0ee8d0478037d7edf73c3e7a6096",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/texas/bosque-county/",
+        "heading": "Explain the award's price consequences before entry.",
+        "intro": "An award that purchases a work differs from an award added to its sale price. Keep the selected award's entry requirements, accepted-price restrictions and later artwork delivery stages connected.",
+        "customerQuestion": "Does this award buy my work or add to its sale, and which conditions follow from choosing it?",
+        "decisions": [
+          {
+            "label": "Describe the award relationship precisely",
+            "body": "Use the current call's exact wording to distinguish a purchase amount from an additional award. Keep any minimum-entry requirement attached only to the applicable award. Do not calculate a net payment where commission or award treatment remains ambiguous; obtain the organization's explanation."
+          },
+          {
+            "label": "Separate entry from accepted-work handling",
+            "body": "Explain when prices become fixed and identify the instructions that apply after acceptance. Entry-mail and physical-artwork addresses may differ. Label each address by its purpose so an artist does not reuse an entry destination for shipment of an accepted piece."
+          },
+          {
+            "label": "Plan the artwork’s return or pickup",
+            "body": "Keep the organization’s approved carrier, return and pickup instructions with the accepted-work stage. A fictional artist question could ask, “If my accepted piece is not sold, which return or pickup arrangement must I prepare?” Staff should resolve that plan using the applicable prospectus. The question does not invent prepaid shipping, a carrier commitment or a collection deadline."
+          }
+        ],
+        "ownerInputs": [
+          "Current approved prospectus, exact award terms and entry requirements.",
+          "Accepted-price and commission explanations, with ambiguities resolved.",
+          "Current dates, separate entry/artwork addresses, carrier and return instructions."
+        ],
+        "sourceBridge": "The concluded 2026 Bosque Arts Center Art Classic is a historical example: the John Steven Jones Purchase Award buys one piece for its stated amount regardless of listed price, while an Art Patrons award adds to a sale. The prospectus also distinguishes award-entry requirements and artwork delivery.",
+        "limits": "The 2026 event is not an open submission opportunity. The organization approves current financial and shipping terms. Secure submissions, file uploads and payments require separate assessment.",
+        "inputHash": "d578da279e0281f3600c6459daac8773c1db0ee8d0478037d7edf73c3e7a6096",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "12f46066099fee8e7c21cea4b7da8f2438ab2ffe22918d60753bcb2bf12f8994",
+      "afterSha256": "d8e5e6768bae5cc9edb26085fe6a59da6b565b74c6f7c734570c9cc59b712233",
+      "requiredFixes": [
+        "Keep annual archive/update and handoff commitments in the FAQ. Use decision three for the artist’s accepted-work return or pickup stage, based on approved carrier and return instructions, while retaining the historical-event disclosure."
+      ]
+    }
+  ],
+  "records": [],
+  "faqs": [],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-e.jsonl"
+  ],
+  "limits": "Draft only. Historical disclosure and annual-call FAQ preserved. No current financial, carrier, deadline or event terms invented.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+    "reviewFileSha256": "d4e1b45fc20e37711b9e3376de44e92e8465708dc38a4aa391f9c911cbe4d99f",
+    "exactCandidates": 1,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

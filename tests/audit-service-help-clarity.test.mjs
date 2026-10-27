@@ -45,8 +45,8 @@ test('contractor simplification preserves payment, editing, evidence and form bo
  assert.match(contractor,/A request is not a confirmed appointment or a quote/);
  assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate agreement on the work and price/);
  assert.match(contractor,/ready booking link or compatible standard embed may fit an included connection/);
- assert.ok(contractor.includes('A guided quote form costs '+money(offers.add_ons.find(item=>item.id==='guided_quote_form').public_price)));
- assert.match(contractor,/not an automatic price/);
+ assert.ok(contractor.includes('Guided quote form — '+money(offers.add_ons.find(item=>item.id==='guided_quote_form').public_price)));
+ assert.match(contractor,/does not calculate an automatic price/);
  assert.match(contractor,/two fictional concepts above.*not examples of your completed jobs/);
  assert.doesNotMatch(contractor,/every request reaches your inbox|guaranteed (?:inbox|delivery)/i);
  const closing=contractor.match(/<section class="studio-closing">(.*?)<\/section>/s)[1];

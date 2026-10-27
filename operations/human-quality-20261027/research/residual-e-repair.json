@@ -1,0 +1,300 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/queens-county/",
+    "/areas/schenectady-county/",
+    "/areas/tennessee/davidson-county/",
+    "/areas/texas/bailey-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/queens-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/queens-county/",
+        "heading": "Separate firing a piece from permission to make it in the studio.",
+        "intro": "Kiln service, short-term workspace and membership provide different kinds of access. Explain the condition of the work and any included glazing space before an artist transports pieces or applies for a service.",
+        "customerQuestion": "Can I use the firing service for these pieces, and what workspace would I need separately?",
+        "decisions": [
+          {
+            "label": "Explain what must be made before arrival",
+            "body": "State the studio's actual preparation requirements for work presented for bisque firing. An artist with an unmade project should understand that requesting a kiln does not grant fabrication space. Keep accepted firing types and any special requirements identifiable through the inquiry."
+          },
+          {
+            "label": "Provide a materials-review route",
+            "body": "Ask for the clay and glaze information staff actually need, using the approved process. Unfamiliar materials should remain subject to review rather than automatic acceptance. The website can explain preparation without approving a firing schedule or substituting for studio judgment."
+          },
+          {
+            "label": "Compare the access arrangements",
+            "body": "Distinguish membership, short-term workspace and the limited glazing arrangement attached to reserving both firings in this example. A customer needing somewhere to glaze should find the relevant question without assuming any kiln booking permits unrestricted studio use. Keep applications and orientation requirements with their actual offers."
+          }
+        ],
+        "ownerInputs": [
+          "Current firing services, preparation and material-information requirements.",
+          "Actual fabrication, glazing and membership access conditions.",
+          "Application, orientation and staff-review routes with approved translations where needed."
+        ],
+        "sourceBridge": "AlterWork Studios in Long Island City separates membership, workspace and kiln services, requiring premade pieces for bisque firing and describing limited glazing access for customers reserving both firings. This makes equipment service different from permission to work in the studio.",
+        "limits": "Staff confirm materials and access. Automatic translation should not establish technical acceptance instructions; approved language versions need an update owner and reply capability. New access systems or automated acceptance require separate assessment.",
+        "inputHash": "54e9f8c9932edbb01958ae7f7ba4245539ab521a2442c6cdbc65c3420cbe92b2",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/queens-county/",
+        "heading": "Separate firing a piece from permission to make it in the studio.",
+        "intro": "Kiln service, short-term workspace and membership provide different kinds of access. Explain the condition of the work and any included glazing space before an artist transports pieces or applies for a service.",
+        "customerQuestion": "Can I use the firing service for these pieces, and what workspace would I need separately?",
+        "decisions": [
+          {
+            "label": "Explain what must be made before arrival",
+            "body": "State the studio's actual preparation requirements for work presented for bisque firing. An artist with an unmade project should understand that requesting a kiln does not grant fabrication space. Keep accepted firing types and any special requirements identifiable through the inquiry."
+          },
+          {
+            "label": "Provide a materials-review route",
+            "body": "Ask for the clay and glaze information staff actually need, using the approved process. Unfamiliar materials should remain subject to review rather than automatic acceptance. The website can explain preparation without approving a firing schedule or substituting for studio judgment."
+          },
+          {
+            "label": "Compare the access arrangements",
+            "body": "Distinguish membership, short-term workspace and the limited glazing arrangement attached to reserving both firings in this example. A customer needing somewhere to glaze should find the relevant question without assuming any kiln booking permits unrestricted studio use. Keep applications and orientation requirements with their actual offers."
+          }
+        ],
+        "ownerInputs": [
+          "Current firing services, preparation and material-information requirements.",
+          "Actual fabrication, glazing and membership access conditions.",
+          "Application, orientation and staff-review routes with approved translations where needed."
+        ],
+        "sourceBridge": "AlterWork Studios in Long Island City separates membership, workspace and kiln services, requiring premade pieces for bisque firing and describing limited glazing access for customers reserving both firings. This makes equipment service different from permission to work in the studio.",
+        "limits": "Studio staff confirm materials and access. New access systems or automated acceptance require separate assessment; the public website can prepare the artist’s question without approving the firing or granting workspace.",
+        "inputHash": "54e9f8c9932edbb01958ae7f7ba4245539ab521a2442c6cdbc65c3420cbe92b2",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "01d5d84194147018cf18dc8cc3f84e01c57799ac9ad91d9c1873b64193f55b9d",
+      "afterSha256": "08603b303172cd170838151d1adede57d20fec2c9427d88920565a2df4c0665b",
+      "requiredFixes": [
+        "Keep the full translation scope, approval, maintenance and reply-language commitments in the FAQ; shorten limits to material/access confirmation and separately scoped systems."
+      ]
+    },
+    {
+      "route": "/areas/schenectady-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/schenectady-county/",
+        "heading": "Keep each part of a mixed order attached to its timing question.",
+        "intro": "An organizer may need embroidered garments and engraved gifts for one event. Show how the business reviews the combined request without letting one product's approximate lead time stand for the whole order.",
+        "customerQuestion": "Can these different items be ready for the same event, and what do you need to review that?",
+        "decisions": [
+          {
+            "label": "Identify every product and method",
+            "body": "Label product examples with their decoration or customization method. Invite the full combination and quantities through the existing inquiry route. An organizer should be able to describe apparel and gifts together while staff can still identify the separate production questions involved."
+          },
+          {
+            "label": "Distinguish guidance from the confirmed date",
+            "body": "Place approximate timing beside the category it describes, including any approved distinction for large custom orders. Capture the desired in-hand or event date as a requirement for review. Explain who confirms feasibility and whether items can be collected together, rather than promising that the shortest published turnaround covers everything."
+          },
+          {
+            "label": "Provide a route for changes after ordering",
+            "body": "Label the approved contact for an existing order and explain which reference the customer should include. Keep that message separate from a new inquiry. Receipt of a change request should not imply approval to alter production, preserve the original date or change the agreed collection arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Current method-specific timing guidance and large-order qualifications.",
+          "Product, quantity and event-date details used to assess a combined request.",
+          "The person or route that confirms dates, fulfillment and order changes."
+        ],
+        "sourceBridge": "KSB Kreations in Schenectady publishes different approximate timing for embroidery, engraving and apparel and discusses large custom orders separately. Those differences make a mixed-order brief more useful than one general turnaround statement.",
+        "limits": "The business confirms production acceptance, dates and readiness for the actual order. The website does not approve changes by receiving a message. Live order lookup, production updates and automated fulfillment coordination need separate scope.",
+        "inputHash": "7adcc5e0755b1043c84fc06b6c8f2f3e3604f4dec77edc931efdcc089c4d054f",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/schenectady-county/",
+        "heading": "Keep each part of a mixed order attached to its timing question.",
+        "intro": "An organizer may need embroidered garments and engraved gifts for one event. Show how the business reviews the combined request without letting one product's approximate lead time stand for the whole order.",
+        "customerQuestion": "Can these different items be ready for the same event, and what do you need to review that?",
+        "decisions": [
+          {
+            "label": "Identify every product and method",
+            "body": "Label product examples with their decoration or customization method. Invite the full combination and quantities through the existing inquiry route. An organizer should be able to describe apparel and gifts together while staff can still identify the separate production questions involved."
+          },
+          {
+            "label": "Distinguish guidance from the confirmed date",
+            "body": "Place approximate timing beside the category it describes, including any approved distinction for large custom orders. Capture the desired in-hand or event date as a requirement for review. Explain who confirms feasibility and whether items can be collected together, rather than promising that the shortest published turnaround covers everything."
+          },
+          {
+            "label": "Keep the collection plan with every item",
+            "body": "Use the business’s actual confirmation process to keep each product and quantity visible in the fulfillment plan. A fictional organizer asking for embroidered shirts and engraved gifts should be able to ask, “Will these be ready for one collection, or would we need separate arrangements?” Do not let readiness of the shirts stand in for readiness of the gifts."
+          }
+        ],
+        "ownerInputs": [
+          "Current method-specific timing guidance and large-order qualifications.",
+          "Product, quantity and event-date details used to assess a combined request.",
+          "The person or route that confirms dates, fulfillment and order changes."
+        ],
+        "sourceBridge": "KSB Kreations in Schenectady publishes different approximate timing for embroidery, engraving and apparel and discusses large custom orders separately. Those differences make a mixed-order brief more useful than one general turnaround statement.",
+        "limits": "The business confirms production acceptance, dates and readiness for each item. Automated fulfillment coordination requires separate scope; a clear summary can support the existing staff review.",
+        "inputHash": "7adcc5e0755b1043c84fc06b6c8f2f3e3604f4dec77edc931efdcc089c4d054f",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "4fc6294fb3b0a942d248ee7a21cf48fae5444ed10f047d97f78d40c7e7861c37",
+      "afterSha256": "0f6925408dbd591b3a57caedfad3646489e06ad7d56ecb79fc3c2b7e3dc492ac",
+      "requiredFixes": [
+        "Keep the scoped studio commitment and detailed change-contact instructions in the FAQ. Refocus step three on confirming combined-item readiness and collection using owner-approved facts; trim the repeated limits wording."
+      ]
+    },
+    {
+      "route": "/areas/tennessee/davidson-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/tennessee/davidson-county/",
+        "heading": "Show the room, engineer and finishing work included in each studio offer.",
+        "intro": "Session length alone does not explain what an artist is buying. Compare the studio's actual bundles so someone bringing an engineer, needing one or working with existing recordings can find the appropriate route.",
+        "customerQuestion": "Do I need room time, an engineer, finishing work, or a package that includes several of those stages?",
+        "decisions": [
+          {
+            "label": "Explain room access and who runs the session",
+            "body": "Describe the room, equipment and assistance included in the particular option. Keep studio-only access distinguishable from a booking with an engineer. An artist bringing their own engineer should understand the relevant arrangement without assuming every room booking includes the studio's professional services."
+          },
+          {
+            "label": "Name included and separate finishing work",
+            "body": "Show the deliverables for each actual package, including any production, mixing or mastering that is bundled. Do not imply all finishing work is an extra charge. Give customers with existing recordings a finishing-service route without suggesting they must book room time first."
+          },
+          {
+            "label": "Connect the request to its stage and output",
+            "body": "Ask what the customer already has, what help is needed and what result is being discussed. Preserve combined-package relationships through the existing booking or quote destination. Use authorized public audio and approved credits where examples clarify the offer, keeping private project files outside the public portfolio workflow."
+          }
+        ],
+        "ownerInputs": [
+          "Current room, equipment and engineer inclusions for each offer.",
+          "Finishing/production bundles, expected outputs and existing booking or inquiry links.",
+          "Approved photographs/audio examples, publication permissions and accurate credits."
+        ],
+        "sourceBridge": "JD Sound says Nashville Studio A can be booked with or without an engineer and describes finishing services. East Nashville's Kali Cai offers studio-only and with-engineer options, includes finishing in some packages and separately offers online mixing and mastering.",
+        "limits": "The studio confirms package details and arrangements. Public media permission does not authorize transfer of private recordings. Shared calendars, engineer scheduling, payments, session-file transfer and private delivery systems require separate scope.",
+        "inputHash": "415530e717e9a01ab1f0908132020e727a99ee8f42c990b7d9284acf969986e9",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/tennessee/davidson-county/",
+        "heading": "Show the room, engineer and finishing work included in each studio offer.",
+        "intro": "Session length alone does not explain what an artist is buying. Compare the studio's actual bundles so someone bringing an engineer, needing one or working with existing recordings can find the appropriate route.",
+        "customerQuestion": "Do I need room time, an engineer, finishing work, or a package that includes several of those stages?",
+        "decisions": [
+          {
+            "label": "Explain room access and who runs the session",
+            "body": "Describe the room, equipment and assistance included in the particular option. Keep studio-only access distinguishable from a booking with an engineer. An artist bringing their own engineer should understand the relevant arrangement without assuming every room booking includes the studio's professional services."
+          },
+          {
+            "label": "Name included and separate finishing work",
+            "body": "Show the deliverables for each actual package, including any production, mixing or mastering that is bundled. Do not imply all finishing work is an extra charge. Give customers with existing recordings a finishing-service route without suggesting they must book room time first."
+          },
+          {
+            "label": "Connect the request to its stage and output",
+            "body": "Ask what the customer already has, what help is needed and what result is being discussed. Preserve combined-package relationships through the existing booking or quote destination. A customer seeking finishing for an existing recording should retain that starting point rather than arrive as an unexplained room-time request."
+          }
+        ],
+        "ownerInputs": [
+          "Current room, equipment and engineer inclusions for each offer.",
+          "Finishing/production bundles, expected outputs and existing booking or inquiry links.",
+          "Approved photographs/audio examples, publication permissions and accurate credits."
+        ],
+        "sourceBridge": "JD Sound says Nashville Studio A can be booked with or without an engineer and describes finishing services. East Nashville's Kali Cai offers studio-only and with-engineer options, includes finishing in some packages and separately offers online mixing and mastering.",
+        "limits": "The studio confirms package details and arrangements. Shared calendars, engineer scheduling and payment integrations require separate scope.",
+        "inputHash": "415530e717e9a01ab1f0908132020e727a99ee8f42c990b7d9284acf969986e9",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "44052e460bdb0b23462fde11000afc16bf164ee477a8b8a2de7c9481de2559ee",
+      "afterSha256": "899009eebd7e59cfd340541ce189ebbf5bc9e5db011a5e91ac5584e449971b3f",
+      "requiredFixes": [
+        "Keep detailed public-media permissions and private-file transfer boundaries in the two FAQs. Remove the private-files sentence from decision three and shorten limits to studio confirmation and separately scoped scheduling/payment integrations."
+      ]
+    },
+    {
+      "route": "/areas/texas/bailey-county/",
+      "partition": 5,
+      "before": {
+        "route": "/areas/texas/bailey-county/",
+        "heading": "Describe attendee charges before requesting the community room.",
+        "intro": "An approved class-materials fee can have different rules from event admission. Explain that distinction while organizers assess suitability, before they invest time preparing a room request.",
+        "customerQuestion": "Does our planned event fit the room's rules, including what attendees would pay?",
+        "decisions": [
+          {
+            "label": "Start with the proposed purpose",
+            "body": "Explain the approved kinds of meetings and the community the facility serves. Ask organizers to describe the event and any attendee charge. Staff can then consider the actual proposal without the page implying that any activity called a class qualifies."
+          },
+          {
+            "label": "Preserve the charge distinction",
+            "body": "Use the owner's exact approved distinction between admission and materials charges. Keep any educational-use approval condition beside the exception. A permitted materials fee should not become broad permission to sell tickets, charge admission or recover unrelated event costs."
+          },
+          {
+            "label": "Connect suitability to the full policy",
+            "body": "Show operating-hour limits, priority rules and the established request route alongside the initial suitability questions. Link to the authoritative complete policy and agree how changes reach the website. A short introduction can help people begin while retaining conditions that could change the approval decision."
+          }
+        ],
+        "ownerInputs": [
+          "Current permitted-use policy and approved fee distinctions.",
+          "Room hours, equipment information and library or city priority rules.",
+          "Staff request route, authoritative policy document and update responsibility."
+        ],
+        "sourceBridge": "Muleshoe Area Public Library prohibits admission charges while allowing materials charges for approved educational classes. Its facilities policy also addresses meeting uses, operating hours and library or city priority. A proposed craft class therefore needs both purpose and charge information reviewed.",
+        "limits": "Staff decide whether the proposed use fits. Clear public criteria do not grant approval or reserve the room. Availability and reservation tools need separate assessment.",
+        "inputHash": "95d3a73d58dac521887bb6aaea4e42c4fcf36779cbfba2c99c9cc18101a66b23",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "after": {
+        "route": "/areas/texas/bailey-county/",
+        "heading": "Describe attendee charges before requesting the community room.",
+        "intro": "An approved class-materials fee can have different rules from event admission. Explain that distinction while organizers assess suitability, before they invest time preparing a room request.",
+        "customerQuestion": "Does our planned event fit the room's rules, including what attendees would pay?",
+        "decisions": [
+          {
+            "label": "Start with the proposed purpose",
+            "body": "Explain the approved kinds of meetings and the community the facility serves. Ask organizers to describe the event and any attendee charge. Staff can then consider the actual proposal without the page implying that any activity called a class qualifies."
+          },
+          {
+            "label": "Preserve the charge distinction",
+            "body": "Use the owner's exact approved distinction between admission and materials charges. Keep any educational-use approval condition beside the exception. A permitted materials fee should not become broad permission to sell tickets, charge admission or recover unrelated event costs."
+          },
+          {
+            "label": "Bring hours and priority into the request",
+            "body": "Keep the proposed event hours and any setup time with the purpose and charge description sent to staff. Explain the facility’s actual operating-hour limits and library or city priority rules. An organizer should know which contact reviews the complete request and whether a different time needs discussion before treating a preferred slot as reserved."
+          }
+        ],
+        "ownerInputs": [
+          "Current permitted-use policy and approved fee distinctions.",
+          "Room hours, equipment information and library or city priority rules.",
+          "Staff request route, authoritative policy document and update responsibility."
+        ],
+        "sourceBridge": "Muleshoe Area Public Library prohibits admission charges while allowing materials charges for approved educational classes. Its facilities policy also addresses meeting uses, operating hours and library or city priority. A proposed craft class therefore needs both purpose and charge information reviewed.",
+        "limits": "Staff decide whether the proposed use fits. Clear public criteria do not grant approval or reserve the room. Availability and reservation tools need separate assessment.",
+        "inputHash": "95d3a73d58dac521887bb6aaea4e42c4fcf36779cbfba2c99c9cc18101a66b23",
+        "needsResearch": false,
+        "publicationHold": null
+      },
+      "beforeSha256": "ddd76c2f7fe2b0a991591f736028bc8d2de719384ee33304bdd6e87aadb85ca4",
+      "afterSha256": "9d2850ab306735ca07cafca7d9ccc15779e42094331812e587e4c2250d89b214",
+      "requiredFixes": [
+        "Keep the website-document authority and update commitments in the FAQ. Refocus decision three on the organizer’s hours, priority and staff-request steps, removing the repeated policy-management explanation."
+      ]
+    }
+  ],
+  "records": [],
+  "faqs": [],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-e.jsonl"
+  ],
+  "limits": "Draft-only corrections to four diagnosed pages. Original FAQs, source entries and historical audits retained; independent exact recheck before import.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+    "reviewFileSha256": "d4e1b45fc20e37711b9e3376de44e92e8465708dc38a4aa391f9c911cbe4d99f",
+    "exactCandidates": 4,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

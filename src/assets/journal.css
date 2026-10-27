@@ -120,3 +120,11 @@
 .journal-prose .guide-case-details{border-block:1px solid var(--line);padding:.5rem 0}
 .journal-prose .guide-case-details>summary{font-size:1.15rem;line-height:1.5}
 .journal-prose .guide-case-details[open]>summary{margin-bottom:1rem}
+
+.studio-site .guide-topic-count{display:inline-block;font-family:Manrope,Arial,sans-serif;font-size:.9rem;font-weight:500;line-height:1.5;color:var(--slate);margin-left:.6rem;white-space:nowrap}
+.studio-site .journal-group>h2:has(.guide-topic-count){margin-bottom:.65rem}
+.studio-site .guide-group-intro{max-width:66ch;font-size:1rem;line-height:1.7;margin-bottom:1.5rem}
+.studio-site .guide-more{border-top:1px solid var(--line);margin:-.5rem 0 2.5rem}
+.studio-site .guide-more>summary{font-weight:600;cursor:pointer;min-height:48px;padding:.85rem 0;line-height:1.5}
+.studio-site .guide-more[open]>summary{margin-bottom:.5rem}
+.studio-site .guide-more[hidden]{display:none}

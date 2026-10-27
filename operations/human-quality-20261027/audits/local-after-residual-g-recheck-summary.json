@@ -1,0 +1,37 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 28,
+  "reviewedCount": 28,
+  "nextCandidateIndex": 28,
+  "contentPassCount": 28,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "counts": {
+      "packets": 6,
+      "renderers": 5,
+      "drafts": 28,
+      "sources": 28,
+      "siblings": 28,
+      "bodies": 28,
+      "quotes": 168,
+      "repairDrafts": 28,
+      "historicalFindings": 28
+    },
+    "errors": [],
+    "unique": 28,
+    "reviews": 28,
+    "checkedAt": "2026-10-27T21:29:12.471Z",
+    "scope": "Exact packets, renderer files, current drafts/source/siblings, reconstructed bodies, evidence quotes, before/after draft hashes and preserved historical requiredFixes/caps."
+  },
+  "reviewLimitations": [
+    "No independent fresh live source retrieval; supplied official-source factual receipts compared.",
+    "Baseline rendered text not reread; source entries and repair before/after compared.",
+    "Supplied neighboring drafts compared; broader topical-family overlap remains separately reviewable.",
+    "Visuals/accessibility/final scores remain null."
+  ]
+}

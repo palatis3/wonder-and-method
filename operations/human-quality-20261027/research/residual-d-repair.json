@@ -1,0 +1,1016 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/north-carolina/hertford-county/",
+    "/areas/north-carolina/randolph-county/",
+    "/areas/ohio/knox-county/",
+    "/areas/ohio/montgomery-county/",
+    "/areas/ohio/richland-county/",
+    "/areas/otsego-county/",
+    "/areas/pennsylvania/berks-county/",
+    "/areas/pennsylvania/bucks-county/",
+    "/areas/pennsylvania/butler-county/",
+    "/areas/pennsylvania/cambria-county/",
+    "/areas/pennsylvania/carbon-county/",
+    "/areas/pennsylvania/chester-county/",
+    "/areas/pennsylvania/clearfield-county/",
+    "/areas/pennsylvania/crawford-county/",
+    "/areas/pennsylvania/delaware-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-d.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/north-carolina/hertford-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain what the rental period means for the item.",
+        "intro": "A short tool rental and an event rental can use different timing arrangements. Put the relevant clock and handoff instructions beside each category so customers can compare the actual offer instead of assuming every period includes an overnight stay.",
+        "customerQuestion": "When does this rental period run, and when do we collect and return the item?",
+        "decisions": [
+          {
+            "label": "Define the category’s time period",
+            "body": "Use the business’s approved definition for the selected item. Explain when a short tool period is measured during business hours. Show a current, owner-approved timing example if available, without transferring that rule to other equipment or inventing a universal day length."
+          },
+          {
+            "label": "Separate the event from its handoffs",
+            "body": "For event items, distinguish the day of use from collection, delivery and return. Ask customers to describe a restricted handoff time or other special request before confirmation. A weekend event date should not be treated as the complete logistical arrangement."
+          },
+          {
+            "label": "Explain the return review",
+            "body": "Describe the actual return and inspection process and who to contact about a timing question. Keep the requested use, item and handoffs together in the inquiry. The customer should understand what remains for staff to review rather than assuming a rate label confirms all arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Current category-specific periods and approved timing examples.",
+          "Actual collection, delivery and special-request options.",
+          "Return-inspection instructions and the existing quote route."
+        ],
+        "sourceBridge": "Classic Party & Equipment Rentals serves Hertford County and distinguishes short tool periods measured during business hours from event collection-and-return arrangements. Its timing and inspection guidance provides a concrete comparison.",
+        "limits": "The rental business confirms terms and special timing. Content does not calculate prices, reserve equipment or schedule delivery. Inventory, contract management and automated rental tools require separate website scope.",
+        "route": "/areas/north-carolina/hertford-county/",
+        "inputHash": "1aaa8dbbc6f7893176747853e4ee7641846e91cf3955c7d619448cb282b739a1"
+      },
+      "after": {
+        "heading": "Explain what the rental period means for the item.",
+        "intro": "A short tool rental and an event rental can use different timing arrangements. Put the relevant clock and handoff instructions beside each category so customers can compare the actual offer instead of assuming every period includes an overnight stay.",
+        "customerQuestion": "When does this rental period run, and when do we collect and return the item?",
+        "decisions": [
+          {
+            "label": "Define the category’s time period",
+            "body": "Use the business’s approved definition for the selected item. A fictional tool request could keep these fields separate: “Item: [tool]; requested collection: [date and time]; requested return: [date and time]; please confirm how the short period counts business hours.” These are questions for staff, not an invented day length, rate or overnight allowance."
+          },
+          {
+            "label": "Separate the event from its handoffs",
+            "body": "For event items, distinguish use from collection, delivery and return. Fictional request: “Event use: [Saturday date and hours]; requested collection: [Friday date and time]; requested return: [Monday date and time]. Are those handoffs available, and what period would apply?” Keep all three fields in the inquiry. The requested weekend arrangement is not a published operator entitlement."
+          },
+          {
+            "label": "Explain the return review",
+            "body": "Describe the actual return and inspection process and who to contact about a timing question. Keep the requested use, item and handoffs together in the inquiry. The customer should understand what remains for staff to review rather than assuming a rate label confirms all arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Current category-specific periods and approved timing examples.",
+          "Actual collection, delivery and special-request options.",
+          "Return-inspection instructions and the existing quote route."
+        ],
+        "sourceBridge": "Classic Party & Equipment Rentals serves Hertford County and distinguishes short tool periods measured during business hours from event collection-and-return arrangements. Its timing and inspection guidance provides a concrete comparison.",
+        "limits": "The rental business confirms terms and special timing. Content does not calculate prices, reserve equipment or schedule delivery. Inventory, contract management and automated rental tools require separate website scope.",
+        "route": "/areas/north-carolina/hertford-county/",
+        "inputHash": "1aaa8dbbc6f7893176747853e4ee7641846e91cf3955c7d619448cb282b739a1"
+      },
+      "beforeSha256": "55e4916c776d597707776706203667128e750e794d09aceff8e8e30a98262d01",
+      "afterSha256": "58a935a71c604844d7f2b284155ba0cb3e016a719ab9eb609586726c3dbd5f6f",
+      "requiredFixes": [
+        "Demonstrate tool-period versus event-handoff timing with checked operator facts or a clearly fictional request using labeled time fields. Do not invent day length, price or overnight permission; preserve operator confirmation."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/randolph-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Separate the shared mailer from the details that change.",
+        "intro": "A personalized mailing can combine one layout with many recipient-specific names, offers or matching pieces. Help customers describe that structure before sending production records so the printer can understand the request and explain its review process.",
+        "customerQuestion": "How do I explain the personalization without sending a recipient list in the first message?",
+        "decisions": [
+          {
+            "label": "Show the common design",
+            "body": "Use a fictional or approved redacted example to identify the artwork and text that stay the same. Ask about the piece’s purpose and existing design material. This gives the buyer a shared reference without exposing real recipient information on the public website."
+          },
+          {
+            "label": "Identify changing and matched content",
+            "body": "Ask which kinds of words or images vary and whether related items must stay together. Explain the actual matching capability and proof discussion. Approval of the common layout should not appear to settle every variable field or matching check needed for production."
+          },
+          {
+            "label": "Name the mailing responsibility",
+            "body": "Clarify whether the buyer requests printing alone or addressing, sorting and mailing work as well. Explain the initial contact route and the approved later route for detailed files. Keep personal records out of a general form that is not intended to receive them."
+          }
+        ],
+        "ownerInputs": [
+          "Approved examples with fictional or redacted recipient information.",
+          "Current personalization, matching and mailing capabilities.",
+          "Actual proof responsibilities and the proper production-file transfer route."
+        ],
+        "sourceBridge": "Village Printing in Asheboro describes design, printing, variable-data and matched mailings alongside mailing services. Its offer supports a clear distinction between common artwork, changing content and the work needed to send the finished pieces.",
+        "limits": "The printer determines production checks and secure data transfer. Website content prepares the inquiry; recipient processing, postage calculation, campaign systems and production automation require separate assessment.",
+        "route": "/areas/north-carolina/randolph-county/",
+        "inputHash": "4cbacd4d8bf35e2344888dae1671cfdf367a96f3be7f9b3a658dc42e07cb2a87"
+      },
+      "after": {
+        "heading": "Separate the shared mailer from the details that change.",
+        "intro": "A personalized mailing can combine one layout with many recipient-specific names, offers or matching pieces. Help customers describe that structure before sending production records so the printer can understand the request and explain its review process.",
+        "customerQuestion": "How do I explain the personalization without sending a recipient list in the first message?",
+        "decisions": [
+          {
+            "label": "Show the common design",
+            "body": "Identify the artwork and text that stay the same. Fictional brief: “Every letter uses the same approved logo and event description. The greeting changes to [Recipient A] or [Recipient B].” These invented labels show the structure without exposing a real mailing list; the printer still reviews the design and variable fields."
+          },
+          {
+            "label": "Identify changing and matched content",
+            "body": "Continue the fictional brief with the matching requirement: “Letter A and reply card A carry [Reference A] and must remain together; the B pair uses [Reference B].” Ask the printer to review how the related pieces will be matched and proofed. Approval of the common layout does not approve the recipient records or establish that matching checks have been completed."
+          },
+          {
+            "label": "Name the mailing responsibility",
+            "body": "Clarify whether the buyer requests printing alone or addressing, sorting and mailing work as well. Explain the initial contact route and the approved later route for detailed files. Keep personal records out of a general form that is not intended to receive them."
+          }
+        ],
+        "ownerInputs": [
+          "Approved examples with fictional or redacted recipient information.",
+          "Current personalization, matching and mailing capabilities.",
+          "Actual proof responsibilities and the proper production-file transfer route."
+        ],
+        "sourceBridge": "Village Printing in Asheboro describes design, printing, variable-data and matched mailings alongside mailing services. Its offer supports a clear distinction between common artwork, changing content and the work needed to send the finished pieces.",
+        "limits": "The printer determines production checks and secure data transfer. Website content prepares the inquiry; recipient processing, postage calculation, campaign systems and production automation require separate assessment.",
+        "route": "/areas/north-carolina/randolph-county/",
+        "inputHash": "4cbacd4d8bf35e2344888dae1671cfdf367a96f3be7f9b3a658dc42e07cb2a87"
+      },
+      "beforeSha256": "478ec18f61a6b35e3e87577bdedd8da1af3c37df25d30fd6ec5ddb421b35e49a",
+      "afterSha256": "ca22dba91a294f2f70cdaa50f9bbc853ef3c65b5a60de1deee8d6aa2524a4b31",
+      "requiredFixes": [
+        "Add a clearly fictional brief showing shared artwork, a variable field and a pair of pieces that must stay matched. Use invented placeholders, not personal records; retain the later approved production-file route and printer review."
+      ]
+    },
+    {
+      "route": "/areas/ohio/knox-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Choose the glass-gallery route by what the visitor wants to do.",
+        "intro": "One stained-glass image can attract a buyer, a homeowner with a damaged panel and someone who wants to learn. Explain buying, commissioning, repair and instruction through the object and the visitor’s intended role.",
+        "customerQuestion": "Am I choosing finished work, requesting help with existing glass or making a piece myself?",
+        "decisions": [
+          {
+            "label": "Distinguish finished work from a commission",
+            "body": "Keep the exact item reference with a purchase question. For new work, ask about the intended setting and effect and explain what the workshop reviews. A portfolio image can inspire a request without suggesting the pictured piece is current stock or an approved design for another setting."
+          },
+          {
+            "label": "Give existing glass its own route",
+            "body": "Invite whole-object context and an observed concern for a panel needing assessment. Explain current repair intake using approved guidance. A homeowner should not have to choose a finished-piece listing or diagnose the glass before finding the relevant contact."
+          },
+          {
+            "label": "Explain current learning choices",
+            "body": "Distinguish making a gift in class from commissioning one. State the actual class format and completion or collection arrangements. Mark ended sessions clearly and replace active registration invitations with current information, while preserving useful descriptions of the making process."
+          }
+        ],
+        "ownerInputs": [
+          "Current buying, custom, repair and learning categories.",
+          "Accurate example origins and approved repair-intake information.",
+          "Current class descriptions, handoff instructions and update responsibility."
+        ],
+        "sourceBridge": "The Gallery on Gambier combines finished glass, custom design, repair and instruction. It lists 14 E. Gambier Street in Mount Vernon, also identified by Knox County tourism. That mixed offer makes visitor intention a useful starting point around the shared gallery.",
+        "limits": "The business assesses glass and confirms class arrangements. Content can connect existing contact and class routes. Inventory systems, custom design tools, reservations and payments require separate scope; explanatory choices do not reserve a class or approve a repair.",
+        "route": "/areas/ohio/knox-county/",
+        "inputHash": "53f4e52aede7f775d35cdb924d9f068031f4a31d9165ff5875ef325313129600"
+      },
+      "after": {
+        "heading": "Choose the glass-gallery route by what the visitor wants to do.",
+        "intro": "One stained-glass image can attract a buyer, a homeowner with a damaged panel and someone who wants to learn. Explain buying, commissioning, repair and instruction through the object and the visitor’s intended role.",
+        "customerQuestion": "Am I choosing finished work, requesting help with existing glass or making a piece myself?",
+        "decisions": [
+          {
+            "label": "Distinguish finished work from a commission",
+            "body": "Keep the exact item reference with a purchase question. For new work, ask about the intended setting and effect and explain what the workshop reviews. A portfolio image can inspire a request without suggesting the pictured piece is current stock or an approved design for another setting."
+          },
+          {
+            "label": "Give existing glass its own route",
+            "body": "Invite whole-object context and an observed concern for a panel needing assessment. Explain current repair intake using approved guidance. A homeowner should not have to choose a finished-piece listing or diagnose the glass before finding the relevant contact."
+          },
+          {
+            "label": "Explain current learning choices",
+            "body": "Distinguish making a gift in class from commissioning one. State the actual class format and completion or collection arrangements. A visitor should know what they would make themselves, what the instructor supplies and whether the piece leaves with them that day or needs later collection, using the business’s approved instructions."
+          }
+        ],
+        "ownerInputs": [
+          "Current buying, custom, repair and learning categories.",
+          "Accurate example origins and approved repair-intake information.",
+          "Current class descriptions, handoff instructions and update responsibility."
+        ],
+        "sourceBridge": "The Gallery on Gambier combines finished glass, custom design, repair and instruction. It lists 14 E. Gambier Street in Mount Vernon, also identified by Knox County tourism. That mixed offer makes visitor intention a useful starting point around the shared gallery.",
+        "limits": "The business assesses glass and confirms class arrangements. Content can connect existing contact and class routes. Inventory systems, custom design tools, reservations and payments require separate scope; explanatory choices do not reserve a class or approve a repair.",
+        "route": "/areas/ohio/knox-county/",
+        "inputHash": "53f4e52aede7f775d35cdb924d9f068031f4a31d9165ff5875ef325313129600"
+      },
+      "beforeSha256": "48cff674522141e7b26c187853048beae6a7fa85d9fe48b791c0727336e396f9",
+      "afterSha256": "aae23c6b7b6db092518d9664f0bb09d755a0e72717bddf637307f2eccd2148fc",
+      "requiredFixes": [
+        "Remove the repeated ended-session maintenance instructions from decision three while preserving the substantive care FAQ."
+      ]
+    },
+    {
+      "route": "/areas/ohio/montgomery-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Describe the furniture’s intended change and the details to keep.",
+        "intro": "A customer may want a lighter finish while preserving visible grain or sentimental trim. Use accurate before-and-after examples to connect those preferences with the piece’s present condition before the business assesses suitable work.",
+        "customerQuestion": "Can we change the appearance while keeping the grain and familiar details?",
+        "decisions": [
+          {
+            "label": "Show the starting piece",
+            "body": "Explain which photographs and observations help staff review condition and intended use. Keep wear or damage separate from an appearance preference. A customer who is unsure whether touch-up or broader refinishing applies should still have a clear general inquiry route."
+          },
+          {
+            "label": "Name the desired effect and retained details",
+            "body": "Invite color, grain visibility and features the owner values. Label reference images by what the customer likes about them. A finished photograph can express a preference without promising that another piece will respond to the same treatment or look identical."
+          },
+          {
+            "label": "Caption the actual transformation",
+            "body": "Pair permitted before-and-after views with what changed and what was preserved. Explain the assessment step and service boundaries. If reorganizing the portfolio, review existing project addresses and agree destinations and redirects for moved pages so useful older references remain connected to their work."
+          }
+        ],
+        "ownerInputs": [
+          "Approved photographs and the actual work in each example.",
+          "Current service boundaries and useful assessment information.",
+          "Existing portfolio addresses and accurate retained-detail captions."
+        ],
+        "sourceBridge": "Craft and Revive lists 2199 Burnside Drive with a Dayton address and serves communities beyond the county as well. Its refinishing and touch-up material includes painted and stained examples, making retained character and intended finish useful distinctions before assessment.",
+        "limits": "The business examines the furniture and selects suitable treatment; this content is not a refinishing procedure. Finish simulators, estimates, collection booking and job tracking need separate scope. Portfolio migration must be agreed before work and does not guarantee unchanged search rankings.",
+        "route": "/areas/ohio/montgomery-county/",
+        "inputHash": "196df6210b9d9d418fc99ce659102fe4445dec8ce6316765232b4fdb436f89d3"
+      },
+      "after": {
+        "heading": "Describe the furniture’s intended change and the details to keep.",
+        "intro": "A customer may want a lighter finish while preserving visible grain or sentimental trim. Use accurate before-and-after examples to connect those preferences with the piece’s present condition before the business assesses suitable work.",
+        "customerQuestion": "Can we change the appearance while keeping the grain and familiar details?",
+        "decisions": [
+          {
+            "label": "Show the starting piece",
+            "body": "Explain which photographs and observations help staff review condition and intended use. Keep wear or damage separate from an appearance preference. A customer who is unsure whether touch-up or broader refinishing applies should still have a clear general inquiry route."
+          },
+          {
+            "label": "Name the desired effect and retained details",
+            "body": "Invite color, grain visibility and features the owner values. Label reference images by what the customer likes about them. A finished photograph can express a preference without promising that another piece will respond to the same treatment or look identical."
+          },
+          {
+            "label": "Caption the actual transformation",
+            "body": "Pair permitted before-and-after views with what changed and what was preserved. Explain the assessment step and service boundaries. A caption can identify a new finish while naming the grain, trim or other details retained, so the customer’s reference stays connected to the work it actually shows."
+          }
+        ],
+        "ownerInputs": [
+          "Approved photographs and the actual work in each example.",
+          "Current service boundaries and useful assessment information.",
+          "Existing portfolio addresses and accurate retained-detail captions."
+        ],
+        "sourceBridge": "Craft and Revive lists 2199 Burnside Drive with a Dayton address and serves communities beyond the county as well. Its refinishing and touch-up material includes painted and stained examples, making retained character and intended finish useful distinctions before assessment.",
+        "limits": "The business examines the furniture and selects suitable treatment; this content is not a refinishing procedure. Finish simulators, estimates, collection booking and job tracking need separate scope.",
+        "route": "/areas/ohio/montgomery-county/",
+        "inputHash": "196df6210b9d9d418fc99ce659102fe4445dec8ce6316765232b4fdb436f89d3"
+      },
+      "beforeSha256": "985943891f1aeebc56c676e0dae9c0ca1abf1f26e81b4c71c78efbed2406c51c",
+      "afterSha256": "f30768efd84d567e607268516ddcb298da57d791290114f4ff8063f1ff5b5cd7",
+      "requiredFixes": [
+        "Consolidate portfolio migration scope, redirects and ranking limits in the substantive FAQ; keep decision three focused on transformation captions and limits on furniture assessment."
+      ]
+    },
+    {
+      "route": "/areas/ohio/richland-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Compare how guests receive the meal before choosing a catering format.",
+        "intro": "Menu interest and service format belong in the same event conversation. Explain what happens at the table, buffet or station so customers can express a preference while leaving venue arrangements and staffing for the caterer to confirm.",
+        "customerQuestion": "Can we discuss family-style service while the table arrangement is still undecided?",
+        "decisions": [
+          {
+            "label": "Describe the guest experience",
+            "body": "Explain offered formats plainly: plated meals arrive at guests’ places, family-style food is shared at the table, a buffet has guests visit a service area, and a chef station involves a staffed experience. Use accurate business-specific descriptions rather than names alone."
+          },
+          {
+            "label": "Connect the preference to venue questions",
+            "body": "Invite known seating, schedule, meal-area or station-location information as appropriate. Keep unknown details visible. A customer can describe the shared-table experience they want without treating its layout as settled, or ask about a station without assuming every venue arrangement will support it."
+          },
+          {
+            "label": "State delivery and staffing roles",
+            "body": "Keep menu choices separate from the actual service included. Explain staffed and drop-off options accurately. Put essential current menu information in readable page content with an approved download alongside it; review existing file addresses and the handling of older links before replacing documents."
+          }
+        ],
+        "ownerInputs": [
+          "Current formats, menu boundaries and approved event examples.",
+          "Accurate setup, delivery and staff responsibilities.",
+          "Useful venue questions and an owner-confirmed current menu version."
+        ],
+        "sourceBridge": "Gertz Culinary identifies Mansfield as its location and includes Richland County in its catering area. It describes plated, family-style, buffet and chef-station service as well as staffed and delivery options, making guest experience and responsibilities useful comparisons.",
+        "limits": "The caterer confirms staffing, layout, timing and suitability. Menu builders, instant pricing, staff scheduling and booking integrations require separate scope. Document rewriting and future updates are agreed work beyond checking that a download opens; content can prepare a general event inquiry.",
+        "route": "/areas/ohio/richland-county/",
+        "inputHash": "6558d22eb65c88017ff5047e32898c20b45e7c1bc1ad9bc533ef28367beadc44"
+      },
+      "after": {
+        "heading": "Compare how guests receive the meal before choosing a catering format.",
+        "intro": "Menu interest and service format belong in the same event conversation. Explain what happens at the table, buffet or station so customers can express a preference while leaving venue arrangements and staffing for the caterer to confirm.",
+        "customerQuestion": "Can we discuss family-style service while the table arrangement is still undecided?",
+        "decisions": [
+          {
+            "label": "Describe the guest experience",
+            "body": "Explain offered formats plainly: plated meals arrive at guests’ places, family-style food is shared at the table, a buffet has guests visit a service area, and a chef station involves a staffed experience. Use accurate business-specific descriptions rather than names alone."
+          },
+          {
+            "label": "Connect the preference to venue questions",
+            "body": "Invite known seating, schedule, meal-area or station-location information as appropriate. Keep unknown details visible. A customer can describe the shared-table experience they want without treating its layout as settled, or ask about a station without assuming every venue arrangement will support it."
+          },
+          {
+            "label": "State delivery and staffing roles",
+            "body": "Keep menu choices separate from the actual service included. Explain staffed and drop-off options accurately, naming what the caterer handles and what the organizer must arrange. A preferred meal format should stay attached to any open delivery, setup or staffing question until the caterer confirms the plan."
+          }
+        ],
+        "ownerInputs": [
+          "Current formats, menu boundaries and approved event examples.",
+          "Accurate setup, delivery and staff responsibilities.",
+          "Useful venue questions and an owner-confirmed current menu version."
+        ],
+        "sourceBridge": "Gertz Culinary identifies Mansfield as its location and includes Richland County in its catering area. It describes plated, family-style, buffet and chef-station service as well as staffed and delivery options, making guest experience and responsibilities useful comparisons.",
+        "limits": "The caterer confirms staffing, layout, timing and suitability. Menu builders, instant pricing, staff scheduling and booking integrations require separate scope; content can prepare a general event inquiry.",
+        "route": "/areas/ohio/richland-county/",
+        "inputHash": "6558d22eb65c88017ff5047e32898c20b45e7c1bc1ad9bc533ef28367beadc44"
+      },
+      "beforeSha256": "2e826712bad6622fd67baba4728f5849450792aa99fd54493da8598b3f418e79",
+      "afterSha256": "7b8ad1b25784bf2b26d518306521b61792d66642b4946db5fe65ff807ad0627a",
+      "requiredFixes": [
+        "Keep readable menu/download, old-link and document-update responsibilities together in the FAQ; trim their repetition from decision three and limits while preserving staffing/delivery and operator-confirmation scope."
+      ]
+    },
+    {
+      "route": "/areas/otsego-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain the privacy of the event space before discussing menus.",
+        "intro": "A group reservation does not necessarily give exclusive use of a venue. Define the offered private and semi-private arrangements so organizers can describe the setting they need alongside the occasion, meal and preferred date.",
+        "customerQuestion": "For a quiet company dinner, which space is private and where might other visitors still be present?",
+        "decisions": [
+          {
+            "label": "Define the boundary of private space",
+            "body": "Name the actual area included in each offer and explain the owner-approved meaning of private. Keep the distinction visible before package or date requests. A group should not assume a whole-venue booking simply because the event description uses a privacy label."
+          },
+          {
+            "label": "Describe the shared setting accurately",
+            "body": "Explain the semi-private arrangement and relevant nearby activity using approved wording and correctly captioned photographs. A portfolio image should identify the arrangement it shows rather than promise separation that the offer does not provide. Let customers raise a quietness or shared-space preference before deciding on a meal format."
+          },
+          {
+            "label": "Preserve the complete event brief",
+            "body": "Keep privacy, catering, occasion and date preferences together in the existing inquiry. Explain which details staff confirm as one arrangement and leave undecided questions open. A rehearsal dinner or company gathering should reach the venue with its actual preferences without appearing already reserved or exclusively allocated."
+          }
+        ],
+        "ownerInputs": [
+          "Approved space descriptions and private or shared boundaries.",
+          "Current packages and photographs labeled by actual arrangement.",
+          "Catering options and space, date and service confirmation process."
+        ],
+        "sourceBridge": "Brewery Ommegang describes private and semi-private Tap House packages and customized catering discussions. It is in the Town of Middlefield in Otsego County, using a Cooperstown mailing address, providing a local example of why the exact setting matters alongside the event offer.",
+        "limits": "The venue supplies privacy boundaries and confirms the arrangement. Content can clarify labels and captions or connect a fuller comparison of spaces and formats. An event photograph or inquiry does not establish exclusive access, and a preferred meal format remains subject to the venue’s review.",
+        "route": "/areas/otsego-county/",
+        "inputHash": "166e6fa8fd79dce1b0720ae7c37f532592bb94f23d4df78eb63f57ff34edb62f"
+      },
+      "after": {
+        "heading": "Ask what private or semi-private event space actually includes.",
+        "intro": "A private-event label does not identify the area reserved or the activity nearby. Help an organizer state the privacy they need and request the venue’s actual boundaries before comparing menus or dates.",
+        "customerQuestion": "How can we ask whether a company dinner would have its own space or share the setting with other visitors?",
+        "decisions": [
+          {
+            "label": "Define the boundary of private space",
+            "body": "Put the included area and access conditions beside the package when the venue supplies them. A fictional inquiry could begin: “We are planning a company dinner and need to hear a short presentation. Which area would be reserved for our group, and would it be exclusive to us?” The question seeks a defined boundary rather than assuming that private means the whole venue."
+          },
+          {
+            "label": "Describe the shared setting accurately",
+            "body": "Continue the fictional inquiry: “For the semi-private option, what other visitor activity could be nearby, and what separation would our group have?” Ask the venue to describe the actual arrangement and provide accurately captioned photographs. The example identifies what needs an answer; it does not claim that either package guarantees quiet or a particular layout."
+          },
+          {
+            "label": "Preserve the complete event brief",
+            "body": "Keep privacy, catering, occasion and date preferences together in the existing inquiry. Explain which details staff confirm as one arrangement and leave undecided questions open. A rehearsal dinner or company gathering should reach the venue with its actual preferences without appearing already reserved or exclusively allocated."
+          }
+        ],
+        "ownerInputs": [
+          "Approved space descriptions and private or shared boundaries.",
+          "Current packages and photographs labeled by actual arrangement.",
+          "Catering options and space, date and service confirmation process."
+        ],
+        "sourceBridge": "Brewery Ommegang’s public page offers private and semi-private Tap House event packages and customized catering discussions, but does not define the reserved areas or nearby shared activity. That missing distinction motivates the fictional inquiry above. The brewery is in the Town of Middlefield in Otsego County and uses a Cooperstown mailing address.",
+        "limits": "The venue supplies privacy boundaries and confirms the arrangement. The illustrative questions are not a statement of Ommegang’s package terms or a completed client event. An event photograph or inquiry does not establish exclusive access, and a preferred meal format remains subject to venue review.",
+        "route": "/areas/otsego-county/",
+        "inputHash": "166e6fa8fd79dce1b0720ae7c37f532592bb94f23d4df78eb63f57ff34edb62f"
+      },
+      "beforeSha256": "7d7e2cca55603e386c63e6c64926120b4b84b8e2c695e439d0b188db261b435c",
+      "afterSha256": "bdba7fc5092cf76e4e8f89ff73daf089c772f909a183338d4a4da04306135a53",
+      "requiredFixes": [
+        "Resolve the space-privacy question with checked published package boundaries if available; otherwise revise the question and add a clearly fictional inquiry showing exclusive-area and shared-activity questions without asserting unsupported Ommegang arrangements."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/berks-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Distinguish a one-off service request from a recurring business requirement.",
+        "intro": "Both inquiries may use the same contact route, but they need different context. Help the customer identify the accepted work and whether the discussion concerns one visit or an ongoing arrangement.",
+        "customerQuestion": "Can I ask about regular service at our premises without submitting it as a single household job?",
+        "decisions": [
+          {
+            "label": "Identify the immediate request",
+            "body": "Start with the actual service and a concise description of the work. Keep the initial choice short enough for an ordinary household customer to use without completing a commercial contract brief."
+          },
+          {
+            "label": "Explain a recurring requirement",
+            "body": "Ask about frequency, access and the premises when those details help staff assess ongoing work. Show relevant approved examples and the review process. The page should begin a conversation about suitability without setting a price, schedule or maintenance commitment."
+          },
+          {
+            "label": "Preserve current-customer contact",
+            "body": "Keep any established portal or service contact easy to find for existing customers. Separate routine requests from new-work assessment where the business already does so. A revised commercial page need not introduce another account or ordering system."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted services and useful initial questions.",
+          "Commercial examples, access considerations and review process.",
+          "Existing-customer contact and new-inquiry responsibilities."
+        ],
+        "sourceBridge": "Sonlight Services describes residential septic services and commercial grease or sludge work across Berks and other counties. DeLong & Sons separately describes commercial HVAC and plumbing. These are distinct public examples of service patterns, not a combined provider or offer.",
+        "limits": "The business confirms frequency, price and availability. A content review can assess confusing service wording; a substantial commercial-page improvement can be separately agreed. Account portals, recurring billing and automatic scheduling require their own assessment.",
+        "route": "/areas/pennsylvania/berks-county/",
+        "inputHash": "6b068cd685692f1b036ebb5b9be1cc64a6f6c4a7b98357e1df2daf2c65774413"
+      },
+      "after": {
+        "heading": "Distinguish a one-off service request from a recurring business requirement.",
+        "intro": "A one-off household service request and a recurring business requirement may use the same contact route, but they need different context. Help the customer identify the work and whether they are asking about one visit or an ongoing arrangement.",
+        "customerQuestion": "Can I ask about regular service at our premises without submitting it as a single household job?",
+        "decisions": [
+          {
+            "label": "Identify the immediate request",
+            "body": "Start with the actual service and a concise description. Fictional household inquiry: “I have a septic-service question at one property. What initial information do you need to decide whether to assess it?” The request leaves the service and visit for staff to confirm rather than forcing the customer through a commercial contract brief."
+          },
+          {
+            "label": "Explain a recurring requirement",
+            "body": "A contrasting fictional business inquiry could say: “We want to discuss recurring grease-related service at our premises. Access is limited to [hours]; the appropriate frequency is still unknown. Who can review the requirement with us?” The placeholder describes an access constraint, not an accepted schedule or technical service recommendation. Staff can ask the relevant questions without treating it as a single household job."
+          },
+          {
+            "label": "Preserve current-customer contact",
+            "body": "Keep any established portal or service contact easy to find for existing customers. Separate routine requests from new-work assessment where the business already does so. A revised commercial page need not introduce another account or ordering system."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted services and useful initial questions.",
+          "Commercial examples, access considerations and review process.",
+          "Existing-customer contact and new-inquiry responsibilities."
+        ],
+        "sourceBridge": "Sonlight Services describes residential septic services and commercial grease or sludge work across Berks and other counties. DeLong & Sons separately describes commercial HVAC and plumbing. These are distinct public examples of service patterns, not a combined provider or offer.",
+        "limits": "The business confirms frequency, price and availability. A content review can assess confusing service wording; a substantial commercial-page improvement can be separately agreed. Account portals, recurring billing and automatic scheduling require their own assessment.",
+        "route": "/areas/pennsylvania/berks-county/",
+        "inputHash": "6b068cd685692f1b036ebb5b9be1cc64a6f6c4a7b98357e1df2daf2c65774413"
+      },
+      "beforeSha256": "65c052619f07f916d20dfd296bf85c5a2fed46fc294bb675141865171c60f54f",
+      "afterSha256": "13b29ccf4a7a95ffea592e1c7d8f7702d6235894cbe3570abfe1bfa78e3bae3c",
+      "requiredFixes": [
+        "Name the two request types in the opening and add a clearly fictional one-off versus recurring-premises inquiry example with frequency/access unknowns; preserve separation of the two named public businesses and avoid implying technical service acceptance."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/bucks-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Let a repair inquiry start with the work needed, without a renovation brief.",
+        "intro": "A homeowner comparing a small repair with a larger project needs to know whether both are accepted and what happens after contacting the team. Relevant examples can explain fit while a shared inquiry remains concise.",
+        "customerQuestion": "Do you take a small repair, and what do you need before deciding whether to assess it?",
+        "decisions": [
+          {
+            "label": "Explain accepted work",
+            "body": "Identify the work categories, real coverage and jobs the business declines. Ask for a short description first. Say whether staff’s next reply begins a conversation, requests information or proposes an assessment rather than presenting every inquiry as ready for quotation."
+          },
+          {
+            "label": "Use project evidence accurately",
+            "body": "Show approved examples with the business’s actual contribution. A larger renovation may benefit from photographs and process context, while a repair customer needs a direct service explanation. The visitor’s own job details should remain separate from any project that inspired the inquiry."
+          },
+          {
+            "label": "Keep follow-up proportionate",
+            "body": "Request detailed documents or photographs through an agreed channel when needed; uploads require separate scope. Review existing approved photographs before assuming a new professional shoot is necessary, and adjust the page plan when evidence is missing."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted work, coverage and common inquiry confusion.",
+          "Project facts, publication rights and accurate role descriptions.",
+          "Assessment steps and agreed follow-up channels."
+        ],
+        "sourceBridge": "Wolfpack Home Services describes work across Bucks and Montgomery counties and a request followed by discussion with its team. Bucks County also publishes business-support links; those resources do not establish eligibility for a particular program.",
+        "limits": "The business confirms project fit and estimates. A small supplied photo change may fit care, while a researched project story is a separately agreed substantial improvement. The same change is not counted toward both allowances; unrelated photographs cannot serve as evidence of completed work.",
+        "route": "/areas/pennsylvania/bucks-county/",
+        "inputHash": "257faa788ec25422eb73a1ec9b19cade0f1dfaaf1cf9ccd1961500a6d7471fa5"
+      },
+      "after": {
+        "heading": "Let a repair inquiry start with the work needed, without a renovation brief.",
+        "intro": "A homeowner comparing a small repair with a larger project needs to know whether both are accepted and what happens after contacting the team. Relevant examples can explain fit while a shared inquiry remains concise.",
+        "customerQuestion": "Do you take a small repair, and what do you need before deciding whether to assess it?",
+        "decisions": [
+          {
+            "label": "Explain accepted work",
+            "body": "Identify the work categories, real coverage and jobs the business declines. Ask for a short description first. Say whether staff’s next reply begins a conversation, requests information or proposes an assessment rather than presenting every inquiry as ready for quotation."
+          },
+          {
+            "label": "Use project evidence accurately",
+            "body": "Show approved examples with the business’s actual contribution. A larger renovation may benefit from photographs and process context, while a repair customer needs a direct service explanation. The visitor’s own job details should remain separate from any project that inspired the inquiry."
+          },
+          {
+            "label": "Keep follow-up proportionate",
+            "body": "Request detailed documents or photographs through an agreed channel when needed; uploads require separate scope. Keep the first message proportionate to the job. Staff can ask a repair customer for a relevant detail view without requiring the full plans or project history that a larger renovation may need."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted work, coverage and common inquiry confusion.",
+          "Project facts, publication rights and accurate role descriptions.",
+          "Assessment steps and agreed follow-up channels."
+        ],
+        "sourceBridge": "Wolfpack Home Services describes work across Bucks and Montgomery counties and a request followed by discussion with its team. Bucks County also publishes business-support links; those resources do not establish eligibility for a particular program.",
+        "limits": "The business confirms project fit and estimates. Content can explain the next assessment step without promising that every small job is accepted or that an inquiry is a final quote. New upload or routing features need their own agreed scope.",
+        "route": "/areas/pennsylvania/bucks-county/",
+        "inputHash": "257faa788ec25422eb73a1ec9b19cade0f1dfaaf1cf9ccd1961500a6d7471fa5"
+      },
+      "beforeSha256": "f830e8809a2206e59123bbc713990131c1d0291ca324e40da523e2ec2177f346",
+      "afterSha256": "09209dacce28860f728fcadadec2262518fe8ac8295938e4bc2cb0d505c6a577",
+      "requiredFixes": [
+        "Keep decision three on proportionate repair follow-up and move photo-shoot/evidence planning to its FAQ. Consolidate care-versus-project-story allowances in the second FAQ and keep limits on owner-confirmed project fit and estimates."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/butler-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Confirm whether the customer visits the showroom or samples come to the home.",
+        "intro": "The appointment’s location should be clear before someone chooses a time or supplies an address. Connect product information to the correct visit arrangement and its existing confirmation process.",
+        "customerQuestion": "Am I booking a showroom visit or asking someone to bring samples to my property?",
+        "decisions": [
+          {
+            "label": "Name the visit destination",
+            "body": "Use the verified showroom address and current visiting instructions. Explain any appointment requirement through the business’s existing process. Familiar regional names should not substitute for the place the customer must actually reach."
+          },
+          {
+            "label": "Explain the home consultation",
+            "body": "Describe what happens at the customer’s property and request its location only for the appropriate inquiry. Keep the consultation type visible when linking to an appointment provider so the receiving process retains the intended arrangement."
+          },
+          {
+            "label": "Prepare a useful selection conversation",
+            "body": "Show approved product categories and project examples, then explain selection, measurement and quotation. Treat sample photographs as inspiration rather than current stock. Product information can support the visit without becoming a live catalog or configurator."
+          }
+        ],
+        "ownerInputs": [
+          "Current visit options, addresses and confirmation steps.",
+          "Approved product information and project photographs.",
+          "Actual selection, measurement and pricing process."
+        ],
+        "sourceBridge": "Molyneaux’s Cranberry page describes a showroom and a consultation with samples brought to the home. Nelson Kitchen & Bath separately describes remodeling services and a showroom serving the northern Pittsburgh area. Cranberry Township, Mars and Butler are different places.",
+        "limits": "Each business confirms its own appointments. One accurate coverage section can explain home consultations; additional town pages need distinct value. A showroom move review can inventory affected links, but outside profiles and larger address migrations need agreed scope.",
+        "route": "/areas/pennsylvania/butler-county/",
+        "inputHash": "1cc339cf847ef2694bc076e6fbc6b1330df93f1621db8254f132571552e3b1ea"
+      },
+      "after": {
+        "heading": "Confirm whether the customer visits the showroom or samples come to the home.",
+        "intro": "The appointment’s location should be clear before someone chooses a time or supplies an address. Connect product information to the correct visit arrangement and its existing confirmation process.",
+        "customerQuestion": "Am I booking a showroom visit or asking someone to bring samples to my property?",
+        "decisions": [
+          {
+            "label": "Name the visit destination",
+            "body": "Use the verified showroom address and current visiting instructions. Explain any appointment requirement through the business’s existing process. Familiar regional names should not substitute for the place the customer must actually reach."
+          },
+          {
+            "label": "Explain the home consultation",
+            "body": "Describe what happens at the customer’s property and request its location only for the appropriate inquiry. Keep the consultation type visible when linking to an appointment provider so the receiving process retains the intended arrangement."
+          },
+          {
+            "label": "Prepare a useful selection conversation",
+            "body": "Show approved product categories and project examples, then explain selection, measurement and quotation. Treat sample photographs as inspiration rather than current stock. Product information can support the visit without becoming a live catalog or configurator."
+          }
+        ],
+        "ownerInputs": [
+          "Current visit options, addresses and confirmation steps.",
+          "Approved product information and project photographs.",
+          "Actual selection, measurement and pricing process."
+        ],
+        "sourceBridge": "Molyneaux’s Cranberry page describes a showroom and a consultation with samples brought to the home. Nelson Kitchen & Bath separately describes remodeling services and a showroom serving the northern Pittsburgh area. Cranberry Township, Mars and Butler are different places.",
+        "limits": "Each business confirms its own appointments, consultation coverage and selection process. Content can connect accurate visit information to an existing provider; changes to provider accounts, booking behavior or new appointment features require separately agreed scope.",
+        "route": "/areas/pennsylvania/butler-county/",
+        "inputHash": "1cc339cf847ef2694bc076e6fbc6b1330df93f1621db8254f132571552e3b1ea"
+      },
+      "beforeSha256": "97c9608b4b7f9ac95dcaa426b6563448313b4034389a29ac1dd2dbe14ef0a7c2",
+      "afterSha256": "9b751702b4ca4c3ae83055ab1f1d2573aee8fe59cb4573387725754485fed9af",
+      "requiredFixes": [
+        "Remove town-page and showroom-migration summaries from limits because both FAQs already explain those obligations; preserve appointment confirmation and independently scoped provider changes."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/cambria-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain whether a reference is an original detail to match or a style to interpret.",
+        "intro": "A surviving moulding and a magazine photograph supply different evidence. Help the customer identify the reference’s role before discussing restoration, reproduction or new cabinetry.",
+        "customerQuestion": "We have one surviving moulding. Can we use it to discuss a missing section rather than just a similar style?",
+        "decisions": [
+          {
+            "label": "Describe the existing feature",
+            "body": "Invite the context and images needed to identify the original and its place in the building. A surviving piece can begin assessment without being presented as complete evidence or an approved specification."
+          },
+          {
+            "label": "Label the desired relationship",
+            "body": "Distinguish a proposed match from inspiration for new work. Accurate portfolio captions should identify restored originals, reproduced features and newly designed interpretations. A style image alone should not establish historical accuracy or a confirmed match."
+          },
+          {
+            "label": "Explain the review and collaboration",
+            "body": "Describe the actual involvement of owners, designers or preservation professionals. Show when reference preferences become agreed details and how the craftsperson assesses the project. Keep a general inquiry available for work that does not fit one category."
+          }
+        ],
+        "ownerInputs": [
+          "Accurate project captions and accepted work.",
+          "Useful original-feature context and reference material.",
+          "Collaboration, assessment and specification responsibilities."
+        ],
+        "sourceBridge": "Fjord Form identifies its Johnstown workshop, with visits by appointment, and describes matching historic profiles, joinery and finishes as well as cabinetry for new construction. The range makes the reference’s purpose a useful first distinction.",
+        "limits": "Assessment remains with the craftsperson. A portfolio update should retain accurate captions and useful old project addresses where possible; agreed moves need appropriate replacements and checks. A larger migration is separately scoped, with no promise of unchanged rankings.",
+        "route": "/areas/pennsylvania/cambria-county/",
+        "inputHash": "66d114d2925e80a1b3a7a968798ced394aa656fc6db420a66c527004bff0ac68"
+      },
+      "after": {
+        "heading": "Explain whether a reference is an original detail to match or a style to interpret.",
+        "intro": "A surviving moulding and a magazine photograph supply different evidence. Help the customer identify the reference’s role before discussing restoration, reproduction or new cabinetry.",
+        "customerQuestion": "We have one surviving moulding. Can we use it to discuss a missing section rather than just a similar style?",
+        "decisions": [
+          {
+            "label": "Describe the existing feature",
+            "body": "Invite the context and images needed to identify the original and its place in the building. A surviving piece can begin assessment without being presented as complete evidence or an approved specification."
+          },
+          {
+            "label": "Label the desired relationship",
+            "body": "Distinguish a proposed match from inspiration for new work. Accurate portfolio captions should identify restored originals, reproduced features and newly designed interpretations. A style image alone should not establish historical accuracy or a confirmed match."
+          },
+          {
+            "label": "Explain the review and collaboration",
+            "body": "Describe the actual involvement of owners, designers or preservation professionals. Show when reference preferences become agreed details and how the craftsperson assesses the project. Keep a general inquiry available for work that does not fit one category."
+          }
+        ],
+        "ownerInputs": [
+          "Accurate project captions and accepted work.",
+          "Useful original-feature context and reference material.",
+          "Collaboration, assessment and specification responsibilities."
+        ],
+        "sourceBridge": "Fjord Form identifies its Johnstown workshop, with visits by appointment, and describes matching historic profiles, joinery and finishes as well as cabinetry for new construction. The range makes the reference’s purpose a useful first distinction.",
+        "limits": "The craftsperson assesses the original, the proposed relationship and the work required. A surviving detail can support the discussion without establishing a confirmed match; an inspiration photograph does not establish historical accuracy or approve a new specification.",
+        "route": "/areas/pennsylvania/cambria-county/",
+        "inputHash": "66d114d2925e80a1b3a7a968798ced394aa656fc6db420a66c527004bff0ac68"
+      },
+      "beforeSha256": "a0152b63ee4120825707ceb96d312a9fb087accc24c5f83adb20860074256de5",
+      "afterSha256": "a9481f6a0e9b18dd04b7898db1aae61efb1a0e8b9d0cc0b47c7719316f82b6f5",
+      "requiredFixes": [
+        "Remove the portfolio-migration summary from limits and preserve craftsperson assessment/uncertain match boundaries; retain the substantive migration FAQ unchanged."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/carbon-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep custom measurements as inquiry information until the business approves them.",
+        "intro": "A product question, repair request and custom job can start with different details. Explain what is useful initially and what staff must review before pricing or manufacture.",
+        "customerQuestion": "Can I send approximate dimensions to begin a custom-glass discussion without authorizing production?",
+        "decisions": [
+          {
+            "label": "Start with the accepted work",
+            "body": "Ask for the product or service category and a useful description. Standard product questions may need a model reference; custom work may need initial dimensions. Make clear which details are preliminary and who later checks suitability and measurements."
+          },
+          {
+            "label": "Label examples and purchase routes",
+            "body": "Separate possible custom work from products actually ready to buy. Use owner-approved availability wording and maintain the existing ordering route where appropriate. A visitor should know whether to ask about an example, plan a visit or purchase through the current provider."
+          },
+          {
+            "label": "Explain the inquiry handoff",
+            "body": "State what staff review and what the customer’s confirmation means. Agree a sample request for checking visible confirmation and the supported saving and notification path. The test verifies the website workflow; technical measurement approval remains with the business."
+          }
+        ],
+        "ownerInputs": [
+          "Initial questions and professional-review responsibilities.",
+          "Approved examples, availability wording and content owner.",
+          "Receiving process and agreed inquiry test data."
+        ],
+        "sourceBridge": "C. Polete Glass & Aluminum’s public contact page lists repair and custom-glass services and describes Carbon County and nearby coverage. Its real Lehighton-area premises and service area should be distinguished from a county audience heading.",
+        "limits": "A custom inquiry does not authorize manufacture. Technical uploads, configurators and calculated prices need separate requirements, acceptance checks and pricing; they are not ordinary care updates. The final review records agreed checks and any unverified steps.",
+        "route": "/areas/pennsylvania/carbon-county/",
+        "inputHash": "1ce193525d198842c4d9e9af93be55cd92116afd3fefba67f11795f3f9f08c61"
+      },
+      "after": {
+        "heading": "Keep custom measurements as inquiry information until the business approves them.",
+        "intro": "A product question, repair request and custom job can start with different details. Explain what is useful initially and what staff must review before pricing or manufacture.",
+        "customerQuestion": "Can I send approximate dimensions to begin a custom-glass discussion without authorizing production?",
+        "decisions": [
+          {
+            "label": "Start with the accepted work",
+            "body": "Ask for the product or service category and a useful description. Standard product questions may need a model reference; custom work may need initial dimensions. Make clear which details are preliminary and who later checks suitability and measurements."
+          },
+          {
+            "label": "Label examples and purchase routes",
+            "body": "Separate possible custom work from products actually ready to buy. Use owner-approved availability wording and maintain the existing ordering route where appropriate. A visitor should know whether to ask about an example, plan a visit or purchase through the current provider."
+          },
+          {
+            "label": "Keep preliminary dimensions labeled",
+            "body": "Fictional custom-glass inquiry: “I want to discuss a tabletop. My rough estimate is [length and width, with units]; please tell me what you need to assess the request and how final dimensions are approved.” Keep the approximate label in the receiving message. This begins a review; it is not a cutting list or permission to manufacture."
+          }
+        ],
+        "ownerInputs": [
+          "Initial questions and professional-review responsibilities.",
+          "Approved examples, availability wording and content owner.",
+          "Receiving process and agreed inquiry test data."
+        ],
+        "sourceBridge": "C. Polete Glass & Aluminum’s public contact page lists repair and custom-glass services and describes Carbon County and nearby coverage. Its real Lehighton-area premises and service area should be distinguished from a county audience heading.",
+        "limits": "The glass business confirms suitability, final measurements and accepted work. A custom inquiry does not authorize manufacture. Content can make that review boundary clear while preserving the existing contact route.",
+        "route": "/areas/pennsylvania/carbon-county/",
+        "inputHash": "1ce193525d198842c4d9e9af93be55cd92116afd3fefba67f11795f3f9f08c61"
+      },
+      "beforeSha256": "70bb1ec2496aab128934dd17f574f7eae6c8a0dab894329fb61735c6a9de645a",
+      "afterSha256": "6d2e8f64f5b0ea9b9a5ec519cca94e35ef64f994aa8fc6a22c9f941a89720150",
+      "requiredFixes": [
+        "Replace repeated testing prose in decision three with a clearly fictional custom-glass inquiry retaining approximate dimensions and staff-review status. Keep verification details in the FAQ, and trim repeated configurator/care/final-review text from limits while preserving non-authorization."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/chester-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain the first service before sending a new customer to the booking provider.",
+        "intro": "A working scheduling tool can stay in place while the main website improves service choices. New customers need to understand the offer and its limits; returning customers may simply need their familiar route.",
+        "customerQuestion": "Which cleaning service should I choose for a first visit, and where do I ask about work outside the standard options?",
+        "decisions": [
+          {
+            "label": "Explain the service differences",
+            "body": "Describe the actual first-visit and ongoing offers, preparation and exclusions. Help the visitor choose from the provider’s supported options, while keeping a human contact available for a request needing a quote."
+          },
+          {
+            "label": "Preserve the existing route",
+            "body": "Keep returning customers’ established scheduling link easy to reach. Explain what the provider’s acknowledgment actually means, and agree the exact connection rather than assuming it confirms every requested service."
+          },
+          {
+            "label": "Keep offers consistent",
+            "body": "Assign responsibility for changing service descriptions on both the website and provider. Use approved examples where they explain fit, and avoid multiplying pages when shared information can stay together. Coverage should not imply equal appointment availability everywhere."
+          }
+        ],
+        "ownerInputs": [
+          "Current offers, exclusions and first-visit questions.",
+          "Existing booking links and acknowledgment meaning.",
+          "Approved examples and owner of service updates."
+        ],
+        "sourceBridge": "Shine Squad Cleaning presents Chester County cleaning services with booking and quote actions. Its public offer provides a local example of explaining the service before handing the customer to an existing tool.",
+        "limits": "Content improvements are separate from building scheduling, recurring payments or a portal. Paid custom website work is handed over with relevant license restrictions; the provider remains a separate account with its own permissions and customer-data responsibilities. Monthly work should identify a completed improvement and its checks, without promising rankings or booking totals.",
+        "route": "/areas/pennsylvania/chester-county/",
+        "inputHash": "1517ee463f1b6bd49a9ea5eb42a5e23975d9f8e701d0dc5e2cb72966817e14c4"
+      },
+      "after": {
+        "heading": "Explain the first service before sending a new customer to the booking provider.",
+        "intro": "A working scheduling tool can stay in place while the main website improves service choices. New customers need to understand the offer and its limits; returning customers may simply need their familiar route.",
+        "customerQuestion": "How should a cleaning website distinguish a first-visit question from a returning customer’s scheduling request?",
+        "decisions": [
+          {
+            "label": "Explain the service differences",
+            "body": "Describe the actual first-visit and ongoing offers, preparation and exclusions. Fictional first-time inquiry: “We have not used your service before and are unsure which listed cleaning covers our needs. Can someone review the rooms and requested work before we choose a booking option?” If the work falls outside the supported choices, preserve the question for a quote discussion rather than inventing a suitable package."
+          },
+          {
+            "label": "Preserve the existing route",
+            "body": "A contrasting fictional returning-customer request might be: “We want the same agreed service again; where should we use our existing scheduling route?” Keep that familiar link easy to reach and explain what the provider’s acknowledgment actually means. Neither example promises a slot or assumes every requested task is confirmed."
+          },
+          {
+            "label": "Keep offers consistent",
+            "body": "Assign responsibility for changing service descriptions on both the website and provider. Use approved examples where they explain fit, and avoid multiplying pages when shared information can stay together. Coverage should not imply equal appointment availability everywhere."
+          }
+        ],
+        "ownerInputs": [
+          "Current offers, exclusions and first-visit questions.",
+          "Existing booking links and acknowledgment meaning.",
+          "Approved examples and owner of service updates."
+        ],
+        "sourceBridge": "Shine Squad Cleaning presents Chester County cleaning services with booking and quote actions. Its public offer provides a local example of explaining the service before handing the customer to an existing tool.",
+        "limits": "Content improvements can clarify the service choice while retaining the existing booking route. Building scheduling, recurring payments or a new portal requires separate scope. The cleaning business confirms the accepted work and appointment arrangements.",
+        "route": "/areas/pennsylvania/chester-county/",
+        "inputHash": "1517ee463f1b6bd49a9ea5eb42a5e23975d9f8e701d0dc5e2cb72966817e14c4"
+      },
+      "beforeSha256": "cfbe9fc2729d3e097b25cad6eee64636b745c7d0b07ed20e2fda25e2f954936c",
+      "afterSha256": "6836be8dc914ea86996092f1cd32f7156ad4d8facf99bae402871f56a7beff4e",
+      "requiredFixes": [
+        "Reframe the customer question as a website-planning task and add a clearly fictional first-visit versus repeat-customer inquiry, with unsupported work routed to a quote question. Remove rights/monthly-outcome summaries from limits while retaining separate scheduling/payment scope and both substantive FAQs."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/clearfield-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Show what a restoration example achieved without promising the same result on another stone.",
+        "intro": "Before-and-after photographs can explain work on one memorial. Pair them with factual captions and a clear assessment route so families can describe their concern without choosing a treatment themselves.",
+        "customerQuestion": "The example looks much cleaner. Can you assess discoloration on our memorial without promising every mark will disappear?",
+        "decisions": [
+          {
+            "label": "Describe the work shown",
+            "body": "Identify the visible concern and verified work performed in each example. Distinguish cleaning, repair and added lettering through accurate captions rather than letting a photograph imply all three."
+          },
+          {
+            "label": "Explain the outcome honestly",
+            "body": "Use the actual after image and any relevant limitations. A successful result on one stone should not diagnose another or guarantee removal of its marks. Keep that boundary beside the comparison, where the family is forming expectations."
+          },
+          {
+            "label": "Invite an assessment request",
+            "body": "Ask for the memorial’s identity, cemetery context and observed concern. Let the customer raise additional work, such as wording, separately from appearance. Explain current site coordination and review without asking the family to select a cleaning method."
+          }
+        ],
+        "ownerInputs": [
+          "Approved before-and-after images and factual work descriptions.",
+          "Relevant outcome limits and actual accepted services.",
+          "Memorial identification and assessment arrangements."
+        ],
+        "sourceBridge": "Korb Monuments in DuBois publishes restoration examples and notes that some stains remain on some stones. It offers cemetery cleaning, lettering and restoration, identifies its main plant and showroom at 15 East Park Avenue, and expressly serves Clearfield County.",
+        "limits": "The specialist assesses suitable work. Dated project captions may retain historical place names while current contact information reflects verified present-day details. Review those uses individually instead of automatically renaming every page or URL.",
+        "route": "/areas/pennsylvania/clearfield-county/",
+        "inputHash": "6602c14c03f8bfc4614c9fd096bba7a72d7876e08b34bbfda58fb07ad2ffef26"
+      },
+      "after": {
+        "heading": "Show what a restoration example achieved without promising the same result on another stone.",
+        "intro": "Before-and-after photographs can explain work on one memorial. Pair them with factual captions and a clear assessment route so families can describe their concern without choosing a treatment themselves.",
+        "customerQuestion": "The example looks much cleaner. Can you assess discoloration on our memorial without promising every mark will disappear?",
+        "decisions": [
+          {
+            "label": "Describe the work shown",
+            "body": "Identify the visible concern and verified work performed in each example. Distinguish cleaning, repair and added lettering through accurate captions rather than letting a photograph imply all three."
+          },
+          {
+            "label": "Explain the outcome honestly",
+            "body": "Use the actual after image and any relevant limitations. A successful result on one stone should not diagnose another or guarantee removal of its marks. Keep that boundary beside the comparison, where the family is forming expectations."
+          },
+          {
+            "label": "Invite an assessment request",
+            "body": "Ask for the memorial’s identity, cemetery context and observed concern. Let the customer raise additional work, such as wording, separately from appearance. Explain current site coordination and review without asking the family to select a cleaning method."
+          }
+        ],
+        "ownerInputs": [
+          "Approved before-and-after images and factual work descriptions.",
+          "Relevant outcome limits and actual accepted services.",
+          "Memorial identification and assessment arrangements."
+        ],
+        "sourceBridge": "Korb Monuments in DuBois publishes restoration examples and notes that some stains remain on some stones. It offers cemetery cleaning, lettering and restoration, identifies its main plant and showroom at 15 East Park Avenue, and expressly serves Clearfield County.",
+        "limits": "The specialist assesses the actual memorial and suitable work. A before-and-after example records one stone’s outcome; it does not select a treatment or promise that another stone’s marks will disappear.",
+        "route": "/areas/pennsylvania/clearfield-county/",
+        "inputHash": "6602c14c03f8bfc4614c9fd096bba7a72d7876e08b34bbfda58fb07ad2ffef26"
+      },
+      "beforeSha256": "80ae3e4be8fe6b202c867c89f9902924772f881fd07c2e1fe9596537df2ab70d",
+      "afterSha256": "8c19b941ff5422ae8fbdcbce6aa70a5e85004424618b3acc5e64e18818acb191",
+      "requiredFixes": [
+        "Remove duplicated historical-place-name/update instructions from limits, preserving specialist assessment and outcome uncertainty; retain the substantive place-name FAQ."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/crawford-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain whether the shop is making the part or adding work to one already supplied.",
+        "intro": "Laser engraving can be part of manufacturing or a separate operation on an existing component. Keep those starting points visible so the buyer describes the actual work being requested.",
+        "customerQuestion": "We already have finished brackets. Can we ask for identification marks without ordering new brackets?",
+        "decisions": [
+          {
+            "label": "Identify who supplies the component",
+            "body": "Label examples as shop-manufactured or customer-supplied parts. Ask what already exists and retain a general inquiry for uncertain work. A marking request should not silently become an order to manufacture the component."
+          },
+          {
+            "label": "Describe the requested operation",
+            "body": "Connect the actual part to the marking content and intended location. Explain the information the shop needs for review without claiming that a material or photograph establishes suitability. A new component with engraving should preserve both tasks in its brief."
+          },
+          {
+            "label": "Agree the physical handoff",
+            "body": "Describe how accepted parts are received and returned and who confirms the work before shipment. Sending an item should remain separate from permission to perform an operation that has not been agreed."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted supplied-part work and review requirements.",
+          "Approved captions and useful marking references.",
+          "Receiving, return and work-confirmation responsibilities."
+        ],
+        "sourceBridge": "Offi Tool & Die offers laser engraving within manufacturing and on parts customers send to the shop. It lists 15926 South Mosiertown Road in Hayfield Township, Crawford County, with a Meadville mailing address.",
+        "limits": "The shop determines suitability. Public descriptions can explain the service without exposing customer drawings, identities or proprietary specifications. Any public diagram needs accuracy review; private document submission requires an agreed handling process and feature scope.",
+        "route": "/areas/pennsylvania/crawford-county/",
+        "inputHash": "efac900797f9900d6c34674ea6830071ced557f178107cb85fbbcd4f05f829f9"
+      },
+      "after": {
+        "heading": "Explain whether the shop is making the part or adding work to one already supplied.",
+        "intro": "Laser engraving can be part of manufacturing or a separate operation on an existing component. Keep those starting points visible so the buyer describes the actual work being requested.",
+        "customerQuestion": "We already have finished brackets. Can we ask for identification marks without ordering new brackets?",
+        "decisions": [
+          {
+            "label": "Identify who supplies the component",
+            "body": "Label examples as shop-manufactured or customer-supplied parts. Ask what already exists and retain a general inquiry for uncertain work. A marking request should not silently become an order to manufacture the component."
+          },
+          {
+            "label": "Describe the requested operation",
+            "body": "Connect the actual part to the marking content and intended location. Explain the information the shop needs for review without claiming that a material or photograph establishes suitability. A new component with engraving should preserve both tasks in its brief."
+          },
+          {
+            "label": "Agree the physical handoff",
+            "body": "Describe how accepted parts are received and returned and who confirms the work before shipment. Sending an item should remain separate from permission to perform an operation that has not been agreed."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted supplied-part work and review requirements.",
+          "Approved captions and useful marking references.",
+          "Receiving, return and work-confirmation responsibilities."
+        ],
+        "sourceBridge": "Offi Tool & Die offers laser engraving within manufacturing and on parts customers send to the shop. It lists 15926 South Mosiertown Road in Hayfield Township, Crawford County, with a Meadville mailing address.",
+        "limits": "The shop determines whether the supplied component and requested marking are suitable and confirms the work. A completed artwork file does not approve the part itself, and a shipping inquiry is not permission to begin an unagreed operation.",
+        "route": "/areas/pennsylvania/crawford-county/",
+        "inputHash": "efac900797f9900d6c34674ea6830071ced557f178107cb85fbbcd4f05f829f9"
+      },
+      "beforeSha256": "8b9850d887d4dd93d7c53f89228a14e5e0482bcf0934bbd589396990e434cc72",
+      "afterSha256": "b7cb2fb8cb53740db7c375c749c2758e829508d9ac4d51f6bfc01d06048b37b9",
+      "requiredFixes": [
+        "Consolidate confidentiality, diagram approval and private-document scope in the FAQ; keep limits focused on suitability and approved supplied-part work."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/delaware-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep the scale of a removal job visible through the first reply.",
+        "intro": "A small pickup and a whole-property cleanout can share an entry point while needing different assessment. Ask enough to identify the job before suggesting a price or visit.",
+        "customerQuestion": "We need a whole-property cleanout. Can we describe it without receiving the price or appointment wording for one small pickup?",
+        "decisions": [
+          {
+            "label": "Identify accepted work and size",
+            "body": "Use a concise job category and description with real exclusions. Invite location and access concerns where useful, without making the first message a detailed inventory or confirmed job."
+          },
+          {
+            "label": "Explain the assessment",
+            "body": "Describe what staff review before quoting or arranging a visit. Detailed contents, photographs or inspection can follow through an agreed channel. Keep the category and context in the acknowledgment so a larger inquiry is not treated as a standard small pickup."
+          },
+          {
+            "label": "Add distinct explanations where useful",
+            "body": "Separate service content when preparation, exclusions or review genuinely differ. Use approved examples and accurate coverage rather than repeating the same offer for each town. Preserve an appropriate inquiry route from every explanation."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted and excluded work and common missing details.",
+          "Actual assessment process and existing request route.",
+          "Approved examples and acknowledgment wording."
+        ],
+        "sourceBridge": "Delco Cleanouts describes junk pickup and larger cleanouts in Delaware County and surrounding areas. The location here is Delaware County, Pennsylvania, distinct from Delaware the state and other counties with that name.",
+        "limits": "Uploads, conditional routing, calculators and automatic scheduling require separate assessment. For missing inquiries, report the page and failed steps without unnecessary customer details so an agreed test can compare receipt, saved submission, notification and inbox. Small approved service-text changes may fit care; new workflows need their own scope.",
+        "route": "/areas/pennsylvania/delaware-county/",
+        "inputHash": "ccc2ab8d2d12d9e6a12650d7c79c6465684a2db133cf91eccc96feec7962523d"
+      },
+      "after": {
+        "heading": "Keep the scale of a removal job visible through the first reply.",
+        "intro": "A small pickup and a whole-property cleanout can share an entry point while needing different assessment. Ask enough to identify the job before suggesting a price or visit.",
+        "customerQuestion": "We need a whole-property cleanout. Can we describe it without receiving the price or appointment wording for one small pickup?",
+        "decisions": [
+          {
+            "label": "Identify accepted work and size",
+            "body": "Use a concise job category and description with real exclusions. Invite location and access concerns where useful, without making the first message a detailed inventory or confirmed job."
+          },
+          {
+            "label": "Explain the assessment",
+            "body": "Describe what staff review before quoting or arranging a visit. Detailed contents, photographs or inspection can follow through an agreed channel. Keep the category and context in the acknowledgment so a larger inquiry is not treated as a standard small pickup."
+          },
+          {
+            "label": "Add distinct explanations where useful",
+            "body": "Separate service content when preparation, exclusions or review genuinely differ. Use approved examples and accurate coverage rather than repeating the same offer for each town. Preserve an appropriate inquiry route from every explanation."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted and excluded work and common missing details.",
+          "Actual assessment process and existing request route.",
+          "Approved examples and acknowledgment wording."
+        ],
+        "sourceBridge": "Delco Cleanouts describes junk pickup and larger cleanouts in Delaware County and surrounding areas. The location here is Delaware County, Pennsylvania, distinct from Delaware the state and other counties with that name.",
+        "limits": "The business confirms accepted work, assessment, price and any visit. Content can preserve the job’s scale through the existing inquiry. Uploads, conditional routing, calculators and automatic scheduling require separate assessment.",
+        "route": "/areas/pennsylvania/delaware-county/",
+        "inputHash": "ccc2ab8d2d12d9e6a12650d7c79c6465684a2db133cf91eccc96feec7962523d"
+      },
+      "beforeSha256": "3150354b40c0bfb2d1ded43446658590b5d78040c4e666ee1c7773f985ef0756",
+      "afterSha256": "cd5e2351f1175bd006ad66f22c69b5b2a5c0a726064a73f11b19d868f839f4fd",
+      "requiredFixes": [
+        "Remove the duplicated missing-inquiry diagnostic checklist and care-update summary from limits; retain separately scoped workflows and owner-confirmed assessment/price boundaries."
+      ]
+    }
+  ],
+  "sourceChecks": [
+    {
+      "route": "/areas/otsego-county/",
+      "url": "https://www.ommegang.com/tap-room-restaurant/private-events/",
+      "checkedDate": "2026-10-27",
+      "finding": "Official page offers private and semi-private Tap House packages but does not identify reserved areas or shared-activity boundaries. Corrected draft states this limitation and uses fictional inquiry questions. No rates, capacity or staff identity imported."
+    }
+  ],
+  "limits": "Drafts only. Source records, FAQs and imported briefs unchanged; exact independent recheck required before import.",
+  "acceptance": {
+    "reviewFile": "operations/human-quality-20261027/audits/local-after-residual-def-final-recheck.jsonl",
+    "reviewFileSha256": "d4e1b45fc20e37711b9e3376de44e92e8465708dc38a4aa391f9c911cbe4d99f",
+    "exactCandidates": 15,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  }
+}

@@ -1,0 +1,1668 @@
+{
+  "generatedAt": "2026-10-27T15:18:11.583Z",
+  "scope": 61,
+  "routesComplete": true,
+  "files": [
+    {
+      "file": "src/service-area-directory.mjs",
+      "sha256": "3863f74cc64d52e8de970228558f5d53402e3394cd7b6aeb0e8840173afc3d6c"
+    },
+    {
+      "file": "src/assets/county-directory.js",
+      "sha256": "5b8fb71ddd0b43418dd74cc25f608f83b77fb77682bfee125c0fa09857f2fd66"
+    },
+    {
+      "file": "src/service-counties.mjs",
+      "sha256": "a468dbb78d59e0d27cac870b8c1eb01d321d975f2677080f0205d52e8caee3c9"
+    },
+    {
+      "file": "src/service-content.mjs",
+      "sha256": "66870ee55b2684fd7e6b4174f34e10328b0a63cd5ad401c2ab16abe6df919c27"
+    },
+    {
+      "file": "src/seo-service-content.mjs",
+      "sha256": "be180dca64b531a37333f54aeee8c71e9d1740948e295c429d0ba8eff808f8f5"
+    },
+    {
+      "file": "src/search-guides.mjs",
+      "sha256": "c78d5cd8c26eb2fc64a2c86b87c27ee20d79085c57573e4b0d14824245f2b7f3"
+    },
+    {
+      "file": "src/audit-guide-updates.mjs",
+      "sha256": "21596a31fd4829dbeb9cafbdbe3adb9a0b57a231725074f171a6547023c877bf"
+    },
+    {
+      "file": "src/addon-content.mjs",
+      "sha256": "77d84225b7d90fa74473c5109701b19a100836b7c7034adb729ee534ad26089c"
+    },
+    {
+      "file": "tests/human-directory-clarity.test.mjs",
+      "sha256": "8ecab5902c8282613cc19ae8bb63f91288b146c3311cf456e5f38886346cd62f"
+    }
+  ],
+  "preservation": {
+    "all3222Areas": true,
+    "allPlaceMembershipNames": true,
+    "allSourceDestinations": true,
+    "dataSnapshotUnchanged": true,
+    "noBuildOrDistEdits": true
+  },
+  "validation": {
+    "targetedTests": "10/10 preservation + search serialization/budget tests passed.",
+    "broaderTests": "78/79 geography/service tests passed; sole dynamic-price regression corrected and its targeted test subsequently passed.",
+    "existingCopyFixture": "audit-service-help-clarity.test.mjs:48 expects the prior prose; parent will update assertion to new labeled option while retaining dynamic price and automatic-price boundary.",
+    "sourceVerification": {
+      "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+      "checked": "2026-10-27",
+      "finding": "Current primary documentation supports indexed/snippet eligibility, Search Console inclusion and no special AI file/schema claim."
+    }
+  },
+  "records": [
+    {
+      "route": "/areas/",
+      "baselineHash": "801f3b4adccc0193fe06c2054b6f1c6fd46e9df19c417812e517b54cfe2719b3",
+      "renderedComponentSha256": "5e39cfd682f745168d9926d1dd9c15fd8d448256cd714bcedfd94e5653609835",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Added parenthetical-place legend; state/district/territory heading consistent; full directory retained."
+      ],
+      "originalRecommendations": [
+        "Add a short legend explaining the parenthetical community labels and cross-county matches; verify whether surprising labels help actual place discovery before changing them.",
+        "Use ‘Browse by state, district or territory’ consistently.",
+        "Retain full directory coverage and the distinct task-based route; do not remove functional lists merely to reduce word count."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/alabama/",
+      "baselineHash": "4f1d18e6b885eccd200458a02d752632dfc9919f74a0d137ae685a0dc56dc25c",
+      "renderedComponentSha256": "3c68ef15da881ac584f1a3bf78bad86550ec6116e481d1363b3fe5b7e3eee403",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Pluralize group counts correctly: ‘Winston (1 county)’.",
+        "Use an Alabama-specific ‘County, city, town or community’ search label and recovery wording, retaining the cross-boundary explanation."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/alaska/",
+      "baselineHash": "e00569d1193c7c765e32e4d32b33e670e2da0b25cfba529575a1ed9722907e87",
+      "renderedComponentSha256": "d16895b30d44605ceabf5fafc346547ea366fac1783294e3125d8fe97c9cd87d",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use ‘Borough, census area, city or community’ for search and no-results guidance, retaining the four concrete query examples.",
+        "Explain overlapping government/place records in plain language beside the affected entries; move ACS26/data-maintenance notes to a clearly labeled technical source note.",
+        "Give source links document-specific titles and dates so users can select the relevant source."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/arizona/",
+      "baselineHash": "a837ff950f359e0ba38248ca46833bd537556c921e7f29e9b72ddc7c82dc1092",
+      "renderedComponentSha256": "75b8ca1f59715403e214f0abba1811c8a7acd19cdbfc77466226663419a644fe",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "San Tan Valley current inventory type retained; ranking limitation directed to source notes."
+      ],
+      "originalRecommendations": [
+        "Keep San Tan Valley’s place type and dated caveat, but move ranking-source completeness into the technical source note rather than the main search help.",
+        "Use a plain ‘Statistical area, not a municipal government’ label; retain official class codes in optional source metadata.",
+        "Use Arizona-specific county/city/town/community search guidance."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/arkansas/",
+      "baselineHash": "45068a1e179cf9fa5d3eedfc0383e464794aefc5b76f534f875f2636dbcf1b38",
+      "renderedComponentSha256": "57172e75233cf109565aab12086490f0ab260195b89bc5d5eb5a756c2df61aa0",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use natural numeric sorting for numbered districts/townships while preserving recorded names; show ‘District 1’ when a bare number would be ambiguous outside its group.",
+        "Use Arkansas-specific county/city/town/township search guidance and a plain explanation that the listed Census subdivisions do not have active municipal governments."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/",
+      "baselineHash": "12a2f204a3acae384c0f051e592603cb5e679948a325319ad78fdfbce1cee6a0",
+      "renderedComponentSha256": "cb8445053c11bb08418e96cadaddc436550e92c45680b7cc626e0d9839fe1644",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep ‘statistical area, not a municipal government’ beside divisions and move class/status codes into optional technical source metadata.",
+        "Give source links distinct document titles and dates, and preserve California’s three no-incorporated-place counties and San Francisco distinction."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/colorado/",
+      "baselineHash": "6d1393fcf282563102a70cc5eb66ac814519237b2c5e89eb32478923fe615f97",
+      "renderedComponentSha256": "043bd5f9ccfdfece701fde794df84c6ea4d4ff33fa70c6e7ee9eb1a96fa8689a",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep a plain consolidated-city/county explanation for Denver and Broomfield; move C/H6/A/C1 and ranking mechanics to technical metadata.",
+        "Retain Bonanza’s inactive-status note beside its town entry and offer state-appropriate search terms."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/connecticut/",
+      "baselineHash": "5337df12c65be979657fcbca64b715998ad820b0083813935da1932085721090",
+      "renderedComponentSha256": "5a08a80d0a5dcc04bbda8c60d500e0b19cfba68f30a1d3b68946782561fb1633",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use ‘Town, city, borough or planning region’ for the main search label and recovery help.",
+        "Keep the shared planning-region definition once, retain concise entry-specific facts and aliases, and preserve the Groton/Milford/former-county distinctions."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/delaware/",
+      "baselineHash": "7ca07a181809bd43b7089ee438e3e41c172328e242651c6b3b3de94acaf6dbe5",
+      "renderedComponentSha256": "809859b6132aba1d5dab3a0a8ea51c44d185e7e044ca21cd4171200e7e770c25",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use ‘County, city, town, village or community’ and a Delaware-specific no-results prompt.",
+        "Retain the repeated cross-county names and their explanatory notes; deduplicating them would remove useful factual distinctions."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/district-of-columbia/",
+      "baselineHash": "db0aa50fa5ca4fc58a6780f43cb85b24a60fc1670e967b91e7039558f122b46e",
+      "renderedComponentSha256": "e6bd698075609ca967d9b0796b479ae1c693ba4e8a2c124b94aee2da62e47b18",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use ‘Neighborhood or Council ward’ and DC-specific no-results examples; explain that matching names open the single district guide.",
+        "Use ‘Browse the Washington, DC guide’ and remove irrelevant cross-county/municipio boilerplate here while retaining the neighborhood-boundary caveat."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/florida/",
+      "baselineHash": "35879926f1dc8b716dddde37a3ae91f96d71c81464c20103bcfb5111729900aa",
+      "renderedComponentSha256": "888e97f5f9d906cbeb7f8f25d9aed1f5146a7c29f7945e5814b7c4b2c2bbc419",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use singular county for a one-entry range and Florida-specific search terminology.",
+        "Preserve cross-county examples and the Jacksonville/beach-city distinction."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/georgia/",
+      "baselineHash": "be0a0b762b15e3c568d113d4e94cbdec1ae2edd8176101d95bf2e57a385d4a4f",
+      "renderedComponentSha256": "40e8158a6830c9f0c647c2af5f98d0b1ce4a4dcaac5bf5c4aa0641129234d085",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Explain consolidated-government status plainly and move original-record preservation to technical notes.",
+        "Retain full lists and Athens/Augusta balance distinctions; use Georgia-specific search terms."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/hawaii/",
+      "baselineHash": "0bc0b7520a8e4c281abdd6c5128ba8c0759a8525ce9d0c092809fc1b69113ee4",
+      "renderedComponentSha256": "78414c86580ac6da284443ac092e6adaab789b897805fa588fa881496b427ebf",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Kalawao has an entry-level no-incorporated-place/CDP note; dated conditional transition text retained."
+      ],
+      "originalRecommendations": [
+        "Deduplicate the source-definition paragraphs and replace ACS26/G/H4 codes with plain explanations, preserving the dated conditional legal note and its source.",
+        "Add a short ‘No Census place/CDP recorded in this inventory’ note within Kalawao’s entry with a direct source-note link.",
+        "Use county/community search terminology appropriate to Hawaii."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/idaho/",
+      "baselineHash": "f6c52227a9713e1c4cbd3555cebee0796d28a6d8862381f586545438f2fd15fd",
+      "renderedComponentSha256": "659beaee68673072bdb56a571847d801047d577c645e79e39154edc1b20713e4",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep Lost River’s inactive-status explanation and remove ranking mechanics from visitor prose.",
+        "Name cited documents distinctly and use county/city/community search terms."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/illinois/",
+      "baselineHash": "881c367cd55a669627e3e9f1a4d38e52452f945404b1639e8176aa18ccaadaff",
+      "renderedComponentSha256": "a7d85105a50081944c2b7c8fc6139178e7ad7911bb49b26029ef49544120a3ba",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use natural numeric sorting while preserving official precinct names.",
+        "Move record-equivalent terminology to technical metadata and explain overlapping records plainly."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/indiana/",
+      "baselineHash": "e071c7746b6eb8201b5dc8e73f2679badff3daf6b9080c41df59f16118dea8fb",
+      "renderedComponentSha256": "7d11fd84bda6c8ad2b2dab82bdb7def451ddb261b6dfac2dc7ac71f7e2b7dd55",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use county/city/town/township language consistently in search, labels and recovery.",
+        "Give repeated stats.indiana.edu citations distinct document titles while retaining snapshot and reconciliation dates."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/",
+      "baselineHash": "4d1b7cee5e3a82ae42e6f2a928d337d7fc02d8bbf6341c973df6f58d6ae2412c",
+      "renderedComponentSha256": "bc9855d078b18c10039c10b26372ccd634b3ca583711307f79c1ef7ea35fa840",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use a shared plain definition with short active/inactive status labels, preserving Julien and Kane exceptions.",
+        "Move hierarchy-record mechanics into technical metadata, name source documents distinctly and use county/city/township search vocabulary."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/kansas/",
+      "baselineHash": "6742ef3a1ea622c0e39e088b0f9941d52bcfc2c47dc2fe3601349ee041629a45",
+      "renderedComponentSha256": "2ec85a8f0343f8059a50c3e8b39721ea90cf3fd52f6d6df9e5f5c24e10ecf9b4",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Remove internal ranking and hierarchy-placeholder prose from the main definitions; preserve clear Frederick/Tribune and consolidation notes.",
+        "Use natural numeric sorting for numbered townships and concise status labels backed by one shared definition.",
+        "Use Kansas-appropriate search terms and distinct citation titles."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/kentucky/",
+      "baselineHash": "ae10b4f02b5a968188e98bee8c471c0ec7b857b6c485545cef9bae3790aa40f9",
+      "renderedComponentSha256": "8a61045c2b9a7d7bd8a19144a5313ed044bd566c8a84d9d635787dc6e6e010c3",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Name Monterey in the dissolution source note, keep a short former-city explanation beside its entry, and move GEOID retention to metadata.",
+        "Use county/city/community search labels and give the dissolution citation a descriptive title."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/louisiana/",
+      "baselineHash": "96e4384e04294b998b9859196bd554413ee2044ca27560f09dca10d9ae002cf7",
+      "renderedComponentSha256": "e1172aae634d6ff7ea2138f7a0a8f3ebb8722b5232e3d2a47f592b148cb8f1b0",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use parish/city/town/village/district search language and natural numeric sorting.",
+        "Keep clear Houma and New Orleans exceptions while moving B/N codes and hierarchy mechanics to technical metadata."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/maine/",
+      "baselineHash": "fbb10b852c5e1de455a16883b973d994626c1bd3ef6a88f2600a257537618fec",
+      "renderedComponentSha256": "a7ad9e2e4434cb7464314b2c7ab749a2745f49d0eca138d7092f8925d9b89b4c",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use county/town/city/plantation/community search vocabulary and preserve the territory-name limit.",
+        "Remove redundant type-pair sentences where headings suffice, while keeping Rangeley and other genuinely ambiguous examples.",
+        "Retain Drew’s dated deorganization note and provide distinct source document titles."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/maryland/",
+      "baselineHash": "c182659a66d544d62a63c3130ab1de2613a303538b14c12aa0745fa214c17834",
+      "renderedComponentSha256": "20c40991221ded6640d8fcb98c8299d720e765d2d465f88518670a79ef733e1a",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "157 explicitly modifies incorporated municipalities, with CDPs separately described; underlying inventory unchanged."
+      ],
+      "originalRecommendations": [
+        "Clarify that 157 modifies incorporated municipalities, then separately state the scope of CDPs after confirming the intended count.",
+        "Label source groups by county/city and use descriptive document titles.",
+        "Keep Baltimore City/County and cross-county examples, streamline redundant city/town preambles, and use Maryland-specific search labels."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/massachusetts/",
+      "baselineHash": "0c6129d9c92b381e32eaa33c2c2e694b3d946d3fa1fde6a529ce13e6f40a3b11",
+      "renderedComponentSha256": "a98bdf371fbfbf964e747ac0f74ba27302cddf16cc81b7e248c93c831827dce4",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Suffolk guide now explains transfer from an example in another place; redundant type-pair opening removed while remaining qualifications retained."
+      ],
+      "originalRecommendations": [
+        "Use a location-neutral moving-planning link label or explain how the Philadelphia example transfers to Suffolk County.",
+        "Remove redundant type-pair preambles or preserve the town-name/city-government qualification within them.",
+        "Keep East Longmeadow's dated source distinction and use county/city/town search language."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/",
+      "baselineHash": "183ef98c3a0a098616649402abcbec5f5a885cd43feaf9324bbe77ad3f003009",
+      "renderedComponentSha256": "2b3a038ecfc03218219f06108d90851c3941bbe4d22e20cde53d7defb0698d00",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Howard subtype uncertainty retained beside name; original research chronology available in an evidence disclosure."
+      ],
+      "originalRecommendations": [
+        "Keep a concise Howard status-uncertain note beside the name and move the ballot/minutes/retrieval chronology to an optional evidence note; do not assert a resolved subtype.",
+        "Keep Cass Lake's dated incorporation/organization explanation, moving GEOID assignment mechanics to metadata.",
+        "Retain aliases as searchable names with concise labels; explain normalization and charter reconciliation once, use county-named source groups and Michigan-specific control labels."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/minnesota/",
+      "baselineHash": "a02c7520ee935e63ab0ad808ef17861afc01195240c4501e5c4a1926b7e8dd8d",
+      "renderedComponentSha256": "8152c68db4ac91ca9eb57b26890604bb7c7bc87b06c24ba1cc42dd9df48d242c",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Move ranking and hierarchy-placeholder mechanics to technical metadata.",
+        "Preserve numeric territory names but explain their recorded status, retain Lake of the Woods/Fort Snelling distinctions, and use county/city/township search terms."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/mississippi/",
+      "baselineHash": "a06f2f1187d4c8be9c673511eee28a827deb46f9a79fb919db0d243dedeb6c8e",
+      "renderedComponentSha256": "388f26077dcf8a603b2a67cff1333db9d6002565f0b74581ffedd810ae507a2c",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use Mississippi county/city/town/village/community search wording and appropriate examples.",
+        "Retain the concise Tillatoba exception and Jackson/Hattiesburg boundary examples."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/missouri/",
+      "baselineHash": "2d6862d6e01d7a031b5f2ddecebec4905828bf96cbb6e234224104b65b038cce",
+      "renderedComponentSha256": "e1869ee48a5e6ecbe8f81b0bc38dce0811c3830e7a4a05059d01fa7bef0ac84d",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Move ranking calculations, status I and hierarchy mechanics out of visitor definitions while retaining plain inactive-status notes.",
+        "Fix singular service area, use county/city/township search vocabulary and preserve the St. Louis City/County distinction."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/montana/",
+      "baselineHash": "7b6353060bf7fe69d1e76fb17067af357e11b5e14e5e015fe60347332147da81",
+      "renderedComponentSha256": "1d69b4be0b2a738eba4b1b7212aa26c7de843bcce319fba19a4a3d4b1efe6480",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Preserve the clear Deer Lodge/Powell and Butte/Walkerville distinctions; move status codes and population aggregation notes to optional technical evidence.",
+        "Use short statistical-type definitions and distinct source titles, retaining all inventory names and tribal-jurisdiction caveats."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/nebraska/",
+      "baselineHash": "4e668f5c18055fc2269ffdf1830015c2b235c05c56ee66b68f9733f977a4231c",
+      "renderedComponentSha256": "d179e82c85ca21d81f12d97c6dfc3a066c7850f9122ba08a3a431faeaf640e31",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use natural sorting for numbered precincts and explain that Stanton abbreviations are recorded labels; add supported expansions only when verified.",
+        "Shorten status annotations with one shared definition, move A/I/hierarchy mechanics to metadata, and preserve Banner/McPherson’s exceptions."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles.",
+        "Stanton abbreviations retained as recorded; unsupported expansions intentionally not invented."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/nevada/",
+      "baselineHash": "386c335fb2a84370306db3c7a37480ccd0c2e79db07f03be2adac9c5c4bd2f97",
+      "renderedComponentSha256": "bec3bb7e83c25f6130f2eb79163edef8b4047c048a57c1f3841897dfec5a90c8",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Shared scope notes deduplicated and no-incorporated-place statement names the affected county set."
+      ],
+      "originalRecommendations": [
+        "Keep one source-scope paragraph, name every county covered by the no-incorporated-place exception or attach the note locally, and retain the Carson City exception separately.",
+        "Replace S/Z5 prose with a plain statistical-area definition and use Nevada-specific search terms."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-hampshire/",
+      "baselineHash": "276742b5a467b17525e1b99d966310ed03c865493a06c8ec5480790881fdfd72",
+      "renderedComponentSha256": "d94d9e70bf73d97057eed338fc88513210d3cdacff66185721cbf5f735d7452e",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use county/city/town/place search language and preserve the Coös alias help.",
+        "Streamline redundant type-pair preambles while retaining Livermore and distinct unincorporated categories; name the two state-source documents distinctly."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-jersey/",
+      "baselineHash": "bdb3b947dbc2c1006a353dd4384001ec20654d5c5dfb5d63c49cc2d92de93e09",
+      "renderedComponentSha256": "cdaee36d2dba3ad6a548c65ea4b58d7cf3fd222e098d8776db39db40d37b70bc",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use county/municipality/community search wording with borough/township examples.",
+        "Retain specific same-name, Princeton and South Orange distinctions; remove repetitive type-pair preambles and move suffix mechanics to metadata."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-mexico/",
+      "baselineHash": "0d0b709eaf60c7460cd8893847121c7d9bec6a41523847279e7d62508f7a65ee",
+      "renderedComponentSha256": "219def3e5ab931fb2b680ef8a3b61916cfb1dbf2634a0e2081ac517edafd6a10",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Los Alamos consolidation and statistical community distinctions now adjacent to its entry."
+      ],
+      "originalRecommendations": [
+        "Replace S/Z5 annotations with a concise statistical-area definition and use document-specific source titles.",
+        "Put a short consolidated-government note beside Los Alamos’s entry, preserve tribal-jurisdiction limits and use state-appropriate search vocabulary."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-york/",
+      "baselineHash": "1798a8a04851ac3ff4f8e58fc06757201cbd99cd0560e5542589245711491de5",
+      "renderedComponentSha256": "bd063fb075273287bfcbbccd479338231c5b0383408ac45a1b8add2e035422b1",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "All five NYC borough annotations corrected; upstate Town membership unchanged."
+      ],
+      "originalRecommendations": [
+        "Use borough-aware location text for all NYC neighborhoods, for example ‘In Manhattan (New York County), New York City’; preserve correct town membership language for upstate hamlets.",
+        "Retain useful same-name, former-village, overlap and cross-county facts; state the shared address-confirmation rule once unless a local exception changes the decision.",
+        "Name source groups by county and source links by document, and use city/town/village/borough/community search terminology."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/",
+      "baselineHash": "cab85c9de8bc0d494ed0106e761b5e672871352f90c2559b2bb219806ac97e41",
+      "renderedComponentSha256": "9f3dbe389e408de85820912824ad73267f3c958c3f918697097b316166916ea2",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Wake guide now explains transfer from an example in another place."
+      ],
+      "originalRecommendations": [
+        "Use a location-neutral sign-planning guide or explain why the Alexandria example applies to Wake County.",
+        "Keep dated active/former/suspended distinctions beside the place; put record identifiers and reconciliation mechanics in optional evidence detail.",
+        "Use state-appropriate search wording and document titles for evidence links."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-dakota/",
+      "baselineHash": "955a5896c917619f80c34963dc48acf6d629b615ea70b292e8b8b85b4dff60fe",
+      "renderedComponentSha256": "df6b0e2c92e597854212ae41086de5bea4eaf87aed4d109b4f8aceed37787638",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep every township and inactive label, but use a shared definition and compact Active/Inactive status labels in mixed lists.",
+        "Explain statistical territories in plain language and reserve Census codes and hierarchy processing for optional methodology.",
+        "Name source links by document and adapt search examples to cities, townships and counties."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/ohio/",
+      "baselineHash": "1631dd3a98ba055333c386f267a30832f3b5b9af4bd24b74af531aea2a33c92b",
+      "renderedComponentSha256": "9f908d6641afcad8f104aead51aaad9071715eb395235d9f446e4827c626f9cc",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Rendville inactive-government status now adjacent to its village name."
+      ],
+      "originalRecommendations": [
+        "Add a compact inactive-government label beside Rendville and retain its source evidence.",
+        "Preserve specific aliases, type exceptions and boundary facts; state the shared address and coverage rule once.",
+        "Name general definitions and reference groups by the relevant county and use document titles for source links."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/oklahoma/",
+      "baselineHash": "005d57fbeacc40cae38e83b5f867eac47b87f276b4d94ab066fce42d19ae17e4",
+      "renderedComponentSha256": "16f87ba9375ddeeae46c902afa6a1d15f54d39a8759020025162c7bd0893bd29",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Remove internal ranking diagnostics from public definitions or explain a specific visible limitation they cause.",
+        "Keep inactive labels but use concise plain-language status notes; reserve record codes for evidence details.",
+        "Use source document titles and city/town/county search examples."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/oregon/",
+      "baselineHash": "8d6f932bfc0a85e07030a2d4e46280b3a03608ece5bf938f88e0220b85b87f41",
+      "renderedComponentSha256": "e755044d14b2c70d77d973fe064b39945c03bed7160610b89dbfecc29306d87a",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use a concise shared statistical-area definition and move S/Z5 and I/C9 codes to optional source detail.",
+        "Deduplicate the scope paragraph while preserving tribal-boundary limits and dated inventory scope.",
+        "Keep Greenhorn's inactive label and both memberships; omit unexplained ranking mechanics."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/pennsylvania/",
+      "baselineHash": "82e8b3e8a4b8600e80730173c60cc66b8fbc87abe2e15b1092268841e7544fce",
+      "renderedComponentSha256": "2ba3189bbaa06a25a5be00edc03dd41106af4cec465fef65238a38ccc8cc5f12",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Explain selected-community scope briefly at the start so an absent informal community is not mistaken for lack of coverage.",
+        "Preserve merger, home-rule and same-name distinctions; consolidate generic address advice.",
+        "Use county-named source groups and document titles, linking detailed reconciliation notes from the relevant exception."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/puerto-rico/",
+      "baselineHash": "2682a3c906d023369498834119e65f6f6b40114e756992ca3e5b30a56628e305",
+      "renderedComponentSha256": "de0768909178ea8ec905c13db983c8a50e36216f5cfcd05ffe1deaeaed396cbc",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Both Martín Peña records retained and qualified with their existing Hato Rey Norte/Santurce parent barrio fields; all subbarrios expose parent context."
+      ],
+      "originalRecommendations": [
+        "Verify the two Martín Peña records and show each parent barrio or another official qualifier; do not silently deduplicate distinct entities.",
+        "Show parent barrio context for subbarrios where needed to distinguish shared names.",
+        "Define place categories once in plain language, retain compact type labels, and move Census status codes and GRFC methodology into optional evidence detail.",
+        "Use municipio/barrio/subbarrio/comunidad examples in the search control and recovery message."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/rhode-island/",
+      "baselineHash": "3040a1dbcc1b0ea466d0e82755a8796bd1c2fd2be04e4762c0ba41d4ddabf4e9",
+      "renderedComponentSha256": "c5d97e6a94df26df36f89b307a835b883ecfac755d5a430a8a71a9c49a788fd4",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use city, town, county or community in search labels and recovery text.",
+        "Give the Rhode Island source link a document-specific title.",
+        "Preserve the concise typed inventory and concrete shared-name distinctions."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/south-carolina/",
+      "baselineHash": "8e5765d6da5d6d94d2433107e282a0827832428fdc86c7aa8a46e833add3b13d",
+      "renderedComponentSha256": "e694df193302a65fa637d456ed0644bec2ae7012f76f7dd3919f72eab781d710",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use city, town, county or community search labels and recovery examples.",
+        "Name Bamberg source links by document title.",
+        "Preserve the concise list-based structure and adjacent municipal-name exception."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/south-dakota/",
+      "baselineHash": "cf9e88620bed2c4b3e76ade5c96ffe502acb602341698b812d98a56366afd63c",
+      "renderedComponentSha256": "2c45e0d5f8810c1fadc239c999b4117f828b86167d93a5fcab11f553918817aa",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep all township names and inactive status but use a shared definition plus compact status labels.",
+        "Move Census codes and excluded-hierarchy mechanics into optional source methodology.",
+        "Use city/town/township/county search examples and document-specific evidence labels."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/tennessee/",
+      "baselineHash": "b09111db4c14569e5b9ac2d6c324cd9d4678d7b26ece4db63357a4b6fedffd0a",
+      "renderedComponentSha256": "a282e7f3fb8b59094de666749f53afdf44b58c2a17441604a82b4d683ea6e371",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use city, town, county or community in search labels and recovery guidance.",
+        "Name the Tennessee municipal and mapping sources by document title.",
+        "Retain compact special-government headings and the statistical-balance distinction."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/texas/",
+      "baselineHash": "198985074e2b66652c8faad0a62385a5445ca22193904c8f326e8f374c07121b",
+      "renderedComponentSha256": "48572af481714a6ceb018e40bf30bce8e0b139b92f29d799d889bde1039fb61c",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Added complete 254-county scope, place-type key, informal-community limit and typed-search help."
+      ],
+      "originalRecommendations": [
+        "Add a concise upfront place-type key, typed-search example, cross-county explanation and informal-community scope.",
+        "Retain the complete typed lists and inactive labels; move record codes to optional methodology.",
+        "Remove unexplained ranking diagnostics and use state-specific search terminology and titled source documents."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/utah/",
+      "baselineHash": "1701e7772fb41277be988373c9a7396ae1c5156e25c195e8a26a2a132fa2bdc4",
+      "renderedComponentSha256": "ea7af35f3f61146a1cbba162616b868b0333d6e4df6a092fd7aa75d8878b14a8",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use plain-language place/county relationships and place definitions, with technical methodology optional.",
+        "Keep typed headings and shorten repeated category explanations through a shared key.",
+        "Use city/town/county search examples and source document titles."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/vermont/",
+      "baselineHash": "46575f0fcdb97808bdaf48e7ba2871a49ec2a1661c4a1a8c761c4b007752d379",
+      "renderedComponentSha256": "dba4e5fe0a39f17db50e6713fa9b2be6de0f434b15a29c64dd3cf9aaec656b5f",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Alias no longer repeats village after a name already ending in village; inactive/legal-status data retained."
+      ],
+      "originalRecommendations": [
+        "Lead village exceptions with concise Active/Inactive/Former status, then provide the state-versus-Census explanation as optional evidence.",
+        "Remove the duplicated village type and repeated inactive word without erasing legal status distinctions.",
+        "Preserve Morrisville/Morristown and city/town distinctions; consolidate generic address advice and use state-appropriate search examples."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/virginia/",
+      "baselineHash": "976d0bbccef9fa6b1c40a66fc8288dad29ed7a2d8bebfa440db8e50cfa8d74f5",
+      "renderedComponentSha256": "fbf4cb6ced796fc133a2bed24760a0abe7631262dda482d3dfc6a76aef0c1df2",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition.",
+        "Arlington guide now explains transfer from an example in another place; singular service-area count corrected."
+      ],
+      "originalRecommendations": [
+        "Use a location-neutral moving guide or explain the Philadelphia example's transferability to Arlington.",
+        "Render singular service area for one-entry groups.",
+        "Lead Glen Lyn's note with its current former-town status and date; put Census-versus-state reconciliation in optional source detail.",
+        "Use city/county/town search examples and exact source document titles."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/washington/",
+      "baselineHash": "66dc5b9cb650a872a3c2ef0c0928a10e7db4cecedd96a2b3ac9c6252c5826763",
+      "renderedComponentSha256": "c7b32a21fcffeb9ce974a15ff5461fdf40dc2d1f9e184d884d52ac0332cc105b",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Keep a plain-language shared statistical-area definition and move S/Z5 codes to optional evidence methodology.",
+        "Retain tribal-government/boundary limitations and zero-population membership explanation.",
+        "Use city/town/county search examples and document-specific source labels."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/west-virginia/",
+      "baselineHash": "b0438474d971462b0f3d9c3450f3468674d8b278fcfa6dbbb7b5331063d9ad1a",
+      "renderedComponentSha256": "249b8448adc25219e50378118b6ce400cd97d4c174c0dbc848e55028a3699546",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Render 1 county for single-entry groups.",
+        "Use city/town/village/county search guidance and source document titles.",
+        "Keep aliases and the explained corporation type; preserve the source-conflict disclosure."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/wisconsin/",
+      "baselineHash": "654069a63e560551bc6edd2c8527a766de65a6815431e1f82e320d27b7932565",
+      "renderedComponentSha256": "22078b6c14273d35bc4c32e8900bac37883293c70c728c818385bf0f8e45d2bd",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Use county/town/city/village/community examples in Wisconsin search and recovery copy.",
+        "Give source links exact document titles and dates.",
+        "Preserve complete typed lists and the Brookfield, Florence and Menominee distinctions."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/wyoming/",
+      "baselineHash": "0826443068ecf6e9899f4a2d10db1a732f6540db065fdf83d66ed0e0c2b2fc59",
+      "renderedComponentSha256": "8fbc7ca33e5ea35fe15990a36f6315f17cdda1499e5f54ff1e103fdfc740eb88",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "State-appropriate search and recovery vocabulary; singular count labels.",
+        "Source reference groups identify their counties; available sourceNames used, otherwise descriptive URL-based labels preserve exact destinations.",
+        "Numbered typed lists sort naturally without changing names or memberships.",
+        "Repeated statuses simplified in place; full altered status definitions retained in an optional reference disclosure.",
+        "Source methodology and record limitations separated from ordinary definitions; shared prefix notes link to a single definition."
+      ],
+      "originalRecommendations": [
+        "Explain the current county-membership source in ordinary language; move GRFC/ACS26 terminology into optional methodology.",
+        "Use a shared statistical-area explanation with concise type labels, retaining the tribal-government limitation.",
+        "Use exact source document titles and Wyoming-specific search examples."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/",
+      "baselineHash": "6d30cc721ff95b794a45ec66e1816ece64fe819f9d99d0927ff12fe13e2f309a",
+      "renderedComponentSha256": "d4c215a218e5d69bb03c94af4922ad8fc5a9b27211986545fd6bcefa6fa83828",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Group headings directly name build/replace, improve and ongoing-help choices."
+      ],
+      "originalRecommendations": [
+        "Use explicit H2s such as ‘Build or replace your website’ and ‘Improve an existing website’ while retaining the concise grouped cards."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/contractor-websites/",
+      "baselineHash": "22c1323ec82104bdb07d02d3c18757eccf0db434fc2ffb28d2658f84a1432d7d",
+      "renderedComponentSha256": "ea29ded870affd4f4b869566cb2a38c9c60214bd79456410cefd5934c29ff5f4",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Guided quote form, booking and CRM connection become three labeled options with dynamic prices, anchored links and preserved limits."
+      ],
+      "originalRecommendations": [
+        "Keep the six-field starting form and confirmation boundary visible; separate guided quote, booking and CRM options into three compact labeled alternatives with their prices and links.",
+        "Preserve the useful seven-page/9-of-15 worked plan and the explicit fictional-concept labels."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/seo/",
+      "baselineHash": "7d9967bb3c7023eedd9c7274e9a05675349d87f6bf9c7cb4a1e0cdf0685c6259",
+      "renderedComponentSha256": "9f4ad5c0d99c89aa13821ab5c2a8dd1a2f24e50fb2fd98bb184f4dd4fc8e320b",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Dynamic monthly prices near opening and explicit care/main-improvement/replacement/Grow-extra accounting; Google AI eligibility claim checked against current primary guidance."
+      ],
+      "originalRecommendations": [
+        "Add one compact ‘What counts in your month’ comparison: care edits, main improvements, permitted replacements and Grow’s separate extra; remove repeated definitions once the example has illustrated the unit.",
+        "Show the monthly price choice near the opening and place one-off campaign/dashboard alternatives after the primary next step.",
+        "Verify the exact current Google AI-setting claim against the linked primary source before final acceptance."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/web-design/",
+      "baselineHash": "faf7690f6b446a41f135d4b76f31f1e5f8e11c1e467c311c3c7fb3cad8d1df5e",
+      "renderedComponentSha256": "f91ead3259155c10c72959afc8c71a40b5f1940499a0aa5bb577eadee211b5f3",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Added preparation/build/owner-review/launch sequence beside existing dynamic timings and proposal caveat."
+      ],
+      "originalRecommendations": [
+        "Present readiness → build → owner review → launch as a compact timeline or four short labeled steps, keeping the written-proposal date caveat beside it.",
+        "Keep one nearby outside-cost note for the package/payment block instead of restating it.",
+        "Retain the complete notes-to-copy example and the visible code-editing limitation."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/website-addons/",
+      "baselineHash": "829b6e95283a9fbf3ab55f34d946c100fc10ed5818703f4e98e7ca1cf455ca88",
+      "renderedComponentSha256": "b4834b219ffdc3f69f35368a8dc63ef34d7527e2d8e8690b0094e16d721525af",
+      "hashScope": "Detailed catalog component; unchanged page wrapper not included",
+      "changes": [
+        "All add-on options compared by choose-when and dynamic price; navigation follows actual catalog groups; reporting/job dashboard and ordinary/guided form distinctions explicit with ongoing-support exclusions."
+      ],
+      "originalRecommendations": [
+        "Add a compact option/choose-when/price comparison above the detailed cards, including the two commonly confused pairs; retain full unit limits and acceptance checks.",
+        "Align jump-link labels with the catalog sections or explicitly show which sections each customer task covers.",
+        "Keep custom application support exclusions visible alongside dashboard and portal prices."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/website-audit/",
+      "baselineHash": "5db6d2a3511b8c94accf00c0d72a0aaa8b54c418de1891e4087386d6b3985b17",
+      "renderedComponentSha256": "a47770d35983d2e0c6dfc3b2f36d84b82cf32fb48a272010d227800c9730dd6d",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Closing requests site address, failing customer task and platform/access limits without passwords; fix caps and review terms retained."
+      ],
+      "originalRecommendations": [
+        "Keep the total-fix/no-safe-fix conditions beside the comparison and trim their later restatement where the process adds no new condition.",
+        "Add a final one-sentence brief asking for the site URL, failing customer task and platform/access limitations, without passwords.",
+        "Preserve the labeled own-site repair evidence and the explicit right to use findings with another developer."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/website-care/",
+      "baselineHash": "a7ee5da004e71a12e9174f8c8a4cfd0c9d19d56c08e7ae08f64558880804f8d3",
+      "renderedComponentSha256": "e19d25d13df3d9a8420430bf9738e1fd38b29c901668ff5467435915aed016bd",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Enrollment section combines access/platform/recovery responsibilities with starting-review decision; closing asks for platform and connected tools."
+      ],
+      "originalRecommendations": [
+        "Merge ‘Starting with an existing website’ and ‘Check the platform first’ into one enrollment section with platform, authorized access, recovery owner and starting-review decision.",
+        "Use the existing three-part responsibility split as the single main source for included work versus provider work; let the outage FAQ add only the after-hours consequence.",
+        "Carry the platform/tool preparation request into the closing CTA."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/services/website-redesign/",
+      "baselineHash": "05ea491a2541156127b2ce9062d59fbdd1890796d2134fd52f2d58e766348c12",
+      "renderedComponentSha256": "02cc3176b065203919af84e0c616244105bc786ee421496feed5ae49e7c95b8e",
+      "hashScope": "Page body component before shared layout, FAQ and supplementary sections",
+      "changes": [
+        "Pre-price boundaries split into editing system, pages counted and migration work; opening clarifies age alone does not decide replacement."
+      ],
+      "originalRecommendations": [
+        "Split the pre-price boundaries into ‘Editing system’, ‘Pages counted’ and ‘Migration work’ bullets or a compact comparison.",
+        "Fold the age-based decision into the opening repair-versus-redesign section, retaining the separate useful live-site continuity FAQ.",
+        "Preserve the real own-site before/after example and explicit transfer caveats."
+      ],
+      "acceptance": "Implementation applied; independent after-review and final visual/interaction acceptance pending.",
+      "remainingChecks": [
+        "Wide/narrow layout, expanded disclosures and keyboard/search interaction on final build.",
+        "External source freshness and exact document titles not comprehensively reverified; readable URL-derived labels are descriptions, not claimed publication titles."
+      ],
+      "contentAfterRatings": null,
+      "visualAfterRating": null,
+      "accessibilityAfterRating": null,
+      "finalScore": null
+    }
+  ]
+}

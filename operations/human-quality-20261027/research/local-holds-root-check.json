@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-27",
+  "status": "primary-source-check-complete-pending-integration-and-candidate-review",
+  "scope": "Independent primary-agent check of material replacement-example facts proposed in local-holds.json. This is not a final page score or a booking, availability or operator-flow test.",
+  "routes": [
+    {
+      "route": "/areas/niagara-county/",
+      "verified": "The operator's Lewiston page gives a 40-inch dry-seat threshold and 44-inch ordinary wet-seat threshold, onsite child measurement, variable schedules and captain/crew seating decisions. The official county directory lists both Lewiston municipalities within Niagara County.",
+      "sources": ["https://whirlpooljet.com/jet-boat-tickets/lewiston/", "https://downloads.niagaracounty.gov/government/county_information/cities,_towns_and_villages.php"],
+      "boundary": "A hypothetical 42-inch child clears only the stated dry height threshold. Other participation restrictions remain operative. Do not resolve conflicting power-row wording or claim complete eligibility."
+    },
+    {
+      "route": "/areas/missouri/jackson-county/",
+      "verified": "The National Archives library page describes the grades 6–12 role-based primary-source program. Its linked official partner describes four classroom modules and up to 72 students per session. The ordinary museum-tour page publishes different arrangements. A dated library release establishes its Jackson County context.",
+      "sources": ["https://www.trumanlibrary.gov/education/white-house-decision-center", "https://www.trumanlibraryinstitute.org/education/the-white-house-decision-center/student-program/", "https://www.trumanlibrary.gov/education/tours", "https://www.trumanlibrary.gov/library-closure"],
+      "boundary": "Do not turn preparation modules into an admission prerequisite or transfer tour terms to the simulation. The 2021 release is used for county context only, never current operating status."
+    },
+    {
+      "route": "/areas/florida/walton-county/",
+      "verified": "Official indexed text separates crowd-capacity closures, where reserved campers are admitted and day visitors including pedestrians/cyclists are excluded, from emergency closure notices covering overnight accommodation. Indexed normal-arrival instructions require contact before 5 p.m. for arrival after sunset. The indexed storm notice and a separate official concession notice identify Grayton Beach in Walton County.",
+      "sources": ["https://www.floridastateparks.org/graytonbeach", "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park/hours-fees", "https://www.floridastateparks.org/StormUpdates", "https://www.floridastateparks.org/call-business-plans-grayton-beach-state-park"],
+      "accessLimitation": "Direct park pages returned 403. Relevant official indexed text was inspected; current reopening and live operations remain unverified.",
+      "boundary": "The page must remain a dated planning example. Do not state that the park is currently open, that an old notice is current status, or that a reservation overrides emergency closure."
+    },
+    {
+      "route": "/areas/monroe-county/",
+      "verified": "RMSC distinguishes free member Star Shows from a $4 member discount on Planetarium and Laser Shows. It describes selected-date tickets and first-come seating. Its planetarium landing page gives the five-minute online-sales cutoff. Its official historical fact sheet identifies Monroe County support and institutional context.",
+      "sources": ["https://rmsc.org/strasenburgh-planetarium/hours-admission-directions/", "https://rmsc.org/strasenburgh-planetarium/", "https://rmsc.org/wp-content/uploads/RMSC_MASTER_Fact_Sheet_-_Updated_2022_2.pdf"],
+      "boundary": "No account, member redemption, ticket inventory or seating flow was tested. The sales cutoff establishes neither sold-out status nor availability at the door."
+    }
+  ]
+}

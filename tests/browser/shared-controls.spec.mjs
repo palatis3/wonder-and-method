@@ -81,6 +81,9 @@ test('shared header contact and the single floating top link remain reachable ac
    await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();
   }else await revealTools(page);
   await page.evaluate(()=>scrollTo({top:900,behavior:'instant'}));
+  // A dense mobile inquiry view may have no clear tool slot. Its footer must
+  // restore both controls so the navigation action remains available.
+  if(isMobile)await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
   await inViewport(page.locator('.back-to-top'));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),path).toBe(true);
   await expect(page.locator('footer a[href="#page-top"]')).toHaveCount(0);
@@ -305,15 +308,34 @@ test('back-to-top and chat follow each viewport and page type',async({page})=>{
  for(const path of ['/','/pricing/','/services/','/services/seo/','/areas/','/contact/','/checkout/focused-site/','/guides/ai-search-visibility/','/work/hearthside/']){
   await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
   const chat=page.locator('.support-chat-launch'),top=page.locator('.back-to-top');
-  await expect(top).toBeHidden();await inViewport(chat);
+  await expect(top).toBeHidden();
   await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
   for(const y of [680,1200,760]){
    await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
-   await expect(top).toBeVisible();await expect(top).toHaveCSS('position','fixed');
-   await inViewport(top);expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);
-   await inViewport(chat);expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
+   await expect(top).toHaveCSS('position','fixed');
+   const narrow=await page.evaluate(()=>matchMedia('(max-width:767px),(max-height:520px)').matches);
+   if(!narrow){await expect(top).toBeVisible();await inViewport(top);await inViewport(chat);}
+   for(const control of [top,chat])expect(await control.evaluate(el=>{if(!el.checkVisibility({checkVisibilityCSS:true}))return true;const r=el.getBoundingClientRect();return r.top>=0&&r.left>=0&&r.bottom<=innerHeight+1&&r.right<=innerWidth+1;})).toBe(true);
+   expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);
+   expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
+   if(narrow)await expect.poll(()=>page.evaluate(()=>{
+    const tools=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect()),hits=[];
+    for(const region of document.querySelectorAll('main,footer')){
+     const walker=document.createTreeWalker(region,NodeFilter.SHOW_TEXT);
+     while(walker.nextNode()){
+      const node=walker.currentNode,parent=node.parentElement,b=parent.getBoundingClientRect();
+      if(!node.textContent.trim()||parent.closest('script,style')||b.bottom<0||b.top>innerHeight||!parent.checkVisibility({checkVisibilityCSS:true}))continue;
+      const range=document.createRange();range.selectNodeContents(node);
+      for(const r of range.getClientRects())for(const t of tools)if(Math.min(r.right,t.right)>Math.max(r.left,t.left)+1&&Math.min(r.bottom,t.bottom)>Math.max(r.top,t.top)+1)hits.push(node.textContent.trim().slice(0,80));
+     }
+    }
+    return hits;
+   }),path+' leaves prose clear').toEqual([]);
   }
+  await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
+  await expect(top).toBeVisible();await inViewport(top);await expect(chat).toBeVisible();await inViewport(chat);
   await top.click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);
-  await expect(page.locator(path==='/work/hearthside/'?'.concept-toolbar a[href="/work/"]':'.site-header .wordmark')).toBeFocused();await inViewport(chat);
+  await expect(page.locator(path==='/work/hearthside/'?'.concept-toolbar a[href="/work/"]':'.site-header .wordmark')).toBeFocused();
+  if(!await page.evaluate(()=>matchMedia('(max-width:767px),(max-height:520px)').matches))await inViewport(chat);
  }
 });

@@ -3,15 +3,21 @@ import {conceptCatalog} from '../../src/portfolio-concepts.mjs';
 
 test('guide search, topic selection, empty results and native reset agree',async({page})=>{
  await page.goto('/guides/?qa=1');const count=page.locator('[data-guide-count]'),search=page.locator('#guide-search');
- await expect(count).toHaveText('65 of 65 guides shown.');
- await search.fill('booking');await expect(count).toHaveText(/\d+ of 65 guides shown\./);await expect(count).not.toHaveText('65 of 65 guides shown.');
+ await expect(count).toHaveText('65 guides available. Choose a topic or search for a question.');
+ await search.fill('booking');await expect(count).toHaveText(/\d+ of 65 guides match\./);await expect(count).not.toHaveText('65 of 65 guides match.');
  await expect(page.locator('.guide-examples')).toHaveAttribute('open','');
  const visible=await page.locator('.journal-card:visible').allTextContents();expect(visible.length).toBeGreaterThan(0);for(const text of visible)expect(text.toLowerCase()).toContain('booking');
- await search.fill('zzzz-no-match');await expect(count).toHaveText('0 of 65 guides shown. Try another keyword or reset the filters.');await expect(page.locator('.journal-card:visible')).toHaveCount(0);
- await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(count).toHaveText('65 of 65 guides shown.');await expect(search).toBeFocused();await expect(search).toHaveValue('');
+ await search.fill('zzzz-no-match');await expect(count).toHaveText('0 of 65 guides match. Try another keyword or reset the filters.');await expect(page.locator('.journal-card:visible')).toHaveCount(0);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(count).toHaveText('65 guides available. Choose a topic or search for a question.');await expect(search).toBeFocused();await expect(search).toHaveValue('');
  const topic=await page.locator('#guide-category option').nth(1).getAttribute('value');await page.locator('#guide-category').selectOption(topic);
  await expect(page.locator('[data-guide-group]:visible')).toHaveCount(1);await expect(page.locator('[data-guide-group]:visible')).toHaveAttribute('id',topic);
- await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(count).toHaveText('65 of 65 guides shown.');
+ await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(count).toHaveText('65 guides available. Choose a topic or search for a question.');
+ const extra=page.locator('#plan [data-guide-more]');
+ await expect(extra).not.toHaveAttribute('open','');await extra.locator('summary').click();await expect(extra).toHaveAttribute('open','');
+ await search.fill('migration');await expect(page.locator('.journal-card:visible')).not.toHaveCount(0);
+ for(const card of await page.locator('.journal-card:visible').all())await expect(card).toContainText(/migration/i);
+ await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(extra).toHaveAttribute('open','');
+ await extra.locator('summary').click();await expect(extra).not.toHaveAttribute('open','');
 });
 
 test('break-even customers round cents correctly and retain optional detail state',async({page})=>{

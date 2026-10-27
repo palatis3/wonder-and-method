@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-27T14:15:16.064Z",
+  "runId": 40517904883,
+  "head": "ebe755bf0ed336815e02f0f5c364675de51afdcb",
+  "status": "fixed-awaiting-full-ci",
+  "cause": "Floating Node 24 resolves to different cached minor versions across runners. Strict CI evidence binding correctly rejects the mismatch before downstream tests run.",
+  "producer": {
+    "jobId": 122236258090,
+    "nodeVersion": "24.22.1",
+    "evidence": "evidence/ux-improvements-20261027/job-122236258090.log",
+    "setupLines": [
+      150,
+      152
+    ]
+  },
+  "failures": [
+    {
+      "jobId": 122239408676,
+      "name": "reading-accessibility",
+      "errorLine": 211,
+      "nodeVersion": "24.21.0",
+      "step": "npm run ci:browser -- verify-build",
+      "error": "CI evidence mismatch: nodeVersion",
+      "evidence": "evidence/ux-improvements-20261027/job-122239408676.log"
+    },
+    {
+      "jobId": 122239408726,
+      "name": "seo-editorial",
+      "errorLine": 206,
+      "nodeVersion": "24.21.0",
+      "step": "npm run ci:browser -- verify-build",
+      "error": "CI evidence mismatch: nodeVersion",
+      "evidence": "evidence/ux-improvements-20261027/job-122239408726.log"
+    },
+    {
+      "jobId": 122239409092,
+      "name": "browser (3)",
+      "errorLine": 199,
+      "nodeVersion": "24.21.0",
+      "step": "npm run ci:browser -- verify-build",
+      "error": "CI evidence mismatch: nodeVersion",
+      "evidence": "evidence/ux-improvements-20261027/job-122239409092.log"
+    },
+    {
+      "jobId": 122239409276,
+      "name": "browser (1)",
+      "errorLine": 234,
+      "nodeVersion": "24.21.0",
+      "step": "npm run ci:browser -- verify-build",
+      "error": "CI evidence mismatch: nodeVersion",
+      "evidence": "evidence/ux-improvements-20261027/job-122239409276.log"
+    },
+    {
+      "jobId": 122239409537,
+      "name": "browser (4)",
+      "errorLine": 238,
+      "nodeVersion": "24.21.0",
+      "step": "npm run ci:browser -- verify-build",
+      "error": "CI evidence mismatch: nodeVersion",
+      "evidence": "evidence/ux-improvements-20261027/job-122239409537.log"
+    }
+  ],
+  "changedFiles": [
+    ".github/workflows/site-checks.yml",
+    ".github/workflows/capture-visual-baselines.yml"
+  ],
+  "fix": "Pin all 12 setup-node occurrences across site checks and visual candidate capture to observed successful producer Node 24.22.1.",
+  "invariants": [
+    "Strict CI context comparison unchanged",
+    "No content, tests, baseline, skip list or threshold changes",
+    "No commit, push or deployment"
+  ],
+  "verification": {
+    "focusedTests": {
+      "command": "node --test tests/ci-contract.test.mjs tests/github-release-checks.test.mjs",
+      "passed": 31,
+      "failed": 0
+    },
+    "exactWorkflowDiff": "Verified both workflows differ from HEAD only by exact Node version replacement",
+    "strictNodeBinding": "Matching exact versions pass; 24.21.0 against 24.22.1 still throws",
+    "gitDiffCheck": "passed"
+  },
+  "requiredFollowup": "Run full CI for the new commit; original run cannot validate this change. Failed downstream test suites did not execute, so no outcome is inferred for their checks."
+}

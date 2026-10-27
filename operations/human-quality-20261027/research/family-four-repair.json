@@ -1,0 +1,775 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/florida/suwannee-county/",
+    "/areas/north-carolina/pasquotank-county/",
+    "/areas/vermont/washington-county/",
+    "/areas/new-hampshire/hillsborough-county/"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/florida/suwannee-county/",
+      "partition": 1,
+      "before": {
+        "route": "/areas/florida/suwannee-county/",
+        "inputHash": "4dc737ad1d31013edcabedf50bf3fb3f694c1cb26f61a7fab8aff0282ad33120",
+        "heading": "Define one finished document set before asking how many copies are needed.",
+        "intro": "A request for copies may mean loose pages, collated handouts or a bound report with an appendix. Your print page can explain the contents and finish of one complete output, then keep its quantity attached to that definition.",
+        "customerQuestion": "Should my separate appendix be included in every bound report, and how do I specify the number of complete sets?",
+        "decisions": [
+          {
+            "label": "Identify the contents and order",
+            "body": "Ask which files belong in one report or handout and their intended sequence. Explain the shop’s terms for pages, sheets and sets so customers can distinguish the contents of a copy from the quantity ordered."
+          },
+          {
+            "label": "Describe the finished treatment",
+            "body": "Use an annotated example showing the actual cover, collation and binding choices. Keep color, sidedness and paper questions with the output while the printer confirms settings from the files and requested result."
+          },
+          {
+            "label": "Separate different outputs",
+            "body": "Let an organizer describe bound presenter copies and loose audience handouts as different items, each with its own contents and quantity. Explain file identification, final review and collection or delivery arrangements using the existing submission route."
+          }
+        ],
+        "ownerInputs": [
+          "Approved finished examples and supported finishing options.",
+          "Page, sheet and set terminology plus file-preparation guidance.",
+          "Review process and actual collection or delivery arrangements."
+        ],
+        "sourceBridge": "The UPS Store location on Suwannee Plaza Lane in Live Oak lists presentation printing, binding, cover choices, collating and paper options. Those services support a useful explanation of what belongs in one complete document before quantities are multiplied.",
+        "limits": "The printer confirms production details, accepted files, cost and completion. Automatic pricing, file preflight and online production ordering require separate scope; a clear finished-set example can support the current quote and file-submission process.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "after": {
+        "route": "/areas/florida/suwannee-county/",
+        "inputHash": "4dc737ad1d31013edcabedf50bf3fb3f694c1cb26f61a7fab8aff0282ad33120",
+        "heading": "Keep presenter and audience print versions separate.",
+        "intro": "One event can need a bound presenter report and a shorter audience handout. A print inquiry should identify the approved content, finishing and quantity for each version so a shared file folder does not turn into one undifferentiated print order.",
+        "customerQuestion": "How do we order presenter reports and audience handouts without sending every page to both groups?",
+        "decisions": [
+          {
+            "label": "Name the two finished outputs",
+            "body": "Fictional workshop brief: twelve presenters need a bound twenty-page report with a four-page appendix; sixty attendees need a separate two-page handout. These are invented planning quantities, not shop minimums. Name the presenter report and attendee handout as different outputs before discussing paper or binding."
+          },
+          {
+            "label": "Attach the correct content to each version",
+            "body": "The presenter report includes its appendix in every bound copy; the attendee handout uses only the approved two-page file. Give each output a clear file name and revision reference, with its intended page order. A shared event name should not cause the appendix to enter the handout or make an old draft the production source."
+          },
+          {
+            "label": "Review quantities and finishing independently",
+            "body": "Keep twelve complete bound reports separate from sixty loose handouts in the quote request. Use the shop’s accepted preparation and review process to confirm covers, sidedness and finishing for each. One accepted version should not be treated as approval of the other, and the event date remains a needed-by request until the printer agrees completion."
+          }
+        ],
+        "ownerInputs": [
+          "Approved presenter and attendee files, revisions and content lists.",
+          "Separate finished quantities, binding and paper preferences.",
+          "Current proof review and collection or delivery process."
+        ],
+        "sourceBridge": "The UPS Store in Live Oak lists presentation printing, binding, covers, collating and paper options. Those capabilities support this fictional two-audience brief: the website can distinguish content versions before the printer reviews production.",
+        "limits": "The printer confirms production details, accepted files, cost and completion. Automatic pricing, file preflight and online production ordering require separate scope; a clear finished-set example can support the current quote and file-submission process.",
+        "status": "draft-reviewed-against-complete-baseline-text"
+      },
+      "beforeSha256": "21b4d41ab909fc8e6a25e89014a2d819966ff5bcc06a875e703f466ee89813c3",
+      "afterSha256": "821b7b858263ec29ed47a5069ee340ad8b28e2b4a35f9d03d0696c16a307e243",
+      "requiredFixes": [
+        "Suwannee and Christian both explain contents, binding and recipient-set quantities. Suwannee needs a concrete two-audience production brief that separates presenter and attendee versions; Christian can retain the assembled recipient packet task."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/pasquotank-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep every vehicle visible in a shared graphics project.",
+        "intro": "A van and trailer can carry the same business identity while needing different layouts and coverage. Show that distinction so a fleet inquiry preserves the common message without treating one image as a specification for every vehicle.",
+        "customerQuestion": "Can we use one brand across vehicles that need different graphics?",
+        "decisions": [
+          {
+            "label": "Identify the shared message",
+            "body": "Ask for the business name, communication priorities and available brand material. Caption fleet examples to explain what stays recognizable across them. This gives the customer a common project reference while leaving vehicle-specific decisions open for review."
+          },
+          {
+            "label": "Describe vehicles individually",
+            "body": "Keep each vehicle or trailer and its desired coverage separate within the request. A customer might want a full wrap on one item and lettering on another. Ask for the identifying information the graphics business actually needs rather than assuming similar branding means interchangeable surfaces."
+          },
+          {
+            "label": "Connect the brief to design approval",
+            "body": "Explain the real consultation, measurement and approval sequence before printing and installation. Keep existing graphics and unresolved coverage questions attached to the relevant vehicle. The customer should be able to review the coordinated project without losing the individual decisions inside it."
+          }
+        ],
+        "ownerInputs": [
+          "Approved fleet examples identifying shared and individual design choices.",
+          "Current vehicle categories and useful intake details.",
+          "The actual measurement, design approval and installation discussion process."
+        ],
+        "sourceBridge": "F&H Print Sign Design in Elizabeth City offers graphics for vans, fleets, box trucks, trailers and boats and describes consultation through installation. That range provides a concrete example of one identity requiring several vehicle-specific reviews.",
+        "limits": "The graphics business confirms measurements, suitability and production artwork. A reference image does not establish fit for another vehicle. Automated wrap pricing, scheduling connections and fleet-management integrations require separate website scope.",
+        "route": "/areas/north-carolina/pasquotank-county/",
+        "inputHash": "9c24e602dca9dc483f508b09e6cb3bc53b12a170afeccbb72026d4681d65bd90"
+      },
+      "after": {
+        "heading": "Show what a vehicle-graphics approval actually covers.",
+        "intro": "Approving a design is one stage between consultation and installation. Explain which vehicle and proof the decision applies to, so a customer can resolve one item without accidentally approving an unmeasured vehicle or a later installation date.",
+        "customerQuestion": "We approved the van design, but the trailer still needs measuring. What has actually been agreed?",
+        "decisions": [
+          {
+            "label": "Separate measurements from the proposed design",
+            "body": "F&H describes consultation and precise measurement before developing graphics, followed by design approval, printing and installation. Show those stages with the actual vehicle reference. A picture of a similar van can explain the intended appearance, but it does not establish measurements for the customer’s trailer."
+          },
+          {
+            "label": "Name the exact item being approved",
+            "body": "In a fictional project, van proof V2 is ready for the customer’s review while trailer measurements remain outstanding. The approval instruction should identify V2 and the van; it must not read “approve all fleet graphics.” Keep the trailer unresolved and ask the shop how it records that separate decision. This is a content example, not a claim that F&H uses these proof codes."
+          },
+          {
+            "label": "Explain what happens after the decision",
+            "body": "Give the customer the shop’s actual next step after approval and a contact for a correction before production. Do not display an installation date as confirmed merely because artwork has been approved. Whether part of a multi-vehicle job can proceed separately remains the shop’s scheduling and production decision."
+          }
+        ],
+        "ownerInputs": [
+          "Actual measurement, proof and production stages.",
+          "Vehicle-specific approval wording and correction contact.",
+          "The message that confirms an installation arrangement."
+        ],
+        "sourceBridge": "F&H Print Sign Design in Elizabeth City publishes a consultation-to-measurement-to-approval workflow before printing and installation. The local example supports a precise approval explanation; it does not establish an online proofing tool or a guaranteed production schedule.",
+        "limits": "The shop confirms measurements, artwork, suitability and production arrangements. A public workflow explanation can support its existing process; proofing accounts, status tracking and scheduling integrations require separate scope.",
+        "route": "/areas/north-carolina/pasquotank-county/",
+        "inputHash": "9c24e602dca9dc483f508b09e6cb3bc53b12a170afeccbb72026d4681d65bd90"
+      },
+      "beforeSha256": "d5a024e82aa07dbae9f3f7a60e02213924799338b7f1736dae18f7d699f7451d",
+      "afterSha256": "67800f0de10c651bd277e3797b1a46fbaf5705279d3b5d7fa8ba6e6a6f1a4955",
+      "requiredFixes": [
+        "Both fleet pages repeat shared identity, per-vehicle details and approval. Reframe Pasquotank around the published measurement-to-design-approval production sequence and a partial-approval example; keep Marion as the initial mixed-fleet specification."
+      ]
+    },
+    {
+      "route": "/areas/vermont/washington-county/",
+      "partition": 6,
+      "before": {
+        "route": "/areas/vermont/washington-county/",
+        "heading": "Describe both the printed piece and its distribution",
+        "intro": "A stack of newsletters and newsletters mailed to individual recipients are different requested results. Make that distinction visible before a buyer treats the print quantity as the entire order.",
+        "customerQuestion": "Will I distribute the finished copies, or am I asking the printer to handle mailing or fulfillment?",
+        "decisions": [
+          {
+            "label": "Define the physical output",
+            "body": "Invite the printed item, quantity and preparation information the printer needs. Keep this requirement understandable on its own, whether the customer later requests a distribution service or plans to handle it themselves. Use approved product examples to explain what the shop can review."
+          },
+          {
+            "label": "Identify who distributes the copies",
+            "body": "Separate a bulk collection or delivery from individual mailing or fulfillment. Ask the buyer to describe the intended handoff through the current quote process. Printing a piece should not automatically imply every downstream service, while a mailing request should be visible before responsibilities are agreed."
+          },
+          {
+            "label": "Explain how operational files follow",
+            "body": "Let the first inquiry name the distribution need without requiring a full recipient list. State who requests detailed files and how the business receives them through its actual agreed process. A general contact route can remain useful while later project information goes to the responsible person or system."
+          }
+        ],
+        "ownerInputs": [
+          "Current print products, preparation prompts and bulk handoff arrangements.",
+          "Actual mailing/fulfillment services and questions used to review distribution work.",
+          "Owner-approved responsibilities and the existing process for later project-file transfer."
+        ],
+        "sourceBridge": "Leahy Press in Montpelier offers printing alongside mailing and fulfillment, including direct-mail work. That combination supports a practical website brief separating the physical piece from how it reaches its audience.",
+        "limits": "A focused quote-page edit can clarify the distribution question; a fuller introduction can connect examples with responsibility boundaries. The printer confirms the actual mailing or fulfillment work. Public copy does not establish a new data-transfer system. Address processing, postage calculations, secure exchange, fulfillment systems and tracking require separate scope.",
+        "inputHash": "c02cb63fec679dbc7ec8a6531310933c9ee7105dbe2b744f742a43dde6d45787"
+      },
+      "after": {
+        "route": "/areas/vermont/washington-county/",
+        "heading": "Distinguish a mailing campaign from ongoing order fulfillment.",
+        "intro": "A single postcard mailing and a stream of internet orders need different release instructions. Explain when each job is ready to be sent, what an order contains and who resolves changes before promising that printing includes the whole distribution process.",
+        "customerQuestion": "Are we handing over one mailing list, or asking you to fulfill separate orders as they arrive?",
+        "decisions": [
+          {
+            "label": "Identify one campaign or recurring releases",
+            "body": "Leahy Press in Montpelier lists mailing and fulfillment from direct-mail postcards to internet orders. A fictional campaign with one approved audience list is different from individual catalogue orders arriving over several weeks. Ask which pattern the buyer needs instead of treating both as one bulk delivery."
+          },
+          {
+            "label": "Describe the contents of one order",
+            "body": "For the fictional recurring job, an order might contain one current catalogue and one matching price insert. The buyer must identify the approved editions and what should happen when one item changes or becomes unavailable. Ask the printer which packing, stock and release responsibilities it can accept; its general fulfillment offer does not specify every one of these arrangements."
+          },
+          {
+            "label": "Agree how orders and exceptions reach staff",
+            "body": "Explain the existing method for handing over approved orders and handling a correction before dispatch. A first inquiry can state the anticipated frequency and exception questions without uploading customer lists. A website explanation does not create automatic synchronization with an online shop or guarantee that a later address change reaches an already released parcel."
+          }
+        ],
+        "ownerInputs": [
+          "Campaign or recurring-order pattern and intended release frequency.",
+          "Approved item editions and the packing or stock tasks requested.",
+          "Actual order-transfer method, correction contact and dispatch confirmation."
+        ],
+        "sourceBridge": "Leahy Press explicitly offers direct-mail work and internet-order fulfillment alongside printing. That distinction supports a release-and-exception brief for recurring orders, beyond deciding who collects a finished print run.",
+        "limits": "The printer confirms fulfillment scope, files, stock arrangements and timing. Ordering software, inventory synchronization and automatic customer-data transfer require separate assessment.",
+        "inputHash": "c02cb63fec679dbc7ec8a6531310933c9ee7105dbe2b744f742a43dde6d45787"
+      },
+      "beforeSha256": "302524117fd044556434dfa80c21bb1e1cdddd98a74936fe8d6a1db003036a09",
+      "afterSha256": "6e5b24bd4ddd52180d941d732353974a9f97b9b051b7cf7ec606448ee6e4739a",
+      "requiredFixes": [
+        "Vermont Washington repeats Ohio Marion’s print-versus-distribution responsibility and later recipient-file handoff. Use Leahy’s actual internet-order fulfillment offer to distinguish one mailing campaign from recurring order releases and exceptions."
+      ]
+    },
+    {
+      "route": "/areas/new-hampshire/hillsborough-county/",
+      "partition": 3,
+      "before": {
+        "heading": "Keep the differences inside a mixed apparel order visible.",
+        "intro": "A shared logo does not make every garment the same item. Explain how to describe styles, sizes, colors and placement variations beside the existing quote route.",
+        "customerQuestion": "Which details are shared across the order, and which vary by garment group?",
+        "decisions": [
+          {
+            "label": "Identify each garment style and quantity breakdown",
+            "body": "Wicked Apparel describes Manchester screen printing, a catalogue and an image-supported quote request. Use current catalogue references to distinguish shirts from hoodies and retain the shop’s preferred size-and-quantity breakdown. An overall total should not erase which sizes belong to each style."
+          },
+          {
+            "label": "Keep garment color and artwork placement attached",
+            "body": "Show an approved mixed-order example with labeled garment colors and design locations. A preview on white should not be assumed to apply unchanged to navy. If all items share a chest logo but only some need a second print, make that subset visible for staff rather than treating one artwork reference as the entire order specification."
+          },
+          {
+            "label": "Prepare the quote without choosing production methods",
+            "body": "Explain how the shop wants customers to send their garment breakdown and available artwork through its existing route. Keep a general question option for unresolved garment or design choices, with enough context for staff to discuss the intended result before selecting production methods."
+          }
+        ],
+        "ownerInputs": [
+          "Current catalogue references and preferred quantity format.",
+          "Approved mixed-order examples with garment/artwork labels.",
+          "Actual design-help offer and maintained quote destination."
+        ],
+        "sourceBridge": "Wicked Apparel’s Manchester catalogue and image-supported quote route provide the Hillsborough County starting point. The proposed content makes differences within a shared apparel brief visible before the shop assesses production.",
+        "limits": "The shop confirms materials, production setup and pricing. Public examples do not establish stock or approve artwork. Size-collection portals, live pricing, stock feeds and group-payment stores require separate scope.",
+        "route": "/areas/new-hampshire/hillsborough-county/",
+        "inputHash": "c0b9568adbe77a50dd14a33163147e85c625119dfe45fcacbbe35cbb9d9bc212"
+      },
+      "after": {
+        "heading": "Keep a garment substitution attached to the right part of the quote.",
+        "intro": "Changing one catalogue item can affect its artwork and price without changing the rest of a mixed order. Explain how customers identify the replacement and what staff must review again, instead of letting a new picture silently replace the whole brief.",
+        "customerQuestion": "Can we change the hoodie style while keeping the approved shirt group unchanged?",
+        "decisions": [
+          {
+            "label": "Identify the item being replaced",
+            "body": "Wicked Apparel’s catalogue and image-supported quote route provide a starting point for a change request. In a fictional brief, twenty white shirts stay as quoted while eight navy hoodies change to another catalogue style. Name the old and proposed hoodie references and retain the size breakdown; these invented quantities are not a minimum order or a claim of stock."
+          },
+          {
+            "label": "Carry the decoration questions into the change",
+            "body": "State whether the hoodie’s front logo and any back artwork should remain, then ask the shop to assess the new garment and print area. A replacement product photo is a reference, not proof that the old decoration or price still applies. Keep the unchanged shirts separate so the amendment does not accidentally request new artwork for every item."
+          },
+          {
+            "label": "Wait for the revised quote or approval",
+            "body": "Use the shop’s actual correction route to identify which part of the earlier request changes. Keep the desired completion date as a question during review; a customer message alone does not confirm availability, a revised price or production permission. Staff decides the printing method and communicates the accepted change."
+          }
+        ],
+        "ownerInputs": [
+          "Old and proposed catalogue references with each group’s size quantities.",
+          "Artwork placements to retain or review on the replacement garment.",
+          "Current quote-revision route and accepted-change confirmation."
+        ],
+        "sourceBridge": "Wicked Apparel in Manchester connects catalogue selection with an image-supported screen-printing quote. That combination supports a clearly labeled substitution request, while the shop retains product and production decisions.",
+        "limits": "The shop confirms product availability, decoration suitability, price and timing. The example explains a change through the existing inquiry process; it does not add a live configurator or approve a substitute automatically.",
+        "route": "/areas/new-hampshire/hillsborough-county/",
+        "inputHash": "c0b9568adbe77a50dd14a33163147e85c625119dfe45fcacbbe35cbb9d9bc212"
+      },
+      "beforeSha256": "7bb2492bccb182fd274d7f7e53f63674d143ab5845f8dd8893972702d6bbdd58",
+      "afterSha256": "0042e0e96d5a8c28637b17f2b398459244a637015897c48358005159592de9f4",
+      "requiredFixes": [
+        "Hillsborough repeats Fayette’s garment-group/color/placement breakdown without an additional worked decision. Reframe the catalog-driven inquiry around substituting one garment style while preserving other groups and requesting fresh print review."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "route": "/areas/north-carolina/pasquotank-county/",
+      "before": {
+        "areaId": "north-carolina/pasquotank",
+        "market": "Pasquotank County, NC",
+        "lead": "A shared brand does not make every vehicle in a fleet the same graphics project. I help Pasquotank County print and sign businesses preserve the individual vehicles inside one coordinated request.",
+        "decisionTitle": "Keep each vehicle visible in a shared fleet-graphics brief.",
+        "decision": "F&H Print Sign Design in Elizabeth City offers vehicle graphics for service vans, fleets, box trucks, trailers and boats. Its process includes consultation, measurement and design approval before printing and installation. I can clarify the fleet introduction or build a fuller portfolio and inquiry guide that separates the common message from the body and coverage questions for each vehicle. A business adding a trailer to its service vans should be able to describe one brand project without implying the same layout fits every surface.",
+        "scopes": [
+          {
+            "title": "Clarify shared and individual graphics choices",
+            "pages": [
+              "Shared business message",
+              "Vehicles in the request",
+              "Coverage discussion"
+            ],
+            "request": "Explain what stays consistent and what needs vehicle-specific review.",
+            "supplies": "Approved fleet examples, actual vehicle categories and captions describing the graphics shown.",
+            "check": "A customer can request a consistent identity across a van and trailer without assuming one image specifies both layouts."
+          },
+          {
+            "title": "Connect the fleet brief to design review",
+            "pages": [
+              "Brand and message priorities",
+              "Vehicle-by-vehicle information",
+              "Coverage and existing graphics",
+              "Design review and installation discussion"
+            ],
+            "request": "Keep the vehicles distinguishable as the shared project moves into a consultation.",
+            "supplies": "Useful vehicle-information prompts, portfolio captions and the owner’s current measurement and approval process.",
+            "check": "The inquiry can retain a full-wrap interest for one vehicle and simpler lettering for another while linking both to the same business identity."
+          }
+        ],
+        "planningTable": {
+          "title": "A shared-fleet graphics brief",
+          "intro": "Begin with the common identity, then preserve the separate vehicles that carry it. The installer confirms measurements and suitability.",
+          "columns": [
+            "Brief element",
+            "Customer information",
+            "Owner explanation",
+            "Decision supported"
+          ],
+          "rows": [
+            [
+              "Shared identity",
+              "The business name, message and available brand material.",
+              "How examples use a consistent identity across vehicles.",
+              "What should remain recognizable throughout the fleet?"
+            ],
+            [
+              "Individual vehicles",
+              "Each vehicle or trailer being discussed.",
+              "The information used to distinguish its body and relevant surfaces.",
+              "Which physical item does each request concern?"
+            ],
+            [
+              "Coverage differences",
+              "The desired treatment for each vehicle.",
+              "Accurately captioned lettering and wrap examples.",
+              "Where should the arrangements differ?"
+            ],
+            [
+              "Design review",
+              "The common project and outstanding questions for each vehicle.",
+              "The actual measurement, design and approval sequence.",
+              "Can staff review the whole fleet without losing a vehicle’s requirements?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Production artwork, vehicle assessment and installation scheduling remain with the graphics business. Automated wrap pricing, scheduling connections and fleet-management integrations need separate website scope. Content can prepare the existing consultation.",
+        "quoteQuestions": [
+          "Which parts of a fleet example are shared identity and which are vehicle-specific layouts?",
+          "How should customers describe different coverage wishes in one request?",
+          "What vehicle details need to remain visible through design review?"
+        ],
+        "coverageNote": "For Pasquotank County, NC website buyers. F&H Print Sign Design lists 1725 City Center Boulevard in Elizabeth City, Pasquotank County. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
+        "sources": [
+          {
+            "url": "https://www.fhprintsign.com/vehiclegraphics",
+            "label": "F&H Print Sign Design: vehicle graphics",
+            "observation": "Offers multiple vehicle and fleet categories and describes consultation, measurement, design approval, printing and installation."
+          },
+          {
+            "url": "https://www.fhprintsign.com/",
+            "label": "F&H Print Sign Design: business and location",
+            "observation": "Describes the sign and print business; its published business-location data gives 1725 City Center Boulevard."
+          },
+          {
+            "url": "https://www.loopnet.com/property/1725-city-center-blvd-elizabeth-city-nc-27909/37139-890302889254/",
+            "label": "LoopNet: City Center Boulevard property record",
+            "observation": "Identifies the exact commercial property as being in Pasquotank County."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "A product-preview example for keeping each layout and approval distinct"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "north-carolina/pasquotank"
+        ],
+        "path": "/areas/north-carolina/pasquotank-county/",
+        "title": "Web Design for Pasquotank County, NC",
+        "description": "Web design for Pasquotank County, NC. Example brief: keep each vehicle visible in a shared fleet-graphics brief.",
+        "servedAreas": [
+          {
+            "name": "Pasquotank County",
+            "state": "North Carolina",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/north-carolina/#pasquotank",
+            "label": "Pasquotank County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "north-carolina/pasquotank",
+        "market": "Pasquotank County, NC",
+        "lead": "A shared brand does not make every vehicle in a fleet the same graphics project. I help Pasquotank County print and sign businesses preserve the individual vehicles inside one coordinated request.",
+        "decisionTitle": "Keep each vehicle visible in a shared fleet-graphics brief.",
+        "decision": "F&H Print Sign Design in Elizabeth City offers vehicle graphics for service vans, fleets, box trucks, trailers and boats. Its process includes consultation, measurement and design approval before printing and installation. I can clarify the fleet introduction or build a fuller portfolio and inquiry guide that separates the common message from the body and coverage questions for each vehicle. A business adding a trailer to its service vans should be able to describe one brand project without implying the same layout fits every surface.",
+        "scopes": [
+          {
+            "title": "Clarify shared and individual graphics choices",
+            "pages": [
+              "Shared business message",
+              "Vehicles in the request",
+              "Coverage discussion"
+            ],
+            "request": "Explain what stays consistent and what needs vehicle-specific review.",
+            "supplies": "Approved fleet examples, actual vehicle categories and captions describing the graphics shown.",
+            "check": "A customer can request a consistent identity across a van and trailer without assuming one image specifies both layouts."
+          },
+          {
+            "title": "Connect the fleet brief to design review",
+            "pages": [
+              "Brand and message priorities",
+              "Vehicle-by-vehicle information",
+              "Coverage and existing graphics",
+              "Design review and installation discussion"
+            ],
+            "request": "Keep the vehicles distinguishable as the shared project moves into a consultation.",
+            "supplies": "Useful vehicle-information prompts, portfolio captions and the owner’s current measurement and approval process.",
+            "check": "The inquiry can retain a full-wrap interest for one vehicle and simpler lettering for another while linking both to the same business identity."
+          }
+        ],
+        "planningTable": {
+          "title": "A shared-fleet graphics brief",
+          "intro": "Begin with the common identity, then preserve the separate vehicles that carry it. The installer confirms measurements and suitability.",
+          "columns": [
+            "Brief element",
+            "Customer information",
+            "Owner explanation",
+            "Decision supported"
+          ],
+          "rows": [
+            [
+              "Shared identity",
+              "The business name, message and available brand material.",
+              "How examples use a consistent identity across vehicles.",
+              "What should remain recognizable throughout the fleet?"
+            ],
+            [
+              "Individual vehicles",
+              "Each vehicle or trailer being discussed.",
+              "The information used to distinguish its body and relevant surfaces.",
+              "Which physical item does each request concern?"
+            ],
+            [
+              "Coverage differences",
+              "The desired treatment for each vehicle.",
+              "Accurately captioned lettering and wrap examples.",
+              "Where should the arrangements differ?"
+            ],
+            [
+              "Design review",
+              "The common project and outstanding questions for each vehicle.",
+              "The actual measurement, design and approval sequence.",
+              "Can staff review the whole fleet without losing a vehicle’s requirements?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Production artwork, vehicle assessment and installation scheduling remain with the graphics business. Automated wrap pricing, scheduling connections and fleet-management integrations need separate website scope. Content can prepare the existing consultation.",
+        "quoteQuestions": [
+          "Which parts of a fleet example are shared identity and which are vehicle-specific layouts?",
+          "How should customers describe different coverage wishes in one request?",
+          "What vehicle details need to remain visible through design review?"
+        ],
+        "coverageNote": "For Pasquotank County, NC website buyers. F&H Print Sign Design lists 1725 City Center Boulevard in Elizabeth City, Pasquotank County. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
+        "sources": [
+          {
+            "url": "https://www.fhprintsign.com/vehiclegraphics",
+            "label": "F&H Print Sign Design: vehicle graphics",
+            "observation": "Describes consultation and measurement, then custom design approval before printing and installation. Offers graphics across several vehicle categories; no live proofing or scheduling capability is inferred."
+          },
+          {
+            "url": "https://www.fhprintsign.com/",
+            "label": "F&H Print Sign Design: business and location",
+            "observation": "Describes the sign and print business; its published business-location data gives 1725 City Center Boulevard."
+          },
+          {
+            "url": "https://www.loopnet.com/property/1725-city-center-blvd-elizabeth-city-nc-27909/37139-890302889254/",
+            "label": "LoopNet: City Center Boulevard property record",
+            "observation": "Identifies the exact commercial property as being in Pasquotank County."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "A product-preview example for keeping each layout and approval distinct"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "north-carolina/pasquotank"
+        ],
+        "path": "/areas/north-carolina/pasquotank-county/",
+        "title": "Web Design for Pasquotank County, NC",
+        "description": "Web design for Pasquotank County, NC. Example brief: keep each vehicle visible in a shared fleet-graphics brief.",
+        "servedAreas": [
+          {
+            "name": "Pasquotank County",
+            "state": "North Carolina",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/north-carolina/#pasquotank",
+            "label": "Pasquotank County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "4294b87790a3242a3a614e53471fc814b8a543c189b62ac34d556119ed4785bb",
+      "afterSha256": "39e9222a65fda0258efffe540891260c5e96b67c640a94562f1725b8f5193962"
+    },
+    {
+      "route": "/areas/vermont/washington-county/",
+      "before": {
+        "areaId": "vermont/washington",
+        "market": "Montpelier / Washington County, VT",
+        "lead": "A finished stack of printed pieces and a mailing sent to individual recipients describe different results. I help Montpelier and Washington County businesses explain that distribution question before a customer treats the print quantity as the whole order.",
+        "decisionTitle": "Keep the print specification and distribution plan distinct.",
+        "decision": "Leahy Press in Montpelier offers printing alongside mailing and fulfillment services. For an illustrative print business, the website can help a buyer explain both the physical piece and how it should reach its audience. I can clarify that conversation around an existing quote route or build a fuller service introduction connecting print examples to distribution choices. The printer confirms the actual mailing or fulfillment work; a first inquiry does not need the customer’s full recipient list.",
+        "scopes": [
+          {
+            "title": "Clarify the distribution part of a print inquiry",
+            "pages": [
+              "The finished printed piece",
+              "Bulk handoff or individual distribution",
+              "Preparation and project contact"
+            ],
+            "request": "Help a buyer describe how the work will reach people before assuming printing includes mailing.",
+            "supplies": "Current fulfillment services, owner-approved preparation prompts and the actual route for later project files.",
+            "check": "An organization can ask for a newsletter mailing separately from copies it wants to distribute itself."
+          },
+          {
+            "title": "Connect printed examples to delivery responsibilities",
+            "pages": [
+              "Printing products and examples",
+              "Mailing and fulfillment introduction",
+              "Customer-supplied content and distribution information",
+              "Quote review and general inquiry"
+            ],
+            "request": "Make the service boundary understandable for customers planning a complete communication.",
+            "supplies": "Approved examples, accurate responsibility descriptions and the questions staff need for review.",
+            "check": "A customer can identify who will distribute the pieces without uploading a recipient list into a general contact form."
+          }
+        ],
+        "planningTable": {
+          "title": "A print-and-distribution content brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "The printed item",
+              "Describe the physical output and requested quantity.",
+              "Current product and preparation information.",
+              "The print requirement remains understandable on its own."
+            ],
+            [
+              "One bulk handoff",
+              "Explain how to discuss copies the customer will distribute.",
+              "Actual collection or delivery arrangements.",
+              "A bulk print order is not silently turned into a mailing service."
+            ],
+            [
+              "Individual recipients",
+              "Make mailing or fulfillment a separate requested service.",
+              "The owner’s current offer and assessment questions.",
+              "The buyer can name the distribution need before sending detailed recipient data."
+            ],
+            [
+              "Project information later",
+              "Explain who requests and receives operational files.",
+              "Current file-transfer process and responsibilities.",
+              "A general inquiry stays usable while detailed lists follow the agreed process."
+            ]
+          ]
+        },
+        "scopeTrigger": "Address processing, postage calculations, fulfillment systems, secure data exchange and tracking need separate scope. Public content can support the present quote and general inquiry routes.",
+        "quoteQuestions": [
+          "Which distribution services should customers discuss separately from printing?",
+          "What can a first inquiry explain without supplying a full mailing list?",
+          "Who confirms the handoff between print production and distribution?"
+        ],
+        "coverageNote": "This page serves Montpelier and Washington County, Vermont businesses. Leahy Press lists its shop on River Street in Montpelier. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://leahypress.com/services/",
+            "label": "Leahy Press: printing, mailing and fulfillment",
+            "observation": "Lists printed products and mailing/fulfillment services, including direct-mail work, at its Montpelier location."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/custom-print-order/",
+            "label": "Custom-order websites: turn an inquiry into an accepted production job"
+          },
+          {
+            "path": "/guides/shipping-date-and-quote/",
+            "label": "Ecommerce checkout: separate shipping dates, arrival requests and quotes"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "vermont/washington"
+        ],
+        "path": "/areas/vermont/washington-county/",
+        "title": "Web Design for Montpelier / Washington County, VT",
+        "description": "Web design for Montpelier / Washington County, VT. Example brief: keep the print specification and distribution plan distinct.",
+        "servedAreas": [
+          {
+            "name": "Washington County",
+            "state": "Vermont",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/vermont/#washington",
+            "label": "Washington County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/vermont-washington.txt"
+      },
+      "after": {
+        "areaId": "vermont/washington",
+        "market": "Montpelier / Washington County, VT",
+        "lead": "A finished stack of printed pieces and a mailing sent to individual recipients describe different results. I help Montpelier and Washington County businesses explain that distribution question before a customer treats the print quantity as the whole order.",
+        "decisionTitle": "Keep the print specification and distribution plan distinct.",
+        "decision": "Leahy Press in Montpelier offers printing alongside mailing and fulfillment services. For an illustrative print business, the website can help a buyer explain both the physical piece and how it should reach its audience. I can clarify that conversation around an existing quote route or build a fuller service introduction connecting print examples to distribution choices. The printer confirms the actual mailing or fulfillment work; a first inquiry does not need the customer’s full recipient list.",
+        "scopes": [
+          {
+            "title": "Clarify the distribution part of a print inquiry",
+            "pages": [
+              "The finished printed piece",
+              "Bulk handoff or individual distribution",
+              "Preparation and project contact"
+            ],
+            "request": "Help a buyer describe how the work will reach people before assuming printing includes mailing.",
+            "supplies": "Current fulfillment services, owner-approved preparation prompts and the actual route for later project files.",
+            "check": "An organization can ask for a newsletter mailing separately from copies it wants to distribute itself."
+          },
+          {
+            "title": "Connect printed examples to delivery responsibilities",
+            "pages": [
+              "Printing products and examples",
+              "Mailing and fulfillment introduction",
+              "Customer-supplied content and distribution information",
+              "Quote review and general inquiry"
+            ],
+            "request": "Make the service boundary understandable for customers planning a complete communication.",
+            "supplies": "Approved examples, accurate responsibility descriptions and the questions staff need for review.",
+            "check": "A customer can identify who will distribute the pieces without uploading a recipient list into a general contact form."
+          }
+        ],
+        "planningTable": {
+          "title": "A print-and-distribution content brief",
+          "intro": "Use these prompts to plan your own website. The owner confirms the service facts and examples; the table does not determine the outcome of an individual job.",
+          "columns": [
+            "Customer situation",
+            "Content to explain",
+            "Owner input",
+            "Acceptance case"
+          ],
+          "rows": [
+            [
+              "The printed item",
+              "Describe the physical output and requested quantity.",
+              "Current product and preparation information.",
+              "The print requirement remains understandable on its own."
+            ],
+            [
+              "One bulk handoff",
+              "Explain how to discuss copies the customer will distribute.",
+              "Actual collection or delivery arrangements.",
+              "A bulk print order is not silently turned into a mailing service."
+            ],
+            [
+              "Individual recipients",
+              "Make mailing or fulfillment a separate requested service.",
+              "The owner’s current offer and assessment questions.",
+              "The buyer can name the distribution need before sending detailed recipient data."
+            ],
+            [
+              "Project information later",
+              "Explain who requests and receives operational files.",
+              "Current file-transfer process and responsibilities.",
+              "A general inquiry stays usable while detailed lists follow the agreed process."
+            ]
+          ]
+        },
+        "scopeTrigger": "Address processing, postage calculations, fulfillment systems, secure data exchange and tracking need separate scope. Public content can support the present quote and general inquiry routes.",
+        "quoteQuestions": [
+          "Which distribution services should customers discuss separately from printing?",
+          "What can a first inquiry explain without supplying a full mailing list?",
+          "Who confirms the handoff between print production and distribution?"
+        ],
+        "coverageNote": "This page serves Montpelier and Washington County, Vermont businesses. Leahy Press lists its shop on River Street in Montpelier. Wonder and Method is a Buffalo studio working remotely. Named businesses are public examples, not clients.",
+        "sources": [
+          {
+            "url": "https://leahypress.com/services/",
+            "label": "Leahy Press: printing, mailing and fulfillment",
+            "observation": "Lists printing and mailing/fulfillment services covering direct-mail postcards and internet orders. Detailed stock, packing, release and system-integration arrangements require a project discussion."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/custom-print-order/",
+            "label": "Custom-order websites: turn an inquiry into an accepted production job"
+          },
+          {
+            "path": "/guides/shipping-date-and-quote/",
+            "label": "Ecommerce checkout: separate shipping dates, arrival requests and quotes"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "vermont/washington"
+        ],
+        "path": "/areas/vermont/washington-county/",
+        "title": "Web Design for Montpelier / Washington County, VT",
+        "description": "Web design for Montpelier / Washington County, VT. Example brief: keep the print specification and distribution plan distinct.",
+        "servedAreas": [
+          {
+            "name": "Washington County",
+            "state": "Vermont",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/vermont/#washington",
+            "label": "Washington County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/vermont-washington.txt"
+      },
+      "beforeSha256": "faa5551ec63548560de7763f831c6c31313fb7c84eac353395187003ca3c9d82",
+      "afterSha256": "5ad955e034bef99c88796b2fbf7c1afc251052dab9249c815f4bdc5a80631cba"
+    }
+  ],
+  "faqs": [],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/family-comparison-20261027.json"
+  ],
+  "sourceChecks": [
+    "operations/human-quality-20261027/research/family-four-source-checks.json"
+  ],
+  "limits": "Four complete brief revisions distinguish multi-audience output, vehicle-specific proof approval, recurring fulfillment and a garment substitution. Fictional examples are explicit. No route or indexing policy changes and no brief import yet.",
+  "acceptance": {
+    "reviewFiles": [
+      {
+        "file": "operations/human-quality-20261027/audits/local-after-family-four-recheck.jsonl",
+        "sha256": "b6edf48ac5a6073657e0389e1869a1ea33f6d51bd5d23bcc80eff74ab8799353"
+      }
+    ],
+    "exactCandidates": 4,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  },
+  "import": {
+    "routesFile": "operations/human-quality-20261027/research/residual-op-family-import-routes.json",
+    "verifiedProjection": true,
+    "evidence": "output/human-quality-20261027/release-content/summary.json"
+  }
+}

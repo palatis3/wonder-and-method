@@ -1,0 +1,1760 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "reviewer": "Independent Astra review",
+  "scope": "Exact 39 source/coverage corrections supported only by geography-citation-repairs.json and 6 FAQ removals supported only by repetition-repairs.json. All candidate main text read for these corrections. No numeric full-page scores, visual/accessibility verdict or publication approval.",
+  "inputs": {
+    "ledger": "tests/fixtures/human-quality-edits.json",
+    "ledgerSha256": "48cf3660283a98b310aae734646982cd7892941cce9b96b37b65d3bde2117c28",
+    "inventory": "output/human-quality-20261027/final-inventory/pages.jsonl",
+    "inventorySha256": "f60a87e2889cb481c69aac3577302f2d7c7b36ed017d383333bc6941ce2fc1f9",
+    "geographyEvidenceSha256": "d446e156bf86c47ba0305c96599f151a58e2aa38242c48deb6bc57fbd7f1cad9"
+  },
+  "records": [
+    {
+      "route": "/areas/arkansas/newton-county/",
+      "beforeSha256": "73ab628086555fc4439ef5539f8cdd602dc0b2d015faaa3fbad92ab5683030c6",
+      "afterSha256": "da1766cadd3de3387f7506e3abeb1b0e4b4e191db4d725ff1e5e461e5f9a27d1",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "8ab936391002a861fab954a2adcb5f09ce26495c03687a4774e8dae7ba4ac0b9",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://newtoncountychamber.com/directory/buffalo-outdoor-center/",
+          "readScope": "Business listing heading and address; supplemental About page Choose Area introduction and complete Ponca subsection, including Buffalo Outdoor Center listing.",
+          "support": "The Chamber lists Buffalo Outdoor Center at 4699 AR 43 Hwy, Ponca. Its About page explicitly introduces the areas of Newton County, describes Ponca in western Newton County, and lists the same operator under Ponca. This supports the locality, without relying solely on Chamber membership.",
+          "additionalUrls": [
+            "https://newtoncountychamber.com/about-us/"
+          ],
+          "access": "Direct page reads, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/llano-county/",
+      "beforeSha256": "bb9013b32b72be52e314ef24481434f86db6fe2e9aa0760c6f1b2928bc39e9eb",
+      "afterSha256": "1cd8c97be01fa5bc8ef498578a88ebfa20307c5b0311c62c352ea688745bf771",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "7969cd8b45e2c04988e66a81bc1e68a24a27b2c0009c6bb6b25a0a5c495e22f3",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=604+West+Young+Street%2C+Llano+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-llano.json",
+          "receiptSha256": "bfe6d8b5a2b9ca751f16f12cbbf8ef6e2e0d487a68824a787d7b821260d15677",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "604 West Young Street, Llano TX"
+          },
+          "matchedAddress": "604 W YOUNG ST, LLANO, TX, 78643",
+          "county": [
+            {
+              "name": "Llano County",
+              "geoid": "48299"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/lynn-county/",
+      "beforeSha256": "59d663dbc6c00801cd36ccfa7e25d997ae822a522d3180202d01c22b5c3d4580",
+      "afterSha256": "70c2a5e5e6ac7bf1f6bd070acce5375d301010caa7cf7b4acc3fda16397698bf",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "ea2636b8015d34e16d1d914f2e4ea8b89cca516e9ed874b21c753c6416b3bcea",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=374+FM+1317%2C+Tahoka+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-lynn.json",
+          "receiptSha256": "5249d096f6c999d2e09302c268de724cdd1ce0b69af265f4fe3cb17db236a424",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "374 FM 1317, Tahoka TX"
+          },
+          "matchedAddress": "374 FM 1317, TAHOKA, TX, 79373",
+          "county": [
+            {
+              "name": "Lynn County",
+              "geoid": "48305"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/marion-county/",
+      "beforeSha256": "3331a2966a66900c9bbf897cce97d1a0c8443be7f151163ec5c1172a79d9ebb5",
+      "afterSha256": "0f39cdce8b59f0fbf23155807d48f39ebd9b2dca9f4cdcc700e6e20e016cf15a",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "2e1ee65ccf365c3667ad9f7a30fbc475cdaf05e3fa0740bfb0999403774c265d",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://www.loc.gov/pictures/item/tx0486/",
+          "readScope": "HABS item title, Place field and associated survey location paragraph.",
+          "support": "The exact HABS item identifies House of the Seasons, 409 South Alley Street, Jefferson, Marion County, Texas. Historical geography only; no current ownership or operating claim adopted.",
+          "additionalUrls": [
+            "https://tile.loc.gov/storage-services/master/pnp/habshaer/tx/tx0400/tx0486/data/tx0486data.pdf"
+          ],
+          "access": "Direct item fetch returned 403; indexed official item and official survey text read, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/martin-county/",
+      "beforeSha256": "38b0a33dcb920ed336cd5e10a44361a232cc6ef70517b83e4344732eed5f42f5",
+      "afterSha256": "498d74da45c0a5c3d99d69b1b66bd0347519f9f289c61b2e684446909f769c25",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "24192ffa54cc73306b0e58778cd2371fee907bba742a457cd05918c1199b475b",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2187+County+Road+B3651%2C+Stanton+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-martin.json",
+          "receiptSha256": "875e2e3b8c3b589d2243e889eb93eb07367faa58738a60aa83d887cdfb8e325d",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "2187 County Road B3651, Stanton TX"
+          },
+          "matchedAddress": "2187 CO RD B3651, STANTON, TX, 79782",
+          "county": [
+            {
+              "name": "Martin County",
+              "geoid": "48317"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/mason-county/",
+      "beforeSha256": "fac9c4e78c4a4407d1e6f8899db076a4381d78bf843437eb6a9ec510c0c0306a",
+      "afterSha256": "ab3d5e4d5b3ef1391b4d4cfa676e90d06b8a77df7b7ff0a8d19bead93a174cfc",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "cbafd13008c2a721f3d77588ca8929b438fbdd74b1780b1df1d81941240b7594",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://atlas.thc.texas.gov/Details/5319011293",
+          "readScope": "Exact THC Atlas record 5319011293: title, Address, City, County and Marker Location fields.",
+          "support": "Seaquist Home is identified on Broad Street in Mason, Mason County. The historical record number is 400, while the operator uses 405; corrected copy claims only street and county, not identical street numbers.",
+          "access": "Direct fetch timed out; indexed official record read, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/maverick-county/",
+      "beforeSha256": "6501314c9ea81419186e763e86135b55b5e442d8ed07039f77aae2df3f48ba28",
+      "afterSha256": "7bc559507ed09580e1b8d2713e72082b1ac0b3456b6c5f29b874e3be99b6d7ac",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "7275a6cf32e0b7ad54f9a4235b8bc4d8e6ba1ba0643dc6e3e3e741e692699a21",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=3295+Bob+Rogers+Drive%2C+Eagle+Pass+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-maverick.json",
+          "receiptSha256": "1e7ec01b09dfcd26448fb5b59a442501f7f61ffb4dec447820376f1f1cfd0115",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "3295 Bob Rogers Drive, Eagle Pass TX"
+          },
+          "matchedAddress": "3295 BOB ROGERS DR, EAGLE PASS, TX, 78852",
+          "county": [
+            {
+              "name": "Maverick County",
+              "geoid": "48323"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/milam-county/",
+      "beforeSha256": "41656dfe196b9d824ab0ae4bffc7004e29800f690c630f6c54612efbaedefe33",
+      "afterSha256": "daa68d8e0e94c556e61b4fb3abcf9c281ba0f2ec0a7fb38d01c5c1edc24969d5",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "91cd751129b217424630180028abf0ee8b5040a341107ffb7cbec26c3488e3cd",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=9112+North+FM+908%2C+Rockdale+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-milam-event.json",
+          "receiptSha256": "d8453925b576c737988c86bba1ab1b0db1613b478b64a6e977dfec4a8c223cd7",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "9112 North FM 908, Rockdale TX"
+          },
+          "matchedAddress": "9112 N FM 908, ROCKDALE, TX, 76567",
+          "county": [
+            {
+              "name": "Milam County",
+              "geoid": "48331"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        },
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=9119+North+FM+908%2C+Rockdale+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-milam-rv.json",
+          "receiptSha256": "3da1cea46ac43f87f24e46695b790d6eaf1386b7a0d076a203c596e700b23591",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "9119 North FM 908, Rockdale TX"
+          },
+          "matchedAddress": "9119 N FM 908, ROCKDALE, TX, 76567",
+          "county": [
+            {
+              "name": "Milam County",
+              "geoid": "48331"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/palo-pinto-county/",
+      "beforeSha256": "60285ef73797af2047810a70e639ab274c26eb2a7f96cfa1002b01c9b2514d41",
+      "afterSha256": "c49ce9137562ebb1ccc8423367068c07704aafc201be4c86a12b227f0abb2cbd",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "3fe0ad615b7db0883b764f890f0d65629e76183c83b542b677364f467b02af15",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2375+Indian+Creek+Road%2C+Mineral+Wells+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-palo-pinto.json",
+          "receiptSha256": "16c5ab995989a6d767509120b7b2db9677a63841441f05f05b99cf8482993fa7",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "2375 Indian Creek Road, Mineral Wells TX"
+          },
+          "matchedAddress": "2375 INDIAN CREEK RD, MINERAL WELLS, TX, 76067",
+          "county": [
+            {
+              "name": "Palo Pinto County",
+              "geoid": "48363"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/real-county/",
+      "beforeSha256": "f76679dffa16ada35e5bbb5687a5f951a12253c5190121687801da1e4102826d",
+      "afterSha256": "d2413e9c67e4b87a29f11e9e3723a1b727857e139418c206907f0cb2405a94d6",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "28c17619c646729f20e0985f3ff155c1a4efae82fc6687078eb33979d6c18d0e",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=144+Ranch+Road+337+East%2C+Leakey+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-real.json",
+          "receiptSha256": "cf65b2fa312ec45e05a624a026329c2262e05cf2dd3974529d57256a45281d6e",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "144 Ranch Road 337 East, Leakey TX"
+          },
+          "matchedAddress": "144 RANCH RD 337, LEAKEY, TX, 78873",
+          "county": [
+            {
+              "name": "Real County",
+              "geoid": "48385"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/red-river-county/",
+      "beforeSha256": "65680309b049bf8f0a7f068550c464f360ec38459201080cb90dfc4cc4999854",
+      "afterSha256": "072c00f5c6e09f47b58ff7ee485978564c45a07054c8787336ee8574d02f1a9c",
+      "verdict": "accept",
+      "changedFields": [
+        "coverageNote",
+        "sources"
+      ],
+      "candidateMainTextSha256": "f650e6472f75dd3bd4527a70ac2153f6ae3d46c3e93ba0eccc833c6c3cfa69d6",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/lennox-woods-preserve/",
+          "readScope": "Location section and full Directions section, including county and distance from Clarksville.",
+          "support": "The Nature Conservancy explicitly locates Lennox Woods in Red River County, about ten miles north of Clarksville. The revised attribution accurately replaces an unnecessary independent-verification process assertion.",
+          "access": "Direct page read, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Revised coverage attribution is consistent with the independently inspected named-entity evidence.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/reeves-county/",
+      "beforeSha256": "4364346c5e0ba2d726aadbb722b7a2c3f517ab9d35dcb1504a07c60296d7274b",
+      "afterSha256": "0a111dfc5c153ebc1e33cd8363f5357371dc93a2e588687e4a4aba5e45eabf11",
+      "verdict": "accept",
+      "changedFields": [
+        "coverageNote",
+        "sources"
+      ],
+      "candidateMainTextSha256": "479680603a17db080deafa0c24cc25d61e257fd4b45134c6e0626a20cff9e244",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://tpwd.texas.gov/business/feedback/meetings/2025/0821/agenda/item.phtml?item=2",
+          "readScope": "2026–2027 State Park List exhibit: table headers and Balmorhea row.",
+          "support": "TPWD lists Balmorhea as a State Park in Reeves County. The replacement identifies this named park, without pretending that an unmatched Census street lookup succeeded or adopting the historical list as current operating-status evidence.",
+          "access": "Direct official table read, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Revised coverage attribution is consistent with the independently inspected named-entity evidence.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/refugio-county/",
+      "beforeSha256": "0408055886923a10b74c4c99797b3740d09f65ece2630ece0672d188c18ed14f",
+      "afterSha256": "10160ed3767e145830c962946ae07ac52f939f947b1bee7ace646b80fbd99c98",
+      "verdict": "accept",
+      "changedFields": [
+        "coverageNote",
+        "sources"
+      ],
+      "candidateMainTextSha256": "442537ffbf029b878c6ba957328825985f796d52d654e1f3faebf73edf7351d5",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=815+Commerce+Street%2C+Refugio+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/refugio-library.json",
+          "receiptSha256": "823efcf5f98c8978a84db17a611a87966e1922a561cbd3f959be92209bf54f4f",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "815 Commerce Street, Refugio TX"
+          },
+          "matchedAddress": "815 COMMERCE ST, REFUGIO, TX, 78377",
+          "county": [
+            {
+              "name": "Refugio County",
+              "geoid": "48391"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Revised coverage attribution is consistent with the independently inspected named-entity evidence.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/sabine-county/",
+      "beforeSha256": "75cddfca267fdad33e471ebd208c91cb3d4327b214b6b3f0b6cb167e823ca627",
+      "afterSha256": "5991274a7a02aa477dfb614dc01c462093ec36990cae0b9beb44b981e6b1b543",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "f6c0feeab328a186bd27c664de535cdd25ca9d91b1e2f09dc9195aacde00133c",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=375+Sabine+Street%2C+Hemphill+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-sabine.json",
+          "receiptSha256": "23fed94506820d4ce3b9513df8b4a01f5f78e055b4d9ed44b60bd277b36eef57",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "375 Sabine Street, Hemphill TX"
+          },
+          "matchedAddress": "375 SABINE ST, HEMPHILL, TX, 75948",
+          "county": [
+            {
+              "name": "Sabine County",
+              "geoid": "48403"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/san-augustine-county/",
+      "beforeSha256": "c4185f3a72745758f4bd2a75e555e5946f80f5d11dee5372edc87d71b5af9bf1",
+      "afterSha256": "b3601634a3c7e59e5f1738ecb24ab3a80552388d0f1909d17f0359bf121935f8",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "95805d0facf93adbe7a67061e845eb08526eea87ba190c63d5d8cdc81f94d994",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=701+South+Broadway+Street%2C+San+Augustine+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-san-augustine.json",
+          "receiptSha256": "5c5c9e2598d5bf409d6293b166efeb20e8d083efa04abbf3c5c412941830ceeb",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "701 South Broadway Street, San Augustine TX"
+          },
+          "matchedAddress": "701 S BROADWAY ST, SAN AUGUSTINE, TX, 75972",
+          "county": [
+            {
+              "name": "San Augustine County",
+              "geoid": "48405"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/san-jacinto-county/",
+      "beforeSha256": "7f044dc20c97c6269aad2b5c2f66cfc635afea08bba605617e640c36ff9f1716",
+      "afterSha256": "f0d9381cc2c066bfeaf443731a74bd8b367bb84065c536bacd2a7b1722760c61",
+      "verdict": "accept",
+      "changedFields": [
+        "coverageNote",
+        "sources"
+      ],
+      "candidateMainTextSha256": "0a026309aca0e21cc6a948782e7e8eb649a355073f40e395bb681a5d3c9cb8eb",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://www.fs.usda.gov/sites/default/files/2022-06/GAOA-FY22-LRF-Projects.pdf",
+          "readScope": "2022 Forest Service project list page 15 (zero-based 14): Double Lake Recreation Area Rehabilitation row and STATE_COUNTY column.",
+          "support": "The same row names Double Lake Recreation Area and TX–San Jacinto. Used only for physical county identity; no present construction, availability or access claim is inferred.",
+          "access": "Direct PDF row read and screenshot requested, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Revised coverage attribution is consistent with the independently inspected named-entity evidence.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/texas/san-saba-county/",
+      "beforeSha256": "4b51bf72a986af037041cbb1c106b09a7ebf6171333079d5b4336b5aff544a96",
+      "afterSha256": "7185ab3c886d6e921b62a2bff025c9e6dfdbdd25b169c9a5e73ace496ca9fef1",
+      "verdict": "accept",
+      "changedFields": [
+        "coverageNote",
+        "sources"
+      ],
+      "candidateMainTextSha256": "a5d4b53a345806f42d2b31590a99d2367892a07507e2002c228c85cced7b181a",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://sansabatexas.com/come-golf-the-hill-country/",
+          "readScope": "City golf-course article location/adjacent-park paragraph; Hill Country Portal San Saba County heading and complete named RV park entry.",
+          "support": "The city describes its golf course outside city limits and the adjacent San Saba River RV Park. The regional directory places that named park in San Saba County, with matching operator link and telephone. Copy explicitly attributes the secondary corroboration and does not adopt its amenities, access or coordinates.",
+          "access": "Both pages read directly, October 27, 2026."
+        },
+        {
+          "url": "https://www.hillcountryportal.com/hillcountry-swimming-holes.html",
+          "readScope": "City golf-course article location/adjacent-park paragraph; Hill Country Portal San Saba County heading and complete named RV park entry.",
+          "support": "The city describes its golf course outside city limits and the adjacent San Saba River RV Park. The regional directory places that named park in San Saba County, with matching operator link and telephone. Copy explicitly attributes the secondary corroboration and does not adopt its amenities, access or coordinates.",
+          "access": "Both pages read directly, October 27, 2026."
+        }
+      ],
+      "reasons": [
+        "Revised coverage attribution is consistent with the independently inspected named-entity evidence.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/kern-county/",
+      "beforeSha256": "bb8e4535e52ae84ced077cf93771b71306094a70b4d18fe58221c648b0b0fe65",
+      "afterSha256": "53d3703bcbdd3ae85d05a357e9186be7ecd63799c4ef55059d9b3991a7f0e27f",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "504b969faaa92fa8f61ca22d953da70a570624951abcacb875c3ce3f309ba7c1",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://ceqanet.lci.ca.gov/2008121030",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/kern-airport-local.txt",
+          "receiptSha256": "bfcee976573d6b3c979a477ec5f291ce55c9f7163a26674c53d066cdd9a45baf",
+          "recordedReceiptHashVerified": null,
+          "readScope": "Complete saved CEQAnet project text; title, airport description and Location Cities/Counties fields.",
+          "support": "Meadows Field Airport Master Plan identifies Bakersfield and Kern County. Historical location evidence only; no assumption that a current project or flight operation is approved."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/lake-county/",
+      "beforeSha256": "51b242d22adf0e5b376053a415c458dfb68f237af0edbb9337cb89404e17728b",
+      "afterSha256": "e1e4366047fd61b3ed41339961227ec41481874fd4f26d9f1d281743cb765f97",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "8df5cd1454df4e427d563c9b37ef6a1823a86b901acaaa9a0e1cc0c16048518a",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2200+Lakeshore+Blvd%2C+Lakeport%2C+CA+95453&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/lake-geocoder.txt",
+          "receiptSha256": "07ad4b359db310fcadf5ce2130a058b5cb6ddf0a74baf15799aca885f0da93d5",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "2200 Lakeshore Blvd, Lakeport, CA 95453"
+          },
+          "matchedAddress": "2200 LAKESHORE BLVD, LAKEPORT, CA, 95453",
+          "county": [
+            {
+              "name": "Lake County",
+              "geoid": "06033"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/los-angeles-county/",
+      "beforeSha256": "91a2f6073819d123e2bdd5a53df21a6e0ecbdfc58b8066a304f1f36f603951fd",
+      "afterSha256": "2670b1bcc31fc0ee5f4c56695692c942e4432010ee89b89cfae137b490bed7db",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "2c5b75bb6ce6bae40965ba91d9070c4958a03ca27aa3e500741938e98126700f",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=7758+Sunset+Blvd%2C+Los+Angeles%2C+CA+90046&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/los-angeles-geocoder.txt",
+          "receiptSha256": "2ca2082b6079173a3b2762012facce902a46a3f2d5a103fd3729aeb23e64abfc",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "7758 Sunset Blvd, Los Angeles, CA 90046"
+          },
+          "matchedAddress": "7758 W SUNSET BLVD, LOS ANGELES, CA, 90046",
+          "county": [
+            {
+              "name": "Los Angeles County",
+              "geoid": "06037"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/madera-county/",
+      "beforeSha256": "c888540372bf7d53f4a85183337f28f121201d0d7850f7879ff751efd479e2fa",
+      "afterSha256": "1f17cf7b5b4362108df0a582c8d53a6785fc9a25bd559506a9c6ec5f81e6fa36",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "0621d84ed8574b123e076f97f0f94533c9f859f0a187674d69a689ee3dfbd658",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=21821+Avenue+16%2C+Madera%2C+CA+93637&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/madera-geocoder.txt",
+          "receiptSha256": "9658d6252f1c9818448d6b25553f6a8bd01c5437b85e4ba55e3bfb622e44a9e9",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "21821 Avenue 16, Madera, CA 93637"
+          },
+          "matchedAddress": "21821 AVE 16, MADERA, CA, 93637",
+          "county": [
+            {
+              "name": "Madera County",
+              "geoid": "06039"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/marin-county/",
+      "beforeSha256": "6cf58f9d5ba3045709cbf30420dcb1308bde7e1149ab559c56384ae592eec125",
+      "afterSha256": "a2157c61d70c1bb864b639a6063b10fce31c975dd23e452cd3dcd02d73ad2aa9",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "9b1851717c19112028e50a3ad6453a589bdc380530aab2262d4161f42ae71e72",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=110+Loch+Lomond+Dr%2C+San+Rafael%2C+CA+94901&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/marin-geocoder.txt",
+          "receiptSha256": "6a93c9bd0c38bea0b6ac848ddefc9a448bc94888b5698d4524e26e234b9e87cb",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "110 Loch Lomond Dr, San Rafael, CA 94901"
+          },
+          "matchedAddress": "110 LOCH LOMOND DR, SAN RAFAEL, CA, 94901",
+          "county": [
+            {
+              "name": "Marin County",
+              "geoid": "06041"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/mendocino-county/",
+      "beforeSha256": "09794d2d307c6971b9f009f0d57cb2ef161fdeff45acc6f5c7594b140b054918",
+      "afterSha256": "81947ad7d8f98cbad189c4d71ef569245ffc1d6aa4034abc5256793fb3229ca4",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "566f36fe452c96fa609bd626cb357c0c70369ba6999af12fe451ca7c51e15ed7",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=14660+Mitchell+Creek+Dr%2C+Fort+Bragg%2C+CA+95437&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/mendocino-geocoder.txt",
+          "receiptSha256": "ec81898124d3259bfa70d9cfc07424595d5b53280f19046a60ecc3e31e2a024b",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "14660 Mitchell Creek Dr, Fort Bragg, CA 95437"
+          },
+          "matchedAddress": "14660 MITCHELL CREEK DR, FORT BRAGG, CA, 95437",
+          "county": [
+            {
+              "name": "Mendocino County",
+              "geoid": "06045"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/merced-county/",
+      "beforeSha256": "894b6184a1535aa40df5c795732d25bcf296aa3365d18edaf5e5175294064924",
+      "afterSha256": "2694189248e1fd2ec3df4acaff78d9fa3238cd82893d0251309b6b3d45b61503",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "4e1d5b7e4a1ecc252b8a00d9234df6da13ee5568f0a1b83f791ee794b746641b",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1300+B+St%2C+Merced%2C+CA+95341&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/merced-geocoder.txt",
+          "receiptSha256": "b1f9c538a708a077390ac6945a85d3f33afbe8c071d1a8b7c8e353856bf264fb",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "1300 B St, Merced, CA 95341"
+          },
+          "matchedAddress": "1300 B ST, MERCED, CA, 95341",
+          "county": [
+            {
+              "name": "Merced County",
+              "geoid": "06047"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/modoc-county/",
+      "beforeSha256": "1c44ff7c1f7d299168aee899e36d9305ffbbf9ee4a8ef1d496e8408af81ddda2",
+      "afterSha256": "ba76b889c7bdf4ff22180d363b73415679cc5346c6e3cfb27584a99de8cfde67",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "6001e1b96ee9b64ed3b2f669de83704667b18ed1c64d9f739f59267421e7066d",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=67254+Highway+299+E%2C+Cedarville%2C+CA+96104&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/modoc-geocoder.txt",
+          "receiptSha256": "6ad1c3a4198c02e53bc544649daa2af3e7bfe0202cc10602aed1794d5c0014f2",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "67254 Highway 299 E, Cedarville, CA 96104"
+          },
+          "matchedAddress": "67254 STATE RTE 299, CEDARVILLE, CA, 96104",
+          "county": [
+            {
+              "name": "Modoc County",
+              "geoid": "06049"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/mono-county/",
+      "beforeSha256": "65940f7e054b0c967bb07f6ce53fc108df6d1eb8a15f925fe02c39a32fe5943c",
+      "afterSha256": "da7e733299835c565f7e04da2651aa608390a2d22b54471374221e675ecb1c01",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "4aec13603ab28909ef7557efda82eae2f94829d26f93e5f97be00da057c93d87",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=3043+Main+St%2C+Mammoth+Lakes%2C+CA+93546&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/mono-geocoder.txt",
+          "receiptSha256": "1a0d01b55857df0808ea9b5e450cf7d08f5a22fc50af6ccd4dd0f04911947373",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "3043 Main St, Mammoth Lakes, CA 93546"
+          },
+          "matchedAddress": "3043 MAIN ST, MAMMOTH LAKES, CA, 93546",
+          "county": [
+            {
+              "name": "Mono County",
+              "geoid": "06051"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/monterey-county/",
+      "beforeSha256": "9daf99faa322a24e677de13769f7c8a5b91276e22207d6508757721f183205c2",
+      "afterSha256": "137d4af4b2773717e7fcc0f2af2b7b055357249d381bd9f9dd1c7b6d4da90076",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "d8bc899ab088e8934420645901c6d7dc200dc1ee6e0276cce32f8730119a8948",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=32+Cannery+Row%2C+Monterey%2C+CA+93940&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/monterey-geocoder.txt",
+          "receiptSha256": "481eb08b4ae42a3224d168f611f9acb143b5a6c96e473346e41f29b14094f517",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "32 Cannery Row, Monterey, CA 93940"
+          },
+          "matchedAddress": "32 CANNERY ROW, MONTEREY, CA, 93940",
+          "county": [
+            {
+              "name": "Monterey County",
+              "geoid": "06053"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/napa-county/",
+      "beforeSha256": "bbafd5c3eb0cf2674b8553ae35075e1d61881d1ed673aaef6d80575cb2cc1150",
+      "afterSha256": "68d0460014612d99264c785c64148eccecd3a9b1dd59a6ec43dc72569316b12f",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "96f72691cd584c809b2f5e6cb992b7b80d53d613a1348f59e4629655edf1997c",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1566+Airport+Blvd%2C+Napa%2C+CA+94558&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/napa-geocoder.txt",
+          "receiptSha256": "eba43ca2eeee0ef46772f514fc43d063e1be0beff79008947abe7aa169d9f391",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "1566 Airport Blvd, Napa, CA 94558"
+          },
+          "matchedAddress": "1566 AIRPORT BLVD, NAPA, CA, 94558",
+          "county": [
+            {
+              "name": "Napa County",
+              "geoid": "06055"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/nevada-county/",
+      "beforeSha256": "c9d79036cb9630e06dfaf23a75d4ad18f7afba8199899f2e8063f4641b63b391",
+      "afterSha256": "292f779b78925cfe9fa4fc2eb18386991954ea0f565a0473b7bcdd5ae74ccf7a",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "47c95f82c9757aae97369c77d18eb256966f0dadce8b73f3386aa036d25d6fba",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=754+Zion+St%2C+Nevada+City%2C+CA+95959&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/nevada-geocoder.txt",
+          "receiptSha256": "74094e4aadad742d91d32ab4c78a6ddec635fb88ecc149d2efb80382eeb33393",
+          "recordedReceiptHashVerified": null,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "754 Zion St, Nevada City, CA 95959"
+          },
+          "matchedAddress": "754 ZION ST, NEVADA CITY, CA, 95959",
+          "county": [
+            {
+              "name": "Nevada County",
+              "geoid": "06057"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/colorado/kiowa-county/",
+      "beforeSha256": "1cf72314f962253b1f2181fbe117fe506e32f9f1a74b5dc66273f91c7557cbc0",
+      "afterSha256": "084b0640a215f54499c554be07e19f179a6327d87bb8c61f1869000512dfff2b",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "30511878ec93813309b228591a3749b6000a739508dda56731bc4f2ff3eb6cd1",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1211+Luther+Street%2C+Eads+CO&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/colorado-kiowa-clinic.json",
+          "receiptSha256": "3f4c09c41a79f81d1b2689bb4a7450f9d5f7a731d65a09e1b877053fdd34724c",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "1211 Luther Street, Eads CO"
+          },
+          "matchedAddress": "1211 LUTHER ST, EADS, CO, 81036",
+          "county": [
+            {
+              "name": "Kiowa County",
+              "geoid": "08061"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        },
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1208+Luther+Street%2C+Eads+CO&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "receipt": "evidence/human-quality-20261027/geography-rechecks/colorado-kiowa-hospital.json",
+          "receiptSha256": "3f8040492b5c187c22ef3a78c0e9e90ae32ef98e54988439c1a53d69fe43d9d8",
+          "recordedReceiptHashVerified": true,
+          "readScope": "result.input.address and complete addressMatches[0], with matchedAddress and geographies.Counties evaluated for the locality claim.",
+          "inputAddress": {
+            "address": "1208 Luther Street, Eads CO"
+          },
+          "matchedAddress": "1208 LUTHER ST, EADS, CO, 81036",
+          "county": [
+            {
+              "name": "Kiowa County",
+              "geoid": "08061"
+            }
+          ],
+          "support": "The saved exact street-address result places the published premises in the named county; postal-city names are not treated as county proof."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/haines-borough/",
+      "beforeSha256": "9cad1dcaaf19de20af35fdee30aca73e557fe20726959d0adaac24a5a424a6c3",
+      "afterSha256": "c72bed09f2d96ff0d96b95cd86cf4bca83b60c9db05b7cd3b7fbe9e6eb4b31fe",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "5d310f917cc92d46fac42699e17b6f627053ab5f599373a86fc99415252aef61",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/haines/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/haines-locality.txt",
+          "receiptSha256": "828c153d695bd2cc95e7bc373d16ec05670100abfbe4c8635990453197bac96b",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3932,
+            "textEndExclusive": 4285
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Haines Borough Haines Borough Regional Corporation Sealaska Alaska Native Regional Corporation Electric Grid Upper Lynn Canal Grid Latitude, Longitude 59.23431397, -135.44787598 School District(s) Haines Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/hoonah-angoon-census-area/",
+      "beforeSha256": "1b9c51a17fe3d78491e3c5b1cb3eb9eebbe905e3e2e936239d6dc225973b2b5f",
+      "afterSha256": "eff502b747edb56211e98d88a341b2cf72fa7c7339d9845925575ee556a8414d",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "a0e71a738202327110a03aef685a0260ab7deff7a0ba39a23751648c33823b84",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/hoonah/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/hoonah-locality.txt",
+          "receiptSha256": "15777d919891302463bcd92edd6df9c44d2053eddadd651632ca2c22f313d46c",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3958,
+            "textEndExclusive": 4411
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Hoonah Borough None (in the Unorganized Borough) Census Area Hoonah-Angoon Census Area Regional Corporation Sealaska Alaska Native Regional Corporation Village Corporation Huna Totem Corporation Electric Grid Hoonah Grid Latitude, Longitude 58.10953807, -135.44570828 School District(s) Hoonah City School District (City School District)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/juneau-city-and-borough/",
+      "beforeSha256": "e232c44a82580009ffecfb30bf681500043dfe6577878464c56d9119fa004f34",
+      "afterSha256": "4429a4c1cdb15bb1971861198e6c7207b63b40bc4ff96e8dcf76c12e562ed1b7",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "796f128bbd66415e9489cbb38ad2c17279a2a112c215a4eae66dba0be4e07e7e",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/juneau/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/juneau-locality.txt",
+          "receiptSha256": "cc369b01f54f9487d670c5582f42b3c0229cca198f3b4639bb166c3807262ca7",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3936,
+            "textEndExclusive": 4333
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Juneau Borough City and Borough of Juneau Regional Corporation Sealaska Alaska Native Regional Corporation Village Corporation Goldbelt Incorporated Electric Grid Juneau Grid Latitude, Longitude 58.29983971, -134.40663973 School District(s) Juneau Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/kenai-peninsula-borough/",
+      "beforeSha256": "0f32622107c4be1d9fa5a2883bb0918ddfd42612577ec03540e8fc9899df5140",
+      "afterSha256": "c15e906129fce994ed31a8137755e37279200d5cb564f0a063a509ce779a8eed",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "ff6e53f0699ff8da3a2e528cbe58d3cc073f011371ab0a2d8be1b085cbb2ec27",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/seward/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/seward-locality.txt",
+          "receiptSha256": "44a0ae854c8eb3f4879db6dd5dcb6b90cfbe9e3857e37c33c658b583215946b8",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3935,
+            "textEndExclusive": 4297
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Seward Borough Kenai Peninsula Borough Regional Corporation Chugach Alaska Native Regional Corporation Electric Grid Railbelt Grid Latitude, Longitude 60.10312795, -149.43922421 School District(s) Kenai Peninsula Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/ketchikan-gateway-borough/",
+      "beforeSha256": "7042501bc0030890bbc605f07a1ac0031d4e56276ead6879a2bc6f3bcb4c8acf",
+      "afterSha256": "81cc17d267e1248bf1d036b35889b2c28d3811339c60ef1059751ac7157b76c7",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "9c02525c7b736f3b629cdc9a8f316c9aaa5178727a0a2ebafc4b789b28d859fa",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/ketchikan/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/ketchikan-locality.txt",
+          "receiptSha256": "af499cff68b811a71d78a61751aafe61ff62180807553d8712a16dc19ad8e81a",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3940,
+            "textEndExclusive": 4307
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Ketchikan Borough Ketchikan Gateway Borough Regional Corporation Sealaska Alaska Native Regional Corporation Electric Grid Seapa Grid Latitude, Longitude 55.34243333, -131.64802329 School District(s) Ketchikan Gateway Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/kodiak-island-borough/",
+      "beforeSha256": "f6602e05021e31ad57e9d7fa452d480797b7a41a8d4b26a68ae6b17f49c791ad",
+      "afterSha256": "187ab684bd9c66a76ca9388f4c351032af54b3853f35729a3b9a86e24e2ce82a",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "50bddee814acb62e0de0a154a672ff0cbfb92dce2184d8033a4c7c87c6a6c7fe",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/kodiak/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/kodiak-locality.txt",
+          "receiptSha256": "f6cddd1121faa2bc4e8e71ac2968676aaf7f3b747a47edee0d3da9eed3c46bd5",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3931,
+            "textEndExclusive": 4337
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Kodiak Borough Kodiak Island Borough Regional Corporation Koniag Alaska Native Regional Corporation Village Corporation Natives of Kodiak Incorporated Electric Grid Kodiak Grid Latitude, Longitude 57.79300136, -152.39748118 School District(s) Kodiak Island Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/kusilvak-census-area/",
+      "beforeSha256": "46af4da0f0e6cd443cb1af1229f4c8ec7842527bb97bb7e662e2d46319a094de",
+      "afterSha256": "75254559a4b677a68dd167823076bbc41c48cf6fcc3cf38afefc85a6fc69be58",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "2431e51637863ffba4d2a0f9ff739c58dc5869d98762de02b660aa8bb10d652d",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://cityofemmonak.org/community-1",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/kusilvak-locality.txt",
+          "receiptSha256": "5373a5e21fac623e6e097ace5cc7c86092528b8c545f9a88480bcc2f4df88a18",
+          "recordedReceiptHashVerified": true,
+          "readScope": "Entire extracted municipal community page; Land paragraph evaluated for geographic assertion.",
+          "support": "City of Emmonak explicitly places the community within Kusilvak Census Area. The candidate identifies the main store in Emmonak and does not treat all delivery destinations as that premises."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/lake-and-peninsula-borough/",
+      "beforeSha256": "2ed8dc80c0c0c16be73d9bae0a2dd02589983ba31c7b2710f1039fa3a51fe0ca",
+      "afterSha256": "3d7bd1526811d2ec561e0d8e466ce9c6711c80d5e2677248457f181dd3a91234",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "3bacff02d63bbef5d2cc57621094ebd315c7445ec8b92609d6c4ef2ca7f26729",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://lakeandpen.com/port-alsworth",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/lake-locality.txt",
+          "receiptSha256": "31a6ca1c31d3ddffd77bfd9ce72bc0a9bb09391e4686c70c5122e29b2ed4996e",
+          "recordedReceiptHashVerified": true,
+          "readScope": "Entire extracted Borough community page: Port Alsworth title and community description, with Our Communities context.",
+          "support": "The borough publishes Port Alsworth as one of its communities. Candidate explicitly distinguishes resort locality from Anchorage passenger check-in."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/alaska/matanuska-susitna-borough/",
+      "beforeSha256": "a1a8726edf1dce8bbe7c977760ee6e8d3d57d691a2bd8e2a4515e0882a192f96",
+      "afterSha256": "724dd3c1b23fc725d5de3cd707c9b97052959b4eef717e0921b183d7271c145e",
+      "verdict": "accept",
+      "changedFields": [
+        "sources"
+      ],
+      "candidateMainTextSha256": "237dde98ee18327a45804d8b717e44befbc515ce24e1d4194a6016e9662374fe",
+      "reviewScope": "Independent correction review after reading complete candidate main text and full ledger before/after edits; no numeric page rating or release approval.",
+      "checks": {
+        "currentSourceMatchesAfterHash": true,
+        "reconstructedBeforeMatchesBeforeHash": true,
+        "changedSourceUrlsRendered": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/talkeetna/general",
+          "receipt": "evidence/wy-hi-ak-expansion-20261026/ak-002/receipts/talkeetna-locality.txt",
+          "receiptSha256": "289d4ceb5cb77c01da3f16a6f075030bed97824e5bb577a9190d0c0c011df326",
+          "recordedReceiptHashVerified": true,
+          "readScope": {
+            "section": "Full Geography / Location and regional associations table",
+            "textStart": 3943,
+            "textEndExclusive": 4315
+          },
+          "support": "Geography Transportation Legislative Districts Geography Location and regional associations View Dataset Community Talkeetna Borough Matanuska-Susitna Borough Regional Corporation Cook Inlet Alaska Native Regional Corporation Electric Grid Railbelt Grid Latitude, Longitude 62.32317025, -150.11199934 School District(s) Matanuska-Susitna Borough School District (Borough)",
+          "scopeLimit": "Community-to-borough/census-area identity only; no inference that all trips or remote destinations are inside it."
+        }
+      ],
+      "reasons": [
+        "Added citation supplies the missing public geography support for the existing narrowly framed locality statement.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "Original operator sources, operating qualifications and public-example/non-client distinction remain."
+      ],
+      "unresolvedChecks": []
+    }
+  ],
+  "faqs": [
+    {
+      "route": "/areas/north-carolina/ashe-county/",
+      "beforeSha256": "d5e9448cafd07ecd7584d64e6677823e514e3ee1f6b01518ea37773dbf282638",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Will updating our website also correct outdated information on other sites?",
+      "candidateMainTextSha256": "4ae33af33d6dfe0ed9f09f7810dc0d2d0a78594082adf40d00ea74d08172fc4a",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Record external discrepancies retains outside-publisher control, separately authorized follow-up, and the lack of a guaranteed search refresh time.",
+        "The boundary paragraph retains separate scope for listing work.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/pennsylvania/philadelphia-county/",
+      "beforeSha256": "01e0060b6694f648623473d6293a0ddba5ec8c1946d23c489b85f95a42b4118d",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Can we show what an assessment report looks like without publishing a full client report?",
+      "candidateMainTextSha256": "ec8656a6b2db42aa22afda45293ee07203d1639af1cfba1803c7ea04c4db308a",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Name and illustrate the output retains owner approval, illustrative excerpt/contents outline, fictional labeling and the distinction from completed client work.",
+        "The useful-details list requires confidential material removed; the boundary paragraph excludes specialist assessment and professional advice.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/iowa/allamakee-county/",
+      "beforeSha256": "f1926f31e8a5b80a262d4b6ae1f27b8dd6ebae56275258fc14396924eb8a6964",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Can guests keep the arrival instructions when cell service is unavailable?",
+      "candidateMainTextSha256": "1bab3a8b3823c14b285f6c1deee8defb44c16dff596b20b0957257c06298019c",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Make preparation usable away from a signal retains the dated printable arrival sheet, approved directions/check-in details and current-information source.",
+        "The boundary paragraph retains that a downloadable sheet is neither offline navigation nor a conditions assessment, and staff confirm conditions/departure.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/iowa/dallas-county/",
+      "beforeSha256": "fba1c80cf142231f1eb4449e46c89ef90aa4a4f461a959d33aa70e36e86a446d",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Do you need access to our payment account to explain the statement name?",
+      "candidateMainTextSha256": "b77131db040a6e20574ccc217a1373342562508c30caa76498763e00b136faaf",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Give receipt questions a staff route retains owner-approved descriptor and redacted public confirmation wording without payment-record access.",
+        "The boundary paragraph excludes customer/card/transaction identifiers and separately scopes reconciliation, customer-record access and automated reminders.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/iowa/fayette-county/",
+      "beforeSha256": "03494fde22a5dde4a33f5fd22ddaf495f6e6990212b1ac64be822accf91bc6f8",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Can the project include correcting directions on third-party listings?",
+      "candidateMainTextSha256": "bf1fd7d8d666ce2d53862e55c6edc5efd546016cf925252a67689afb74b5a523",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Agree where corrections will be made retains named third-party destinations, their controllers and responsibility for requesting each change.",
+        "Body and useful details retain authoritative owner-verified addresses, agreement on included external listings and the fact that a website edit does not update maps or booking providers.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    },
+    {
+      "route": "/areas/california/yuba-county/",
+      "beforeSha256": "c78b3135b14ce2ff56d4f095e6cc67b549447eb33359858fd3eddbdc674630d7",
+      "afterSha256": "eb045d78d273107348b0300c01d29b7552d622abbc6faf81b3ec55359aa9950c",
+      "verdict": "accept",
+      "removedQuestion": "Can a group-planning page promise neighboring campsites?",
+      "candidateMainTextSha256": "e6494ff5b4fa0bb01148b29e19988be9ae0b0258448b1c93f3e6420bfa8303ee",
+      "reviewScope": "FAQ-removal correction only; full removed answer compared against complete candidate main text, not a numeric page audit.",
+      "checks": {
+        "currentFaqAbsent": true,
+        "currentFaqMatchesAfterHash": true,
+        "removedFaqMatchesBeforeHash": true,
+        "completeCandidateMainTextRead": true
+      },
+      "evidence": {
+        "ledger": "tests/fixtures/human-quality-edits.json",
+        "currentFaqSource": "src/service-faqs.json",
+        "candidateInventory": "output/human-quality-20261027/final-inventory/pages.jsonl"
+      },
+      "reasons": [
+        "Treat nearby sites as a request retains staff review and no neighboring-allocation promise; Keep reservations individual retains each household booking and confirmation.",
+        "The public example preserves that site numbers are not guaranteed and assignments can change, while the boundary retains staff decisions and separately assessed inventory/payments/changes.",
+        "Candidate retains all three website price/page tiers, scope and approval language, paid-file/account ownership, optional care, and contact/pricing actions.",
+        "No unique material answer, qualification or commercial commitment is lost by removing this duplicate FAQ."
+      ],
+      "unresolvedChecks": []
+    }
+  ]
+}

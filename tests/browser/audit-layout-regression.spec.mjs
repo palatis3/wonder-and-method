@@ -18,13 +18,20 @@ test('Services separates three needs and keeps every choice readable at enlarged
  }
 });
 
-// Floating tools remain available while scrolling and yield to keyboard focus.
+// Floating tools yield to prose where narrow viewports have no clear slot.
 function coveredContent(){
  const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(node=>node.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})).map(node=>({name:node.className,r:node.getBoundingClientRect()}));
  const hits=[],overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
  for(const node of document.querySelectorAll('main p,main li,main h1,main h2,main h3,main a,main label,main input,main textarea,main button,main summary,main video,footer a')){
-  if(node!==document.activeElement||!node.checkVisibility({checkVisibilityCSS:true}))continue;
-  for(const control of floats)if(overlaps(node.getBoundingClientRect(),control.r))hits.push(control.name+' / '+node.tagName+' '+node.textContent.trim().slice(0,80));
+  if(!node.checkVisibility({checkVisibilityCSS:true}))continue;
+  const box=node.getBoundingClientRect();if(box.bottom<0||box.top>innerHeight)continue;
+  if(node===document.activeElement)for(const control of floats)if(overlaps(box,control.r))hits.push(control.name+' / focused '+node.tagName);
+  if(!matchMedia('(max-width:767px),(max-height:520px)').matches)continue;
+  const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode())if(walker.currentNode.textContent.trim()){
+   const range=document.createRange();range.selectNodeContents(walker.currentNode);
+   for(const rect of range.getClientRects())for(const control of floats)if(overlaps(rect,control.r))hits.push(control.name+' / '+walker.currentNode.textContent.trim().slice(0,80));
+  }
  }
  return {hits,visible:floats.filter(({r})=>r.bottom>0&&r.top<innerHeight).length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1).map(({name})=>name)};
 }
@@ -41,18 +48,22 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
   for(const y of stops){
    await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},y);
    await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-   await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
-   if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
+   if(width>767&&height>520){
+    await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
+    if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
+   }
    await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
-   const result=await page.evaluate(coveredContent);expect(result.hits,`${path} at ${y}`).toEqual([]);expect(result.outside).toEqual([]);visible+=result.visible;
+   await expect.poll(async()=>(await page.evaluate(coveredContent)).hits,`${path} at ${y}`).toEqual([]);
+   const result=await page.evaluate(coveredContent);expect(result.outside).toEqual([]);visible+=result.visible;
    const focused=await page.evaluate(()=>{
     const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect());
     const target=[...document.querySelectorAll('main a[href],main button,main summary,footer a[href]')].find(n=>{if(!n.checkVisibility({checkVisibilityCSS:true}))return false;const r=n.getBoundingClientRect();return floats.some(f=>Math.min(r.right,f.right)>Math.max(r.left,f.left)+1&&Math.min(r.bottom,f.bottom)>Math.max(r.top,f.top)+1);});
     if(!target)return false;target.focus({preventScroll:true});return true;
    });
-   if(focused){await expect.poll(async()=>(await page.evaluate(coveredContent)).hits).toEqual([]);await page.evaluate(()=>document.activeElement.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();}
+   if(focused){await expect.poll(async()=>(await page.evaluate(coveredContent)).hits).toEqual([]);await page.evaluate(()=>document.activeElement.blur());}
   }
   await page.locator('#site-help').scrollIntoViewIfNeeded();
+  await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
   await expect(page.locator('.back-to-top')).toBeInViewport();await expect(page.locator('.support-chat-launch')).toBeInViewport();
   const help=await page.locator('#site-help').evaluate(el=>({top:el.getBoundingClientRect().top,mainBottom:document.querySelector('main').getBoundingClientRect().bottom}));expect(help.top).toBeGreaterThanOrEqual(help.mainBottom);
  }

@@ -5,6 +5,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
 import faqs from '../src/service-faqs.json' with {type:'json'};
+import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
+const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/nv-wa-approved-paths.json' with {type:'json'};
 import preservation from './fixtures/nv-wa-preservation.json' with {type:'json'};
 import decisions from '../operations/nv-wa-expansion-20261026/county-decisions.json' with {type:'json'};
@@ -22,9 +24,9 @@ test('Nevada/Washington preserve all 1983 prior records and all FAQs with exactl
  assert.equal(locationServices.length,2266);assert.equal(approved.length,52);
  assert.deepEqual([...approved.slice(2)].sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxCopyEdits(byPath.get(path))),hash,path);
- assert.deepEqual(Object.keys(faqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(coUtPrPreservation.newFaqs)].sort());
+ assert.deepEqual(Object.keys(historicalFaqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(coUtPrPreservation.newFaqs)].sort());
  for(const [path,hash]of Object.entries(preservation.faqs))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
- assert.equal(Object.keys(faqs).length,208);assert.equal(Object.values(faqs).flat().length,278);
+ assert.equal(Object.keys(historicalFaqs).length,208);assert.equal(Object.values(historicalFaqs).flat().length,278);
  assert.deepEqual(['nevada','washington'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[14,36]);
 });
 test('all 56 areas retain directory destinations and the six no-addition decisions remain directory-only',()=>{
@@ -49,3 +51,4 @@ test('new briefs have actionable scopes, valid directory links and online-provid
  }
  const carson=byPath.get('/areas/nevada/carson-city/');assert(carson);assert.doesNotMatch(carson.title,/Carson City County|Carson City City/);
 });
+

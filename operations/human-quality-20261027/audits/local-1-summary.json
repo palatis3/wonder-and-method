@@ -1,0 +1,31 @@
+{
+  "status": "complete-content-review-and-replacement-drafts",
+  "assignedCount": 378,
+  "auditCount": 378,
+  "draftCount": 378,
+  "unauditedRoutes": [],
+  "draftBackfill": [],
+  "caps": {
+    "majorBurden": 376,
+    "noIndependent": 1
+  },
+  "scope": "Complete rendered main-text editorial review; visual/accessibility/interaction unknown; source facts inherited, not freshly verified",
+  "sharpestIssues": [
+    "Repeated summary, narrative, table, options and questions obscure useful local decisions.",
+    "Several headings and customer-next-step labels describe designer tasks rather than visitor actions.",
+    "Some sibling examples need stronger independent purpose, not cosmetic localization."
+  ],
+  "validation": {
+    "exactAssignmentCoverage": true,
+    "uniqueRoutes": true,
+    "baselineHashesMatch": true,
+    "evidencePassagesExact": true,
+    "siblingRoutesExist": true,
+    "draftSchemaValid": true,
+    "visualAndInteractionChecksCompleted": false,
+    "freshSourceChecksCompleted": false
+  },
+  "draftNeedsResearch": [
+    "/areas/florida/walton-county/"
+  ]
+}

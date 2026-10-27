@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const root='operations/human-quality-20261027',receipt=root+'/research/residual-e-final-repair.json',route='/areas/texas/bosque-county/';
+assert(!fs.existsSync(receipt));
+const file=root+'/drafts/local-5.jsonl',rows=fs.readFileSync(file,'utf8').trim().split(/\r?\n/).map(JSON.parse);
+const review=fs.readFileSync(root+'/audits/local-after-residual-e.jsonl','utf8').trim().split(/\r?\n/).map(JSON.parse).find(r=>r.route===route);
+const hash=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex'),d=rows.find(r=>r.route===route),before=structuredClone(d);
+assert(review?.requiredFixes.length);assert.equal(hash(d),review.draftSha256);
+d.decisions[1].body='Explain when prices become fixed and identify the instructions that apply after acceptance. Entry-mail and physical-artwork addresses may differ. Label each address by its purpose so an artist does not reuse an entry destination for shipment of an accepted piece.';
+d.decisions[2].label='Plan the artwork’s return or pickup';
+d.decisions[2].body='Keep the organization’s approved carrier, return and pickup instructions with the accepted-work stage. A fictional artist question could ask, “If my accepted piece is not sold, which return or pickup arrangement must I prepare?” Staff should resolve that plan using the applicable prospectus. The question does not invent prepaid shipping, a carrier commitment or a collection deadline.';
+assert.equal(d.inputHash,before.inputHash);
+const edit={route,partition:5,before,after:structuredClone(d),beforeSha256:hash(before),afterSha256:hash(d),requiredFixes:review.requiredFixes};
+fs.writeFileSync(file,rows.map(r=>JSON.stringify(r)).join('\n')+'\n');
+fs.writeFileSync(receipt,JSON.stringify({date:'2026-10-27',status:'implemented-pending-independent-recheck',routes:[route],drafts:[edit],records:[],faqs:[],reviewEvidence:[root+'/audits/local-after-residual-e.jsonl'],limits:'Draft only. Historical disclosure and annual-call FAQ preserved. No current financial, carrier, deadline or event terms invented.'},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({drafts:1,imported:false}));

@@ -1,0 +1,131 @@
+{
+  "status": "complete-content-recheck-final-evidence-pending",
+  "reviewer": "Independent Astra",
+  "reviewedAt": "2026-10-27",
+  "assignedCount": 43,
+  "reviewedCount": 43,
+  "pendingCount": 0,
+  "completedPackets": [
+    "packet-001.jsonl",
+    "packet-002.jsonl",
+    "packet-003.jsonl",
+    "packet-004.jsonl",
+    "packet-005.jsonl",
+    "packet-006.jsonl",
+    "packet-007.jsonl",
+    "packet-008.jsonl",
+    "packet-009.jsonl"
+  ],
+  "requiredFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "recoveryCheckpoint": "Complete. Current draft/source/body/sibling hashes, rendered candidate text, all258 quoted evidence passages, six integer ratings and weighted subtotals verified. Ready for guarded primary content acceptance; visual/accessibility/final signoff remains separate.",
+  "scope": "Independent complete-current-candidate content recheck of all43 corrected routes, including complete FAQs/source disclosures, full source entries, supplied neighbor drafts and prior findings. All43 reviews saved; no source or draft edits or import performed.",
+  "researchReceipts": [
+    "residual-continuation-repair.json",
+    "residual-a-final-repair.json",
+    "residual-c-known-repair.json",
+    "residual-c-researched-repair.json",
+    "missouri-residual-fact-recheck.json",
+    "clay-marina-access-recheck.json",
+    "greene-museum-timing-recheck.json",
+    "harrison-hickory-lodging-recheck.json"
+  ],
+  "remainingAttention": "No unresolved material candidate-content defects. Preserve explicit source uncertainty at Greene and Miller, dated closure precedence at Lincoln, and current operator confirmation boundaries. Independent content pass is not publication, visual or accessibility approval.",
+  "contentPassCount": 43,
+  "contentHoldCount": 0,
+  "unresolvedMaterialContentDefects": [],
+  "validation": {
+    "passed": true,
+    "uniqueRoutes": 43,
+    "exactAssignmentCoverage": true,
+    "currentDraftHashes": 43,
+    "currentSourceEntryHashes": 43,
+    "currentRenderedBodyHashes": 43,
+    "currentSiblingHashes": 43,
+    "currentRenderedCandidateTexts": 43,
+    "exactEvidencePassages": 258,
+    "sixIntegerRatingsPerRoute": true,
+    "weightedSubtotals": true,
+    "packetHashes": 9,
+    "unchangedRendererFileHashes": 5,
+    "validatedSourceReceiptChanges": 12,
+    "validatedFaqReceiptChanges": 3,
+    "finalScoresRemainNull": true,
+    "auditFileSha256": "89f1fadbb9fdb8f1d991818c8e5709050a40c5f9550413c63c0ec350cb1c9ffb"
+  },
+  "contentSubtotalRange": {
+    "minimum": 70,
+    "maximum": 75,
+    "outOf": 80,
+    "notNormalizedTo100": true
+  },
+  "recommendedNonblockingImprovements": [
+    {
+      "route": "/areas/indiana/jennings-county/",
+      "items": [
+        "Make the third step focus on final recipient-list checking and receiving arrangements, reducing the small repetition of shared versus personal content."
+      ]
+    },
+    {
+      "route": "/areas/indiana/knox-county/",
+      "items": [
+        "Consider a labeled folded-piece pickup versus mailing inquiry to demonstrate how the two handoff requests differ."
+      ]
+    },
+    {
+      "route": "/areas/indiana/marion-county/",
+      "items": [
+        "Shorten the paid-file FAQ to the delivery promise and link to the existing payment/cancellation terms for accounting detail."
+      ]
+    },
+    {
+      "route": "/areas/missouri/greene-county/",
+      "items": [
+        "Consider a compact notice/reply comparison to shorten the dense first step."
+      ]
+    },
+    {
+      "route": "/areas/missouri/harrison-county/",
+      "items": [
+        "Consider a compact named-cabin table for easier scanning."
+      ]
+    },
+    {
+      "route": "/areas/missouri/lewis-county/",
+      "items": [
+        "Make the two source observations more specific to cart access and reservation rules instead of repeating generic text."
+      ]
+    },
+    {
+      "route": "/areas/missouri/lincoln-county/",
+      "items": [
+        "Consider visually separating the dated closure note from normal seasonal equipment guidance."
+      ]
+    },
+    {
+      "route": "/areas/missouri/marion-county/",
+      "items": [
+        "Consider formatting the seven included buildings as a compact list."
+      ]
+    }
+  ],
+  "unresolvedOperatorFacts": [
+    {
+      "route": "/areas/missouri/greene-county/",
+      "items": [
+        "School overview and form publish different follow-up windows; the candidate dates and discloses the mismatch without inventing a reconciled promise."
+      ]
+    },
+    {
+      "route": "/areas/missouri/miller-county/",
+      "items": [
+        "Escape-game under-ten eligibility remains inconsistent in the operator page; the candidate directs the question to the operator.",
+        "No numeric escape-game booking cutoff was verified; only advance online booking is stated."
+      ]
+    }
+  ],
+  "acceptanceBoundary": "Content-only approval of these exact staged candidates. Imported render, publication, responsive visual checks, keyboard/focus/contrast/reflow/action checks and wider topical-family overlap coverage remain outside this recheck."
+}

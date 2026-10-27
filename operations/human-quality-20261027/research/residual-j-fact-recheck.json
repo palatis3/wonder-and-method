@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-27T21:37:21.609Z",
+  "scope": "Bounded official-source checks for four required corrections. WOKA current footer verified by direct HTTP because web extraction omitted it.",
+  "checks": [
+    {
+      "route": "/areas/north-carolina/tyrrell-county/",
+      "sources": [
+        {
+          "url": "https://pocosinarts.org/workshops/summer-workshop-info/",
+          "facts": "Package needs participant name/session. Street shipments: Pocosin Arts, 202 Main Street, Columbia NC 27925. USPS uses PO Box 690 instead of street address. No enrollment or delivery guarantee."
+        }
+      ]
+    },
+    {
+      "route": "/areas/ohio/ottawa-county/",
+      "sources": [
+        {
+          "url": "https://canvastraining.com/frequently-asked-questions/",
+          "facts": "Basic Workshop recommended for newcomers even with clothing/drapery/factory sewing experience; progression Basic, Advanced, Bimini Enclosure before Marine Upholstery or Rigid Enclosure. Experienced canvas fabricators speak with instructor for placement; no need to take below-level courses."
+        },
+        {
+          "url": "https://canvastraining.com/learning-path/",
+          "facts": "Named headings Basic Canvas, Advanced Canvas, Bimini Enclosure, Semi-Rigid Enclosures & Center Consoles, Upholstery Course 1 & 2. Additional machine-repair/seminar courses exist; not asserting mandatory sequence for every learner."
+        }
+      ]
+    },
+    {
+      "route": "/areas/ohio/pike-county/",
+      "sources": [
+        {
+          "url": "https://www.familywoodworksllc.com/store/p1499/8_1%2F4%22x_8_1%2F4%22_Oak_Park.html",
+          "facts": "8 1/4 by 8 1/4 inch rear opening intended for 8 by 8 inch Rookwood tile. Maker recommends confirming actual tile measurements. Not exterior dimensions or guarantee for all tiles; current order availability not asserted."
+        }
+      ]
+    },
+    {
+      "route": "/areas/oklahoma/adair-county/",
+      "sources": [
+        {
+          "url": "https://visitwoka.com/season-pass/",
+          "facts": "10 percent rental/concession/merchandise benefit on presentation. Personal use; pass may not be shared outside immediate family. Page does not explicitly resolve a passholder purchasing a separate rental for a friend, so operator confirmation needed. Capacity limits apply, not guaranteed entry."
+        },
+        {
+          "url": "https://visitwoka.com/first-time-visit/",
+          "status": 200,
+          "checkedAt": "2026-10-27T21:37:01.781Z",
+          "closureSnippets": [
+            " there be a train click HERE for alternate directions. -Parking is $10 per vehicle. There is no overnight parking -Parking lot hours change seasonally, check park hours before you come Rentals -We offer a variety of rental equipment and rental packages -All our rentals are good for 4 h",
+            "o our full FAQ&#8217;s page, or contact us directly with questions at (918) 610-9652 PARK HOURS 8:00am-6:00pm RENTAL &amp; CONCESSION HOURS Closed for the Season EMAIL woka@grda.com PHONE 918.610.WOKA (9652) ADDRESS 474986 Twin Falls RD Watts, OK 74964 Home About Current Conditions Wave Ca"
+          ]
+        },
+        {
+          "url": "https://visitwoka.com/plan-your-visit/rentals/",
+          "status": 200,
+          "checkedAt": "2026-10-27T21:37:01.887Z",
+          "closureSnippets": [
+            "out Wave Cams Current Conditions Directions and Parking FAQs Education Inflatable Kayaking Hardshell Kayaking River Surfing Rentals At WOKA Rental and Concession Hours: Mon - Fri 10AM - 6PM Sat &amp; Sun 10AM - 5PM ALL FLOAT PASS Maximize your 4-hour water adventure! Start with one vessel and switch to ano"
+          ]
+        }
+      ]
+    }
+  ]
+}

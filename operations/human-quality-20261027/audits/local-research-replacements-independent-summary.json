@@ -1,0 +1,117 @@
+{
+  "reviewedAt": "2026-10-27",
+  "reviewType": "independent complete-prose checkpoint",
+  "reviewedCount": 14,
+  "pass": [
+    "/areas/missouri/jackson-county/",
+    "/areas/monroe-county/",
+    "/areas/nassau-county/",
+    "/areas/new-jersey/atlantic-county/",
+    "/areas/new-jersey/burlington-county/",
+    "/areas/new-jersey/camden-county/",
+    "/areas/new-jersey/cape-may-county/",
+    "/areas/new-jersey/essex-county/",
+    "/areas/new-jersey/gloucester-county/",
+    "/areas/new-jersey/hunterdon-county/",
+    "/areas/new-jersey/morris-county/",
+    "/areas/new-jersey/union-county/",
+    "/areas/niagara-county/"
+  ],
+  "fail": [
+    "/areas/florida/walton-county/"
+  ],
+  "findings": [
+    {
+      "route": "/areas/florida/walton-county/",
+      "candidateBodySha256": "c0cc0eb505b368cc6665751473b59e60404159280f768b09603a373d1c6dcc04",
+      "priority": 2,
+      "quote": "Preserve the operator's exact visitor categories. Grayton's capacity notice distinguishes reserved campers from day visitors, including people arriving on foot or by bicycle. Changing transport does not turn a day visit into the stated exception.",
+      "issue": "The question promises the reservation exception, but the answer merely says the categories differ. Readers must infer that reserved campers are admitted during a capacity closure.",
+      "requiredChange": "State the dated source rule directly: reserved campers are admitted during capacity closures, while day visitors including pedestrians and cyclists are excluded. Keep the separate emergency-closure and current-status caveats beside it."
+    }
+  ],
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "allPublicationHoldsUnchanged": true,
+  "sourceEdits": false,
+  "imports": false,
+  "builds": false,
+  "scoreMeaning": "Each per-route integer rating is a manual editorial judgment. Weighted content subtotal is out of 80 and is not normalized to 100. Content pass does not establish final rubric acceptance; visual, accessibility and built interactions remain pending.",
+  "evidenceLimitations": [
+    {
+      "route": "/areas/florida/walton-county/",
+      "limit": "Official indexed text only; direct Florida State Parks pages returned 403. Current operations are unverified."
+    },
+    {
+      "route": "/areas/missouri/jackson-county/",
+      "limit": "Program or tour availability, booking and completion checks were not tested."
+    },
+    {
+      "route": "/areas/monroe-county/",
+      "limit": "No account, redemption, ticket inventory or seating flow was tested."
+    },
+    {
+      "route": "/areas/nassau-county/",
+      "limit": "Published operator pages were read; no actual reservation update, flight tracking or payment process was tested."
+    },
+    {
+      "route": "/areas/new-jersey/atlantic-county/",
+      "limit": "Published listings read; no booking or interpretation of ambiguous deposit terms performed."
+    },
+    {
+      "route": "/areas/new-jersey/burlington-county/",
+      "limit": "Official index six months old; direct fetch timed out. No private shop/order inspected. Reconfirm present terms before any implementation."
+    },
+    {
+      "route": "/areas/new-jersey/camden-county/",
+      "limit": "Makerspace page read; registration page timed out and no current workshop inventory was verified."
+    },
+    {
+      "route": "/areas/new-jersey/cape-may-county/",
+      "limit": "No location-level stock or private inventory verified."
+    },
+    {
+      "route": "/areas/new-jersey/essex-county/",
+      "limit": "Homepage and empty RFQ cart read; quote form/FAQ returned 429. No submission verified."
+    },
+    {
+      "route": "/areas/new-jersey/gloucester-county/",
+      "limit": "Public text read; decorative package inclusion icons not reliable. No final pricing or appointment test."
+    },
+    {
+      "route": "/areas/new-jersey/hunterdon-county/",
+      "limit": "Public page read; no private booking, ratings or environmental-compliance claim adopted."
+    },
+    {
+      "route": "/areas/new-jersey/morris-county/",
+      "limit": "No booking, membership eligibility or repair diagnosis performed."
+    },
+    {
+      "route": "/areas/new-jersey/union-county/",
+      "limit": "Indexed article/service text only; direct article cache miss, homepage empty. No provider booking flow tested."
+    },
+    {
+      "route": "/areas/niagara-county/",
+      "limit": "No live seat inventory or participation approval; other restrictions still apply."
+    }
+  ],
+  "inputs": [
+    {
+      "file": "packet-001.jsonl",
+      "count": 5,
+      "sha256": "e3c9508c21ad502ed2f5ec644929a8113595493830a6bd290e663c1de5f622ba"
+    },
+    {
+      "file": "packet-002.jsonl",
+      "count": 5,
+      "sha256": "75089ccf7f4d16c7d35c42e7c471603f2136ef6b49ac447095b2a0f3c94dbc22"
+    },
+    {
+      "file": "packet-003.jsonl",
+      "count": 4,
+      "sha256": "492ed1a841aba23476a89b9b6548d1b2db817b2c53ded5fe8ebaea86036aeb0b"
+    }
+  ],
+  "remaining": "Repair Walton direct capacity exception and recheck its complete changed candidate. Complete final browser/accessibility/action checks for every route before acceptance."
+}

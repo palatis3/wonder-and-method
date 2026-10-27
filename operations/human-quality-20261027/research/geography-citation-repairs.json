@@ -1,0 +1,620 @@
+{
+  "date": "2026-10-27",
+  "status": "Citation and coverage corrections staged for independent review; no content scores assigned.",
+  "changes": [
+    {
+      "route": "/areas/alaska/haines-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/haines/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\haines-locality.txt",
+            "sha256": "828c153d695bd2cc95e7bc373d16ec05670100abfbe4c8635990453197bac96b",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3932,
+              "textEndExclusive": 4285
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/hoonah-angoon-census-area/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/hoonah/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\hoonah-locality.txt",
+            "sha256": "15777d919891302463bcd92edd6df9c44d2053eddadd651632ca2c22f313d46c",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3958,
+              "textEndExclusive": 4411
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/juneau-city-and-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/juneau/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\juneau-locality.txt",
+            "sha256": "cc369b01f54f9487d670c5582f42b3c0229cca198f3b4639bb166c3807262ca7",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3936,
+              "textEndExclusive": 4333
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/kenai-peninsula-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/seward/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\seward-locality.txt",
+            "sha256": "44a0ae854c8eb3f4879db6dd5dcb6b90cfbe9e3857e37c33c658b583215946b8",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3935,
+              "textEndExclusive": 4297
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/ketchikan-gateway-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/ketchikan/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\ketchikan-locality.txt",
+            "sha256": "af499cff68b811a71d78a61751aafe61ff62180807553d8712a16dc19ad8e81a",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3940,
+              "textEndExclusive": 4307
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/kodiak-island-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/kodiak/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\kodiak-locality.txt",
+            "sha256": "f6cddd1121faa2bc4e8e71ac2968676aaf7f3b747a47edee0d3da9eed3c46bd5",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3931,
+              "textEndExclusive": 4337
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/kusilvak-census-area/",
+      "repairs": [
+        {
+          "url": "https://cityofemmonak.org/community-1",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\kusilvak-locality.txt",
+            "sha256": "5373a5e21fac623e6e097ace5cc7c86092528b8c545f9a88480bcc2f4df88a18",
+            "readScope": "Entire extracted page text read; navigation and footer not relied on. Linked pages not read unless separately receipted.",
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/lake-and-peninsula-borough/",
+      "repairs": [
+        {
+          "url": "https://lakeandpen.com/port-alsworth",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\lake-locality.txt",
+            "sha256": "31a6ca1c31d3ddffd77bfd9ce72bc0a9bb09391e4686c70c5122e29b2ed4996e",
+            "readScope": "Entire extracted page text read; navigation and footer not relied on. Linked pages not read unless separately receipted.",
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/alaska/matanuska-susitna-borough/",
+      "repairs": [
+        {
+          "url": "https://akenergygateway.alaska.edu/explore/communities/talkeetna/general",
+          "evidence": {
+            "receipt": "evidence\\wy-hi-ak-expansion-20261026\\ak-002\\receipts\\talkeetna-locality.txt",
+            "sha256": "289d4ceb5cb77c01da3f16a6f075030bed97824e5bb577a9190d0c0c011df326",
+            "readScope": {
+              "section": "Full Geography / Location and regional associations table",
+              "textStart": 3943,
+              "textEndExclusive": 4315
+            },
+            "review": "Root read the relevant geographic relationship; reuse unchanged dated receipt, not a new live check."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/arkansas/newton-county/",
+      "repairs": [
+        {
+          "url": "https://newtoncountychamber.com/directory/buffalo-outdoor-center/",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Direct page read; corroborates the named operator and address. County activity listing supplies the surrounding context."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/kern-county/",
+      "repairs": [
+        {
+          "url": "https://ceqanet.lci.ca.gov/2008121030",
+          "evidence": {
+            "receipt": "evidence/ca-nm-expansion-20261026/ca-002/receipts/kern-airport-local.txt",
+            "review": "Root inspected Location: Cities Bakersfield; Counties Kern. Historical record used only for geography."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/lake-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2200+Lakeshore+Blvd%2C+Lakeport%2C+CA+95453&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\lake-geocoder.txt",
+            "matchedAddress": "2200 LAKESHORE BLVD, LAKEPORT, CA, 95453",
+            "county": "Lake County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/los-angeles-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=7758+Sunset+Blvd%2C+Los+Angeles%2C+CA+90046&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\los-angeles-geocoder.txt",
+            "matchedAddress": "7758 W SUNSET BLVD, LOS ANGELES, CA, 90046",
+            "county": "Los Angeles County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/madera-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=21821+Avenue+16%2C+Madera%2C+CA+93637&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\madera-geocoder.txt",
+            "matchedAddress": "21821 AVE 16, MADERA, CA, 93637",
+            "county": "Madera County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/marin-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=110+Loch+Lomond+Dr%2C+San+Rafael%2C+CA+94901&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\marin-geocoder.txt",
+            "matchedAddress": "110 LOCH LOMOND DR, SAN RAFAEL, CA, 94901",
+            "county": "Marin County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/mendocino-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=14660+Mitchell+Creek+Dr%2C+Fort+Bragg%2C+CA+95437&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\mendocino-geocoder.txt",
+            "matchedAddress": "14660 MITCHELL CREEK DR, FORT BRAGG, CA, 95437",
+            "county": "Mendocino County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/merced-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1300+B+St%2C+Merced%2C+CA+95341&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\merced-geocoder.txt",
+            "matchedAddress": "1300 B ST, MERCED, CA, 95341",
+            "county": "Merced County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/modoc-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=67254+Highway+299+E%2C+Cedarville%2C+CA+96104&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\modoc-geocoder.txt",
+            "matchedAddress": "67254 STATE RTE 299, CEDARVILLE, CA, 96104",
+            "county": "Modoc County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/mono-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=3043+Main+St%2C+Mammoth+Lakes%2C+CA+93546&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\mono-geocoder.txt",
+            "matchedAddress": "3043 MAIN ST, MAMMOTH LAKES, CA, 93546",
+            "county": "Mono County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/monterey-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=32+Cannery+Row%2C+Monterey%2C+CA+93940&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\monterey-geocoder.txt",
+            "matchedAddress": "32 CANNERY ROW, MONTEREY, CA, 93940",
+            "county": "Monterey County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/napa-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1566+Airport+Blvd%2C+Napa%2C+CA+94558&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\napa-geocoder.txt",
+            "matchedAddress": "1566 AIRPORT BLVD, NAPA, CA, 94558",
+            "county": "Napa County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/california/nevada-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=754+Zion+St%2C+Nevada+City%2C+CA+95959&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence\\ca-nm-expansion-20261026\\ca-002\\receipts\\nevada-geocoder.txt",
+            "matchedAddress": "754 ZION ST, NEVADA CITY, CA, 95959",
+            "county": "Nevada County",
+            "review": "Saved exact address result inspected; no new source fetch."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/colorado/gunnison-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=19+Emmons+Road%2C+Mount+Crested+Butte+CO&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/colorado-gunnison.json",
+            "sha256": "ed8613e70a72d42f4205db889885611dd7eafeddd8de4d450eec6f65fcf17971",
+            "matchedAddress": "19 EMMONS RD, CRESTED BUTTE, CO, 81225",
+            "county": "Gunnison County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/colorado/kiowa-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1211+Luther+Street%2C+Eads+CO&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/colorado-kiowa-clinic.json",
+            "sha256": "3f4c09c41a79f81d1b2689bb4a7450f9d5f7a731d65a09e1b877053fdd34724c",
+            "matchedAddress": "1211 LUTHER ST, EADS, CO, 81036",
+            "county": "Kiowa County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        },
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=1208+Luther+Street%2C+Eads+CO&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/colorado-kiowa-hospital.json",
+            "sha256": "3f8040492b5c187c22ef3a78c0e9e90ae32ef98e54988439c1a53d69fe43d9d8",
+            "matchedAddress": "1208 LUTHER ST, EADS, CO, 81036",
+            "county": "Kiowa County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/llano-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=604+West+Young+Street%2C+Llano+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-llano.json",
+            "sha256": "bfe6d8b5a2b9ca751f16f12cbbf8ef6e2e0d487a68824a787d7b821260d15677",
+            "matchedAddress": "604 W YOUNG ST, LLANO, TX, 78643",
+            "county": "Llano County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/lynn-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=374+FM+1317%2C+Tahoka+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-lynn.json",
+            "sha256": "5249d096f6c999d2e09302c268de724cdd1ce0b69af265f4fe3cb17db236a424",
+            "matchedAddress": "374 FM 1317, TAHOKA, TX, 79373",
+            "county": "Lynn County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/marion-county/",
+      "repairs": [
+        {
+          "url": "https://www.loc.gov/pictures/item/tx0486/",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Official indexed HABS item read; historical source used only for physical location."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/martin-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2187+County+Road+B3651%2C+Stanton+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-martin.json",
+            "sha256": "875e2e3b8c3b589d2243e889eb93eb07367faa58738a60aa83d887cdfb8e325d",
+            "matchedAddress": "2187 CO RD B3651, STANTON, TX, 79782",
+            "county": "Martin County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/mason-county/",
+      "repairs": [
+        {
+          "url": "https://atlas.thc.texas.gov/Details/5319011293",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Direct record and indexed table inspected. Historical marker address 400 differs from operator 405; only street and county used."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/maverick-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=3295+Bob+Rogers+Drive%2C+Eagle+Pass+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-maverick.json",
+            "sha256": "1e7ec01b09dfcd26448fb5b59a442501f7f61ffb4dec447820376f1f1cfd0115",
+            "matchedAddress": "3295 BOB ROGERS DR, EAGLE PASS, TX, 78852",
+            "county": "Maverick County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/milam-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=9112+North+FM+908%2C+Rockdale+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-milam-event.json",
+            "sha256": "d8453925b576c737988c86bba1ab1b0db1613b478b64a6e977dfec4a8c223cd7",
+            "matchedAddress": "9112 N FM 908, ROCKDALE, TX, 76567",
+            "county": "Milam County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        },
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=9119+North+FM+908%2C+Rockdale+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-milam-rv.json",
+            "sha256": "3da1cea46ac43f87f24e46695b790d6eaf1386b7a0d076a203c596e700b23591",
+            "matchedAddress": "9119 N FM 908, ROCKDALE, TX, 76567",
+            "county": "Milam County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/palo-pinto-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=2375+Indian+Creek+Road%2C+Mineral+Wells+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-palo-pinto.json",
+            "sha256": "16c5ab995989a6d767509120b7b2db9677a63841441f05f05b99cf8482993fa7",
+            "matchedAddress": "2375 INDIAN CREEK RD, MINERAL WELLS, TX, 76067",
+            "county": "Palo Pinto County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/real-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=144+Ranch+Road+337+East%2C+Leakey+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-real.json",
+            "sha256": "cf65b2fa312ec45e05a624a026329c2262e05cf2dd3974529d57256a45281d6e",
+            "matchedAddress": "144 RANCH RD 337, LEAKEY, TX, 78873",
+            "county": "Real County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/red-river-county/",
+      "repairs": [
+        {
+          "url": "https://www.nature.org/en-us/get-involved/how-to-help/places-we-protect/lennox-woods-preserve/",
+          "evidence": "Operator location and directions sections read directly; remove unnecessary independent-verification process claim."
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/reeves-county/",
+      "repairs": [
+        {
+          "url": "https://tpwd.texas.gov/business/feedback/meetings/2025/0821/agenda/item.phtml?item=2",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Official indexed 2026–2027 park-list exhibit read. Used for county identity only, not present operating status. Census street query returned no match."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/refugio-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=815+Commerce+Street%2C+Refugio+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/refugio-library.json",
+            "review": "Fresh public Census result inspected. State directory query returned a server error; its old process assertion is replaced."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/rockwall-county/",
+      "repairs": [
+        {
+          "url": "https://www.rockwallcountytexas.com/150/Library-Cards",
+          "evidence": "Retain county government’s own library identity and address, remove unsupported separate-directory process assertion. Census query returned no match; no match claimed."
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/sabine-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=375+Sabine+Street%2C+Hemphill+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-sabine.json",
+            "sha256": "23fed94506820d4ce3b9513df8b4a01f5f78e055b4d9ed44b60bd277b36eef57",
+            "matchedAddress": "375 SABINE ST, HEMPHILL, TX, 75948",
+            "county": "Sabine County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/san-augustine-county/",
+      "repairs": [
+        {
+          "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=701+South+Broadway+Street%2C+San+Augustine+TX&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+          "evidence": {
+            "receipt": "evidence/human-quality-20261027/geography-rechecks/texas-san-augustine.json",
+            "sha256": "5c5c9e2598d5bf409d6293b166efeb20e8d083efa04abbf3c5c412941830ceeb",
+            "matchedAddress": "701 S BROADWAY ST, SAN AUGUSTINE, TX, 75972",
+            "county": "San Augustine County",
+            "review": "Fresh public Census result, checked October 27, 2026."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/san-jacinto-county/",
+      "repairs": [
+        {
+          "url": "https://www.fs.usda.gov/sites/default/files/2022-06/GAOA-FY22-LRF-Projects.pdf",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "PDF page15 row inspected: NFS in Texas, Double Lake Recreation Area Rehabilitation, TX–San Jacinto. Historical location evidence only; no current construction or availability claim."
+          }
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/san-saba-county/",
+      "repairs": [
+        {
+          "url": "https://sansabatexas.com/come-golf-the-hill-country/",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Official city page read; establishes property relationship and outside-city location, not a Census street match."
+          }
+        },
+        {
+          "url": "https://www.hillcountryportal.com/hillcountry-swimming-holes.html",
+          "evidence": {
+            "checkedAt": "2026-10-27",
+            "review": "Independent regional directory location heading inspected and matched by park name, operator link and phone. Secondary corroboration only; other amenities, access claims and coordinates not adopted."
+          }
+        }
+      ]
+    }
+  ]
+}

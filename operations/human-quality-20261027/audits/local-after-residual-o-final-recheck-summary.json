@@ -1,0 +1,28 @@
+{
+  "status": "one-disclosure-repair-pending",
+  "assignedCount": 45,
+  "reviewedCount": 45,
+  "contentPassCount": 44,
+  "changedDisclosureSets": 25,
+  "entirelyUnchangedCandidates": 20,
+  "requiredFixes": [
+    {
+      "route": "/areas/nebraska/saunders-county/",
+      "fix": "Restore the slaughter-day anchor and both 5:30 p.m. deadlines in the source disclosure."
+    }
+  ],
+  "validation": {
+    "packets": 9,
+    "renderers": 5,
+    "currentDraftBindings": 45,
+    "currentSourceBindings": 45,
+    "currentNeighborBindings": 45,
+    "exactQuotes": 270,
+    "unchangedParagraphProofs": 45,
+    "manualChangedDisclosureSets": 25,
+    "currentCandidateBodyBindings": 45,
+    "validatedAt": "2026-10-27T23:16:46.569Z"
+  },
+  "evidenceScope": "Exact prior full reviews inherited only after deterministic equality proof for unchanged paragraphs; all 25 changed disclosure sets manually compared with prior source facts and current main context. No fresh whole-baseline reread.",
+  "limits": "Visual/accessibility/final scores remain null. No source or draft edits."
+}

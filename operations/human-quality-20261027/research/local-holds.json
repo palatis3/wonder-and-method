@@ -1,0 +1,200 @@
+{
+  "reviewedAt": "2026-10-27",
+  "status": "four-distinct-replacement-proposals-for-independent-review",
+  "method": "Read the four frozen rendered main texts and authored drafts, original comparison siblings, and additional related full pages. Researched official operator, institutional partner and government sources with web tools. Source text retrieved through search is explicitly distinguished from directly opened pages. No original audit, draft partition or website source was edited.",
+  "integrationRule": "These are proposed replacement subjects, not score changes or permission to erase baseline findings. Integrate source-entry overrides together with the proposed brief and its factual qualifications. Preserve shared commercial terms and substantive existing FAQs. Do not retain the old example's provider, description, scope prompts or unrelated guide labels around the new brief.",
+  "routes": [
+    {
+      "route": "/areas/niagara-county/",
+      "baselineRenderedSha256": "7568a516dc27725e8ca54fd0f4403501cd8ac2c5b4240a28f1ee47851bad8c9b",
+      "decision": "replace-generic-repair-example-with-boat-specific-participation-comparison",
+      "independentValue": "The same family's eligibility changes between two named boat formats at the same Lewiston operator: the height requirement is 40 inches for dry seating and 44 inches for the ordinary wet ride. A hypothetical 42-inch child illustrates why a general child ticket category or wet/dry preference cannot establish eligibility. The proposed page does not decide medical suitability or resolve contradictory power-row requirements.",
+      "comparisons": [
+        {"route": "/areas/north-carolina/alamance-county/", "read": "complete frozen mainText", "difference": "Original Niagara repeated general acceptance/review advice; Alamance already explains garment material and sample acceptance. The replacement concerns experience-specific participation requirements before selecting a tour."},
+        {"route": "/areas/oklahoma/mccurtain-county/", "read": "complete frozen mainText", "difference": "McCurtain applies one combined age-and-height prerequisite to a canoe request. Niagara compares different requirements between named formats at one departure location; the family can meet one published height condition and fail another. That comparative decision is the reason to retain this page."}
+      ],
+      "sources": [
+        {"url": "https://whirlpooljet.com/jet-boat-tickets/lewiston/", "title": "Lewiston - Whirlpool Jet Boat Tours", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; complete relevant booking and participation body read", "observations": ["Operator gives 115 S. Water Street, Lewiston, NY.", "Dry Freedom Jet minimum height is 40 inches; Wet Jet minimum is 44 inches; children are measured onsite.", "Schedules depend on weather, season and demand; walk-ins depend on availability.", "Wet Freedom wording says age 13 or older and over 100 pounds; front-row restrictions differ from other operator pages."], "evidence": "Children will be measured on-site", "use": "Location and ordinary wet/dry height comparison only; do not derive a guaranteed seat or use conflicting power-row boundary."},
+        {"url": "https://whirlpooljet.com/frequently-asked-questions/", "title": "Frequently Asked Questions - Whirlpool Jet Boat Tours", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; participation section inspected", "observations": ["Corroborates the ordinary Wet Jet and Dry Freedom height distinction.", "Wet Freedom wording uses 100 pounds rather than the Lewiston page's over-100 wording."], "evidence": "at least 13 years old and 100 lbs", "use": "Corroboration and explicit conflict identification; not a resolution of the exact weight boundary."},
+        {"url": "https://whirlpooljet.com/stay-dry/", "title": "Stay Dry - Whirlpool Jet Boat Tours", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; USA product and conditions inspected", "observations": ["Describes enclosed dry seating and the USA option.", "Its page contains different front-row age/row wording in different sections; captain and crew determine seating."], "evidence": "All seating is at the discretion of Captain & Crew", "use": "Do not publish a derived front-row rule; refer unresolved seating questions to the operator."},
+        {"url": "https://downloads.niagaracounty.gov/government/county_information/cities%2C_towns_and_villages.php", "title": "Directory of Officials - Niagara County", "accessedAt": "2026-10-27", "publishedDate": null, "access": "official county search text", "observations": ["County directory explicitly lists both the Town and Village of Lewiston among municipalities within Niagara County."], "evidence": "Links to Cities, Towns and Villages located in Niagara County.", "use": "Corroborates county relationship of the operator's Lewiston departure."}
+      ],
+      "rejectedSources": [{"url": "https://niagarajet.com/", "reason": "Explicitly identifies itself as an independent informational brand, not an official operator. No facts from it are used."}],
+      "unresolved": ["Exact Wet Freedom weight boundary and front-row age/row rules conflict within official material; omitted from the operative comparison.", "No departure availability, medical suitability, accessibility or booking flow was verified."],
+      "sourceEntryOverride": {
+        "file": "src/location-service-data.json",
+        "key": "new-york/niagara",
+        "checkedDate": "2026-10-27",
+        "decisionTitle": "Compare participation requirements for the selected boat format.",
+        "lead": "A family's preferred ride can change when each boat format has different participation requirements. A Niagara County example shows why those requirements belong beside the experience choice.",
+        "decision": "Keep the exact boat format and departure location attached to its published requirements before the visitor follows a booking link. A general child category does not establish eligibility for every format.",
+        "coverageNote": "Whirlpool Jet Boat Tours lists its American departure at 115 S. Water Street in Lewiston, a municipality identified by Niagara County's official directory. Wonder and Method works remotely from Buffalo. This is a public planning example, not a client or affiliation claim.",
+        "sources": [
+          {"url": "https://whirlpooljet.com/jet-boat-tickets/lewiston/", "label": "Whirlpool Jet Boat Tours: Lewiston departure and participation", "observation": "Lists the Lewiston departure, separate ordinary wet and dry height requirements, onsite measurement and variable schedules. Conflicting power-row wording is not adopted."},
+          {"url": "https://whirlpooljet.com/frequently-asked-questions/", "label": "Whirlpool Jet Boat Tours: format-specific requirements", "observation": "Corroborates the ordinary wet/dry height distinction; other seating and weight wording requires direct operator confirmation."},
+          {"url": "https://downloads.niagaracounty.gov/government/county_information/cities%2C_towns_and_villages.php", "label": "Niagara County: municipal directory", "observation": "Identifies Lewiston within Niagara County."}
+        ],
+        "quoteQuestions": ["Which requirements change with the selected experience?", "Can customers distinguish a ticket category from permission to participate?", "Who resolves conflicting or uncertain seating instructions?"],
+        "relatedGuides": [],
+        "preserveExistingFaqs": true,
+        "removeLegacyExampleReferences": ["Medina's Services", "small repair versus larger improvement", "generic optional county worksheet"]
+      },
+      "proposedBrief": {
+        "heading": "Compare the requirements for the boat format before choosing the ride.",
+        "intro": "Wet or dry is more than a comfort preference when the formats have different participation requirements. Your experience page can keep the chosen boat and its conditions together before a family follows the booking link.",
+        "customerQuestion": "My child is 42 inches tall. Does choosing a dry ride change which published height requirement applies?",
+        "decisions": [
+          {"label": "Name the exact experience", "body": "Use the operator's actual format names beside the relevant departure location. A broad child-ticket label or photograph should not make every boat appear interchangeable."},
+          {"label": "Compare the applicable requirements", "body": "Place the verified conditions beside each choice. In this hypothetical family example, 42 inches clears the published dry-height threshold but does not meet the ordinary wet-ride threshold. That comparison addresses height only; it does not approve participation."},
+          {"label": "Keep the operator's final review visible", "body": "Explain onsite checks and the contact route for unresolved seating or participation questions. Preserve the selected format when passing the visitor to the operator, and keep current schedules separate from the general experience description."}
+        ],
+        "ownerInputs": ["Current requirements for each named format and departure.", "Approved comparison wording and correction responsibility.", "Onsite-check, operator-contact and booking instructions."],
+        "sourceBridge": "Whirlpool Jet Boat Tours lists a Lewiston departure in Niagara County. Its ordinary Wet Jet requires a minimum height of 44 inches, while Dry Freedom Jet seating requires 40 inches; children are measured onsite. Those different thresholds support a concrete comparison before booking.",
+        "limits": "Other participation restrictions still apply, and the operator determines admission and seating. Official power-row weight and front-row wording conflict, so this example does not reproduce those rules. Confirm uncertainties directly. Live availability, eligibility automation and booking integrations require separate scope."
+      }
+    },
+    {
+      "route": "/areas/missouri/jackson-county/",
+      "baselineRenderedSha256": "9c45151c67d29d04a0c160c8a8b34ee80890dd7c3d8a42c95c558ab0c2fd044c",
+      "decision": "replace-generic-school-tour-with-curriculum-linked-simulation-choice",
+      "independentValue": "A teacher chooses between a museum tour and a role-based White House Decision Center simulation that includes four classroom modules. This changes the preparation before the onsite date, not merely the headcount or chaperone ratio. The named simulation options support actual curriculum matching rather than an invented lesson.",
+      "comparisons": [
+        {"route": "/areas/missouri/callaway-county/", "read": "complete frozen mainText", "difference": "Callaway covers reservation thresholds, 1:15 supervision, 25-person divisions and notice periods. Jackson now explains the distinct learning activity and classroom-to-onsite preparation sequence. Capacity is supporting context rather than the page's premise."},
+        {"route": "/areas/indiana/morgan-county/", "read": "complete frozen mainText during preceding assigned audit; unchanged frozen input", "difference": "Morgan compares one-project craft classes with a prerequisite course for later access. Jackson concerns selecting a historical simulation and preparing the same class through linked classroom modules before an onsite experience; no eligibility credential is inferred."}
+      ],
+      "sources": [
+        {"url": "https://www.trumanlibrary.gov/education/white-house-decision-center", "title": "The White House Decision Center - Harry S. Truman", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; complete page read", "observations": ["Official National Archives library page describes students acting as Truman and advisers using primary-source material; student program is for grades 6–12.", "Links directly to the Institute's student-program details."], "evidence": "designed to complement a rigorous course of study", "use": "Program identity, grade range and primary-source learning purpose."},
+        {"url": "https://www.trumanlibraryinstitute.org/education/the-white-house-decision-center/student-program/", "title": "Student Program - Truman Library Institute", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened via official library link; complete program body, simulations, fees and contact read", "observations": ["Curriculum includes four classroom modules supporting the onsite experience; virtual simulations are also mentioned.", "Named scenarios include the Berlin blockade and postwar armed-forces civil rights.", "Lists up to 72 students per session, $12 per student and a $360 minimum group charge.", "Links a 2026–2027 reservation calendar, but no live slot was checked."], "evidence": "includes four interactive classroom modules", "use": "Preparation sequence and named program choice. Do not call modules mandatory prerequisites or infer virtual capacity/pricing from onsite terms."},
+        {"url": "https://www.trumanlibrary.gov/education/tours", "title": "Tours - Harry S. Truman", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; full school/youth/adult and special-note sections read", "observations": ["Museum school visits begin at grade three and groups of 15; elementary and older groups have different suggested tour durations.", "Guided bookings require four weeks because of docent scheduling; group-rate visits must be arranged in advance."], "evidence": "School group visits are arranged for groups of 15 or more students", "use": "Evidence that an ordinary museum tour is a separate offer; do not transfer its rules to WHDC."},
+        {"url": "https://www.trumanlibrary.gov/museum/hours", "title": "Hours, Admission and Directions - Harry S. Truman", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; full page read", "observations": ["Gives the museum address at 500 W. U.S. Highway 24, Independence, Missouri."], "use": "Local venue identity, not the Institute's separate Kansas City administrative address."},
+        {"url": "https://www.trumanlibrary.gov/library-closure", "title": "Truman Library to Close Temporarily Due to Public Health Conditions", "accessedAt": "2026-10-27", "publishedDate": "2021-07-26", "access": "directly opened; full dated release read", "observations": ["Historical official release explicitly relates the Independence library's local conditions to Jackson County."], "use": "Additional county corroboration only. This 2021 notice is not current closure evidence and must not appear as a current alert."}
+      ],
+      "unresolved": ["No live reservation availability or current session duration verified.", "Do not transfer ordinary museum-tour minimums, lead times or rates to the simulation.", "Virtual simulations are mentioned but their separate capacity, charges and preparation are not established here."],
+      "sourceEntryOverride": {
+        "file": "src/location-service-data.json",
+        "key": "missouri/jackson",
+        "checkedDate": "2026-10-27",
+        "decisionTitle": "Connect classroom preparation to the selected historical simulation.",
+        "lead": "A museum visit and a role-based history simulation ask a class to prepare differently. A Jackson County example shows why the learning activity should be chosen before the visit becomes only a date and headcount.",
+        "decision": "Distinguish the ordinary museum tour from the White House Decision Center program, preserve the chosen scenario and explain its classroom preparation before requesting the onsite arrangement.",
+        "coverageNote": "The Harry S. Truman Presidential Library and Museum lists its venue in Independence, Jackson County. The Institute's administrative address is not the student visit location. Wonder and Method works online from Buffalo; the institution is a public example, not a client or partner.",
+        "sources": [
+          {"url": "https://www.trumanlibrary.gov/education/white-house-decision-center", "label": "Truman Library: White House Decision Center", "observation": "Describes a primary-source role simulation for grades 6–12 and links the program partner's details."},
+          {"url": "https://www.trumanlibraryinstitute.org/education/the-white-house-decision-center/student-program/", "label": "Truman Library Institute: simulation and classroom modules", "observation": "Names scenarios, four classroom modules and onsite capacity up to 72 students; dates require program confirmation."},
+          {"url": "https://www.trumanlibrary.gov/education/tours", "label": "Truman Library: separate museum school tours", "observation": "Publishes the distinct school-tour offer and its own arrangements; these are not automatically simulation terms."},
+          {"url": "https://www.trumanlibrary.gov/museum/hours", "label": "Truman Library: Independence venue", "observation": "Identifies the museum at 500 W. U.S. Highway 24 in Independence."}
+        ],
+        "quoteQuestions": ["Which learning activity does each program actually provide?", "What classroom preparation belongs to the selected experience?", "Which dates, group limits and arrangements must program staff confirm?"],
+        "relatedGuides": [],
+        "removeLegacyExampleReferences": ["generic guided versus self-guided program comparison", "unspecified grade-and-topic worksheet"]
+      },
+      "proposedBrief": {
+        "heading": "Choose the learning activity before planning the visit date.",
+        "intro": "A museum tour and a historical decision-making simulation can use the same subject while asking different things of a class. Your program page can connect the selected activity to the preparation that makes it useful.",
+        "customerQuestion": "We want students to examine evidence and defend a decision. Should we request a museum tour or the White House simulation, and what do we prepare in class?",
+        "decisions": [
+          {"label": "Compare what students will do", "body": "Describe the activity rather than relying on a general school-visit label. A guided museum discussion and role-based work with advisers and primary sources should remain recognizable as separate offers."},
+          {"label": "Connect the scenario to classroom work", "body": "Keep the teacher's curricular goal and chosen historical scenario with the preparation materials. Explain how classroom modules support the onsite experience without inventing a required completion test or assuming every tour uses that curriculum."},
+          {"label": "Confirm the program arrangement", "body": "Carry the grade range, student count, selected scenario and preferred dates into the program's own inquiry. Keep museum-tour rules separate; a calendar link or ordinary admission ticket does not confirm a simulation session."}
+        ],
+        "ownerInputs": ["Accurate activity descriptions and named scenario choices.", "Current preparation materials and teacher guidance.", "Program-specific capacity, date and confirmation instructions."],
+        "sourceBridge": "The Truman Library in Independence describes its White House Decision Center for grades 6–12. Its official program partner names historical simulations and four classroom modules supporting the onsite experience, with up to 72 students per session. This is a different preparation question from arranging an ordinary museum tour.",
+        "limits": "Program staff confirm current terms and dates. Do not borrow museum-tour rates or notice periods for the simulation, or apply onsite details to the separately mentioned virtual offer. Registration, student records and learning-platform connections require separate scope."
+      }
+    },
+    {
+      "route": "/areas/florida/walton-county/",
+      "baselineRenderedSha256": "aae0f157273b60d61401d333129ce58fd7b7c948c529d1dfa234ab7f480047ba",
+      "decision": "replace-closet-duplicate-with-dated-closure-type-and-entry-exception-example",
+      "independentValue": "A reservation exception belongs to a specific closure type. Grayton's ordinary crowd-capacity notice admits reserved campers but excludes day visitors even on foot or bicycle; a separate dated emergency notice includes overnight accommodation in closure. This makes closure type, visitor status and late-arrival preparation distinct decisions. It must remain a planning example, never a claim that the park is open now.",
+      "comparisons": [
+        {"route": "/areas/florida/st-lucie-county/", "read": "complete frozen mainText", "difference": "Original Walton repeated the same hanging/folded/frequent-use storage inquiry. Replacement changes the decision entirely and removes the duplicated cabinet-provider premise."},
+        {"route": "/areas/colorado/summit-county/", "read": "complete frozen mainText", "difference": "Summit addresses a dated closure followed by a changed check-in/walk/shuttle sequence before reopening. Walton addresses exceptions that apply to crowd-capacity closure but cannot be generalized to emergency closure, plus an independently timed gate-contact action."}
+      ],
+      "sources": [
+        {"url": "https://www.floridastateparks.org/graytonbeach", "title": "Grayton Beach State Park - Florida State Parks", "accessedAt": "2026-10-27", "publishedDate": null, "noticeEffectiveDate": "2024-06-20", "access": "official indexed page text retrieved through web search, including full capacity notice and location; direct open returned 403", "observations": ["Capacity closures can last several hours. The notice distinguishes reserved campers from day visitors, including pedestrians and bicyclists.", "Lists 357 Main Park Road, Santa Rosa Beach."], "evidence": "Campers with reservations will be admitted", "use": "A dated capacity-policy example only, never an all-closures exception or live status signal."},
+        {"url": "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park/hours-fees", "title": "Hours & Fees - Grayton Beach State Park", "accessedAt": "2026-10-27", "publishedDate": null, "access": "official indexed page text retrieved through search; direct open returned 403", "observations": ["The normal-hours page says gates close at sunset and overnight arrivals after sunset should call the park before 5 p.m. on arrival day for gate instructions."], "evidence": "before 5 p.m. on the day of arrival", "use": "Separates advance contact deadline from later arrival; only when overnight operations are confirmed."},
+        {"url": "https://www.floridastateparks.org/StormUpdates", "title": "Storm Updates - Florida State Parks", "accessedAt": "2026-10-27", "publishedDate": null, "noticeEffectiveDate": "2026-10-11", "access": "official indexed page text retrieved through search; complete relevant closure list and heading read; direct open returned 403", "observations": ["The returned notice lists Grayton Beach State Park in Walton County under closures that include associated overnight accommodation.", "This is dated evidence; no reopening confirmation or live park status was obtained."], "evidence": "Park closures, including any associated overnight accommodations", "use": "County corroboration and evidence that an emergency closure has different scope from the capacity exception. Do not assert current closure or reopening from indexing alone."}
+      ],
+      "unresolved": ["Florida State Parks direct pages returned 403; official indexed content supports the dated distinctions but is not a live operating check.", "Current emergency/reopening status is unresolved. No arrival recommendation, availability promise or emergency bypass should be published.", "Do not extend the exact 'campers with reservations' capacity exception to every lodging or reservation type without operator confirmation."],
+      "sourceEntryOverride": {
+        "file": "src/location-service-data.json",
+        "key": "florida/walton",
+        "checkedDate": "2026-10-27",
+        "decisionTitle": "Keep a reservation exception attached to the kind of closure it covers.",
+        "lead": "A reservation can affect entry during a crowd-capacity closure without overriding an emergency shutdown. A Walton County visitor example shows why the closure type must stay visible beside the exception.",
+        "decision": "Explain the dated capacity rule and its visitor categories, place emergency status ahead of normal entry instructions, and separate the advance contact deadline from an after-sunset arrival.",
+        "coverageNote": "Florida State Parks identifies Grayton Beach State Park in Walton County and gives its Santa Rosa Beach address. This example serves Walton County website buyers, including Freeport; it does not place the park in Freeport. Wonder and Method works remotely from Buffalo. The park is a public example, not a client or partner.",
+        "sources": [
+          {"url": "https://www.floridastateparks.org/graytonbeach", "label": "Florida State Parks: Grayton capacity notice", "observation": "A notice effective June 20, 2024 distinguishes reserved campers from day visitors during crowd-capacity closures. Retrieved from official indexed text; it does not establish live operating status."},
+          {"url": "https://www.floridastateparks.org/parks-and-trails/grayton-beach-state-park/hours-fees", "label": "Florida State Parks: normal late-arrival preparation", "observation": "Published overnight instructions place the gate-information call before 5 p.m. when arrival will be after sunset; verify current operations first."},
+          {"url": "https://www.floridastateparks.org/StormUpdates", "label": "Florida State Parks: dated emergency closure scope", "observation": "Indexed notice effective October 11, 2026 lists Grayton in Walton County under closure including overnight accommodation. Current reopening is unverified."}
+        ],
+        "quoteQuestions": ["Which closure does an entry exception actually cover?", "Which visitor categories remain excluded during that closure?", "What must overnight visitors arrange before an after-hours arrival?"],
+        "relatedGuides": [],
+        "removeLegacyExampleReferences": ["South Walton Custom Cabinets", "closet contents and routine", "Freeport cabinet businesses", "old closet meta description and scope prompts"]
+      },
+      "proposedBrief": {
+        "heading": "Keep the entry exception attached to the closure it covers.",
+        "intro": "A reserved camper and a day visitor may receive different instructions when a park reaches capacity. Your visitor page can explain that specific exception without making it sound like permission to enter during every kind of closure.",
+        "customerQuestion": "Does my reservation change a capacity closure, and where do I check whether an emergency closure affects overnight stays too?",
+        "decisions": [
+          {"label": "Identify the operating notice first", "body": "Name the reason for the closure and show its date. Keep emergency or reopening information ahead of ordinary hours so an older entry exception cannot become an unconditional promise."},
+          {"label": "Explain who the exception covers", "body": "Preserve the operator's exact visitor categories. Grayton's capacity notice distinguishes reserved campers from day visitors, including people arriving on foot or by bicycle. Changing transport does not turn a day visit into the stated exception."},
+          {"label": "Separate late arrival from advance preparation", "body": "Once overnight operations are confirmed, show any earlier action required for a later arrival. Grayton's normal instructions call for contact before 5 p.m. when arrival will be after sunset; the arrival time alone does not complete that preparation."}
+        ],
+        "ownerInputs": ["Dated closure types and the exact scope of each exception.", "Current operating-status source and update responsibility.", "Confirmed visitor categories and late-arrival instructions."],
+        "sourceBridge": "Florida State Parks publishes a Grayton Beach capacity notice and separate overnight-arrival instructions. At this review, its indexed storm page also showed an October 11, 2026 notice covering overnight closures and identified the park in Walton County. These different notices support separating closure types rather than merging their instructions.",
+        "limits": "Current park status remains unverified; direct pages returned access errors. This dated planning example does not say the park is open or that a reservation overrides an emergency closure. The operator confirms entry. Live alerts, access control and reservation connections require separate scope."
+      }
+    },
+    {
+      "route": "/areas/monroe-county/",
+      "baselineRenderedSha256": "1ed6b072600d4ea4bd5c1be45e835c5b42cbae0fbbcc0bb6e9909879babb1a6a",
+      "decision": "replace-portable-service-form-example-with-show-category-member-benefit-handoff",
+      "independentValue": "A member selecting one show category receives free admission while another category receives a discount. The benefit is not a universal planetarium entitlement, and it remains separate from the selected show/date and first-come seating. This supplies an actual customer choice at a verified Rochester institution, rather than a hypothetical repair/install form split.",
+      "comparisons": [
+        {"route": "/areas/missouri/moniteau-county/", "read": "complete frozen mainText", "difference": "Original Monroe's form-routing advice lacked local consequence compared with Moniteau's delivery/site terms. The replacement now has a concrete entitlement-category decision and does not reuse quote-preparation logic."},
+        {"route": "/areas/connecticut/southeastern-connecticut-planning-region/", "read": "complete frozen mainText", "difference": "Mystic's page distinguishes members from guests and separate experiences. Rochester's member stays the same while the named show category changes the benefit; that is the independent comparison to preserve."},
+        {"route": "/areas/california/shasta-county/", "read": "complete frozen mainText", "difference": "Shasta assigns a next-available tour after ticket exchange. Rochester publishes selected-date online tickets and first-come seating; no boarding-pass exchange or next-available show allocation is inferred. The main lesson is category-specific membership benefit, not generic ticket confirmation."}
+      ],
+      "sources": [
+        {"url": "https://rmsc.org/strasenburgh-planetarium/hours-admission-directions/", "title": "Hours, Admission & Directions - RMSC Strasenburgh Planetarium", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; full admission, discounts, ticket conditions and location body read", "observations": ["Members receive free Star Shows and a $4 discount on Planetarium and Laser Shows.", "Online tickets apply to the selected date; seating is first come, first served.", "Planetarium is listed at 657 East Avenue, Rochester.", "The general age table overlaps at age 18; this unrelated ambiguity is not reproduced."], "evidence": "FREE admission for all Star Shows", "use": "Category-specific benefit, date and seat distinction; do not infer all shows are free or that a membership guarantees a seat."},
+        {"url": "https://rmsc.org/strasenburgh-planetarium/", "title": "Strasenburgh Planetarium - Rochester Museum & Science Center", "accessedAt": "2026-10-27", "publishedDate": null, "access": "directly opened; public-ticket instructions and current schedule context read", "observations": ["Online sales end five minutes before showtime; same-day and advance tickets are available through the box office or museum reception.", "A dated schedule is published, but no inventory or individual show purchase was checked."], "evidence": "end 5 minutes before showtime", "use": "Separate online-sales cutoff from actual ticket availability and show start; no late-entry promise."},
+        {"url": "https://rmsc.org/wp-content/uploads/RMSC_MASTER_Fact_Sheet_-_Updated_2022_2.pdf", "title": "RMSC Master Fact Sheet - Updated 2022", "accessedAt": "2026-10-27", "publishedDate": "2022", "access": "official PDF text opened; institutional identity, county and campus sections read", "observations": ["RMSC states that it receives Monroe County support and is an attraction there; identifies Strasenburgh as part of the institution and the Rochester East Avenue address."], "use": "Historical institutional/local relationship only; dated attendance, staffing and other statistics are not used."}
+      ],
+      "unresolved": ["No member login, redemption flow, remaining seats or date availability checked.", "The program's own current category labels must determine the benefit; do not classify a show from its title alone.", "No inference about admission after online sales close or late entry."],
+      "sourceEntryOverride": {
+        "file": "src/location-service-data.json",
+        "key": "new-york/monroe",
+        "checkedDate": "2026-10-27",
+        "decisionTitle": "Attach the membership benefit to the selected show category.",
+        "lead": "A membership can cover one show category and discount another. A Rochester example shows why the benefit, selected performance and seating instructions need separate explanations.",
+        "decision": "Help the member identify the official show category before following its ticket route. Keep the membership benefit distinct from the selected date, available ticket and seat choice.",
+        "coverageNote": "RMSC lists the Strasenburgh Planetarium at 657 East Avenue in Rochester; its official fact sheet corroborates the Monroe County relationship. This example does not place its separate Naples nature center in Monroe County. Wonder and Method works remotely from Buffalo, and the institution is not a client or partner.",
+        "sources": [
+          {"url": "https://rmsc.org/strasenburgh-planetarium/hours-admission-directions/", "label": "RMSC: show-category benefits and admission", "observation": "Distinguishes free member Star Shows from discounted Planetarium and Laser Shows; publishes selected-date online tickets, first-come seating and the Rochester address."},
+          {"url": "https://rmsc.org/strasenburgh-planetarium/", "label": "RMSC: show selection and ticket routes", "observation": "Publishes the five-minute online-sales cutoff and separate onsite ticket routes; does not establish remaining availability."},
+          {"url": "https://rmsc.org/wp-content/uploads/RMSC_MASTER_Fact_Sheet_-_Updated_2022_2.pdf", "label": "RMSC: institutional and county context", "observation": "Official historical fact sheet identifies the institution's Monroe County relationship and the Strasenburgh Planetarium."}
+        ],
+        "quoteQuestions": ["Which show categories receive different membership benefits?", "How does the visitor retain the selected show and date through ticketing?", "What does the ticket establish about seating, and what remains unconfirmed?"],
+        "relatedGuides": [],
+        "preserveExistingFaqs": true,
+        "removeLegacyExampleReferences": ["AmeriHeat", "hypothetical repair/install/supplier form split", "generic optional county worksheet"]
+      },
+      "proposedBrief": {
+        "heading": "Attach the membership benefit to the selected show category.",
+        "intro": "A member can receive free admission for one kind of show and a discount for another. Your program page can make that comparison before a broad membership message creates the wrong expectation at ticketing.",
+        "customerQuestion": "I am a member choosing between a Star Show and a Laser Show. Is the benefit the same, and does it reserve a particular seat?",
+        "decisions": [
+          {"label": "Identify the official show category", "body": "Keep each program's actual category beside its description and ticket link. Do not ask visitors to infer the category from an attractive title or assume that everything in the same building carries the same benefit."},
+          {"label": "Explain the benefit before the handoff", "body": "State whether the selected category is included or discounted for the applicable member. Preserve the chosen show and date through the operator's existing route; the general benefit statement is not itself a completed ticket transaction."},
+          {"label": "Keep seating and sales timing separate", "body": "Explain whether seats are assigned or first come, and distinguish an online-sales cutoff from showtime. Direct unresolved ticket questions to staff without promising that closing online sales means either a sold-out show or guaranteed onsite availability."}
+        ],
+        "ownerInputs": ["Current program categories and member benefits.", "Accurate show/date ticket and redemption routes.", "Seating, sales-cutoff and staff-contact instructions."],
+        "sourceBridge": "RMSC's Strasenburgh Planetarium in Rochester publishes free member Star Shows and a $4 discount on Planetarium and Laser Shows. It separately describes selected-date online tickets, first-come seating and online sales ending five minutes before showtime. RMSC's official institutional material corroborates its Monroe County relationship.",
+        "limits": "The operator's current category and membership terms control. No member account, ticket inventory or redemption flow was tested, and this example promises neither a seat nor late entry. Membership validation, seat allocation and ticketing integrations require separate scope."
+      }
+    }
+  ]
+}

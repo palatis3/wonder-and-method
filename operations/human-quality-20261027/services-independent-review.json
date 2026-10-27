@@ -1,0 +1,1458 @@
+{
+  "generatedAt": "2026-10-27T16:07:40.995Z",
+  "status": "complete-current-render-verified",
+  "expected": 61,
+  "reviewed": 61,
+  "uniqueRoutes": 61,
+  "completeMainTextCharacters": 2285602,
+  "allQuotesMatched": true,
+  "allReadPartsPresent": true,
+  "unchangedReviewedRenderCount": 61,
+  "changedCurrentRenders": [],
+  "hashScope": "SHA256 of complete current renderPages HTML; text extracted from main including all disclosures and ordinary hidden interaction states; scripts/style/noscript omitted.",
+  "frozenAt": "2026-10-27T15:34:34.930Z",
+  "contentSubtotals": {
+    "maximum": 80,
+    "min": 65,
+    "max": 80,
+    "mean": 69.8360655737705
+  },
+  "finalScoresAllNull": true,
+  "visualsAllNull": true,
+  "accessibilityAllNull": true,
+  "findingsBySeverity": {
+    "minor": 59,
+    "moderate": 8
+  },
+  "routesWithFindings": 46,
+  "routesWithoutFindings": [
+    "/areas/alabama/",
+    "/areas/arizona/",
+    "/areas/arkansas/",
+    "/areas/delaware/",
+    "/areas/florida/",
+    "/areas/massachusetts/",
+    "/areas/mississippi/",
+    "/areas/new-mexico/",
+    "/areas/oregon/",
+    "/areas/rhode-island/",
+    "/areas/south-carolina/",
+    "/areas/virginia/",
+    "/areas/washington/",
+    "/areas/west-virginia/",
+    "/services/"
+  ],
+  "moderateFindings": [
+    {
+      "route": "/areas/hawaii/",
+      "severity": "moderate",
+      "issue": "The baseline source-definition duplication remains: the same Census scope and Honolulu/CDP distinction each appear twice, once with unexplained data abbreviations.",
+      "evidence": [
+        "January 1, 2026 Census geography with complete 2026 GRFC memberships.",
+        "Hawaii has no Census-recognized incorporated places."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/",
+      "severity": "moderate",
+      "issue": "The Monterey dissolution explanation remains long and duplicated, with its source-block version omitting the place name; technical identifier prose also remains in the entry.",
+      "evidence": [
+        "The retained GEOID identifies the source Census record, not an active government.",
+        "General place definitions\n\nThe Kentucky DLG final dissolution order was signed December 4, 2023 and filed with the Secretary of State on May 20, 2025."
+      ]
+    },
+    {
+      "route": "/areas/michigan/",
+      "severity": "moderate",
+      "issue": "Mechanical alias and charter-reconciliation explanations still repeat throughout many county entries rather than using one definition.",
+      "evidence": [
+        "Current local-government charter status supersedes the generic township suffix in Census geography.",
+        "Normalized spelling/abbreviation of source name."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/",
+      "severity": "moderate",
+      "issue": "The baseline status-note repetition and technical identifier wording remain despite new optional methodology disclosures.",
+      "evidence": [
+        "The retained GEOID identifies the January Census source, not an active government.",
+        "Spencer Mountain has a suspended charter through June 30, 2029; neither is counted as an active municipal government. The charter remains suspended until June 30, 2029 under S.L. 2026-50 section 6.2."
+      ]
+    },
+    {
+      "route": "/areas/ohio/",
+      "severity": "moderate",
+      "issue": "Source section repeats its dated inventory explanation and uses identical generic headings for detached county-specific exceptions.",
+      "evidence": [
+        "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties.",
+        "General place definitions\n\nWashington Township is the county portion of the township also extending across Franklin and Union counties.",
+        "General place definitions\n\nWashington Township extends into Delaware and Union counties."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/",
+      "severity": "moderate",
+      "issue": "Repeated General place definitions headings leave local exceptions without named county context and repeat cross-county caveats already explained above.",
+      "evidence": [
+        "General place definitions\n\nCross-county municipalities are listed in each county they touch: Ellwood City.",
+        "General place definitions\n\nCross-county municipalities are listed in each county they touch: Adamstown."
+      ]
+    },
+    {
+      "route": "/services/seo/",
+      "severity": "moderate",
+      "issue": "After adding the useful accounting list, the page still repeats the completed-improvement explanation and then walks through the same research/approval/publication/report cycle again.",
+      "evidence": [
+        "An improvement is one agreed, finished piece of work.",
+        "That is one finished improvement, including research, writing and checks.",
+        "How the work gets done."
+      ]
+    },
+    {
+      "route": "/services/website-care/",
+      "severity": "moderate",
+      "issue": "The complete rendered page still contains both the merged enrollment section and a later Check the platform first supplement, so the baseline consolidation is incomplete at the rendered-page level.",
+      "evidence": [
+        "Check your website before enrolling.",
+        "Send the platform, connected tools and who controls authorized access and recovery.",
+        "Check the platform first.",
+        "Tell me which website platform and connected tools you use."
+      ]
+    }
+  ],
+  "limitations": [
+    "Content subtotals are out of 80 and are never normalized to 100. No page receives a final score from this text-only pass.",
+    "All 61 pages were individually read completely; list length was not used as a quality proxy.",
+    "Geographic source labels and claimed dates were reviewed; external geography records were not comprehensively reopened.",
+    "Prior baseline findings were compared individually. Improvements can be real without crossing an integer rating anchor."
+  ],
+  "provenance": {
+    "snapshot": "output/human-quality-20261027/services-after-review/snapshot.json",
+    "readLedger": "output/human-quality-20261027/services-after-review/read-ledger.json",
+    "manualDecisions": [
+      "decisions-directories-01.json",
+      "decisions-directories-02.json",
+      "decisions-directories-03.json",
+      "decisions-directories-04.json",
+      "decisions-directories-05.json",
+      "decisions-directories-06.json",
+      "decisions-directories-07.json",
+      "decisions-directories-08.json",
+      "decisions-directories-09.json",
+      "decisions-directories-10.json",
+      "decisions-directories-11.json",
+      "decisions-directories-12.json",
+      "decisions-directories-13.json",
+      "decisions-directories-14.json",
+      "decisions-directories-15.json",
+      "decisions-directories-16.json",
+      "decisions-directories-17.json",
+      "decisions-directories-18.json",
+      "decisions-directories-19.json",
+      "decisions-directories-20.json",
+      "decisions-directories-21.json",
+      "decisions-directories-22.json",
+      "decisions-directories-23.json",
+      "decisions-directories-24.json",
+      "decisions-directories-25.json",
+      "decisions-directories-26.json",
+      "decisions-directories-27.json",
+      "decisions-directories-28.json",
+      "decisions-services.json"
+    ],
+    "rubric": "operations/human-quality-20261027/research-rubric.json"
+  },
+  "ownedAudit": "operations/human-quality-20261027/audits/services-directories-after-independent.jsonl",
+  "recommendation": "Retain substantive improvements and geography/offer distinctions; resolve recorded prose and source-label findings before claiming editorial acceptance. Complete independent visual/accessibility evidence before assigning final scores.",
+  "pageResults": [
+    {
+      "route": "/areas/",
+      "inputHash": "65a14102bef4f5101028df6aa4d9ed81055711eadb6531e60f704abc410a2662",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline parenthetical-label ambiguity addressed by an upfront legend and cross-county result help; district included in browse heading. Surprising but valid cross-county associations remain rather than being silently rewritten. All four complete text chunks read, including all 3,222 area labels, example links and disclosure of research methods.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Empty-state guidance says 'place name: place', which adds no useful example and reads mechanically.",
+          "evidence": [
+            "Try a place name: place, or choose a different state, district or territory."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use concrete search examples or simply say to try another place name in the empty state."
+      ]
+    },
+    {
+      "route": "/areas/alabama/",
+      "inputHash": "d07a1dcaaa3a68096bddfb081d329b623260205d8ba581cd4f3db351a0b6b7a3",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both baseline findings are corrected. Huntsville memberships and differentiated place types are preserved. Full 67-county inventory and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/alaska/",
+      "inputHash": "52f8a9acc6e77a9f7feb1b34e97c7489bd9f74ecd282b01caebb5f11f49d09f7",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "State-specific controls and four concrete query examples are present; ACS26 is expanded. Consolidated-layer language and opaque source identifiers remain from baseline. Full typed inventories read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The overlapping-government explanation still sounds like data-maintenance guidance rather than visitor geography help.",
+          "evidence": [
+            "duplicate geographic layers must not be added together.",
+            "This census area has no county-equivalent municipal government."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "A raw query label does not identify the linked source.",
+          "evidence": [
+            "Alaska: query — tigerweb.geo.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain that the named city/borough is one consolidated government with overlapping Census records; identify the census areas covered by the separate no-government note.",
+        "Use verified descriptive source labels while retaining all records and government/place distinctions."
+      ]
+    },
+    {
+      "route": "/areas/arizona/",
+      "inputHash": "5fcabe98406ae6a00f94be73ece13ecbdf66ab3bd5302a2586a2117583642361",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "All material baseline issues are addressed: San Tan Valley's type is retained, ranking-source mechanics and codes moved to optional notes, and Arizona search language corrected. Full typed inventories and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/arkansas/",
+      "inputHash": "3b33cd4c1c5de7cd157dd3ace87fcad7ecd6a73e1f47368b42a1308307b077a2",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline unnatural district ordering is fixed in Baxter, Crawford and Pope. County/city/town/township search instructions and clear nonfunctioning subdivision definitions are present. Bare numeric names remain interpretable under Districts headings. All lists and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/california/",
+      "inputHash": "30106dc09f07e5ad211925a054e76f3157df6bef85e5cfd2eebdc11f74295bd2",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The baseline moderate code-repetition issue is resolved. Duplicate source labels are differentiated but do not all have useful document titles. Three no-incorporation counties and San Francisco distinction preserved. Every list/disclosure read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Some newly distinct source labels remain opaque filenames and acronyms.",
+          "evidence": [
+            "California: ca gslcg — www2.census.gov",
+            "California: co est2025 alldata.csv — www2.census.gov",
+            "California: sub est2025 6.csv — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use document titles identifying the state geography reference and county/place population estimates, with years."
+      ]
+    },
+    {
+      "route": "/areas/colorado/",
+      "inputHash": "8775ad50ae71b728d5c0c1def30ca542b3b37f730ca8b6c3f6f78001194bef72",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both material baseline issues are addressed with optional technical details. Bonanza and consolidated-government distinctions remain adjacent to entries. One shared source-language defect persists. Full lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source-scope rewrite includes redundant relationship wording and a place category irrelevant to Colorado.",
+          "evidence": [
+            "geographic relationship records membership relationships",
+            "each intersected county or municipio"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records' and 'each intersected county'; label methodology disclosures by the applicable consolidated-government or inactive-place exception."
+      ]
+    },
+    {
+      "route": "/areas/connecticut/",
+      "inputHash": "1e26af3099bfa0f57f5f012c0c81481e32c617fe2d5f7a06c1373ee47f38a007",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "State-appropriate search is corrected and special identities are preserved. Shared-definition repetition remains a limited editorial weakness rather than a reason to remove functional lists. Full inventories and aliases read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The baseline request to define planning regions once is incomplete: entry summaries and opening paragraphs repeat the same current-Census-equivalent explanation before distinct membership details.",
+          "evidence": [
+            "Planning region and current Census county equivalent; distinct from the former county boundaries.",
+            "Greater Bridgeport is one of Connecticut’s nine current Census county-equivalent planning regions.",
+            "Naugatuck Valley Planning Region is one of Connecticut’s nine current Census county-equivalent planning regions."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep the shared definition in search help/source notes and shorten entry paragraphs to distinct municipality membership or a local exception; retain former-county and Groton/Milford distinctions."
+      ]
+    },
+    {
+      "route": "/areas/delaware/",
+      "inputHash": "3acb05c7091afbf2e46b4cf179a53fdc24a70ba9e633f945dce2a543326d6b6f",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Search and recovery labels are Delaware-specific; Clayton, Smyrna and Milford remain in both applicable counties with the boundary explanation. Source grouping now names the counties. Full directory read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/district-of-columbia/",
+      "inputHash": "f89a065304b9832896b10cb4deae45329a6786e2f29247e74b4a983ab35f9354",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The major baseline search/browse mismatch is corrected and irrelevant cross-county guidance is removed. One singular status string and one opaque source label remain. Full neighborhood and ward lists read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The count status still says Browse all 1 district guide, an awkward remnant of the plural template.",
+          "evidence": [
+            "Browse all 1 district guide below."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The source label exposes an unexplained Census filename rather than a reader-facing document description.",
+          "evidence": [
+            "Washington, DC: dc gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use Browse the Washington, DC guide in the count/status text as well as the browse heading.",
+        "Replace dc gslcg with a verified plain document description, preserving its destination."
+      ]
+    },
+    {
+      "route": "/areas/florida/",
+      "inputHash": "1051aba43b610d93f68fe82a1882d240da565408d85186876a342f99d0cd9ebe",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The material baseline finding is corrected, and state-appropriate search is present. Full city/town/village/CDP lists, ancillary guide titles, aliases and source disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/georgia/",
+      "inputHash": "4c8156e19ca20f1745a1dc0b452f2ce26966c2b0eb27b3e35ef038164b72f494",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Georgia-specific search guidance and Athens/Augusta balance distinctions are good. The sole specific baseline finding was not resolved. Full county/place lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Bibb and Muscogee still contain the baseline internal source-retention wording.",
+          "evidence": [
+            "the original Census place label is retained in the source data."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "State the Macon-Bibb and Columbus consolidated-government distinction plainly; move any original-record retention explanation to optional source methodology."
+      ]
+    },
+    {
+      "route": "/areas/hawaii/",
+      "inputHash": "563a1180fb6941064c680665f70d65924f58bdb9f44bc9e060e2d31877b85ef9",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "County/community search and Kalawao's local explanation address two baseline fixes. The more substantial duplicated definitions remain. Full five-county inventory and disclosures read.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "The baseline source-definition duplication remains: the same Census scope and Honolulu/CDP distinction each appear twice, once with unexplained data abbreviations.",
+          "evidence": [
+            "January 1, 2026 Census geography with complete 2026 GRFC memberships.",
+            "Hawaii has no Census-recognized incorporated places."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep one plain-language scope paragraph and one Honolulu distinction, retaining the separate dated Kalawao legal condition and its linked evidence; move record codes to optional methodology."
+      ]
+    },
+    {
+      "route": "/areas/idaho/",
+      "inputHash": "7828bb0a456e8f881544518a7d3d025d5b1272ebcc6395ff60be8fde7a6357d3",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The baseline ranking-mechanics issue is resolved in main prose and search language fits Idaho. A minor awkward wording introduced by acronym expansion remains. Full inventory and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source-method expansion produces the redundant phrase 'records membership relationships'.",
+          "evidence": [
+            "geographic relationship records membership relationships"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records'; retain the dated scope, inactive legal entity and tribal-boundary distinctions."
+      ]
+    },
+    {
+      "route": "/areas/illinois/",
+      "inputHash": "cd0d825e2c4a9584892495cf10f3a7c072690e003643c027c37dd528e1e815af",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline lexical precinct ordering fixed, including Jacksonville and Monroe; baseline unexplained fictitious-equivalent phrase persists. All lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The main source note still calls excluded Census equivalents fictitious without explaining the overlapping records.",
+          "evidence": [
+            "Fictitious Census city/village subdivision equivalents are excluded."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain in plain language that duplicate Census subdivision representations are excluded, retaining the official technical term only in optional methodology."
+      ]
+    },
+    {
+      "route": "/areas/indiana/",
+      "inputHash": "6c65d8776fcba76b48c01144f19559f467e0d04ca1dcd5dbcd62c610367e9c99",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The specific baseline search defect is fixed throughout visible instructions and recovery. Source links are distinguishable but only partially edited into reader-facing titles. Full county and place lists read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Two distinct official evidence labels remain raw web filenames rather than document titles.",
+          "evidence": [
+            "Indiana: e2025 places.asp — stats.indiana.edu",
+            "Indiana: e2025 townships.asp — stats.indiana.edu"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Name the 2025 place and township population estimates explicitly in their link labels."
+      ]
+    },
+    {
+      "route": "/areas/iowa/",
+      "inputHash": "b245574388407a72c0c5233e220a40e9c4186eed556a0938bfea9a4c7ffca1b5",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline fictitious-hierarchy prose moved to an optional methodology disclosure. Nonfunctioning status wording shortened but repetitive ordinary active-status sentences remain in mixed groups. All names, source disclosures and final service links read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Mixed-status township lists still carry repeated full status sentences beside ordinary entries.",
+          "evidence": [
+            "Cascade Active government subordinate to another unit of government.",
+            "Belknap Active government subordinate to another unit of government."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Source labels retain raw file names and an unexplained abbreviation.",
+          "evidence": [
+            "Iowa: sub est2025 19.csv — www2.census.gov",
+            "Iowa: ia gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain ordinary active status once per group and attach concise exception labels to Julien and Kane.",
+        "Use readable source document titles."
+      ]
+    },
+    {
+      "route": "/areas/kansas/",
+      "inputHash": "c8fb704ca019637bd88ab611f35439ef8da412158c8095b119f5a52c2339a871",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline numerical ordering fixed and main diagnostic moved into optional methodology; functional-status distinctions retained. All lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Optional ranking diagnostic remains unexplained beneath an empty definitions heading; acronym source titles are opaque.",
+          "evidence": [
+            "Representative-place population ranking is incomplete because one or more incorporated county memberships lack a matching 2025 estimate.",
+            "Kansas: ks gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Remove empty headings and explain the reader consequence of the optional ranking limitation or omit it; use readable source titles."
+      ]
+    },
+    {
+      "route": "/areas/kentucky/",
+      "inputHash": "21385553078c8091ebcaaee2e9d2de5f765088fbaa77f0d3bdb7e7217489c940",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "County/city/community search guidance is fixed, but both specific baseline prose findings remain. Full lists and disclosures read; no legal status changes inferred.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "The Monterey dissolution explanation remains long and duplicated, with its source-block version omitting the place name; technical identifier prose also remains in the entry.",
+          "evidence": [
+            "The retained GEOID identifies the source Census record, not an active government.",
+            "General place definitions\n\nThe Kentucky DLG final dissolution order was signed December 4, 2023 and filed with the Secretary of State on May 20, 2025."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Evidence labels do not identify the linked geography or Monterey record.",
+          "evidence": [
+            "Kentucky: 0 — kygisportalservices.ky.gov",
+            "Owen County: 6275 — web.sos.ky.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep a short named Monterey former-city entry with effective dates, name Monterey in the evidence note, and retain record identifiers only in optional methodology.",
+        "Name the state geography layer and Monterey dissolution record in their source links."
+      ]
+    },
+    {
+      "route": "/areas/louisiana/",
+      "inputHash": "3c22913adf4a0caeba75a43cd45aba9b29fd2ffeeb0d2dd42a3ae1801b3cc43e",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both baseline findings are corrected: parish-aware search/recovery and natural district order, including mixed 3A/3B labels. B/N codes are optional. A minor technical phrase remains in source prose. Full inventories, all numbered/lettered district lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source prose retains 'fictitious' for a statistical subdivision after the introduction correctly explains it as a duplicate record; the unexplained technical term can suggest an invented place.",
+          "evidence": [
+            "the fictitious New Orleans subdivision is excluded while the actual city is retained."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Reuse the plain duplicate-Census-subdivision explanation in the source note, retaining actual New Orleans city and the coextensive parish distinction."
+      ]
+    },
+    {
+      "route": "/areas/maine/",
+      "inputHash": "eb0668a39495a8fb7a487de7dba775372418cae64426d179e67a6869db5887fb",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Search/recovery vocabulary, organized/unorganized scope, Rangeley distinction and Drew date survive. Distinct source labels exist, but numeric/implementation labels remain. Full typed lists read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The numeric 10782 and ListDistrictTowns citation labels do not tell a reader which evidence they will open; this baseline request is only partially resolved.",
+          "evidence": [
+            "Maine: ListDistrictTowns — legislature.maine.gov",
+            "Maine: 10782 — legislature.maine.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use verified plain descriptions for the House town/county list and the document supporting Drew's deorganization, preserving exact source links and dates."
+      ]
+    },
+    {
+      "route": "/areas/maryland/",
+      "inputHash": "79b6e5cac772f16e5703c768e220c4b4e448c1b4127905d5cc96ae7c157b69ac",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both material baseline findings are addressed: 157 clearly counts municipalities and reference groups identify counties/city. Source-label readability remains a smaller unresolved request. All typed inventories and ancillary guides/worksheets read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source-title improvement is incomplete: mun, munic and county abbreviations such as almu and anmu identify paths rather than documents.",
+          "evidence": [
+            "Maryland: mun — msa.maryland.gov",
+            "Allegany County: almu — msa.maryland.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Give the State Archives sources verified plain titles, retaining county identifiers, URLs and reconciliation dates."
+      ]
+    },
+    {
+      "route": "/areas/massachusetts/",
+      "inputHash": "8ac508ba85ab34d034bce8ae50e5f5ae679b1d0046e7fd1222188de1d09b9738",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The three baseline issues are addressed: state-appropriate controls, preserved town-name/city-government qualifications and explicit transfer language beside the out-of-area guide. Full typed lists read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/michigan/",
+      "inputHash": "47bc463aafc3c1735ea67af7a2bb28ce8762cc7a150acaf24164682ba3df7ff2",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Howard's main annotation is shortened and unresolved status retained with chronology in an optional disclosure. The baseline repetition of reconciliation language persists; Cass Lake's required dated history remains, including the technical GEOID sentence requested for relocation. All lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "Mechanical alias and charter-reconciliation explanations still repeat throughout many county entries rather than using one definition.",
+          "evidence": [
+            "Current local-government charter status supersedes the generic township suffix in Census geography.",
+            "Normalized spelling/abbreviation of source name."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Howard evidence still contains an editorial instruction, while Cass Lake exposes GEOID mechanics and source titles contain hashes.",
+          "evidence": [
+            "retain the generic Township type and a source-qualified historical charter alias",
+            "No Census GEOID assigned here.",
+            "Michigan: 72bced2da68446e68a8a27abf25d6ff8 — arcgis.com"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain alias normalization and charter reconciliation once; preserve every name, type and alias with short labels.",
+        "Make the Howard optional note factual without the retain instruction; move GEOID mechanics to metadata and title source documents readably."
+      ]
+    },
+    {
+      "route": "/areas/minnesota/",
+      "inputHash": "c4fb5b356ed8d7930c196c21f59eb457201e8b0887ec1924b9645ab5be2d87b4",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline moderate diagnostic is moved from main definitions into optional methodology, substantially improving flow. The specific Itasca label-explanation finding persists. Lake of the Woods and Fort Snelling distinctions retained. All lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Itasca's numeric territory labels remain unexplained.",
+          "evidence": [
+            "14925\n\n15025"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The optional population-ranking diagnostic has no explained reader consequence and sits after an empty definitions heading; source titles retain raw acronyms.",
+          "evidence": [
+            "Representative-place population ranking is incomplete because one or more incorporated county memberships lack a matching 2025 estimate.",
+            "Minnesota: mn gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain that the numeric Itasca names are recorded territory identifiers, preserving them unchanged.",
+        "Remove empty source headings; explain any visible ranking limitation or omit the diagnostic, and give sources readable document titles."
+      ]
+    },
+    {
+      "route": "/areas/mississippi/",
+      "inputHash": "43129c989f3ed880c613ffd06c83bb35477dc40238da94ddfff67f8045620a28",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The baseline search-label issue is corrected and both boundary examples and inactive status are preserved. Entire 82-county inventory and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/missouri/",
+      "inputHash": "3974c6cae0cb7617b5ce4a8292d69367d48d1799d11b6f289da44f8f76c2c33b",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline singleton grammar fixed; correct township search vocabulary added; hierarchy/status codes and ranking text moved into optional details. The unexplained ranking limitation remains but is no longer in the primary definitions. All complete main-text chunks read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Optional ranking diagnostic does not explain its relevance to lookup and follows an otherwise empty General place definitions section.",
+          "evidence": [
+            "General place definitions\n\n[DISCLOSURE]\n\nSource methodology and record limitations\n\nRepresentative-place population ranking is incomplete because one or more incorporated county memberships lack a matching 2025 estimate."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Source links retain opaque raw identifiers.",
+          "evidence": [
+            "Missouri: sub est2025 29.csv — www2.census.gov",
+            "Missouri: mo gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Remove the empty generic heading and omit or explain the ranking diagnostic's actual effect in the optional note.",
+        "Use readable source titles."
+      ]
+    },
+    {
+      "route": "/areas/montana/",
+      "inputHash": "d679efd0aaaca38d60efe5549824ea086e77db0537ad189d99510b578692ed17",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The material exposed-code problem is corrected via disclosures, while the population-addition note remains. Names, inactive/statistical distinctions, full county inventories and tribal caveats were all read and preserved.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The baseline population-aggregation explanation remains in visitor-facing prose instead of optional methodology.",
+          "evidence": [
+            "these overlapping layers must not be added together.",
+            "their populations must not be added together."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Mechanical acronym expansion produces an awkward source-scope phrase.",
+          "evidence": [
+            "geographic relationship records membership relationships"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep the plain consolidated-government/Walkerville distinction in the entry, moving population aggregation advice alongside optional Census codes.",
+        "Use '2026 place-to-county relationship records' in shared scope."
+      ]
+    },
+    {
+      "route": "/areas/nebraska/",
+      "inputHash": "4e56efa3059c853e9463bffae4f48d3a6d1767a0e0ea9bc1d7515884b391b379",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Buffalo/Cedar/Phelps natural ordering is corrected; mixed status labels shortened and hierarchy details made optional. Stanton abbreviation explanation remains missing. Banner/McPherson and inactive identities retained. Full lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Stanton's abbreviation-only precinct names remain unexplained.",
+          "evidence": [
+            "BST\n\nDMR\n\nDWY\n\nELK\n\nHMR\n\nPK\n\nSBE\n\nSBW\n\nSTN\n\nUCB"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The state geography reference and population files still have opaque labels.",
+          "evidence": [
+            "Nebraska: ne gslcg — www2.census.gov",
+            "Nebraska: sub est2025 31.csv — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Explain that Stanton precinct abbreviations are the recorded source labels; add expanded names only if verified.",
+        "Replace raw source filenames and acronyms with readable document titles."
+      ]
+    },
+    {
+      "route": "/areas/nevada/",
+      "inputHash": "ccf2da8fcfdd9fa559b613dbad52044ec410d19ee0d64ce869a14f8be9b08903",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Long source duplication, anonymous exception, front-facing codes and generic search vocabulary are corrected. One small generated-sentence agreement defect remains. Full inventory read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The named multi-county exception uses 'has' after seven county subjects and repeats the General place definitions heading.",
+          "evidence": [
+            "Douglas County, Esmeralda County, Eureka County, Lander County, Mineral County, Nye County, Storey County has no incorporated municipality"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Introduce the exception as 'These counties have no incorporated municipality...' and retain the exact seven names and dated scope."
+      ]
+    },
+    {
+      "route": "/areas/new-hampshire/",
+      "inputHash": "22b565d134d6ebf17ddffd3a149df051a889e27b1683e2b01ce800a5a1234ab9",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Search/recovery terms, Coös alias, Livermore and the organized/unincorporated distinctions survive. Sources are differentiated but not all are polished document titles. Full lists read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The municipality source uses a CSV filename as its visible label; a verified plain title would be easier to select.",
+          "evidence": [
+            "New Hampshire: municipality county region.csv — nheconomy.com"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use a verified description such as the state municipality/county list for the CSV source while preserving the link and file-type cue."
+      ]
+    },
+    {
+      "route": "/areas/new-jersey/",
+      "inputHash": "44c9c36340ee02270b5374ba59b6de748f3670d60d957dda868e0ff84648779e",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "State-appropriate search and slimmed type-pair introductions improve lookup. Princeton's technical suffix note remains; numeric citations add avoidable friction. Full municipal/CDP inventories and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The baseline suffix-mechanics sentence remains in Princeton's primary entry.",
+          "evidence": [
+            "Census supplies no legal suffix."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Numeric source labels do not identify the linked map record or legislation.",
+          "evidence": [
+            "New Jersey: 2 — maps.nj.gov",
+            "Essex County: 287 — pub.njleg.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Move Census suffix mechanics into optional methodology while retaining unified municipality/government-form language.",
+        "Replace numeric labels with verified descriptive titles without changing source links."
+      ]
+    },
+    {
+      "route": "/areas/new-mexico/",
+      "inputHash": "16d03bef2bf3b4e3e2bb28d384942ea6ef7eaaffbfc2e030bcc6b22dcad8cd07",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both material baseline findings are addressed: optional technical codes and local Los Alamos explanation. Source titles such as HB0514 remain brief, but the municipal code/legislative pair is identifiable. Full lists and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/new-york/",
+      "inputHash": "8430d2b201a8f1846d947fb324e3aa340c669786e0815322efc5e4a9e9047e1e",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline major borough-as-town error fixed across all five neighborhood lists; baseline repetitive address advice remains in many counties despite some shortening. All lists and disclosures read, including sources and optional worksheets.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Shared address cautions still recur across county explanations, and the overlap definition repeats in adjacent source paragraphs.",
+          "evidence": [
+            "Use the actual business location when a visit or delivery is part of the service.",
+            "Town and village names can overlap. Communities are listed separately from municipalities; use the actual address when a boundary matters."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Several otherwise county-named source links remain numeric or truncated document identifiers.",
+          "evidence": [
+            "Rockland County: 638302849437900000 — rocklandcountyny.gov",
+            "Orange County: 1pt0144 Summary of Status of Consolida — tuxedogov.org"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Retain substantive county distinctions while removing repeated generic address advice and merging the adjacent overlap definitions.",
+        "Give numeric and truncated citations readable document titles."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/",
+      "inputHash": "1be42d575613a623de97765b046c81f65de5e9d8c1d5e987c9fad88a0538fd30",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The Wake/Alexandria transferability finding is resolved and search labels are appropriate. The other baseline finding persists: status/source prose repeats and Census identifiers still interrupt the place entries. Full lists and disclosures read; no legal status changes inferred.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "The baseline status-note repetition and technical identifier wording remain despite new optional methodology disclosures.",
+          "evidence": [
+            "The retained GEOID identifies the January Census source, not an active government.",
+            "Spencer Mountain has a suspended charter through June 30, 2029; neither is counted as an active municipal government. The charter remains suspended until June 30, 2029 under S.L. 2026-50 section 6.2."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep a short dated status explanation beside Speed, Spencer Mountain and Eureka; consolidate legal/source mechanics in named optional evidence sections, removing duplicate date sentences."
+      ]
+    },
+    {
+      "route": "/areas/north-dakota/",
+      "inputHash": "1fa6dfab7a47aace9e5cd50eefc7028d1a8989a016f47f784c8593ec65ce2467",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline repeated long township status prose is corrected to compact labels; inactive status remains explicit. Search examples are state-appropriate and hierarchy details are optional. Document-specific source naming remains incomplete. All names and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Some source links still use machine filenames or unexplained acronyms.",
+          "evidence": [
+            "North Dakota: nd gslcg — www2.census.gov",
+            "North Dakota: sub est2025 38.csv — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Label the subdivision population file and state geography reference by human-readable document title, retaining year."
+      ]
+    },
+    {
+      "route": "/areas/ohio/",
+      "inputHash": "f1d6ddf5760337e705ebee77207144522acaf1ebe9117aca52699db027967f21",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline Rendville status omission fixed. Baseline repeated county-workflow prose remains; county-named source notes still not implemented although source document titles are clear. Read all four chunks, including all lists and source details.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "County preambles still repeatedly add generic workflow cautions rather than place-specific information.",
+          "evidence": [
+            "A city named in service coverage is not evidence that a pictured project took place there.",
+            "Use the actual collection address when confirming a slot."
+          ]
+        },
+        {
+          "severity": "moderate",
+          "issue": "Source section repeats its dated inventory explanation and uses identical generic headings for detached county-specific exceptions.",
+          "evidence": [
+            "Place list from the U.S. Census Bureau, checked October 2026. Places crossing a county line appear in both counties.",
+            "General place definitions\n\nWashington Township is the county portion of the township also extending across Franklin and Union counties.",
+            "General place definitions\n\nWashington Township extends into Delaware and Union counties."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Remove recurring generic customer-workflow cautions while preserving concrete aliases, status and boundary facts.",
+        "Combine duplicate source overview prose and label exception notes by relevant county."
+      ]
+    },
+    {
+      "route": "/areas/oklahoma/",
+      "inputHash": "94b93eddfe0c427b6df0a41666725cc0fe13c7fe25887c5f5d9798605208dd4e",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline diagnostic moved into optional details, reducing interruption, but its visitor relevance remains unexplained. Search labels are corrected and all inactive identities retained. Full lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "An unexplained internal population-ranking diagnostic remains in public methodology, below an otherwise empty definitions heading.",
+          "evidence": [
+            "Representative-place population ranking is incomplete because one or more incorporated county memberships lack a matching 2025 estimate."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "State reference and population source labels still use raw filenames/acronyms.",
+          "evidence": [
+            "Oklahoma: ok gslcg — www2.census.gov",
+            "Oklahoma: sub est2025 40.csv — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Remove the ranking diagnostic if it has no visible user consequence, or explain that consequence and give its disclosure a specific title; remove the empty definitions heading.",
+        "Use concise inactive status notes and readable source document labels."
+      ]
+    },
+    {
+      "route": "/areas/oregon/",
+      "inputHash": "4316c968edc0f5163a39e64d3fa6d768c5240a52d266e285e1c71789c2acc976",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline technical-code repetition and duplicated source scope are addressed. Ranking detail is retained only in optional methodology; the two inactive memberships and tribal caveat survive. All lists/disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/pennsylvania/",
+      "inputHash": "a96c49cf2c106fbb39a9dc8666dc2b1b774a41f6e8d612042ce8adfb90be690b",
+      "contentSubtotal": 65,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Both baseline editorial issues remain. Document titles and dated charter/merger evidence remain strong; full municipality coverage and exceptions retained. All three complete main-text chunks, sources and worksheets read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Opening lookup help does not say selected communities are incomplete; that limitation still arrives after the lists.",
+          "evidence": [
+            "Selected communities are not a complete neighborhood or village inventory."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Many county paragraphs still append generic operational advice to place distinctions.",
+          "evidence": [
+            "Use the actual customer destination in directions and contact details.",
+            "Use the approved appointment destination rather than a general county label when attendance is required."
+          ]
+        },
+        {
+          "severity": "moderate",
+          "issue": "Repeated General place definitions headings leave local exceptions without named county context and repeat cross-county caveats already explained above.",
+          "evidence": [
+            "General place definitions\n\nCross-county municipalities are listed in each county they touch: Ellwood City.",
+            "General place definitions\n\nCross-county municipalities are listed in each county they touch: Adamstown."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Add a concise selected-community scope sentence to the opening help.",
+        "Remove generic address advice from county paragraphs while preserving all substantive local distinctions.",
+        "Name source-note groups by county and combine repeated cross-county definitions."
+      ]
+    },
+    {
+      "route": "/areas/puerto-rico/",
+      "inputHash": "5177c71a60aeba8c8e8fcb67f8eb81246a9507707ecd4bf2d28f317bedac8520",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline moderate Martín Peña ambiguity fixed with distinct parent barrios; long status/hierarchy prose condensed and full definitions optional. All subbarrio parent contexts and complete main text read. Source relationships were not independently revalidated against external records in this editorial pass.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Source overview contains an awkward automated phrase and generic cross-county terminology.",
+          "evidence": [
+            "January 1, 2026 Census geography with full 2026 geographic relationship records membership relationships. Cross-county places appear in each intersected county or municipio."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Source titles expose abbreviated filenames instead of explaining documents.",
+          "evidence": [
+            "Puerto Rico: pr gslcg — www2.census.gov",
+            "Puerto Rico: prm est2025 pop.xlsx — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use a plain description of dated place-to-municipio relationships.",
+        "Give abbreviated source files readable titles."
+      ]
+    },
+    {
+      "route": "/areas/rhode-island/",
+      "inputHash": "e4d25d1eeaee86b04533fd8a25e11d04e1778f7dfe82a5d271bb8d93b5be0a57",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "State-appropriate controls and a meaningful source label address the baseline requests. The optional worksheet remains explicitly fictional/general rather than a claimed local result. Full lists read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/south-carolina/",
+      "inputHash": "27f137e95ceb5538065522038be75de4236969606bef6c81e4576b93e95e1027",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The material baseline search-vocabulary issue is corrected. Bamberg source labels could still be more descriptive, but the local exception and small source group remain understandable. Full lists and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/south-dakota/",
+      "inputHash": "aeff685920ba713636ea4c2e8eb593b52cf8b92f6126c10b728b018c46edf80d",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline Mellette long active-status repetition is corrected, without losing Riverside's inactive status. Search help names city/town/township/county. Document-specific evidence labels remain partly unfinished. All names and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Some source links still use machine filenames or unexplained acronyms.",
+          "evidence": [
+            "South Dakota: sd gslcg — www2.census.gov",
+            "South Dakota: sub est2025 46.csv — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Replace the subdivision CSV and state geography acronym labels with descriptive document titles and years."
+      ]
+    },
+    {
+      "route": "/areas/tennessee/",
+      "inputHash": "c7293c7ac847aa67839505f1f2936756a0a69d83aafa7ecf140d4899ab275ffe",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline city/town/county search issue is corrected; the statistical-balance distinction and special-government entries survive. Source-language cleanup remains incomplete. Full 95-county inventory and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source-title request remains incomplete: MapServer names technology rather than the linked geography evidence.",
+          "evidence": [
+            "Tennessee: MapServer — tnmap.tn.gov"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The shared source-scope list includes organized townships even though the directory has no township category, weakening state specificity.",
+          "evidence": [
+            "Incorporated municipalities, organized townships, consolidated governments and Census-designated places are distinctly typed."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use a verified description for the state municipal map service and tailor the source-scope type list to the categories actually present."
+      ]
+    },
+    {
+      "route": "/areas/texas/",
+      "inputHash": "eb5621bed1b8bd6f0c8ef4199b74565a2bc937446051d9ab83bbbc4683afa618",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline moderate absence of upfront scope fixed. Internal ranking diagnostic now optional but remains unexplained. All six chunks read fully, including all counties, typed lists, inactive labels and sources. No length penalty for functional inventory.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The opening type key names cities and towns but omits the separately listed villages.",
+          "evidence": [
+            "Incorporated cities and towns, Census-designated places and statistical county subdivisions are listed separately.",
+            "Villages\n\nSalado"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "Ranking diagnostic moved to optional detail but still has no visitor-impact explanation and sits below an otherwise empty generic heading.",
+          "evidence": [
+            "General place definitions\n\n[DISCLOSURE]\n\nSource methodology and record limitations\n\nRepresentative-place population ranking is incomplete because one or more incorporated county memberships lack a matching 2025 estimate."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Include villages in the opening type key.",
+        "Remove the empty heading and omit or explain the ranking diagnostic's consequence in optional methodology."
+      ]
+    },
+    {
+      "route": "/areas/utah/",
+      "inputHash": "be278cbb29d7da012d612ef498a150041d023d3e0c970cceeacf8cfdb777c203",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Search controls now fit the state and the acronym is expanded, but awkward source prose and repeated long CCD definitions persist. Full inventories read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source-scope rewrite remains mechanical and includes a place type irrelevant to Utah.",
+          "evidence": [
+            "geographic relationship records membership relationships",
+            "each intersected county or municipio"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The baseline request to shorten repeated statistical explanations is incomplete.",
+          "evidence": [
+            "Statistical CCD with no legal function; not a municipal government or active administrative district."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records' and 'each intersected county' in Utah's scope.",
+        "Keep the full statistical definition once and use a shorter local label without changing place identities or tribal caveats."
+      ]
+    },
+    {
+      "route": "/areas/vermont/",
+      "inputHash": "d8a46cb65e9572ff6506a14aca24e5957e796f7d6685a3a83f9d770e84cb3f6a",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The former Essex Junction alias no longer repeats village, and legal-status distinctions remain. Status ordering and one raw source label are unresolved. Full inventories and exceptions read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "Village status is still explained before being stated, and Jericho repeats inactive; the baseline request for a compact leading status is incomplete.",
+          "evidence": [
+            "Jericho Incorporated entity retained in Census records with inactive governmental status. Inactive",
+            "Groton State-recognized incorporated village absent from Census January 2026 incorporated-place roster. Inactive"
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The Caledonia source label remains an unexplained numeric identifier.",
+          "evidence": [
+            "Caledonia County: 00001 — legislature.vermont.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Lead exception annotations with the recorded Active/Inactive/Former status, then retain or link the state/Census explanation without repeating the status.",
+        "Give the Caledonia source a verified plain description while preserving its link."
+      ]
+    },
+    {
+      "route": "/areas/virginia/",
+      "inputHash": "46aaed1740104b20c724adbb16b3cadfa435055f044fc3c693afd1b300b538b1",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Arlington's Philadelphia guide is contextualized and York's singular label fixed. Search examples are jurisdiction-appropriate. Glen Lyn retains one concise dated reconciliation note and the source block names it. Full names and disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/washington/",
+      "inputHash": "9295d27381e6b0cb1dd10bc6683dbcff802331634455932874da20ca7d4d179a",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline repeated status/class codes are removed from routine lookup content. Search language, zero-population explanation and tribal limitations are preserved. Full typed lists/disclosures read.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/west-virginia/",
+      "inputHash": "70e9828770e60a6428d6e193a2f7da415973c24825a3d9aea1c18ea247fab223",
+      "contentSubtotal": 72.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The baseline singular/plural issue is corrected and search guidance improved. No new material prose defect found in the full inventory and ancillary planning-guide labels.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/areas/wisconsin/",
+      "inputHash": "5d071a9df751d9d5d7de29a1ba32bada989a46c7e59882ffd1fbd09be269cb6a",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The baseline search-label issue is resolved. Complete typed inventories and named exceptions remain. The requested exact source-title cleanup is incomplete. Full lists and disclosures read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The source label exposes the malformed text qmcdq instead of a clean document title.",
+          "evidence": [
+            "Wisconsin: what the acronym qmcdq really means — sco.wisc.edu"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use the verified source title, preserving the source URL and the active-town/incorporated-place distinction."
+      ]
+    },
+    {
+      "route": "/areas/wyoming/",
+      "inputHash": "61ed6122d4edf29ac81aa7b196f6bf338140b287e9a70dfd3ecb738de113c116",
+      "contentSubtotal": 68.75,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "State-appropriate controls and plain shared scope improve the page; Frannie and tribal caveats remain. Some source-language friction persists. Full lists read.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The baseline request for descriptive source titles remains incomplete: query and wy gslcg do not explain the linked evidence.",
+          "evidence": [
+            "Wyoming: query — tigerweb.geo.census.gov",
+            "Wyoming: wy gslcg — www2.census.gov"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Replace raw query/filename labels with verified descriptions, and use '2026 place-to-county relationship records' for the inventory membership explanation."
+      ]
+    },
+    {
+      "route": "/services/",
+      "inputHash": "b744fac3b7d76b0c4ba6923901d6a6c71bfca3e3d016eec043c2a87cb02c0b2e",
+      "contentSubtotal": 80,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Baseline heading fix is fully addressed; the index remains concise and preserves all distinct routes.",
+      "findings": [],
+      "recommendedFixes": []
+    },
+    {
+      "route": "/services/contractor-websites/",
+      "inputHash": "dace4982981190486b9f40c3e18a1ce6edfb1d6f77bccb1a21d555d5805f794d",
+      "contentSubtotal": 77.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The requested three-way add-on separation is delivered and the useful counted page plan and fictional labels are retained. Cross-page profile-scope inconsistency in the guide was reported separately to the parent; the service's finite allowance is verified.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The future-updates paragraph combines file editing, developer choice, care allowance and gallery exclusions; separate the editing decision from optional care for faster scanning.",
+          "evidence": [
+            "Future changes require editing and publishing the website files.",
+            "Optional Keep Running care at $150/month includes one set of small text, photo or link changes you send each month."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep the source-code editing decision in its own short paragraph, followed by the optional care/gallery allowance."
+      ]
+    },
+    {
+      "route": "/services/seo/",
+      "inputHash": "60e5e6bebdcec688e0b0642f06e460d542da1f518e6c12a78d3dd49d53d9d129",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Opening prices and accounting categories address the most important baseline gap. Repetition remains material, so coherence stays 2. No hard cap is applied: the repeated sections still contain some distinct conditions, rather than three entirely valueless repetitions.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "After adding the useful accounting list, the page still repeats the completed-improvement explanation and then walks through the same research/approval/publication/report cycle again.",
+          "evidence": [
+            "An improvement is one agreed, finished piece of work.",
+            "That is one finished improvement, including research, writing and checks.",
+            "How the work gets done."
+          ]
+        },
+        {
+          "severity": "minor",
+          "issue": "The post-card care paragraph restates the cards and accounting list; its only additional schedule detail can be added to the main comparison.",
+          "evidence": [
+            "Care edits: supplied text, photo and link changes are separate from researched improvements.",
+            "Both plans include website and form checks, one set of small text, photo or link changes you send each month, and a quarterly website check."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Use the worked service-page example plus the allowance list as the main explanation; shorten the generic process to approval/report details not already demonstrated.",
+        "Move the quarterly-check detail into the care row and remove the post-card restatement."
+      ]
+    },
+    {
+      "route": "/services/web-design/",
+      "inputHash": "d611ce2d1ac673d6b2e799fb88578f55e3b088c0ad2af55521ab5e4a29169b9f",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The preparation/build/review/launch sequence is implemented; the baseline outside-cost repetition remains. Rating anchors stay unchanged because the improvement does not remove the remaining identifiable reading friction.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The package block and adjacent payment explanation repeat the same outside-cost list instead of sharing one nearby note.",
+          "evidence": [
+            "Domain, hosting, paid tools and tax are separate. Monthly help is optional.",
+            "Domain, hosting, paid tools and any tax are separate."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Keep one shared outside-cost note spanning the package/timing/payment block while preserving all exclusions."
+      ]
+    },
+    {
+      "route": "/services/website-addons/",
+      "inputHash": "a33c90c5055a72f6893df7821fcfe56553249f84f01db2041f21ec04a7eb644a",
+      "contentSubtotal": 77.5,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "All three baseline changes are delivered: comparison, matching navigation and visible ongoing-support distinction. Remaining unit-limit scan friction is limited rather than a hidden or deceptive commercial promise.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The fast comparison does not expose several material unit caps, such as the store's ten products and the guided form's field/branch limits; readers must open detailed cards to compare scale.",
+          "evidence": [
+            "Small online store | Sell a small agreed product collection. | $1,500",
+            "One quote-request form with up to 12 agreed fields and three conditional question branches",
+            "Set up one supported commerce platform with up to 10 supplied products and two existing variants per product"
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Add the most choice-changing quantity limits to the compact comparison or visible card summaries, retaining full exclusions and acceptance details in the clearly labeled panels."
+      ]
+    },
+    {
+      "route": "/services/website-audit/",
+      "inputHash": "c4ec65eb742b563c04cbe466a1ad2a09d71bfeeabd6448dc7575b659be501b0a",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The specific final request is delivered. The baseline repetition fix is partial; scope honesty and own-site/example boundaries remain intact.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The limitation that the offers do not fix every finding is stated with the example and repeated in the process; keep it beside the comparison and let the process explain the new steps.",
+          "evidence": [
+            "We agree which work to do; neither review offer promises to fix every finding.",
+            "Neither review offer promises to fix every finding."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Retain the no-safe-fix and total-fix conditions beside the offer comparison, trimming their later general repetition."
+      ]
+    },
+    {
+      "route": "/services/website-care/",
+      "inputHash": "82b8992aa13303009b6fc667eafa5517523041759d5c2ce60808e450ea1517df",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "The local source merge and final CTA are improved, but renderer-added supplementary content preserves the duplicate enrollment path. No hard cap: the responsibility split and outage answer still add different practical conditions.",
+      "findings": [
+        {
+          "severity": "moderate",
+          "issue": "The complete rendered page still contains both the merged enrollment section and a later Check the platform first supplement, so the baseline consolidation is incomplete at the rendered-page level.",
+          "evidence": [
+            "Check your website before enrolling.",
+            "Send the platform, connected tools and who controls authorized access and recovery.",
+            "Check the platform first.",
+            "Tell me which website platform and connected tools you use."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Merge the remaining platform supplement into the main enrollment block, retaining any distinct security/specialist limit once. Keep the responsibility split as the main included/provider reference."
+      ]
+    },
+    {
+      "route": "/services/website-redesign/",
+      "inputHash": "61557b351289cefd867a55880b22c5d6ff50ea785e59513cba35a90db938dd19",
+      "contentSubtotal": 70,
+      "contentMaximum": 80,
+      "finalScore": null,
+      "comparison": "Editing/pages/migration labels are implemented; folding the age question into the opening is only partial because the full later FAQ remains.",
+      "findings": [
+        {
+          "severity": "minor",
+          "issue": "The age-based FAQ remains after its answer was moved into the opening, so the same repair-versus-redesign explanation is taught twice.",
+          "evidence": [
+            "Age alone does not decide whether a website needs replacing.",
+            "Does a website need redesigning after a fixed number of years?",
+            "Age alone does not decide it."
+          ]
+        }
+      ],
+      "recommendedFixes": [
+        "Remove the repeated age-based FAQ answer or reduce it to a link to the opening decision; retain the distinct live-site continuity FAQ."
+      ]
+    }
+  ]
+}

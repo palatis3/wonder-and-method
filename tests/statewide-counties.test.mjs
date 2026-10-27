@@ -112,7 +112,7 @@ test('the consolidated New York hub preserves factual entries and publishes stat
  const org=schema.find(item=>item['@type']==='Organization');assert.equal(org.location.address.addressLocality,'Buffalo');assert.equal(org.location.address.addressRegion,'NY');
  for(const c of statewideCountyProfiles){
   if(approvedLocationPaths.includes(path(c.slug)))assert.ok(byPath.has(path(c.slug)));else {assert.equal(retiredCountyRoutes[path(c.slug)],page.path+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)));}
-  assert.ok(page.html.includes(`id="${c.slug}"`));assert.ok(page.html.includes(escapeHtml(countyLocalNotes['new-york/'+c.slug]||c.geographyNote)),c.slug);
+  assert.ok(page.html.includes(`id="${c.slug}"`));for(const sentence of factualLocalSentences(countyLocalNotes['new-york/'+c.slug]||c.geographyNote))assert.ok(page.html.includes(escapeHtml(sentence)),c.slug+' '+sentence);
  }
  const image=socialCardPath(page.path);assert.ok(image);assert.ok(page.html.includes(config.origin+image));
  const png=await readFile(new URL('../src'+image,import.meta.url));assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);
@@ -158,3 +158,6 @@ test('every remaining county can record an allowed event without touching inquir
  assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM inquiries').get().n,0);
  assert.throws(()=>sqlite.prepare("INSERT INTO journey_counts VALUES('2026-10-20','page_view','unsure','areas_fake_county','direct',1)").run());
 });
+
+// Address reminders are editorial guidance; every declarative local distinction remains required.
+const factualLocalSentences=note=>(note||'').split(/(?<=\.)\s+/).filter(sentence=>! /^(?:Use |Confirm |Keep |A city named in service coverage )/.test(sentence));

@@ -1,0 +1,207 @@
+{
+  "batch": "residual-i",
+  "reviewer": "Codex primary",
+  "date": "2026-10-27",
+  "assigned": 100,
+  "reviewed": 100,
+  "status": "complete-content-only",
+  "nextPacket": null,
+  "passContent": 79,
+  "reviseContent": 21,
+  "validatedEvidenceFields": 600,
+  "holds": [
+    {
+      "route": "/areas/minnesota/blue-earth-county/",
+      "candidateBodySha256": "01308442895d4523d92622c9f9cadfc8cee717fe1a338793b9f08d3a557b4a88",
+      "requiredFixes": [
+        "Remove the internal “If the research steps duplicate another county example” instruction. Retain direct holdings/access/copying limits and the address-led preparation task."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/carver-county/",
+      "candidateBodySha256": "5f8541395b9033869252cd9831c3d795709733cbcef8af946522bd4f24d9d953",
+      "requiredFixes": [
+        "Keep the permissioned-portfolio explanation in its substantive FAQ. Remove its repeated portfolio/access sentences from decisionone and limits, retaining commercial/private-space approval and ticket-integration boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/clay-county/",
+      "candidateBodySha256": "4ac9547ef6923f89193e15bd6a70bf488c5abf640a4249163f51b472f7418d78",
+      "requiredFixes": [
+        "Keep the substantive shared-form responsibility explanation in the FAQ. Refocus decisionthree on a concrete museum/archive versus building-rental contact choice and remove the repeated agreement/implementation recap from limits."
+      ],
+      "caps": [
+        {
+          "id": "majorBurden",
+          "maximum": 69,
+          "reason": "Same substantive shared-form ownership and routing recommendation repeats across three body sections.",
+          "evidence": [
+            {
+              "section": "Make the contact choice explicit",
+              "passage": "If an owner wants a shared form, first agree who receives each kind of message, who replies and how misdirected questions are handled."
+            },
+            {
+              "section": "Limits",
+              "passage": "The proposed contact structure does not assume a partnership, shared inbox or message-forwarding agreement. A shared form requires that agreement and separate implementation review."
+            },
+            {
+              "section": "FAQ",
+              "passage": "Before adding a combined form, agree on recipients, responsibility for replies and what happens when a request reaches the wrong team."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/areas/minnesota/clearwater-county/",
+      "candidateBodySha256": "a4f460d532554832ada8f1b75bc54003f6372a66a5a168a0a635f7196cd91d93",
+      "requiredFixes": [
+        "Remove “If combined with another research example” editing instruction. Preserve direct holdings, access, known gaps and no-complete-digitization boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/cottonwood-county/",
+      "candidateBodySha256": "df040d0e298c968e6932422b07211ce78c5382af69cfa957fb8b468bcd2583f4",
+      "requiredFixes": [
+        "Keep the substantive address-purpose guidance in the FAQ. Refocus decisionthree on the separately arranged seasonal guided-tour request, preserving correct arrival as a brief link/reference rather than repeating the mailing distinction."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/dakota-county/",
+      "candidateBodySha256": "ad4f749548903568c8141a9a9ded7119964d56f4ba082b34ec03f4ab1b71d193",
+      "requiredFixes": [
+        "Verify and state the actual grade ranges and group-size limits for the named school and village programs. Keep lunch-included versus added-time comparison and clarify any separate adult count without inventing eligibility."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/dodge-county/",
+      "candidateBodySha256": "e15e34b7c5e524736a6b84b00260ad30c99f0827d17e07a46dcafe4aabfb2d4c",
+      "requiredFixes": [
+        "Keep general archive treatment in the FAQ. Shorten decisionone to the three sales/performance states and the actual ended2026example, without repeating instructions to remove purchase prompts/link current program."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/kandiyohi-county/",
+      "candidateBodySha256": "89f69ae202aac8b2c6eb57127f4fbd9bb6a5ecee568df2c3fcbcc77c25aa7514",
+      "requiredFixes": [
+        "Remove the “If combined with a related archive example” editing instruction. Retain holdings, effort, format availability and reproduction-rights boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/lake-of-the-woods-county/",
+      "candidateBodySha256": "17922a7446f1cc1e15353d5d25e2a0f480f9dabf9f5adbbf267d39511b34ef87",
+      "requiredFixes": [
+        "Remove the internal “Preserve this device-and-rights distinction if the example is consolidated with other archive guidance” instruction; retain staff confirmation and rights boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/nicollet-county/",
+      "candidateBodySha256": "bac6cb9dae7c540b611ad203c2aa3bd4d46101df3702e2adfc766ef5e854fa6c",
+      "requiredFixes": [
+        "Remove “Existing archive guidance should be consolidated where it already explains the same task.” Retain reproduction/payment versus permission boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/pine-county/",
+      "candidateBodySha256": "a7c60cdb7053a0472b6648a4f1ecb5e1544e814943eb6e001a3110a934694a60",
+      "requiredFixes": [
+        "Verify the official current museum/café Sunday times and thrift-shop season and add one concrete dated combined-visit comparison. Preserve the twelve-person group contact threshold and do not invent a combined reservation."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/pipestone-county/",
+      "candidateBodySha256": "ebe8e380b04f35c8063bbc22803b446cc9d82b358b71e42057e15308b2817751",
+      "requiredFixes": [
+        "Remove “This material should join existing archive guidance where it serves the same purpose” from limits. Preserve permission and feature-scope boundaries."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/scott-county/",
+      "candidateBodySha256": "e9c9edf1eeb21c324e90500ec5f3b28ee7a1a4316136a80d416cbef536a4d063",
+      "requiredFixes": [
+        "Verify official trunk grade ranges and town-mapping activity differences; provide a concrete grade/activity comparison so the lesson choice is demonstrated. Do not invent contents, timing or availability."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/stevens-county/",
+      "candidateBodySha256": "5ce430361a0a2fad1ec54c4a21e924b3a3ecf4e6db13ca4acd412ea38d8e715d",
+      "requiredFixes": [
+        "Remove sourceBridge sentence about enriching a shared archive-preparation guide and limits instruction to consolidate overlapping advice. Retain the concrete browsing-versus-retrieval distinction and system-scope boundary."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/waseca-county/",
+      "candidateBodySha256": "d7a7fb101222565740db1ed4127cab0efaae96e6b92cbf8f5e8f073b695b4696",
+      "requiredFixes": [
+        "Remove limits instruction beginning “If combined with other archive advice” and bridge sentence about anchoring an image-request guide. Keep LU output limitation and staff/rights scope clear."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/minnesota/watonwan-county/",
+      "candidateBodySha256": "2821dd81b636f6bb8fc9d74a13366865707edffd2943515f48bb77d4cbaf85f9",
+      "requiredFixes": [
+        "Remove limits consolidation instruction and bridge sentence about serving as an example within broader park-event guidance. Keep City Hall shelter route and distinct camping categories."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/scott-county/",
+      "candidateBodySha256": "8b087a5d8f42391344d27603b6bfd1dd3c71a8bc5b1521cd61e75d325f694200",
+      "requiredFixes": [
+        "Verify the official linked poolparty agreement and add its actual setup/guest/departure timing, or a clearly labelled fictional schedule grounded in verified intervals. Keep organizer-only access and cleanup within departure; do not invent extensions or refund rights."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/washington-county/",
+      "candidateBodySha256": "16bf734d9d1db2f1d38bf438f0dc4f89cb2d5cc3140acdcd78022b5ca50d6e39",
+      "requiredFixes": [
+        "Replace internal coverage history about rejected highway-address matches and raw coordinates with a concise factual Trout Lodge/Washington County statement. Preserve independently verified geography in evidence, online-from-Buffalo and nonclient disclosures."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/wayne-county/",
+      "candidateBodySha256": "b838773b1c43c364ace3ef234f67624373a74719874c5fab210a67c3c9b8ac3f",
+      "requiredFixes": [
+        "Remove the sourceBridge sentence beginning “This concrete comparison can sit alongside other cabin-preparation examples”. Preserve actual plumbing/linen comparison and unresolved pet conditions."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/missouri/worth-county/",
+      "candidateBodySha256": "3a3a90b38dfce17b909ef4cd343ec2a8a01d0dccda864d55893546ea1b1eb22b",
+      "requiredFixes": [
+        "Remove coverage sentence about a failed Census lookup. State the verified Worth County courthouse office/location concisely with online-from-Buffalo and example disclosures; preserve failed-lookup evidence privately."
+      ],
+      "caps": []
+    },
+    {
+      "route": "/areas/nebraska/colfax-county/",
+      "candidateBodySha256": "bca6b55ea57f7f4a876887a1e21e9adf78b4cf62860e1906bbeeda0eda385a62",
+      "requiredFixes": [
+        "Verify official full-breakfast versus lunch/dinner minimums and add the actual comparison alongside the20meeting/8overnight example. Preserve staff confirmation, separate meal counts and returned agreement; no invented catering guarantee."
+      ],
+      "caps": []
+    }
+  ],
+  "limits": [
+    "Exact complete candidate reads; not independent.",
+    "Assigned neighbor compared; selected topical comparisons noted, comprehensive family audit pending.",
+    "Visuals/accessibility/final null; no publication acceptance."
+  ]
+}

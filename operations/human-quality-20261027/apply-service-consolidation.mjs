@@ -1,0 +1,31 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const root=resolve(import.meta.dirname,'../..');
+const files=new Map();
+async function change(file,from,to){
+ const text=files.get(file)??await readFile(resolve(root,file),'utf8');
+ if(!text.includes(from)||text.indexOf(from)!==text.lastIndexOf(from))throw Error(`Expected one source match: ${file}: ${from.slice(0,80)}`);
+ files.set(file,text.replace(from,to));
+}
+await change('src/service-content.mjs','<h2>Check your website before enrolling.</h2>','<span id="supported-platforms"></span><h2>Check your website before enrolling.</h2>');
+await change('src/service-content.mjs','${supportedSiteNote()}${baselineSummary(o)}','${supportedSiteNote()}${baselineSummary(o)}<p>Security incidents, malware removal and complex migrations may need a separate specialist. <a href="/guides/website-care-versus-seo/">Compare care and SEO around the work you need</a>, or <a href="/guides/website-maintenance-cost/">plan your maintenance budget</a>.</p>');
+const search=await readFile(resolve(root,'src/search-content.mjs'),'utf8');
+const careLine=search.split(/\r?\n/).find(line=>line.startsWith(" if(path==='/services/website-care/')return section"));
+await change('src/search-content.mjs',careLine," // Care enrollment and its guide links are consolidated in careContent.");
+await change('src/service-content.mjs','before launch. Domain, hosting, paid tools and any tax are separate. <a href="/payments/#build-payments">','before launch. <a href="/payments/#build-payments">');
+await change('src/service-content.mjs','Large migrations and specialist security work require a separate assessment or specialist. Neither review offer promises to fix every finding.','Large migrations and specialist security work require a separate assessment or specialist.');
+await change('src/seo-service-content.mjs','<strong>Care edits:</strong> supplied text, photo and link changes are separate from researched improvements.','<strong>Care:</strong> website and form checks, ${improve.small_change_batches===grow.small_change_batches?monthlySmallChanges(o,\'improve\'):`${e(improve.public_name)}: ${monthlySmallChanges(o,\'improve\')}; ${e(grow.public_name)}: ${monthlySmallChanges(o,\'grow\')}`}, and a quarterly website check. These are separate from researched improvements.');
+const seo=files.get('src/seo-service-content.mjs');
+const post=seo.match(/<p>Both plans include website and form checks,[\s\S]*?<\/p>/)?.[0];
+await change('src/seo-service-content.mjs',post,'');
+const method=seo.match(/<h2>How the work gets done\.<\/h2><ol>[\s\S]*?<\/ol>/)?.[0];
+await change('src/seo-service-content.mjs',method,'<h2>Agree on the research and any replacement task.</h2><p>The example above shows the research, approval and publishing sequence. We agree on a useful task and its completion checks before work begins.</p>');
+await change('src/semrush-content-examples.mjs'," p('That is one finished improvement, including research, writing and checks. Care edits are separate. '+e(o.plans.grow.public_name)+' also includes its separate extra graphic or newsletter excerpt using approved content; it does not replace a main improvement.')+",'');
+await change('src/audit-guide-updates.mjs','<p>${editingAnswer(o)} New project pages or substantial gallery changes are agreed separately.</p>','<h3>Future updates</h3><p>${editingAnswer(o).replace(\' Optional \',\'</p><p>Optional \')} New project pages or substantial gallery changes are agreed separately.</p>');
+const faqFile='src/service-faqs.json',faq=JSON.parse(await readFile(resolve(root,faqFile),'utf8'));
+const before=faq['/services/website-redesign/'].length;
+faq['/services/website-redesign/']=faq['/services/website-redesign/'].filter(item=>item.question!=='Does a website need redesigning after a fixed number of years?');
+if(before-faq['/services/website-redesign/'].length!==1)throw Error('Expected one redundant age FAQ');
+files.set(faqFile,JSON.stringify(faq,null,2)+'\n');
+for(const [file,text]of files)await writeFile(resolve(root,file),text.replaceAll('\r\n','\n'));
+console.log(JSON.stringify({changed:[...files.keys()]}));

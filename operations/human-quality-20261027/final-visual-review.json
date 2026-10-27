@@ -1,0 +1,694 @@
+{
+  "date": "2026-10-27",
+  "reviewer": "Codex primary screenshot inspection",
+  "reviewedRepresentativeScreenshots": 68,
+  "groups": [
+    {
+      "layoutStyleGroup": "742ef16d096f8a76fb51a1c4f3c1c37b80f0d6443f32d779c466a5a3887bbb1a",
+      "representative": "/areas/alabama/baldwin-county/",
+      "width": 390,
+      "memberCount": 2072,
+      "visualRating": 3,
+      "evidence": "The serif page title and smaller sans-serif introduction establish a clear order. The pale customer-question panel, numbered decisions and dividing rules distinguish question from actions. At390px paragraphs wrap within the gutters and controls occupy clear gaps.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/245b76671adeff16-390-firstscreen.jpg",
+          "sha256": "6b803597d5a72cbbdb21c43b7a3122611f345faa3e903a0a19d6f9e003f2a01e"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/245b76671adeff16-390-content.jpg",
+          "sha256": "36a37c6085838ee148894f8e38c01345080fd5295cd079bb61db806aac872cf5"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "b5be32cdc8048d91bc36318cc78169ee9407ff58680592eaaf7a1c7a4160326d",
+      "representative": "/areas/alabama/baldwin-county/",
+      "width": 1440,
+      "memberCount": 2072,
+      "visualRating": 3,
+      "evidence": "The serif page title and smaller sans-serif introduction establish a clear order. The pale customer-question panel, numbered decisions and dividing rules distinguish question from actions. At390px paragraphs wrap within the gutters and controls occupy clear gaps.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/245b76671adeff16-1440-firstscreen.jpg",
+          "sha256": "323f19d7b455bf85ee0cdaa36524bd43c78b06943270ddf7dae6b213668ea992"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/245b76671adeff16-1440-content.jpg",
+          "sha256": "7113c4e78f268d850982eb158010a8efb618afbe7af2f4f2dcad0b9af6d7b2bf"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "0ebc22811ae5b996c347366f0abcd3e12dac681641f5fb92e2e5523a2a26fa4c",
+      "representative": "/areas/alabama/",
+      "width": 1440,
+      "memberCount": 36,
+      "visualRating": 3,
+      "evidence": "The directory title, service/cost block, optional place definitions and search field remain distinct. Source paragraphs have a readable measure and optional record groups are separated by thin rules. Phone spacing remains readable, though search follows the introductory context.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/56db91aa7b16c5a6-1440-firstscreen.jpg",
+          "sha256": "7913e8fe4ad679b27c4d32e771241772340bc56f3f09959f1d421f2469543a4a"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/56db91aa7b16c5a6-1440-content.jpg",
+          "sha256": "5cadbda536e0404a7ce5e569de7190071344652303efb060b710a4920ee29904"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "8aa3f7496f837a3607e7fa0bb5d0c7fff498eae0bc705865d3fa821bbc23eea9",
+      "representative": "/areas/alabama/",
+      "width": 390,
+      "memberCount": 36,
+      "visualRating": 3,
+      "evidence": "The directory title, service/cost block, optional place definitions and search field remain distinct. Source paragraphs have a readable measure and optional record groups are separated by thin rules. Phone spacing remains readable, though search follows the introductory context.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/56db91aa7b16c5a6-390-firstscreen.jpg",
+          "sha256": "be950ef613716ab3a507537f8e69b240b43f432780ce9f9880a30359c7bc01ba"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/56db91aa7b16c5a6-390-content.jpg",
+          "sha256": "7f5056038e58e07e07528aec67be7245945d0caa1ca88815a7de6c48f7876e2d"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "5a9fe8cc5710ff85ab4364a6871902687c50d69bde8c42dfea327005d25361e7",
+      "representative": "/areas/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The introductory service-area promise leads to labelled place/state controls. State navigation and the explanation of research/example boundaries use different sections. The optional examples-by-task control stays separated from the provenance paragraphs.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/27f6b906c5cac5da-1440-firstscreen.jpg",
+          "sha256": "d46ae001ebe0229678d19d46a96a682b212abd712447e77be9f594dc858c73e4"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/27f6b906c5cac5da-1440-content.jpg",
+          "sha256": "5c5211e13b73da2daf3d62fec329bf88f9d58a6d02e3f20b05569b852abd481b"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "9cf0f0c95bd2fd082ec1c1d2b4f925a6a7191f7b9a338ade3e39618d7f5748f6",
+      "representative": "/areas/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The introductory service-area promise leads to labelled place/state controls. State navigation and the explanation of research/example boundaries use different sections. The optional examples-by-task control stays separated from the provenance paragraphs.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/27f6b906c5cac5da-390-firstscreen.jpg",
+          "sha256": "24989011128c9e3ffd9312cf9a0cfb936d377dbe2c54e406ad6a1a0321fcf9f8"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/27f6b906c5cac5da-390-content.jpg",
+          "sha256": "e797251d4f728cac64ba349374789a92032d54940fd923fcac5056ce5e6a6213"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "83af15a2db6c83d0c8f00701054737a50e0f765e9c867d6a0976152f0eebc90c",
+      "representative": "/areas/alaska/",
+      "width": 1440,
+      "memberCount": 16,
+      "visualRating": 3,
+      "evidence": "The extra government-status reference is long but grouped beneath a named heading, with readable line length and separate paragraphs. Main lookup controls use the same labelled, vertically stacked phone treatment as the other directories.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/4ea8864dcd756904-1440-firstscreen.jpg",
+          "sha256": "b33fd8844f5d37f0e7c6243a5993ec1ba217cf3018f8788edf7023be4b0a6e1b"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/4ea8864dcd756904-1440-content.jpg",
+          "sha256": "c775b16239fb8d6506e65d4ea7e66f5f4607fa0f62fcacd38a690ead83d3e93e"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "463e99e2e6af6937ff1f2e6e605b627c0652eee5c6e1fdc55d5f61408bda83ef",
+      "representative": "/areas/alaska/",
+      "width": 390,
+      "memberCount": 16,
+      "visualRating": 3,
+      "evidence": "The extra government-status reference is long but grouped beneath a named heading, with readable line length and separate paragraphs. Main lookup controls use the same labelled, vertically stacked phone treatment as the other directories.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/4ea8864dcd756904-390-firstscreen.jpg",
+          "sha256": "cba7b53b2cf65090f23ece82f6c73266088dbcc2cad4831cee9f03804d695d2e"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/4ea8864dcd756904-390-content.jpg",
+          "sha256": "fb04125c9f43f4754b3d24ab5a1c814429701724bbe9ba9c36b44bfd86205e32"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "c8e8c34cbd428405cce6306f3c91da94f720e1925fb7308f263f2c0b9fc1e370",
+      "representative": "/areas/albany-county/",
+      "width": 1440,
+      "memberCount": 133,
+      "visualRating": 3,
+      "evidence": "The longer city/county title wraps cleanly. In the brief, the question panel and three numbered actions remain visibly distinct; each action includes its condition without requiring a disclosure.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/3844ee4424003845-1440-firstscreen.jpg",
+          "sha256": "5a42c86595d6312874d82ea2c7b6d95b7dcbd472b4562c71e32a0e93024ae663"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/3844ee4424003845-1440-content.jpg",
+          "sha256": "7a6b2a7ad58e330d05b7a56facf28826212948cbf32a07a3dc9d2e19593d81ed"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "f3652b4cb8016b06c82e727f9e25937784da2efcf59d80f35a3a671be1454af0",
+      "representative": "/areas/albany-county/",
+      "width": 390,
+      "memberCount": 133,
+      "visualRating": 3,
+      "evidence": "The longer city/county title wraps cleanly. In the brief, the question panel and three numbered actions remain visibly distinct; each action includes its condition without requiring a disclosure.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/3844ee4424003845-390-firstscreen.jpg",
+          "sha256": "0ebe754fa1fb8db6a5a13b148363ca7266d9a5bd37cc14eef578dc82699e37a4"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/3844ee4424003845-390-content.jpg",
+          "sha256": "9d341a621f649cae27a7406cda7ecce0f9d083488a198a26a6cde80e0b8559f4"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "9add77351042f5b0df9aaf401f1077fcdc19437e79185f8b7bd39fcf8b971668",
+      "representative": "/areas/broome-county/",
+      "width": 390,
+      "memberCount": 61,
+      "visualRating": 3,
+      "evidence": "The combined market name wraps over three phone lines without clipping. The cross-state worksite example has three readable, divided steps, preserving a clear question-to-action sequence.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/913e29e9a3382a99-390-firstscreen.jpg",
+          "sha256": "ec5551084a1f2f7dbab87e10f21d0940a7e9f7ef4c72517706314903779240d6"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/913e29e9a3382a99-390-content.jpg",
+          "sha256": "76d07499c4d11fe1c9fcb194ae79275ccded600febb1423629faa0c33a53922f"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "c007805c942d42605d2e3cdc9813f3151f31e2750765a427b7764a295c6a0382",
+      "representative": "/areas/broome-county/",
+      "width": 1440,
+      "memberCount": 61,
+      "visualRating": 3,
+      "evidence": "The combined market name wraps over three phone lines without clipping. The cross-state worksite example has three readable, divided steps, preserving a clear question-to-action sequence.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/913e29e9a3382a99-1440-firstscreen.jpg",
+          "sha256": "04ca8bad7dc16c345eb5fc35936a208f40548913fe9872f97363b448527ceed2"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/913e29e9a3382a99-1440-content.jpg",
+          "sha256": "3b2afee31b773ad9f2c88f669a6cae0c4338e59894d1a9b8e86bcf21d21fc2d7"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "2dc3e0239bca3919c5b012e43a6151de7719f41621c6576ac429f52991249778",
+      "representative": "/areas/erie-county/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The custom Erie page has a clear service title, price boundary and primary contact link. Four short in-page links precede the custom content. Its Tonawanda explanation and following community section remain distinct at both widths.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/6ad8173dd16e7f32-1440-firstscreen.jpg",
+          "sha256": "f738f168445282e82a09c36ab26d2e1aa8d03ac4e4a3f5da979dc2ecdff17ec7"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/6ad8173dd16e7f32-1440-content.jpg",
+          "sha256": "6b1e710e7c75d6cdddf04aaf3ed1ed1aeb29b662ffb98ff562c9144a66bdacd0"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "3fe437d050dfa23838f2fe5be3bdd211644efa660451f893c41469e021258fb8",
+      "representative": "/areas/erie-county/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The custom Erie page has a clear service title, price boundary and primary contact link. Four short in-page links precede the custom content. Its Tonawanda explanation and following community section remain distinct at both widths.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/6ad8173dd16e7f32-390-firstscreen.jpg",
+          "sha256": "75339b2905da7884d734e1ef95613fd4dbe8846d89e2c2cc83f514c6d6be49df"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/6ad8173dd16e7f32-390-content.jpg",
+          "sha256": "bdf1b2dbbe9bad83d721a5266d2b4e8b94e2b4b375eb23e85dcbbe4ca442ddb9"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "07938b541525afc872236a38b3e0b08d1ba8499f7b9180fa5b00b3b621c04c1a",
+      "representative": "/guides/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The green start-here region and blue labelled filters separate recommended entry points from searching. Desktop guide lists have clear columns; phone filters and topic links stack without competing with the headings.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/65c77e41e1a7cacb-1440-firstscreen.jpg",
+          "sha256": "ddcf70a7e030e75b44c3c6fbd96768f86df8ffead9563341076c912be54f5143"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/65c77e41e1a7cacb-1440-content.jpg",
+          "sha256": "47d8c04fabd943da049dc48c8e0bca0fd6132ad9669b39995e1cda1a747e93fd"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "0466621e4b66e1739bc9586320ddb37308f43526a12c546d86992f7b0368b372",
+      "representative": "/guides/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The green start-here region and blue labelled filters separate recommended entry points from searching. Desktop guide lists have clear columns; phone filters and topic links stack without competing with the headings.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/65c77e41e1a7cacb-390-firstscreen.jpg",
+          "sha256": "4ba31c8513d174a34d656d904cc9b441c22c9b4d304eda1a0c8d1d190eb1d92b"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/65c77e41e1a7cacb-390-content.jpg",
+          "sha256": "16e7c952f5097fc4a099f5059fbf961ce1511ad22e9c6976301409da41b30bbe"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "833e9e971bc1f241fcf1d6644bee5ceefb23c1a33f03bffcfd3517f322c1f155",
+      "representative": "/guides/ai-search-visibility/",
+      "width": 1440,
+      "memberCount": 65,
+      "visualRating": 3,
+      "evidence": "Guide typography distinguishes the title, byline/date, optional contents, short answer and numbered actions. The green question block groups related prerequisites. Phone paragraphs and numbered instructions remain within the gutters.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/62836f75e92163c6-1440-firstscreen.jpg",
+          "sha256": "a5500cf31fc92346bdd07c418ceeddc002e69dcc49f5328569cb6a53513479f7"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/62836f75e92163c6-1440-content.jpg",
+          "sha256": "c70fa7ee3342ea97e5360545a90d417ce78c65a474814be6ee3a322171830991"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "0afa3b48a40d7fa56b571228b7cf21e447ed3721591a09033ad981162bc64e84",
+      "representative": "/guides/ai-search-visibility/",
+      "width": 390,
+      "memberCount": 65,
+      "visualRating": 3,
+      "evidence": "Guide typography distinguishes the title, byline/date, optional contents, short answer and numbered actions. The green question block groups related prerequisites. Phone paragraphs and numbered instructions remain within the gutters.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/62836f75e92163c6-390-firstscreen.jpg",
+          "sha256": "29e732356cd11dfee13473f5662092cb67ae237d0ab82e0f4099c0fa3b1c9d0a"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/62836f75e92163c6-390-content.jpg",
+          "sha256": "b11b379789c58603057a02008eddc2af232d3974ebe0f1dd69fc4dc6e3ac7761"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "8697521ed01e477b67b52214607f75240cf111d44617a67332ee911db424165c",
+      "representative": "/services/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "Three intent links lead into grouped service cards. Cards keep names, concise scope and destination visible in a consistent order; phone cards stack without forcing horizontal navigation.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/eeda784ac03011dd-1440-firstscreen.jpg",
+          "sha256": "d3d37f99c3361086c57357a0d47e00e047d8f5307991f37f966f99cc58ad8457"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/eeda784ac03011dd-1440-content.jpg",
+          "sha256": "bc9d028f3f7fe12413614e4065dfb7e4a0958611dcba3dd5820055076d7e1612"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "ff52d1182d21802c4031e52586c5585f111f871248ad7984422b053448596535",
+      "representative": "/services/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "Three intent links lead into grouped service cards. Cards keep names, concise scope and destination visible in a consistent order; phone cards stack without forcing horizontal navigation.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/eeda784ac03011dd-390-firstscreen.jpg",
+          "sha256": "f7b392d87a8b736e0dceb8a8fdcb377b34868869a1ad327386813e19caf64e9c"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/eeda784ac03011dd-390-content.jpg",
+          "sha256": "f4d15e15b260a3f79fec16a82b78bc28cfbd52317ea59c3c8a2aaa81ebd7cd45"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "942a10a1cc9a74cc7f97c412d1d16526cc4621b29e3fe2d4045c5e55a2f08973",
+      "representative": "/services/contractor-websites/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The contractor promise and contact action lead to three distinct estimate questions. Bold question labels and the bounded fictional Northline preview provide useful hierarchy and visual context.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/6671b56b11452641-1440-firstscreen.jpg",
+          "sha256": "46b817c9757d5f21d4aeb524da06a3b8643695a87f358d92e02d5bc6d9a4ae68"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/6671b56b11452641-1440-content.jpg",
+          "sha256": "0f3aab516af246c417f238771928bfbe3e73e83670d14541c0c60b9cceb72e99"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "6388a39e84574f99c49a52b642bebd3a92ba64ee7cb6bd7be89cf2b71e952c27",
+      "representative": "/services/contractor-websites/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The contractor promise and contact action lead to three distinct estimate questions. Bold question labels and the bounded fictional Northline preview provide useful hierarchy and visual context.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/6671b56b11452641-390-firstscreen.jpg",
+          "sha256": "0bf5e651a9fba8390df78f79bd3511a57baf61a5fe1ee759da7ad65b08ba6956"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/6671b56b11452641-390-content.jpg",
+          "sha256": "cbe36592be241f43f35b15758e761585bf7d9ff9be8235bbb3cc6e4957401d5f"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "a3764f2881009342627f789f03bc70e9848d15d848321f5f86978157f71eb328",
+      "representative": "/services/seo/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "Monthly plan names and prices are followed immediately by the definition of one improvement. The payment/pause/limit section uses bold labels and visible material exclusions; phone wrapping keeps qualifications connected.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/e52617a5489fb7f5-1440-firstscreen.jpg",
+          "sha256": "ddc3342b9bf84279bd2d3f177bf033d862511d930c2f987947f3671cfd71db61"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/e52617a5489fb7f5-1440-content.jpg",
+          "sha256": "f13f1b542f08fc729b5dec79567ee34d16d4ee4c16604b48cdef9ae7741de99f"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "1777f7357c9ac4976cb909efd09c8f453de94d4143e3b57a4e4746eee44a6f71",
+      "representative": "/services/seo/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "Monthly plan names and prices are followed immediately by the definition of one improvement. The payment/pause/limit section uses bold labels and visible material exclusions; phone wrapping keeps qualifications connected.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/e52617a5489fb7f5-390-firstscreen.jpg",
+          "sha256": "6fe3f23452a06f818baefe18c2fc0c29cace207bbb401881df7f9657380a2ae6"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/e52617a5489fb7f5-390-content.jpg",
+          "sha256": "08e34e13cf25f5646cdfb1dd8b1bec8a32ed98e8e4d7f2f04f9c3418d0599f95"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "17d44146767cc3d0ddabaf97a1da7bdba8b8c9b42e99940c11c5d9a66843b512",
+      "representative": "/services/web-design/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The AssetRounds image and project explanation provide a visible work example. The smaller Fieldwork concept is explicitly distinguished. Image/text columns stack sensibly on phone before the writing example.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/2684d85c9d9cb86a-1440-firstscreen.jpg",
+          "sha256": "8237dcce27c9961c3bd252051fe3575d5ae5b9b3ef916b673e73482e592f3fa9"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/2684d85c9d9cb86a-1440-content.jpg",
+          "sha256": "c78460e5e435fd922d5c17932dc6cb4c6dff2814da342a416e039ed943fb95e3"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "d8dd6dc8109ce1579e98c5512b931d28e2dc7812aff26ae6bd97bb12a3a838ad",
+      "representative": "/services/web-design/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The AssetRounds image and project explanation provide a visible work example. The smaller Fieldwork concept is explicitly distinguished. Image/text columns stack sensibly on phone before the writing example.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/2684d85c9d9cb86a-390-firstscreen.jpg",
+          "sha256": "e123b22f4e6d9d3e1813f40b8d27853eaa3e43074ae2463f5b3b5d43ce4c7233"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/2684d85c9d9cb86a-390-content.jpg",
+          "sha256": "2b00165c3fa2793b511b0e7b9f3556cf5231110c2a1d05fe0171c1232d5bab54"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "28d23ab79ce39d1c805197e1e9d524f6348d27ea778c7373cb1c7a323ff4a410",
+      "representative": "/services/website-addons/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The opening states supported-site and price boundaries. A pale fictional-scope example is separated from category navigation and the comparison table. Phone text retains clear gutters and section separation.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/43f8da21cffa8f80-1440-firstscreen.jpg",
+          "sha256": "204c12a8894fa4b1e053bc70a25fda80b32db4e99f12e7b569fbd2a5425e5859"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/43f8da21cffa8f80-1440-content.jpg",
+          "sha256": "b896921f23bb70d43be8fa0935b60140a4a97d21531f160d842b6e7480bfd2d7"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "06ab717da20aca4e465561aea2e292c368a281ee56671a9716957de385c38198",
+      "representative": "/services/website-addons/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The opening states supported-site and price boundaries. A pale fictional-scope example is separated from category navigation and the comparison table. Phone text retains clear gutters and section separation.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/43f8da21cffa8f80-390-firstscreen.jpg",
+          "sha256": "522437f16f4aeecec8174a995ba565bf6fc059cc1f561359a6e12a9acb4983fc"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/43f8da21cffa8f80-390-content.jpg",
+          "sha256": "edf4558255f57d1d6123d56f3ee1776252fe24c712f10ca0307462a92eff19cf"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "7685883a59c01b23a54dbd05d0ba0418afc5d6b7be06c281c844faaf1b9de077",
+      "representative": "/services/website-audit/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The two review options have a concise introduction. The example fix list uses numbered cases and bold finding/change labels, with optional enlarged-text detail separated by a disclosure rule.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/1e762b9cd17fe060-1440-firstscreen.jpg",
+          "sha256": "c4561b72f2cd3b862ed955b9207165f7af45b8be5288878a3bd1ec24b9d1b743"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/1e762b9cd17fe060-1440-content.jpg",
+          "sha256": "8be85d4eea701d9768c2c337a80e823dfb4445b9b2f72258497964b32f05f691"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "33fffb8ccdb7d98c648c5b75636fa904bdecd9c35113ae3ba8b3c45f1f624b3d",
+      "representative": "/services/website-audit/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The two review options have a concise introduction. The example fix list uses numbered cases and bold finding/change labels, with optional enlarged-text detail separated by a disclosure rule.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/1e762b9cd17fe060-390-firstscreen.jpg",
+          "sha256": "763fe7abe007f505bdcc7f51f7714d92798e5791627b0f1d95b287a3451eac66"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/1e762b9cd17fe060-390-content.jpg",
+          "sha256": "abc7a0a3004da2b5c1596ded84796638e53c46df7879a5e71776201aad55be06"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "0c75adf7285fe8b7754192630c537f49e5c639f04fc2f726619b2012e57d7bbb",
+      "representative": "/services/website-care/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The monthly price, sample report and excluded work stay explicit. The report example precedes the care card; the first-payment condition is visually part of the card rather than hidden in a disclosure.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/e9d1c110ac898592-1440-firstscreen.jpg",
+          "sha256": "a3c2edff0a4d7006d036b649e7d0cf75351a99aaae88ae7538261d0769a70764"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/e9d1c110ac898592-1440-content.jpg",
+          "sha256": "a03db393b1b91f3be887ea716d2ecb327e20208236b1c0315c84d095346ba703"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "b14eca97ac8eecfa2747b1cb68fb4be407082873a23efe50f7f72d68283a716e",
+      "representative": "/services/website-care/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The monthly price, sample report and excluded work stay explicit. The report example precedes the care card; the first-payment condition is visually part of the card rather than hidden in a disclosure.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/e9d1c110ac898592-390-firstscreen.jpg",
+          "sha256": "00ad9d82680deeb88f72a12a590fb5e60aacc798dcf7bf674db08dd6d5a0a017"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/e9d1c110ac898592-390-content.jpg",
+          "sha256": "379208af38c734d2516f1270f20d4239c08b00c06112e48751649ae19cd7724b"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "cd0f13f29834cf88fd8426aaa5613e7699a1db38ac2f258f3852791e00c53904",
+      "representative": "/services/website-redesign/",
+      "width": 390,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The free-question boundary is visible beside the contact offer. Repair-versus-redesign guidance precedes a pale before/after example. Desktop comparison columns and phone paragraphs maintain clear hierarchy.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/fdd5f65b887630f6-390-firstscreen.jpg",
+          "sha256": "f5571d552c176f08c25cd96772cc9cb57c152c1c4946bcd6f0a5ab384ba0acf4"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/fdd5f65b887630f6-390-content.jpg",
+          "sha256": "324f6934b28b5a1202978035f0c96ea8b995e25a5ca509bb46bd90704063de1e"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    },
+    {
+      "layoutStyleGroup": "e1ae313550f5d9fae7ad3aa01c76cfee5c40689f6bd2266bcd4b16477dc79524",
+      "representative": "/services/website-redesign/",
+      "width": 1440,
+      "memberCount": 1,
+      "visualRating": 3,
+      "evidence": "The free-question boundary is visible beside the contact offer. Repair-versus-redesign guidance precedes a pale before/after example. Desktop comparison columns and phone paragraphs maintain clear hierarchy.",
+      "screenshots": [
+        {
+          "path": "output/human-quality-20261027/final-layout/fdd5f65b887630f6-1440-firstscreen.jpg",
+          "sha256": "b4930fd314403320a32f8f06fc580568378ac66483cce601641e799b305cffa4"
+        },
+        {
+          "path": "output/human-quality-20261027/final-layout/fdd5f65b887630f6-1440-content.jpg",
+          "sha256": "8dad0b8ba063384020b67657c8c7dd643050dd111eab6deb792ab55bd9c72a53"
+        }
+      ],
+      "findings": [],
+      "inheritance": "Shared typography, spacing, color grouping and outer layout only. Per-URL default/expanded geometry must also pass or have explicit anomaly triage; unique interior content is not claimed individually screenshot-reviewed."
+    }
+  ],
+  "limits": [
+    "Each representative first-screen and selected-content image was directly inspected. This is representative visual evidence, not a claim that every URL screenshot was inspected.",
+    "A conservative3/4 visual judgment applies only with unchanged style/group identity and the URL-specific geometry evidence.",
+    "The65 guides share outer layout and stylesheet; table/diagram differences still require component tests and page-specific geometry, not inference from the AI-search guide image.",
+    "No accessibility rating or final score is assigned by this visual record.",
+    "The raw single clipped-header anomaly is separately resolved in final-layout-triage.json."
+  ]
+}

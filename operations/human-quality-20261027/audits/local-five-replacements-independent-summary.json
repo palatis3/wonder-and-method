@@ -1,0 +1,184 @@
+{
+  "reviewedAt": "2026-10-27",
+  "reviewer": "independent Astra checkpoint",
+  "status": "complete-content-review-only",
+  "reviewed": 12,
+  "contentPass": 12,
+  "contentFail": 0,
+  "materialFindings": 0,
+  "minorObservations": 4,
+  "provisionalContentMaximum": 80,
+  "provisionalContentRange": {
+    "minimum": 68.75,
+    "maximum": 77.5
+  },
+  "finalAcceptance": null,
+  "visuals": null,
+  "accessibility": null,
+  "allCandidateBodiesReadCompletely": true,
+  "meaningfulSiblingsSelectedIndependently": true,
+  "verifiedPacketHashes": [
+    {
+      "file": "packet-001.jsonl",
+      "count": 5,
+      "sha256": "d6b65672397a8372715b770e790b3bda13a44c31b7adaf0af2208ec8826581ba"
+    },
+    {
+      "file": "packet-002.jsonl",
+      "count": 5,
+      "sha256": "15da5f612a53116b97f4de7f69a20ae92a2bcf45a1c15d2b5a4c32dc6d07e904"
+    },
+    {
+      "file": "packet-003.jsonl",
+      "count": 2,
+      "sha256": "e83b3dc4f87bad518d2adff05ac5e18049bf819f25e513f3d5805d95de430b39"
+    }
+  ],
+  "verifiedDraftBindings": 12,
+  "validatedExactContentQuotes": 72,
+  "unresolvedOperatorFacts": [
+    "Suffolk payment sequence",
+    "Grundy regular operating-day summaries",
+    "Gillespie general donation acceptance schedule",
+    "Jefferson tour clock times",
+    "Kendall Aquifer duration"
+  ],
+  "conflictConclusion": "The narrower supported website tasks do not require choosing among the unresolved operator facts. No contradictory schedule, duration or payment rule was adopted.",
+  "lowerDistinctivenessRoutes": [
+    "/areas/pennsylvania/lancaster-county/",
+    "/areas/pennsylvania/montgomery-county/",
+    "/areas/pennsylvania/pike-county/"
+  ],
+  "routes": [
+    {
+      "route": "/areas/pennsylvania/lancaster-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 68.75,
+      "candidateBodySha256": "45cf938e18b4ceebec4e8136685b757819cb464d201d313adc9f8adc7905e4c2",
+      "draftSha256": "e43d42f893d9505f673e11ec94c3080ff3115b3d826ea1779efdb6107f54ada9",
+      "minorObservations": [
+        {
+          "quote": "How would monthly SEO choose which of our two services to work on first?",
+          "issue": "This retained FAQ is relevant to the two-service business but broadens the page after the focused seasonal/weekly example.",
+          "suggestion": "Optionally move general monthly prioritization detail to the linked service page."
+        }
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/montgomery-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 68.75,
+      "candidateBodySha256": "a7aa13f3d458bb7a70611e6616cb052627e2b35048798ff8ecfa5349aa4c27b1",
+      "draftSha256": "9c227851f63f9bb2327c3060eb56e61485b3556bed5af06367c7968b820ed499",
+      "minorObservations": [
+        {
+          "quote": "Does a redesign include finding and redirecting every old address?",
+          "issue": "The migration FAQ is commercially useful but has no particular connection to a deck inquiry.",
+          "suggestion": "Optionally replace or relocate this FAQ when simplifying the page; preserve redirect-scope terms on the service page."
+        }
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/northampton-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 73.75,
+      "candidateBodySha256": "6147b90f24105851ff514a578462ac5d1d33d7ef422c552ad07af796669ac95b",
+      "draftSha256": "f487fed487af9a4d88345256ffd7db3c25c6d11f0f4d96fc42bc908e940a0fc9",
+      "minorObservations": [
+        {
+          "quote": "We include the agreed preservation work in the page map and check representative standard, custom and installation paths.",
+          "issue": "Installation-path language remains from the old catalog framing. The source supports installation services, so it is not false, but it dilutes the new apparel/proof focus.",
+          "suggestion": "Optionally use a method-selection and proof-approval example in this FAQ."
+        }
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/pike-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 68.75,
+      "candidateBodySha256": "014efd74ff0707cb4cfb15b43bf27747bd6683a834fab4673f1b99d9c2220eae",
+      "draftSha256": "aca63cba7d90208ec76722de47a242eaad03b6404c90273dfa694c9bd33912d9",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/pennsylvania/wayne-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "f0f6b4dd232761fb96b77560536064533a2ad90660cfefb62a4ebd20b5675c99",
+      "draftSha256": "5c7ab77a9894b27638ed00b2f09e10d123e741b9fc4d445418e12e2b1593f44a",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/rockland-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "fc05ba0ddd7be81202bc81c1675a75743b08a7d3291a97c66b196e0427515d25",
+      "draftSha256": "74f3a96d618f12b620dace36abb7e5de886ffd2d5f16ed86e58a917022752a69",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/suffolk-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 73.75,
+      "candidateBodySha256": "2cb2474274bd58a070df0d50e69f636fb993d60ad3ad255fa6d5ccada178c6b6",
+      "draftSha256": "e21376de942542ee6187aecac47b7dbc26468993a5f1927640ddd55adaa9d5cd",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/tennessee/grundy-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "f20bbfd718f13c754bf31042c7c887d87586a95862096a7db1d242bacb747dca",
+      "draftSha256": "49995dae9b584b20e491e7fd224267d317cc6a80b945bdd39b8828d6decba358",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/texas/gillespie-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "ad411f51e306db8666b3bf611cea9734398b2c10c75187eae8e968267903fa16",
+      "draftSha256": "c94ec9c6b958bc1ae72223b291a5e98f4175f251bd4ae84c54cd8c472548f5e2",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/texas/grimes-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "44d95df2dbce03e4387fa6fb389ce9587a0413d59b3a061c887f38a04f9d9d1a",
+      "draftSha256": "2e9e781e90fcea6e0c61133cfec20cd7f7f78aa020882ca8c37600684b44b1d1",
+      "minorObservations": []
+    },
+    {
+      "route": "/areas/texas/jefferson-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "3a71ef37aba45bc1c5b2b3fe19e395e08461c5a2bc47fd3d7a206128cdad1df6",
+      "draftSha256": "7a334e68e0ae8fdb0e55d48784c66f6b848df9d7dc21304f73714ecea50b50fa",
+      "minorObservations": [
+        {
+          "quote": "independently corroborated by the saved Census address check",
+          "issue": "The phrase refers to internal evidence handling in public prose.",
+          "suggestion": "When applying the separate geography-citation cleanup, use a reader-facing source description rather than 'saved' evidence terminology."
+        }
+      ]
+    },
+    {
+      "route": "/areas/texas/kendall-county/",
+      "contentVerdict": "pass",
+      "provisionalContentSubtotal": 77.5,
+      "candidateBodySha256": "ed6afdf3c7458e0c73de9e9a3a1a7f3e09a19e184a76ea5fc23026d63836da9b",
+      "draftSha256": "89130c6b44626ea5fc587668b1a0b7282342f84db52359d9ada074045d1433a9",
+      "minorObservations": []
+    }
+  ],
+  "sourceEvidenceLimit": "Targeted independent primary-page reads corroborate the core decisions. Additional geography and some secondary-page corroboration are explicitly inherited from the frozen root research. No external form, payment, booking or availability test.",
+  "remainingChecks": [
+    "Visual and accessibility checks",
+    "Built-route and interaction checks",
+    "Apply any chosen minor editorial improvements and bind review to their new hashes"
+  ],
+  "sourceEdits": false,
+  "imports": false,
+  "builds": false,
+  "publicationHoldsCleared": false
+}

@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
 import faqs from '../src/service-faqs.json' with {type:'json'};
+import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
+const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import preservation from './fixtures/id-mt-preservation.json' with {type:'json'};
 import decisions from '../operations/id-mt-expansion-20261026/area-decisions.json' with {type:'json'};
@@ -21,9 +23,9 @@ test('ID/MT preserve 2146 prior services and 278 FAQ pairs with exactly 69 servi
  assert.equal(locationServices.length,2266);assert.equal(approved.length,71);
  assert.deepEqual([...approved.slice(2)].sort(),Object.keys(preservation.newServices).sort());
  for(const group of [preservation.services,preservation.newServices])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxCopyEdits(byPath.get(path))),hash,path);
- assert.deepEqual(Object.keys(faqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(preservation.newFaqs)].sort());
+ assert.deepEqual(Object.keys(historicalFaqs).sort(),[...Object.keys(preservation.faqs),...Object.keys(preservation.newFaqs)].sort());
  for(const group of [preservation.faqs,preservation.newFaqs])for(const [path,hash]of Object.entries(group))assert.equal(digest(beforeReviewedUxFaqEdits(path,faqs[path])),hash,path);
- assert.equal(Object.keys(faqs).length,208);assert.equal(Object.values(faqs).flat().length,278);
+ assert.equal(Object.keys(historicalFaqs).length,208);assert.equal(Object.values(historicalFaqs).flat().length,278);
 });
 
 test('all 100 areas retain directory destinations and 31 no-additions remain directory-only',()=>{
@@ -50,3 +52,4 @@ test('new briefs retain useful scope, resolvable guide links, FAQs and truthful 
   assert(!schema.some(x=>x['@type']==='FAQPage'));assert.equal(faqs[path],undefined);
  }
 });
+

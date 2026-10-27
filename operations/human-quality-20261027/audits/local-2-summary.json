@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "assignedCount": 378,
+  "completedAuditCount": 378,
+  "completedDraftCount": 378,
+  "nextAssignmentIndex": null,
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScores": null,
+  "capCounts": {
+    "majorBurden": 338
+  },
+  "draftWordCounts": {
+    "min": 247,
+    "median": 287.0,
+    "max": 311
+  },
+  "highestValueFixes": [
+    "Replace repeated plan/table/two-scope/closing-question content with one concise decision sequence or comparison.",
+    "Rewrite mechanically joined scope headings and duplicate owner-input inventories.",
+    "Keep real local thresholds, source uncertainty and operational boundaries beside their affected decisions.",
+    "Make applicability to the niche business explicit; avoid suggesting one example explains every county business."
+  ],
+  "unresolved": [
+    "Separate visual and accessibility verification not performed; no final 100-point score asserted.",
+    "Drafts await independent review and source integration.",
+    "Public-source facts inherited from unchanged repository evidence, not newly verified live."
+  ]
+}

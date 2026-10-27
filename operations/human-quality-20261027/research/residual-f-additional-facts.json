@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-27",
+  "method": "Primary read official pages via web; public descriptions do not confirm live stock or suitability.",
+  "sources": [
+    {
+      "route": "/areas/virginia/highland-county/",
+      "urls": [
+        "https://millgapfarms.com/collections/frontpage",
+        "https://millgapfarms.com/products/1-69-ounce-maple-leaf?variant=30310238453812"
+      ],
+      "facts": [
+        "Collection lists 1.69-, 3.35- and 8.45-ounce maple-leaf bottles.",
+        "1.69-ounce product description offers with or without gold foil cap."
+      ],
+      "limits": [
+        "3.35-ounce detail fetch failed; comparison relies on collection product title.",
+        "No rates, stock or pickup deadline imported."
+      ]
+    },
+    {
+      "route": "/areas/virginia/hopewell-city/",
+      "urls": [
+        "https://www.anchorpointmarina.net/location-rates/"
+      ],
+      "facts": [
+        "Top rack 21-foot length and 8-foot height.",
+        "Middle rack 26-foot length and 8-foot height.",
+        "Bottom rack 32-foot length and 10-foot height.",
+        "Location paragraph says 303A Beacon Road; footer says 303A Beacon Ridge Road."
+      ],
+      "limits": [
+        "Street variant unresolved; retain operator confirmation.",
+        "No rates, insurance/lease advice or technical fit approval imported."
+      ]
+    },
+    {
+      "route": "/areas/virginia/page-county/",
+      "urls": [
+        "https://www.lurayrvresortshenandoahriver.com/",
+        "https://www.lurayrvresortshenandoahriver.com/camping"
+      ],
+      "facts": [
+        "RV sites include full-hookup, pull-through and back-in options.",
+        "Airstream rentals list kitchenette, full bathroom and air conditioning.",
+        "Glamping tents list air conditioning, mini-fridge/microwave/stovetop kitchenette and private bathroom.",
+        "Primitive riverfront tent sites are walk-in.",
+        "FAQ asks accommodation-specific pet-policy confirmation."
+      ],
+      "limits": [
+        "No claim every site has identical hookups or all accommodation permits every pet.",
+        "No accessibility certification, live availability or inferred bedding supplies."
+      ]
+    }
+  ]
+}

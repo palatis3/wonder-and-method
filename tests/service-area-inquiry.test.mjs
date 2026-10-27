@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import entries from '../src/location-service-data.json' with {type:'json'};
+import briefs from '../src/human-location-briefs.json' with {type:'json'};
 import additions from '../src/location-inquiry-contexts.json' with {type:'json'};
 import {countyContextOptions as legacy} from '../src/approved-rerun-county-context.mjs';
 import {serviceAreaContextOptions,serviceAreaQuestionHref} from '../src/inquiry-area-context.mjs';
@@ -41,7 +42,8 @@ test('county service titles retain every market name and CTAs carry context with
   const display=locationServiceDisplay(entry),page=pages.find(x=>x.path===entry.path);
   assert.equal(display.market,entry.market.split(' / ').join(', '));assert.ok(page.title.startsWith('Web design for '));assert.equal(page.title,display.title);
   assert.equal(page.description,display.description,entry.path);assert.match(page.description,/web design for /i,entry.path);assert.doesNotMatch(page.description,/Example brief:/);assert.ok(page.description.length<=160,entry.path);
-  assert.ok(page.body.includes(escapeHtml(entry.lead)));assert.ok(page.body.replace(/<\/p><p>/g,' ').replace(/\s+/g,' ').includes(escapeHtml(entry.decision).replace(/\s+/g,' ')),entry.path);
+  const brief=briefs.find(item=>item.route===entry.path);assert.ok(brief,entry.path+' authored brief');
+  for(const text of [brief.intro,brief.customerQuestion,...brief.decisions.flatMap(d=>[d.label,d.body]),...brief.ownerInputs])assert.ok(page.body.includes(escapeHtml(text)),entry.path+' authored content');
   const links=[...page.body.matchAll(/href="([^"<>]*\/contact\/[^"<>]*)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://example.test')).filter(url=>url.origin==='https://example.test'&&url.pathname==='/contact/');
   assert.equal(links.length,2,entry.path);
   for(const url of links){assert.equal(url.searchParams.get('county'),entry.path.slice(7,-1));assert.equal(url.searchParams.get('request_kind'),'question');assert.equal(url.searchParams.get('goal'),null);}

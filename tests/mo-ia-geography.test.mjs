@@ -99,7 +99,9 @@ test('both directories render all reviewed entities and preserve packed search s
    for(const e of entities(state.geography[c.slug]))assert.ok(entry.includes(escapeHtml(e.name)),c.slug+'/'+e.name);
   }
   if(state.id==='iowa'){assert.match(html,/Unorganized territories \(statistical\)/);assert.match(html,/Statistical entity; not a township government/);}
-  if(state.id==='missouri'){assert.match(html,/Independent city; separate from surrounding counties/);assert.match(html,/Representative-place population ranking is incomplete/);}
+  if(state.id==='missouri'){assert.match(html,/Independent city; separate from surrounding counties/);assert.doesNotMatch(html,/Representative-place population ranking|ranked by population/);
+  const alphabeticalGroups=[...html.matchAll(/<ul class="county-place-list">([\s\S]*?)<\/ul>/g)];assert.ok(alphabeticalGroups.length>0,'rendered place groups');
+  for(const group of alphabeticalGroups){const names=[...group[1].matchAll(/<li>([^<]+)/g)].map(m=>m[1].trim());assert.ok(names.length>0,'nonempty place group');assert.deepEqual(names,names.toSorted((a,b)=>a.localeCompare(b,'en',{numeric:true})),'place groups are alphabetical, not population rankings');}}
   const names=await decodeCountyNames(JSON.parse(html.match(/data-county-place-names>(.*?)<\/script>/s)[1]));
   const decoded=[...html.matchAll(/data-cs="([^"]+)"/g)].map(m=>unpackCountySearch(m[1],names));
   assert.deepEqual(decoded,state.regions.flatMap(r=>r.slugs.map(slug=>cards.find(c=>c.state===state.id&&c.slug===slug).terms)));

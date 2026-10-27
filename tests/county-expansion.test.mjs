@@ -33,7 +33,7 @@ test('retired New York county routes resolve to reviewed place entries within th
   const original=research.counties.find(c=>c.county===county.name);
   if(original)assert.deepEqual(countyGeography[county.slug].municipalities,original.municipalities);
   assert.ok(state.html.includes(`id="${county.slug}"`),destination);
-  assert.ok(state.html.includes(escapeHtml(countyLocalNotes['new-york/'+county.slug]||county.geographyNote)),county.slug);
+  for(const sentence of factualLocalSentences(countyLocalNotes['new-york/'+county.slug]||county.geographyNote))assert.ok(state.html.includes(escapeHtml(sentence)),county.slug+' '+sentence);
   assert.ok(hub.html.includes(`href="${approvedLocationPaths.includes(retired)?retired:destination}"`));
  }
  const publicConfig={...config,searchIndexing:true},sitemap=crawlFiles(publicConfig,render(publicConfig)).sitemap;
@@ -77,3 +77,6 @@ test('county offer references and maintenance costs follow the commercial config
  }
  assert.match(journalSections('/guides/website-maintenance-cost/',changed).map(s=>s.body).join(''),/\$177/);
 });
+
+// Address reminders are editorial guidance; every declarative local distinction remains required.
+const factualLocalSentences=note=>(note||'').split(/(?<=\.)\s+/).filter(sentence=>! /^(?:Use |Confirm |Keep |A city named in service coverage )/.test(sentence));

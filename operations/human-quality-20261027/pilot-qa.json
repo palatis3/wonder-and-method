@@ -1,0 +1,9 @@
+{
+  "scope": "Three independently authored local brief pilots; full-site checks follow complete integration",
+  "routes": ["/areas/alabama/baldwin-county/", "/areas/alabama/jefferson-county/", "/areas/alaska/aleutians-east-borough/"],
+  "claimsToCheck": ["Customer question precedes three distinct decisions", "Source facts and public-example status are preserved", "Headings and prose fit at desktop and phone widths", "No new repetitive summary/table/scope blocks", "Commercial terms and ownership remain visible"],
+  "controls": ["Primary inquiry link preserves the route context", "Price anchor", "Owner-input disclosure opens and closes", "Public-source disclosure opens and closes", "Existing planning-details and questions bookmarks"],
+  "visualStates": ["1440x900 initial", "1440x900 buyer task", "390x844 initial", "390x844 buyer task", "390x844 open owner inputs and sources", "320px reflow"],
+  "exploratoryCases": ["Load planning-details directly and inspect the expanded source material", "Increase text spacing and inspect the longest pilot question/decision"],
+  "signoff": "Pending separate functional, visual and independent review; geometry alone is insufficient"
+}

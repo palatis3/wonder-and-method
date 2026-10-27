@@ -368,12 +368,14 @@ test('literal City names and District-prefixed names preserve explicit type sema
  assert.deepEqual(matches('Census county division Rio Grande City TX'),['texas/starr']);
 });
 
-test('Texas directory renders all members, classification notes and incomplete-ranking caveats',async()=>{
+test('Texas directory renders all members and classification notes without claiming a population ranking',async()=>{
  const html=countyDirectory(state);
  assert.equal((html.match(/data-county-area/g)||[]).length,254);
  assert.match(html,/>Census county divisions \(statistical\)<\/h3>/);
  assert.match(html,/Statistical Census county division \(CCD\); no legal function and not a governmental unit/);
- assert.match(html,/Representative-place population ranking is incomplete/);
+ assert.doesNotMatch(html,/Representative-place population ranking|ranked by population/);
+  const alphabeticalGroups=[...html.matchAll(/<ul class="county-place-list">([\s\S]*?)<\/ul>/g)];assert.ok(alphabeticalGroups.length>0,'rendered place groups');
+  for(const group of alphabeticalGroups){const names=[...group[1].matchAll(/<li>([^<]+)/g)].map(m=>m[1].trim());assert.ok(names.length>0,'nonempty place group');assert.deepEqual(names,names.toSorted((a,b)=>a.localeCompare(b,'en',{numeric:true})),'place groups are alphabetical, not population rankings');}
  for(const county of state.counties){
   const entry=html.slice(html.indexOf('id="'+county.slug+'"')).split('</details>')[0];
   for(const place of entities(geography[county.slug]))assert.ok(entry.includes(escapeHtml(place.name)),county.slug+'/'+place.name);

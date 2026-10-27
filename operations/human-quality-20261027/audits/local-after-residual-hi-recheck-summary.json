@@ -1,0 +1,34 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 39,
+  "reviewedCount": 39,
+  "contentPassCount": 39,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "reviewScope": "Independent editorial correction review of complete current candidate main text including FAQ/disclosures, source entries, supplied nearest siblings, repair before/after and historical findings. Exact common text cross-referenced; no fresh source retrieval claimed.",
+  "factualEvidence": [
+    "residual-h-repair.json sourceChecks",
+    "residual-i-fact-recheck.json"
+  ],
+  "validation": {
+    "packetCount": 8,
+    "rendererFileCount": 5,
+    "currentDraftCount": 39,
+    "sourceEntryCount": 39,
+    "siblingCount": 39,
+    "renderedBodyCount": 39,
+    "exactQuoteCount": 234,
+    "repairBeforeAfterCount": 46,
+    "historicalFindingsPreserved": true,
+    "errors": []
+  },
+  "limitations": [
+    "Page-specific visual and accessibility evidence remain pending.",
+    "Closest topical peer beyond the supplied neighboring draft remains separately reviewable.",
+    "Supplied dated source checks do not establish future operator terms."
+  ]
+}

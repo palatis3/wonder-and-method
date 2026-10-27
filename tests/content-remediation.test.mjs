@@ -18,7 +18,10 @@ test('all 27 guides lead their prose with an answer, show useful contents and fu
   const html=journalArticle(item,offers,journal);
   assert.match(html,/<div class="journal-prose"><div class="guide-decision"><h2>The short answer<\/h2>/,item.path);
   assert.ok(html.indexOf('The short answer')<html.indexOf('<section id="'),item.path);
-  assert.equal((html.match(/class="journal-toc"/g)||[]).length,journalSections(item.path,offers).length>=6?1:0,item.path);
+  const tocCount=(html.match(/class="journal-toc"/g)||[]).length;assert.ok(tocCount<=1,item.path);
+  if(journalSections(item.path,offers).length>=6||item.path==='/guides/website-content-template/')assert.equal(tocCount,1,item.path+' long guide contents');
+  if(item.path==='/guides/website-launch-checklist/')assert.equal(tocCount,0,'short checklist does not need collapsed contents');
+  if(tocCount)for(const section of journalSections(item.path,offers))assert.ok(html.match(/<nav aria-label="In this guide">([\s\S]*?)<\/nav>/)[1].includes('href="#'+section.id+'"'),item.path+' contents '+section.id);
   assert.equal((html.match(/<figure class="journal-hero/g)||[]).length,item.image==='repair-or-redesign'?1:0,item.path);
   assert.doesNotMatch(html,/class="journal-visual"/,item.path+' illustration is visible, not a disclosure');
   assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1,item.path);
@@ -33,10 +36,10 @@ test('all 27 guides lead their prose with an answer, show useful contents and fu
 test('owner checks come first and diagnostic offers preserve correct intent',()=>{
  const form=journalSections('/guides/contact-form-not-working/',offers);
  assert.deepEqual(form.slice(0,5).map(x=>x.id),['five-minute-check','page','platform-settings','verify','review-options']);
- const body=form.map(x=>x.body).join('');assert.match(body,/A site may not store a separate inquiry record/);assert.match(body,/WordPress:.*identify the form plugin/);assert.match(body,/SPF, DKIM and DMARC/);
+ const body=form.map(x=>x.body).join('');assert.match(body,/A site may not store a separate inquiry record/);assert.match(body,/<h3>WordPress<\/h3><p>Identify the form plugin/);assert.match(body,/SPF, DKIM and DMARC/);
  const rendered=journalArticle(journal.find(item=>item.path==='/guides/contact-form-not-working/'),offers,journal);
  assert.match(rendered,/offer=website_baseline&amp;goal=fix&amp;request_kind=question#inquiry/);assert.match(body,/Audit &amp; Fix Sprint.*up to two small fixes in total/);
- const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['define','plain-search-terms','inspection-steps']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
+ const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['define','inspection-steps','specific-index-checks']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
 
@@ -87,7 +90,14 @@ test('guide index is text-only while related cards use responsive WebP derivativ
 test('responsive guide steps retain every decision, and the branching diagram keeps its description',()=>{
  for(const item of journal){
   const html=journalArticle(item,offers,journal),details=researchGuideDetails[item.path.split('/').filter(Boolean).at(-1)];
-  if(details){
+  if(item.path==='/guides/website-not-generating-leads/'){
+   const navigation=html.match(/<nav class="page-jump" aria-label="Inquiry diagnosis steps">([\s\S]*?)<\/nav>/)?.[1];assert.ok(navigation,item.path);
+   assert.deepEqual([...navigation.matchAll(/href="#([^"]+)"/g)].map(m=>m[1]),['find-the-bottleneck','worked-example','measurement','lead-record']);
+   for(const id of ['find-the-bottleneck','worked-example','measurement','lead-record'])assert.ok(html.includes('id="'+id+'"'),item.path+' '+id);
+  }else if(details?.steps[0]?.[0]==='Define the customer decision'){
+   assert.doesNotMatch(html,/class="guide-steps"/,item.path+' generic repeated steps omitted');
+   assert.ok(journalSections(item.path,offers).length>=3,item.path+' substantive guidance remains');
+  }else if(details){
    const steps=html.match(/<ol class="guide-steps"[^>]*>([\s\S]*?)<\/ol>/)?.[1];assert.ok(steps,item.path);
    for(const phrase of details.steps.flat())assert.ok(steps.includes(phrase.replaceAll('&','&amp;')),item.path+' '+phrase);
    assert.ok(html.indexOf('class="guide-steps"')>html.indexOf('</section>'));

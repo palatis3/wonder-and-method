@@ -1,0 +1,31 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 37,
+  "reviewedCount": 37,
+  "nextCandidateIndex": 37,
+  "contentPassCount": 37,
+  "requiredFixes": [],
+  "validation": {
+    "status": "passed",
+    "reviewCount": 37,
+    "packetHashes": 8,
+    "rendererHashes": 5,
+    "currentDraftBindings": 37,
+    "currentSourceBindings": 37,
+    "currentNeighborBindings": 37,
+    "baselineBindings": 37,
+    "currentRenderedBodyBindings": 37,
+    "completeMainTextBindings": 37,
+    "exactEvidenceQuotes": 222,
+    "errors": []
+  },
+  "checkpoint": "Completed37/37. Current8packet and5renderer hashes plus37draft/source/neighbor/baseline/rendered-body/plain-text bindings and222exact evidence quotes validated. No source/draft edits. All visual/accessibility/raw/final scores remain null. Parent may separately assign family-four review.",
+  "limits": "Content-only review; visuals/accessibility/final null. No source or draft edits.",
+  "recommendedFixes": [
+    {
+      "route": "/areas/oklahoma/osage-county/",
+      "fix": "Remove the duplicated article in coverage: “The the Barnsdall vicinity example”."
+    }
+  ],
+  "findingSummary": "All37 current candidates pass content-only review; no material holds. One optional duplicated-article correction in Osage. Umatilla numeric minimum is explicitly unpublished; recovered official indexed evidence supports office hours and combined-party process, not live availability."
+}

@@ -142,7 +142,15 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
   for(const county of state.counties){
    entries++;
    assert.ok(page.body.includes(`id="${county.slug}"`),state.id+'/'+county.slug);
-   if(county.geographyNote)assert.ok(page.body.includes(e(countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote)),state.id+'/'+county.slug+' local distinction');
+   if(county.geographyNote){
+    const note=(countyLocalNotes[state.id+'/'+county.slug]||county.geographyNote).trim();
+    // The revised directory shares generic guidance across the state. Keep the
+    // first local fact, rather than requiring the former repeated prose verbatim.
+    const localFact=state.id==='connecticut'?note.split('. ')[1]:note.split('. ')[0];
+    const pairedPlaces=/^(.+) is a (?:city|town|village|borough|township); (.+) is a (?:city|town|village|borough|township) in /.exec(localFact);
+    if(pairedPlaces)for(const name of pairedPlaces.slice(1))assert.ok(page.body.includes(e(name)),state.id+'/'+county.slug+' '+name);
+    else assert.ok(page.body.includes(e(localFact)),state.id+'/'+county.slug+' local distinction');
+   }
   }
  }
  assert.equal(entries,3222);
@@ -151,7 +159,8 @@ test('state hubs retain all place facts and distinguish borough aliases while Er
  const erie=countyCoverage(erieGeography,config,offers);
  assert.match(erie,/<h1>Web design &amp; SEO in Erie County \(Buffalo\), NY<\/h1>/);
  assert.equal((erie.match(/Use your usual community name/g)||[]).length,1);
- assert.equal((erie.match(/North Tonawanda is in Niagara County/g)||[]).length,1);
+ assert.equal((erie.replace(/<[^>]+>/g,'').match(/North Tonawanda is in Niagara County/g)||[]).length,1);
+ assert.ok(erie.includes('href="https://www.ny.gov/counties/niagara"'));
 });
 
 test('all 2 remaining retired county routes point to preserved entries and public hub prices follow current offers',()=>{

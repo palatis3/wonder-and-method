@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Exact residual checkpoint edits layered over the preserved original acceptance ledger.",
+  "records": [
+    {
+      "path": "/areas/kentucky/fayette-county/",
+      "before": {
+        "areaId": "kentucky/fayette",
+        "market": "Lexington / Fayette County, KY",
+        "lead": "Ordering an item from a shop and asking it to personalize something you already own can require different first steps. I help Lexington and Fayette County businesses explain those routes before customers choose a design or request a quote.",
+        "decisionTitle": "Identify the item before approving its personalization.",
+        "decision": "For an illustrative engraving business, a design choice does not establish that a customer-supplied object is suitable for the work. The Lexington example below explicitly invites customers to bring an item, send a photograph or describe a project. I can clarify the difference between shop-supplied products and supplied-item inquiries around an existing contact route, or build a fuller service introduction. The owner determines what can be accepted; the website should preserve that review before presenting the requested personalization as agreed work.",
+        "scopes": [
+          {
+            "title": "Separate product orders and supplied-item inquiries",
+            "pages": [
+              "Who supplies the item",
+              "Description for the first review",
+              "Item acceptance and personalization approval"
+            ],
+            "request": "Make it clear whether the customer is choosing an offered product or asking about an object they already have. Use the business’s approved way to begin that discussion.",
+            "supplies": "The products you supply, the kinds of supplied-item inquiries you consider and the information your team uses to assess them.",
+            "check": "A customer with their own cup can ask about that item without being treated as though they selected a product from your catalog. Spelling approval does not stand in for item acceptance."
+          },
+          {
+            "title": "Build a service and product introduction",
+            "pages": [
+              "Shop-supplied products",
+              "Customer-supplied item examples",
+              "Personalization and review process",
+              "Quote or existing order handoff"
+            ],
+            "request": "Explain the two routes with approved examples and a clear account of what happens next. Keep any functioning shop or order provider connected to the appropriate product choices.",
+            "supplies": "Accurate service limits, approved photographs and current descriptions of the work the business accepts.",
+            "check": "Visitors understand who is supplying the object and which review comes next. A displayed engraving example is not an assurance that every material or object can be accepted."
+          }
+        ],
+        "planningTable": {
+          "title": "A supplied-item website brief",
+          "intro": "These are proposed content questions for an engraving or personalization business. The owner supplies the actual acceptance policy and how any photographs are shared.",
+          "columns": [
+            "Decision",
+            "What the customer should be able to state",
+            "What the business confirms"
+          ],
+          "rows": [
+            [
+              "Source of the item",
+              "An offered shop product or an object the customer already owns.",
+              "The correct product or inquiry route."
+            ],
+            [
+              "Object and known material",
+              "What the item is, its quantity and any material information the customer knows.",
+              "Whether more information is needed to assess suitability."
+            ],
+            [
+              "Requested marking",
+              "The proposed location and type of personalization.",
+              "Whether the requested work can be accepted on that item."
+            ],
+            [
+              "Design approval",
+              "The exact spelling or artwork after the relevant review.",
+              "The agreed personalization, kept distinct from the earlier item-suitability decision."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business supplies its approved item-acceptance policy and liability terms. Photo uploads, customer-property records, automated acceptance workflows and custom checkout need separate website assessment.",
+        "quoteQuestions": [
+          "Does the customer buy the item from you or supply it?",
+          "What information is needed to assess the object?",
+          "How do you distinguish item acceptance from design or spelling approval?"
+        ],
+        "coverageNote": "Lexington and Fayette County identify this Kentucky service audience. Use the business’s real location and intake arrangements when describing how a customer starts a request.",
+        "sources": [
+          {
+            "url": "https://lexingtonengraving.com/glass-cups-and-wood",
+            "label": "Lexington Engraving: supplied-item inquiries",
+            "observation": "The Lexington page invites customers to bring an item, send a photograph or describe a glass, drinkware or wood project."
+          },
+          {
+            "url": "https://lexingtonengraving.com/metal-marking-and-etching",
+            "label": "Lexington Engraving: metal-item inquiries",
+            "observation": "The metal-marking page also invites an item, photograph or description before a quote. These examples do not establish an acceptance policy for every object."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "Separating a personalization preview from approval"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "kentucky/fayette"
+        ],
+        "path": "/areas/kentucky/fayette-county/",
+        "title": "Web Design for Lexington / Fayette County, KY",
+        "description": "Web design for Lexington / Fayette County, KY. Example brief: identify the item before approving its personalization.",
+        "servedAreas": [
+          {
+            "name": "Fayette County",
+            "state": "Kentucky",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kentucky/#fayette",
+            "label": "Fayette County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "kentucky/fayette",
+        "market": "Lexington / Fayette County, KY",
+        "lead": "Ordering an item from a shop and asking it to personalize something you already own can require different first steps. I help Lexington and Fayette County businesses explain those routes before customers choose a design or request a quote.",
+        "decisionTitle": "Identify the item before approving its personalization.",
+        "decision": "For an illustrative engraving business, a design choice does not establish that a customer-supplied object is suitable for the work. The Lexington example below explicitly invites customers to bring an item, send a photograph or describe a project. I can clarify the difference between shop-supplied products and supplied-item inquiries around an existing contact route, or build a fuller service introduction. The owner determines what can be accepted; the website should preserve that review before presenting the requested personalization as agreed work.",
+        "scopes": [
+          {
+            "title": "Separate product orders and supplied-item inquiries",
+            "pages": [
+              "Who supplies the item",
+              "Description for the first review",
+              "Item acceptance and personalization approval"
+            ],
+            "request": "Make it clear whether the customer is choosing an offered product or asking about an object they already have. Use the business’s approved way to begin that discussion.",
+            "supplies": "The products you supply, the kinds of supplied-item inquiries you consider and the information your team uses to assess them.",
+            "check": "A customer with their own cup can ask about that item without being treated as though they selected a product from your catalog. Spelling approval does not stand in for item acceptance."
+          },
+          {
+            "title": "Build a service and product introduction",
+            "pages": [
+              "Shop-supplied products",
+              "Customer-supplied item examples",
+              "Personalization and review process",
+              "Quote or existing order handoff"
+            ],
+            "request": "Explain the two routes with approved examples and a clear account of what happens next. Keep any functioning shop or order provider connected to the appropriate product choices.",
+            "supplies": "Accurate service limits, approved photographs and current descriptions of the work the business accepts.",
+            "check": "Visitors understand who is supplying the object and which review comes next. A displayed engraving example is not an assurance that every material or object can be accepted."
+          }
+        ],
+        "planningTable": {
+          "title": "A supplied-item website brief",
+          "intro": "These are proposed content questions for an engraving or personalization business. The owner supplies the actual acceptance policy and how any photographs are shared.",
+          "columns": [
+            "Decision",
+            "What the customer should be able to state",
+            "What the business confirms"
+          ],
+          "rows": [
+            [
+              "Source of the item",
+              "An offered shop product or an object the customer already owns.",
+              "The correct product or inquiry route."
+            ],
+            [
+              "Object and known material",
+              "What the item is, its quantity and any material information the customer knows.",
+              "Whether more information is needed to assess suitability."
+            ],
+            [
+              "Requested marking",
+              "The proposed location and type of personalization.",
+              "Whether the requested work can be accepted on that item."
+            ],
+            [
+              "Design approval",
+              "The exact spelling or artwork after the relevant review.",
+              "The agreed personalization, kept distinct from the earlier item-suitability decision."
+            ]
+          ]
+        },
+        "scopeTrigger": "The business supplies its approved item-acceptance policy and liability terms. Photo uploads, customer-property records, automated acceptance workflows and custom checkout need separate website assessment.",
+        "quoteQuestions": [
+          "Does the customer buy the item from you or supply it?",
+          "What information is needed to assess the object?",
+          "How do you distinguish item acceptance from design or spelling approval?"
+        ],
+        "coverageNote": "For website projects in Lexington and Fayette County. Wonder and Method is based in Buffalo, New York, and works online with Kentucky businesses. The engraving business is a public planning example, not a studio client or partner.",
+        "sources": [
+          {
+            "url": "https://lexingtonengraving.com/glass-cups-and-wood",
+            "label": "Lexington Engraving: supplied-item inquiries",
+            "observation": "The Lexington page invites customers to bring an item, send a photograph or describe a glass, drinkware or wood project."
+          },
+          {
+            "url": "https://lexingtonengraving.com/metal-marking-and-etching",
+            "label": "Lexington Engraving: metal-item inquiries",
+            "observation": "The metal-marking page also invites an item, photograph or description before a quote. These examples do not establish an acceptance policy for every object."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/personalization-preview/",
+            "label": "Separating a personalization preview from approval"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "kentucky/fayette"
+        ],
+        "path": "/areas/kentucky/fayette-county/",
+        "title": "Web Design for Lexington / Fayette County, KY",
+        "description": "Web design for Lexington / Fayette County, KY. Example brief: identify the item before approving its personalization.",
+        "servedAreas": [
+          {
+            "name": "Fayette County",
+            "state": "Kentucky",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/kentucky/#fayette",
+            "label": "Fayette County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "e24b8bf492036be4ecb84eec940ee98c451f539571fd025466151f7f92bc41cd",
+      "afterSha256": "fb427a8c812c0e4fcf1616977a3cad33b55103584a205fd1874db6e660a1243d",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-checkpoint-recheck.jsonl",
+        "entrySha256": "33777d6d63471ea9b540ed959818680737337514cb41cc12b97107fde1e1ecf3",
+        "candidateBodySha256": "3909a1a7ea61145b695f062ee6a2e45562e233beb468e25374c39df6b6d38724",
+        "draftSha256": "7ba0e7c80a993b7aea9d8c7a52d8055b2063aeb096e91646018c5764403ff9ab"
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "path": "/areas/broome-county/",
+      "before": [
+        {
+          "question": "How can I check what I receive at website handoff?",
+          "answer": "Check the source and content files, approved assets, dependency and non-secret configuration files, licenses, account inventory, completed checks and build and publishing instructions. The delivery should identify unfinished items too. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
+          "links": [
+            {
+              "path": "/work/source-handoff/",
+              "label": "Inspect the handoff contents"
+            }
+          ]
+        },
+        {
+          "question": "What if a review finds that the missing form details cannot be fixed safely?",
+          "answer": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree on a separate price before proceeding.",
+          "links": [
+            {
+              "path": "/services/website-audit/",
+              "label": "Understand the review deliverable"
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "question": "How can I check what I receive at website handoff?",
+          "answer": "You receive the paid website files, publishing instructions and a record of completed checks and unfinished items. Use the linked handoff checklist to inspect the full delivery. Paid files arrive within five business days after the work is finished or the account is settled if it stops early; they do not wait for the correction period.",
+          "links": [
+            {
+              "path": "/work/source-handoff/",
+              "label": "Inspect the handoff contents"
+            }
+          ]
+        },
+        {
+          "question": "What if a review finds that the missing form details cannot be fixed safely?",
+          "answer": "The review still provides findings, access limits and an ordered list of next steps. A small included fix is conditional on being safe and practical; it is not a promise to repair any form or provider. If resolving the fault requires broader changes, I describe that work and agree on a separate price before proceeding.",
+          "links": [
+            {
+              "path": "/services/website-audit/",
+              "label": "Understand the review deliverable"
+            }
+          ]
+        }
+      ],
+      "beforeSha256": "8370fd4470b1976d2b9cb93ded068cec311f102e141eb20bc6f2b5b5d3d77954",
+      "afterSha256": "10300a3ad50a549bcb0d1d88b19d030ec66268a2a4ca6caa847012569a15ac04",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-checkpoint-recheck.jsonl",
+        "entrySha256": "b27ac658e50ab99bfe7a2bcdb0ff328d6b00de2b4d7cc8f11a766e487c6b6009",
+        "candidateBodySha256": "56c3bdee5b70b70f918f2141606b0321ec27c782fbc362d142114eda079b042a",
+        "draftSha256": "b2f9891a544e07c50867e56d80bd7cc42679a04a9314f74883a764c150ca4880"
+      }
+    },
+    {
+      "path": "/areas/kentucky/boyle-county/",
+      "before": [
+        {
+          "question": "Can you improve our wood photographs without misrepresenting the material?",
+          "answer": "I can prepare supplied photographs for clear website use, with the edits agreed in the written proposal. We should preserve the grain, weathering and other details the example is meant to show, and explain relevant lighting or sample differences in the caption. Screens cannot guarantee an exact color match. You approve the images and factual descriptions; new photography is separate work.",
+          "links": [
+            {
+              "path": "/services/web-design/",
+              "label": "Review website design and supplied-image work"
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "question": "Can you improve our wood photographs without misrepresenting the material?",
+          "answer": "I can prepare supplied photographs for clear website use within the written proposal. You approve the finished images and factual captions. The guidance above explains how we preserve the material’s appearance; the linked scope describes the website design work. New photography is separate work.",
+          "links": [
+            {
+              "path": "/services/web-design/",
+              "label": "Review website design and supplied-image work"
+            }
+          ]
+        }
+      ],
+      "beforeSha256": "fb08b397c6f2bd580897bec4761542600b9e178ccddfbcfa8c1b1fc7657e1c7f",
+      "afterSha256": "6c1c7f9bbefab517f2562ec1d3e1c2a81e6b4f8b250b21d7264eddbbcee09147",
+      "reviewEvidence": {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-checkpoint-recheck.jsonl",
+        "entrySha256": "594914b2e1097710e149e7c49fb87b4ad8c4785fe57493588e166a361c78587e",
+        "candidateBodySha256": "2b822679b76103b4db1a922257a5bdbb83a804d92a41aa264669b4be44a35897",
+        "draftSha256": "9a6e5094d6924d40acf2c35f3ee272d86596ea64c63927b07c1cd8168dea060d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "reviewer": "Independent Astra release-evidence reviewer",
+  "reviewedAt": "2026-10-27T23:54:22.908Z",
+  "status": "pass-with-scope-limitations",
+  "scope": "Bounded review of public-score detection exception and content-review binding; no repeat semantic review, visual/accessibility judgment, or external source recertification.",
+  "evidenceHashes": {
+    "tests/public-review-boundary.test.mjs": "1daf1b055bd87b8540995d10463d84a6ccc5f1fcfd52300d85ab6d8f2a25877f",
+    "operations/human-quality-20261027/bind-final-content.mjs": "45e133f3b4c44a3d8d23b6d0285f399ec7c60a7c3cf2a77835c7d17a2d375c8d",
+    "output/human-quality-20261027/release-content/summary.json": "ab8920e2a04093c681ea6afb04aaf356578f40706eadef2449259867e2e197ab",
+    "output/human-quality-20261027/release-content/pages.jsonl": "a9a61e072f2ea7b0cb8766182722dc2e87f9479dfa39eedf8af235caf02e9564",
+    "output/human-quality-20261027/release-content/guide-date-bindings.json": "8e861f6327944bad4ea880cd8dac1a27d99bba19d30bc07a9b8a83be2b493cef",
+    "operations/human-quality-20261027/audits/guide-rendered-delta-review.json": "6f6e0ceefaf3a4f6d07f3951da507ec9dbe9669c7a34842e5a7ccf06623181c3"
+  },
+  "checks": {
+    "publicBoundaryTests": {
+      "passed": 6,
+      "failed": 0
+    },
+    "rackException": {
+      "actualOccurrences": 1,
+      "route": "/areas/virginia/hopewell-city/",
+      "assessment": "The complete matched sentence is explicitly a length/height rack-size comparison within an Anchor Point Marina source citation. Standalone ratios and adjacent numeric/metadata scores remain rejected; no current scoring concealment found."
+    },
+    "bindingReplay": {
+      "readOnly": true,
+      "complete": true,
+      "expected": 2394,
+      "bound": 2394,
+      "errors": [],
+      "pagesReceiptByteIdentical": true
+    },
+    "reviewEntryHashResolution": {
+      "checked": 2394,
+      "mismatches": 0
+    },
+    "currentRenderedHtml": {
+      "checked": 2394,
+      "mismatches": 0
+    },
+    "builtMainText": {
+      "checked": 2394,
+      "mismatches": 0
+    },
+    "builtMainHtml": {
+      "checked": 2394,
+      "rawDifferences": 146,
+      "normalization": "Remove 12-hex asset version query parameters on /assets/ references only",
+      "normalizedMismatches": []
+    },
+    "reviewIndependence": {
+      "independent": 1488,
+      "notIndependent": 906
+    },
+    "scores": {
+      "minimumContentSubtotal": 65,
+      "contentMaximum": 80,
+      "below65": 0,
+      "allVisualAccessibilityFinalNull": true
+    },
+    "correctedSeoReview": {
+      "reviewInputHashMatchesCorrectionSnapshotAndCurrentRender": true
+    }
+  },
+  "materialFindings": [],
+  "limitations": [
+    "Receipts bind current renderer output; full built HTML bytes differ due to build transforms. Independent build comparison verifies main content, including normalized main markup, only.",
+    "Most bindings use main-text equivalence, excluding shared breadcrumb in local/article candidates; this does not independently certify navigation, metadata, resource integrity, interactions, visibility, visual quality or accessibility.",
+    "Fourteen rendered guide introduction deltas are primary-review records; six prior content ratings are retained. Not every page has an independent-review flag.",
+    "Corrected SEO service binding uses the correction snapshot main-text hash without asserting snapshot inputHash equals corrected review inputHash in the binder. This reviewer verified those input hashes and current render match in this release; prospective hardening could assert that chain.",
+    "No final total score or visual/accessibility pass is established by this content-only receipt."
+  ]
+}

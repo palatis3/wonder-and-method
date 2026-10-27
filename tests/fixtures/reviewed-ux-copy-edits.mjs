@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import review from './ux-copy-edits.json' with {type:'json'};
+import {beforeReviewedHumanQualityEdits,beforeReviewedHumanQualityFaqEdits} from './reviewed-human-quality-edits.mjs';
 const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const records=new Map(review.records.map(row=>[row.path,row]));
 const faqs=new Map(review.faqs.map(row=>[row.path,row]));
@@ -19,5 +20,5 @@ function restore(value,change,path){
  assert.equal(digest(before),change.beforeSha256,path+' prior accepted record');
  return before;
 }
-export const beforeReviewedUxCopyEdits=record=>restore(record,records.get(record.path),record.path);
-export const beforeReviewedUxFaqEdits=(path,answers)=>restore(answers,faqs.get(path),path);
+export const beforeReviewedUxCopyEdits=record=>restore(beforeReviewedHumanQualityEdits(record),records.get(record.path),record.path);
+export const beforeReviewedUxFaqEdits=(path,answers)=>restore(beforeReviewedHumanQualityFaqEdits(path,answers),faqs.get(path),path);

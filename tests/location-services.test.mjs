@@ -45,6 +45,13 @@ test('2266 approved commercial pages preserve 2276 directory identities, truthfu
  const pages=renderPages({config,offers,map,geography}),byPath=new Map(pages.map(page=>[page.path,page]));
  assert.equal(Object.keys(reviewedWorksheets).length,72);
  assert.equal(locationServices.filter(entry=>entry.legacyWorksheet&&reviewedWorksheets[entry.areaId]===entry.legacyWorksheet).length,71);
+ assert.deepEqual(locationServices.filter(entry=>entry.legacyWorksheetRetired).map(entry=>entry.path).sort(),[
+  '/areas/monroe-county/','/areas/nassau-county/','/areas/new-jersey/burlington-county/',
+  '/areas/new-jersey/camden-county/','/areas/new-jersey/cape-may-county/',
+  '/areas/new-jersey/gloucester-county/','/areas/new-jersey/morris-county/','/areas/niagara-county/',
+  '/areas/pennsylvania/lancaster-county/','/areas/pennsylvania/montgomery-county/','/areas/pennsylvania/northampton-county/',
+  '/areas/pennsylvania/pike-county/','/areas/pennsylvania/wayne-county/','/areas/rockland-county/','/areas/suffolk-county/','/areas/westchester-county/'
+ ]);
  for(const entry of locationServices){
   const page=byPath.get(entry.path);assert.ok(page,entry.path);
   const schema=JSON.parse(page.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
@@ -59,7 +66,7 @@ test('2266 approved commercial pages preserve 2276 directory identities, truthfu
   for(const id of ['buyer-task','approach','search'])assert.ok(page.html.includes(`id="${id}"`),entry.path+'#'+id);
   if(historicPaths[entry.path]){
    assert.ok(entry.legacyWorksheet,entry.path);
-   assert.equal(page.html.includes(entry.legacyWorksheet),reviewedWorksheets[entry.areaId]===entry.legacyWorksheet,entry.path+' reviewed worksheet availability');
+   assert.equal(page.html.includes(entry.legacyWorksheet),!entry.legacyWorksheetRetired&&reviewedWorksheets[entry.areaId]===entry.legacyWorksheet,entry.path+' relevant worksheet link');
    assert.ok((await readFile(new URL('../src'+entry.legacyWorksheet,import.meta.url),'utf8')).includes('General website planning'));
   }
  }

@@ -32,7 +32,7 @@ export const careTaskExamples=o=>studioSection('task-owners','Who looks after ea
 export const seoWorkExample=o=>studioSection('choose-monthly-work','One example: make a service page useful',
  p('<strong>Fictional example:</strong> customers ask which repairs a business accepts. One researched page improvement could work like this:')+
  '<ol><li><strong>Start with the facts.</strong> You confirm the jobs you accept, exclusions, service area and the next step for an inquiry.</li><li><strong>Improve the page.</strong> I research the customer question, rewrite the page and its title and description, and add useful links.</li><li><strong>Publish and check.</strong> After your review and one combined feedback list, I publish the page and check its inquiry path.</li></ol>'+
- p('That is one finished improvement, including research, writing and checks. Care edits are separate. '+e(o.plans.grow.public_name)+' also includes its separate extra graphic or newsletter excerpt using approved content; it does not replace a main improvement.')+
+
  p('The report records the changed page, approval, checks and unresolved issues. '+a('/guides/seo-work-and-reporting/#completed-report','See the completed report example')+' or <a href="/assets/guides/sample-monthly-report.txt" download>download the monthly report template (text file)</a>. No ranking or lead increase is claimed.'));
 
 

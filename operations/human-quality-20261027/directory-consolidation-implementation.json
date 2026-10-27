@@ -1,0 +1,1087 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-27T17:11:20.157Z",
+  "scope": "53 state/district/territory directory and area-index routes only; no service-page, geography-source-data, build or browser edits.",
+  "files": [
+    {
+      "path": "src/service-area-directory.mjs",
+      "sha256": "4a6bb6c4df4ce1752f164899cb3e080bdac91c737c72c7998cd8669d1ab8b1cf"
+    },
+    {
+      "path": "src/assets/county-directory.js",
+      "sha256": "ce0253c047b7377a06eb458fc59c78be704d3bc581d0ae75acf7261add4392da"
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "sha256": "83a3ce92daffcd3577e372f994dd6db3010f2cf1152a2076e040ce7124deead9"
+    },
+    {
+      "path": "src/directory-editorial-notes.mjs",
+      "sha256": "5725dce9e4aa740a281d439f934cd5842a71ff1bf2bb37cd074cd1517f0b4797"
+    },
+    {
+      "path": "tests/human-directory-clarity.test.mjs",
+      "sha256": "567d435df85991e0488a547c233885917e9407960a77a05ac2a6e2a3c2cf1c3a"
+    }
+  ],
+  "evidence": {
+    "basis": "Saved independent after-review findings; existing local geography/status/source records.",
+    "newExternalVerification": false,
+    "sourceLabels": "Reader-facing descriptions derived from existing record purpose, URL structure and local evidence; not claims that external documents were newly opened or their exact published titles verified."
+  },
+  "validation": {
+    "directoryRoutes": 53,
+    "entryIdentities": 3222,
+    "underlyingServiceStatesUnchanged": true,
+    "allPlaceNamesAndMembershipsPreserved": true,
+    "allPriorIdsPreserved": true,
+    "allPriorUniqueLinksPreserved": true,
+    "duplicateIds": 0,
+    "removedDatedObservations": 0,
+    "targetedTests": {
+      "file": "tests/human-directory-clarity.test.mjs",
+      "passed": 6,
+      "failed": 0
+    },
+    "searchTransportAndPayloadTests": {
+      "passed": 7,
+      "failed": 0
+    },
+    "regionalDirectoryTests": {
+      "file": "tests/regional-directory.test.mjs",
+      "passed": 3,
+      "failed": 2,
+      "failures": [
+        {
+          "line": 59,
+          "reason": "Requires the full former charter-reconciliation note beside Gun Plain, contrary to the requested shared definition."
+        },
+        {
+          "line": 131,
+          "reason": "Requires Ontario County’s full former paragraph including the generic address caution requested for removal."
+        }
+      ]
+    },
+    "diffWhitespaceCheck": "passed"
+  },
+  "unresolvedChecks": [
+    "Root-owned regional-directory prose-equality fixtures need alignment with the approved consolidation; semantic and immutable-data coverage is in the owned test.",
+    "Independent final full-text and rendered visual/accessibility/interaction review remain pending. No build or browser pass was performed."
+  ],
+  "totals": {
+    "beforeTextCharacters": 2358381,
+    "afterTextCharacters": 2332349
+  },
+  "routes": [
+    {
+      "route": "/areas/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use concrete search examples or simply say to try another place name in the empty state."
+      ],
+      "implementation": [
+        "Replaced the empty-state field-label echo with a direct suggestion to try another place name."
+      ],
+      "beforeSha256": "56d9bcaf4c52f93e08adeaced38522eae5972dfd1735a75f3e556f022fab5b77",
+      "afterSha256": "290d098ebc2e21f6b8f7d69057e33e3eb8b9a9e63b20a1045b36a401c2b4a112",
+      "beforeCharacters": 86039,
+      "afterCharacters": 86038,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/alabama/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "2b2a4360c35a8bc3eb9ef11c6c10a439cac54dbe9644cb43170ad804c9f12baa",
+      "afterSha256": "90ee45bc206ca45063f475ab0d6c707e2c3ef703ad845c64f732e43d2c95b439",
+      "beforeCharacters": 27626,
+      "afterCharacters": 27637,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/alaska/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain that the named city/borough is one consolidated government with overlapping Census records; identify the census areas covered by the separate no-government note.",
+        "Use verified descriptive source labels while retaining all records and government/place distinctions."
+      ],
+      "implementation": [
+        "Explained the overlapping city/borough records as one government; named the census areas in the no-government exception.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "a23975cee0dec257501407720b095805fcd678609700cb276a84e0aba24a1e0e",
+      "afterSha256": "c9766ec59ba02a575d483311a50d61f6a4d11f005d28f5b2492cb181b38c0f51",
+      "beforeCharacters": 26404,
+      "afterCharacters": 26848,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/arizona/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "4f3f3b45aa0dd0d5c6c008ef25ed2993bf229fc3143148fbb212606c8c38ea2c",
+      "afterSha256": "a7511d1d79fc6f264705aca9cb063805cfe48b75d772ce0a7b43be4a4a233875",
+      "beforeCharacters": 20122,
+      "afterCharacters": 20054,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/arkansas/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "feafee67edcc89750da91be44a1a063fabf70498180008b0ac174e5fb6fabc1b",
+      "afterSha256": "fe61186082f11d6d45d043e3ec9786d7daa7867fdb89557921ff141f2cc454e9",
+      "beforeCharacters": 50083,
+      "afterCharacters": 50095,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use document titles identifying the state geography reference and county/place population estimates, with years."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "ff8bc6fe1d9d93606383b770c6df4fd07ba1b7b786dc3da9e36a0770f9fbfc1d",
+      "afterSha256": "104a805cb13210b1795dd4a26ecea2f5a89b6032629fbac1303e14bfe487ec3d",
+      "beforeCharacters": 66230,
+      "afterCharacters": 66346,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/colorado/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records' and 'each intersected county'; label methodology disclosures by the applicable consolidated-government or inactive-place exception."
+      ],
+      "implementation": [
+        "Replaced relationship jargon and removed municipio wording from county scope.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "435da7be4a97f14b0343a5c08b3bc7dabfbb6ca6b66a3d249187ae8b4f9d8835",
+      "afterSha256": "644057449302be65b28007c7ff84eac1809a0a098bd488a9c9ac64a21f431b7b",
+      "beforeCharacters": 45737,
+      "afterCharacters": 42840,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/connecticut/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep the shared definition in search help/source notes and shorten entry paragraphs to distinct municipality membership or a local exception; retain former-county and Groton/Milford distinctions."
+      ],
+      "implementation": [
+        "Removed repeated planning-region definitions from individual entries; retained distinct membership and former-county exceptions.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "8775187cf60973e0f0f623a7c992b7e2dfc50442b3ee249489cc1ebfc64d756f",
+      "afterSha256": "09935ad09e1bc5796f6218b2ada270a89c6f3cd53a18db2ea8367f33e0d2e762",
+      "beforeCharacters": 18421,
+      "afterCharacters": 15696,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/delaware/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "eee66df22ce7e0af53c362c2fc601ced11e30ad35620a33b43cc75636ec9e26a",
+      "afterSha256": "22e4c86fdd3a0378c90266a84ce37c685d9c734f60dd2b96181f7b21f94c6b17",
+      "beforeCharacters": 4702,
+      "afterCharacters": 4704,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/district-of-columbia/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use Browse the Washington, DC guide in the count/status text as well as the browse heading.",
+        "Replace dc gslcg with a verified plain document description, preserving its destination."
+      ],
+      "implementation": [
+        "Changed initial and reset search status to Browse the Washington, DC guide.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "faad3a2f7e590be89f5bae575c94dc2b2d29943438dc54d7803bf874835f43f2",
+      "afterSha256": "c38acc96bf0139170058d8a8dfce6a95c0d163da0cc32b19e2e10ece4f9cc904",
+      "beforeCharacters": 3439,
+      "afterCharacters": 3477,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/florida/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "4750d344511c4eaea2177835ba1b8704f727c7eae038a835a73c5d6de0b9f682",
+      "afterSha256": "b9495157a6423fff3aa69fc878d7d01e01cf581a6c170e60db3ee8e987b1b949",
+      "beforeCharacters": 44646,
+      "afterCharacters": 44796,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/georgia/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "State the Macon-Bibb and Columbus consolidated-government distinction plainly; move any original-record retention explanation to optional source methodology."
+      ],
+      "implementation": [
+        "Replaced internal source-retention instructions with the consolidated city-county distinction.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "4b427a70d2e2853bbd20d69dba1de868ff2c7586832adbe3efe3ee58fa17c4a0",
+      "afterSha256": "f1a894527c75a928ae672819d533c5fb6a12c2639b9817b2d5022e909d0d791c",
+      "beforeCharacters": 50005,
+      "afterCharacters": 49988,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/hawaii/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep one plain-language scope paragraph and one Honolulu distinction, retaining the separate dated Kalawao legal condition and its linked evidence; move record codes to optional methodology."
+      ],
+      "implementation": [
+        "Printed shared dated scope and Honolulu/CDP distinction once; preserved the named Kalawao conditional transition, dates and source evidence.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "794b2eb1016d3c70ddef4c99049a22a4fd0f7e0e7d83025b4a9b9a14fbbbc37c",
+      "afterSha256": "4e5d4d5624b6a1f5dc7b6dfaf60f25d633dbb4de2306141401eecf843303e129",
+      "beforeCharacters": 9867,
+      "afterCharacters": 9330,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/idaho/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records'; retain the dated scope, inactive legal entity and tribal-boundary distinctions."
+      ],
+      "implementation": [
+        "Used a plain place-to-county relationship description.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "371d73ae9b19911102cdf628478d8ca1808afdfe07946227da237da2c9cac338",
+      "afterSha256": "8033890535a9550a74dd5c8913330bb3130ee0347d520f3ffafd2f6eb118003b",
+      "beforeCharacters": 28035,
+      "afterCharacters": 26217,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/illinois/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain in plain language that duplicate Census subdivision representations are excluded, retaining the official technical term only in optional methodology."
+      ],
+      "implementation": [
+        "Explained excluded duplicate Census subdivision representations without calling a place fictitious.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "d1d0c7b7bbe3ace125d85be6ec45d2b4af6be8124f42416af5c7690cdadcfe5d",
+      "afterSha256": "1ad2e6c92862c15805eeb81334ed5ced3a0a05acc30ee05db2a4324c3ec5b446",
+      "beforeCharacters": 75311,
+      "afterCharacters": 75335,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/indiana/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Name the 2025 place and township population estimates explicitly in their link labels."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "3b5f31f09cf37d9492c2fe031d3d775aa30d89050fedf123bfd9fa448c31042f",
+      "afterSha256": "91008f9e53668c4ac6f5aabae8a0deac4f666958e9d88d2a4d9d2def963eec4f",
+      "beforeCharacters": 59183,
+      "afterCharacters": 59185,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain ordinary active status once per group and attach concise exception labels to Julien and Kane.",
+        "Use readable source document titles."
+      ],
+      "implementation": [
+        "Moved the ordinary active-subordinate status to a group default, keeping concise per-place exceptions.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "028cd88f176adc64e3fa9b9bb986c863d940298c04faac33f794447a662fa510",
+      "afterSha256": "32c71bfb37d56c6295682851a6993b1d2c5ebd5cdc929f45efc21cbfe21c45d0",
+      "beforeCharacters": 73417,
+      "afterCharacters": 69158,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/kansas/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Remove empty headings and explain the reader consequence of the optional ranking limitation or omit it; use readable source titles."
+      ],
+      "implementation": [
+        "Omitted the internal population-ranking diagnostic and its empty heading.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "3d31f6be68d377d5b95efee25b05802916eee31f291be6560553231a70dc9261",
+      "afterSha256": "80cb85efc81dc4fda27b4f3dac1d1e74e0623ff882ba9b1b86fb4c9e6d14fdb3",
+      "beforeCharacters": 66819,
+      "afterCharacters": 64170,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/kentucky/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep a short named Monterey former-city entry with effective dates, name Monterey in the evidence note, and retain record identifiers only in optional methodology.",
+        "Name the state geography layer and Monterey dissolution record in their source links."
+      ],
+      "implementation": [
+        "Shortened the Monterey entry with order/filing dates; named Monterey in its evidence and moved geographic-identifier mechanics to optional record details.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "b19b5f6b59c932c9e7c1be3fa713bdd76a48001b389cb7acb5816f43f762562d",
+      "afterSha256": "93d919c6dcac795f2455fcbcd1cdabe2062fe98ab8b5e3e1c925da61f0c5b3be",
+      "beforeCharacters": 49501,
+      "afterCharacters": 49318,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/louisiana/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Reuse the plain duplicate-Census-subdivision explanation in the source note, retaining actual New Orleans city and the coextensive parish distinction."
+      ],
+      "implementation": [
+        "Reused the duplicate-record explanation for New Orleans without changing the actual city/parish distinction.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "b5875ffb4aed94ca40e79359f61beca2340773d13056d9a5bf73365f006031c9",
+      "afterSha256": "2a6f8c1ec153bf0f507c24118c970527387cfcfbc1a9345cf9efa234ce874158",
+      "beforeCharacters": 34676,
+      "afterCharacters": 34689,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/maine/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use verified plain descriptions for the House town/county list and the document supporting Drew's deorganization, preserving exact source links and dates."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "cc4517e54d41bc1920f189a6e046d7a2614a3863089472bff50848faf93a7a7e",
+      "afterSha256": "c2f1a1f6150249471338e1511bb6903ec7ec77ed270ad89920c21996d307b86d",
+      "beforeCharacters": 19336,
+      "afterCharacters": 19339,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/maryland/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Give the State Archives sources verified plain titles, retaining county identifiers, URLs and reconciliation dates."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "b34d2b447fedd3b863c829fa2ca2a42ef81eab5dce203019391ded601cdb5fdf",
+      "afterSha256": "f7b286c63ee378fab6ff54cd6fc4d868d7ca3bda8237cb6b89c4437a8566fd41",
+      "beforeCharacters": 25882,
+      "afterCharacters": 26573,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/massachusetts/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "a58d3e82d1afc2e505a466888a315b231c189f56f86e2d612278786c1d06351b",
+      "afterSha256": "8566517dbac8b4731d76ad3702e841b7f93e65eaef8b91f57fcbc7010c9fbc34",
+      "beforeCharacters": 17324,
+      "afterCharacters": 17335,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain alias normalization and charter reconciliation once; preserve every name, type and alias with short labels.",
+        "Make the Howard optional note factual without the retain instruction; move GEOID mechanics to metadata and title source documents readably."
+      ],
+      "implementation": [
+        "Defined alias spelling and charter reconciliation once; retained all aliases and typed names.",
+        "Recast Howard’s unresolved status evidence as factual prose; moved Cass Lake identifier mechanics to optional record detail, preserving organization dates.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "7b93b1e0fb4aa81e8ee2c093bb7684c16f96157000152a44dbcb5b7e132f7bf8",
+      "afterSha256": "78a883baea40f2ac6bd15ff0ab65f286e153cfa0210aeba3f68638f971ae7cbe",
+      "beforeCharacters": 71880,
+      "afterCharacters": 69136,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/minnesota/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain that the numeric Itasca names are recorded territory identifiers, preserving them unchanged.",
+        "Remove empty source headings; explain any visible ranking limitation or omit the diagnostic, and give sources readable document titles."
+      ],
+      "implementation": [
+        "Explained Itasca numeric territory labels without renaming them; omitted the internal ranking diagnostic.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "45df935ec260516adbd77a5c04d8dec4ad0c8e45cf0bf34a36d9071db9255379",
+      "afterSha256": "6002acf062da1c5a315b9c4e7ab7a1ab81776998e2b9446accbf7dc13cbd7b60",
+      "beforeCharacters": 72394,
+      "afterCharacters": 72793,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/mississippi/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "fc3880827db9d7e13054fad973c8bf13ca66424d7781eef02eafd1522350a293",
+      "afterSha256": "aa649e3d0d3ef6a50d8aa187eab9a807b6d9491cc55845e3b8f158377334b0ce",
+      "beforeCharacters": 28158,
+      "afterCharacters": 28151,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/missouri/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Remove the empty generic heading and omit or explain the ranking diagnostic's actual effect in the optional note.",
+        "Use readable source titles."
+      ],
+      "implementation": [
+        "Omitted the internal ranking diagnostic and empty heading.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "c0f061990b58ffa5f31ef94a39b6969eea496a29ce08f7fd3fce351edb8adc8d",
+      "afterSha256": "79fd47e52b99699a7f711558563e1edd0624b7b31aa71d7ec0972ae522320f69",
+      "beforeCharacters": 80275,
+      "afterCharacters": 80382,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/montana/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep the plain consolidated-government/Walkerville distinction in the entry, moving population aggregation advice alongside optional Census codes.",
+        "Use '2026 place-to-county relationship records' in shared scope."
+      ],
+      "implementation": [
+        "Kept consolidated-government and Walkerville distinctions visible; retained original aggregation cautions in optional recorded-status evidence.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "f9cf8fe81ff1ffe45f4ff7d72274945f93e9d2cc56fdf77dfe04ba65c1929932",
+      "afterSha256": "36aa31aafa4b17e228f4e750dad063f4b73a0a621009a4c2840e312d0df2a305",
+      "beforeCharacters": 43966,
+      "afterCharacters": 41914,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/nebraska/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Explain that Stanton precinct abbreviations are the recorded source labels; add expanded names only if verified.",
+        "Replace raw source filenames and acronyms with readable document titles."
+      ],
+      "implementation": [
+        "Explained Stanton precinct abbreviations as recorded source labels without inventing expansions.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "8de8326f7c404721b578c282c57d9c4256c3dc04a992fc94ba6bcd66e2fed980",
+      "afterSha256": "ec54a71630a854e279e58624a517375edbfbd1143f8c4806d35fc365de28427b",
+      "beforeCharacters": 62750,
+      "afterCharacters": 61086,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/nevada/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Introduce the exception as 'These counties have no incorporated municipality...' and retain the exact seven names and dated scope."
+      ],
+      "implementation": [
+        "Used plural grammar for the seven counties lacking incorporated municipalities and removed the redundant generic definition link.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "dbb45da6b46ff633ebbe359f7605badad632e9cc0a3185408757d5ac1417202d",
+      "afterSha256": "9ead1ca8be7a1759b113f9639ca7bbf76aef79f8d7a8f36538a21b82cc68bd1e",
+      "beforeCharacters": 14080,
+      "afterCharacters": 14322,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-hampshire/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use a verified description such as the state municipality/county list for the CSV source while preserving the link and file-type cue."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "75bcc6238024293765e48240bb63535a01194bc67b8be81fd70e5dc4f82c3f86",
+      "afterSha256": "97ab4e899d8018524fc45e0afd8b5034708db4676d360a68fed5cda3aac616ee",
+      "beforeCharacters": 11565,
+      "afterCharacters": 11572,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-jersey/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Move Census suffix mechanics into optional methodology while retaining unified municipality/government-form language.",
+        "Replace numeric labels with verified descriptive titles without changing source links."
+      ],
+      "implementation": [
+        "Moved Princeton’s Census suffix mechanics to optional naming detail while retaining its unified municipality and government form.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "53ccfc3cb999e6def538b6478ad63d71eded382b8ffe1365c05c803156603882",
+      "afterSha256": "b31572afdcd85241d1405c560cd6d18b718860c254f7d0d5b689508bfd3511cc",
+      "beforeCharacters": 29372,
+      "afterCharacters": 29653,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-mexico/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "c0103788ee281252c3b3ea006a11f5a32dc4e759ba917e88521ea8b09fe87519",
+      "afterSha256": "ca1f5f6a53226e9ba469afdefd30531f6365b23782d83e962e1453175da0b585",
+      "beforeCharacters": 29280,
+      "afterCharacters": 29392,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/new-york/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Retain substantive county distinctions while removing repeated generic address advice and merging the adjacent overlap definitions.",
+        "Give numeric and truncated citations readable document titles."
+      ],
+      "implementation": [
+        "Removed recurring generic address cautions and merged shared town/village overlap explanations.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "06f7f09198777018d434c383003715c88d3fb7803cf3c2fe93b17b98b8e4f207",
+      "afterSha256": "7d18cca44821ffd057033251ed750e49f1ed21709ef1d37dbc25335b763f8cc7",
+      "beforeCharacters": 75958,
+      "afterCharacters": 75471,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep a short dated status explanation beside Speed, Spencer Mountain and Eureka; consolidate legal/source mechanics in named optional evidence sections, removing duplicate date sentences."
+      ],
+      "implementation": [
+        "Shortened Speed, Spencer Mountain and Eureka annotations; kept named dated county/state evidence and removed duplicate suspended-charter dates.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "ddc1e0a65d3192cd05ba4178cfc5da8e942a43633d0244f0c506f7f34d0ee884",
+      "afterSha256": "5d0e2eb6aa81be8837f6ddcf65ecf0a189cc4c8c7a0ce07648fb7e9cf795cfb0",
+      "beforeCharacters": 51232,
+      "afterCharacters": 50718,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-dakota/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Label the subdivision population file and state geography reference by human-readable document title, retaining year."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "96cbfa384b3684702f8cdf91e6f3e2ed9148aeeac5ff7ae77877b9b9ab0d31ad",
+      "afterSha256": "c0450f75bfd63a095ea3a69d32a22a74d89b22c945daf8e8b854c3bb6d8fd57e",
+      "beforeCharacters": 51374,
+      "afterCharacters": 48569,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/ohio/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Remove recurring generic customer-workflow cautions while preserving concrete aliases, status and boundary facts.",
+        "Combine duplicate source overview prose and label exception notes by relevant county."
+      ],
+      "implementation": [
+        "Removed generic customer-workflow cautions, shared the dated source overview, and named county-specific township/status exceptions.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "60ac725eade76550e94fcb8bf71c1816223efbb7a100994ccb21e62a1a2cf8e8",
+      "afterSha256": "5ee57b05a651b963e46035da4ce2bafbd34095c05e7f6809b198154449adfda9",
+      "beforeCharacters": 90465,
+      "afterCharacters": 88900,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/oklahoma/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Remove the ranking diagnostic if it has no visible user consequence, or explain that consequence and give its disclosure a specific title; remove the empty definitions heading.",
+        "Use concise inactive status notes and readable source document labels."
+      ],
+      "implementation": [
+        "Omitted the internal ranking diagnostic and empty heading.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "1eb851e0c8527c6246d7545b684763b548eb5c889dd76c2f1863361b6bd1f9c2",
+      "afterSha256": "f862c413022756867a692f33d0759b4a0b08a41da631085ab282d2de49af01dd",
+      "beforeCharacters": 52615,
+      "afterCharacters": 52978,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/oregon/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "fa544f35ac28232c78457dae7622e2128bf9bbfc2cd0a8f4e56f3994e700024b",
+      "afterSha256": "2286b7cb4e95fbd8b3de7fd128994873533bcdbd9c23926cb5c2c7e91fdd85c1",
+      "beforeCharacters": 29502,
+      "afterCharacters": 29639,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/pennsylvania/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Add a concise selected-community scope sentence to the opening help.",
+        "Remove generic address advice from county paragraphs while preserving all substantive local distinctions.",
+        "Name source-note groups by county and combine repeated cross-county definitions."
+      ],
+      "implementation": [
+        "Added the selected-community limitation to opening help.",
+        "Removed generic address cautions and named source-note groups by county, preserving each county’s shared-municipality facts.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "79ca941d73fcd1222758ea02aea6a577fd8bb654c6f66014fd8ad05bd6761c25",
+      "afterSha256": "25c91f5e187e0c0b68aea7c60a283e9a69f4bd83d1ad95f8da1ca24b246a6d65",
+      "beforeCharacters": 82094,
+      "afterCharacters": 80245,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/puerto-rico/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use a plain description of dated place-to-municipio relationships.",
+        "Give abbreviated source files readable titles."
+      ],
+      "implementation": [
+        "Used place-to-municipio relationship wording rather than cross-county boilerplate.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "5d4771df3bf672280921bd7930641337d29f5e5c074b3d6beeeaf0f3ffaf2bb3",
+      "afterSha256": "b8cd9dabd1779a94c9a1cd533b813a074249b8c909af0c4a4f151f6f7ff4580b",
+      "beforeCharacters": 78762,
+      "afterCharacters": 78768,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/rhode-island/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "65ed5d38954700314af049b4df73227b5532f1a0543d687a6ced2597a57d90f8",
+      "afterSha256": "24571104aecf512ae82c38ebe1ff77114040fae72b980ad9b0a7900667e4e4bb",
+      "beforeCharacters": 4761,
+      "afterCharacters": 4772,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/south-carolina/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "93e0ed28d733ece6c1e32fc26d87d7e8f46198694c5b88d442ba1e593e401fb9",
+      "afterSha256": "b4459f09883301707e78e940289421104a3d8c2e0f834402f42c76a256704193",
+      "beforeCharacters": 22653,
+      "afterCharacters": 22664,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/south-dakota/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Replace the subdivision CSV and state geography acronym labels with descriptive document titles and years."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "225fc9cd0ac33f4d1712dbbcbc15d01f4313543a62143060ead983715b4c0f18",
+      "afterSha256": "bc658cd2b9811a466e02621dd0d87a9d0ea4444510b171914ce96d58a4ca6f4c",
+      "beforeCharacters": 49668,
+      "afterCharacters": 49467,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/tennessee/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use a verified description for the state municipal map service and tailor the source-scope type list to the categories actually present."
+      ],
+      "implementation": [
+        "Tailored the scope types to omit organized townships not present in this directory.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "ab9706b756fadf91018b4e5fec0344a1e2d04fd6335836e26252d251b093ab0a",
+      "afterSha256": "addc0c844532e0198aa2c5afba570692c392f14ab972f5fb7b4197904df0fc66",
+      "beforeCharacters": 41036,
+      "afterCharacters": 41038,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/texas/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Include villages in the opening type key.",
+        "Remove the empty heading and omit or explain the ranking diagnostic's consequence in optional methodology."
+      ],
+      "implementation": [
+        "Added villages to the opening type key and omitted the internal ranking diagnostic.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "d5324c6c4d2cd8fc499492315240c9bb7d0fb2bb06ccd8aa836a1e987f19f38f",
+      "afterSha256": "a514546f1b2010baa21f04473fceb1f6a522bf3ecba7fa116f022a622bfcbaa8",
+      "beforeCharacters": 155880,
+      "afterCharacters": 156083,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/utah/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use '2026 place-to-county relationship records' and 'each intersected county' in Utah's scope.",
+        "Keep the full statistical definition once and use a shorter local label without changing place identities or tribal caveats."
+      ],
+      "implementation": [
+        "Used county-specific relationship wording and a short local statistical-subdivision label; full definition remains in optional evidence.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "af47ac37158777d7203a9c514bba68d557a1857765ec4b12fb655194159b2c1b",
+      "afterSha256": "c54fea095cbda3e94fa4ffe2f8f11ebae7322e45f94c48253d6e17e1de69b722",
+      "beforeCharacters": 23242,
+      "afterCharacters": 21992,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/vermont/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Lead exception annotations with the recorded Active/Inactive/Former status, then retain or link the state/Census explanation without repeating the status.",
+        "Give the Caledonia source a verified plain description while preserving its link."
+      ],
+      "implementation": [
+        "Put recorded Active/Inactive status first and removed repeated inactive wording.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "64e759d416a75b2f5ee8bc4a6e8fad098b952340a273c0d7b42c99731789126f",
+      "afterSha256": "b4b1295b702d98ee464cee3c05f2cfa3e07d3665f06d05582e7afc7407e4fe92",
+      "beforeCharacters": 16752,
+      "afterCharacters": 17101,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/virginia/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "bc87386d7f7376ec822d7aa9a99685a36a47487500f0d7a584f9a89a70d112c4",
+      "afterSha256": "8ad944fe9fc192c639c4259daacb5eb83ea44e0eb24e6d2331bc3a6605260248",
+      "beforeCharacters": 56345,
+      "afterCharacters": 56774,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/washington/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "2943f92a43fcc9a0f04e01f8e5575e844fccb6336cb1959a4c88c7e3707cd832",
+      "afterSha256": "5a6d45fe102e85317cd8e69948f926e35b346c82c1013fd4f9b92a868cf23c42",
+      "beforeCharacters": 35616,
+      "afterCharacters": 35655,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/west-virginia/",
+      "status": "no_saved_findings_shared_renderer_updated",
+      "recommendedFixes": [],
+      "implementation": [
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "6cbca7dfdff9ef4c3a1b6940619b6062ba2a438ebbc12fb82c6e787a8056ccf6",
+      "afterSha256": "cd0d592868b6059d8e5d1cd222364f016b698969365530fc1f413b3009e51042",
+      "beforeCharacters": 26952,
+      "afterCharacters": 26954,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/wisconsin/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use the verified source title, preserving the source URL and the active-town/incorporated-place distinction."
+      ],
+      "implementation": [
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "9428c1e04da023fe80584cb894f4280e639499cad64c0cbc627ed814d8d171bc",
+      "afterSha256": "684a65f703cebde5fe5485c28b15483dca174a375281253322f1811336a8f960",
+      "beforeCharacters": 49415,
+      "afterCharacters": 49425,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/wyoming/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Replace raw query/filename labels with verified descriptions, and use '2026 place-to-county relationship records' for the inventory membership explanation."
+      ],
+      "implementation": [
+        "Used the plain place-to-county relationship wording.",
+        "Replaced opaque source labels with descriptive record names and retained every exact destination.",
+        "Shared only repeated scope definitions; retained county-specific exceptions under named headings and all source/reference IDs."
+      ],
+      "beforeSha256": "68278072502145ae8f83cf1cd82bf7426dcc902d1176bd277b976106441347a7",
+      "afterSha256": "d45a8ca7034ef72d24ae7b32f1f8f1dcd6e1ba4f5afea6d3791d1889e6ebe6b0",
+      "beforeCharacters": 17534,
+      "afterCharacters": 17567,
+      "allPriorIdsAndLinksRetained": true,
+      "visuals": null,
+      "accessibility": null,
+      "finalScore": null
+    }
+  ]
+}

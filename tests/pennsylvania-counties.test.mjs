@@ -67,7 +67,7 @@ test('county identity survives in anchored state entries with truthful Buffalo p
  for(const c of pennsylvaniaProfiles){
   if(approvedLocationPaths.includes(path(c.slug)))assert.ok(byPath.has(path(c.slug)));else {assert.equal(retiredCountyRoutes[path(c.slug)],route+'#'+c.slug);assert.ok(!byPath.has(path(c.slug)),path(c.slug));}
   assert.ok(page.html.includes(`id="${c.slug}"`),c.slug);assert.ok(page.html.includes(escapeHtml(c.name+' County')),c.slug);
-  assert.ok(page.html.includes(escapeHtml(countyLocalNotes['pennsylvania/'+c.slug]||c.geographyNote)),c.slug+' local distinction');
+  for(const sentence of factualLocalSentences(countyLocalNotes['pennsylvania/'+c.slug]||c.geographyNote))assert.ok(page.html.includes(escapeHtml(sentence)),c.slug+' '+sentence);
  }
  assert.equal(retiredCountyRoutes['/areas/pennsylvania/erie-county/'],undefined);
  assert.deepEqual(schemas(byPath.get('/areas/pennsylvania/erie-county/')).find(x=>x['@type']==='Service').areaServed,[{'@type':'AdministrativeArea',name:'Erie County, Pennsylvania'}]);
@@ -172,3 +172,6 @@ test('all 69 new routes accept anonymous aggregates while privacy and inquiry is
  assert.equal(sqlite.prepare('SELECT COUNT(*) AS n FROM inquiries').get().n,0);
  assert.throws(()=>sqlite.prepare("INSERT INTO journey_counts VALUES('2026-10-20','page_view','unsure','areas_fake_county','direct',1)").run());
 });
+
+// Address reminders are editorial guidance; every declarative local distinction remains required.
+const factualLocalSentences=note=>(note||'').split(/(?<=\.)\s+/).filter(sentence=>! /^(?:Use |Confirm |Keep |A city named in service coverage )/.test(sentence));

@@ -1,0 +1,1821 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-27T15:59:29.527Z",
+  "purpose": "Consolidate all saved independent guide findings through one owned helper; final editorial acceptance belongs to a subsequent independent review.",
+  "ownedSource": "src/guide-review-consolidations.mjs",
+  "sourceSha256": "c68a23d2d0811fec280bb5e7c4f7a38ea100714200a65161125a771e3300bc16",
+  "entryPoint": "consolidateReviewedGuide(path, sections)",
+  "integration": "Call after reviseGuideSections and before formatGuideSections. This helper clones the input and synchronizes bodyHTML where present. Root owns integration; no build or browser changes were made by this worker.",
+  "totals": {
+    "routes": 65,
+    "changed": 54,
+    "unchanged": 11,
+    "beforeTextCharacters": 357056,
+    "afterTextCharacters": 338381
+  },
+  "validation": {
+    "status": "passed",
+    "scripts": [
+      "output/human-quality-20261027/guides-independent/check-consolidation.mjs",
+      "output/human-quality-20261027/guides-independent/test-consolidation.mjs"
+    ],
+    "inputMutation": false,
+    "missingAnchors": 0,
+    "duplicateAnchors": 0,
+    "missingUniqueLinkDestinations": 0,
+    "unresolvedFragments": 0,
+    "missingDollarAmounts": 0,
+    "missingNumericTerms": 0,
+    "bodyHTMLMismatches": 0,
+    "nestedDisclosures": 0,
+    "tableStructuresChecked": 84,
+    "alteredPriceInputRoutes": 65,
+    "targetedAssertions": 10,
+    "scope": "Direct section outputs, not a built-site visual or accessibility review."
+  },
+  "unresolved": [
+    {
+      "route": "/guides/website-not-generating-leads/",
+      "item": "The illustrated strip is rendered outside guide section bodies. The repeated prose is removed and the remodeler example now follows the diagnostic table; root should make the strip navigation-only or confirm its existing presentation does not repeat the diagnostic model."
+    },
+    {
+      "scope": "All changed routes",
+      "item": "Independent final full-text review and root-owned rendered visual/accessibility/interaction acceptance remain pending. Existing source observations and citations were preserved, not reverified against current external pages in this implementation pass."
+    }
+  ],
+  "routes": [
+    {
+      "route": "/guides/ferry-booking-status/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep the added five-part guest record first, explain travel/changes/standby next, then test the same record with the operator-specific exceptions.",
+        "Combine the older field table with the new record rather than maintaining two competing main templates."
+      ],
+      "beforeSourceContentSha256": "92593333fb112c825a218d09e0ae4feaedf06cb892cdfee7be5f80124510ad87",
+      "afterSourceContentSha256": "2f83f3f80f058b4184a905069065f832e0e5e402c3b36956f0a5c2040bc2b457",
+      "beforeTextCharacters": 6016,
+      "afterTextCharacters": 5668,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Check every part of the ferry booking"
+        },
+        {
+          "id": "florida-camping-capacity",
+          "title": "Key West: camping travel and kayak space need separate checks"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/ferry-route-and-last-mile/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Merge the two identical Cape May–Lewes source entries while retaining both observations and their source link."
+      ],
+      "beforeSourceContentSha256": "e64ab4856e0c6f250d2a3e2cd3da5bf61bc33c8570be9610e9a0fbe1d7e9de24",
+      "afterSourceContentSha256": "304b2de47ca8edf81ee5c411672ea579762d86144c6d2571f37b53912ee02580",
+      "beforeTextCharacters": 4504,
+      "afterTextCharacters": 4422,
+      "changedSections": [
+        {
+          "id": "sources",
+          "title": "Sources and scope"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/experience-product-choice/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use consistent access, party-condition, return/facility and booking-owner columns for real options; move passenger count to a shared check.",
+        "Keep the unresolved duration label beside the affected option and one dated source note instead of four reminders."
+      ],
+      "beforeSourceContentSha256": "1bb9e422b78f923ca84f96b61e8bbe804eb8557212c53674f4dd2b3b03eee451",
+      "afterSourceContentSha256": "e7c9dea871bb9eba710127a0035e31a20ca4ae08f6e3fc4fb1fcff37c7c0f316",
+      "beforeTextCharacters": 4072,
+      "afterTextCharacters": 3838,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Compare access, party conditions and return arrangements"
+        },
+        {
+          "id": "planning-3",
+          "title": "Check the selected seasonal service"
+        },
+        {
+          "id": "check",
+          "title": "Check the difficult case"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/departure-address/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep one main arrival specimen; move the older named examples beside its applicable fields or into optional evidence notes."
+      ],
+      "beforeSourceContentSha256": "435792f701d8daceacdc630e8a216d3f29ece5efa277c5260ed5e058347a8ef5",
+      "afterSourceContentSha256": "e663989368be080997df1d4eebae62c0b924cd638f8a12cb2505d9edc6dd3526",
+      "beforeTextCharacters": 5455,
+      "afterTextCharacters": 5413,
+      "changedSections": [
+        {
+          "id": "planning-1",
+          "title": "Arrival evidence by field"
+        },
+        {
+          "id": "florida-cruise-terminals",
+          "title": "PortMiami: keep departure and return terminals distinct"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-2",
+        "planning-3"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/timed-booking-handoff/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use one clearly labeled optional evidence library without nested wrappers; keep the Essex product distinction beside its test."
+      ],
+      "beforeSourceContentSha256": "c4805d398ffd0833282cce3930bb1c4de4cec8e5826c3f16d5d9ecb564590f40",
+      "afterSourceContentSha256": "47e4b86c06a8af6cad27e069698c84143262aeac2a2ac7273d1d4f4f5c7ee8c4",
+      "beforeTextCharacters": 7742,
+      "afterTextCharacters": 7689,
+      "changedSections": [
+        {
+          "id": "check",
+          "title": "Check the difficult case"
+        },
+        {
+          "id": "related-cases",
+          "title": "Operator evidence library"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-1",
+        "planning-4",
+        "planning-5"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/photography-location-confirmation/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "564bd95633a8c5af96861896b9e732ad9fe462f2a4b9ffd6c1fffdb59adce5da",
+      "afterSourceContentSha256": "564bd95633a8c5af96861896b9e732ad9fe462f2a4b9ffd6c1fffdb59adce5da",
+      "beforeTextCharacters": 4392,
+      "afterTextCharacters": 4392,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/class-take-home/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Fold the class-category paragraph into the Changes row or a brief note, retaining the multi-day test and policy limitation."
+      ],
+      "beforeSourceContentSha256": "a37ddad618504bb13283aff2f86363e829f79867b1bbf1b80344249736d72f33",
+      "afterSourceContentSha256": "7fbdb2c75efcc414ecf93a5c1cc01fe44ece1a1a7a2866273b719543033ef3a5",
+      "beforeTextCharacters": 3624,
+      "afterTextCharacters": 3447,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Class confirmation: materials, collection and changes"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-2"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/shipping-date-and-quote/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "856f81d6a18582e3c07fef216da8cf05879ac0b63ebce7b1991f73e2eaf8ee3f",
+      "afterSourceContentSha256": "856f81d6a18582e3c07fef216da8cf05879ac0b63ebce7b1991f73e2eaf8ee3f",
+      "beforeTextCharacters": 3804,
+      "afterTextCharacters": 3804,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/custom-print-order/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Lead with the business's actual accepted submission route; retain Hatch's methods as a short dated supporting example."
+      ],
+      "beforeSourceContentSha256": "43ae79883a59d35d2c94abff57ab20804253663791b3289f340a9e1d0ac6a429",
+      "afterSourceContentSha256": "069410eb07688db31df35c2b4573019fdb5f8c92f85601a9c9e47118014d0c8d",
+      "beforeTextCharacters": 3806,
+      "afterTextCharacters": 3914,
+      "changedSections": [
+        {
+          "id": "planning-3",
+          "title": "Respect the real ordering channel"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/personalization-preview/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "21d0ea6709d5cf8c44bce770aa294bee42da57fbdda31b44accd60a8c415e1fa",
+      "afterSourceContentSha256": "21d0ea6709d5cf8c44bce770aa294bee42da57fbdda31b44accd60a8c415e1fa",
+      "beforeTextCharacters": 3791,
+      "afterTextCharacters": 3791,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/itinerary-dependency-review/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Recast the table as one row per dependent offer with evidence, owner, status and customer action.",
+        "Word the sample pause as the seller's package/option being paused, so it does not imply that the outside operator has stopped selling its own activity."
+      ],
+      "beforeSourceContentSha256": "2176f0ecc6f8057ed77bba36aa7f6d7694fbfbc1a543546850c85a91c1dee7b3",
+      "afterSourceContentSha256": "cb94233622fa697cea1aa00b7d519493a5e9790e3aedd26f0d7b80ce4a2600c5",
+      "beforeTextCharacters": 4062,
+      "afterTextCharacters": 4131,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Outside-service change log"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/river-section-and-release/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "064afb2a8f3a7b3487014afe2e2ebbf701cc0df0a0f7ee5fdd4f4decdb7a0c10",
+      "afterSourceContentSha256": "064afb2a8f3a7b3487014afe2e2ebbf701cc0df0a0f7ee5fdd4f4decdb7a0c10",
+      "beforeTextCharacters": 3618,
+      "afterTextCharacters": 3618,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/island-payment-preparation/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Combine paid/to-pay/provider rows with the original card, and retain the ATM limitation in one concise dated note."
+      ],
+      "beforeSourceContentSha256": "e4528d250121dce5429460a16ce2deaf2d28c5069dcb9bb5a9c069c88699c7be",
+      "afterSourceContentSha256": "2d3fa398d4043ce55ed93212f41aca1b612fa78cb1de1e2176b036d6df17fc70",
+      "beforeTextCharacters": 3745,
+      "afterTextCharacters": 3236,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Before-departure payment and parking card"
+        },
+        {
+          "id": "planning-1",
+          "title": "Describe the actual merchant’s payment methods"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/kayak-rental-access-information/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep the sample wording as the demonstration and use the later paragraph only for the distinct staff-confirmation and response-process instructions."
+      ],
+      "beforeSourceContentSha256": "d0a30e7d5b0a9cff21bf9eb2b14a544c6cadf19fd30591a9a7735c09128b9bb5",
+      "afterSourceContentSha256": "00e5519269e17eda2a34284ebd30bc8723029fac9b5533294733f1fffad01df8",
+      "beforeTextCharacters": 4067,
+      "afterTextCharacters": 3949,
+      "changedSections": [
+        {
+          "id": "planning-2",
+          "title": "Offer a practical access conversation"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/franklin-county-canoe-rental-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Merge the two test sections into two visible case bullets: longer carry/water handoff and changed access after a quote. Remove the duplicate carry test."
+      ],
+      "beforeSourceContentSha256": "9bfc3c44170353a60cfc9865a66b6eab9a43b8c97be175faf38c5bc178732d60",
+      "afterSourceContentSha256": "eb80e623804db36b116e802001ff530e892c1a129be06e972b4e64f1223f1ead",
+      "beforeTextCharacters": 4144,
+      "afterTextCharacters": 3795,
+      "changedSections": [
+        {
+          "id": "check",
+          "title": "Test carrying responsibilities and a changed access point"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-3"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/niagara-county-hotel-transport-information/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Move maintenance owner/date/season/fallback fields below the three-service comparison as a separate update record."
+      ],
+      "beforeSourceContentSha256": "789e787ddc24930c04727528974fa006ea0f74e3d94d5b187f08d0e3c6ac93bd",
+      "afterSourceContentSha256": "f994ca7bef60edd2224983668bfa6f119e6ce2d9ffbdcf3a53dd613a15182c57",
+      "beforeTextCharacters": 4247,
+      "afterTextCharacters": 4315,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Proposed transport reference panel"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/otsego-county-baseball-lodging-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Connect the completed family record to one guest-count test and keep later prose for the distinct multi-household payment/hold decision."
+      ],
+      "beforeSourceContentSha256": "21497b471a1a8a91c1b57a9bb5b8388dae0598934dc48baeddac6a5b0d979731",
+      "afterSourceContentSha256": "fba6659de8761088898b0eddfe3d8390143c42ac1e0655e1f8c96a5e8ed7f742",
+      "beforeTextCharacters": 4246,
+      "afterTextCharacters": 4097,
+      "changedSections": [
+        {
+          "id": "check",
+          "title": "Count the actual overnight guests"
+        },
+        {
+          "id": "planning-2",
+          "title": "Resolve the multi-household payment and hold"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/farm-event-website-updates/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use the four-state table as the explanation; merge the two repeated prose sections into one owner/date/retest action, retaining the no-automatic-year-change rule."
+      ],
+      "beforeSourceContentSha256": "e9840a469404f3515a697503d9bc62a92e2d768c9e8de37acdbc703dc303c23a",
+      "afterSourceContentSha256": "d8db3705a5f3b6437d68309feaf1da268aff0b6f45a3388f768e581e187fccfb",
+      "beforeTextCharacters": 4250,
+      "afterTextCharacters": 3461,
+      "changedSections": [
+        {
+          "id": "planning-2",
+          "title": "Assign the update and retest"
+        },
+        {
+          "id": "check",
+          "title": "Confirm the event facts"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-3"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/manufacturing-rfq-form/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Split file requirements, file receipt and revised-file handling with descriptive subheadings; keep operator comparisons as short dated evidence notes."
+      ],
+      "beforeSourceContentSha256": "f629d8d03114200c39e91abad2fdf4c331210f3859235895596b0f8f2ac55d79",
+      "afterSourceContentSha256": "46432d72727bb335ed2a681e85153809a1441f81278f142bdfa99c5668e2722b",
+      "beforeTextCharacters": 6580,
+      "afterTextCharacters": 6861,
+      "changedSections": [
+        {
+          "id": "planning-2",
+          "title": "Keep every file attached to the same request"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/repair-authorization-form/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Refer back to the main status record and retain only unique update/issued-reference guidance; move shipping boundaries into a concise secondary note."
+      ],
+      "beforeSourceContentSha256": "40fea2afdff2cb0e8b962ac23ea767eb4edce06f92223c17bf3c0fa84fe7ce24",
+      "afterSourceContentSha256": "92dee90756c05ff64efebb6d754da2b19805d93417a7266184f3224907621e9d",
+      "beforeTextCharacters": 6126,
+      "afterTextCharacters": 5707,
+      "changedSections": [
+        {
+          "id": "planning-3",
+          "title": "Keep shipment and repair status understandable"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/parts-compatibility-inquiry/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use one branch structure and add a concise fictional handoff containing item, known configuration, change and unresolved question."
+      ],
+      "beforeSourceContentSha256": "0c6cb9ac91b1d994c08811a50b6e8cd02259c29e1e13a7fb1412fb5592192efe",
+      "afterSourceContentSha256": "54e79d40c45ff283c687240eec4aba3252aac1ef96e058673874bdc8c01ea6e9",
+      "beforeTextCharacters": 5951,
+      "afterTextCharacters": 5712,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Catalog-to-specialist handoff"
+        },
+        {
+          "id": "planning-1",
+          "title": "Let the catalog and the specialist do different jobs"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/shared-kitchen-inquiry/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Mark each proposed worksheet field as initial routing or later review, subject to facility approval."
+      ],
+      "beforeSourceContentSha256": "6ce32f6870b04a8dfde49b9789efb636e21d2ab8b3b2e27df1fb9228d4add33e",
+      "afterSourceContentSha256": "dd67a2a07f6a4c1769e49378c9ed9ce53243d36b6374932627057d340f7200cc",
+      "beforeTextCharacters": 6081,
+      "afterTextCharacters": 6428,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Kitchen inquiry routing worksheet"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/marine-service-intake/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Put the location/facility selector and owner in the main readiness record, then explain intake/access/confirmation before one combined changed-location test."
+      ],
+      "beforeSourceContentSha256": "3dd5b1548b0e01a8d9b02ad8ce6d8360f406ed81299092db6b286562ac956d62",
+      "afterSourceContentSha256": "89b28b9351a2c88b58aa48eacc54d82f48f6cef572c791f2aa8a7890a1985ade",
+      "beforeTextCharacters": 7359,
+      "afterTextCharacters": 7425,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Marine service readiness record"
+        },
+        {
+          "id": "check",
+          "title": "Check the difficult case"
+        },
+        {
+          "id": "florida-yard-location",
+          "title": "South Florida: select the yard before presenting its facilities"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/wholesale-order-readiness/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Name Primitives By Kathy at the first reference and shorten account prerequisite prose with the dedicated buyer-account guide link."
+      ],
+      "beforeSourceContentSha256": "c2283a2dab3fafc426c8ce7c3003d1fbdb8af96806f6776ae860e217725c2420",
+      "afterSourceContentSha256": "305b6019ff4ad70a5a8b8849820419025c6fec16a019e483abbb6d3c2fb52198",
+      "beforeTextCharacters": 5782,
+      "afterTextCharacters": 5579,
+      "changedSections": [
+        {
+          "id": "planning-3",
+          "title": "Separate incoming stock from the customer's shipment"
+        },
+        {
+          "id": "planning-1",
+          "title": "Explain which buying route the customer is using"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/approved-buyer-account-flow/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use a concise disclosure label such as ‘Portal-transition checks’."
+      ],
+      "beforeSourceContentSha256": "ea7f33bc8e16729ad1bc20718f7d5a18d7723de88005481c35f47bf990bb52cb",
+      "afterSourceContentSha256": "6c66751c42b8ddafd6faee9b409b8bb896b801623e5690e9d6cfde0142d1bb5d",
+      "beforeTextCharacters": 6203,
+      "afterTextCharacters": 6171,
+      "changedSections": [
+        {
+          "id": "planning-3",
+          "title": "Plan portal changes as part of the customer journey"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/philadelphia-moving-website/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "5cad49624b8bd01c42804809601b51ae423e99bedacff2f604071f777f2b586b",
+      "afterSourceContentSha256": "5cad49624b8bd01c42804809601b51ae423e99bedacff2f604071f777f2b586b",
+      "beforeTextCharacters": 6558,
+      "afterTextCharacters": 6558,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/alexandria-sign-project-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Place concise source observations beside the relevant stage and keep the full dated source description as optional evidence."
+      ],
+      "beforeSourceContentSha256": "e5a075299d8cfe2d7df5a3d8c1d9ff426d2989573ed07d7792f3bae6bde651ce",
+      "afterSourceContentSha256": "affa46bae72b48d4d52b5ed1c441e80cb8fc9c023c691687b65e0bc41be80294",
+      "beforeTextCharacters": 6233,
+      "afterTextCharacters": 6865,
+      "changedSections": [
+        {
+          "id": "planning-1",
+          "title": "Start with the site before promising the production path"
+        },
+        {
+          "id": "planning-2",
+          "title": "Explain what your quote includes and who owns each review"
+        },
+        {
+          "id": "planning-3",
+          "title": "Make fabrication-only and installed offers easy to distinguish"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/brevard-county-launch-tour-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Order product definition before policy and testing; merge the two test sections into one Saturday-to-Monday walkthrough retaining every distinct check."
+      ],
+      "beforeSourceContentSha256": "b98718b1a79240ca945d3c4e98e2723c0a26d08ca2c597325410fb2a467c7891",
+      "afterSourceContentSha256": "bf9ce47f86c12174bda2c8639631011a0e5406d21badc3f410a7b785ac0b8bd3",
+      "beforeTextCharacters": 6234,
+      "afterTextCharacters": 5997,
+      "changedSections": [
+        {
+          "id": "check",
+          "title": "Walk the Saturday-to-Monday change through the booking"
+        }
+      ],
+      "mergedSectionIds": [
+        "planning-3"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/citrus-county-manatee-tour-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Label rows with illustrative visit categories, each explicitly conditional on what the operator offers; keep unverified locations and conditions as placeholders.",
+        "Group the arrival paragraph under brief meeting-point, seasonal-access and assistance subheadings if it remains dense in the phone layout."
+      ],
+      "beforeSourceContentSha256": "7f6bf6c6826ad0c13e5bc16655b8eb89b3e631216cd313cbe0066fd80c838405",
+      "afterSourceContentSha256": "48eb507d7ea12dff63dae302343242f4eda3764a327ebfb73e9cb0d1960f9b10",
+      "beforeTextCharacters": 6292,
+      "afterTextCharacters": 6355,
+      "changedSections": [
+        {
+          "id": "layout",
+          "title": "Crystal River visit-choice worksheet"
+        },
+        {
+          "id": "planning-2",
+          "title": "Put access and arrival instructions beside the booking"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/marion-county-equestrian-stay-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep the three-arrangement card as the main example and trim the follow-on prose to customer-reported status, actual dates and independent cancellation terms."
+      ],
+      "beforeSourceContentSha256": "04aaa6cdce7006ed23f790c230cef89d425e362bbeb8facb39c9f60ea623d003",
+      "afterSourceContentSha256": "ebd0cd50af5a34ab77a291167a5f98078ed0419d214781c2a4251a2d951875ba",
+      "beforeTextCharacters": 6730,
+      "afterTextCharacters": 6196,
+      "changedSections": [
+        {
+          "id": "planning-2",
+          "title": "Give each reservation its own status"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/walton-county-bonfire-booking-website/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Shorten the repeated policy/capacity prose and retain unique versioned-map and authority-maintenance details."
+      ],
+      "beforeSourceContentSha256": "c5afdef7c8ffe4270bc4981857776644b99d9e60b82521efc4a8d0268afbad68",
+      "afterSourceContentSha256": "204d5b55fb106ab772bb3a3f0f0eb87f41af12e810d4f37fc31a4ca1c2b89e8e",
+      "beforeTextCharacters": 6215,
+      "afterTextCharacters": 5691,
+      "changedSections": [
+        {
+          "id": "planning-1",
+          "title": "Label location choices before taking a booking"
+        },
+        {
+          "id": "planning-2",
+          "title": "Keep provider capacity and location readiness distinct"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/vacation-rental-property-fit/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Merge repeated selected-property instructions and condense optional source cases into a property/date/minimum-stay comparison."
+      ],
+      "beforeSourceContentSha256": "bdef1f6c36b8f95f63b957a8666cc4c92415dab6a942239aec400988211d8e2c",
+      "afterSourceContentSha256": "70479bb97a6d4c77b6d0e50681f8872a776d8cad650c2b2a80db896b37ae47f2",
+      "beforeTextCharacters": 6113,
+      "afterTextCharacters": 5031,
+      "changedSections": [
+        {
+          "id": "planning-3",
+          "title": "Review the offer and any alternative as separate decisions"
+        },
+        {
+          "id": "planning-1",
+          "title": "Keep the property identity through the inquiry"
+        },
+        {
+          "id": "source-observations",
+          "title": "What the published sources establish"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/ai-search-visibility/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "14c2cc572eac9eb86d6fdacaf009e92bcb22855f57b5e65288d2183c29b20617",
+      "afterSourceContentSha256": "14c2cc572eac9eb86d6fdacaf009e92bcb22855f57b5e65288d2183c29b20617",
+      "beforeTextCharacters": 7723,
+      "afterTextCharacters": 7723,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/ai-website-content-review/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "1118734d7260441719153b089c49b9246c8331469f6a703a019bfbcb93d826ca",
+      "afterSourceContentSha256": "1118734d7260441719153b089c49b9246c8331469f6a703a019bfbcb93d826ca",
+      "beforeTextCharacters": 5857,
+      "afterTextCharacters": 5857,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/local-seo-audit/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "a2afd3524d7578a3087110c86d187858293f0c2950ba680b9460a8d3931e297a",
+      "afterSourceContentSha256": "a2afd3524d7578a3087110c86d187858293f0c2950ba680b9460a8d3931e297a",
+      "beforeTextCharacters": 6234,
+      "afterTextCharacters": 6234,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/slow-website-on-mobile/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Collect lab/field, URL/origin and rolling-window terms in one compact reference."
+      ],
+      "beforeSourceContentSha256": "968a859d18052553c78be2f6cf0fc670358bf6cec93286616df7f1a0694b26ee",
+      "afterSourceContentSha256": "4f0c507b86a90a71e107559674668ca80d6ced0f3913efc87bd1222d998d3633",
+      "beforeTextCharacters": 5507,
+      "afterTextCharacters": 5300,
+      "changedSections": [
+        {
+          "id": "test-speed",
+          "title": "How to check website speed on mobile"
+        },
+        {
+          "id": "interpret",
+          "title": "Read scores alongside real tasks"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-not-generating-leads/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Retain diagnostic table, make strip navigation only, and remove repeated enumeration.",
+        "Put remodeler example beside fit stage and keep remaining sections for unique measurement limits and comparison method."
+      ],
+      "beforeSourceContentSha256": "ead9690f0df07f26a084bbeef1940d7072af120b02e23c0e1dee4747c8160e14",
+      "afterSourceContentSha256": "617f454e9521784dc80e2c46c145da7fb412fa43e9a98e70d484f2f0bb03ab8e",
+      "beforeTextCharacters": 5037,
+      "afterTextCharacters": 4720,
+      "changedSections": [
+        {
+          "id": "find-the-bottleneck",
+          "title": "Use the four-stage diagnostic to choose one investigation"
+        },
+        {
+          "id": "measurement",
+          "title": "Check the measurement before the marketing"
+        }
+      ],
+      "mergedSectionIds": [
+        "worked-example"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/how-to-choose-a-web-designer/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Place the existing questions under Scope, Collaboration and Ownership/acceptance subheadings or one grouped answer/evidence table, avoiding a separate repetitive overview."
+      ],
+      "beforeSourceContentSha256": "70eebd0cb56a9df34fc4c2ed4a53460da3299519c2249d700e476eaa2495b780",
+      "afterSourceContentSha256": "8a19b308f7be30ac609036b8e5a7dfe1dae192589eb31277769b574c9b33f7fe",
+      "beforeTextCharacters": 5986,
+      "afterTextCharacters": 5721,
+      "changedSections": [
+        {
+          "id": "questions",
+          "title": "Questions to ask before you sign"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-content-template/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep annotated transformation, merge unique page prompts into the existing matrix, and reduce SEO section to one relevant/irrelevant pair plus FAQ link.",
+        "Remove repeated template-download and approval reminders in favor of one shared checklist."
+      ],
+      "beforeSourceContentSha256": "83d8a2cd598c358f0931f90efe1b7b293422db511ba99754bcaa7e4ce7d5ab61",
+      "afterSourceContentSha256": "9159787b03e2d4f4325e3d8fffc3fb56f763e99f5fc7e25468da40a766849b19",
+      "beforeTextCharacters": 8379,
+      "afterTextCharacters": 5419,
+      "changedSections": [
+        {
+          "id": "facts",
+          "title": "Gather the facts before polishing the words"
+        },
+        {
+          "id": "notes-to-copy",
+          "title": "Start with the example: owner notes to usable service copy"
+        },
+        {
+          "id": "page-purpose",
+          "title": "Give each page a clear job"
+        },
+        {
+          "id": "service",
+          "title": "Choose useful service-page questions"
+        },
+        {
+          "id": "review",
+          "title": "Review the finished copy in context"
+        }
+      ],
+      "mergedSectionIds": [
+        "homepage",
+        "about",
+        "contact"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-redesign-timeline/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use Ready inputs → writing/design → design review/approval → build → finished-site review/corrections/approval → launch checks, preserving payment milestones.",
+        "Replace repeated final package-time list with proposal/date confirmation."
+      ],
+      "beforeSourceContentSha256": "e1f881a351c9c7efc5e02b72f42230339849cb1655ec8a3a801734e28e31bc44",
+      "afterSourceContentSha256": "e67923716e17dd9013f387fa996bc86bc23db2c779836c7a3cf44ef4166ed103",
+      "beforeTextCharacters": 5089,
+      "afterTextCharacters": 5294,
+      "changedSections": [
+        {
+          "id": "example",
+          "title": "Plan the build and review windows together"
+        },
+        {
+          "id": "studio",
+          "title": "How this applies to my website packages"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/one-page-website-seo/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "4ae85c4c042a14cf35d101cd504ac855b49bb45b5a8ff418d057b96fbfac09a7",
+      "afterSourceContentSha256": "4ae85c4c042a14cf35d101cd504ac855b49bb45b5a8ff418d057b96fbfac09a7",
+      "beforeTextCharacters": 5539,
+      "afterTextCharacters": 5539,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-handover-checklist/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "cbafc72347c80bbb01bec5ea8694309309b68f5161fd3108ff17879be87ea802",
+      "afterSourceContentSha256": "cbafc72347c80bbb01bec5ea8694309309b68f5161fd3108ff17879be87ea802",
+      "beforeTextCharacters": 4609,
+      "afterTextCharacters": 4609,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-maintenance-cost/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Condense five task rows to scope, owner and separately priced work while preserving exclusions.",
+        "Replace repeated plan-selection ending with a direct care-versus-SEO link."
+      ],
+      "beforeSourceContentSha256": "458a74695dfc83cbd7a77e4d7b847d12113629b8aa1efb898885772a5cf94693",
+      "afterSourceContentSha256": "fb699617bf761fe6bc5847542af4148b1dd9613102c3a3c78a1222731075903a",
+      "beforeTextCharacters": 6092,
+      "afterTextCharacters": 5386,
+      "changedSections": [
+        {
+          "id": "first-year",
+          "title": "Work out a first-year budget"
+        },
+        {
+          "id": "task-owners",
+          "title": "Assign the task as well as the budget"
+        },
+        {
+          "id": "choose-care",
+          "title": "Choose the help you need"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-launch-checklist/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Keep one version/approver/date record instruction and group before/live checks in a single release checklist."
+      ],
+      "beforeSourceContentSha256": "32ad7f465275709cde3a43b9f74ce641131de0516b55bc6e1a383677ca1b28a1",
+      "afterSourceContentSha256": "68c9163f39fd229759ea2ff91d24e0aa4b42deae26be63f035fd77b5e8bea772",
+      "beforeTextCharacters": 3645,
+      "afterTextCharacters": 3543,
+      "changedSections": [
+        {
+          "id": "release-record",
+          "title": "Start with one version and one decision maker"
+        },
+        {
+          "id": "content-approval",
+          "title": "Release checks before and after launch"
+        }
+      ],
+      "mergedSectionIds": [
+        "customer-journey",
+        "accounts-search",
+        "recovery",
+        "live-check"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/ai-website-or-custom/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Merge the two method/structure paragraphs into one concise comparison and preserve the early sibling link.",
+        "Use a short grammatical disclosure label such as ‘AI-search eligibility details’ without lowercasing acronyms."
+      ],
+      "beforeSourceContentSha256": "b6627f22079f4877cff303b02da50d9fb933dcfda53154b8221824a512691662",
+      "afterSourceContentSha256": "04ce033d46de492cbfde115363928f0877fe18db82320a0dbdafda98720644df",
+      "beforeTextCharacters": 5588,
+      "afterTextCharacters": 5107,
+      "changedSections": [
+        {
+          "id": "choose-the-job",
+          "title": "Start with the work the website must do"
+        },
+        {
+          "id": "ai-search",
+          "title": "Being built with AI does not buy AI-search visibility"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-not-showing-on-google/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Group reason-table rows under access, replacement/duplicate, errors and discovery while retaining official labels."
+      ],
+      "beforeSourceContentSha256": "f055389c200d1c5a7087656b38d990ae89f6b0223b6663ec782e0c0f0d0857ee",
+      "afterSourceContentSha256": "d235d22adcedd2c2e458325be160b11949d8520317ddaeb04187f0d6311a4ed2",
+      "beforeTextCharacters": 5134,
+      "afterTextCharacters": 5364,
+      "changedSections": [
+        {
+          "id": "define",
+          "title": "Describe what is missing"
+        },
+        {
+          "id": "specific-index-checks",
+          "title": "Use the reported reason to choose the next check"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/contact-form-not-working/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Give Squarespace, Wix and WordPress instructions distinct subheadings while keeping the public test first."
+      ],
+      "beforeSourceContentSha256": "31e5cb42fb10c804d94a10b8a632d20027616a858368e54c7cbe8f69d505cec3",
+      "afterSourceContentSha256": "f50379f4523aba6f16eb0ca9eb43911d163c0049906e54afc0542a188bb451e8",
+      "beforeTextCharacters": 8496,
+      "afterTextCharacters": 8490,
+      "changedSections": [
+        {
+          "id": "five-minute-check",
+          "title": "Start with one labeled test"
+        },
+        {
+          "id": "platform-settings",
+          "title": "Check the form’s notification settings"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/service-area-pages/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Reduce the territory comparison to customer question, useful new answer, page decision and owner; move shared excluded claims into one note.",
+        "Merge the opening checklist with the original criteria and keep later sections for unique coverage, ownership and maintenance instructions."
+      ],
+      "beforeSourceContentSha256": "2747f5c54cff8ba9259aa0faa1d9e99bbc3435b1a14c299da57b6117a65d9079",
+      "afterSourceContentSha256": "a6b105969e26e07d2e364b144246041d02232921519cb1a40e2f83a9276e0c28",
+      "beforeTextCharacters": 8080,
+      "afterTextCharacters": 5871,
+      "changedSections": [
+        {
+          "id": "choose",
+          "title": "Choose the smallest useful page structure"
+        },
+        {
+          "id": "example",
+          "title": "A completed fictional territory decision"
+        }
+      ],
+      "mergedSectionIds": [
+        "question"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-maintenance-checklist/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Link timing answer to the single responsibility split and use one planned-work/elapsed-wait/outage example."
+      ],
+      "beforeSourceContentSha256": "a3cd443584dbb915f621619a5fc07073166d56e9225a6e7f66b5c3ceb38647f7",
+      "afterSourceContentSha256": "3da40ee1b04899b85fbc6ba2bd518229d303c6d38b247a246e81ed7596c5ad66",
+      "beforeTextCharacters": 4077,
+      "afterTextCharacters": 3786,
+      "changedSections": [
+        {
+          "id": "recovery",
+          "title": "Arrange software updates and recovery"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/contractor-website-checklist/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Replace the repeated optional bullets with a brief readiness recap and keep only the additional profile/measurement checks; use ‘Search readiness checks’ as the summary."
+      ],
+      "beforeSourceContentSha256": "d274333c1341696356bb7cf57ea29944de04c3348ca02b51a02bb57f5cc3d487",
+      "afterSourceContentSha256": "a49b8768b158e5a863b9328cffbbaf483167f2141fe7bd824095aa042f4be6de",
+      "beforeTextCharacters": 6286,
+      "afterTextCharacters": 6065,
+      "changedSections": [
+        {
+          "id": "search",
+          "title": "Search readiness after the customer journey works"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/quote-request-form/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Show common contact fields once, then compare the task-specific fields, optional status and reasons across the three examples."
+      ],
+      "beforeSourceContentSha256": "617a7df41a91036e93214ad591891ca87427ccbb32314fe34acfd9ee233aa3a3",
+      "afterSourceContentSha256": "a1866ee434dcec7302a1fd718530759c217b804f82663b6080d8112d28271fc6",
+      "beforeTextCharacters": 5250,
+      "afterTextCharacters": 5263,
+      "changedSections": [
+        {
+          "id": "field-review",
+          "title": "Keep, defer or remove each field"
+        },
+        {
+          "id": "project-example",
+          "title": "Example 1: a small project inquiry"
+        },
+        {
+          "id": "scheduled-example",
+          "title": "Example 2: a scheduled-service request"
+        },
+        {
+          "id": "b2b-example",
+          "title": "Example 3: a B2B specification request"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/small-business-faq-examples/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Convert each example to short weak/better blocks with one reason and move common approval requirements to the existing review checklist."
+      ],
+      "beforeSourceContentSha256": "d3a47937aa4d1d39ae3590c75ca3d2910f1f89129674ea798ebdac89028ced8c",
+      "afterSourceContentSha256": "db9a34c4c0e138a193066799bd89315ccbdcb929be7719028e32137797d5c1b4",
+      "beforeTextCharacters": 4977,
+      "afterTextCharacters": 4686,
+      "changedSections": [
+        {
+          "id": "price-fit",
+          "title": "Price and fit: explain the condition"
+        },
+        {
+          "id": "coverage-inputs",
+          "title": "Coverage and preparation: say what to send"
+        },
+        {
+          "id": "timing-next-step",
+          "title": "Timing and next steps: avoid accidental promises"
+        },
+        {
+          "id": "approve",
+          "title": "Review facts and test the finished answer"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-launch-announcement/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Consolidate repeated approval and drafting-versus-publication reminders in the shared record; keep one prominent notice-expiry instruction."
+      ],
+      "beforeSourceContentSha256": "a1f0fbeafc629a1aef0ca1e8b2bf2f2e1762b318c4bc9221e0c4b3898c3927b2",
+      "afterSourceContentSha256": "1dceb70940ac7b9c2b2b88d28baa214a6ea2f9202b7dc4075fa6b3cc5d7c20fa",
+      "beforeTextCharacters": 4458,
+      "afterTextCharacters": 3998,
+      "changedSections": [
+        {
+          "id": "fictional-brief",
+          "title": "One launch brief, three channels"
+        },
+        {
+          "id": "email",
+          "title": "Email draft: explain the useful change"
+        },
+        {
+          "id": "social",
+          "title": "Social post: keep the same promise"
+        },
+        {
+          "id": "notice",
+          "title": "On-site notice: help returning visitors"
+        },
+        {
+          "id": "approve-send",
+          "title": "Check and approve each channel separately"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/inquiry-confirmation-examples/",
+      "status": "unchanged_no_saved_fix",
+      "recommendedFixes": [],
+      "beforeSourceContentSha256": "738a8860e9ff078d5de49f3b3574b9105b1d758b685d34559877f69d0786898a",
+      "afterSourceContentSha256": "738a8860e9ff078d5de49f3b3574b9105b1d758b685d34559877f69d0786898a",
+      "beforeTextCharacters": 4545,
+      "afterTextCharacters": 4545,
+      "changedSections": [],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/customer-case-study-template/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use one persistent fictional label for the exercise and consolidate repeated evidence-not-results reminders."
+      ],
+      "beforeSourceContentSha256": "32e6f942579fff7558af695c85fc3f62c10e4d49dada6a6c416c573f1301ec64",
+      "afterSourceContentSha256": "1d582ca8dda85b36a5a644b9775807c38c4d7e45ff11ab86a4d67c297c65124d",
+      "beforeTextCharacters": 5152,
+      "afterTextCharacters": 4918,
+      "changedSections": [
+        {
+          "id": "worked-example",
+          "title": "Fictional example: a clearer repair inquiry"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/industrial-website-planning/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Combine the document-owner explanation with its approval-record row; retain the new example label and unique superseded-file/restricted-access instructions."
+      ],
+      "beforeSourceContentSha256": "6bb01a482f81aff86e5f1e5d95c9bb0b20f822cbe5ebff523db2476d40abda5a",
+      "afterSourceContentSha256": "764407d8425598658a35f3ee98fbb65601ea25e62499b402596b52f8e43b4b64",
+      "beforeTextCharacters": 5841,
+      "afterTextCharacters": 5473,
+      "changedSections": [
+        {
+          "id": "approval",
+          "title": "Create a claim and document approval record"
+        },
+        {
+          "id": "documents",
+          "title": "Give technical documents an owner and a revision"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-project-cost/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Reduce proposal table to writing, editing/control, outside bills and migration, linking full comparison guidance."
+      ],
+      "beforeSourceContentSha256": "0bc035a0c35dc38b8d8ea6af8a152b0d5ea0c53916aebfcf03f82420ac75c168",
+      "afterSourceContentSha256": "3949177d5af659a9356f3ab63ffe4c4c16deefdec4ac40f2cb470379c7ef69d3",
+      "beforeTextCharacters": 6842,
+      "afterTextCharacters": 6796,
+      "changedSections": [
+        {
+          "id": "matched-proposals",
+          "title": "Compare two proposals against one agreed brief"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-redesign-brief/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Replace dense editing paragraph with the three prompts plus one source-code limitation note; combine repeated download/provider instructions."
+      ],
+      "beforeSourceContentSha256": "305e0985a7aa7b8a3d783752a20a1252bab78a234fed1808ef4553dd35361dd4",
+      "afterSourceContentSha256": "d937b07d897d1154746f614829dff6af52667d2fad514b857de0506ed7b90818",
+      "beforeTextCharacters": 6521,
+      "afterTextCharacters": 5996,
+      "changedSections": [
+        {
+          "id": "requirements-evidence",
+          "title": "Turn three requirements into checkable replies"
+        },
+        {
+          "id": "editing",
+          "title": "Decide who edits and what the site must do"
+        },
+        {
+          "id": "acceptance",
+          "title": "Decide how you will approve the work"
+        },
+        {
+          "id": "rfp",
+          "title": "Send the same brief to each designer"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/local-seo-profile-eligibility/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Replace the broad optional sections with short contextual links to local SEO audit, service-area pages and work/reporting, retaining the profile-specific address/category/review conditions."
+      ],
+      "beforeSourceContentSha256": "ae7e70afec7b6f96ae8614173daa0d0f6b41cf04ef2c7082fd4c86f2c94f3bfe",
+      "afterSourceContentSha256": "4b609b10e0b5515c34644cafa6b1b0642a19a70526ca8b5eb8632b191c9073c3",
+      "beforeTextCharacters": 4635,
+      "afterTextCharacters": 3370,
+      "changedSections": [
+        {
+          "id": "pages",
+          "title": "Write pages around the services people need"
+        },
+        {
+          "id": "sequence",
+          "title": "Local search steps, in order"
+        },
+        {
+          "id": "expectations",
+          "title": "Buy a defined improvement, then evaluate it"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/seo-work-and-reporting/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use one disclosure for Grow's allowance and approval rules.",
+        "Combine general/local keyword instruction around the existing worked row; make the two one-sentence reference sections inline notes under the report."
+      ],
+      "beforeSourceContentSha256": "72b91d40c66dca2cc443be6b3b4917e5ad06d6d4ad5682b2e069b7788013358d",
+      "afterSourceContentSha256": "deb60abc251062d95f79204e67e3ecde8380b1e51eb0ca5545cc12f4bbba8d5d",
+      "beforeTextCharacters": 8758,
+      "afterTextCharacters": 7521,
+      "changedSections": [
+        {
+          "id": "completed-report",
+          "title": "A completed fictional monthly report, with annotations"
+        },
+        {
+          "id": "keyword-opportunities",
+          "title": "How keyword opportunities become useful work"
+        },
+        {
+          "id": "campaigns",
+          "title": "Grow’s extra promotional work"
+        }
+      ],
+      "mergedSectionIds": [
+        "work",
+        "receipt"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-migration-checklist/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use the four-decision inventory as the single map, preserving merge and owners.",
+        "Collapse traffic-drop investigation into a concise optional branch linked to search visibility, and keep one worksheet instruction."
+      ],
+      "beforeSourceContentSha256": "17c58b8dbaef32baf96bd6f6cd241ac5d023c93e820809e8ce560f377b6bd743",
+      "afterSourceContentSha256": "1a17e5507b6c2889bf14ae20d9eab25cbd0fff1f9c1764b081911a7b6740211f",
+      "beforeTextCharacters": 6842,
+      "afterTextCharacters": 5490,
+      "changedSections": [
+        {
+          "id": "content-inventory",
+          "title": "A filled content inventory before the URL map"
+        },
+        {
+          "id": "map",
+          "title": "Apply and verify the URL map"
+        },
+        {
+          "id": "after",
+          "title": "Review the move over time"
+        }
+      ],
+      "mergedSectionIds": [
+        "redirect-example"
+      ],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/custom-website-or-template/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Combine the four new checks, existing trial paragraph and finished-experience checklist into one trial record.",
+        "Explain template/custom fit before the final quality check and related-action sentence."
+      ],
+      "beforeSourceContentSha256": "c434cd5bd2097a015f1e2d1a5ad4df1be9b6479f1a47000c5c0d9b42487624bb",
+      "afterSourceContentSha256": "00556c9d5b973975078ec161aa36d1bddaaec4e017de6274a3b2ee28eda2f9f8",
+      "beforeTextCharacters": 4055,
+      "afterTextCharacters": 3528,
+      "changedSections": [
+        {
+          "id": "compare",
+          "title": "Compare the same customer journey"
+        },
+        {
+          "id": "quality",
+          "title": "Run one trial of the finished experience"
+        },
+        {
+          "id": "website-or-social",
+          "title": "Do you need a website as well as a social page?"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-care-versus-seo/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Remove duplicate three-choice paragraph, label disclosure Plan limits and renewal terms, and surface the major care exclusion summary."
+      ],
+      "beforeSourceContentSha256": "4651690fc75e67fed04cc34e71a8b696a75d388be54dbe4d1cee69d77fa6ad1b",
+      "afterSourceContentSha256": "b58a5344491a7be43085da8cf6dc1dbe40e00fd9fdff9778f179174328f757d2",
+      "beforeTextCharacters": 3283,
+      "afterTextCharacters": 3222,
+      "changedSections": [
+        {
+          "id": "short-answer",
+          "title": "Start with the job your website needs"
+        },
+        {
+          "id": "compare",
+          "title": "Compare the work you receive"
+        },
+        {
+          "id": "costs",
+          "title": "Prices and questions to ask"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-audit-checklist/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use the exact shared status labels everywhere and rename the example section to include both navigation and inquiry findings."
+      ],
+      "beforeSourceContentSha256": "94d7f0a0a7b7de882632507abbfa9ccdc70763faa2dddb53dd125833f8715b9a",
+      "afterSourceContentSha256": "eb23ed599c7ef2dc7253323ca5918f1a88686cb8fe4994f8b3e2acfee74b2f82",
+      "beforeTextCharacters": 4514,
+      "afterTextCharacters": 4527,
+      "changedSections": [
+        {
+          "id": "owned-fixes",
+          "title": "Examples: a wrong service link and an undelivered inquiry"
+        },
+        {
+          "id": "access",
+          "title": "Use “Need access” when you cannot test"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    },
+    {
+      "route": "/guides/website-repair-or-redesign/",
+      "status": "implemented_pending_independent_review",
+      "recommendedFixes": [
+        "Use diagram as sole overview, shorten frequency answer to change triggers, and consolidate retained-content/access/retest reminders."
+      ],
+      "beforeSourceContentSha256": "62e3cfc074aceda8a5edd003f92195bb3afc7b535563483b2d579a610ed2fa7a",
+      "afterSourceContentSha256": "a38d58eaa382f8a8f872f1c5977bda296dcebd65935631f4ea402269d7a6af4d",
+      "beforeTextCharacters": 5983,
+      "afterTextCharacters": 5464,
+      "changedSections": [
+        {
+          "id": "start",
+          "title": "Begin with the problem, not the age of the site"
+        },
+        {
+          "id": "worksheet",
+          "title": "Record the keep, fix or rebuild decision"
+        },
+        {
+          "id": "keep",
+          "title": "Keep what already does the job"
+        },
+        {
+          "id": "contained",
+          "title": "Choose a small fix when the problem is clear"
+        },
+        {
+          "id": "rework",
+          "title": "When broader changes or a rebuild make sense"
+        }
+      ],
+      "mergedSectionIds": [],
+      "allPriorAnchorsRetained": true,
+      "allPriorUniqueLinksRetained": true,
+      "allPriorAmountsAndNumericTermsRetained": true,
+      "visualRating": null,
+      "accessibilityRating": null,
+      "finalScore": null
+    }
+  ]
+}

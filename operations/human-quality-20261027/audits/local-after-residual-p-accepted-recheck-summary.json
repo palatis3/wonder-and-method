@@ -1,0 +1,29 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 37,
+  "reviewedCount": 37,
+  "contentPassCount": 37,
+  "unresolvedMaterialContentDefects": [],
+  "requiredFixes": [],
+  "validation": {
+    "status": "passed",
+    "validatedAt": "2026-10-27T23:36:13.704Z",
+    "freshNodeProcess": true,
+    "packetHashesVerified": 8,
+    "rendererHashesVerified": 5,
+    "currentDraftsVerified": 37,
+    "currentSourcesVerified": 37,
+    "currentNeighborDraftsVerified": 37,
+    "baselineBindingsVerified": 37,
+    "currentRenderedBodiesVerified": 37,
+    "completeMainPlaintextsVerified": 37,
+    "exactEvidenceQuotesVerified": 222,
+    "uniqueReviewRoutesVerified": 37,
+    "manualRatingArithmeticVerified": 37,
+    "inheritedReviewProvenanceVerified": 37,
+    "topicalPeerDraftsVerified": 0,
+    "visualAccessibilityAndFinalScoresRemainNull": true
+  },
+  "checkpoint": "Complete content-only checkpoint. All assigned reviews saved once and fresh-process validated against current packets, renderer dependencies, source entries, drafts, siblings, baseline bindings, rendered body and text. Visual, accessibility and publication signoff remain separate.",
+  "limits": "Content only; visual/accessibility/final null; source and draft files untouched."
+}

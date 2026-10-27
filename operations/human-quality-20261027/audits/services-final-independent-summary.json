@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-10-27T17:11:33.315Z",
+  "status": "complete-current-render-verified",
+  "expected": 8,
+  "reviewed": 8,
+  "uniqueRoutes": 8,
+  "completeMainTextCharacters": 57590,
+  "allQuotesMatched": true,
+  "allFullBodyReadsPresent": true,
+  "unchangedReviewedRenderCount": 8,
+  "changedCurrentRenders": [],
+  "hashScope": "SHA256 of complete current renderPages HTML; text extracted from main including all disclosures and ordinary hidden interaction states; scripts/style/noscript omitted.",
+  "contentSubtotals": {
+    "maximum": 80,
+    "min": 76.25,
+    "max": 80,
+    "mean": 78.28125
+  },
+  "finalScoresAllNull": true,
+  "visualsAllNull": true,
+  "accessibilityAllNull": true,
+  "findingsBySeverity": {
+    "minor": 1
+  },
+  "findings": [
+    {
+      "route": "/services/seo/",
+      "severity": "minor",
+      "issue": "The disclosure titled Local, on-page and technical SEO details contains only short guide routing, so its label overstates the depth behind the control.",
+      "evidence": [
+        "Local, on-page and technical SEO details",
+        "Find the question behind the search."
+      ]
+    }
+  ],
+  "verifiedHardCaps": 0,
+  "priorFindingsResolved": true,
+  "approvedOffersUnchanged": true,
+  "approvedOffersSha256": "641782ea16351bdbb5a4bd2931d6e9eebcdf25e9ba2ddeb6993c769f366702cc",
+  "recommendation": "Prior commercial findings are resolved. Correct the remaining SEO disclosure label, then retain these unchanged body judgments; complete independent visual/accessibility checks before final scores.",
+  "limitations": [
+    "Content subtotal is out of 80, never normalized to 100; all final scores remain null.",
+    "All eight full bodies including disclosures and FAQs were reread independently.",
+    "Commercial source values were previously verified and remain unchanged; no new external freshness or visual provenance claim."
+  ],
+  "provenance": {
+    "snapshot": "output/human-quality-20261027/services-final-independent/snapshot.json",
+    "readLedger": "output/human-quality-20261027/services-final-independent/read-ledger.json",
+    "manualDecisions": "output/human-quality-20261027/services-final-independent/decisions.json",
+    "rubric": "operations/human-quality-20261027/research-rubric.json",
+    "priorAudit": "operations/human-quality-20261027/audits/services-directories-after-independent.jsonl",
+    "currentSourceFiles": [
+      {
+        "file": "src/pages.mjs",
+        "sha256": "9d1b7c07e8da0777a222075a9628b830c27dbfdec6ed99e08df78c6fd7a9f637"
+      },
+      {
+        "file": "src/service-content.mjs",
+        "sha256": "3a4af167a19b00107a622c7dc4a71d1aa396d43c48d1802d48c7c6ed6efe3f21"
+      },
+      {
+        "file": "src/seo-service-content.mjs",
+        "sha256": "3f5f18850c5c62c4345c54fd84bdcffd322b453fed22ffb556ac92b69b77e060"
+      },
+      {
+        "file": "src/search-guides.mjs",
+        "sha256": "a1242dadd6d9afcfc406c4c2fdf55e4a5757cc2bf15f78f9df811a3da328a824"
+      },
+      {
+        "file": "src/search-content.mjs",
+        "sha256": "78408c7139042420a15153d46b3702dc2f9a3150f9ad0f67ab6db5e9da9e1765"
+      },
+      {
+        "file": "src/service-faqs.mjs",
+        "sha256": "fabe9d422ee34a479b65536ca9b9bb8cb36bd978a6d64a51b9dc94a0a4a609e6"
+      },
+      {
+        "file": "src/addon-content.mjs",
+        "sha256": "b96365a321e043ff4b13763a45e1028ba02d2e39df01bd43062d175ab58d529f"
+      },
+      {
+        "file": "config/offers.json",
+        "sha256": "641782ea16351bdbb5a4bd2931d6e9eebcdf25e9ba2ddeb6993c769f366702cc"
+      }
+    ]
+  }
+}

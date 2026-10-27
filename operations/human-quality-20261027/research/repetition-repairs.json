@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-27",
+  "scope": "Named recommendations from earlier complete-page reviews; no generated ratings or publication approval.",
+  "sourceChecks": [
+    {
+      "url": "https://www.iowadnr.gov/places-go/state-parks/all-parks/beeds-lake-state-park",
+      "fact": "Lists Beeds Lake State Park at 1422 165th Street in Hampton and identifies Franklin as its area served."
+    },
+    {
+      "url": "https://www.jellybelly.com/factory",
+      "fact": "Separates self-guided admission from advance-booked guided groups and describes variable production. Its school-group section requires no advance reservations and explains splitting large parties, payment and receipt arrangements."
+    }
+  ],
+  "changes": [
+    {
+      "route": "/areas/iowa/allamakee-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "4b052932ed2e5e78a8f428514729584fde9c0f66d8df91345ac95ccd56a5f350",
+      "afterHash": "d5b3c7b9288eafc2954d72c19e37a918a08f243f30eb8e320dd68a64270b47f0",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/dallas-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "c8082e93dd5d710b9af6728035fd1ae9c57f766c687a4280237126da7190064a",
+      "afterHash": "5ed8f4117f865cee13d6ecbb196fd4500b5cf06782f22826fb1734f8b1d68c23",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/fayette-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "e6d4b68739c0e5bca6ccf976f671917678a771d4dacb0b9dd56e5a21df05875d",
+      "afterHash": "7cc8014a7a361a6c9f7f2119b6c3ca72ff65e27df80c4e22e60f53192f8d3fdc",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/ashe-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "2ca9c8cb61df0d87ff5f3af9c635ec4b36fd60c3a72a68f5816af8d37aa10035",
+      "afterHash": "fed37db0d3183fea9186b43269a93a1cb57a749b9a2a1fd8842783e1cc237e94",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/pennsylvania/philadelphia-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "bcb2382ce6a17679e2a76a6894af7918c0136bac69bf471cbf5b527046a8d832",
+      "afterHash": "c3d93ff123fa1c9e9b5149e852358e8235c950b9a1339b92e3a011975c8dabd9",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/texas/rockwall-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "40b6e91b0a9c6d7f4d0087ae34f785135be314cdd1ae12c701d551a2ea251688",
+      "afterHash": "7c0894c365ef8976652e090e419b7a586706c33c54410e7c2fd371150bdebfd7",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/yuba-county/",
+      "reasons": [
+        "Remove FAQ whose entire answer repeats a substantive body recommendation"
+      ],
+      "beforeHash": "1a76a566967cf0677570db863cab22fe3d334fef8a0869ecc6b602ce7d711e75",
+      "afterHash": "cd87117ac12888d72a87e67e4d9bcaa5adad29d889aedd26493897bf864da3f5",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/franklin-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "1b29d6b683161d6b5b6baf5f390c4981738c558883209f56bb427167d168cef0",
+      "afterHash": "26eea4d28bd62dad5b8ae5b7dfcd34d10a33ab1e498aa5fe7104a9c1ac78c258",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/kalamazoo-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "dcec01d0a336743852205c925dd28258027f775947f927f77526c6232cc0b583",
+      "afterHash": "d185051becc30f23a4d13fce9e9cce380e9c187727eb644900b7d7f2783fc5dc",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/livingston-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "923faed9bcc90a1905c0d5ac8ca4ec1355033524591aca1354fc865b55ec03fc",
+      "afterHash": "03c54223dc8da9ef12674e5bfcace2be715b0428bc71decca8c8726d99050c8c",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/macomb-county/",
+      "reasons": [
+        "Give decision 2 its own visitor purpose"
+      ],
+      "beforeHash": "5c039dd2e29d97c8345c1238e74620413376bfd8e84266f53a6071f9b9245510",
+      "afterHash": "3ed5d90f00c4ae3ce3ca754202f66bbc24c3acdb4132569647799f862a75f398",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/oakland-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "15027b3ce9c839bd83c3f892f3bb86087daef8a91305a229fa111fde867d6db0",
+      "afterHash": "f16e660d6502ee47de02001635bf846464594050541bb6804d7ba933f2c225a4",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/otsego-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "6ac6ac211654e348e5b598d575c02932f685672bc10645c9602a09984fa64f10",
+      "afterHash": "ba014c99a48678d1e52f632a02fc61517266bf3c35f4d7df07e731b693b42674",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/michigan/wayne-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "2d0334caa0fcbc062b7a2afccca71ccf9bc594986ca6738568f56e0474bc97ee",
+      "afterHash": "dd81ea5a51c28f6416ee55bf4522a8bedce577b76c17b2dd833d5bea285893cc",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/alleghany-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "fae7853872ee12d562b49a84a61c9bf81f04e269d35b4600ac0adeb8f13f2888",
+      "afterHash": "baf7677c09b3d44c59de31ce746c959ba91035541ac20d18f5844fe6446b8481",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/burke-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "ace5772066042ea3b9e93de6d3f7b8b271a96247aa9329fa84ea3dcb177b16cf",
+      "afterHash": "5ed4d7e2ad133fd1a42ccb2e0b3d81cd3ae45785af85b536ebe3845cc7a4c80b",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/craven-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "3c0e1b6cb4fd85c163e308c2bc2e17484640200d18c47a140e9dee49e4cd6d2f",
+      "afterHash": "1429647a09e8040ca5da82bf97e11eae1da8cf666750402bebaac9c87be735b0",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/north-carolina/cumberland-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "83482d7813d78bc1fff6412cc50478f4213bffe6805fd88254eeb4d7f2877690",
+      "afterHash": "5d7d7780928cd70d30d2e8d954e3f8b3af8099331703ba494847dad61ee9690c",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/pennsylvania/venango-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "d6d603ed3bfcd822da12d50be3b1151ab6801611f1dd16ebbb083fd5209747a0",
+      "afterHash": "292c73e0ed46652fc06e4b94157049681829c6b175203bd7a5493e0d67bb5e53",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/texas/nolan-county/",
+      "reasons": [
+        "Identify the fifty-student scenario as hypothetical, not an operator-published case"
+      ],
+      "beforeHash": "db33cebd2790e5dd0d07980acc4a764dcc3ce2aa5963cc9c4d3e8ee90fc8dbb9",
+      "afterHash": "5f21812f498d240faad0b0c16d0b38787dc8129c10314aa90508da1bda63338d",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/broome-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "76ed6af7f3eb5c2c0f7583556593c121af4637c8dec31e7fa9c8049a6679a593",
+      "afterHash": "5bc6816ccdf59d9e88a88bbe2e0706ccf382e4961a3f12569612afe86cc2a6f6",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/fresno-county/",
+      "reasons": [
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "044e946e9100f72c2e477c13f6f8168d7946395438ac7b9c2c590faa5fbcbb46",
+      "afterHash": "2ec039ba5a3bd05dc4a5f9d483b36db7e3245ca0dc2c15b1ff3cf28d5ae69ab2",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/san-joaquin-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "12970d619ee69f0ea80a5ce84277d1804f35efe676b54160c3ac81d7dc0ae36f",
+      "afterHash": "2a3d30105447125a86325779b456df485bdb8974b99ed072b412fdbce83a2a3a",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/california/solano-county/",
+      "reasons": [
+        "Give decision 1 its own visitor purpose",
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: sourceBridge"
+      ],
+      "beforeHash": "886076273a23d451f63ca905e320c90861f4579b76f128b8b4c8e2a3a561703d",
+      "afterHash": "242c4f3aa513d6fa2d7fab901984231837183474fd9d22d750ca7c63b3e7473c",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/henry-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "666c105ac8cefd2ce5d87cdb0adc57eeaed76d24ba6550b49878bdd267ac536c",
+      "afterHash": "b316f030e70be41494f3f326b56191c9786a30875875c1f83c774c965f88e3cb",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/iowa/jackson-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "7851487ac0fefb5df218bf2d25abfbb9916684cc78af40995538f3762f2e5f2d",
+      "afterHash": "25b2d06ac92c9b50fb2633142c88bb01f94168684ea9adaee6149f7b3e633b28",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/chautauqua-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: limits"
+      ],
+      "beforeHash": "a9ccc5e4c09edd70417a94eccb7fc649dc02419645d6ebd8e01f6bdaf7606070",
+      "afterHash": "0be5162f11a9f8d76cfe272bce9302388509ba071d2c29fa086db1e07de63153",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/colorado/denver-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose"
+      ],
+      "beforeHash": "938cad1c51e8247c7c96aa1d59822d1f3bbbe1de477d2492b9da630b4c705a4c",
+      "afterHash": "33b5739ba0d76e3deff508f6fa284c3c3a3eda93d19be4773f8fbffc06eef5c3",
+      "independentRecheck": null,
+      "finalScore": null
+    },
+    {
+      "route": "/areas/colorado/gunnison-county/",
+      "reasons": [
+        "Give decision 3 its own visitor purpose",
+        "Remove repeated recommendation or internal editorial instruction: sourceBridge"
+      ],
+      "beforeHash": "cab7df4d0ea4b5d325e7dffa91a799d393446b498843d8614a0f2fd67aff4cc8",
+      "afterHash": "26553c2f21d8ed167518fcefd48b1f8362638592426372efa4ae657a0b220f5c",
+      "independentRecheck": null,
+      "finalScore": null
+    }
+  ]
+}

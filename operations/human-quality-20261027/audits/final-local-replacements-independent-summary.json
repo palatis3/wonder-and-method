@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-27",
+  "status": "in-progress-nine-page-checkpoint",
+  "assignedCount": 17,
+  "reviewedCount": 9,
+  "pendingCount": 8,
+  "passCount": 9,
+  "holdCount": 0,
+  "reviewedRoutes": [
+    "/areas/michigan/monroe-county/",
+    "/areas/michigan/newaygo-county/",
+    "/areas/west-virginia/hardy-county/",
+    "/areas/west-virginia/lewis-county/",
+    "/areas/west-virginia/mercer-county/",
+    "/areas/west-virginia/mingo-county/",
+    "/areas/west-virginia/pleasants-county/",
+    "/areas/west-virginia/putnam-county/",
+    "/areas/west-virginia/randolph-county/"
+  ],
+  "pendingRoutes": [
+    "/areas/west-virginia/webster-county/",
+    "/areas/west-virginia/wirt-county/",
+    "/areas/westchester-county/",
+    "/areas/wyoming/lincoln-county/",
+    "/areas/wyoming/natrona-county/",
+    "/areas/erie-county/",
+    "/areas/wyoming/sweetwater-county/",
+    "/areas/wyoming/washakie-county/"
+  ],
+  "packetAssignment": "output/human-quality-20261027/after-review/final-local-replacements/assignment.json",
+  "additionalAssignment": "output/human-quality-20261027/after-review/last-two-local-replacements/assignment.json",
+  "eriePacket": "output/human-quality-20261027/built-review/erie-final/pages.jsonl",
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "originalPacketFileHashesMatch": true,
+    "exactDraftAndCandidateHashBindings": 9,
+    "exactEvidenceQuotes": 54,
+    "duplicateRoutes": 0,
+    "issues": []
+  },
+  "findings": [
+    "All nine reviewed replacements resolve the original overlap sufficiently for content-only readiness; complete review records explain closer substantive comparisons.",
+    "Newaygo was also compared with Bergen prototype/repeat-production, Lewis with Ector commercial-photo and Caswell specialist-photo, Mercer with Fountain people/machines, Mingo with Comanche permit routing and Beaver calendar-year units, and final three with delivery/checkout/image-product siblings.",
+    "Hardy passes as an explicitly bounded booking-unit reconciliation example; no current authoritative per-person versus whole-party instruction is asserted or operationally validated.",
+    "Randolph’s saved LED primary-source extraction was read directly and supports the no-photographs restriction, customizable outline and remote control."
+  ],
+  "limits": "This checkpoint covers nine exact staged candidate main bodies only, including all supplied disclosures and project FAQs. The other eight pages are unreviewed. Content-ready does not establish final rubric acceptance, browser quality, current destination operation or publication permission. No sources, drafts or baseline audits were modified and no imports, builds, transactions or publication were performed.",
+  "handoff": "Continue by appending the remaining eight records to the existing JSONL and updating this summary. Read their complete candidate packets/source notes and close substantive siblings; do not reuse unreviewed alphabetical packet neighbors as evidence. Preserve these nine records while their hashes remain unchanged."
+}

@@ -1,0 +1,51 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 20,
+  "reviewedCount": 20,
+  "contentPassCount": 20,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "recommendedFixes": [
+    {
+      "route": "/areas/oklahoma/adair-county/",
+      "passage": "WOKA: first-time visitors — Separates per-vehicle parking and four-hour vessel rentals including a lifejacket and helmet. Direct HTTP check October 27 found the footer marking rentals and concessions closed for the season; web text extraction omitted that footer.",
+      "recommendation": "Consider shortening reader-facing source notes to the dated closure notice and conflicting hours, retaining HTTP/extraction-method details in the research receipt."
+    },
+    {
+      "route": "/areas/pennsylvania/bradford-county/",
+      "passage": "Ask where the unit is now, such as an upstairs window, and which access details staff need to review the removal. Keep a useful unit photograph or reference attached to that position so staff can distinguish it from another appliance at the property. Leave the handling method and accepted work for the business to assess.",
+      "recommendation": "Consider shortening the photograph/identifier sentence here because the preceding decision already explains distinguishing the unit from others at the property."
+    },
+    {
+      "route": "/areas/pennsylvania/franklin-county/",
+      "passage": "Keep the supplier, pattern and color as readable labels alongside the fabric link. Attach those references to the chair or other piece being discussed, so several preferred fabrics remain alternatives for that project rather than separate orders.",
+      "recommendation": "Consider keeping the alternatives-versus-separate-orders explanation in one of the first two decisions; both currently make that same point."
+    }
+  ],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "reviewScope": "Independent editorial correction review of complete current candidate main text including FAQ/disclosures, source entries, supplied nearest siblings, repair before/after and historical findings. Exact common text cross-referenced; no fresh source retrieval claimed.",
+  "factualEvidence": [
+    "residual-j-fact-recheck.json"
+  ],
+  "validation": {
+    "packetCount": 4,
+    "rendererFileCount": 5,
+    "currentDraftCount": 20,
+    "sourceEntryCount": 20,
+    "siblingCount": 20,
+    "renderedBodyCount": 20,
+    "exactQuoteCount": 120,
+    "repairBeforeAfterCount": 24,
+    "historicalFindingsPreserved": true,
+    "errors": []
+  },
+  "limitations": [
+    "Page-specific visual and accessibility evidence remain pending.",
+    "Closest topical peer beyond the supplied neighboring draft remains separately reviewable.",
+    "Supplied dated source checks do not establish future operator terms.",
+    "WOKA friend-rental benefit and current rental operation remain explicit operator questions, not promises."
+  ]
+}

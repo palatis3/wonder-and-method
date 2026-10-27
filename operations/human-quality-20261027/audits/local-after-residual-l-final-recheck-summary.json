@@ -1,0 +1,29 @@
+{
+  "status": "complete-content-only",
+  "assignedCount": 25,
+  "reviewedCount": 25,
+  "nextCandidateIndex": 25,
+  "contentPassCount": 25,
+  "unresolvedMaterialContentDefects": 0,
+  "requiredFixes": [],
+  "contentOnly": true,
+  "visuals": null,
+  "accessibility": null,
+  "finalScore": null,
+  "validation": {
+    "errors": [],
+    "drafts": 25,
+    "sources": 25,
+    "bodies": 25,
+    "siblings": 25,
+    "packets": 5,
+    "renderers": 5,
+    "quotes": 150
+  },
+  "completedAt": "2026-10-27T22:04:55.086Z",
+  "limitations": [
+    "Independent content review against supplied dated evidence; no fresh live-source retrieval.",
+    "Current visual, accessibility, interaction and final score checks remain pending.",
+    "Compared assigned neighbors; broader topical-family overlap remains pending."
+  ]
+}

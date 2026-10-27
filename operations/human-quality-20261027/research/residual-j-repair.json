@@ -1,0 +1,2295 @@
+{
+  "date": "2026-10-27",
+  "status": "independently-accepted-and-imported-pending-rendered-checks",
+  "routes": [
+    "/areas/north-carolina/northampton-county/",
+    "/areas/north-carolina/rutherford-county/",
+    "/areas/north-carolina/stanly-county/",
+    "/areas/north-carolina/tyrrell-county/",
+    "/areas/north-carolina/vance-county/",
+    "/areas/north-carolina/washington-county/",
+    "/areas/ohio/fayette-county/",
+    "/areas/ohio/fulton-county/",
+    "/areas/ohio/marion-county/",
+    "/areas/ohio/ottawa-county/",
+    "/areas/ohio/perry-county/",
+    "/areas/ohio/pike-county/",
+    "/areas/ohio/sandusky-county/",
+    "/areas/ohio/vinton-county/",
+    "/areas/oklahoma/adair-county/",
+    "/areas/oklahoma/canadian-county/",
+    "/areas/pennsylvania/bradford-county/",
+    "/areas/pennsylvania/erie-county/",
+    "/areas/pennsylvania/forest-county/",
+    "/areas/pennsylvania/franklin-county/"
+  ],
+  "reviewEvidence": [
+    "operations/human-quality-20261027/audits/local-after-residual-j.jsonl"
+  ],
+  "drafts": [
+    {
+      "route": "/areas/north-carolina/northampton-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep older-model support separate from current equipment sales.",
+        "intro": "An equipment page may remain useful after a model is no longer sold. Label its status and document links clearly so existing owners can find help while buyers understand which purchase questions need a different route.",
+        "customerQuestion": "Is this model available to buy, or is this section here to support equipment I already own?",
+        "decisions": [
+          {
+            "label": "State why the model is listed",
+            "body": "Use the exact model name and its approved current sales status. Distinguish a current purchase offer from a retained support section. An owner searching for an older machine should not have to infer discontinuation from an absent price or an old photograph."
+          },
+          {
+            "label": "Name each document’s purpose",
+            "body": "Label manuals and cleaning documents with the model and the information they contain before download. Keep an unresolved question attached to that model when directing the visitor to staff. Someone discussing a replacement can identify the old machine without confusing its manual with the new purchase offer."
+          },
+          {
+            "label": "Preserve useful existing addresses",
+            "body": "Before reorganizing support content, collect the page and document URLs customers may have saved. Keep suitable addresses or agree matching redirects and check important model-to-manual paths. File addresses and hosting behavior need review as well as the visible page navigation."
+          }
+        ],
+        "ownerInputs": [
+          "Approved model sales status and current product descriptions.",
+          "The document inventory with model and purpose for each file.",
+          "Existing support URLs to preserve and the correct staff contact routes."
+        ],
+        "sourceBridge": "Hampton Farms retains manuals and cleaning documents for its discontinued PN1 grinder while presenting equipment by model. Its Northampton County connection supports a practical example of serving buyers and existing owners on the same site.",
+        "limits": "The supplier approves technical instructions and compatibility decisions. The website does not diagnose equipment. A larger document migration, redirect scope or support-system integration needs separate assessment and pricing.",
+        "route": "/areas/north-carolina/northampton-county/",
+        "inputHash": "7d9946e74c50a047d711a71a78df694347db4e13565a79da47145285f9319c3e"
+      },
+      "after": {
+        "heading": "Keep older-model support separate from current equipment sales.",
+        "intro": "An equipment page may remain useful after a model is no longer sold. Label its status and document links clearly so existing owners can find help while buyers understand which purchase questions need a different route.",
+        "customerQuestion": "Is this model available to buy, or is this section here to support equipment I already own?",
+        "decisions": [
+          {
+            "label": "State why the model is listed",
+            "body": "Use the exact model name and its approved current sales status. Distinguish a current purchase offer from a retained support section. An owner searching for an older machine should not have to infer discontinuation from an absent price or an old photograph."
+          },
+          {
+            "label": "Name each document’s purpose",
+            "body": "Label manuals and cleaning documents with the model and the information they contain before download. Keep an unresolved question attached to that model when directing the visitor to staff. Someone discussing a replacement can identify the old machine without confusing its manual with the new purchase offer."
+          },
+          {
+            "label": "Choose support or a new-equipment discussion",
+            "body": "A PN1 owner looking for cleaning information needs the retained PN1 document route. Someone replacing that grinder needs the current-equipment inquiry, with PN1 identified as the machine already owned. Keep these two actions beside the model status so a support download is not mistaken for an offer to buy the discontinued model."
+          }
+        ],
+        "ownerInputs": [
+          "Approved model sales status and current product descriptions.",
+          "The document inventory with model and purpose for each file.",
+          "Existing support URLs to preserve and the correct staff contact routes."
+        ],
+        "sourceBridge": "Hampton Farms retains manuals and cleaning documents for its discontinued PN1 grinder while presenting equipment by model. Its Northampton County connection supports a practical example of serving buyers and existing owners on the same site.",
+        "limits": "The supplier approves technical instructions and compatibility decisions. The website does not diagnose equipment. A larger document migration, redirect scope or support-system integration needs separate assessment and pricing.",
+        "route": "/areas/north-carolina/northampton-county/",
+        "inputHash": "7d9946e74c50a047d711a71a78df694347db4e13565a79da47145285f9319c3e"
+      },
+      "beforeSha256": "94fe85f833d17ee7e5693189dffa4f298e8d1ed0d3b9e6f8e059ecd8c2684edd",
+      "afterSha256": "5a2e9a52af1f0d06ada042606d2bb90db188a1c1efa7dda11d9e0de6bddb8b80",
+      "requiredFixes": [
+        "Keep the detailed saved-manual-link preservation guidance in the FAQ. Refocus decisionthree on a concrete PN1 owner versus current-equipment buyer support choice rather than repeating URL inventory/redirect/file-hosting checks."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/rutherford-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Separate the first parts batch from possible repeat demand.",
+        "intro": "A buyer may know today’s quantity while still estimating future needs. Keep those two statements distinct so the manufacturer can discuss an initial batch and a continuing relationship without reading a forecast as an order.",
+        "customerQuestion": "How should I describe this batch and the work we might repeat later?",
+        "decisions": [
+          {
+            "label": "Identify the part being discussed",
+            "body": "Ask for the available drawing, sample or reference and the relevant revision. Keep that identity visible through the inquiry. A recurring request is easier to understand when staff can tell whether future quantities concern the same part or a possible changed specification."
+          },
+          {
+            "label": "State the immediate requirement",
+            "body": "Collect the quantity currently being requested and the context needed to review it. Describe this as the present production discussion. Do not combine a firm immediate need and an uncertain later estimate into one apparently committed quantity."
+          },
+          {
+            "label": "Label anticipated repetition",
+            "body": "Invite the buyer to describe the expected future pattern and its uncertainty. Explain the route for discussing contract work and leave timing, terms and continuing commitments open for agreement. A useful example can show one part reference with a current batch and a separately labeled forecast."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted part references and current batch inquiry requirements.",
+          "An approved example of repeat or contract manufacturing work.",
+          "The actual process for discussing future demand and commercial arrangements."
+        ],
+        "sourceBridge": "Tri City Laser in Forest City describes cutting and engraving alongside contract manufacturing for repeated orders. Its offer makes current quantity, stable part identity and expected recurrence useful distinctions in the first inquiry.",
+        "limits": "The manufacturer and buyer confirm feasibility, terms and production commitments. A forecast does not reserve capacity or establish a standing order. Automatic reordering, inventory commitments and order-system integrations are separate from the proposed content work.",
+        "route": "/areas/north-carolina/rutherford-county/",
+        "inputHash": "96c3452b983915d4c1296ca9de0e8ddda7c0dd47571e22d5a3aa644382e77302"
+      },
+      "after": {
+        "heading": "Separate the first parts batch from possible repeat demand.",
+        "intro": "A buyer may know today’s quantity while still estimating future needs. Keep those two statements distinct so the manufacturer can discuss an initial batch and a continuing relationship without reading a forecast as an order.",
+        "customerQuestion": "How should I describe this batch and the work we might repeat later?",
+        "decisions": [
+          {
+            "label": "Identify the part being discussed",
+            "body": "Ask for the available drawing, sample or reference and the relevant revision. Keep that identity visible through the inquiry. A recurring request is easier to understand when staff can tell whether future quantities concern the same part or a possible changed specification."
+          },
+          {
+            "label": "State the immediate requirement",
+            "body": "Collect the quantity currently being requested and the context needed to review it. Describe this as the present production discussion. Do not combine a firm immediate need and an uncertain later estimate into one apparently committed quantity."
+          },
+          {
+            "label": "Label anticipated repetition",
+            "body": "Fictional inquiry: “Part DEMO-R, revision B: please review a first batch of 40 pieces. We may need another 120 over the following six months, but that forecast is uncertain and not an order.” Keep 40 as the present request and 120 as possible later demand; do not merge them into a committed 160. These illustrative counts are not minimums, an accepted schedule or reserved capacity. The manufacturer and buyer review any continuing arrangement."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted part references and current batch inquiry requirements.",
+          "An approved example of repeat or contract manufacturing work.",
+          "The actual process for discussing future demand and commercial arrangements."
+        ],
+        "sourceBridge": "Tri City Laser in Forest City describes cutting and engraving alongside contract manufacturing for repeated orders. Its offer makes current quantity, stable part identity and expected recurrence useful distinctions in the first inquiry.",
+        "limits": "The manufacturer and buyer confirm feasibility, terms and production commitments. A forecast does not reserve capacity or establish a standing order. Automatic reordering, inventory commitments and order-system integrations are separate from the proposed content work.",
+        "route": "/areas/north-carolina/rutherford-county/",
+        "inputHash": "96c3452b983915d4c1296ca9de0e8ddda7c0dd47571e22d5a3aa644382e77302"
+      },
+      "beforeSha256": "755361f3e19e6363eab87b224c6e67c3b0763f8f9af85d2173057de49302f2f7",
+      "afterSha256": "2d78bd36918383ba99be1f5a33607274c782f2e92bc9bca5af6fe6b70b8eb9b4",
+      "requiredFixes": [
+        "Add a clearly labelled fictional part-reference/current-batch/future-forecast brief. Use separate quantities and uncertainty, explicitly not order minimums or accepted commitments; preserve manufacturer review."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/stanly-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Make finish-selection help easy to find within an existing project.",
+        "intro": "A homeowner with a builder may need help choosing tile or hardware while keeping the current team. Show where selection advice fits, which related business provides it and what happens after the choices are made.",
+        "customerQuestion": "Can you help with finishes without taking over our wider design project?",
+        "decisions": [
+          {
+            "label": "Keep the current team visible",
+            "body": "Ask who is managing the work and which responsibilities are already assigned. Explain narrower selection advice beside broader construction design and furnishings services. A useful comparison lets the customer identify the help needed without assuming the existing builder or designer must be replaced."
+          },
+          {
+            "label": "Separate settled and open choices",
+            "body": "Invite references for finishes already chosen and a short list of decisions still needing advice. A client with flooring selected can describe unresolved tile and hardware in that context. Show the categories the service actually covers rather than implying unlimited project coordination."
+          },
+          {
+            "label": "Name the provider and handoff",
+            "body": "For related businesses sharing a website, identify the company delivering each service and the correct contact route. Describe the actual selection output and who acts on it. Agree website ownership and content approval before combining the businesses’ offers."
+          }
+        ],
+        "ownerInputs": [
+          "Current service boundaries and the sister-company relationship.",
+          "Examples of settled finishes alongside choices still open.",
+          "The actual deliverable, responsible provider and inquiry destination."
+        ],
+        "sourceBridge": "Elle Luna Interiors in Albemarle distinguishes wider design work from material-selection help through Fifth & College Tile & Design Co. The latter addresses clients with existing teams or self-managed projects, making responsibility and handoff especially relevant.",
+        "limits": "The designer confirms the advice offered. Selection help does not automatically include purchasing or construction coordination. Shared branding does not combine company responsibilities; procurement and project-management tools need separate website scope.",
+        "route": "/areas/north-carolina/stanly-county/",
+        "inputHash": "c92ee8e04428f3536ac7f98a179155206611ce67ee860870ded04b8f43c8c31b"
+      },
+      "after": {
+        "heading": "Make finish-selection help easy to find within an existing project.",
+        "intro": "A homeowner with a builder may need help choosing tile or hardware while keeping the current team. Show where selection advice fits, which related business provides it and what happens after the choices are made.",
+        "customerQuestion": "Can you help with finishes without taking over our wider design project?",
+        "decisions": [
+          {
+            "label": "Keep the current team visible",
+            "body": "Ask who is managing the work and which responsibilities are already assigned. Explain narrower selection advice beside broader construction design and furnishings services. A useful comparison lets the customer identify the help needed without assuming the existing builder or designer must be replaced."
+          },
+          {
+            "label": "Separate settled and open choices",
+            "body": "Invite references for finishes already chosen and a short list of decisions still needing advice. A client with flooring selected can describe unresolved tile and hardware in that context. Show the categories the service actually covers rather than implying unlimited project coordination."
+          },
+          {
+            "label": "Carry selections to the existing project team",
+            "body": "A homeowner with flooring already selected can ask for the tile and hardware choices to be recorded separately, with product references and any unresolved alternatives. Explain which selection document the service actually supplies and who passes it to the existing builder or designer. The receiving team still confirms quantities, purchasing and installation decisions."
+          }
+        ],
+        "ownerInputs": [
+          "Current service boundaries and the sister-company relationship.",
+          "Examples of settled finishes alongside choices still open.",
+          "The actual deliverable, responsible provider and inquiry destination."
+        ],
+        "sourceBridge": "Elle Luna Interiors in Albemarle distinguishes wider design work from material-selection help through Fifth & College Tile & Design Co. The latter addresses clients with existing teams or self-managed projects, making responsibility and handoff especially relevant.",
+        "limits": "The designer confirms the advice offered. Selection help does not automatically include purchasing or construction coordination. Procurement and project-management tools need separate website scope.",
+        "route": "/areas/north-carolina/stanly-county/",
+        "inputHash": "c92ee8e04428f3536ac7f98a179155206611ce67ee860870ded04b8f43c8c31b"
+      },
+      "beforeSha256": "a3e3d4e3d7da8f60bf1cad424b91fffa62b5a41951cb36c2687ad8c13c487c88",
+      "afterSha256": "392d4dc1b43a95dfaa2665a60c42dca0da4a32fed437154cf440133a90578d43",
+      "requiredFixes": [
+        "Keep related-business ownership, content approval and contact-routing agreement in FAQ. Refocus decisionthree on the actual selection-output handoff to the existing builder/team, without repeating the shared-site planning process."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/tyrrell-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Give shipped workshop supplies a participant and session.",
+        "intro": "A box sent ahead to a school must be connected to the person and workshop expecting it. Place package identification and delivery instructions with the materials list so students can prepare one coherent shipment.",
+        "customerQuestion": "How should I label and send supplies for my workshop?",
+        "decisions": [
+          {
+            "label": "Start with the workshop",
+            "body": "Keep the participant name and selected session on the materials instructions. Distinguish supplies the student must bring or order from materials the class provides. A supplier ordering on the student’s behalf should receive the same identifying information."
+          },
+          {
+            "label": "Choose the correct delivery route",
+            "body": "Show the school-approved address for the actual delivery method. Postal deliveries and other shipments may use different instructions. Use a clearly labeled example package address rather than asking students to infer the receiving location from the general campus contact page."
+          },
+          {
+            "label": "Resolve missing preparation details",
+            "body": "Give students a contact for questions about supplies or shipments before travel. Ask them to include their name, session and the unresolved item so staff can understand the question without reconstructing which workshop they booked."
+          }
+        ],
+        "ownerInputs": [
+          "Current materials lists and personal-versus-class supply responsibilities.",
+          "Approved package label examples and delivery-method addresses.",
+          "The preparation contact and current receiving instructions."
+        ],
+        "sourceBridge": "Pocosin Arts School of Fine Craft in Columbia explains shipments labeled with the student’s name and session and distinguishes postal from street-address delivery. Its instructions provide a concrete example of keeping preparation and receiving details together.",
+        "limits": "The school confirms what it can receive and how supplies are handled. An address instruction does not confirm delivery or workshop enrollment. Shipping, purchases and package tracking remain separate from the proposed website content.",
+        "route": "/areas/north-carolina/tyrrell-county/",
+        "inputHash": "9b82cbfaf90d4857f730b78c0a94acabd01e653958460f001d03593fdfe3ca2f"
+      },
+      "after": {
+        "heading": "Give shipped workshop supplies a participant and session.",
+        "intro": "A box sent ahead to a school must be connected to the person and workshop expecting it. Place package identification and delivery instructions with the materials list so students can prepare one coherent shipment.",
+        "customerQuestion": "How should I label and send supplies for my workshop?",
+        "decisions": [
+          {
+            "label": "Start with the workshop",
+            "body": "Keep the participant name and selected session on the materials instructions. Distinguish supplies the student must bring or order from materials the class provides. A supplier ordering on the student’s behalf should receive the same identifying information."
+          },
+          {
+            "label": "Choose the correct delivery route",
+            "body": "Pocosin’s instructions checked October 27, 2026 use 202 Main Street, Columbia, NC 27925 for street-address shipments, but PO Box 690, Columbia, NC 27925 for USPS. An illustrative USPS label is: “Pocosin Arts / [participant name] — [workshop session] / PO Box 690 / Columbia, NC 27925.” The bracketed fields are placeholders. For a shipment using the published street route, replace the PO Box line with 202 Main Street; confirm the carrier and receiving instructions with the school before sending."
+          },
+          {
+            "label": "Resolve missing preparation details",
+            "body": "Give students a contact for questions about supplies or shipments before travel. Ask them to include their name, session and the unresolved item so staff can understand the question without reconstructing which workshop they booked."
+          }
+        ],
+        "ownerInputs": [
+          "Current materials lists and personal-versus-class supply responsibilities.",
+          "Approved package label examples and delivery-method addresses.",
+          "The preparation contact and current receiving instructions."
+        ],
+        "sourceBridge": "Pocosin Arts School of Fine Craft’s workshop FAQ, checked October 27, 2026, asks for the participant’s name and session on packages and gives different USPS and street-address destinations. Those details belong with the selected workshop’s materials instructions.",
+        "limits": "The school confirms what it can receive and how supplies are handled. An address instruction does not confirm delivery or workshop enrollment. Shipping, purchases and package tracking remain separate from the proposed website content.",
+        "route": "/areas/north-carolina/tyrrell-county/",
+        "inputHash": "9b82cbfaf90d4857f730b78c0a94acabd01e653958460f001d03593fdfe3ca2f"
+      },
+      "beforeSha256": "315b97752bde42617e2593ccabee78af66343091ec8da3f0574103f5745990ef",
+      "afterSha256": "4dd6ad6f6f16e0c2b04cb56984b7f8ccc220d9defc5bfd5d4c4c97cfc8eadde9",
+      "requiredFixes": [
+        "Verify postal versus street shipment instructions and provide a labelled package-address example with fictional participant/session placeholders. Keep actual carrier/delivery distinctions and no receipt/enrollment guarantee."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/vance-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep the award message distinct from the sample plaque.",
+        "intro": "An organizer may like a plaque photograph without having settled its inscription. A clear inquiry preserves the recognition purpose, selected object and exact wording as separate decisions for review.",
+        "customerQuestion": "How do I describe the plaque I want and the words it should carry?",
+        "decisions": [
+          {
+            "label": "Name the occasion",
+            "body": "Ask what is being recognized and who the presentation is for. Label examples by their purpose, such as retirement or an employee award, so customers can find a relevant starting point without treating the sample inscription as their own finished message."
+          },
+          {
+            "label": "Identify the physical plaque",
+            "body": "Keep the catalog reference, preferred size and color together. Explain which choices the shop currently offers and which still need discussion. A change to the object should remain visible without silently replacing the recipient details supplied earlier."
+          },
+          {
+            "label": "Preserve exact text for review",
+            "body": "Separate recipient names, dates and intended wording from illustrative copy. Explain who will review the message and visual layout before production. Use fictional or anonymized examples to show the difference between a recognition brief and text ready for approval."
+          }
+        ],
+        "ownerInputs": [
+          "Current plaque references, sizes and appearance options.",
+          "Anonymized examples distinguishing occasion from exact inscription.",
+          "Text-preparation guidance and the actual design approval process."
+        ],
+        "sourceBridge": "Screen Master in Henderson describes customized plaque color, size and engraving and lists several recognition categories. The combination supports a website example that connects the reason for an award with its physical and written details.",
+        "limits": "The shop confirms product availability, layout and engraving requirements. The customer remains responsible for final recipient details and wording approval. Product-ordering and approval-record systems are separate from clarifying the existing inquiry.",
+        "route": "/areas/north-carolina/vance-county/",
+        "inputHash": "5abee0c6d56208e3116b94974e9fd413a19d406d2a7e3a5918ddebd4d483107b"
+      },
+      "after": {
+        "heading": "Keep the award message distinct from the sample plaque.",
+        "intro": "An organizer may like a plaque photograph without having settled its inscription. A clear inquiry preserves the recognition purpose, selected object and exact wording as separate decisions for review.",
+        "customerQuestion": "How do I describe the plaque I want and the words it should carry?",
+        "decisions": [
+          {
+            "label": "Name the occasion",
+            "body": "Ask what is being recognized and who the presentation is for. Label examples by their purpose, such as retirement or an employee award, so customers can find a relevant starting point without treating the sample inscription as their own finished message."
+          },
+          {
+            "label": "Identify the physical plaque",
+            "body": "Keep the catalog reference, preferred size and color together. Explain which choices the shop currently offers and which still need discussion. A change to the object should remain visible without silently replacing the recipient details supplied earlier."
+          },
+          {
+            "label": "Preserve exact text for review",
+            "body": "Fictional recognition brief: a volunteer thank-you for the invented recipient Morgan Vale. Proposed inscription fields: recipient “Morgan Vale”; message “Thank you for five years of service”; date “June 12, 2027”; status “draft—recipient details and layout not approved.” Keep the chosen plaque reference and preferred size in separate fields. The invented wording illustrates what must be checked; it does not establish stock, engraving fit or permission to produce."
+          }
+        ],
+        "ownerInputs": [
+          "Current plaque references, sizes and appearance options.",
+          "Anonymized examples distinguishing occasion from exact inscription.",
+          "Text-preparation guidance and the actual design approval process."
+        ],
+        "sourceBridge": "Screen Master in Henderson describes customized plaque color, size and engraving and lists several recognition categories. The combination supports a website example that connects the reason for an award with its physical and written details.",
+        "limits": "The shop confirms product availability, layout and engraving requirements. The customer remains responsible for final recipient details and wording approval. Product-ordering and approval-record systems are separate from clarifying the existing inquiry.",
+        "route": "/areas/north-carolina/vance-county/",
+        "inputHash": "5abee0c6d56208e3116b94974e9fd413a19d406d2a7e3a5918ddebd4d483107b"
+      },
+      "beforeSha256": "aee1c209cdad159c6d8e41c16f9b5d6fda2a1366db7eab46428aa55bf5189983",
+      "afterSha256": "e5c356aaee354d2a61f8f1597b146ea4a8c98b6d82b06e843be3b7ca461b8b55",
+      "requiredFixes": [
+        "Provide an explicitly fictional recognition brief and separate exact inscription fields using invented names/date, including approval status. Preserve object reference/size independently and do not imply stock or automatic engraving fit."
+      ]
+    },
+    {
+      "route": "/areas/north-carolina/washington-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep the trailer reference and yard together.",
+        "intro": "A trailer photograph may identify a current unit, a sold example or a configuration to discuss as a custom order. Explain that status before travel so a buyer can ask about the intended yard without assuming the pictured trailer is there.",
+        "customerQuestion": "Is this unit available at Plymouth, or should I ask about a similar order?",
+        "decisions": [
+          {
+            "label": "Retain the stock reference",
+            "body": "Show the number or stable identifier beside the listing and carry it into the sales inquiry. Let a buyer identify which trailer prompted the question. A model image alone may not distinguish one physical unit from another with similar features."
+          },
+          {
+            "label": "Explain the listing’s status",
+            "body": "Use clear current, sold or example labels and the appropriate next action. A sold unit can still help describe desired features, but it should lead to a similar-configuration discussion rather than an implied purchase of that exact trailer. An empty inventory response should invite confirmation, not an invented stock conclusion."
+          },
+          {
+            "label": "Confirm the yard before the visit",
+            "body": "Keep the intended location with the reference and use its actual contact. Explain the current yard-purchase and custom-order routes. Staff should confirm where the unit can be viewed and what remains to arrange before the buyer travels."
+          }
+        ],
+        "ownerInputs": [
+          "Current stock identifiers and status conventions.",
+          "Actual custom-order offer and inventory-route wording.",
+          "Accurate yard contacts and viewing-confirmation instructions."
+        ],
+        "sourceBridge": "910 Trailers lists Plymouth and Pink Hill yards, stock references, sold examples and custom orders. The supplied check of its Plymouth inventory route returned no listings, so that evidence does not establish present availability.",
+        "limits": "Dealer staff confirm the unit, location and purchase arrangement. Content does not synchronize stock or reserve a viewing. Custom-build quoting, financing and appointment systems require separate scope.",
+        "route": "/areas/north-carolina/washington-county/",
+        "inputHash": "68fb8bfbe5ccb78d53adb7eeff6e5a1b82bb020553bc63e4b25359c48d52655b"
+      },
+      "after": {
+        "heading": "Keep the trailer reference and yard together.",
+        "intro": "A trailer photograph may identify a current unit, a sold example or a configuration to discuss as a custom order. Explain that status before travel so a buyer can ask about the intended yard without assuming the pictured trailer is there.",
+        "customerQuestion": "Is this unit available at Plymouth, or should I ask about a similar order?",
+        "decisions": [
+          {
+            "label": "Retain the stock reference",
+            "body": "Show the number or stable identifier beside the listing and carry it into the sales inquiry. Let a buyer identify which trailer prompted the question. A model image alone may not distinguish one physical unit from another with similar features."
+          },
+          {
+            "label": "Explain the listing’s status",
+            "body": "Use clear current, sold or example labels and the appropriate next action. A sold unit can still help describe desired features, but it should lead to a similar-configuration discussion rather than an implied purchase of that exact trailer. An empty inventory response should invite confirmation, not an invented stock conclusion."
+          },
+          {
+            "label": "Confirm the yard before the visit",
+            "body": "Keep the intended location with the reference and use its actual contact. Explain the current yard-purchase and custom-order routes. Staff should confirm where the unit can be viewed and what remains to arrange before the buyer travels."
+          }
+        ],
+        "ownerInputs": [
+          "Current stock identifiers and status conventions.",
+          "Actual custom-order offer and inventory-route wording.",
+          "Accurate yard contacts and viewing-confirmation instructions."
+        ],
+        "sourceBridge": "910 Trailers lists Plymouth and Pink Hill yards, stock references, sold examples and custom orders. On October 23, 2026, its Plymouth inventory route returned no listed stock in the response checked. That observation does not confirm whether a particular trailer is currently available; ask the yard about the exact reference.",
+        "limits": "Dealer staff confirm the unit, location and purchase arrangement. Content does not synchronize stock or reserve a viewing. Custom-build quoting, financing and appointment systems require separate scope.",
+        "route": "/areas/north-carolina/washington-county/",
+        "inputHash": "68fb8bfbe5ccb78d53adb7eeff6e5a1b82bb020553bc63e4b25359c48d52655b"
+      },
+      "beforeSha256": "3f69d30fb7a2d9a3e67300b3b6e042ed7a2495f76add6a430cf2ed0eea8aa774",
+      "afterSha256": "a7b60667bc64f21591b0de0fc9ff1f80cf5dec79214553dd0c483e1ded136bb9",
+      "requiredFixes": [
+        "Replace “The supplied check of its Plymouth inventory route” with a direct dated statement describing the observed response. Preserve the explicit lack of current stock confirmation."
+      ]
+    },
+    {
+      "route": "/areas/ohio/fayette-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Keep garment quantities separate from each decoration placement.",
+        "intro": "A coordinated apparel request can contain several garments, sizes and designs. Explain how those parts fit together so a total quantity does not obscure what appears on the front, back or another location.",
+        "customerQuestion": "How should I describe shirts and hats that share a brand but use different artwork placements?",
+        "decisions": [
+          {
+            "label": "Identify the garment groups",
+            "body": "Keep item type and intended garment color together, then show the known size quantities within each group. Allow uncertain details to remain open for discussion. A single total may be useful, but it should not replace the breakdown staff needs to understand mixed items."
+          },
+          {
+            "label": "Describe every placement",
+            "body": "Ask what appears at each requested location and which artwork reference belongs there. Keep print colors distinct from garment colors. A front logo and a back design are separate decoration details even when they appear on the same batch of shirts."
+          },
+          {
+            "label": "Use examples to show the order structure",
+            "body": "Caption printed and embroidered work with its garment and locations. Explain how related pieces belong to one request without making their decoration identical. A shirts-and-hats inquiry can preserve shared branding while clearly marking differences for the shop’s final review."
+          }
+        ],
+        "ownerInputs": [
+          "Current apparel offer and actual quantity and placement questions.",
+          "Approved mixed-order examples with decoration-role captions.",
+          "Design-support boundaries and responsibility for the final breakdown."
+        ],
+        "sourceBridge": "Dixon Printing & Embroidery identifies its Washington Court House business and asks separately about print locations, colors at each location, garment colors and size quantities. The Fayette County Chamber also lists the local business, supporting the example’s geographic connection.",
+        "limits": "The shop confirms artwork, garments, methods and accepted production details. Content can prepare an ordinary quote inquiry. Bulk-order calculators, team stores, live garment stock and automated artwork checking require separate scope; a shared logo does not settle every placement.",
+        "route": "/areas/ohio/fayette-county/",
+        "inputHash": "b3ab96f754abcca39f007659f87d0989a59d87c2bf40159f1ce3ffd75ce8dabf"
+      },
+      "after": {
+        "heading": "Keep garment quantities separate from each decoration placement.",
+        "intro": "A coordinated apparel request can contain several garments, sizes and designs. Explain how those parts fit together so a total quantity does not obscure what appears on the front, back or another location.",
+        "customerQuestion": "How should I describe shirts and hats that share a brand but use different artwork placements?",
+        "decisions": [
+          {
+            "label": "Identify the garment groups",
+            "body": "Keep item type and intended garment color together, then show the known size quantities within each group. Allow uncertain details to remain open for discussion. A single total may be useful, but it should not replace the breakdown staff needs to understand mixed items."
+          },
+          {
+            "label": "Describe every placement",
+            "body": "Ask what appears at each requested location and which artwork reference belongs there. Keep print colors distinct from garment colors. A front logo and a back design are separate decoration details even when they appear on the same batch of shirts."
+          },
+          {
+            "label": "Use examples to show the order structure",
+            "body": "Fictional mixed order: 12 navy shirts (four small, five medium and three large) plus six gray adjustable hats. Proposed shirt artwork: white logo on the front and white event wording on the back. Proposed hat artwork: the logo on the front only, with decoration color still undecided. Garment colors, size counts and artwork per placement are separate information. These invented counts and colors are not order minimums or accepted production specifications; the shop reviews the products and decoration method."
+          }
+        ],
+        "ownerInputs": [
+          "Current apparel offer and actual quantity and placement questions.",
+          "Approved mixed-order examples with decoration-role captions.",
+          "Design-support boundaries and responsibility for the final breakdown."
+        ],
+        "sourceBridge": "Dixon Printing & Embroidery identifies its Washington Court House business and asks separately about print locations, colors at each location, garment colors and size quantities. The Fayette County Chamber also lists the local business, supporting the example’s geographic connection.",
+        "limits": "The shop confirms artwork, garments, methods and accepted production details. Content can prepare an ordinary quote inquiry. Bulk-order calculators, team stores, live garment stock and automated artwork checking require separate scope; a shared logo does not settle every placement.",
+        "route": "/areas/ohio/fayette-county/",
+        "inputHash": "b3ab96f754abcca39f007659f87d0989a59d87c2bf40159f1ce3ffd75ce8dabf"
+      },
+      "beforeSha256": "e36516c5dbe1246a39eb69ef6f3a97cdffa4647315e2d2eb3f937d9081213852",
+      "afterSha256": "aa877c61af5b61e18c90b7f00fa8f00a14389e3f6cdd44a15f0fa5ac106b8c5b",
+      "requiredFixes": [
+        "Add a clearly fictional mixed shirts-and-hats brief with separate garment/size counts and artwork per placement, explicitly not minimums or accepted specifications. Keep garment colors separate from decoration colors and require shop review."
+      ]
+    },
+    {
+      "route": "/areas/ohio/fulton-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Describe one complete printed set before counting sheets.",
+        "intro": "A ticket, receipt form or reply piece has a job after printing. Explain what belongs together, which numbers relate and what comes apart so customers can describe the intended use without guessing finishing terminology.",
+        "customerQuestion": "How should I explain numbered forms with parts that stay together or detach?",
+        "decisions": [
+          {
+            "label": "Identify one usable unit",
+            "body": "Show a labeled finished set and ask which sheets or parts are used together. Distinguish the number of complete units from a total sheet count. A customer requesting receipt forms needs a way to describe the structure before production details are agreed."
+          },
+          {
+            "label": "Explain numbering relationships",
+            "body": "Invite a known starting reference and describe how the shop discusses sequences or repeated numbers. Ask which parts share an identifier. Finished artwork can still leave those relationships unclear, so the numbering question belongs with the set rather than as an isolated file note."
+          },
+          {
+            "label": "Show what remains attached",
+            "body": "Use approved examples to explain padding, binding and perforation through their actual purpose. Identify what is removed, kept or returned and when separation happens. A detachable reply section should be discussed before layout is treated as final, without requiring the buyer to prescribe the production method."
+          }
+        ],
+        "ownerInputs": [
+          "Current numbering and finishing services.",
+          "Permitted examples identifying sets, numbering and separation points.",
+          "Preparation instructions and the reviewer for functional print requirements."
+        ],
+        "sourceBridge": "Tomahawk Printing lists its Wauseon shop and describes numbering, padding, perforation and other finishing services. These capabilities provide a concrete basis for explaining how a printed object works after it leaves the press.",
+        "limits": "The printer confirms page arrangement, numbering, finishing and feasibility. Content can prepare the existing inquiry. Variable-data systems, automatic sequence validation and production integrations require separate scope; a use description does not itself approve the final production specification.",
+        "route": "/areas/ohio/fulton-county/",
+        "inputHash": "a50441051bae94341cd0e6b28c341dd0107ed58dd2c4df996de7a7eb6bea9b83"
+      },
+      "after": {
+        "heading": "Describe one complete printed set before counting sheets.",
+        "intro": "A ticket, receipt form or reply piece has a job after printing. Explain what belongs together, which numbers relate and what comes apart so customers can describe the intended use without guessing finishing terminology.",
+        "customerQuestion": "How should I explain numbered forms with parts that stay together or detach?",
+        "decisions": [
+          {
+            "label": "Identify one usable unit",
+            "body": "Show a labeled finished set and ask which sheets or parts are used together. Distinguish the number of complete units from a total sheet count. A customer requesting receipt forms needs a way to describe the structure before production details are agreed."
+          },
+          {
+            "label": "Show one complete printed unit",
+            "body": "Fictional unit DEMO-021 has a main record and a detachable receipt, both carrying the same illustrative identifier. The receipt is handed to the customer; the main record stays with the issuing organization. A request for 50 such units means 50 complete sets, not 50 sheets. The example does not prescribe how sheets, copies or detachment are produced, and its invented identifier is not an approved numbering specification."
+          },
+          {
+            "label": "Show what remains attached",
+            "body": "Use approved examples to explain padding, binding and perforation through their actual purpose. Identify what is removed, kept or returned and when separation happens. A detachable reply section should be discussed before layout is treated as final, without requiring the buyer to prescribe the production method."
+          }
+        ],
+        "ownerInputs": [
+          "Current numbering and finishing services.",
+          "Permitted examples identifying sets, numbering and separation points.",
+          "Preparation instructions and the reviewer for functional print requirements."
+        ],
+        "sourceBridge": "Tomahawk Printing lists its Wauseon shop and describes numbering, padding, perforation and other finishing services. These capabilities provide a concrete basis for explaining how a printed object works after it leaves the press.",
+        "limits": "The printer confirms page arrangement, numbering, finishing and feasibility. Content can prepare the existing inquiry. Variable-data systems, automatic sequence validation and production integrations require separate scope; a use description does not itself approve the final production specification.",
+        "route": "/areas/ohio/fulton-county/",
+        "inputHash": "a50441051bae94341cd0e6b28c341dd0107ed58dd2c4df996de7a7eb6bea9b83"
+      },
+      "beforeSha256": "dc8eb7200a31c46d0f234bc78fd1d4c77ef85f580dfde2f8d5215cc79024d4ad",
+      "afterSha256": "345dad751fcf7836a1f8840e8b132913ba68aa9c8ca7410010d799b62b0624f8",
+      "requiredFixes": [
+        "Provide a labelled fictional complete printed unit showing which pieces share an identifier and which detach/remain, with units distinct from sheets. Avoid specifying unverified production methods or implying accepted numbering checks."
+      ]
+    },
+    {
+      "route": "/areas/ohio/marion-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Describe what the recipient should receive, then decide who mails it.",
+        "intro": "A print file can show artwork without explaining the complete mailing. Connect printed pieces, enclosures and the final handoff so a customer can request printing alone or discuss additional mailing work.",
+        "customerQuestion": "Can you print our inserts while we handle distribution ourselves?",
+        "decisions": [
+          {
+            "label": "Identify the printed work",
+            "body": "Invite the project purpose, audience, quantity and what artwork already exists. Explain where design help fits the current offer. Keep a description beside transferred files so staff can understand the requested work without treating the attachment as a complete production brief."
+          },
+          {
+            "label": "Show the complete unit",
+            "body": "Use an approved fictional example to explain which items should arrive together. A letter and enclosure can form one mailing even when they have separate files. Ask what belongs inside each unit and explain who reviews assembly requirements before production."
+          },
+          {
+            "label": "Clarify addressing and handoff",
+            "body": "Ask whether the buyer will collect finished print or wants the printer to handle mailing. Identify who holds recipient information and explain the approved way to discuss its transfer. A customer preparing their own distribution should not accidentally request addressing or postal delivery."
+          }
+        ],
+        "ownerInputs": [
+          "Current print, assembly and mailing services.",
+          "An approved fictional example with all included pieces.",
+          "Actual addressing, data-transfer and fulfillment responsibilities."
+        ],
+        "sourceBridge": "Laipply’s lists 270 East Center Street in Marion. Its services include printing, design, bindery, mail assembly, addressing and delivery to the post office; it also asks customers to describe the job when transferring files. That makes the complete mailing unit a useful inquiry starting point.",
+        "limits": "The printer confirms postal requirements, production scope and data-transfer arrangements. Content can prepare a general inquiry without approving a mailing. Recipient databases, campaign automation and postal-system integrations require separate scope; public examples should use fictional recipient information.",
+        "route": "/areas/ohio/marion-county/",
+        "inputHash": "82ae5915e092431aefc8623f96d64046c6e9e6814538765b1f2c42b0b2277e67"
+      },
+      "after": {
+        "heading": "Describe what the recipient should receive, then decide who mails it.",
+        "intro": "A print file can show artwork without explaining the complete mailing. Connect printed pieces, enclosures and the final handoff so a customer can request printing alone or discuss additional mailing work.",
+        "customerQuestion": "Can you print our inserts while we handle distribution ourselves?",
+        "decisions": [
+          {
+            "label": "Identify the printed work",
+            "body": "Invite the project purpose, audience, quantity and what artwork already exists. Explain where design help fits the current offer. Keep a description beside transferred files so staff can understand the requested work without treating the attachment as a complete production brief."
+          },
+          {
+            "label": "Show the complete unit",
+            "body": "Fictional mailing unit: one letter and one information insert inside an envelope. The buyer supplies the two print files and asks the printer to quote printing and assembly; the buyer plans to collect the completed units and handle addressing and distribution. No recipient data is included in this public example. If the buyer instead wants the printer to address and mail them, those are additional responsibilities to discuss, not automatic inclusions or postal approval."
+          },
+          {
+            "label": "Clarify addressing and handoff",
+            "body": "Ask whether the buyer will collect finished print or wants the printer to handle mailing. Identify who holds recipient information and explain the approved way to discuss its transfer. A customer preparing their own distribution should not accidentally request addressing or postal delivery."
+          }
+        ],
+        "ownerInputs": [
+          "Current print, assembly and mailing services.",
+          "An approved fictional example with all included pieces.",
+          "Actual addressing, data-transfer and fulfillment responsibilities."
+        ],
+        "sourceBridge": "Laipply’s lists 270 East Center Street in Marion. Its services include printing, design, bindery, mail assembly, addressing and delivery to the post office; it also asks customers to describe the job when transferring files. That makes the complete mailing unit a useful inquiry starting point.",
+        "limits": "The printer confirms postal requirements, production scope and data-transfer arrangements. Content can prepare a general inquiry without approving a mailing. Recipient databases, campaign automation and postal-system integrations require separate scope; public examples should use fictional recipient information.",
+        "route": "/areas/ohio/marion-county/",
+        "inputHash": "82ae5915e092431aefc8623f96d64046c6e9e6814538765b1f2c42b0b2277e67"
+      },
+      "beforeSha256": "6a24da15d24b73a0ec279dd7be6cbce163ad6520f89b62933b926df8198a8d93",
+      "afterSha256": "3c5ec946554ef713dd7f48210994cafe54b3907978f2379a0e0e290afc708417",
+      "requiredFixes": [
+        "Add a clearly fictional mailing-unit example identifying each included piece and separate print/assembly/addressing/distribution responsibilities. Do not use real recipient data or imply postal approval or an offered quantity/minimum."
+      ]
+    },
+    {
+      "route": "/areas/ohio/ottawa-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain course starting points before a student chooses a workshop.",
+        "intro": "Experience sewing clothing and experience fabricating marine canvas raise different training questions. Put the school’s current guidance beside course descriptions so students can describe their background and learning goal before using registration.",
+        "customerQuestion": "Does my sewing experience mean I am ready for an advanced marine-canvas workshop?",
+        "decisions": [
+          {
+            "label": "Invite the relevant experience",
+            "body": "Ask what the student has made and which skill they want to learn. Explain the distinction between sewing in another field and canvas fabrication using the school’s approved guidance. Prior experience can inform a conversation without automatically establishing readiness for a particular course."
+          },
+          {
+            "label": "Show the course relationships",
+            "body": "Describe the starting course and how later workshops relate to earlier training. Keep taught topics, preparation and current requirements clear. A continuing student should be able to connect completed training to the next goal without interpreting the schedule alone as a placement recommendation."
+          },
+          {
+            "label": "Connect uncertain fit to an instructor",
+            "body": "Preserve the school’s actual placement-discussion route for experienced canvas makers and others with unresolved questions. Keep that route linked to the current schedule and registration. Explain who confirms fit so a visitor can ask before choosing a workshop that may not suit their background."
+          }
+        ],
+        "ownerInputs": [
+          "Current course descriptions, prerequisites and sequence.",
+          "Instructor questions about previous work and learning goals.",
+          "Approved classroom examples and actual placement and registration roles."
+        ],
+        "sourceBridge": "Northcoast Marine Specialties lists its training location on SE Catawba Road in Port Clinton. It distinguishes sewing from canvas-fabrication experience, publishes an ordered workshop progression and directs experienced fabricators to an instructor for placement, giving the guidance a concrete local basis.",
+        "limits": "The school determines placement and current requirements. Content explains the existing instructor and enrollment conversation; it is not a skills assessment. Skills testing, student records, learning platforms and registration-system changes require separate scope, and course fit remains distinct from current availability.",
+        "route": "/areas/ohio/ottawa-county/",
+        "inputHash": "0b4dd1029f58e07356eb1743a9ea94c6bacf5ff8f9316d7e0eb26229e2032ce6"
+      },
+      "after": {
+        "heading": "Explain course starting points before a student chooses a workshop.",
+        "intro": "Experience sewing clothing and experience fabricating marine canvas raise different training questions. Put the school’s current guidance beside course descriptions so students can describe their background and learning goal before using registration.",
+        "customerQuestion": "Does my sewing experience mean I am ready for an advanced marine-canvas workshop?",
+        "decisions": [
+          {
+            "label": "Invite the relevant experience",
+            "body": "Northcoast’s FAQ, checked October 27, 2026, recommends the Basic Workshop for newcomers to canvas fabrication even if they have sewn clothing, draperies or factory piecework. A clothing-sewing background therefore does not by itself place someone in Advanced Canvas. Ask what the student has made and what they want to learn."
+          },
+          {
+            "label": "Show the course relationships",
+            "body": "The published sequence names Basic Canvas, Advanced Canvas and Bimini Enclosure before later marine upholstery or rigid-enclosure study. Show those course names beside the relevant preparation guidance. This is a learning-path explanation, not a statement that every learner must repeat all earlier classes: experienced canvas fabricators are directed to an instructor for placement before scheduling."
+          },
+          {
+            "label": "Connect uncertain fit to an instructor",
+            "body": "Give students the instructor contact for unresolved placement questions and keep the current class schedule separately accessible. Once the instructor advises on fit, the student still needs to check dates and enrollment availability; a learning-path recommendation does not reserve a place."
+          }
+        ],
+        "ownerInputs": [
+          "Current course descriptions, prerequisites and sequence.",
+          "Instructor questions about previous work and learning goals.",
+          "Approved classroom examples and actual placement and registration roles."
+        ],
+        "sourceBridge": "Northcoast Marine Specialties lists its Port Clinton training location on SE Catawba Road. Its FAQ and learning path, checked October 27, 2026, distinguish general sewing from canvas fabrication and name the workshop progression and instructor-placement route.",
+        "limits": "The school determines placement and current requirements. Content explains the existing instructor and enrollment conversation; it is not a skills assessment. Skills testing, student records, learning platforms and registration-system changes require separate scope, and course fit remains distinct from current availability.",
+        "route": "/areas/ohio/ottawa-county/",
+        "inputHash": "0b4dd1029f58e07356eb1743a9ea94c6bacf5ff8f9316d7e0eb26229e2032ce6"
+      },
+      "beforeSha256": "0b6f80a7b66c827461425e7f00c1f177002619b188b47fe2e8f2f995d5d73115",
+      "afterSha256": "51edc73dde7161dcd27a94ddb024604989862be58aae7262a50d4d16a9771979",
+      "requiredFixes": [
+        "Verify the current official learning path and add a concise dated example using actual course names and the relevant starting-point distinction. Preserve instructor placement authority and do not equate experience, prerequisites or course fit with availability."
+      ]
+    },
+    {
+      "route": "/areas/ohio/perry-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Show the existing memorial separately from the proposed addition.",
+        "intro": "An inscription, portrait or plaque request begins with the memorial already in place. Explain the photographs, current details and site information that let a family describe an addition without confusing new wording with what should remain.",
+        "customerQuestion": "How do I show which inscription is already there and which words we want added?",
+        "decisions": [
+          {
+            "label": "Identify the existing memorial",
+            "body": "Explain the description and photographs the business actually requests, together with the cemetery or location information. Keep current inscriptions and other features identifiable. A customer should be able to establish which piece is being discussed before selecting an example of possible new work."
+          },
+          {
+            "label": "Describe the proposed addition",
+            "body": "Separate new wording, portrait references or plaque ideas from existing content. Explain the offered kinds of additions and the review process in approved terms. A family can state what it wants discussed while preserving the original details that are intended to remain unchanged."
+          },
+          {
+            "label": "Connect examples to assessment",
+            "body": "Caption permitted projects with the actual addition performed and the relevant context. Invite outstanding site and placement questions through the existing inquiry route. A photograph can introduce a similar request without replacing the specialist’s examination of the current memorial or confirmation of site arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted addition work and approved photograph prompts.",
+          "Permitted examples identifying what was actually added.",
+          "Current review process and required site information."
+        ],
+        "sourceBridge": "Quality Monument Services lists 430 Swigart Street in New Lexington. Its existing-memorial work includes onsite engraving, portrait options, plaques and repair, providing a concrete basis for distinguishing proposed additions from the memorial and wording already present.",
+        "limits": "The memorial specialist confirms condition, accepted work and site arrangements, and handles engraving, restoration and coordination. Content prepares the initial conversation without approving placement or wording. Website approval tools and site-management connections require separately agreed scope; examples remain subject to individual assessment.",
+        "route": "/areas/ohio/perry-county/",
+        "inputHash": "66095f2ef93e364830fd4a4bc81c09853acd80ab3e531f23f8e581aa0066d2ca"
+      },
+      "after": {
+        "heading": "Show the existing memorial separately from the proposed addition.",
+        "intro": "An inscription, portrait or plaque request begins with the memorial already in place. Explain the photographs, current details and site information that let a family describe an addition without confusing new wording with what should remain.",
+        "customerQuestion": "How do I show which inscription is already there and which words we want added?",
+        "decisions": [
+          {
+            "label": "Identify the existing memorial",
+            "body": "Explain the description and photographs the business actually requests, together with the cemetery or location information. Keep current inscriptions and other features identifiable. A customer should be able to establish which piece is being discussed before selecting an example of possible new work."
+          },
+          {
+            "label": "Describe the proposed addition",
+            "body": "Fictional preparation example: existing content “In loving memory” is to remain unchanged; proposed addition “Always in our hearts” is a new line for discussion. Keep the current memorial photograph labelled “existing” and the new wording labelled “draft—not approved.” Record cemetery and placement questions separately for the specialist. These invented phrases contain no real family details and do not approve a layout or establish that an addition is suitable."
+          },
+          {
+            "label": "Connect examples to assessment",
+            "body": "Caption permitted projects with the actual addition performed and the relevant context. Invite outstanding site and placement questions through the existing inquiry route. A photograph can introduce a similar request without replacing the specialist’s examination of the current memorial or confirmation of site arrangements."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted addition work and approved photograph prompts.",
+          "Permitted examples identifying what was actually added.",
+          "Current review process and required site information."
+        ],
+        "sourceBridge": "Quality Monument Services lists 430 Swigart Street in New Lexington. Its existing-memorial work includes onsite engraving, portrait options, plaques and repair, providing a concrete basis for distinguishing proposed additions from the memorial and wording already present.",
+        "limits": "The memorial specialist confirms condition, accepted work and site arrangements, and handles engraving, restoration and coordination. Content prepares the initial conversation without approving placement or wording. Website approval tools and site-management connections require separately agreed scope; examples remain subject to individual assessment.",
+        "route": "/areas/ohio/perry-county/",
+        "inputHash": "66095f2ef93e364830fd4a4bc81c09853acd80ab3e531f23f8e581aa0066d2ca"
+      },
+      "beforeSha256": "18042abac1e9f0d44b45319c954adc3ab91cff22cfb5fbfecdad07f6d61491dc",
+      "afterSha256": "a2035063bda4adb269d7de9690cde11cde5beccf81da3ff7876fa7470ed84ccc",
+      "requiredFixes": [
+        "Add a clearly fictional, non-identifying existing-versus-proposed inscription brief with retained content, new words and unresolved site review labelled separately. Avoid real family names or implying approval."
+      ]
+    },
+    {
+      "route": "/areas/ohio/pike-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain which frame measurement relates to the art tile.",
+        "intro": "A frame’s outside appearance does not establish whether a particular tile fits. Label the object, opening and arrangement so a customer can compare a listing or ask a sizing question with the right reference.",
+        "customerQuestion": "Does this frame fit my tile, or am I looking at its outside dimensions?",
+        "decisions": [
+          {
+            "label": "Identify the actual tile",
+            "body": "Invite the maker or product reference and the tile information requested by the frame maker. Name the tile family a listed frame is designed for. A visually similar object should not automatically be treated as the product the listing describes."
+          },
+          {
+            "label": "Label the opening and arrangement",
+            "body": "Explain what each published measurement refers to, including the relevant rear opening where used. Keep tile dimensions distinct from frame measurements. Show whether a product has one or multiple openings so a customer with two tiles can describe their intended relationship before choosing a listing."
+          },
+          {
+            "label": "Connect appearance and sizing questions",
+            "body": "Tie wood, finish and style examples to the frame under discussion. Explain current custom-size arrangements and the information needed when the object differs from a listed tile. The customer can ask about an unusual size while leaving fit and construction for the maker’s review."
+          }
+        ],
+        "ownerInputs": [
+          "Current product dimensions and the meaning of each measurement.",
+          "Accurate tile-family and single- or multiple-opening descriptions.",
+          "Approved images and current custom-size inquiry requirements."
+        ],
+        "sourceBridge": "Family Woodworks lists 286 Taylor Hollow Road in Piketon. It offers frames for Rookwood art tiles, including single and multiple openings, distinguishes a rear opening measurement from tile size and invites custom-frame questions. These details make measurement labels especially useful.",
+        "limits": "The frame maker confirms fit, mounting and fabrication. Content can clarify existing product and contact routes without establishing suitability from a photograph. A configurator or new ordering workflow requires separately agreed website scope; proposed tile arrangements remain subject to the maker’s review.",
+        "route": "/areas/ohio/pike-county/",
+        "inputHash": "3da9cf1583da86d55fc4dec166e6966470def1c68e823caa5e6843a04e4b34e6"
+      },
+      "after": {
+        "heading": "Explain which frame measurement relates to the art tile.",
+        "intro": "A frame’s outside appearance does not establish whether a particular tile fits. Label the object, opening and arrangement so a customer can compare a listing or ask a sizing question with the right reference.",
+        "customerQuestion": "Does this frame fit my tile, or am I looking at its outside dimensions?",
+        "decisions": [
+          {
+            "label": "Identify the actual tile",
+            "body": "Invite the maker or product reference and the tile information requested by the frame maker. Name the tile family a listed frame is designed for. A visually similar object should not automatically be treated as the product the listing describes."
+          },
+          {
+            "label": "Label the opening and arrangement",
+            "body": "The Oak Park example checked October 27, 2026 labels an 8¼ by 8¼ inch rear opening for an 8 by 8 inch Rookwood art tile. Those are two different measurements; neither is the frame’s outside size. The maker asks customers to confirm their actual tile measurements. Keep this named example separate from other sizes and from single- or multiple-opening arrangements, with fit confirmed for the actual tile."
+          },
+          {
+            "label": "Connect appearance and sizing questions",
+            "body": "Tie wood, finish and style examples to the frame under discussion. Explain current custom-size arrangements and the information needed when the object differs from a listed tile. The customer can ask about an unusual size while leaving fit and construction for the maker’s review."
+          }
+        ],
+        "ownerInputs": [
+          "Current product dimensions and the meaning of each measurement.",
+          "Accurate tile-family and single- or multiple-opening descriptions.",
+          "Approved images and current custom-size inquiry requirements."
+        ],
+        "sourceBridge": "Family Woodworks lists 286 Taylor Hollow Road in Piketon. Its Rookwood frame range includes single and multiple openings. The linked Oak Park listing, checked October 27, 2026, supplies the rear-opening and tile-size comparison above; it is a measurement example, not confirmation of current stock.",
+        "limits": "The frame maker confirms fit, mounting and fabrication. Content can clarify existing product and contact routes without establishing suitability from a photograph. A configurator or new ordering workflow requires separately agreed website scope; proposed tile arrangements remain subject to the maker’s review.",
+        "route": "/areas/ohio/pike-county/",
+        "inputHash": "3da9cf1583da86d55fc4dec166e6966470def1c68e823caa5e6843a04e4b34e6"
+      },
+      "beforeSha256": "8950dbef0c3f6367a36ccee26ec5fc17d817e3899e2570956c116feaa1207030",
+      "afterSha256": "6e530c46d64207de8bd7c16af3c8637c832cce2ae38c36abbc59770c0a8c6bd3",
+      "requiredFixes": [
+        "Verify the linked official labelled-frame example and state the actual rear-opening measurement separately from its intended tile size, with date and maker confirmation. Do not generalize it to every tile or frame or imply outside dimensions are known."
+      ]
+    },
+    {
+      "route": "/areas/ohio/sandusky-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Distinguish a supplied component from an operation that needs automation.",
+        "intro": "A buyer with a drawing may need a cut part, while a facility contact may need a production step redesigned. Explain the requested output before linking both inquiries to the engineering team.",
+        "customerQuestion": "Can I request a cut component without asking for the design of the whole machine?",
+        "decisions": [
+          {
+            "label": "Describe the component and further work",
+            "body": "Invite the available file, drawing, sketch or part idea and explain accepted references. Keep cutting distinct from requested machining or fabrication afterward. A buyer can identify the supplied state they need without accidentally treating one process as the entire contribution."
+          },
+          {
+            "label": "Identify assembly or operation-level needs",
+            "body": "Explain actual assembly support and the separate machine-building conversation. Ask which pieces belong together or which production or handling step needs review. A component photograph should not stand in for an automated system specification, even when the same business offers both services."
+          },
+          {
+            "label": "Caption contribution and location accurately",
+            "body": "Label approved examples with the part, assembly or machine work actually performed. Preserve before-and-after operation context for engineering discussion. Use Fremont for the verified municipality and Sandusky County for the county in headings, contact details and map links; Sandusky city is a different location in Erie County."
+          }
+        ],
+        "ownerInputs": [
+          "Current component, assembly and automation services.",
+          "Approved examples with accurate contribution captions.",
+          "First-contact questions for existing operations and verified location details."
+        ],
+        "sourceBridge": "KJ Engineering Design lists 2610 Hayes Avenue in Fremont. It offers cutting from files, drawings or sketches with further design, machining, fabrication and assembly support, alongside machine building, integration and material-handling automation. These outputs warrant distinct inquiry explanations.",
+        "limits": "The engineering team defines solutions, technical requirements, integration and performance. Content identifies the requested contribution without designing an automated system. New quotation tools or project portals require separately agreed website scope; service coverage should remain distinct from the address customers should visit.",
+        "route": "/areas/ohio/sandusky-county/",
+        "inputHash": "7951365eceeaab9807dad3653fcf0c6ae78c75f0471659024bd1f643ecb0550b"
+      },
+      "after": {
+        "heading": "Distinguish a supplied component from an operation that needs automation.",
+        "intro": "A buyer with a drawing may need a cut part, while a facility contact may need a production step redesigned. Explain the requested output before linking both inquiries to the engineering team.",
+        "customerQuestion": "Can I request a cut component without asking for the design of the whole machine?",
+        "decisions": [
+          {
+            "label": "Describe the component and further work",
+            "body": "Invite the available file, drawing, sketch or part idea and explain accepted references. Keep cutting distinct from requested machining or fabrication afterward. A buyer can identify the supplied state they need without accidentally treating one process as the entire contribution."
+          },
+          {
+            "label": "Identify assembly or operation-level needs",
+            "body": "Explain actual assembly support and the separate machine-building conversation. Ask which pieces belong together or which production or handling step needs review. A component photograph should not stand in for an automated system specification, even when the same business offers both services."
+          },
+          {
+            "label": "Caption the actual contribution",
+            "body": "Label approved examples as a cut part, a completed assembly or an automated operation, identifying what the engineering team actually supplied. A component buyer should see any later machining or assembly left to others; a facility contact should see the operation under discussion rather than infer a complete system from one part photograph."
+          }
+        ],
+        "ownerInputs": [
+          "Current component, assembly and automation services.",
+          "Approved examples with accurate contribution captions.",
+          "First-contact questions for existing operations and verified location details."
+        ],
+        "sourceBridge": "KJ Engineering Design lists 2610 Hayes Avenue in Fremont. It offers cutting from files, drawings or sketches with further design, machining, fabrication and assembly support, alongside machine building, integration and material-handling automation. These outputs warrant distinct inquiry explanations.",
+        "limits": "The engineering team defines solutions, technical requirements, integration and performance. Content identifies the requested contribution without designing an automated system. New quotation tools or project portals require separately agreed website scope.",
+        "route": "/areas/ohio/sandusky-county/",
+        "inputHash": "7951365eceeaab9807dad3653fcf0c6ae78c75f0471659024bd1f643ecb0550b"
+      },
+      "beforeSha256": "371cf01b7c52136e2826235bab315cb13e0125550e3da23d124e1160fc069641",
+      "afterSha256": "eed1ddeeb3afa438247c03ecd17623b907f14e02864a98e1771ad381b46f847f",
+      "requiredFixes": [
+        "Keep the substantive location FAQ once; remove its repeated Fremont/Sandusky-city instructions from the third decision and the coverage-versus-address sentence in limits. Let the third decision focus on part, assembly and automation contribution examples."
+      ]
+    },
+    {
+      "route": "/areas/ohio/vinton-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain fence components through the positions they serve.",
+        "intro": "A style and overall length do not describe every post in a proposed fence. Use an illustrative layout to help customers identify straight runs, turns and ends before the supplier reviews the actual material request.",
+        "customerQuestion": "How do I explain which posts are for straight sections and which belong at corners or ends?",
+        "decisions": [
+          {
+            "label": "Keep the selected system visible",
+            "body": "Name current component families and connect examples to the relevant fence system. Ask what the customer is considering and what information is known. The page should explain product relationships without letting one general post quantity stand for every position in the layout."
+          },
+          {
+            "label": "Show runs, turns and termination points",
+            "body": "Use approved diagrams to explain line, corner and end roles. Invite where the run continues, changes direction or stops, including questions beside an access opening. A buyer can describe these locations while leaving actual quantities and installation requirements for review."
+          },
+          {
+            "label": "Identify existing connections",
+            "body": "Explain how to provide the requested photographs or identifiers when extending a fence. Preserve where new work meets the existing section and any uncertain component combinations. Link that context to the current supply conversation rather than suggesting that a similar-looking example proves compatibility."
+          }
+        ],
+        "ownerInputs": [
+          "Current system and component names.",
+          "Approved illustrative layouts and accurate product diagrams.",
+          "Actual material-review process and guidance for identifying existing sections."
+        ],
+        "sourceBridge": "McArthur Lumber and Post lists its State Route 93 address in McArthur. Its split-rail range separates line, corner and end posts alongside rails, and a corner-post example explains the role at a change of direction. Those positions provide a concrete product explanation.",
+        "limits": "The supplier or installer confirms quantities, compatibility and installation requirements. Property owners and responsible site professionals resolve boundaries, measurements and design. An automated material calculator requires separate website scope; explanatory diagrams prepare a discussion rather than produce a finished material list.",
+        "route": "/areas/ohio/vinton-county/",
+        "inputHash": "b46af756ab878eb47fe5b5ac965bd34ca09317e0764d015a9e0c4963cffbc6aa"
+      },
+      "after": {
+        "heading": "Explain fence components through the positions they serve.",
+        "intro": "A style and overall length do not describe every post in a proposed fence. A labelled example can help customers identify straight runs, turns and ends before the supplier reviews the actual material request.",
+        "customerQuestion": "How do I explain which posts are for straight sections and which belong at corners or ends?",
+        "decisions": [
+          {
+            "label": "Keep the selected system visible",
+            "body": "Name current component families and connect examples to the relevant fence system. Ask what the customer is considering and what information is known. The page should explain product relationships without letting one general post quantity stand for every position in the layout."
+          },
+          {
+            "label": "Show runs, turns and termination points",
+            "body": "Fictional layout description: a run starts at an end position, continues straight through line positions, turns at a corner position, then stops at another end beside a proposed access opening. Label those positions on a simple owner-approved sketch so the supplier can discuss their roles. This is not a material count, measured plan, boundary decision or installation design; component compatibility and actual quantities still need review."
+          },
+          {
+            "label": "Identify existing connections",
+            "body": "Explain how to provide the requested photographs or identifiers when extending a fence. Preserve where new work meets the existing section and any uncertain component combinations. Link that context to the current supply conversation rather than suggesting that a similar-looking example proves compatibility."
+          }
+        ],
+        "ownerInputs": [
+          "Current system and component names.",
+          "Approved illustrative layouts and accurate product diagrams.",
+          "Actual material-review process and guidance for identifying existing sections."
+        ],
+        "sourceBridge": "McArthur Lumber and Post lists its State Route 93 address in McArthur. Its split-rail range separates line, corner and end posts alongside rails, and a corner-post example explains the role at a change of direction. Those positions provide a concrete product explanation.",
+        "limits": "The supplier or installer confirms quantities, compatibility and installation requirements. Property owners and responsible site professionals resolve boundaries, measurements and design. An automated material calculator requires separate website scope; explanatory diagrams prepare a discussion rather than produce a finished material list.",
+        "route": "/areas/ohio/vinton-county/",
+        "inputHash": "b46af756ab878eb47fe5b5ac965bd34ca09317e0764d015a9e0c4963cffbc6aa"
+      },
+      "beforeSha256": "bf57010cd60169bcdb0dbed55f548ba7f1a1040b711e50882ea2e3a1f8165132",
+      "afterSha256": "58e1ebec290d55d6b2ea09b5916d1a14eeea48c4dffe75d305259a53bed8b6d1",
+      "requiredFixes": [
+        "Provide a concise explicitly fictional layout example labelling a continuing straight run, a turn, and an end or access opening. State that it illustrates roles only, not dimensions, quantities, compatibility, boundaries or installation design."
+      ]
+    },
+    {
+      "route": "/areas/oklahoma/adair-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Separate parking, equipment and pass benefits before a park visit.",
+        "intro": "A passholder bringing a friend may still need to arrange a vehicle and rental equipment. Put the current operating notice beside those choices so benefits are not mistaken for supplied gear, an open rental desk or guaranteed entry.",
+        "customerQuestion": "Does my pass cover a friend’s rental, and is the rental service operating for our visit?",
+        "decisions": [
+          {
+            "label": "Identify the vehicle arrangement",
+            "body": "Explain the current parking charge unit and hours beside the approved purchase route. Keep per-vehicle parking distinct from an equipment rental. A visitor should be able to identify what the arrival payment covers before planning the rest of the day."
+          },
+          {
+            "label": "Describe the equipment offer and status",
+            "body": "State the owner-approved rental duration and inclusions, then display whether the service is currently operating. Reconcile repeated hours before publishing a promise. Closing rentals or concessions should change those notices without implying that every park activity has the same status."
+          },
+          {
+            "label": "Explain pass limits separately",
+            "body": "Distinguish season and annual validity, actual rental discounts and capacity conditions. A benefit should not become a statement that equipment is supplied or entry guaranteed. Link each choice to its existing route only after the relevant terms and current status are clear."
+          }
+        ],
+        "ownerInputs": [
+          "Current parking units, hours and approved links.",
+          "Confirmed rental inclusions and seasonal operating status.",
+          "Current pass terms and one editor responsible for repeated notices."
+        ],
+        "sourceBridge": "WOKA’s reviewed pages near Watts describe per-vehicle parking and four-hour vessel rentals with a lifejacket and helmet. Its passes remain subject to capacity. The captured first-visit page says rentals and concessions are closed for the season while the rental page still shows operating hours; the owner must resolve that conflict.",
+        "limits": "The operator confirms current conditions, participation guidance and operating facts. Maintained content can clarify existing purchase routes without a new booking system. A pass does not guarantee entry, and a displayed discount does not establish rental availability.",
+        "route": "/areas/oklahoma/adair-county/",
+        "inputHash": "75e50846a80d41d562b5d1698fbcbbd3d41ce679aa12cbe0c4fc97b29970334b"
+      },
+      "after": {
+        "heading": "Separate parking, equipment and pass benefits before a park visit.",
+        "intro": "A passholder bringing a friend may still need to arrange a vehicle and rental equipment. Put the current operating notice beside those choices so benefits are not mistaken for supplied gear, an open rental desk or guaranteed entry.",
+        "customerQuestion": "Does my pass cover a friend’s rental, and is the rental service operating for our visit?",
+        "decisions": [
+          {
+            "label": "Identify the vehicle arrangement",
+            "body": "Explain the current parking charge unit and hours beside the approved purchase route. Keep per-vehicle parking distinct from an equipment rental. A visitor should be able to identify what the arrival payment covers before planning the rest of the day."
+          },
+          {
+            "label": "Describe the equipment offer and status",
+            "body": "State the owner-approved rental duration and inclusions, then display whether the service is currently operating. Reconcile repeated hours before publishing a promise. Closing rentals or concessions should change those notices without implying that every park activity has the same status."
+          },
+          {
+            "label": "Explain pass limits separately",
+            "body": "The pass page checked October 27, 2026 lists a 10% rental discount when the pass is presented and says it cannot be shared outside the holder’s immediate family. It does not explicitly resolve a passholder buying a separate rental for a friend. Keep that guest-benefit question with the operator rather than promise coverage. Season and annual validity also differ, and capacity limits still apply."
+          }
+        ],
+        "ownerInputs": [
+          "Current parking units, hours and approved links.",
+          "Confirmed rental inclusions and seasonal operating status.",
+          "Current pass terms and one editor responsible for repeated notices."
+        ],
+        "sourceBridge": "WOKA near Watts describes per-vehicle parking and four-hour vessel rentals including a lifejacket and helmet. On October 27, 2026, the first-visit page footer said rentals and concessions were closed for the season, while the rental page body still listed ordinary operating hours. Confirm the current service status with the operator before presenting either as a visit promise.",
+        "limits": "The operator confirms current conditions, participation guidance and operating facts. Maintained content can clarify existing purchase routes without a new booking system. A pass does not guarantee entry, and a displayed discount does not establish rental availability.",
+        "route": "/areas/oklahoma/adair-county/",
+        "inputHash": "75e50846a80d41d562b5d1698fbcbbd3d41ce679aa12cbe0c4fc97b29970334b"
+      },
+      "beforeSha256": "6fe3fa4769d1e2585a49bb8c552e7fa83e9c3c8401361c0e241a9f139d8ede46",
+      "afterSha256": "90630a4e9e08b574c14e55e5a949189c81e44b115376ea12c77ed4422928a5f1",
+      "requiredFixes": [
+        "Verify official pass terms and clarify whether the rental benefit applies to the passholder or guests, without guessing. Replace captured/reviewed-page phrasing with a direct dated observation of the conflicting seasonal notice and hours. Keep capacity and availability boundaries."
+      ]
+    },
+    {
+      "route": "/areas/oklahoma/canadian-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Explain the event’s floor needs before presenting the arena as ready space.",
+        "intro": "Total area does not establish the setup for a trade show or graduation. Connect the intended activity, surface preparation and seating questions, while keeping each supporting space’s own description accurate.",
+        "customerQuestion": "What floor preparation should we discuss before planning exhibits and aisles in the arena?",
+        "decisions": [
+          {
+            "label": "Show the actual surface arrangements",
+            "body": "Use approved photographs and descriptions of the dirt center, concrete apron and possible preparations. Ask what people, displays or furniture need to do on the floor. A multipurpose arena should not appear to provide a ready exhibit surface merely because its area is listed."
+          },
+          {
+            "label": "Preserve layout and seating questions",
+            "body": "Explain movable seating through venue-approved configurations and invite the intended activity and arrangement. Keep typical seating figures tied to their actual layout. Staff should receive the event’s setup requirements before determining suitability or treating a capacity as applicable to every use."
+          },
+          {
+            "label": "Describe connected spaces separately",
+            "body": "Name the pavilion and indoor arena individually when both are requested. Keep open-air conditions and asphalt distinct from indoor surfaces. If retaining a venue-guide PDF, compare room names, surfaces and dimensions with the web summary and identify who controls revisions."
+          }
+        ],
+        "ownerInputs": [
+          "Current setup photographs and approved surface descriptions.",
+          "Venue-approved configurations and layout-review questions.",
+          "Separate space specifications and the current controlled guide version."
+        ],
+        "sourceBridge": "Canadian County Expo Center near El Reno describes a dirt-center arena with a concrete apron, possible rolling, packing or covering, and movable grandstands. Its connected pavilion is open air with an asphalt floor; a covered walkway does not make the spaces equivalent.",
+        "limits": "Qualified venue staff determine surface suitability, capacity, structural, electrical and event requirements. Content prepares the inquiry and can summarize an approved guide. Rebuilding the PDF is a separate deliverable; a public space description does not approve a specific event layout.",
+        "route": "/areas/oklahoma/canadian-county/",
+        "inputHash": "e67e922c18fba2042a19b10d985bb344b07b724810c6dcf8b0cdc8e033dfc443"
+      },
+      "after": {
+        "heading": "Explain the event’s floor needs before presenting the arena as ready space.",
+        "intro": "Total area does not establish the setup for a trade show or graduation. Connect the intended activity, surface preparation and seating questions, while keeping each supporting space’s own description accurate.",
+        "customerQuestion": "What floor preparation should we discuss before planning exhibits and aisles in the arena?",
+        "decisions": [
+          {
+            "label": "Show the actual surface arrangements",
+            "body": "Use approved photographs and descriptions of the dirt center, concrete apron and possible preparations. Ask what people, displays or furniture need to do on the floor. A multipurpose arena should not appear to provide a ready exhibit surface merely because its area is listed."
+          },
+          {
+            "label": "Preserve layout and seating questions",
+            "body": "Explain movable seating through venue-approved configurations and invite the intended activity and arrangement. Keep typical seating figures tied to their actual layout. Staff should receive the event’s setup requirements before determining suitability or treating a capacity as applicable to every use."
+          },
+          {
+            "label": "Describe connected spaces separately",
+            "body": "Name the pavilion and indoor arena individually when both are requested. Keep the pavilion’s open-air conditions and asphalt distinct from the arena’s dirt center and concrete apron. Ask which activities use each space, including movement between them; a covered walkway does not establish that their surfaces or event arrangements are interchangeable."
+          }
+        ],
+        "ownerInputs": [
+          "Current setup photographs and approved surface descriptions.",
+          "Venue-approved configurations and layout-review questions.",
+          "Separate space specifications and the current controlled guide version."
+        ],
+        "sourceBridge": "Canadian County Expo Center near El Reno describes a dirt-center arena with a concrete apron, possible rolling, packing or covering, and movable grandstands. Its connected pavilion is open air with an asphalt floor; a covered walkway does not make the spaces equivalent.",
+        "limits": "Qualified venue staff determine surface suitability, capacity, structural, electrical and event requirements. Content prepares the inquiry; a public space description does not approve a specific event layout.",
+        "route": "/areas/oklahoma/canadian-county/",
+        "inputHash": "e67e922c18fba2042a19b10d985bb344b07b724810c6dcf8b0cdc8e033dfc443"
+      },
+      "beforeSha256": "04c2311557fce4efe135c2a5b092a64b37b7721f6c58a1385738738891646198",
+      "afterSha256": "e94aed2705836320e191c693f0f554700a3a57fb136cdf711849447cfc51c9f1",
+      "requiredFixes": [
+        "Retain the PDF/web-summary FAQ; remove repeated PDF revision comparison from decision three and the separate-deliverable sentence from limits. Keep the third decision centered on indoor arena versus open-air pavilion surfaces."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/bradford-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Name the action as well as the equipment in a seasonal service request.",
+        "intro": "Installing a window unit and removing it are different jobs. Let customers describe the item, where it is now and where they want it to be so staff can review the actual request.",
+        "customerQuestion": "Can you remove the air conditioner from an upstairs window and discuss where it should go afterward?",
+        "decisions": [
+          {
+            "label": "Identify the item and action",
+            "body": "Provide simple installation and removal wording beside the accepted service. Invite a useful item reference or photograph so staff can distinguish the unit from others at the property. An autumn inquiry naming an air conditioner should not automatically become an installation request."
+          },
+          {
+            "label": "Explain the starting position",
+            "body": "Ask for the access and current-location information the business needs to review the job. The unit’s position, such as an upstairs window, is separate from the customer’s full street address. A town or service area may be sufficient for initial assessment if the owner’s process allows it."
+          },
+          {
+            "label": "Describe the intended destination",
+            "body": "Let the customer explain what should happen after removal. State actual handling, storage and disposal boundaries rather than silently including additional arrangements. Staff can confirm the visit and any further work after reviewing the before-and-after situation."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted installation and removal work.",
+          "Minimum item, access and service-area questions.",
+          "Handling boundaries and visit confirmation process."
+        ],
+        "sourceBridge": "Jim’s Home Services lists installation or removal of window air conditioners and identifies its address at 17 Locust Avenue in Towanda, Bradford County. Its household-service offer illustrates why naming the action matters.",
+        "limits": "The business reviews the work and confirms any visit. Content can clarify seasonal requests or explain accepted small jobs more fully. Removal does not automatically include storage or disposal, and the initial inquiry need not collect more address information than the actual review requires.",
+        "route": "/areas/pennsylvania/bradford-county/",
+        "inputHash": "be534b39b9ae5897412d8cff9b790272a898cd076ff8e28b2fb50e4d1fbea6e3"
+      },
+      "after": {
+        "heading": "Name the action as well as the equipment in a seasonal service request.",
+        "intro": "Installing a window unit and removing it are different jobs. Let customers describe the item, where it is now and where they want it to be so staff can review the actual request.",
+        "customerQuestion": "Can you remove the air conditioner from an upstairs window and discuss where it should go afterward?",
+        "decisions": [
+          {
+            "label": "Identify the item and action",
+            "body": "Provide simple installation and removal wording beside the accepted service. Invite a useful item reference or photograph so staff can distinguish the unit from others at the property. An autumn inquiry naming an air conditioner should not automatically become an installation request."
+          },
+          {
+            "label": "Explain the starting position",
+            "body": "Ask where the unit is now, such as an upstairs window, and which access details staff need to review the removal. Keep a useful unit photograph or reference attached to that position so staff can distinguish it from another appliance at the property. Leave the handling method and accepted work for the business to assess."
+          },
+          {
+            "label": "Describe the intended destination",
+            "body": "Let the customer explain what should happen after removal. State actual handling, storage and disposal boundaries rather than silently including additional arrangements. Staff can confirm the visit and any further work after reviewing the before-and-after situation."
+          }
+        ],
+        "ownerInputs": [
+          "Accepted installation and removal work.",
+          "Minimum item, access and service-area questions.",
+          "Handling boundaries and visit confirmation process."
+        ],
+        "sourceBridge": "Jim’s Home Services lists installation or removal of window air conditioners and identifies its address at 17 Locust Avenue in Towanda, Bradford County. Its household-service offer illustrates why naming the action matters.",
+        "limits": "The business reviews the work and confirms any visit. Content can clarify seasonal requests or explain accepted small jobs more fully. Removal does not automatically include storage or disposal.",
+        "route": "/areas/pennsylvania/bradford-county/",
+        "inputHash": "be534b39b9ae5897412d8cff9b790272a898cd076ff8e28b2fb50e4d1fbea6e3"
+      },
+      "beforeSha256": "4d925f976c418b30001a32a51a8282a2c84c0aa91c5844217117e60836dbdf73",
+      "afterSha256": "c0198a7138bd75007897ab5ef6a68f206eb187640c583164cc274a4482989655",
+      "requiredFixes": [
+        "Retain the substantive minimum-address FAQ. Refocus decision two on the unit position and access context without repeating address collection policy; remove the address-minimization sentence from limits while preserving removal/storage/disposal boundaries."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/erie-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Describe whether the mark repeats across parts or changes by batch or item.",
+        "intro": "A logo file, a lot identifier and a serial sequence carry different information. Explain the marking purpose before asking the buyer to supply artwork or data for review.",
+        "customerQuestion": "We need an individual serial number on each part. How should we distinguish that from one repeated logo?",
+        "decisions": [
+          {
+            "label": "Identify the shared content",
+            "body": "Show approved examples of logos or wording repeated across components. Connect the artwork to the actual part and intended placement rather than treating an isolated image as the complete job."
+          },
+          {
+            "label": "Explain batch and individual identifiers",
+            "body": "Distinguish an identifier shared by a group from content that changes on every item. Use safe fictional examples to make the difference clear. Ask how the buyer intends to group or identify parts without generating or approving the identifiers on the website."
+          },
+          {
+            "label": "Describe specification review",
+            "body": "Explain the accepted content and placement references and how manufacturer and buyer confirm them. Keep a general inquiry available when the request does not fit an example. A shared artwork file does not specify per-part variation."
+          }
+        ],
+        "ownerInputs": [
+          "Current marking capabilities and safe example data.",
+          "Part and placement information needed for review.",
+          "Accepted data formats and specification confirmation process."
+        ],
+        "sourceBridge": "NaviTek Machining lists logos, part and lot identifiers and serialization among its laser-marking uses. Its facility is at 8305 Middle Road in Fairview Township, Erie County.",
+        "limits": "The manufacturer and buyer define the marking specification and checks. Content prepares that conversation; it does not supply a traceability system, validate a code or approve the identifiers.",
+        "route": "/areas/pennsylvania/erie-county/",
+        "inputHash": "fe8456b471c0368a8d7e3fa48b29a8298039262552bf1c7128307b61930b3ec2"
+      },
+      "after": {
+        "heading": "Describe whether the mark repeats across parts or changes by batch or item.",
+        "intro": "A logo file, a lot identifier and a serial sequence carry different information. Explain the marking purpose before asking the buyer to supply artwork or data for review.",
+        "customerQuestion": "We need an individual serial number on each part. How should we distinguish that from one repeated logo?",
+        "decisions": [
+          {
+            "label": "Identify the shared content",
+            "body": "Show approved examples of logos or wording repeated across components. Connect the artwork to the actual part and intended placement rather than treating an isolated image as the complete job."
+          },
+          {
+            "label": "Explain batch and individual identifiers",
+            "body": "Fictional three-part example: every item carries the same “DEMO LOGO”; all three share lot label “DEMO-LOT-A”; individual serial placeholders are “DEMO-001,” “DEMO-002” and “DEMO-003.” The logo repeats across items, the lot groups them and the serial changes for each one. These are explanatory placeholders, not production identifiers, validated codes or a traceability system. The manufacturer and buyer confirm the real content, placement and checks."
+          },
+          {
+            "label": "Describe specification review",
+            "body": "Explain the accepted content and placement references and how manufacturer and buyer confirm them. Keep a general inquiry available when the request does not fit an example. A shared artwork file does not specify per-part variation."
+          }
+        ],
+        "ownerInputs": [
+          "Current marking capabilities and safe example data.",
+          "Part and placement information needed for review.",
+          "Accepted data formats and specification confirmation process."
+        ],
+        "sourceBridge": "NaviTek Machining lists logos, part and lot identifiers and serialization among its laser-marking uses. Its facility is at 8305 Middle Road in Fairview Township, Erie County.",
+        "limits": "The manufacturer and buyer define the marking specification and checks. Content prepares that conversation; it does not supply a traceability system, validate a code or approve the identifiers.",
+        "route": "/areas/pennsylvania/erie-county/",
+        "inputHash": "fe8456b471c0368a8d7e3fa48b29a8298039262552bf1c7128307b61930b3ec2"
+      },
+      "beforeSha256": "af5d56b4c8708524ef7e13999e162ed5d1323bc41a6edd76e007aefddb27926c",
+      "afterSha256": "21d4bdd15c2313630c1b0398962ba569d8c6a506eee03c6d53f205c8cd12a487",
+      "requiredFixes": [
+        "Add a clearly fictional small marking example that distinguishes a repeated logo, a lot label shared by multiple items and a different serial placeholder per item. Label it as explanatory data, not real production identifiers, validation or a traceability system."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/forest-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Confirm which sales location can show the boat before the customer travels.",
+        "intro": "A nearby branch does not mean every vessel in a shared inventory is available there. Carry the boat reference and intended location into the viewing request so staff can confirm the actual arrangement.",
+        "customerQuestion": "I want to visit Tionesta. Is the listed boat there, or do the viewing instructions apply to Milton?",
+        "decisions": [
+          {
+            "label": "Identify the model or particular vessel",
+            "body": "Explain the references the sales team recognizes. Distinguish general interest in a model from a request to inspect one specific listed boat, including when a model is available to order rather than physically present."
+          },
+          {
+            "label": "Explain each location’s role",
+            "body": "Label main and satellite locations accurately and state how branch stock or brand questions are answered. A general inventory or brand list should not imply that every item can be viewed at the nearest branch."
+          },
+          {
+            "label": "Confirm the visit and current access",
+            "body": "Explain the location, appointment and seasonal instructions staff confirm before travel. Review old access notices with the responsible contact; an old review date does not establish that viewing has resumed. Keep a current contact route while uncertain access is checked."
+          }
+        ],
+        "ownerInputs": [
+          "Current main and satellite roles and vessel references.",
+          "Branch stock-confirmation responsibilities.",
+          "Current access notices and viewing instructions."
+        ],
+        "sourceBridge": "Robbins Marine identifies Tionesta Marina at Tionesta Lake in Forest County as a satellite sales location and says stock and brands may differ. Its main dealership and separate general viewing page are for Milton.",
+        "limits": "The sales team confirms the vessel and visit. Content can clarify location roles while existing inventory stays in place. A preferred date, nearby branch or catalog entry does not establish a viewing appointment or local availability.",
+        "route": "/areas/pennsylvania/forest-county/",
+        "inputHash": "f380099cb2e70d8f06f5236715fb15a0b88359b7962bbca32d4663be3b8cfc3d"
+      },
+      "after": {
+        "heading": "Confirm which sales location can show the boat before the customer travels.",
+        "intro": "A nearby branch does not mean every vessel in a shared inventory is available there. Carry the boat reference and intended location into the viewing request so staff can confirm the actual arrangement.",
+        "customerQuestion": "I want to visit Tionesta. Is the listed boat there, or do the viewing instructions apply to Milton?",
+        "decisions": [
+          {
+            "label": "Identify the model or particular vessel",
+            "body": "Explain the references the sales team recognizes. Distinguish general interest in a model from a request to inspect one specific listed boat, including when a model is available to order rather than physically present."
+          },
+          {
+            "label": "Explain each location’s role",
+            "body": "Label main and satellite locations accurately and state how branch stock or brand questions are answered. A general inventory or brand list should not imply that every item can be viewed at the nearest branch."
+          },
+          {
+            "label": "Confirm the visit and current access",
+            "body": "Keep the exact vessel reference and intended Tionesta or Milton location in the viewing request. Ask staff to confirm where that boat can be seen and the appointment arrangements before travel. A proposed date for the nearest branch is not confirmation that the listed vessel is there."
+          }
+        ],
+        "ownerInputs": [
+          "Current main and satellite roles and vessel references.",
+          "Branch stock-confirmation responsibilities.",
+          "Current access notices and viewing instructions."
+        ],
+        "sourceBridge": "Robbins Marine identifies Tionesta Marina at Tionesta Lake in Forest County as a satellite sales location and says stock and brands may differ. Its main dealership and separate general viewing page are for Milton.",
+        "limits": "The sales team confirms the vessel and visit. Content can clarify location roles while existing inventory stays in place. A preferred date, nearby branch or catalog entry does not establish a viewing appointment or local availability.",
+        "route": "/areas/pennsylvania/forest-county/",
+        "inputHash": "f380099cb2e70d8f06f5236715fb15a0b88359b7962bbca32d4663be3b8cfc3d"
+      },
+      "beforeSha256": "86bbf0b8aa87aea0ca60e178bfb7971b0824c5c4b5dbfbab23b88ea1b7428250",
+      "afterSha256": "90706d1999e597fe8af9e7b69b98b10c0fe2cccdf2b40a4581c0c0b29d39feb2",
+      "requiredFixes": [
+        "Retain the old-access-notice FAQ and remove that duplicated review-date/contact guidance from decision three. Keep decision three focused on confirming the vessel, branch and appointment before travel."
+      ]
+    },
+    {
+      "route": "/areas/pennsylvania/franklin-county/",
+      "partition": 4,
+      "before": {
+        "heading": "Carry an identifiable fabric reference into the conversation about the furniture.",
+        "intro": "Online browsing can prepare a customer for a sample appointment if the useful reference survives the handoff. Connect supplier, pattern and color to the actual piece and intended upholstery work.",
+        "customerQuestion": "I found a fabric online for my chair. What should I bring to the sample appointment?",
+        "decisions": [
+          {
+            "label": "Keep the reference findable",
+            "body": "Explain the supplier, pattern and color details staff need. Use readable labels alongside current vendor links rather than relying on a screenshot alone, so the reference remains useful if a supplier page moves."
+          },
+          {
+            "label": "Connect the material to the piece",
+            "body": "Invite the furniture description, desired change and useful photographs. Someone considering several patterns should be able to compare ideas for one piece without appearing to submit several fabric orders."
+          },
+          {
+            "label": "Explain the sample appointment",
+            "body": "Describe how physical samples and project discussion help resolve options. State the actual selection and ordering process and distinguish a favorite reference from an agreed final choice. An online image does not confirm stock or suitability."
+          }
+        ],
+        "ownerInputs": [
+          "Current supplier links and useful reference labels.",
+          "Accepted furniture descriptions and photograph guidance.",
+          "Sample appointments and selection approval process."
+        ],
+        "sourceBridge": "B. J. Bricker’s Upholstery links to fabric suppliers and offers appointments to browse samples and discuss projects. It expressly serves Franklin County and identifies its showroom in the Fayetteville area of Guilford Township.",
+        "limits": "The upholsterer confirms material options and suitability. The supplier controls its catalog; the business verifies replacement links for agreed website updates. New catalog integration or stock synchronization is separate from maintaining ordinary links.",
+        "route": "/areas/pennsylvania/franklin-county/",
+        "inputHash": "3cfa3b313660107e5a201c3fa4ad90cb8c4bb9cb856d9a1c0ee4e4a16c2444db"
+      },
+      "after": {
+        "heading": "Carry an identifiable fabric reference into the conversation about the furniture.",
+        "intro": "Online browsing can prepare a customer for a sample appointment if the useful reference survives the handoff. Connect supplier, pattern and color to the actual piece and intended upholstery work.",
+        "customerQuestion": "I found a fabric online for my chair. What should I bring to the sample appointment?",
+        "decisions": [
+          {
+            "label": "Keep the reference findable",
+            "body": "Keep the supplier, pattern and color as readable labels alongside the fabric link. Attach those references to the chair or other piece being discussed, so several preferred fabrics remain alternatives for that project rather than separate orders."
+          },
+          {
+            "label": "Connect the material to the piece",
+            "body": "Invite the furniture description, desired change and useful photographs. Someone considering several patterns should be able to compare ideas for one piece without appearing to submit several fabric orders."
+          },
+          {
+            "label": "Explain the sample appointment",
+            "body": "Describe how physical samples and project discussion help resolve options. State the actual selection and ordering process and distinguish a favorite reference from an agreed final choice. An online image does not confirm stock or suitability."
+          }
+        ],
+        "ownerInputs": [
+          "Current supplier links and useful reference labels.",
+          "Accepted furniture descriptions and photograph guidance.",
+          "Sample appointments and selection approval process."
+        ],
+        "sourceBridge": "B. J. Bricker’s Upholstery links to fabric suppliers and offers appointments to browse samples and discuss projects. It expressly serves Franklin County and identifies its showroom in the Fayetteville area of Guilford Township.",
+        "limits": "The upholsterer confirms material options, physical-sample choices and suitability for the actual furniture. A preferred online reference is not a final fabric selection or stock confirmation.",
+        "route": "/areas/pennsylvania/franklin-county/",
+        "inputHash": "3cfa3b313660107e5a201c3fa4ad90cb8c4bb9cb856d9a1c0ee4e4a16c2444db"
+      },
+      "beforeSha256": "9f2e7023f86e3ca466af1992b08aad7039e4237135f31a34b39b05cf096e1e5f",
+      "afterSha256": "3f53dea9324cbe85f8423094ca786717a0a2d0c97b107dc30d78816633acb8f6",
+      "requiredFixes": [
+        "Retain the substantive catalog-maintenance FAQ; shorten limits to material suitability and remove the repeated catalog/link/integration policy. Keep decision one centered on supplier, pattern and color references, without repeating moved-link maintenance rationale."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "route": "/areas/north-carolina/tyrrell-county/",
+      "before": {
+        "areaId": "north-carolina/tyrrell",
+        "market": "Tyrrell County, NC",
+        "lead": "Materials sent ahead to a workshop need to reach the right participant and session. I help Tyrrell County learning businesses connect preparation instructions with the practical handoff at their venue.",
+        "decisionTitle": "Tie shipped workshop materials to the participant and session.",
+        "decision": "Pocosin Arts School of Fine Craft in Columbia sends workshop materials information and explains how students can ship ordered supplies to campus. Its instructions call for the participant’s name and session and distinguish postal deliveries from other shipments. I can clarify that preparation guidance or build a fuller workshop introduction that keeps the selected class, personal materials and delivery arrangement together. A package arriving at the school should be identifiable as part of a particular student’s preparation.",
+        "scopes": [
+          {
+            "title": "Clarify materials sent ahead",
+            "pages": [
+              "Selected workshop",
+              "Materials information",
+              "Package identification"
+            ],
+            "request": "Explain how preparation information follows the participant into a shipment.",
+            "supplies": "Current materials-list process, approved package labels and the correct delivery instructions.",
+            "check": "A student can identify the session on a supply package rather than sending an unexplained box to the general campus address."
+          },
+          {
+            "title": "Connect workshop preparation to campus arrival",
+            "pages": [
+              "Participant and session",
+              "Personal and class supplies",
+              "Delivery route",
+              "Unresolved arrival questions"
+            ],
+            "request": "Help students distinguish what they bring or send from what the school supplies.",
+            "supplies": "Current supply responsibilities, delivery-address guidance and the contact for questions before arrival.",
+            "check": "A student arranging a supplier shipment can retain their own name and session while checking the appropriate address for the delivery method."
+          }
+        ],
+        "planningTable": {
+          "title": "A workshop-materials handoff brief",
+          "intro": "Use the school’s current instructions for the selected workshop. The school confirms what it can receive and how materials are handled.",
+          "columns": [
+            "Preparation detail",
+            "Student information",
+            "Owner explanation",
+            "Question supported"
+          ],
+          "rows": [
+            [
+              "Workshop identity",
+              "The participant and selected session.",
+              "Where those identifiers belong in preparation information.",
+              "Which student and workshop does this concern?"
+            ],
+            [
+              "Materials source",
+              "Items the student will bring, order or obtain through the school.",
+              "The actual division between personal and class supplies.",
+              "What still needs to be obtained?"
+            ],
+            [
+              "Shipment",
+              "The items and delivery method under discussion.",
+              "Current address and package-identification instructions.",
+              "Will the package reach the appropriate receiving route?"
+            ],
+            [
+              "Before arrival",
+              "A missing, changed or unresolved materials arrangement.",
+              "The contact and context needed for a useful question.",
+              "What must the student clarify before traveling?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Shipping arrangements, material purchases and workshop administration remain with the participant and workshop business. Package-tracking or registration integrations need separate website scope. Content can explain current preparation and inquiry routes.",
+        "quoteQuestions": [
+          "Can a shipped package be connected to the participant and session?",
+          "Where should the site distinguish personal materials from class-provided supplies?",
+          "How should delivery-method instructions remain attached to the materials guidance?"
+        ],
+        "coverageNote": "For Tyrrell County, NC website buyers. Pocosin Arts School of Fine Craft lists 202 Main Street in Columbia, Tyrrell County. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
+        "sources": [
+          {
+            "url": "https://pocosinarts.org/workshops/summer-workshop-info/",
+            "label": "Pocosin Arts: workshop preparation FAQ",
+            "observation": "Describes workshop materials information, class-supplied materials and shipments labeled with the student’s name and session; distinguishes postal and street-address delivery."
+          },
+          {
+            "url": "https://pocosinarts.org/",
+            "label": "Pocosin Arts: programs and campus",
+            "observation": "Describes online and on-campus craft programs and lists its Columbia address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare workshop materials and arrival instructions"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "north-carolina/tyrrell"
+        ],
+        "path": "/areas/north-carolina/tyrrell-county/",
+        "title": "Web Design for Tyrrell County, NC",
+        "description": "Web design for Tyrrell County, NC. Example brief: tie shipped workshop materials to the participant and session.",
+        "servedAreas": [
+          {
+            "name": "Tyrrell County",
+            "state": "North Carolina",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/north-carolina/#tyrrell",
+            "label": "Tyrrell County place directory"
+          }
+        ]
+      },
+      "after": {
+        "areaId": "north-carolina/tyrrell",
+        "market": "Tyrrell County, NC",
+        "lead": "Materials sent ahead to a workshop need to reach the right participant and session. I help Tyrrell County learning businesses connect preparation instructions with the practical handoff at their venue.",
+        "decisionTitle": "Tie shipped workshop materials to the participant and session.",
+        "decision": "Pocosin Arts School of Fine Craft in Columbia sends workshop materials information and explains how students can ship ordered supplies to campus. Its instructions call for the participant’s name and session and distinguish postal deliveries from other shipments. I can clarify that preparation guidance or build a fuller workshop introduction that keeps the selected class, personal materials and delivery arrangement together. A package arriving at the school should be identifiable as part of a particular student’s preparation.",
+        "scopes": [
+          {
+            "title": "Clarify materials sent ahead",
+            "pages": [
+              "Selected workshop",
+              "Materials information",
+              "Package identification"
+            ],
+            "request": "Explain how preparation information follows the participant into a shipment.",
+            "supplies": "Current materials-list process, approved package labels and the correct delivery instructions.",
+            "check": "A student can identify the session on a supply package rather than sending an unexplained box to the general campus address."
+          },
+          {
+            "title": "Connect workshop preparation to campus arrival",
+            "pages": [
+              "Participant and session",
+              "Personal and class supplies",
+              "Delivery route",
+              "Unresolved arrival questions"
+            ],
+            "request": "Help students distinguish what they bring or send from what the school supplies.",
+            "supplies": "Current supply responsibilities, delivery-address guidance and the contact for questions before arrival.",
+            "check": "A student arranging a supplier shipment can retain their own name and session while checking the appropriate address for the delivery method."
+          }
+        ],
+        "planningTable": {
+          "title": "A workshop-materials handoff brief",
+          "intro": "Use the school’s current instructions for the selected workshop. The school confirms what it can receive and how materials are handled.",
+          "columns": [
+            "Preparation detail",
+            "Student information",
+            "Owner explanation",
+            "Question supported"
+          ],
+          "rows": [
+            [
+              "Workshop identity",
+              "The participant and selected session.",
+              "Where those identifiers belong in preparation information.",
+              "Which student and workshop does this concern?"
+            ],
+            [
+              "Materials source",
+              "Items the student will bring, order or obtain through the school.",
+              "The actual division between personal and class supplies.",
+              "What still needs to be obtained?"
+            ],
+            [
+              "Shipment",
+              "The items and delivery method under discussion.",
+              "Current address and package-identification instructions.",
+              "Will the package reach the appropriate receiving route?"
+            ],
+            [
+              "Before arrival",
+              "A missing, changed or unresolved materials arrangement.",
+              "The contact and context needed for a useful question.",
+              "What must the student clarify before traveling?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Shipping arrangements, material purchases and workshop administration remain with the participant and workshop business. Package-tracking or registration integrations need separate website scope. Content can explain current preparation and inquiry routes.",
+        "quoteQuestions": [
+          "Can a shipped package be connected to the participant and session?",
+          "Where should the site distinguish personal materials from class-provided supplies?",
+          "How should delivery-method instructions remain attached to the materials guidance?"
+        ],
+        "coverageNote": "For Tyrrell County, NC website buyers. Pocosin Arts School of Fine Craft lists 202 Main Street in Columbia, Tyrrell County. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
+        "sources": [
+          {
+            "url": "https://pocosinarts.org/workshops/summer-workshop-info/",
+            "label": "Pocosin Arts: workshop preparation FAQ",
+            "observation": "Packages need participant name and session. Street-address shipments use Pocosin Arts, 202 Main Street, Columbia, NC 27925; USPS uses PO Box 690 instead of the street address."
+          },
+          {
+            "url": "https://pocosinarts.org/",
+            "label": "Pocosin Arts: programs and campus",
+            "observation": "Describes online and on-campus craft programs and lists its Columbia address."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare workshop materials and arrival instructions"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "north-carolina/tyrrell"
+        ],
+        "path": "/areas/north-carolina/tyrrell-county/",
+        "title": "Web Design for Tyrrell County, NC",
+        "description": "Web design for Tyrrell County, NC. Example brief: tie shipped workshop materials to the participant and session.",
+        "servedAreas": [
+          {
+            "name": "Tyrrell County",
+            "state": "North Carolina",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/north-carolina/#tyrrell",
+            "label": "Tyrrell County place directory"
+          }
+        ]
+      },
+      "beforeSha256": "8582babd075c1dd5ca71097ea2d4d0bdb900f797e74377af879c5b9e96d75748",
+      "afterSha256": "7c29365f2d1f83b4aa3c9245a1c78b0453f6c0ce3c8ac0bc098c3c3abbfcb4a8"
+    },
+    {
+      "route": "/areas/ohio/ottawa-county/",
+      "before": {
+        "areaId": "ohio/ottawa",
+        "market": "Port Clinton / Ottawa County, OH",
+        "lead": "Previous sewing experience and experience fabricating boat canvas can lead to different training questions. I help Port Clinton and Ottawa County businesses explain course choices before a student reaches the schedule.",
+        "decisionTitle": "Let students describe their experience before choosing the next workshop.",
+        "decision": "Northcoast Marine Specialties in Port Clinton publishes a canvas-training progression and asks experienced fabricators to discuss placement with an instructor. For a teaching business, I can clarify the starting-point guidance or connect course descriptions to a fuller learning introduction. The useful distinction is what the student has already done and what they want to learn next, with placement confirmed through the school's actual process.",
+        "scopes": [
+          {
+            "title": "Clarify workshop starting points",
+            "pages": [
+              "Experience and learning goal",
+              "Course sequence and scope",
+              "Placement discussion and registration route"
+            ],
+            "request": "Put the school's starting guidance beside its course descriptions, keeping the existing registration route connected.",
+            "supplies": "Current course descriptions, prerequisite wording and the questions instructors use when discussing prior experience.",
+            "check": "A visitor who sews clothing can describe that background without assuming it establishes readiness for an advanced marine-canvas workshop."
+          },
+          {
+            "title": "Build a fuller training introduction",
+            "pages": [
+              "Skills taught across the course sequence",
+              "Experience-based placement questions",
+              "Workshop preparation and examples",
+              "Instructor conversation and schedule"
+            ],
+            "request": "Explain how each course relates to the student's goal while keeping course fit and current availability understandable.",
+            "supplies": "Approved classroom examples, current preparation information and the school's actual placement and registration responsibilities.",
+            "check": "An experienced canvas maker can identify the skill they want to improve and reach an instructor before selecting a course whose fit is uncertain."
+          }
+        ],
+        "planningTable": {
+          "title": "A workshop-placement content brief",
+          "intro": "The school determines course placement and current requirements. This table plans explanatory content, not a skills assessment.",
+          "columns": [
+            "Student situation",
+            "Information to invite",
+            "Content the school supplies",
+            "Useful next decision"
+          ],
+          "rows": [
+            [
+              "New to canvas work",
+              "The products or techniques the student hopes to learn.",
+              "A clear starting course and its teaching purpose.",
+              "Which introduction should the student consider?"
+            ],
+            [
+              "Sewing experience in another field",
+              "The kind of previous sewing work.",
+              "An explanation of the additional skills involved in canvas fabrication.",
+              "What does that experience establish for this course?"
+            ],
+            [
+              "Existing canvas experience",
+              "Previous projects and the skill to develop.",
+              "The actual route for discussing placement.",
+              "Which course should an instructor review with the student?"
+            ],
+            [
+              "Continuing student",
+              "Completed training and the next learning goal.",
+              "Current course relationships and preparation guidance.",
+              "What should be checked before choosing the next workshop?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Skills testing, student records, learning platforms and registration-system changes need separate scope. Content can guide the existing instructor and enrollment conversation.",
+        "quoteQuestions": [
+          "What experience distinctions do instructors need before recommending a course?",
+          "Which course descriptions need clearer relationships to earlier training?",
+          "How should visitors ask about placement before using the existing registration route?"
+        ],
+        "coverageNote": "For Port Clinton and Ottawa County businesses. Northcoast Marine Specialties lists its training location on SE Catawba Road in Port Clinton. Wonder and Method is based in Buffalo and works remotely.",
+        "sources": [
+          {
+            "url": "https://canvastraining.com/frequently-asked-questions/",
+            "label": "Northcoast Marine Specialties: training questions",
+            "observation": "Distinguishes sewing experience from canvas fabrication experience and directs experienced fabricators to an instructor for placement; lists its Port Clinton address."
+          },
+          {
+            "url": "https://canvastraining.com/learning-path/",
+            "label": "Northcoast Marine Specialties: learning path",
+            "observation": "Describes an ordered set of workshops with different fabrication topics."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare workshop placement and course details"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "ohio/ottawa"
+        ],
+        "path": "/areas/ohio/ottawa-county/",
+        "title": "Web Design for Port Clinton / Ottawa County, OH",
+        "description": "Web design for Port Clinton / Ottawa County, OH. Example brief: let students describe their experience before choosing the next workshop.",
+        "servedAreas": [
+          {
+            "name": "Ottawa County",
+            "state": "Ohio",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/ohio/#ottawa",
+            "label": "Ottawa County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/ohio-ottawa.txt"
+      },
+      "after": {
+        "areaId": "ohio/ottawa",
+        "market": "Port Clinton / Ottawa County, OH",
+        "lead": "Previous sewing experience and experience fabricating boat canvas can lead to different training questions. I help Port Clinton and Ottawa County businesses explain course choices before a student reaches the schedule.",
+        "decisionTitle": "Let students describe their experience before choosing the next workshop.",
+        "decision": "Northcoast Marine Specialties in Port Clinton publishes a canvas-training progression and asks experienced fabricators to discuss placement with an instructor. For a teaching business, I can clarify the starting-point guidance or connect course descriptions to a fuller learning introduction. The useful distinction is what the student has already done and what they want to learn next, with placement confirmed through the school's actual process.",
+        "scopes": [
+          {
+            "title": "Clarify workshop starting points",
+            "pages": [
+              "Experience and learning goal",
+              "Course sequence and scope",
+              "Placement discussion and registration route"
+            ],
+            "request": "Put the school's starting guidance beside its course descriptions, keeping the existing registration route connected.",
+            "supplies": "Current course descriptions, prerequisite wording and the questions instructors use when discussing prior experience.",
+            "check": "A visitor who sews clothing can describe that background without assuming it establishes readiness for an advanced marine-canvas workshop."
+          },
+          {
+            "title": "Build a fuller training introduction",
+            "pages": [
+              "Skills taught across the course sequence",
+              "Experience-based placement questions",
+              "Workshop preparation and examples",
+              "Instructor conversation and schedule"
+            ],
+            "request": "Explain how each course relates to the student's goal while keeping course fit and current availability understandable.",
+            "supplies": "Approved classroom examples, current preparation information and the school's actual placement and registration responsibilities.",
+            "check": "An experienced canvas maker can identify the skill they want to improve and reach an instructor before selecting a course whose fit is uncertain."
+          }
+        ],
+        "planningTable": {
+          "title": "A workshop-placement content brief",
+          "intro": "The school determines course placement and current requirements. This table plans explanatory content, not a skills assessment.",
+          "columns": [
+            "Student situation",
+            "Information to invite",
+            "Content the school supplies",
+            "Useful next decision"
+          ],
+          "rows": [
+            [
+              "New to canvas work",
+              "The products or techniques the student hopes to learn.",
+              "A clear starting course and its teaching purpose.",
+              "Which introduction should the student consider?"
+            ],
+            [
+              "Sewing experience in another field",
+              "The kind of previous sewing work.",
+              "An explanation of the additional skills involved in canvas fabrication.",
+              "What does that experience establish for this course?"
+            ],
+            [
+              "Existing canvas experience",
+              "Previous projects and the skill to develop.",
+              "The actual route for discussing placement.",
+              "Which course should an instructor review with the student?"
+            ],
+            [
+              "Continuing student",
+              "Completed training and the next learning goal.",
+              "Current course relationships and preparation guidance.",
+              "What should be checked before choosing the next workshop?"
+            ]
+          ]
+        },
+        "scopeTrigger": "Skills testing, student records, learning platforms and registration-system changes need separate scope. Content can guide the existing instructor and enrollment conversation.",
+        "quoteQuestions": [
+          "What experience distinctions do instructors need before recommending a course?",
+          "Which course descriptions need clearer relationships to earlier training?",
+          "How should visitors ask about placement before using the existing registration route?"
+        ],
+        "coverageNote": "For Port Clinton and Ottawa County businesses. Northcoast Marine Specialties lists its training location on SE Catawba Road in Port Clinton. Wonder and Method is based in Buffalo and works remotely.",
+        "sources": [
+          {
+            "url": "https://canvastraining.com/frequently-asked-questions/",
+            "label": "Northcoast Marine Specialties: training questions",
+            "observation": "Recommends Basic for people entering canvas fabrication despite clothing/drapery/factory sewing experience. Names Basic, Advanced and Bimini Enclosure before later upholstery or rigid-enclosure workshops; experienced canvas fabricators consult an instructor for placement."
+          },
+          {
+            "url": "https://canvastraining.com/learning-path/",
+            "label": "Northcoast Marine Specialties: learning path",
+            "observation": "Names Basic Canvas, Advanced Canvas, Bimini Enclosure, Semi-Rigid Enclosures & Center Consoles, and Upholstery Course 1 & 2, alongside additional seminars and machine-repair training."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Prepare workshop placement and course details"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "ohio/ottawa"
+        ],
+        "path": "/areas/ohio/ottawa-county/",
+        "title": "Web Design for Port Clinton / Ottawa County, OH",
+        "description": "Web design for Port Clinton / Ottawa County, OH. Example brief: let students describe their experience before choosing the next workshop.",
+        "servedAreas": [
+          {
+            "name": "Ottawa County",
+            "state": "Ohio",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/ohio/#ottawa",
+            "label": "Ottawa County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/ohio-ottawa.txt"
+      },
+      "beforeSha256": "ad36237d704ffdce288b51694223fc7389766e87a912d9afe5dfbfe21bc4b373",
+      "afterSha256": "257c554567a5062270ed76392020908598aed2eedffb1ebb04d842430f7ef994"
+    },
+    {
+      "route": "/areas/ohio/pike-county/",
+      "before": {
+        "areaId": "ohio/pike",
+        "market": "Waverly / Pike County, OH",
+        "lead": "A frame's outside appearance does not establish which art tile fits inside it. I help Pike County makers explain the object, opening and arrangement so customers can discuss the right frame.",
+        "decisionTitle": "Connect the art tile to the frame opening it needs.",
+        "decision": "Family Woodworks in Piketon offers frames sized for particular art tiles, including single and multiple openings, and invites sizing questions. For a frame maker's website, I can clarify product descriptions or build a fuller introduction connecting the tile, frame style and proposed display. The useful distinction is between the dimensions of the object and the frame opening described by the maker. The business confirms the fit.",
+        "scopes": [
+          {
+            "title": "Clarify tile-frame product descriptions",
+            "pages": [
+              "Tile identity and dimensions",
+              "Frame opening and arrangement",
+              "Style, finish and sizing inquiry"
+            ],
+            "request": "Keep the art tile and the relevant opening information together beside the existing product and contact routes.",
+            "supplies": "Current product dimensions, the meaning of each measurement and accurate single- or multiple-opening descriptions.",
+            "check": "A customer with an art tile can identify the maker's relevant opening description without assuming the frame's outer size establishes fit."
+          },
+          {
+            "title": "Connect standard frames and custom sizes",
+            "pages": [
+              "Tile and picture-frame offers",
+              "Opening arrangements and dimensions",
+              "Wood and finish examples",
+              "Sizing questions and project inquiry"
+            ],
+            "request": "Explain how a customer can discuss a listed frame or an unusual size using the object they want to display.",
+            "supplies": "Approved product images, accurate measurement labels, current custom-size arrangements and the information needed for review.",
+            "check": "A visitor with two tiles can describe both pieces and the desired arrangement before treating a single-opening listing as the complete solution."
+          }
+        ],
+        "planningTable": {
+          "title": "An art-tile frame inquiry brief",
+          "intro": "The maker confirms fit and construction. Use this table to plan product explanations and useful sizing questions.",
+          "columns": [
+            "Project detail",
+            "Customer provides",
+            "Website explains",
+            "Question to confirm"
+          ],
+          "rows": [
+            [
+              "Art tile",
+              "Maker or product reference and the actual tile information available.",
+              "Which tile family a listed frame is designed for.",
+              "Is this the tile the listing describes?"
+            ],
+            [
+              "Dimensions",
+              "The object's measurements as requested by the maker.",
+              "What each published frame dimension refers to.",
+              "Which measurement describes the relevant opening?"
+            ],
+            [
+              "Arrangement",
+              "One tile or several, with a desired relationship.",
+              "Single and multiple openings where offered.",
+              "How should the pieces be displayed together?"
+            ],
+            [
+              "Frame appearance",
+              "Preferred style, wood or finish reference.",
+              "Accurate examples tied to the frame being discussed.",
+              "Which appearance choices apply to this frame?"
+            ]
+          ]
+        },
+        "scopeTrigger": "The frame maker confirms fit, mounting and fabrication. A product configurator or new ordering workflow needs separately agreed website scope.",
+        "quoteQuestions": [
+          "Which dimensions do customers most often confuse on your listings?",
+          "Can every example identify the intended tile and number of openings?",
+          "What information do you need when the tile or arrangement differs from a listed frame?"
+        ],
+        "coverageNote": "For Waverly, Piketon and Pike County businesses. Family Woodworks lists its business on Taylor Hollow Road in Piketon. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://www.familywoodworksllc.com/store/c83/Frames_Sized_For_Rookwood_Art_Tiles.html",
+            "label": "Family Woodworks: tile-specific frames",
+            "observation": "Describes frames sized for Rookwood art tiles, including single and multiple openings, and invites sizing questions."
+          },
+          {
+            "url": "https://www.familywoodworksllc.com/store/p1499/8_1%2F4%22x_8_1%2F4%22_Oak_Park.html",
+            "label": "Family Woodworks: a labeled frame opening",
+            "observation": "Distinguishes the frame's rear opening measurement from the art-tile size."
+          },
+          {
+            "url": "https://www.familywoodworksllc.com/contactus.html",
+            "label": "Family Woodworks: Piketon contact",
+            "observation": "Invites custom-frame questions and lists 286 Taylor Hollow Road, Piketon."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-redesign-brief/",
+            "label": "Preparing the website redesign brief"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "ohio/pike"
+        ],
+        "path": "/areas/ohio/pike-county/",
+        "title": "Web Design for Waverly / Pike County, OH",
+        "description": "Web design for Waverly / Pike County, OH. Example brief: connect the art tile to the frame opening it needs.",
+        "servedAreas": [
+          {
+            "name": "Pike County",
+            "state": "Ohio",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/ohio/#pike",
+            "label": "Pike County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/ohio-pike.txt"
+      },
+      "after": {
+        "areaId": "ohio/pike",
+        "market": "Waverly / Pike County, OH",
+        "lead": "A frame's outside appearance does not establish which art tile fits inside it. I help Pike County makers explain the object, opening and arrangement so customers can discuss the right frame.",
+        "decisionTitle": "Connect the art tile to the frame opening it needs.",
+        "decision": "Family Woodworks in Piketon offers frames sized for particular art tiles, including single and multiple openings, and invites sizing questions. For a frame maker's website, I can clarify product descriptions or build a fuller introduction connecting the tile, frame style and proposed display. The useful distinction is between the dimensions of the object and the frame opening described by the maker. The business confirms the fit.",
+        "scopes": [
+          {
+            "title": "Clarify tile-frame product descriptions",
+            "pages": [
+              "Tile identity and dimensions",
+              "Frame opening and arrangement",
+              "Style, finish and sizing inquiry"
+            ],
+            "request": "Keep the art tile and the relevant opening information together beside the existing product and contact routes.",
+            "supplies": "Current product dimensions, the meaning of each measurement and accurate single- or multiple-opening descriptions.",
+            "check": "A customer with an art tile can identify the maker's relevant opening description without assuming the frame's outer size establishes fit."
+          },
+          {
+            "title": "Connect standard frames and custom sizes",
+            "pages": [
+              "Tile and picture-frame offers",
+              "Opening arrangements and dimensions",
+              "Wood and finish examples",
+              "Sizing questions and project inquiry"
+            ],
+            "request": "Explain how a customer can discuss a listed frame or an unusual size using the object they want to display.",
+            "supplies": "Approved product images, accurate measurement labels, current custom-size arrangements and the information needed for review.",
+            "check": "A visitor with two tiles can describe both pieces and the desired arrangement before treating a single-opening listing as the complete solution."
+          }
+        ],
+        "planningTable": {
+          "title": "An art-tile frame inquiry brief",
+          "intro": "The maker confirms fit and construction. Use this table to plan product explanations and useful sizing questions.",
+          "columns": [
+            "Project detail",
+            "Customer provides",
+            "Website explains",
+            "Question to confirm"
+          ],
+          "rows": [
+            [
+              "Art tile",
+              "Maker or product reference and the actual tile information available.",
+              "Which tile family a listed frame is designed for.",
+              "Is this the tile the listing describes?"
+            ],
+            [
+              "Dimensions",
+              "The object's measurements as requested by the maker.",
+              "What each published frame dimension refers to.",
+              "Which measurement describes the relevant opening?"
+            ],
+            [
+              "Arrangement",
+              "One tile or several, with a desired relationship.",
+              "Single and multiple openings where offered.",
+              "How should the pieces be displayed together?"
+            ],
+            [
+              "Frame appearance",
+              "Preferred style, wood or finish reference.",
+              "Accurate examples tied to the frame being discussed.",
+              "Which appearance choices apply to this frame?"
+            ]
+          ]
+        },
+        "scopeTrigger": "The frame maker confirms fit, mounting and fabrication. A product configurator or new ordering workflow needs separately agreed website scope.",
+        "quoteQuestions": [
+          "Which dimensions do customers most often confuse on your listings?",
+          "Can every example identify the intended tile and number of openings?",
+          "What information do you need when the tile or arrangement differs from a listed frame?"
+        ],
+        "coverageNote": "For Waverly, Piketon and Pike County businesses. Family Woodworks lists its business on Taylor Hollow Road in Piketon. Wonder and Method works remotely from Buffalo.",
+        "sources": [
+          {
+            "url": "https://www.familywoodworksllc.com/store/c83/Frames_Sized_For_Rookwood_Art_Tiles.html",
+            "label": "Family Woodworks: tile-specific frames",
+            "observation": "Describes frames sized for Rookwood art tiles, including single and multiple openings, and invites sizing questions."
+          },
+          {
+            "url": "https://www.familywoodworksllc.com/store/p1499/8_1%2F4%22x_8_1%2F4%22_Oak_Park.html",
+            "label": "Family Woodworks: a labeled frame opening",
+            "observation": "Labels an 8¼ by 8¼ inch rear opening for an 8 by 8 inch Rookwood art tile and recommends confirming actual tile measurements. These are not exterior frame dimensions or proof of stock."
+          },
+          {
+            "url": "https://www.familywoodworksllc.com/contactus.html",
+            "label": "Family Woodworks: Piketon contact",
+            "observation": "Invites custom-frame questions and lists 286 Taylor Hollow Road, Piketon."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-redesign-brief/",
+            "label": "Preparing the website redesign brief"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "ohio/pike"
+        ],
+        "path": "/areas/ohio/pike-county/",
+        "title": "Web Design for Waverly / Pike County, OH",
+        "description": "Web design for Waverly / Pike County, OH. Example brief: connect the art tile to the frame opening it needs.",
+        "servedAreas": [
+          {
+            "name": "Pike County",
+            "state": "Ohio",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/ohio/#pike",
+            "label": "Pike County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/ohio-pike.txt"
+      },
+      "beforeSha256": "4f770decaf745243bd913f9936a1163344244e6d21b0e8158ff6e407dc3c5940",
+      "afterSha256": "af625a0885b90dd441e8324103e314dbbc9af3de69b6a5b55a30cdd80d52f804"
+    },
+    {
+      "route": "/areas/oklahoma/adair-county/",
+      "before": {
+        "areaId": "oklahoma/adair",
+        "market": "Adair County, OK",
+        "lead": "A park pass, a parking payment and a rental each answer a different part of a day-trip plan. I help Adair County businesses explain what a visitor still needs to arrange.",
+        "decisionTitle": "Keep parking, equipment and the operating season separate.",
+        "decision": "WOKA’s first-visit page describes parking charged per vehicle and four-hour equipment rentals that include a vessel, lifejacket and helmet. Its pass page distinguishes season and annual passes and makes entry subject to capacity. At this review, the first-visit page says rentals and concessions are closed for the season, while the rental page still displays operating hours.\n\nFor a proposed recreation website, I would put the current operating notice beside the choices it affects, then explain parking, equipment and pass benefits individually. Consider a passholder planning to bring a friend who needs a rental: owning the pass should not imply that equipment is supplied or that the rental desk is operating. The owner must resolve conflicting hours before they become a visitor promise. A focused project can make these relationships clear with maintained text and existing links; it does not need a new booking system.",
+        "scopes": [
+          {
+            "title": "Explain what each purchase covers",
+            "pages": [
+              "Vehicle parking",
+              "Equipment rental and included gear",
+              "Pass benefits and entry limits"
+            ],
+            "request": "Identify the vehicle and equipment arrangements before following the existing purchase routes.",
+            "supplies": "Current parking units, rental inclusions, pass terms and owner-approved links.",
+            "check": "A passholder can identify a separate rental need without being told the pass guarantees admission."
+          },
+          {
+            "title": "Give seasonal notices a clear scope",
+            "pages": [
+              "Park opening notice",
+              "Rental and concession status",
+              "Where current changes are published"
+            ],
+            "request": "Check whether the chosen service is operating before planning the visit.",
+            "supplies": "One responsible editor, approved seasonal dates and the pages where hours repeat.",
+            "check": "Closing rentals leaves the park notice accurate and removes contradictory rental-hours claims from the proposed content."
+          }
+        ],
+        "scopeTrigger": "A smaller job can clarify inclusions and reconcile published hours. A fuller project can connect pass information, equipment choices and seasonal updates. The operator supplies all participation and current-condition guidance.",
+        "quoteQuestions": [
+          "Which purchase covers the vehicle, equipment or person?",
+          "Which pass benefits depend on capacity or an operating rental service?",
+          "Who resolves seasonal-hours differences across pages?"
+        ],
+        "coverageNote": "Website project planning for Adair County, including the public example in or near Watts. Wonder and Method is based in Buffalo, New York, and works online with Oklahoma businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://visitwoka.com/first-time-visit/",
+            "label": "WOKA: first-time visitors",
+            "observation": "Separates per-vehicle parking from four-hour vessel rentals including a lifejacket and helmet; the captured footer marks rentals and concessions closed for the season."
+          },
+          {
+            "url": "https://visitwoka.com/plan-your-visit/rentals/",
+            "label": "WOKA: rentals",
+            "observation": "Describes four-hour rental options and still displays rental operating hours, which conflict with the captured first-visit season notice."
+          },
+          {
+            "url": "https://visitwoka.com/season-pass/",
+            "label": "WOKA: passes",
+            "observation": "Distinguishes season and annual passes, rental discounts and capacity limits; a pass does not guarantee entry."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections; the owner approves operational facts.",
+        "areaIds": [
+          "oklahoma/adair"
+        ],
+        "path": "/areas/oklahoma/adair-county/",
+        "title": "Web Design for Adair County, OK",
+        "description": "Web design for Adair County, Oklahoma. Keep parking, equipment and the operating season separate.",
+        "servedAreas": [
+          {
+            "name": "Adair County",
+            "state": "Oklahoma",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/oklahoma/#adair",
+            "label": "Adair County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep booking and arrival preparation connected"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Separate the arrangements for a park visit",
+          "intro": "Proposed website planning and acceptance checks. The owner supplies current facts and confirms each actual arrangement.",
+          "columns": [
+            "Planning choice",
+            "Website explanation",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Vehicle arrival",
+              "Parking charge and current parking hours.",
+              "Owner-approved parking information.",
+              "A rental is not presented as the vehicle’s parking payment."
+            ],
+            [
+              "Equipment",
+              "Rental duration and included items.",
+              "Current equipment offer and operating status.",
+              "A pass benefit is not presented as supplied equipment."
+            ],
+            [
+              "Pass",
+              "Validity, discount and capacity conditions.",
+              "Current pass terms.",
+              "A pass does not become a guaranteed place."
+            ]
+          ]
+        }
+      },
+      "after": {
+        "areaId": "oklahoma/adair",
+        "market": "Adair County, OK",
+        "lead": "A park pass, a parking payment and a rental each answer a different part of a day-trip plan. I help Adair County businesses explain what a visitor still needs to arrange.",
+        "decisionTitle": "Keep parking, equipment and the operating season separate.",
+        "decision": "WOKA’s first-visit page describes parking charged per vehicle and four-hour equipment rentals that include a vessel, lifejacket and helmet. Its pass page distinguishes season and annual passes and makes entry subject to capacity. At this review, the first-visit page says rentals and concessions are closed for the season, while the rental page still displays operating hours.\n\nFor a proposed recreation website, I would put the current operating notice beside the choices it affects, then explain parking, equipment and pass benefits individually. Consider a passholder planning to bring a friend who needs a rental: owning the pass should not imply that equipment is supplied or that the rental desk is operating. The owner must resolve conflicting hours before they become a visitor promise. A focused project can make these relationships clear with maintained text and existing links; it does not need a new booking system.",
+        "scopes": [
+          {
+            "title": "Explain what each purchase covers",
+            "pages": [
+              "Vehicle parking",
+              "Equipment rental and included gear",
+              "Pass benefits and entry limits"
+            ],
+            "request": "Identify the vehicle and equipment arrangements before following the existing purchase routes.",
+            "supplies": "Current parking units, rental inclusions, pass terms and owner-approved links.",
+            "check": "A passholder can identify a separate rental need without being told the pass guarantees admission."
+          },
+          {
+            "title": "Give seasonal notices a clear scope",
+            "pages": [
+              "Park opening notice",
+              "Rental and concession status",
+              "Where current changes are published"
+            ],
+            "request": "Check whether the chosen service is operating before planning the visit.",
+            "supplies": "One responsible editor, approved seasonal dates and the pages where hours repeat.",
+            "check": "Closing rentals leaves the park notice accurate and removes contradictory rental-hours claims from the proposed content."
+          }
+        ],
+        "scopeTrigger": "A smaller job can clarify inclusions and reconcile published hours. A fuller project can connect pass information, equipment choices and seasonal updates. The operator supplies all participation and current-condition guidance.",
+        "quoteQuestions": [
+          "Which purchase covers the vehicle, equipment or person?",
+          "Which pass benefits depend on capacity or an operating rental service?",
+          "Who resolves seasonal-hours differences across pages?"
+        ],
+        "coverageNote": "Website project planning for Adair County, including the public example in or near Watts. Wonder and Method is based in Buffalo, New York, and works online with Oklahoma businesses. Named organizations are public planning examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://visitwoka.com/first-time-visit/",
+            "label": "WOKA: first-time visitors",
+            "observation": "Separates per-vehicle parking and four-hour vessel rentals including a lifejacket and helmet. Direct HTTP check October 27 found the footer marking rentals and concessions closed for the season; web text extraction omitted that footer."
+          },
+          {
+            "url": "https://visitwoka.com/plan-your-visit/rentals/",
+            "label": "WOKA: rentals",
+            "observation": "Direct HTTP check October 27 found ordinary rental/concession hours still in the page body, conflicting with the first-visit seasonal closure notice. Current operation needs operator confirmation."
+          },
+          {
+            "url": "https://visitwoka.com/season-pass/",
+            "label": "WOKA: passes",
+            "observation": "Lists 10% rental discount with presentation; prohibits sharing outside immediate family and retains capacity limits. It does not expressly settle a passholder buying a friend’s separate rental, so guest benefit eligibility remains an operator question."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections; the owner approves operational facts.",
+        "areaIds": [
+          "oklahoma/adair"
+        ],
+        "path": "/areas/oklahoma/adair-county/",
+        "title": "Web Design for Adair County, OK",
+        "description": "Web design for Adair County, Oklahoma. Keep parking, equipment and the operating season separate.",
+        "servedAreas": [
+          {
+            "name": "Adair County",
+            "state": "Oklahoma",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/oklahoma/#adair",
+            "label": "Adair County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/timed-booking-handoff/",
+            "label": "Keep booking and arrival preparation connected"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Separate the arrangements for a park visit",
+          "intro": "Proposed website planning and acceptance checks. The owner supplies current facts and confirms each actual arrangement.",
+          "columns": [
+            "Planning choice",
+            "Website explanation",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Vehicle arrival",
+              "Parking charge and current parking hours.",
+              "Owner-approved parking information.",
+              "A rental is not presented as the vehicle’s parking payment."
+            ],
+            [
+              "Equipment",
+              "Rental duration and included items.",
+              "Current equipment offer and operating status.",
+              "A pass benefit is not presented as supplied equipment."
+            ],
+            [
+              "Pass",
+              "Validity, discount and capacity conditions.",
+              "Current pass terms.",
+              "A pass does not become a guaranteed place."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "ad572e89374591233801ad54110c87ec683c92fa6d38384ce2cd121ceaa44559",
+      "afterSha256": "d7bdca58a68344e994defa6ff124713b8860c2b94794fd1cc6840e604880a707"
+    }
+  ],
+  "faqs": [],
+  "sourceChecks": [
+    "operations/human-quality-20261027/research/residual-j-fact-recheck.json"
+  ],
+  "limits": "Twenty drafts and four exact source records; no FAQ or imported-brief changes. Fictional examples explicitly bounded; pass guest eligibility remains unresolved rather than inferred. Independent complete-candidate recheck required.",
+  "acceptance": {
+    "reviewFiles": [
+      {
+        "file": "operations/human-quality-20261027/audits/local-after-residual-j-recheck.jsonl",
+        "sha256": "42d0e18e278e4ce4e3e8b6d720382569675b105c04c0ab313fbe382cf6d3ae57"
+      }
+    ],
+    "exactCandidates": 20,
+    "scope": "Content only; family, visual, accessibility and release checks remain separate."
+  },
+  "importVerification": {
+    "checkedAt": "2026-10-27T21:45:22.608Z",
+    "method": "All selected route projections exactly equal src/human-location-briefs.json after guarded import.",
+    "routes": 20
+  }
+}

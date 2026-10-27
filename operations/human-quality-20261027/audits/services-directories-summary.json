@@ -1,0 +1,38 @@
+{
+  "expectedCount": 61,
+  "reviewedCount": 61,
+  "complete": true,
+  "missingRoutes": [],
+  "scope": "Individual complete-text editorial assessment only. All final scores remain null pending visual and accessibility evidence. Directory enumeration is functional reference, not automatically penalized for length.",
+  "familyCounts": {
+    "area-index": 1,
+    "area-state": 52,
+    "service-index": 1,
+    "service": 7
+  },
+  "contentSubtotalRange": [
+    53.75,
+    72.5
+  ],
+  "capCounts": {
+    "seriousClarity": 1
+  },
+  "keyFixes": [
+    "Correct NYC neighborhood annotations that call each borough a Town; this contradicts the page's own borough definitions and triggers the seriousClarity cap of 59.",
+    "Qualify the repeated San Juan Martin Pena subbarrio labels by parent barrio after checking the source records; do not blindly deduplicate potentially distinct places.",
+    "Add upfront place-type and search guidance to Texas; preserve all 254 county entries.",
+    "Use task-oriented service headings and clearer brief instructions at the final action.",
+    "Reduce repeated definition, ownership and scope passages without hiding essential commercial conditions.",
+    "Keep complete directory lists and local place-type distinctions; use state-appropriate search labels and precise browse/search result language.",
+    "Replace internal status codes and research-log prose with plain-language status; keep dates, uncertainties and documentary detail available.",
+    "Name source links and county reference groups precisely; fix singular/plural counts and explain geographically mismatched guide links.",
+    "Keep visual, interaction and external-source verification explicit and separate from content judgments."
+  ],
+  "validation": {
+    "assignmentCoverage": "61 unique routes match the assignment exactly",
+    "baselineHashes": "61 input hashes match the baseline inventory",
+    "exactQuotesChecked": 437,
+    "quoteErrors": 0,
+    "finalScores": "All null pending visual/accessibility evidence"
+  }
+}
