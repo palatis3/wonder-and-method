@@ -49,6 +49,8 @@ test('forty expansion hubs expose 2889 entries within 53 public directory pages 
 test('hub entries expose every recorded place and distinct government type with their source references',()=>{
  for(const state of states){
   const html=directories.get(state.id);
+  // A definition may span readable paragraphs inside its own note container.
+  const definitionHtml=html.replace(/(<div id="geography-note-\d+">)([\s\S]*?)(<\/div>)/g,(_,open,note,close)=>open+note.replaceAll('</p><p>',' ')+close);
   for(const county of state.counties){
    const g=state.geography[county.slug];
    const entry=html.slice(html.indexOf(`id="${county.slug}"`)).split('</details>')[0];
@@ -59,7 +61,7 @@ test('hub entries expose every recorded place and distinct government type with 
    assert.match(entry,/href="#geography-reference-\d+"/);
    for(const url of g.sources)assert.ok(html.includes(`href="${e(url)}"`),state.id+' source '+url);
    const shared=Object.values(state.geography).find(other=>other.directoryNote&&g.directoryNote.startsWith(other.directoryNote+' '));
-   assert.ok(html.includes(e(g.directoryNote))||(shared&&html.includes(e(shared.directoryNote))&&html.includes(e(g.directoryNote.slice(shared.directoryNote.length+1)))),state.id+' complete place definitions, with a shared prefix printed once');
+   assert.ok(definitionHtml.includes(e(g.directoryNote))||(shared&&definitionHtml.includes(e(shared.directoryNote))&&definitionHtml.includes(e(g.directoryNote.slice(shared.directoryNote.length+1)))),state.id+' complete place definitions, with a shared prefix printed once');
   }
  }
  assert.match(directories.get('michigan'),/>Charter townships<\/h3>/);
