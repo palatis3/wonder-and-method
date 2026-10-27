@@ -287,6 +287,7 @@ export async function bindCountyDirectory(root=document,prepared){
  const sections=[...directory.querySelectorAll('.county-section')];
  const results=root.querySelector('[data-county-results]');
  const bestList=results?.querySelector('[data-county-best]'),moreList=results?.querySelector('[data-county-more]');
+ const separateResults=Boolean(results&&bestList&&moreList);
  const moreDetails=moreList?.closest('details');
  const multipleNote=results?.querySelector('[data-county-multiple]');
  const stateLabels=Object.fromEntries(serviceStateInfo.map(state=>[state.id,state.name]));
@@ -302,10 +303,12 @@ export async function bindCountyDirectory(root=document,prepared){
  let filtering=false,openBeforeSearch=new Set();
  const update=()=>{
   const search=parseCountyQuery(input.value),state=stateFilter?.value||'',active=Boolean(input.value.trim()||state);
-  if(active&&!filtering)openBeforeSearch=new Set(sections.filter(section=>section.open));
+  if(active&&!filtering&&!separateResults)openBeforeSearch=new Set(sections.filter(section=>section.open));
+  // Dedicated results hide the whole native directory. Preserve its rows,
+  // order and open sections instead of rewriting thousands of hidden cards.
   let count=0;
-  for(const card of cards){card.match=countyMatch(card,search,state);card.score=card.match.score;card.element.hidden=!card.score;if(card.score)count++;}
-  for(const section of sections){
+  for(const card of cards){card.match=countyMatch(card,search,state);card.score=card.match.score;if(!separateResults)card.element.hidden=!card.score;if(card.score)count++;}
+  if(!separateResults)for(const section of sections){
    const localCards=cards.filter(card=>section.contains(card.element));
    section.hidden=!localCards.some(card=>card.score);
    if(active)section.open=!section.hidden;
@@ -314,7 +317,7 @@ export async function bindCountyDirectory(root=document,prepared){
    if(list)for(const card of localCards.sort((a,b)=>active?compareCountyMatches(a.match,b.match)||a.index-b.index:a.index-b.index))list.append(card.element);
   }
   filtering=active;empty.hidden=count!==0;clear.disabled=!active;
-  if(results&&bestList&&moreList){
+  if(separateResults){
    const ordered=cards.filter(card=>card.score).sort((a,b)=>compareCountyMatches(a.match,b.match)||a.index-b.index);
    const best=ordered.filter(card=>card.score===ordered[0]?.score),more=ordered.filter(card=>card.score!==ordered[0]?.score);
    bestList.replaceChildren(...(active?best.map(makeResult):[]));moreList.replaceChildren(...(active?more.map(makeResult):[]));
