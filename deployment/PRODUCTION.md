@@ -2,7 +2,7 @@
 
 Current published application: [Colorado, Utah and Puerto Rico](../operations/co-ut-pr-expansion-20261026/RELEASE.md), source `76a5b665f52447579de68703de60b57003b7ea05`, runtime `22055743-5bfc-41d9-9507-55485ed6ad4b`, deployed 2026-10-27T00:22:53.176Z. All 2,299 routes and 2,969 assets match the tested build; exact-source CI, live verification, Search Console submission and scheduled recovery with external monitoring receipt are complete.
 
-The [Idaho and Montana candidate](../operations/id-mt-expansion-20261026/RELEASE.md) adds 69 reviewed service pages and two state directories. It remains pending exact-source CI, Linux screenshot acceptance and production verification.
+The [Idaho and Montana candidate](../operations/id-mt-expansion-20261026/RELEASE.md) adds 69 reviewed service pages and two state directories. It remains pending final exact-source CI and production verification.
 
 ## Retained prior release record
 

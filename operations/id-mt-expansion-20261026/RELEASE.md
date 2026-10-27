@@ -1,6 +1,6 @@
 # Idaho and Montana release candidate
 
-Status: content and local technical review complete; exact-source CI, Linux screenshot acceptance and production verification pending. This record does not claim publication.
+Status: content, local technical review and Linux screenshot acceptance complete; final exact-source CI and production verification pending. This record does not claim publication.
 
 All 100 counties have individual evidence and disposition review. The candidate adds 32 Idaho and 37 Montana service pages, two state directories and no FAQs or general guides. Thirty-one areas remain directory-only after source and comparison review. All 2,146 preceding service records and all 278 FAQ pairs on 208 pages remain unchanged.
 
@@ -11,5 +11,7 @@ Independent cohort, correction, keyword, source-integration and rendered-delta r
 The keyword review inspected 828 unique US exact phrases: 55 positive volume estimates, 10 explicit zero volumes and 763 unavailable volumes. Only 37 observations are complete; 28 numeric observations require refresh. The 27 question seeds are exploratory phrases. National estimates are not county-resident demand and overlapping volumes are not summed. No new FAQ or guide was justified by full-body review.
 
 Migration 0047 adds 71 fixed daily analytics page keys, from 2,271 to 2,342. All preceding migrations are unchanged. Publication requires a fresh production backup, successful local restore and rehearsal, preserved stored rows and schemas, exact-source CI, live checks, sitemap submission and a genuine scheduled recovery with its external receipt.
+
+The first CI run passed its unit suite, then identified missing contextual-link approval records and an ambiguous Sanders scope sentence. Independent review accepted 128 individual link rationales, preserved 2,504 existing records and updated five guide fingerprints solely for the expanded state count. Sanders now explicitly assigns route engineering to the operator and qualified transport specialists, separately from website-system assessment. Only that page's text and HTML baseline hashes changed; all other pages, assets and downloads remain identical. The accepted 72 Linux screenshots remain applicable to the unchanged 28 sampled routes. Local site-quality checks now pass all 4,412 route checks and 2,995 historical fragment targets with no findings.
 
 The disposition and keyword summaries are in this directory. Private evidence is in `evidence/id-mt-expansion-20261026/`, including `final-candidate-packet/`, `keyword-final-review/`, `cohort-review/`, `integration-review/` and `integration/`. No indexing, ranking, lead or revenue outcome is claimed.
