@@ -6,6 +6,7 @@ const paths=['/work/','/services/','/services/web-design/','/services/website-re
 test('design desk changes presentation while preserving content, inquiry context and keyboard focus',async({page})=>{
  await page.goto('/work/?qa=1');const desk=page.locator('[data-design-desk]');await expect(desk).toHaveAttribute('data-desk-ready','true');
  const specimen=desk.locator('[data-desk-specimen]'),copy=await specimen.innerText();
+ await expect(desk.locator('.design-desk-footer')).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
  await page.route('**/__site-axe.js',route=>route.fulfill({contentType:'text/javascript',body:axe}));await page.addScriptTag({url:'/__site-axe.js'});
  for(const direction of ['expressive','warm','quiet']){
   const radio=desk.locator(`input[name="desk-direction"][value="${direction}"]`);await radio.focus();await radio.press('Space');

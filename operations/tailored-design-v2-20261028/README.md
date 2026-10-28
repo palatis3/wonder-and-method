@@ -26,6 +26,8 @@ New browser coverage checks all design states, content invariance, keyboard focu
 
 At the local checkpoint: focused Chromium journeys and accessibility passed 29 cases with one pre-existing reduced-motion exclusion; focused Firefox/WebKit coverage passed 20 cases. The 1,048-unit suite had two build-dependent fixture failures during a concurrent rebuild; both affected tests and their complete four-test file passed after the build finished. Final CI must rerun the complete suite. Static verification, 2,425-route SEO checks, 2,995 historical fragment checks and all 16 exact editorial review decisions passed. These are development results, not publication evidence.
 
+Linux screenshot inspection caught an inherited page-footer background on the design desk links. Its local link group now uses an ordinary div, with a regression assertion for the transparent background. Nu validation caught missing responsive-source metadata; the phone source now pairs an explicit 390w descriptor with its sizes attribute. The independent reviewer approved both repairs. Release helper review also added postdeployment timestamps and authenticated runtime/commit binding to live browser evidence.
+
 ## Release status
 
-Pending final content baseline, reviewed Linux visual candidates, full exact-commit CI and production verification. A later release record will identify the tested source, production runtime and actual results. No field-performance, conversion-lift or human usability result is claimed.
+The reviewed content baseline and 24 Linux visual references are prepared. Final Work captures, full exact-commit CI and production verification remain pending. A later release record will identify the tested source, production runtime and actual results. No field-performance, conversion-lift or human usability result is claimed.
