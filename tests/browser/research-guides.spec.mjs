@@ -1,6 +1,14 @@
 import {test,expect} from './fixtures.mjs';
 import {readFile} from 'node:fs/promises';
 const axe=await readFile(new URL('../../node_modules/axe-core/axe.min.js',import.meta.url),'utf8');
+const guideSections={
+ 'website-not-generating-leads':['define-the-problem','find-the-bottleneck','measurement','page-decision','lead-record'],
+ 'how-to-choose-a-web-designer':['same-brief','compare-quotes','questions','provider-fit','work-evidence','acceptance'],
+ 'website-content-template':['notes-to-copy','facts','page-purpose','service','review'],
+ 'website-redesign-timeline':['start','example','sequence','ready','reviews','studio'],
+ 'one-page-website-seo':['decision','example-one','example-many','compare','implementation','change'],
+ 'website-handover-checklist':['meaning','example','accounts','files','register','verification']
+};
 test.beforeEach(async({page})=>{await page.route('**/__test-axe.js',route=>route.fulfill({status:200,contentType:'text/javascript',body:axe}));});
 test('ROI calculator validates, recalculates and resets without transmitting inputs',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='no-javascript','Covered by the no-JavaScript fallback');
@@ -27,11 +35,17 @@ test('ROI calculator validates, recalculates and resets without transmitting inp
 test('six new guides have visible content, working downloads and narrow-screen layouts',async({page},testInfo)=>{
  test.skip(testInfo.project.name==='no-javascript');
  for(const slug of ['website-not-generating-leads','how-to-choose-a-web-designer','website-content-template','website-redesign-timeline','one-page-website-seo','website-handover-checklist']){
-  await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();await expect(page.locator('.journal-prose > section')).toHaveCount(slug==='website-content-template'?8:6);
+  await page.goto('/guides/'+slug+'/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();expect(await page.locator('.journal-prose > section').evaluateAll(nodes=>nodes.map(n=>n.id))).toEqual(guideSections[slug]);
   if(slug==='website-content-template')await expect(page.locator('.journal-prose > #notes-to-copy')).toContainText('Fictional notes supplied by an owner:');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
   const download=page.locator('.journal-prose a[href^="/assets/guides/"]').first();await expect(download).toBeVisible();const url=await download.getAttribute('href');const response=await page.request.get(url);expect(response.status()).toBe(200);expect((await response.text()).length).toBeGreaterThan(300);
-  const steps=page.locator('.guide-steps');await steps.scrollIntoViewIfNeeded();await expect(steps).toBeVisible();expect(await steps.locator('li').count()).toBeGreaterThanOrEqual(3);expect(await steps.locator('li strong').allTextContents()).not.toContain('');
+  if(slug==='website-not-generating-leads'){
+   const diagnostic=page.locator('#find-the-bottleneck table');await expect(diagnostic).toBeVisible();await expect(diagnostic.getByRole('rowheader')).toHaveCount(4);
+   await expect(diagnostic.getByRole('rowheader')).toHaveText(['People find you','They understand and choose your service','Their inquiry reaches you','You reply and assess or book suitable work']);
+   await expect(page.locator('#lead-record li')).toHaveCount(5);
+  }else{
+   const steps=page.locator('.guide-steps');await steps.scrollIntoViewIfNeeded();await expect(steps).toBeVisible();expect(await steps.locator('li').count()).toBeGreaterThanOrEqual(3);expect(await steps.locator('li strong').allTextContents()).not.toContain('');
+  }
   await page.addScriptTag({url:'/__test-axe.js'});const violations=await page.evaluate(async()=>{const r=await axe.run(document.getElementById('main'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return r.violations.map(x=>({id:x.id,nodes:x.nodes.length}));});expect(violations,slug).toEqual([]);
  }
 });

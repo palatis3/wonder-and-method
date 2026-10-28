@@ -1,5 +1,11 @@
 import {test,expect} from './fixtures.mjs';
 
+async function openBudgetDetails(page){
+ for(const details of await page.locator('main details').all())if(await details.getAttribute('open')===null){
+  const summary=details.locator(':scope > summary');await summary.focus();await page.keyboard.press('Enter');await expect(details).toHaveAttribute('open','');
+ }
+}
+
 test('table regions enter the tab order only while they need scrolling',async({page})=>{
  await page.goto('/guides/website-project-cost/');
  const region=page.locator('.journal-table-wrap').first();
@@ -19,6 +25,7 @@ test('table regions enter the tab order only while they need scrolling',async({p
 test('concise budgets retain comparable columns and semantic headers at narrow widths',async({page})=>{
  for(const path of ['/guides/website-maintenance-cost/','/guides/website-project-cost/']){
   await page.goto(path);
+  await openBudgetDetails(page);
   for(const width of [320,390,640,1440]){
    await page.setViewportSize({width,height:900});
    for(const table of await page.locator('.compact-money-table').all()){
@@ -48,6 +55,7 @@ test('compact budgets contain scrolling and expose keyboard access with enlarged
  let checked=0;
  for(const path of ['/guides/website-maintenance-cost/','/guides/website-project-cost/']){
   await page.goto(path);await page.evaluate(()=>document.fonts.ready);
+  await openBudgetDetails(page);
   await page.evaluate(()=>document.documentElement.style.fontSize='200%');
   for(const table of await page.locator('.compact-money-table').all()){
    const region=table.locator('..');

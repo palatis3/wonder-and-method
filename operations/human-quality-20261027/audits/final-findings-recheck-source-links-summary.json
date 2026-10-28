@@ -1,0 +1,36 @@
+{
+  "reviewer": "Independent Astra full content/source repair review",
+  "reviewedAt": "2026-10-28T01:01:09.089838+00:00",
+  "packet": "output/human-quality-20261027/source-link-review/current.jsonl",
+  "packetSha256": "991def05a33383435bd053e18fac52d6d1717ca657bcc286be59dd2a173552b0",
+  "coverage": {
+    "expected": 7,
+    "fullBodiesRead": 7,
+    "draftsAndSourceEntriesRead": 7,
+    "nearestSiblingDraftsAndSourceListsRead": 7,
+    "sourceDisclosuresRead": 7,
+    "separateFaqSectionsPresent": 0
+  },
+  "passContent": 7,
+  "holds": 0,
+  "newBlockingFindings": 0,
+  "ratingChanges": 0,
+  "routes": [
+    "/areas/texas/briscoe-county/",
+    "/areas/texas/hartley-county/",
+    "/areas/texas/childress-county/",
+    "/areas/texas/dallam-county/",
+    "/areas/texas/moore-county/",
+    "/areas/texas/gray-county/",
+    "/areas/pennsylvania/dauphin-county/"
+  ],
+  "remainingDefects": [
+    "Hartley sourceBridge has pre-existing subjectless fragments and repeated address; optional prose polish only, retained scanability 3."
+  ],
+  "limitations": [
+    "Content/source review only; visuals, accessibility and final remain null.",
+    "Seven changed source documents freshly retrieved in preceding research; unchanged supplemental sources were not re-fetched.",
+    "Supplied sibling comparison is not an exhaustive topical-overlap review."
+  ],
+  "verdict": "pass-content"
+}

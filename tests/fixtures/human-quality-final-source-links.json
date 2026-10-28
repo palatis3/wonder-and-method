@@ -1,0 +1,1535 @@
+{
+  "date": "2026-10-27",
+  "reviewer": "Codex primary; seven live source records independently researched by Astra",
+  "basis": "Replace seven confirmed404 citations with live official sources; disclose six JSON published records. Correct the piano appraisal attribution and example to supported value-appraisal/estate/sale purposes. Preserve all routes, commercial terms and unrelated content.",
+  "records": [
+    {
+      "path": "/areas/texas/briscoe-county/",
+      "before": {
+        "areaId": "texas/briscoe",
+        "market": "Briscoe County, TX",
+        "lead": "A borrower should not have to try the wrong channel before learning how an item can be renewed. I help Briscoe County institutions organize public instructions around the material and the action needed.",
+        "decisionTitle": "Put the right renewal channel beside each material.",
+        "decision": "Caprock Public Library’s service page allows book renewals online but directs DVD renewals to telephone or in-person contact. It also says an item cannot be renewed when another borrower is waiting. For a library website, I would connect each material’s loan information to the appropriate renewal route and a clear staff-help option. A proposed check would follow a reader with both a book and a DVD: the page should make the different channels visible without implying that the same catalog action handles both. The library decides whether the particular item can renew. Public instructions can explain that boundary without asking the reader to disclose account details in a general website inquiry.",
+        "scopes": [
+          {
+            "title": "Repair material-specific renewal instructions",
+            "pages": [
+              "Books and the catalog route",
+              "DVD contact route",
+              "When another reader is waiting"
+            ],
+            "request": "Use the stated channel for the material and contact staff when renewal is unavailable.",
+            "supplies": "Current renewal wording, catalog links and library contact details.",
+            "check": "The reader does not assume that an online book-renewal instruction also applies to DVDs."
+          },
+          {
+            "title": "Build a borrowing help page",
+            "pages": [
+              "Materials and loan periods",
+              "Renewal options",
+              "Unavailable renewals",
+              "Staff assistance"
+            ],
+            "request": "Find the material, then follow its next-action instructions.",
+            "supplies": "Approved loan and renewal terms, contact routes and account-help wording.",
+            "check": "A request to renew is not presented as guaranteed when another borrower is waiting."
+          }
+        ],
+        "scopeTrigger": "A short content repair may be enough when the existing catalog works and the main need is clearer instructions. A broader borrowing page is useful when material types have several different rules. Catalog behavior and account decisions remain separate from the public content work.",
+        "quoteQuestions": [
+          "Which materials use a different renewal channel?",
+          "What should a reader do when renewal is unavailable?",
+          "Can the material’s loan details and next action be found together?"
+        ],
+        "coverageNote": "For Briscoe County website buyers. The public example is in Quitaque, Texas. Wonder and Method works with you online from Buffalo, New York. Named organizations are planning examples, not studio clients or endorsements.",
+        "sources": [
+          {
+            "url": "https://caprockpublic.harringtonlc.org/library-services/",
+            "label": "Caprock Public Library: library services",
+            "observation": "Distinguishes online book renewal from telephone or in-person DVD renewal and explains the waiting-borrower limit."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "texas/briscoe"
+        ],
+        "path": "/areas/texas/briscoe-county/",
+        "title": "Web Design for Briscoe County, TX",
+        "description": "Web design for Briscoe County, TX. Example brief: put the right renewal channel beside each material.",
+        "servedAreas": [
+          {
+            "name": "Briscoe County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#briscoe",
+            "label": "Briscoe County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Connect the information to the next action"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "beforeSha256": "c395d2206fbc9a315d1bfd24efde89ea6c62982c0b6b559b7af1ca8fb9668673",
+      "after": {
+        "areaId": "texas/briscoe",
+        "market": "Briscoe County, TX",
+        "lead": "A borrower should not have to try the wrong channel before learning how an item can be renewed. I help Briscoe County institutions organize public instructions around the material and the action needed.",
+        "decisionTitle": "Put the right renewal channel beside each material.",
+        "decision": "Caprock Public Library’s service page allows book renewals online but directs DVD renewals to telephone or in-person contact. It also says an item cannot be renewed when another borrower is waiting. For a library website, I would connect each material’s loan information to the appropriate renewal route and a clear staff-help option. A proposed check would follow a reader with both a book and a DVD: the page should make the different channels visible without implying that the same catalog action handles both. The library decides whether the particular item can renew. Public instructions can explain that boundary without asking the reader to disclose account details in a general website inquiry.",
+        "scopes": [
+          {
+            "title": "Repair material-specific renewal instructions",
+            "pages": [
+              "Books and the catalog route",
+              "DVD contact route",
+              "When another reader is waiting"
+            ],
+            "request": "Use the stated channel for the material and contact staff when renewal is unavailable.",
+            "supplies": "Current renewal wording, catalog links and library contact details.",
+            "check": "The reader does not assume that an online book-renewal instruction also applies to DVDs."
+          },
+          {
+            "title": "Build a borrowing help page",
+            "pages": [
+              "Materials and loan periods",
+              "Renewal options",
+              "Unavailable renewals",
+              "Staff assistance"
+            ],
+            "request": "Find the material, then follow its next-action instructions.",
+            "supplies": "Approved loan and renewal terms, contact routes and account-help wording.",
+            "check": "A request to renew is not presented as guaranteed when another borrower is waiting."
+          }
+        ],
+        "scopeTrigger": "A short content repair may be enough when the existing catalog works and the main need is clearer instructions. A broader borrowing page is useful when material types have several different rules. Catalog behavior and account decisions remain separate from the public content work.",
+        "quoteQuestions": [
+          "Which materials use a different renewal channel?",
+          "What should a reader do when renewal is unavailable?",
+          "Can the material’s loan details and next action be found together?"
+        ],
+        "coverageNote": "For Briscoe County website buyers. The public example is in Quitaque, Texas. Wonder and Method works with you online from Buffalo, New York. Named organizations are planning examples, not studio clients or endorsements.",
+        "sources": [
+          {
+            "url": "https://caprockpublic.harringtonlc.org/?rest_route=/wp/v2/pages/31",
+            "label": "Caprock Public Library: library services (published record, JSON)",
+            "observation": "Distinguishes online book renewal from telephone or in-person DVD renewal and explains the waiting-borrower limit."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "texas/briscoe"
+        ],
+        "path": "/areas/texas/briscoe-county/",
+        "title": "Web Design for Briscoe County, TX",
+        "description": "Web design for Briscoe County, TX. Example brief: put the right renewal channel beside each material.",
+        "servedAreas": [
+          {
+            "name": "Briscoe County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#briscoe",
+            "label": "Briscoe County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Connect the information to the next action"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "afterSha256": "f1adc4a2103a6ed6563540601cfba851fa1537e428f6024a0fddef7d4aae9028",
+      "research": {
+        "url": "https://caprockpublic.harringtonlc.org/?rest_route=/wp/v2/pages/31",
+        "checkedAt": "2026-10-28T00:53:48.637476+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\caprockpublic_harringtonlc_org_rest_route_wp_v2_pages_31.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\caprockpublic_harringtonlc_org_rest_route_wp_v2_pages_31.json"
+      }
+    },
+    {
+      "path": "/areas/texas/hartley-county/",
+      "before": {
+        "lead": "Access to a digital resource is not the same as permission to share it with a class or club. I help Hartley County organizations explain who a resource is for, whether it is available locally and how to ask for help.",
+        "decisionTitle": "Show the permitted use before the resource link.",
+        "decision": "Channing School/Public Library's digital-resource page separates free resources, consortium resources and subscriptions whose local availability must be checked. Its Harrington Library Consortium notice says individual cardholders must not extend their access to schools, classes, clubs or other groups. For a proposed library website, I would keep audience, local availability and sign-in instructions together. A hypothetical club organizer with a personal library card should find the group-use question before sharing credentials. The aim is a useful public resource directory, with a clear staff route for uncertainty; the page should not infer a license or permission from a successful login.",
+        "scopes": [
+          {
+            "title": "Improve the existing resource directory",
+            "pages": [
+              "Free and subscription resources",
+              "Individual-use conditions",
+              "Local availability and sign-in help"
+            ],
+            "request": "Select a resource and check its audience and access requirements before opening it.",
+            "supplies": "The current resource list, approved licensing notices, local subscriptions and correct provider destinations.",
+            "check": "A teacher or club organizer can see that an individual card's access does not establish group permission."
+          },
+          {
+            "title": "Build a library research and learning gateway",
+            "pages": [
+              "Resources by reader purpose",
+              "Audience and subscription labels",
+              "Library-card and provider help",
+              "Staff questions and resource review"
+            ],
+            "request": "Find a suitable resource for the intended use and ask the responsible team when the published conditions do not settle it.",
+            "supplies": "Approved resource descriptions, age or audience groupings, local availability, help contacts and review responsibilities.",
+            "check": "A listed optional subscription is not presented as available at Channing until the library confirms it; free resources remain easy to find."
+          }
+        ],
+        "scopeTrigger": "A focused update can improve labels and links around the current directory. A fuller build can reorganize learning and research tasks across resource providers. The library and providers define licensing and availability. Authentication, subscription management and account permissions are separate technical work; the public directory does not need to collect credentials.",
+        "quoteQuestions": [
+          "Which resource conditions depend on individual versus group use?",
+          "Which listed subscriptions are actually available through your library?",
+          "Who checks provider links and approves changes to access notices?"
+        ],
+        "areaId": "texas/hartley",
+        "market": "Hartley County, TX",
+        "coverageNote": "Channing School/Public Library lists 900 Greenwood; the Census address match confirms Hartley County. Wonder and Method is based in Buffalo and works online with Texas businesses. Named organizations are public research examples, not clients or partners.",
+        "sources": [
+          {
+            "url": "https://channing.harringtonlc.org/hlc-digital-resources/",
+            "label": "Channing School/Public Library: HLC digital resources",
+            "observation": "Separates resource categories and local subscription checks; publishes the restriction on extending individual cardholder access to groups."
+          },
+          {
+            "url": "https://channing.harringtonlc.org/",
+            "label": "Channing School/Public Library: location",
+            "observation": "Lists its location at 900 Greenwood in Channing and card/PIN access to online databases."
+          },
+          {
+            "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=900+Greenwood+Ave%2C+Channing+TX+79018&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+            "label": "Independent county-location evidence",
+            "observation": "Channing School/Public Library lists 900 Greenwood; the Census address match confirms Hartley County."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "texas/hartley"
+        ],
+        "path": "/areas/texas/hartley-county/",
+        "title": "Web Design for Hartley County, TX",
+        "description": "Web design for Hartley County, TX. Planning: show the permitted use before the resource link.",
+        "servedAreas": [
+          {
+            "name": "Hartley County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#hartley",
+            "label": "Hartley County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Explain access states without implying approval"
+          }
+        ],
+        "checkedDate": "2026-10-25",
+        "planningTable": {
+          "title": "What every resource card should answer",
+          "intro": "These are proposed website checks for your own organization. The owner supplies current information and approves the actual arrangements.",
+          "columns": [
+            "Decision",
+            "Website explanation",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Purpose",
+              "Describe what the resource helps the reader do.",
+              "A current, accurate resource summary.",
+              "The reader can choose by need rather than a product name alone."
+            ],
+            [
+              "Audience",
+              "State the approved use and relevant limits.",
+              "The provider's current audience or licensing wording.",
+              "A personal account is not described as classroom access."
+            ],
+            [
+              "Availability",
+              "Identify free, provided and locally conditional resources.",
+              "The library's actual subscriptions.",
+              "An unconfirmed subscription is not labelled available."
+            ],
+            [
+              "Help",
+              "Keep the correct staff or provider route nearby.",
+              "Responsibility for access and permission questions.",
+              "Readers can ask without sending passwords through a public form."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "cc5745207313c89c96475834be11fed0f32bbbb102746c9cb8d70ed2952e18c4",
+      "after": {
+        "lead": "Access to a digital resource is not the same as permission to share it with a class or club. I help Hartley County organizations explain who a resource is for, whether it is available locally and how to ask for help.",
+        "decisionTitle": "Show the permitted use before the resource link.",
+        "decision": "Channing School/Public Library's digital-resource page separates free resources, consortium resources and subscriptions whose local availability must be checked. Its Harrington Library Consortium notice says individual cardholders must not extend their access to schools, classes, clubs or other groups. For a proposed library website, I would keep audience, local availability and sign-in instructions together. A hypothetical club organizer with a personal library card should find the group-use question before sharing credentials. The aim is a useful public resource directory, with a clear staff route for uncertainty; the page should not infer a license or permission from a successful login.",
+        "scopes": [
+          {
+            "title": "Improve the existing resource directory",
+            "pages": [
+              "Free and subscription resources",
+              "Individual-use conditions",
+              "Local availability and sign-in help"
+            ],
+            "request": "Select a resource and check its audience and access requirements before opening it.",
+            "supplies": "The current resource list, approved licensing notices, local subscriptions and correct provider destinations.",
+            "check": "A teacher or club organizer can see that an individual card's access does not establish group permission."
+          },
+          {
+            "title": "Build a library research and learning gateway",
+            "pages": [
+              "Resources by reader purpose",
+              "Audience and subscription labels",
+              "Library-card and provider help",
+              "Staff questions and resource review"
+            ],
+            "request": "Find a suitable resource for the intended use and ask the responsible team when the published conditions do not settle it.",
+            "supplies": "Approved resource descriptions, age or audience groupings, local availability, help contacts and review responsibilities.",
+            "check": "A listed optional subscription is not presented as available at Channing until the library confirms it; free resources remain easy to find."
+          }
+        ],
+        "scopeTrigger": "A focused update can improve labels and links around the current directory. A fuller build can reorganize learning and research tasks across resource providers. The library and providers define licensing and availability. Authentication, subscription management and account permissions are separate technical work; the public directory does not need to collect credentials.",
+        "quoteQuestions": [
+          "Which resource conditions depend on individual versus group use?",
+          "Which listed subscriptions are actually available through your library?",
+          "Who checks provider links and approves changes to access notices?"
+        ],
+        "areaId": "texas/hartley",
+        "market": "Hartley County, TX",
+        "coverageNote": "Channing School/Public Library lists 900 Greenwood; the Census address match confirms Hartley County. Wonder and Method is based in Buffalo and works online with Texas businesses. Named organizations are public research examples, not clients or partners.",
+        "sources": [
+          {
+            "url": "https://channing.harringtonlc.org/?rest_route=/wp/v2/pages/32",
+            "label": "Channing School/Public Library: HLC digital resources (published record, JSON)",
+            "observation": "Separates resource categories and local subscription checks; publishes the restriction on extending individual cardholder access to groups."
+          },
+          {
+            "url": "https://channing.harringtonlc.org/",
+            "label": "Channing School/Public Library: location",
+            "observation": "Lists its location at 900 Greenwood in Channing and card/PIN access to online databases."
+          },
+          {
+            "url": "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress?address=900+Greenwood+Ave%2C+Channing+TX+79018&benchmark=Public_AR_Current&vintage=Current_Current&format=json",
+            "label": "Independent county-location evidence",
+            "observation": "Channing School/Public Library lists 900 Greenwood; the Census address match confirms Hartley County."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "texas/hartley"
+        ],
+        "path": "/areas/texas/hartley-county/",
+        "title": "Web Design for Hartley County, TX",
+        "description": "Web design for Hartley County, TX. Planning: show the permitted use before the resource link.",
+        "servedAreas": [
+          {
+            "name": "Hartley County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#hartley",
+            "label": "Hartley County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Explain access states without implying approval"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "What every resource card should answer",
+          "intro": "These are proposed website checks for your own organization. The owner supplies current information and approves the actual arrangements.",
+          "columns": [
+            "Decision",
+            "Website explanation",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Purpose",
+              "Describe what the resource helps the reader do.",
+              "A current, accurate resource summary.",
+              "The reader can choose by need rather than a product name alone."
+            ],
+            [
+              "Audience",
+              "State the approved use and relevant limits.",
+              "The provider's current audience or licensing wording.",
+              "A personal account is not described as classroom access."
+            ],
+            [
+              "Availability",
+              "Identify free, provided and locally conditional resources.",
+              "The library's actual subscriptions.",
+              "An unconfirmed subscription is not labelled available."
+            ],
+            [
+              "Help",
+              "Keep the correct staff or provider route nearby.",
+              "Responsibility for access and permission questions.",
+              "Readers can ask without sending passwords through a public form."
+            ]
+          ]
+        }
+      },
+      "afterSha256": "64776c15e4b57b7d7ebe9990ad868b14cf3e2d2edb0040e9eddefefdebc0c745",
+      "research": {
+        "url": "https://channing.harringtonlc.org/?rest_route=/wp/v2/pages/32",
+        "checkedAt": "2026-10-28T00:53:48.211539+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\channing_harringtonlc_org_rest_route_wp_v2_pages_32.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\channing_harringtonlc_org_rest_route_wp_v2_pages_32.json"
+      }
+    },
+    {
+      "path": "/areas/texas/childress-county/",
+      "before": {
+        "areaId": "texas/childress",
+        "market": "Childress County, TX",
+        "lead": "Different library services can have different access requirements. I help Childress County organizations explain public access and account-required services before asking a visitor to register or sign in.",
+        "decisionTitle": "Separate public internet use from borrowing-card and database access requirements.",
+        "decision": "Childress Public Library’s services page says internet use does not require a patron card, while its database instructions call for a library card and PIN. For your website, I can introduce service-specific access choices before linking to account registration or a digital database. A hypothetical visitor seeking Wi-Fi does not first have to request a card; someone opening a restricted database sees the credential-help route.",
+        "scopes": [
+          {
+            "title": "Clarify public internet access",
+            "pages": [
+              "Public internet access",
+              "Card and PIN services",
+              "Credential-help instructions"
+            ],
+            "request": "Choose the service needed, then follow its public-access or credential-help instructions.",
+            "supplies": "Requested service, public-access conditions, card/PIN help route and staff-approved age guidance.",
+            "check": "A hypothetical visitor seeking Wi-Fi does not first have to request a card; someone opening a restricted database sees the credential-help route."
+          },
+          {
+            "title": "Connect services by intended use to the next step",
+            "pages": [
+              "Services by intended use",
+              "Borrowing-card information",
+              "Digital-resource routes",
+              "Staff-reviewed policy questions"
+            ],
+            "request": "Choose the service needed, then follow its public-access or credential-help instructions.",
+            "supplies": "Your approved descriptions for services by intended use, borrowing-card information, digital-resource routes, plus the person responsible for keeping them current.",
+            "check": "A public internet route remains usable without first entering an account-registration process."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of public internet access. A fuller build can connect services by intended use with staff-reviewed policy questions. Public instructions can support the existing staff and catalog routes. Borrower-account access, credential handling and eligibility decisions need separate assessment; no borrowing history is needed for this content brief.",
+        "quoteQuestions": [
+          "Which services can a visitor use without a card, and which need an existing credential?",
+          "What should customers know about card and PIN services?",
+          "Who confirms the information for credential-help instructions?"
+        ],
+        "coverageNote": "For website projects in Childress County, including the Childress example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
+        "sources": [
+          {
+            "url": "https://childress.harringtonlc.org/our-library-services/",
+            "label": "Childress Public Library: services",
+            "observation": "Childress Public Library states that internet use does not require a patron card."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/childress"
+        ],
+        "path": "/areas/texas/childress-county/",
+        "title": "Web Design for Childress County, TX",
+        "description": "Web design for Childress County, TX. Planning: separate public internet use from borrowing-card and database access requirements.",
+        "servedAreas": [
+          {
+            "name": "Childress County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#childress",
+            "label": "Childress County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          }
+        ],
+        "checkedDate": "2026-10-25"
+      },
+      "beforeSha256": "b07b7f4ac9f4e507d31e54b8f3b0e56d25c156df257d662ec90f1adde68a0101",
+      "after": {
+        "areaId": "texas/childress",
+        "market": "Childress County, TX",
+        "lead": "Different library services can have different access requirements. I help Childress County organizations explain public access and account-required services before asking a visitor to register or sign in.",
+        "decisionTitle": "Separate public internet use from borrowing-card and database access requirements.",
+        "decision": "Childress Public Library’s services page says internet use does not require a patron card, while its database instructions call for a library card and PIN. For your website, I can introduce service-specific access choices before linking to account registration or a digital database. A hypothetical visitor seeking Wi-Fi does not first have to request a card; someone opening a restricted database sees the credential-help route.",
+        "scopes": [
+          {
+            "title": "Clarify public internet access",
+            "pages": [
+              "Public internet access",
+              "Card and PIN services",
+              "Credential-help instructions"
+            ],
+            "request": "Choose the service needed, then follow its public-access or credential-help instructions.",
+            "supplies": "Requested service, public-access conditions, card/PIN help route and staff-approved age guidance.",
+            "check": "A hypothetical visitor seeking Wi-Fi does not first have to request a card; someone opening a restricted database sees the credential-help route."
+          },
+          {
+            "title": "Connect services by intended use to the next step",
+            "pages": [
+              "Services by intended use",
+              "Borrowing-card information",
+              "Digital-resource routes",
+              "Staff-reviewed policy questions"
+            ],
+            "request": "Choose the service needed, then follow its public-access or credential-help instructions.",
+            "supplies": "Your approved descriptions for services by intended use, borrowing-card information, digital-resource routes, plus the person responsible for keeping them current.",
+            "check": "A public internet route remains usable without first entering an account-registration process."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of public internet access. A fuller build can connect services by intended use with staff-reviewed policy questions. Public instructions can support the existing staff and catalog routes. Borrower-account access, credential handling and eligibility decisions need separate assessment; no borrowing history is needed for this content brief.",
+        "quoteQuestions": [
+          "Which services can a visitor use without a card, and which need an existing credential?",
+          "What should customers know about card and PIN services?",
+          "Who confirms the information for credential-help instructions?"
+        ],
+        "coverageNote": "For website projects in Childress County, including the Childress example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
+        "sources": [
+          {
+            "url": "https://childress.harringtonlc.org/?rest_route=/wp/v2/pages/54",
+            "label": "Childress Public Library: services (published record, JSON)",
+            "observation": "Childress Public Library states that internet use does not require a patron card."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/childress"
+        ],
+        "path": "/areas/texas/childress-county/",
+        "title": "Web Design for Childress County, TX",
+        "description": "Web design for Childress County, TX. Planning: separate public internet use from borrowing-card and database access requirements.",
+        "servedAreas": [
+          {
+            "name": "Childress County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#childress",
+            "label": "Childress County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          }
+        ],
+        "checkedDate": "2026-10-27"
+      },
+      "afterSha256": "340e784226261e431a6d46cea16b545b4b76df992d3ef1363ff4b2b762997037",
+      "research": {
+        "url": "https://childress.harringtonlc.org/?rest_route=/wp/v2/pages/54",
+        "checkedAt": "2026-10-28T00:53:48.538487+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\childress_harringtonlc_org_rest_route_wp_v2_pages_54.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\childress_harringtonlc_org_rest_route_wp_v2_pages_54.json"
+      }
+    },
+    {
+      "path": "/areas/texas/dallam-county/",
+      "before": {
+        "areaId": "texas/dallam",
+        "market": "Dallam County, TX",
+        "lead": "A larger borrowing allowance can leave a separate household limit unchanged. I help Dalhart and Dallam County organizations explain concurrent rules with examples that make their different scopes clear.",
+        "decisionTitle": "Explain the staged per-card borrowing allowance separately from a household media cap.",
+        "decision": "Dallam-Hartley County Library’s borrowing page describes a smaller allowance for a new borrower’s first two checkout periods, followed by a larger per-account allowance. It separately says that its household DVD/Blu-ray limit still applies. For your website, I can use a two-stage public-policy explanation with an always-visible household rule and a separate hold-ready status note. In a hypothetical explanatory scenario, moving from the initial allowance to the established allowance does not increase the published household DVD/Blu-ray cap. Staff still determines the real account’s status.",
+        "scopes": [
+          {
+            "title": "Clarify new-borrower allowance",
+            "pages": [
+              "New-borrower allowance",
+              "Established per-card allowance",
+              "Persistent household media cap"
+            ],
+            "request": "Read the borrowing-stage explanation alongside the continuing household rule and ask staff about an individual account.",
+            "supplies": "Owner-approved wording for new/established borrowers, per-card versus household scope and staff route for individual account questions.",
+            "check": "In a hypothetical explanatory scenario, moving from the initial allowance to the established allowance does not increase the published household DVD/Blu-ray cap. Staff still determines the real account’s status."
+          },
+          {
+            "title": "Connect borrowing-policy introduction to the next step",
+            "pages": [
+              "Borrowing-policy introduction",
+              "Stage and counting scope",
+              "Hold and pickup status",
+              "Staff account-help route"
+            ],
+            "request": "Read the borrowing-stage explanation alongside the continuing household rule and ask staff about an individual account.",
+            "supplies": "Your approved descriptions for borrowing-policy introduction, stage and counting scope, hold and pickup status, plus the person responsible for keeping them current.",
+            "check": "The larger per-account allowance never replaces the household media limit in either the summary or worked example."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of new-borrower allowance. A fuller build can connect borrowing-policy introduction with staff account-help route. Public instructions can support the existing staff and catalog routes. Borrower-account access, credential handling and eligibility decisions need separate assessment; no borrowing history is needed for this content brief.",
+        "quoteQuestions": [
+          "Which limit changes with borrowing history, and which limit continues to apply to the household?",
+          "What should customers know about established per-card allowance?",
+          "Who confirms the information for persistent household media cap?"
+        ],
+        "coverageNote": "For website projects in Dallam County, including the Dalhart example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
+        "sources": [
+          {
+            "url": "https://dallam.harringtonlc.org/library-services/borrowing/",
+            "label": "Dallam-Hartley County Library: borrowing",
+            "observation": "New patrons have four items for the first two checkout periods, then twelve per account after borrowing and returning twice. DVD/Blu-ray discs remain capped at four per household at both stages."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/dallam"
+        ],
+        "path": "/areas/texas/dallam-county/",
+        "title": "Web Design for Dallam County, TX",
+        "description": "Web design for Dallam County, TX. Planning: explain the staged per-card borrowing allowance separately from a household media cap.",
+        "servedAreas": [
+          {
+            "name": "Dallam County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#dallam",
+            "label": "Dallam County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          },
+          {
+            "path": "/guides/inquiry-confirmation-examples/",
+            "label": "Inquiry confirmation examples that describe what happened"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Decisions to settle in the website brief",
+          "intro": "These are proposed content decisions. Staff supply current facts and confirm actual requests.",
+          "columns": [
+            "Decision",
+            "Proposed website content",
+            "Information to supply"
+          ],
+          "rows": [
+            [
+              "Initial allowance",
+              "Describe the smaller allowance and the stated transition condition.",
+              "Approved wording for the initial borrowing periods."
+            ],
+            [
+              "Established allowance",
+              "Name the per-account scope of the larger allowance.",
+              "Current per-card rule and staff help route."
+            ],
+            [
+              "Household media limit",
+              "Keep the household rule visible through both stages.",
+              "Current media categories and household wording."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "e8a91b3ea7c0844b348929dadf141ecff51bc65dddb9bf419b2910753b53721e",
+      "after": {
+        "areaId": "texas/dallam",
+        "market": "Dallam County, TX",
+        "lead": "A larger borrowing allowance can leave a separate household limit unchanged. I help Dalhart and Dallam County organizations explain concurrent rules with examples that make their different scopes clear.",
+        "decisionTitle": "Explain the staged per-card borrowing allowance separately from a household media cap.",
+        "decision": "Dallam-Hartley County Library’s borrowing page describes a smaller allowance for a new borrower’s first two checkout periods, followed by a larger per-account allowance. It separately says that its household DVD/Blu-ray limit still applies. For your website, I can use a two-stage public-policy explanation with an always-visible household rule and a separate hold-ready status note. In a hypothetical explanatory scenario, moving from the initial allowance to the established allowance does not increase the published household DVD/Blu-ray cap. Staff still determines the real account’s status.",
+        "scopes": [
+          {
+            "title": "Clarify new-borrower allowance",
+            "pages": [
+              "New-borrower allowance",
+              "Established per-card allowance",
+              "Persistent household media cap"
+            ],
+            "request": "Read the borrowing-stage explanation alongside the continuing household rule and ask staff about an individual account.",
+            "supplies": "Owner-approved wording for new/established borrowers, per-card versus household scope and staff route for individual account questions.",
+            "check": "In a hypothetical explanatory scenario, moving from the initial allowance to the established allowance does not increase the published household DVD/Blu-ray cap. Staff still determines the real account’s status."
+          },
+          {
+            "title": "Connect borrowing-policy introduction to the next step",
+            "pages": [
+              "Borrowing-policy introduction",
+              "Stage and counting scope",
+              "Hold and pickup status",
+              "Staff account-help route"
+            ],
+            "request": "Read the borrowing-stage explanation alongside the continuing household rule and ask staff about an individual account.",
+            "supplies": "Your approved descriptions for borrowing-policy introduction, stage and counting scope, hold and pickup status, plus the person responsible for keeping them current.",
+            "check": "The larger per-account allowance never replaces the household media limit in either the summary or worked example."
+          }
+        ],
+        "scopeTrigger": "Use a focused edit when the existing page needs a clearer explanation of new-borrower allowance. A fuller build can connect borrowing-policy introduction with staff account-help route. Public instructions can support the existing staff and catalog routes. Borrower-account access, credential handling and eligibility decisions need separate assessment; no borrowing history is needed for this content brief.",
+        "quoteQuestions": [
+          "Which limit changes with borrowing history, and which limit continues to apply to the household?",
+          "What should customers know about established per-card allowance?",
+          "Who confirms the information for persistent household media cap?"
+        ],
+        "coverageNote": "For website projects in Dallam County, including the Dalhart example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
+        "sources": [
+          {
+            "url": "https://dallam.harringtonlc.org/?rest_route=/wp/v2/pages/91",
+            "label": "Dallam-Hartley County Library: borrowing (published record, JSON)",
+            "observation": "New patrons have four items for the first two checkout periods, then twelve per account after borrowing and returning twice. DVD/Blu-ray discs remain capped at four per household at both stages."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. The written proposal identifies the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/dallam"
+        ],
+        "path": "/areas/texas/dallam-county/",
+        "title": "Web Design for Dallam County, TX",
+        "description": "Web design for Dallam County, TX. Planning: explain the staged per-card borrowing allowance separately from a household media cap.",
+        "servedAreas": [
+          {
+            "name": "Dallam County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#dallam",
+            "label": "Dallam County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          },
+          {
+            "path": "/guides/inquiry-confirmation-examples/",
+            "label": "Inquiry confirmation examples that describe what happened"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Decisions to settle in the website brief",
+          "intro": "These are proposed content decisions. Staff supply current facts and confirm actual requests.",
+          "columns": [
+            "Decision",
+            "Proposed website content",
+            "Information to supply"
+          ],
+          "rows": [
+            [
+              "Initial allowance",
+              "Describe the smaller allowance and the stated transition condition.",
+              "Approved wording for the initial borrowing periods."
+            ],
+            [
+              "Established allowance",
+              "Name the per-account scope of the larger allowance.",
+              "Current per-card rule and staff help route."
+            ],
+            [
+              "Household media limit",
+              "Keep the household rule visible through both stages.",
+              "Current media categories and household wording."
+            ]
+          ]
+        }
+      },
+      "afterSha256": "1460450c27fe8b0d83b7d24bc899ee7fb75bd62da6a99620a46d8c8dd5c1b6e5",
+      "research": {
+        "url": "https://dallam.harringtonlc.org/?rest_route=/wp/v2/pages/91",
+        "checkedAt": "2026-10-28T00:53:48.674719+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\dallam_harringtonlc_org_rest_route_wp_v2_pages_91.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\dallam_harringtonlc_org_rest_route_wp_v2_pages_91.json"
+      }
+    },
+    {
+      "path": "/areas/texas/moore-county/",
+      "before": {
+        "areaId": "texas/moore",
+        "market": "Moore County, TX",
+        "lead": "A borrower’s card privileges do not necessarily determine where an item can be returned. I help Moore County organizations explain the item, account category and originating location as separate parts of a lending service.",
+        "decisionTitle": "Keep the originating branch attached to the return instruction.",
+        "decision": "Moore County Libraries publishes different checkout limits for card categories, different material rules and a requirement to return an item to the same location where it was borrowed. Its policy also says DVDs and Blu-rays cannot be renewed. For a proposed library website, I would keep those decisions distinct. Imagine a borrower with an established card who borrowed a DVD from one branch and is now closer to another. The card category does not erase the published return-location rule, and an online account link does not promise renewal for that material. Clear content can help the borrower find the correct branch and ask staff about a problem. It should not infer borrowing eligibility or calculate penalties from a general policy summary.",
+        "scopes": [
+          {
+            "title": "Clarify borrowing and return information",
+            "pages": [
+              "Card-category limits",
+              "Material-specific renewal information",
+              "Originating branch and returns",
+              "Help when a return is difficult"
+            ],
+            "request": "Identify the item type and the branch it came from before following renewal or return instructions.",
+            "supplies": "Current board-approved policies, branch names and addresses, and the actual help route.",
+            "check": "An established card is not described as permission to return any item to any branch."
+          },
+          {
+            "title": "Build a fuller lending-service introduction",
+            "pages": [
+              "Getting ready to borrow",
+              "Material and loan-period choices",
+              "Account help",
+              "Return location and exceptions"
+            ],
+            "request": "Use the existing catalog or account service with clear preparation and return information.",
+            "supplies": "Approved lending categories, material rules, branch details and consistent links to the existing system.",
+            "check": "A DVD borrower reaches the published return guidance without a generic renew button being explained as a guaranteed extension."
+          }
+        ],
+        "scopeTrigger": "A focused rewrite can make the policy easier to use without replacing the catalog. A fuller service site helps when account help, branch information and returns are disconnected. Eligibility rules, fine calculations, account access and reminders need separate assessment. Library staff interprets the current policy and handles exceptions.",
+        "quoteQuestions": [
+          "Which borrowing rules depend on the card and which depend on the item?",
+          "Where must an item from each location be returned?",
+          "What should a borrower do when the ordinary return plan will not work?"
+        ],
+        "coverageNote": "For businesses and organizations in Moore County, Texas. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://dumas.harringtonlc.org/library-policies/borrowing-policies/",
+            "label": "Moore County Libraries: borrowing policies",
+            "observation": "Distinguishes card limits, material renewal and return to the originating location."
+          },
+          {
+            "url": "https://www.co.moore.tx.us/page/moore.libraries",
+            "label": "Moore County: library locations",
+            "observation": "Lists the county system’s Dumas, Sunray and Cactus branches."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/moore"
+        ],
+        "path": "/areas/texas/moore-county/",
+        "title": "Web Design for Moore County, TX",
+        "description": "Web design for Moore County, TX. Planning: keep the originating branch attached to the return instruction.",
+        "servedAreas": [
+          {
+            "name": "Moore County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#moore",
+            "label": "Moore County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Distinguish account access from the transaction it permits"
+          }
+        ],
+        "checkedDate": "2026-10-25",
+        "planningTable": {
+          "title": "Keep the originating branch attached to the return instruction.",
+          "intro": "Use these proposed checks with your own approved operating information. They describe website content, not a completed booking or an operational decision.",
+          "columns": [
+            "Reader decision",
+            "Content to prepare",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Card category",
+              "Explain the applicable checkout limits.",
+              "Current approved categories.",
+              "Card privileges are not presented as return-location permission."
+            ],
+            [
+              "Material",
+              "Show the correct renewal rule.",
+              "Current rules for books, audio and video.",
+              "A DVD is not promised the same extension as a book."
+            ],
+            [
+              "Originating branch",
+              "Retain its name in return guidance.",
+              "Verified branch address and policy.",
+              "A shared system does not imply interchangeable return points."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "900d2df0efde7eb60fa7f2aed363e9eeb5f9eb23b7771fc23b6072d473d8e549",
+      "after": {
+        "areaId": "texas/moore",
+        "market": "Moore County, TX",
+        "lead": "A borrower’s card privileges do not necessarily determine where an item can be returned. I help Moore County organizations explain the item, account category and originating location as separate parts of a lending service.",
+        "decisionTitle": "Keep the originating branch attached to the return instruction.",
+        "decision": "Moore County Libraries publishes different checkout limits for card categories, different material rules and a requirement to return an item to the same location where it was borrowed. Its policy also says DVDs and Blu-rays cannot be renewed. For a proposed library website, I would keep those decisions distinct. Imagine a borrower with an established card who borrowed a DVD from one branch and is now closer to another. The card category does not erase the published return-location rule, and an online account link does not promise renewal for that material. Clear content can help the borrower find the correct branch and ask staff about a problem. It should not infer borrowing eligibility or calculate penalties from a general policy summary.",
+        "scopes": [
+          {
+            "title": "Clarify borrowing and return information",
+            "pages": [
+              "Card-category limits",
+              "Material-specific renewal information",
+              "Originating branch and returns",
+              "Help when a return is difficult"
+            ],
+            "request": "Identify the item type and the branch it came from before following renewal or return instructions.",
+            "supplies": "Current board-approved policies, branch names and addresses, and the actual help route.",
+            "check": "An established card is not described as permission to return any item to any branch."
+          },
+          {
+            "title": "Build a fuller lending-service introduction",
+            "pages": [
+              "Getting ready to borrow",
+              "Material and loan-period choices",
+              "Account help",
+              "Return location and exceptions"
+            ],
+            "request": "Use the existing catalog or account service with clear preparation and return information.",
+            "supplies": "Approved lending categories, material rules, branch details and consistent links to the existing system.",
+            "check": "A DVD borrower reaches the published return guidance without a generic renew button being explained as a guaranteed extension."
+          }
+        ],
+        "scopeTrigger": "A focused rewrite can make the policy easier to use without replacing the catalog. A fuller service site helps when account help, branch information and returns are disconnected. Eligibility rules, fine calculations, account access and reminders need separate assessment. Library staff interprets the current policy and handles exceptions.",
+        "quoteQuestions": [
+          "Which borrowing rules depend on the card and which depend on the item?",
+          "Where must an item from each location be returned?",
+          "What should a borrower do when the ordinary return plan will not work?"
+        ],
+        "coverageNote": "For businesses and organizations in Moore County, Texas. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://dumas.harringtonlc.org/?rest_route=/wp/v2/pages/52",
+            "label": "Moore County Libraries: borrowing policies (published record, JSON)",
+            "observation": "Distinguishes card limits, material renewal and return to the originating location."
+          },
+          {
+            "url": "https://www.co.moore.tx.us/page/moore.libraries",
+            "label": "Moore County: library locations",
+            "observation": "Lists the county system’s Dumas, Sunray and Cactus branches."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/moore"
+        ],
+        "path": "/areas/texas/moore-county/",
+        "title": "Web Design for Moore County, TX",
+        "description": "Web design for Moore County, TX. Planning: keep the originating branch attached to the return instruction.",
+        "servedAreas": [
+          {
+            "name": "Moore County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#moore",
+            "label": "Moore County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Distinguish account access from the transaction it permits"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Keep the originating branch attached to the return instruction.",
+          "intro": "Use these proposed checks with your own approved operating information. They describe website content, not a completed booking or an operational decision.",
+          "columns": [
+            "Reader decision",
+            "Content to prepare",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Card category",
+              "Explain the applicable checkout limits.",
+              "Current approved categories.",
+              "Card privileges are not presented as return-location permission."
+            ],
+            [
+              "Material",
+              "Show the correct renewal rule.",
+              "Current rules for books, audio and video.",
+              "A DVD is not promised the same extension as a book."
+            ],
+            [
+              "Originating branch",
+              "Retain its name in return guidance.",
+              "Verified branch address and policy.",
+              "A shared system does not imply interchangeable return points."
+            ]
+          ]
+        }
+      },
+      "afterSha256": "402a99bcf1f6cad7c9bd3d477684bbd504f6b84b3fab26689bdce9fc2edba5d3",
+      "research": {
+        "url": "https://dumas.harringtonlc.org/?rest_route=/wp/v2/pages/52",
+        "checkedAt": "2026-10-28T00:53:48.210852+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\dumas_harringtonlc_org_rest_route_wp_v2_pages_52.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\dumas_harringtonlc_org_rest_route_wp_v2_pages_52.json"
+      }
+    },
+    {
+      "path": "/areas/texas/gray-county/",
+      "before": {
+        "areaId": "texas/gray",
+        "market": "Gray County, TX",
+        "lead": "A household account restriction can be explained without publishing another person’s borrowing. I help Gray County businesses turn that kind of customer decision into clear website content.",
+        "decisionTitle": "Explain a shared account restriction without exposing another person’s borrowing.",
+        "decision": "Lovett Memorial Library groups patrons by household and says a fine on one grouped card restricts the group’s services. Its confidentiality policy distinguishes the amount needed to settle a charge from authors, titles or subjects, which are not discussed without presentation of the borrower’s card. It also says Pampa cannot accept payment for another library’s fines. For a proposed account-help page, I would explain the shared consequence and the appropriate private next step without asking a household member to publish someone else’s borrowing history. The public page can identify that a restriction may concern a grouped account and direct the visitor to staff. It should preserve the distinction between learning how to resolve an amount and receiving details about the underlying materials. If the obligation belongs to another library, the instructions need the correct receiving institution rather than a generic pay-here message.",
+        "scopes": [
+          {
+            "title": "Clarify the account-help instructions",
+            "pages": [
+              "Shared restriction explanation",
+              "Private settlement inquiry",
+              "Correct library for payment"
+            ],
+            "request": "Ask staff through the private route about the restriction and the institution responsible for resolving it.",
+            "supplies": "The owner-approved explanation of household grouping; What staff may discuss through each private route; Which institution handles the relevant payment or return.",
+            "check": "A fictional household member asking why online access is restricted can find a staff route without being asked to list another borrower’s titles, and is not told to pay an external-library fine at Pampa."
+          },
+          {
+            "title": "Build a lending support introduction",
+            "pages": [
+              "Account-help situations",
+              "Material and amount privacy",
+              "Cross-library next steps"
+            ],
+            "request": "Ask staff through the private route about the restriction and the institution responsible for resolving it.",
+            "supplies": "Current descriptions and approved examples for account-help situations, material and amount privacy, cross-library next steps. Name the person who maintains the information and supplies the existing contact or provider destinations.",
+            "check": "A payment-help instruction does not require the visitor to identify another household member’s borrowed titles."
+          }
+        ],
+        "scopeTrigger": "A focused edit can explain how readers should ask for account help while preserving the published disclosure limits. A fuller introduction can connect common account situations and cross-library next steps. Staff handles identity checks and private account information.",
+        "quoteQuestions": [
+          "What should the website explain about the owner-approved explanation of household grouping?",
+          "What should the website explain about what staff may discuss through each private route?",
+          "What should the website explain about which institution handles the relevant payment or return?"
+        ],
+        "coverageNote": "This public example is in Pampa, Gray County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
+        "sources": [
+          {
+            "url": "https://lovett.harringtonlc.org/library-policies/",
+            "label": "Lovett Memorial Library: account and borrowing policies",
+            "observation": "Lovett Memorial Library groups patrons by household and says a fine on one grouped card restricts the group’s services. Its confidentiality policy distinguishes the amount needed to settle a charge from authors, titles or subjects, which are not discussed without presentation of the borrower’s card. It also says Pampa cannot accept payment for another library’s fines."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/gray"
+        ],
+        "path": "/areas/texas/gray-county/",
+        "title": "Web Design for Gray County, TX",
+        "description": "Web design for Gray County, TX. Planning: explain a shared account restriction without exposing another person’s borrowing.",
+        "servedAreas": [
+          {
+            "name": "Gray County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#gray",
+            "label": "Gray County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          }
+        ],
+        "checkedDate": "2026-10-25",
+        "planningTable": {
+          "title": "Explain a shared account restriction without exposing another person’s borrowing",
+          "intro": "Proposed content and checks for a website project. The operator supplies the current terms and confirms each actual arrangement.",
+          "columns": [
+            "Planning decision",
+            "Content to prepare",
+            "Owner evidence",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Shared restriction explanation",
+              "The owner-approved explanation of household grouping",
+              "Current approved service description.",
+              "A fictional household member asking why online access is restricted can find a staff route without being asked to list another borrower’s titles, and is not told to pay an external-library fine at Pampa."
+            ],
+            [
+              "Private settlement inquiry",
+              "What staff may discuss through each private route",
+              "Current policy and its applicable category.",
+              "A payment-help instruction does not require the visitor to identify another household member’s borrowed titles."
+            ],
+            [
+              "Correct library for payment",
+              "Which institution handles the relevant payment or return",
+              "Maintained contact route and the person responsible.",
+              "Ask staff through the private route about the restriction and the institution responsible for resolving it."
+            ]
+          ]
+        }
+      },
+      "beforeSha256": "b7edb52c38450e697e19ccb05d2850c4c8c554a3f1b25689199d605e123c1c09",
+      "after": {
+        "areaId": "texas/gray",
+        "market": "Gray County, TX",
+        "lead": "A household account restriction can be explained without publishing another person’s borrowing. I help Gray County businesses turn that kind of customer decision into clear website content.",
+        "decisionTitle": "Explain a shared account restriction without exposing another person’s borrowing.",
+        "decision": "Lovett Memorial Library groups patrons by household and says a fine on one grouped card restricts the group’s services. Its confidentiality policy distinguishes the amount needed to settle a charge from authors, titles or subjects, which are not discussed without presentation of the borrower’s card. It also says Pampa cannot accept payment for another library’s fines. For a proposed account-help page, I would explain the shared consequence and the appropriate private next step without asking a household member to publish someone else’s borrowing history. The public page can identify that a restriction may concern a grouped account and direct the visitor to staff. It should preserve the distinction between learning how to resolve an amount and receiving details about the underlying materials. If the obligation belongs to another library, the instructions need the correct receiving institution rather than a generic pay-here message.",
+        "scopes": [
+          {
+            "title": "Clarify the account-help instructions",
+            "pages": [
+              "Shared restriction explanation",
+              "Private settlement inquiry",
+              "Correct library for payment"
+            ],
+            "request": "Ask staff through the private route about the restriction and the institution responsible for resolving it.",
+            "supplies": "The owner-approved explanation of household grouping; What staff may discuss through each private route; Which institution handles the relevant payment or return.",
+            "check": "A fictional household member asking why online access is restricted can find a staff route without being asked to list another borrower’s titles, and is not told to pay an external-library fine at Pampa."
+          },
+          {
+            "title": "Build a lending support introduction",
+            "pages": [
+              "Account-help situations",
+              "Material and amount privacy",
+              "Cross-library next steps"
+            ],
+            "request": "Ask staff through the private route about the restriction and the institution responsible for resolving it.",
+            "supplies": "Current descriptions and approved examples for account-help situations, material and amount privacy, cross-library next steps. Name the person who maintains the information and supplies the existing contact or provider destinations.",
+            "check": "A payment-help instruction does not require the visitor to identify another household member’s borrowed titles."
+          }
+        ],
+        "scopeTrigger": "A focused edit can explain how readers should ask for account help while preserving the published disclosure limits. A fuller introduction can connect common account situations and cross-library next steps. Staff handles identity checks and private account information.",
+        "quoteQuestions": [
+          "What should the website explain about the owner-approved explanation of household grouping?",
+          "What should the website explain about what staff may discuss through each private route?",
+          "What should the website explain about which institution handles the relevant payment or return?"
+        ],
+        "coverageNote": "This public example is in Pampa, Gray County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
+        "sources": [
+          {
+            "url": "https://lovett.harringtonlc.org/?rest_route=/wp/v2/pages/26",
+            "label": "Lovett Memorial Library: account and borrowing policies (published record, JSON)",
+            "observation": "Lovett Memorial Library groups patrons by household and says a fine on one grouped card restricts the group’s services. Its confidentiality policy distinguishes the amount needed to settle a charge from authors, titles or subjects, which are not discussed without presentation of the borrower’s card. It also says Pampa cannot accept payment for another library’s fines."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "texas/gray"
+        ],
+        "path": "/areas/texas/gray-county/",
+        "title": "Web Design for Gray County, TX",
+        "description": "Web design for Gray County, TX. Planning: explain a shared account restriction without exposing another person’s borrowing.",
+        "servedAreas": [
+          {
+            "name": "Gray County",
+            "state": "Texas",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/texas/#gray",
+            "label": "Gray County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/approved-buyer-account-flow/",
+            "label": "Keep a buyer account separate from permission to purchase"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "planningTable": {
+          "title": "Explain a shared account restriction without exposing another person’s borrowing",
+          "intro": "Proposed content and checks for a website project. The operator supplies the current terms and confirms each actual arrangement.",
+          "columns": [
+            "Planning decision",
+            "Content to prepare",
+            "Owner evidence",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Shared restriction explanation",
+              "The owner-approved explanation of household grouping",
+              "Current approved service description.",
+              "A fictional household member asking why online access is restricted can find a staff route without being asked to list another borrower’s titles, and is not told to pay an external-library fine at Pampa."
+            ],
+            [
+              "Private settlement inquiry",
+              "What staff may discuss through each private route",
+              "Current policy and its applicable category.",
+              "A payment-help instruction does not require the visitor to identify another household member’s borrowed titles."
+            ],
+            [
+              "Correct library for payment",
+              "Which institution handles the relevant payment or return",
+              "Maintained contact route and the person responsible.",
+              "Ask staff through the private route about the restriction and the institution responsible for resolving it."
+            ]
+          ]
+        }
+      },
+      "afterSha256": "fd10ba819deabdd6372ceb5f6d82c6f38c14770a6058fb9b21a09689b4d4d549",
+      "research": {
+        "url": "https://lovett.harringtonlc.org/?rest_route=/wp/v2/pages/26",
+        "checkedAt": "2026-10-28T00:54:05.277695+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\lovett_harringtonlc_org_rest_route_wp_v2_pages_26.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\lovett_harringtonlc_org_rest_route_wp_v2_pages_26.json"
+      }
+    },
+    {
+      "path": "/areas/pennsylvania/dauphin-county/",
+      "before": {
+        "areaId": "pennsylvania/dauphin",
+        "market": "Harrisburg / Dauphin County, PA",
+        "lead": "A piano owner may need information to make a buying or selling decision before asking for maintenance. I help Dauphin County specialists explain the purpose of an appraisal alongside their tuning and repair work.",
+        "decisionTitle": "Ask what decision the piano appraisal needs to support.",
+        "decision": "Scott D. Portzline Piano Services advertises Harrisburg-area service and describes appraisals of a piano’s condition and value for several purposes, alongside tuning, repairs and moving. For a piano-service website, I can clarify that assessment offer or build a fuller introduction distinguishing the questions each service answers. Someone considering a piano purchase should be able to explain the decision and request an assessment without being routed straight into a routine tuning appointment.",
+        "scopes": [
+          {
+            "title": "Clarify the appraisal inquiry",
+            "pages": [
+              "Purpose of the assessment",
+              "Instrument and known condition",
+              "Appraisal discussion and ordinary questions"
+            ],
+            "request": "Invite the decision the customer is trying to make and explain what your actual appraisal service provides.",
+            "supplies": "Your current appraisal scope, preparation needs and accepted purposes.",
+            "check": "A prospective buyer can request information about a particular piano without the website treating the inquiry as approval to tune or repair it."
+          },
+          {
+            "title": "Connect assessment to wider piano services",
+            "pages": [
+              "Buying or selling questions",
+              "Appraisal and condition discussion",
+              "Tuning, repair and moving offers",
+              "Separate next steps after assessment"
+            ],
+            "request": "Explain how a customer can discuss later work while keeping it distinct from the assessment itself.",
+            "supplies": "Accurate service descriptions, actual appraisal outputs and how further services are agreed.",
+            "check": "An owner seeking a condition-and-value assessment can understand what they receive and ask about later work without assuming that the appraisal includes repairs or guarantees acceptance by another party."
+          }
+        ],
+        "planningTable": {
+          "title": "A piano-appraisal purpose brief",
+          "intro": "Use this worksheet to brief your own website. The owner approves the current offer and responsibilities; these rows describe content to prepare, not an accepted service order.",
+          "columns": [
+            "Visitor situation",
+            "Content to explain",
+            "Owner information needed",
+            "Acceptance question"
+          ],
+          "rows": [
+            [
+              "Decision",
+              "Identify why the owner wants an assessment.",
+              "The purposes your service supports.",
+              "Can the customer explain a buying or selling question?"
+            ],
+            [
+              "Instrument",
+              "Connect the request to the actual piano.",
+              "Identifying details and access information you need.",
+              "Is this a specific instrument rather than a general pricing question?"
+            ],
+            [
+              "Known condition",
+              "Invite observations and relevant history.",
+              "Your approved preparation prompts.",
+              "Can the owner explain concerns without diagnosing the piano?"
+            ],
+            [
+              "Assessment output",
+              "State what is supplied and what needs separate agreement.",
+              "Actual output and any applicable limits.",
+              "Does the visitor understand the service without assuming repairs or third-party approval?"
+            ]
+          ]
+        },
+        "scopeTrigger": "A clearer service description may be sufficient. A fuller build helps when appraisals, maintenance and moving share one unexplained contact route.",
+        "quoteQuestions": [
+          "Which decisions does your appraisal service help customers make?",
+          "What instrument information and access arrangements do you need?",
+          "What does the assessment provide, and which later services are agreed separately?"
+        ],
+        "coverageNote": "Scott D. Portzline Piano Services expressly advertises service in Harrisburg and the surrounding Central Pennsylvania area, including the Dauphin County market. Wonder and Method is a Buffalo studio working remotely with businesses in this county. Named businesses are public examples, not clients or partners.",
+        "sources": [
+          {
+            "url": "https://www.portzlinepianos.com/services",
+            "label": "Scott D. Portzline: appraisal and piano services",
+            "observation": "Describes condition-and-value appraisals alongside tuning, repairs, moving and used-piano services; identifies Harrisburg-area coverage."
+          },
+          {
+            "url": "https://www.portzlinepianos.com/contact-us",
+            "label": "Scott D. Portzline: appointments and questions",
+            "observation": "Invites appointment contact and a general service message."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Describe the actual service and its output"
+          }
+        ],
+        "checkedDate": "2026-10-23",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "pennsylvania/dauphin"
+        ],
+        "path": "/areas/pennsylvania/dauphin-county/",
+        "title": "Web Design for Harrisburg / Dauphin County, PA",
+        "description": "Web design for Harrisburg / Dauphin County, PA. Example brief: ask what decision the piano appraisal needs to support.",
+        "servedAreas": [
+          {
+            "name": "Dauphin County",
+            "state": "Pennsylvania",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/pennsylvania/#dauphin",
+            "label": "Dauphin County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/pennsylvania-dauphin.txt"
+      },
+      "beforeSha256": "536e17e749682dc89e515c18396a30bc9445946e2cf3f73ced91a78e7ebc0620",
+      "after": {
+        "areaId": "pennsylvania/dauphin",
+        "market": "Harrisburg / Dauphin County, PA",
+        "lead": "A piano owner preparing an estate settlement or sale may need a value appraisal before asking for maintenance. I help Dauphin County specialists explain the purpose of an appraisal alongside their tuning and repair work.",
+        "decisionTitle": "Ask what decision the piano appraisal needs to support.",
+        "decision": "Scott D. Portzline Piano Services advertises Harrisburg-area service and describes value appraisals for estate settlement, sale and insurance purposes, alongside tuning, repairs and moving. For a piano-service website, I can clarify that appraisal offer or build a fuller introduction distinguishing the questions each service answers. An owner preparing an estate settlement or sale should be able to explain the decision and request an appraisal without being routed straight into a routine tuning appointment.",
+        "scopes": [
+          {
+            "title": "Clarify the appraisal inquiry",
+            "pages": [
+              "Purpose of the assessment",
+              "Instrument and known condition",
+              "Appraisal discussion and ordinary questions"
+            ],
+            "request": "Invite the decision the customer is trying to make and explain what your actual appraisal service provides.",
+            "supplies": "Your current appraisal scope, preparation needs and accepted purposes.",
+            "check": "An owner preparing an estate settlement or sale can request information about a particular piano without the website treating the inquiry as approval to tune or repair it."
+          },
+          {
+            "title": "Connect assessment to wider piano services",
+            "pages": [
+              "Estate or sale questions",
+              "Appraisal and output discussion",
+              "Tuning, repair and moving offers",
+              "Separate next steps after assessment"
+            ],
+            "request": "Explain how a customer can discuss later work while keeping it distinct from the assessment itself.",
+            "supplies": "Accurate service descriptions, actual appraisal outputs and how further services are agreed.",
+            "check": "An owner seeking a value appraisal can understand what they receive and ask about later work without assuming that the appraisal includes repairs or guarantees acceptance by another party."
+          }
+        ],
+        "planningTable": {
+          "title": "A piano-appraisal purpose brief",
+          "intro": "Use this worksheet to brief your own website. The owner approves the current offer and responsibilities; these rows describe content to prepare, not an accepted service order.",
+          "columns": [
+            "Visitor situation",
+            "Content to explain",
+            "Owner information needed",
+            "Acceptance question"
+          ],
+          "rows": [
+            [
+              "Decision",
+              "Identify why the owner wants an assessment.",
+              "The purposes your service supports.",
+              "Can the customer explain an estate or selling question?"
+            ],
+            [
+              "Instrument",
+              "Connect the request to the actual piano.",
+              "Identifying details and access information you need.",
+              "Is this a specific instrument rather than a general pricing question?"
+            ],
+            [
+              "Known condition",
+              "Invite observations and relevant history.",
+              "Your approved preparation prompts.",
+              "Can the owner explain concerns without diagnosing the piano?"
+            ],
+            [
+              "Assessment output",
+              "State what is supplied and what needs separate agreement.",
+              "Actual output and any applicable limits.",
+              "Does the visitor understand the service without assuming repairs or third-party approval?"
+            ]
+          ]
+        },
+        "scopeTrigger": "A clearer service description may be sufficient. A fuller build helps when appraisals, maintenance and moving share one unexplained contact route.",
+        "quoteQuestions": [
+          "Which decisions does your appraisal service help customers make?",
+          "What instrument information and access arrangements do you need?",
+          "What does the assessment provide, and which later services are agreed separately?"
+        ],
+        "coverageNote": "Scott D. Portzline Piano Services expressly advertises service in Harrisburg and the surrounding Central Pennsylvania area, including the Dauphin County market. Wonder and Method is a Buffalo studio working remotely with businesses in this county. Named businesses are public examples, not clients or partners.",
+        "sources": [
+          {
+            "url": "https://www.portzlinepianos.com/additional-services",
+            "label": "Scott D. Portzline: additional services and appraisals",
+            "observation": "Describes value appraisals for estate settlement, sale and insurance purposes alongside tuning, repairs, moving and used-piano services; identifies Harrisburg-area coverage."
+          },
+          {
+            "url": "https://www.portzlinepianos.com/contact-us",
+            "label": "Scott D. Portzline: appointments and questions",
+            "observation": "Invites appointment contact and a general service message."
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/website-content-template/",
+            "label": "Describe the actual service and its output"
+          }
+        ],
+        "checkedDate": "2026-10-27",
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
+        "areaIds": [
+          "pennsylvania/dauphin"
+        ],
+        "path": "/areas/pennsylvania/dauphin-county/",
+        "title": "Web Design for Harrisburg / Dauphin County, PA",
+        "description": "Web design for Harrisburg / Dauphin County, PA. Example brief: ask what decision the piano appraisal needs to support.",
+        "servedAreas": [
+          {
+            "name": "Dauphin County",
+            "state": "Pennsylvania",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/pennsylvania/#dauphin",
+            "label": "Dauphin County place directory"
+          }
+        ],
+        "legacyWorksheet": "/assets/county-briefs/pennsylvania-dauphin.txt"
+      },
+      "afterSha256": "a295519e54e3dafd0a74b5a5bf21208392804dace3880ce6e2e76af43a7b43d2",
+      "research": {
+        "url": "https://www.portzlinepianos.com/additional-services",
+        "checkedAt": "2026-10-28T00:53:21.634959+00:00",
+        "rawResponse": "evidence\\human-quality-20261027\\source-repair-research\\www_portzlinepianos_com_additional_services.html",
+        "responseMetadata": "evidence\\human-quality-20261027\\source-repair-research\\www_portzlinepianos_com_additional_services.json"
+      }
+    }
+  ],
+  "briefs": [
+    {
+      "route": "/areas/pennsylvania/dauphin-county/",
+      "before": {
+        "route": "/areas/pennsylvania/dauphin-county/",
+        "inputHash": "520f7712ad1040a22b1bf1e9bfad9db405f1fa2e7f793ca2548dd12ec2915c5d",
+        "heading": "Ask what decision the piano appraisal needs to support.",
+        "intro": "A prospective buyer or seller may need a condition-and-value assessment before discussing maintenance. Explain the appraisal’s actual output and keep later tuning, repair or moving work separately agreed.",
+        "customerQuestion": "Can I request an assessment of a piano I am considering buying without booking it for tuning or repairs?",
+        "decisions": [
+          {
+            "label": "Identify the decision and instrument",
+            "body": "Invite the purpose of the assessment and enough detail to identify the particular piano. Explain the accepted appraisal purposes rather than treating every inquiry as a general pricing question or routine maintenance appointment."
+          },
+          {
+            "label": "Prepare useful context",
+            "body": "Ask for known history, observed concerns and access arrangements through approved prompts. The customer should describe what they know without diagnosing the instrument or selecting technical work before assessment."
+          },
+          {
+            "label": "Explain the output and later services",
+            "body": "State what the appraisal actually supplies and any applicable limits. Let the customer ask about later tuning, repairs or moving while making clear those services need their own agreement. Do not imply another party automatically accepts the assessment."
+          }
+        ],
+        "ownerInputs": [
+          "Actual appraisal scope, output and supported purposes.",
+          "Instrument identification and preparation questions.",
+          "Access arrangements and process for agreeing later services."
+        ],
+        "sourceBridge": "Scott D. Portzline Piano Services advertises Harrisburg-area coverage and condition-and-value appraisals alongside tuning, repairs, moving and used-piano services. Its Central Pennsylvania service includes the Dauphin County market.",
+        "limits": "The specialist confirms the assessment and any subsequent work. Content can explain the service distinction or connect a fuller introduction; requesting an appraisal does not authorize repairs or guarantee acceptance by a third party."
+      },
+      "beforeSha256": "812030fcdcc3ebebfd7fdc222feb8a0e430293cfcb84335ff95a13689dfbfcd4",
+      "after": {
+        "route": "/areas/pennsylvania/dauphin-county/",
+        "inputHash": "520f7712ad1040a22b1bf1e9bfad9db405f1fa2e7f793ca2548dd12ec2915c5d",
+        "heading": "Ask what decision the piano appraisal needs to support.",
+        "intro": "An owner preparing an estate settlement or sale may need a value appraisal before discussing maintenance. Explain the appraisal’s actual output and keep later tuning, repair or moving work separately agreed.",
+        "customerQuestion": "Can I request a piano value appraisal for an estate or sale without booking tuning or repairs?",
+        "decisions": [
+          {
+            "label": "Identify the decision and instrument",
+            "body": "Invite the purpose of the assessment and enough detail to identify the particular piano. Explain the accepted appraisal purposes rather than treating every inquiry as a general pricing question or routine maintenance appointment."
+          },
+          {
+            "label": "Prepare useful context",
+            "body": "Ask for known history, observed concerns and access arrangements through approved prompts. The customer should describe what they know without diagnosing the instrument or selecting technical work before assessment."
+          },
+          {
+            "label": "Explain the output and later services",
+            "body": "State what the appraisal actually supplies and any applicable limits. Let the customer ask about later tuning, repairs or moving while making clear those services need their own agreement. Do not imply another party automatically accepts the assessment."
+          }
+        ],
+        "ownerInputs": [
+          "Actual appraisal scope, output and supported purposes.",
+          "Instrument identification and preparation questions.",
+          "Access arrangements and process for agreeing later services."
+        ],
+        "sourceBridge": "Scott D. Portzline Piano Services describes value appraisals for estate settlement, sale and insurance purposes alongside tuning, repairs, moving and used-piano services. Its Harrisburg-area service includes the Dauphin County market.",
+        "limits": "The specialist confirms the assessment and any subsequent work. Content can explain the service distinction or connect a fuller introduction; requesting an appraisal does not authorize repairs or guarantee acceptance by a third party."
+      },
+      "afterSha256": "e3b4d95a9c0ce44a49af0fac2f75ea3fe73a6a19fb2e1bcbe95920a5dbf1624c"
+    }
+  ]
+}

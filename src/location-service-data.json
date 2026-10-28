@@ -61122,9 +61122,9 @@
   {
     "areaId": "pennsylvania/dauphin",
     "market": "Harrisburg / Dauphin County, PA",
-    "lead": "A piano owner may need information to make a buying or selling decision before asking for maintenance. I help Dauphin County specialists explain the purpose of an appraisal alongside their tuning and repair work.",
+    "lead": "A piano owner preparing an estate settlement or sale may need a value appraisal before asking for maintenance. I help Dauphin County specialists explain the purpose of an appraisal alongside their tuning and repair work.",
     "decisionTitle": "Ask what decision the piano appraisal needs to support.",
-    "decision": "Scott D. Portzline Piano Services advertises Harrisburg-area service and describes appraisals of a piano’s condition and value for several purposes, alongside tuning, repairs and moving. For a piano-service website, I can clarify that assessment offer or build a fuller introduction distinguishing the questions each service answers. Someone considering a piano purchase should be able to explain the decision and request an assessment without being routed straight into a routine tuning appointment.",
+    "decision": "Scott D. Portzline Piano Services advertises Harrisburg-area service and describes value appraisals for estate settlement, sale and insurance purposes, alongside tuning, repairs and moving. For a piano-service website, I can clarify that appraisal offer or build a fuller introduction distinguishing the questions each service answers. An owner preparing an estate settlement or sale should be able to explain the decision and request an appraisal without being routed straight into a routine tuning appointment.",
     "scopes": [
       {
         "title": "Clarify the appraisal inquiry",
@@ -61135,19 +61135,19 @@
         ],
         "request": "Invite the decision the customer is trying to make and explain what your actual appraisal service provides.",
         "supplies": "Your current appraisal scope, preparation needs and accepted purposes.",
-        "check": "A prospective buyer can request information about a particular piano without the website treating the inquiry as approval to tune or repair it."
+        "check": "An owner preparing an estate settlement or sale can request information about a particular piano without the website treating the inquiry as approval to tune or repair it."
       },
       {
         "title": "Connect assessment to wider piano services",
         "pages": [
-          "Buying or selling questions",
-          "Appraisal and condition discussion",
+          "Estate or sale questions",
+          "Appraisal and output discussion",
           "Tuning, repair and moving offers",
           "Separate next steps after assessment"
         ],
         "request": "Explain how a customer can discuss later work while keeping it distinct from the assessment itself.",
         "supplies": "Accurate service descriptions, actual appraisal outputs and how further services are agreed.",
-        "check": "An owner seeking a condition-and-value assessment can understand what they receive and ask about later work without assuming that the appraisal includes repairs or guarantees acceptance by another party."
+        "check": "An owner seeking a value appraisal can understand what they receive and ask about later work without assuming that the appraisal includes repairs or guarantees acceptance by another party."
       }
     ],
     "planningTable": {
@@ -61164,7 +61164,7 @@
           "Decision",
           "Identify why the owner wants an assessment.",
           "The purposes your service supports.",
-          "Can the customer explain a buying or selling question?"
+          "Can the customer explain an estate or selling question?"
         ],
         [
           "Instrument",
@@ -61195,9 +61195,9 @@
     "coverageNote": "Scott D. Portzline Piano Services expressly advertises service in Harrisburg and the surrounding Central Pennsylvania area, including the Dauphin County market. Wonder and Method is a Buffalo studio working remotely with businesses in this county. Named businesses are public examples, not clients or partners.",
     "sources": [
       {
-        "url": "https://www.portzlinepianos.com/services",
-        "label": "Scott D. Portzline: appraisal and piano services",
-        "observation": "Describes condition-and-value appraisals alongside tuning, repairs, moving and used-piano services; identifies Harrisburg-area coverage."
+        "url": "https://www.portzlinepianos.com/additional-services",
+        "label": "Scott D. Portzline: additional services and appraisals",
+        "observation": "Describes value appraisals for estate settlement, sale and insurance purposes alongside tuning, repairs, moving and used-piano services; identifies Harrisburg-area coverage."
       },
       {
         "url": "https://www.portzlinepianos.com/contact-us",
@@ -61211,7 +61211,7 @@
         "label": "Describe the actual service and its output"
       }
     ],
-    "checkedDate": "2026-10-23",
+    "checkedDate": "2026-10-27",
     "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections.",
     "areaIds": [
       "pennsylvania/dauphin"
@@ -126456,8 +126456,8 @@
     "coverageNote": "For Briscoe County website buyers. The public example is in Quitaque, Texas. Wonder and Method works with you online from Buffalo, New York. Named organizations are planning examples, not studio clients or endorsements.",
     "sources": [
       {
-        "url": "https://caprockpublic.harringtonlc.org/library-services/",
-        "label": "Caprock Public Library: library services",
+        "url": "https://caprockpublic.harringtonlc.org/?rest_route=/wp/v2/pages/31",
+        "label": "Caprock Public Library: library services (published record, JSON)",
         "observation": "Distinguishes online book renewal from telephone or in-person DVD renewal and explains the waiting-borrower limit."
       }
     ],
@@ -126487,7 +126487,7 @@
         "label": "Connect the information to the next action"
       }
     ],
-    "checkedDate": "2026-10-25"
+    "checkedDate": "2026-10-27"
   },
   {
     "areaId": "texas/brooks",
@@ -127655,8 +127655,8 @@
     "coverageNote": "For website projects in Childress County, including the Childress example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
     "sources": [
       {
-        "url": "https://childress.harringtonlc.org/our-library-services/",
-        "label": "Childress Public Library: services",
+        "url": "https://childress.harringtonlc.org/?rest_route=/wp/v2/pages/54",
+        "label": "Childress Public Library: services (published record, JSON)",
         "observation": "Childress Public Library states that internet use does not require a patron card."
       }
     ],
@@ -127686,7 +127686,7 @@
         "label": "Keep a buyer account separate from permission to purchase"
       }
     ],
-    "checkedDate": "2026-10-25"
+    "checkedDate": "2026-10-27"
   },
   {
     "areaId": "texas/clay",
@@ -129064,8 +129064,8 @@
     "coverageNote": "For website projects in Dallam County, including the Dalhart example discussed here. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not studio clients or partners.",
     "sources": [
       {
-        "url": "https://dallam.harringtonlc.org/library-services/borrowing/",
-        "label": "Dallam-Hartley County Library: borrowing",
+        "url": "https://dallam.harringtonlc.org/?rest_route=/wp/v2/pages/91",
+        "label": "Dallam-Hartley County Library: borrowing (published record, JSON)",
         "observation": "New patrons have four items for the first two checkout periods, then twelve per account after borrowing and returning twice. DVD/Blu-ray discs remain capped at four per household at both stages."
       }
     ],
@@ -132232,8 +132232,8 @@
     "coverageNote": "This public example is in Pampa, Gray County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
     "sources": [
       {
-        "url": "https://lovett.harringtonlc.org/library-policies/",
-        "label": "Lovett Memorial Library: account and borrowing policies",
+        "url": "https://lovett.harringtonlc.org/?rest_route=/wp/v2/pages/26",
+        "label": "Lovett Memorial Library: account and borrowing policies (published record, JSON)",
         "observation": "Lovett Memorial Library groups patrons by household and says a fine on one grouped card restricts the group’s services. Its confidentiality policy distinguishes the amount needed to settle a charge from authors, titles or subjects, which are not discussed without presentation of the borrower’s card. It also says Pampa cannot accept payment for another library’s fines."
       }
     ],
@@ -132263,7 +132263,7 @@
         "label": "Keep a buyer account separate from permission to purchase"
       }
     ],
-    "checkedDate": "2026-10-25",
+    "checkedDate": "2026-10-27",
     "planningTable": {
       "title": "Explain a shared account restriction without exposing another person’s borrowing",
       "intro": "Proposed content and checks for a website project. The operator supplies the current terms and confirms each actual arrangement.",
@@ -133387,8 +133387,8 @@
     "coverageNote": "Channing School/Public Library lists 900 Greenwood; the Census address match confirms Hartley County. Wonder and Method is based in Buffalo and works online with Texas businesses. Named organizations are public research examples, not clients or partners.",
     "sources": [
       {
-        "url": "https://channing.harringtonlc.org/hlc-digital-resources/",
-        "label": "Channing School/Public Library: HLC digital resources",
+        "url": "https://channing.harringtonlc.org/?rest_route=/wp/v2/pages/32",
+        "label": "Channing School/Public Library: HLC digital resources (published record, JSON)",
         "observation": "Separates resource categories and local subscription checks; publishes the restriction on extending individual cardholder access to groups."
       },
       {
@@ -133428,7 +133428,7 @@
         "label": "Explain access states without implying approval"
       }
     ],
-    "checkedDate": "2026-10-25",
+    "checkedDate": "2026-10-27",
     "planningTable": {
       "title": "What every resource card should answer",
       "intro": "These are proposed website checks for your own organization. The owner supplies current information and approves the actual arrangements.",
@@ -139728,8 +139728,8 @@
     "coverageNote": "For businesses and organizations in Moore County, Texas. Wonder and Method works online from Buffalo, New York. The named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
       {
-        "url": "https://dumas.harringtonlc.org/library-policies/borrowing-policies/",
-        "label": "Moore County Libraries: borrowing policies",
+        "url": "https://dumas.harringtonlc.org/?rest_route=/wp/v2/pages/52",
+        "label": "Moore County Libraries: borrowing policies (published record, JSON)",
         "observation": "Distinguishes card limits, material renewal and return to the originating location."
       },
       {
@@ -139764,7 +139764,7 @@
         "label": "Distinguish account access from the transaction it permits"
       }
     ],
-    "checkedDate": "2026-10-25",
+    "checkedDate": "2026-10-27",
     "planningTable": {
       "title": "Keep the originating branch attached to the return instruction.",
       "intro": "Use these proposed checks with your own approved operating information. They describe website content, not a completed booking or an operational decision.",

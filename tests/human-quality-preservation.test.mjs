@@ -163,11 +163,11 @@ test('MKN acceptance binds 59 independent reviews and preserves 48 exact source 
  }
  for(const row of mkn.records){
   assert.deepEqual(row.reviewEvidence,Object.fromEntries(Object.entries(mkn.acceptedCandidates.find(r=>r.route===row.path)).filter(([key])=>key!=='route')));
-  const current=records.find(r=>r.path===row.path);assert.equal(hash(current),row.afterSha256);
+  const current=records.find(r=>r.path===row.path);assert.equal(hash(beforeOpFamilyHumanQualityEdits(current)),row.afterSha256);
   assert.equal(hash(beforeMknHumanQualityEdits(current)),row.beforeSha256);
   for(const field of ['path','areaId','areaIds','market','servedAreas','directoryLinks','legacyWorksheet'])assert.deepEqual(current[field],row.before[field],row.path+' '+field);
   for(const mutate of [r=>r.sources[0].observation+=' Unreviewed.',r=>r.market='Other',r=>delete r.sources,r=>r.unreviewed=true]){
-   const changed=structuredClone(current);mutate(changed);assert.throws(()=>restore(changed),/approved MKN record/);
+   const changed=structuredClone(current);mutate(changed);assert.throws(()=>restore(changed),/approved (MKN|final source link) record/);
   }
  }
 });
