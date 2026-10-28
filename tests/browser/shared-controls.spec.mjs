@@ -18,6 +18,9 @@ test('page help floats in separate corners at every width and yields to form edi
   for(const path of ['/about/','/services/','/contact/']){
    await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
    const chat=page.locator('.support-chat-launch');
+   // On a form, check the fixed launcher in the footer's clear space.
+   // The separate inquiry-obstruction test protects fields before focus.
+   if(path==='/contact/')await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
    await inViewport(chat);expect((await chat.boundingBox()).width).toBe(48);
    await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
    expect(await toolSurfaces()).toEqual(['none','none']);
@@ -38,7 +41,9 @@ test('page help floats in separate corners at every width and yields to form edi
   await page.locator('#email').focus();await expect(page.locator('.support-chat-launch')).toBeHidden();
   expect(await toolSurfaces()).toEqual(['none','none']);
   if(width===390)await page.screenshot({path:testInfo.outputPath('390-contact-focused.png')});
-  await page.locator('#email').evaluate(el=>el.blur());await expect(page.locator('.support-chat-launch')).toBeVisible();
+  await page.locator('#email').evaluate(el=>el.blur());
+  await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
+  await expect(page.locator('.support-chat-launch')).toBeVisible();
   if(width<1024){
    await page.goto('/about/?qa=1');await page.locator('.menu-toggle').click();
    await expect(page.locator('.support-chat-launch')).toBeHidden();expect(await toolSurfaces()).toEqual(['none','none']);
@@ -318,19 +323,15 @@ test('back-to-top and chat follow each viewport and page type',async({page})=>{
    for(const control of [top,chat])expect(await control.evaluate(el=>{if(!el.checkVisibility({checkVisibilityCSS:true}))return true;const r=el.getBoundingClientRect();return r.top>=0&&r.left>=0&&r.bottom<=innerHeight+1&&r.right<=innerWidth+1;})).toBe(true);
    expect(await top.evaluate(el=>el.getBoundingClientRect().right<innerWidth/2)).toBe(true);
    expect(await chat.evaluate(el=>el.getBoundingClientRect().left>innerWidth/2)).toBe(true);
-   if(narrow)await expect.poll(()=>page.evaluate(()=>{
-    const tools=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true})).map(n=>n.getBoundingClientRect()),hits=[];
-    for(const region of document.querySelectorAll('main,footer')){
-     const walker=document.createTreeWalker(region,NodeFilter.SHOW_TEXT);
-     while(walker.nextNode()){
-      const node=walker.currentNode,parent=node.parentElement,b=parent.getBoundingClientRect();
-      if(!node.textContent.trim()||parent.closest('script,style')||b.bottom<0||b.top>innerHeight||!parent.checkVisibility({checkVisibilityCSS:true}))continue;
-      const range=document.createRange();range.selectNodeContents(node);
-      for(const r of range.getClientRects())for(const t of tools)if(Math.min(r.right,t.right)>Math.max(r.left,t.left)+1&&Math.min(r.bottom,t.bottom)>Math.max(r.top,t.top)+1)hits.push(node.textContent.trim().slice(0,80));
-     }
-    }
-    return hits;
-   }),path+' leaves prose clear').toEqual([]);
+   // Ordinary prose no longer changes visibility or vertical placement.
+   // Inquiry forms still temporarily suppress overlapping controls.
+   if(!await page.locator('#inquiry').count()){
+    await expect(top).toBeVisible();await expect(chat).toBeVisible();
+    for(const control of [top,chat])expect(await control.evaluate(el=>{
+     const r=el.getBoundingClientRect();return {bottom:innerHeight-r.bottom,translated:el.style.translate};
+    })).toEqual({bottom:16,translated:''});
+   }
+
   }
   await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
   await expect(top).toBeVisible();await inViewport(top);await expect(chat).toBeVisible();await inViewport(chat);

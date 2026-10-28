@@ -1,31 +1,26 @@
 import {test,expect} from './fixtures.mjs';
 
-function proseCollisions(){
- const tools=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(n=>n.checkVisibility({checkVisibilityCSS:true}));
- const hits=[];
- for(const region of document.querySelectorAll('main,footer')){
-  const walker=document.createTreeWalker(region,NodeFilter.SHOW_TEXT);
-  while(walker.nextNode()){
-   const node=walker.currentNode,parent=node.parentElement;
-   if(!node.textContent.trim()||parent.closest('script,style')||!parent.checkVisibility({checkVisibilityCSS:true}))continue;
-   const box=parent.getBoundingClientRect();if(box.bottom<0||box.top>innerHeight)continue;
-   const range=document.createRange();range.selectNodeContents(node);
-   for(const r of range.getClientRects())for(const tool of tools){const t=tool.getBoundingClientRect();if(Math.min(r.right,t.right)>Math.max(r.left,t.left)+1&&Math.min(r.bottom,t.bottom)>Math.max(r.top,t.top)+1)hits.push(node.textContent.trim().slice(0,80));}
-  }
- }
- return hits;
+function floatingState(){
+ return [...document.querySelectorAll('.back-to-top,.support-chat-launch')].map(el=>{
+  const r=el.getBoundingClientRect();
+  return {name:el.classList[0],visible:el.checkVisibility({checkVisibilityCSS:true}),top:r.top,bottom:r.bottom,left:r.left,right:r.right};
+ });
 }
 
-test('mobile corner tools leave ordinary prose clear and recover after dense content',async({page})=>{
+// The previous prose-gap placement moved or hid tools as every line passed.
+// They now stay in their corners; focused controls and inquiry forms still yield.
+test('corner tools remain visible and anchored throughout ordinary page scrolling',async({page})=>{
  test.setTimeout(90_000);
  await page.emulateMedia({reducedMotion:'reduce'});
- for(const width of [320,390])for(const path of ['/about/','/pricing/','/work/','/areas/texas/milam-county/']){
+ for(const width of [320,390])for(const path of ['/','/about/','/pricing/','/work/','/areas/texas/milam-county/']){
   await page.setViewportSize({width,height:844});await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);
-  for(const y of [0,600,1200,1800]){
-   await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);
-   await expect.poll(()=>page.evaluate(proseCollisions),`${path} ${width}px at ${y}`).toEqual([]);
+  let initial;
+  for(const y of [600,800,1000,1200,1500,1800,1200,800]){
+   await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},y);
+   const state=await page.evaluate(floatingState);
+   for(const control of state){expect(control.visible,path+' '+width+' at '+y).toBe(true);expect(control.bottom).toBeLessThanOrEqual(844);expect(control.bottom).toBeGreaterThanOrEqual(820);}
+   if(initial)expect(state).toEqual(initial);else initial=state;
   }
-  // The footer's reserved bottom space must make both tools discoverable again.
   await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
   const chat=page.locator('.support-chat-launch'),top=page.locator('.back-to-top');
   await expect(chat).toBeVisible();await expect(chat).toBeInViewport();await expect(top).toBeVisible();
@@ -33,9 +28,8 @@ test('mobile corner tools leave ordinary prose clear and recover after dense con
  }
 });
 
-test('mobile reading placement retains focus, refreshes after disclosure and viewport changes',async({page})=>{
+test('corner placement retains focus across scrolling, disclosures and viewport changes',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/pricing/?qa=1');await page.evaluate(()=>document.fonts.ready);
- await expect.poll(()=>page.evaluate(proseCollisions)).toEqual([]);
  const chat=page.locator('.support-chat-launch');
  await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));await expect(chat).toBeVisible();
  await chat.focus();const focusedBox=await chat.boundingBox();
@@ -43,26 +37,34 @@ test('mobile reading placement retains focus, refreshes after disclosure and vie
  await expect(chat).toBeFocused();await expect(chat).toBeVisible();expect((await chat.boundingBox()).y).toBeCloseTo(focusedBox.y,0);
  await page.evaluate(()=>document.activeElement.blur());
  const summary=page.locator('details.pricing-detail-table>summary').first();await summary.click();
- await expect.poll(()=>page.evaluate(proseCollisions)).toEqual([]);
- await page.setViewportSize({width:320,height:640});await expect.poll(()=>page.evaluate(proseCollisions)).toEqual([]);
- await page.setViewportSize({width:1440,height:1000});await page.evaluate(()=>scrollTo({top:680,behavior:'instant'}));
- await expect(chat).toBeVisible();expect(await chat.evaluate(el=>el.style.translate)).toBe('');
+ await expect(summary).toBeFocused();await expect(summary.locator('..')).toHaveAttribute('open','');
+ for(const viewport of [{width:320,height:640},{width:1440,height:1000}]){
+  await page.setViewportSize(viewport);await page.evaluate(()=>{document.activeElement.blur();scrollTo({top:680,behavior:'instant'});});
+  await expect(chat).toBeVisible();const box=await chat.boundingBox();expect(box.y+box.height).toBeCloseTo(viewport.height-16,0);
+ }
 });
 
-test('dense enlarged mobile prose can temporarily hide tools without losing them',async({page})=>{
+test('dense enlarged prose does not flicker or displace tools between animation frames',async({page})=>{
  await page.setViewportSize({width:320,height:640});await page.goto('/about/?qa=1');await page.evaluate(()=>document.fonts.ready);
- // Deliberately leave no 48px gap on either side: a long continuous paragraph.
+ // Continuous enlarged text reproduces the old no-gap hide/show behavior.
  await page.evaluate(()=>{
   const main=document.querySelector('main'),p=document.createElement('p');
   p.textContent='Reading should stay clear at every line. '.repeat(500);
   main.replaceChildren(p);main.style.cssText='padding:0;margin:0;width:100%;max-width:none';
   p.style.cssText='font-size:32px;line-height:1.5;max-width:none;margin:0';
-  scrollTo({top:900,behavior:'instant'});
+  scrollTo({top:600,behavior:'instant'});
  });
- await expect(page.locator('.support-chat-launch')).toBeHidden();await expect(page.locator('.back-to-top')).toBeHidden();
- await expect.poll(()=>page.evaluate(proseCollisions)).toEqual([]);
- await page.evaluate(()=>scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'}));
  await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.back-to-top')).toBeVisible();
+ const samples=await page.evaluate(async()=>{
+  const records=[];
+  for(let y=650;y<=2200;y+=25){
+   scrollTo({top:y,behavior:'instant'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+   records.push([...document.querySelectorAll('.back-to-top,.support-chat-launch')].map(el=>({visible:el.checkVisibility({checkVisibilityCSS:true}),top:el.getBoundingClientRect().top})));
+  }
+  return records;
+ });
+ expect(samples.length).toBeGreaterThan(50);
+ for(const sample of samples)expect(sample).toEqual([{visible:true,top:576},{visible:true,top:576}]);
  await page.locator('.back-to-top').click();await expect.poll(()=>page.evaluate(()=>scrollY)).toBe(0);await expect(page.locator('.site-header .wordmark')).toBeFocused();
 });
 
@@ -135,14 +137,16 @@ test('guide contents and direct fragments reveal optional operator examples',asy
  await expect(page.locator('#related-cases a').first()).toBeVisible();
 });
 
-test('real work and the maker come before the fictional homepage gallery',async({page})=>{
+test('homepage follows visitor needs, real work, concepts, process, questions and contact',async({page})=>{
  await page.goto('/?qa=1');
- const order=await page.locator('.real-project-preview,.founder-strip,.home-starting-points,#website-examples').evaluateAll(nodes=>nodes.map(node=>node.id||node.classList[0]));
- expect(order).toEqual(['featured-work','founder-strip','studio-section','website-examples']);
+ const order=await page.locator('.home-starting-points,.real-project-preview,#website-examples,.studio-process,.home-faq,.studio-closing').evaluateAll(nodes=>nodes.map(node=>node.id||[...node.classList].find(name=>['home-starting-points','studio-process','home-faq','studio-closing'].includes(name))));
+ expect(order).toEqual(['home-starting-points','featured-work','website-examples','studio-process','home-faq','studio-closing']);
  await expect(page.locator('.real-project-preview')).toContainText('AssetRounds');
- await expect(page.locator('.founder-strip')).toContainText('Terry');
+ await expect(page.locator('.founder-strip')).toHaveCount(0);
+ await expect(page.locator('main')).not.toContainText('You work directly with me, Terry');
  await expect(page.locator('#website-examples')).toContainText('fictional');
  await page.locator('.city-explore').click();
  await expect(page).toHaveURL(/#featured-work$/);
  await expect(page.locator('.real-project-preview')).toBeInViewport();
+ await page.goto('/about/?qa=1#terry');await expect(page.locator('#terry')).toHaveText('Hello, I’m Terry.');await expect(page.locator('main')).toContainText('since 2018');
 });

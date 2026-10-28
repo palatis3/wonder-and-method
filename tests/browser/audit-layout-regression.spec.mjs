@@ -18,7 +18,7 @@ test('Services separates three needs and keeps every choice readable at enlarged
  }
 });
 
-// Floating tools yield to prose where narrow viewports have no clear slot.
+// Stable floating tools yield to overlapping keyboard focus, not passing prose.
 function coveredContent(){
  const floats=[...document.querySelectorAll('.back-to-top,.support-chat-launch')].filter(node=>node.checkVisibility({checkVisibilityCSS:true,checkOpacity:true})).map(node=>({name:node.className,r:node.getBoundingClientRect()}));
  const hits=[],overlaps=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
@@ -26,12 +26,7 @@ function coveredContent(){
   if(!node.checkVisibility({checkVisibilityCSS:true}))continue;
   const box=node.getBoundingClientRect();if(box.bottom<0||box.top>innerHeight)continue;
   if(node===document.activeElement)for(const control of floats)if(overlaps(box,control.r))hits.push(control.name+' / focused '+node.tagName);
-  if(!matchMedia('(max-width:767px),(max-height:520px)').matches)continue;
-  const walker=document.createTreeWalker(node,NodeFilter.SHOW_TEXT);
-  while(walker.nextNode())if(walker.currentNode.textContent.trim()){
-   const range=document.createRange();range.selectNodeContents(walker.currentNode);
-   for(const rect of range.getClientRects())for(const control of floats)if(overlaps(rect,control.r))hits.push(control.name+' / '+walker.currentNode.textContent.trim().slice(0,80));
-  }
+
  }
  return {hits,visible:floats.filter(({r})=>r.bottom>0&&r.top<innerHeight).length,outside:floats.filter(({r})=>r.left<0||r.right>innerWidth+1).map(({name})=>name)};
 }
@@ -48,7 +43,7 @@ for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]]
   for(const y of stops){
    await page.evaluate(async y=>{scrollTo({top:y,behavior:'instant'});await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));},y);
    await page.clock.fastForward(3001);await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
-   if(width>767&&height>520){
+   {
     await expect(page.locator('.support-chat-launch'),`${path} at ${y}`).toBeVisible();
     if(y>=520)await expect(page.locator('.back-to-top'),`${path} at ${y}`).toBeVisible();
    }

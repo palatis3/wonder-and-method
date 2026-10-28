@@ -1,11 +1,11 @@
 {
-  "capturedAt": "2026-10-27T13:50:05.660Z",
+  "capturedAt": "2026-10-28T03:12:25.785Z",
   "homeViewport": {
     "width": 1425,
-    "height": 990
+    "height": 980
   },
   "sourceHashes": {
-    "src/premium-site.mjs": "13cc79bbd40e07b89affb955de80aaf79df69188e970ab61574934a982502cf0",
+    "src/premium-site.mjs": "833309649bbabe68030559021519417bf89275c6856b71c73e437c602fa186c7",
     "src/home-proof.mjs": "323f885b86486bac2a4b3d716b679bdbcd36d52783fd52603adf0bd9fca3c44d",
     "src/site-chrome.mjs": "3646ee31b65b374e56dcf93d37ad963391a4b8222e02846fa6018103e93afa7b",
     "src/assets/layout-components.css": "320ee47649622e63937454239169ce2f36d620b0076363bab96d0434f4cc9628",
@@ -20,41 +20,41 @@
   "homeCapture": {
     "path": "/assets/work/studio-website.webp",
     "width": 1425,
-    "height": 990,
-    "bytes": 174794,
-    "sha256": "a682380af0accbb2509302119785b079b04c31a8adefc26c927683fccb5b113b",
+    "height": 980,
+    "bytes": 178400,
+    "sha256": "c3b1bf38020973a14a6644d11943a1d54c8c322d34a6eb296198bd79dca13ea9",
     "quality": 92,
     "variants": [
       {
         "path": "/assets/work/studio-website-240.webp",
         "width": 240,
-        "height": 167,
-        "bytes": 8278,
-        "sha256": "b4270b2b07d1b0dcb51880cb7cc6c6d36c662607210c9b17230a62ea62d6dbae",
+        "height": 165,
+        "bytes": 8188,
+        "sha256": "6d90f83c000e3d87667b6d27baf7969f02a83c180ece79c0441959a3c9a59e7a",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-480.webp",
         "width": 480,
-        "height": 333,
-        "bytes": 25346,
-        "sha256": "a37a3a6d41842e6b5d27cd3b5163574ff17e78dc3cc6db9aa19df38bac099781",
+        "height": 330,
+        "bytes": 24948,
+        "sha256": "724464b66d8e1b5b30506cd595a10e90a494c272a5af18a15558ef2425a37df9",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-640.webp",
         "width": 640,
-        "height": 445,
-        "bytes": 38020,
-        "sha256": "f83d0f756fdd642b1905ef273fedffecaf8f0840b93c35e718a81092f12253bd",
+        "height": 440,
+        "bytes": 37930,
+        "sha256": "7f317581816333b5fcd259f0b365d4c5660f926f2ed579be80f8e4efef1e239a",
         "quality": 82
       },
       {
         "path": "/assets/work/studio-website-960.webp",
         "width": 960,
-        "height": 667,
-        "bytes": 67968,
-        "sha256": "760a6163ed1123085bfa39b4699daf332c5949077e87d99be10018553e4010d5",
+        "height": 660,
+        "bytes": 64926,
+        "sha256": "7f86b8ff9a3de0384dfc764d6bead30cf2358aabaa57351194efa437c6399c28",
         "quality": 82
       }
     ],
@@ -62,12 +62,13 @@
     "reducedMotion": "reduce",
     "builtPage": {
       "path": "dist/index.html",
-      "sha256": "fc68e8c0ffdb00875b43d6fb7e041c62647e2f604daeb493cc8526d443b1ebbc"
+      "sha256": "759c8bdec5a959054c5f7d86b22a7b4dc5c55e8be5c080e7e01f628546ae0a08"
     },
     "builtStyles": {
-      "dist/assets/site.css": "97a4a75a392dc2da240e5ec6f6f79f6cf41a9560c6ae6dd17eec90233380a3cb",
-      "dist/assets/living-city.css": "983446ad76c7a90bd935d494377da9e95e107d63b2b3676e912e2c344ab73475"
-    }
+      "dist/assets/site.css": "69dadd9e7de3f96a8715e9f3c6e723cb5aa55efcd6dc51afe4704df6284e0964",
+      "dist/assets/living-city.css": "d11f00100fb1a398519248359a78f767a1d550e1c335adf439f1c01a773e672c"
+    },
+    "capturedAt": "2026-10-28T03:12:25.785Z"
   },
   "trackerCapture": {
     "path": "/assets/work/lead-workbench.webp",
@@ -120,6 +121,8 @@
       "src/lead-workbench.mjs": "bf62475f966a54cb746906be127c73eda3332c478bc4cbf9c468ed12c4a3b7e4",
       "src/assets/lead-workbench.js": "05092cc9e50b2655246c4a6bfecbce4ebfee6f0ff4ee8812f8a93ec275648a34",
       "src/assets/lead-workbench.css": "80d791b0bde5f445bcc471bf1738d1bc8a62086854a4898601c40b0c68a2a1ee"
-    }
-  }
+    },
+    "capturedAt": "2026-10-27T13:50:05.660Z"
+  },
+  "captureScope": "Homepage refreshed; tracker capture retained with its original timestamp."
 }

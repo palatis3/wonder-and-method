@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "reviewedBy": "Independent Codex reviewer (gpt-6-astra; /root/astra_release_evidence_review)",
-  "reviewedAt": "2026-10-28T00:31:19.418Z",
-  "basis": "Preserve all 585 exclusions, their exact identities and reasons, and all 2041 discovered browser identities. Rebind five existing policy source hashes after independently reviewed assertion-only updates: current service heading; authored visible local decisions and saved source disclosure; directory search locator requiring searchbox role, nonempty accessible name and county-search ID. Jurisdiction-specific labels remain covered by human-directory-clarity tests. No route/query inventory, title, skip predicate or exclusion changed. Review: ignored evidence/human-quality-20261027/assertion-rebinding-review.json. Final four assertion deltas preserve Arkansas township status and North Dakota inactive-township meaning, check both Brevard guide tables, and keyboard-open Connecticut shared definitions before verifying the county-equivalent explanation plus retained local city entries. Two further existing policy hashes rebound; exclusions unchanged.",
+  "reviewedBy": "Independent Codex reviewer (gpt-6-astra; /root/astra_homeflow_review): unchanged exclusions and skip predicates, source bindings only",
+  "reviewedAt": "2026-10-28T03:01:05.002Z",
+  "basis": "Preserve all 585 exclusions, their exact identities and reasons, and all 2041 discovered browser identities. Rebind five existing policy source hashes after independently reviewed assertion-only updates: current service heading; authored visible local decisions and saved source disclosure; directory search locator requiring searchbox role, nonempty accessible name and county-search ID. Jurisdiction-specific labels remain covered by human-directory-clarity tests. No route/query inventory, title, skip predicate or exclusion changed. Review: ignored evidence/human-quality-20261027/assertion-rebinding-review.json. Final four assertion deltas preserve Arkansas township status and North Dakota inactive-township meaning, check both Brevard guide tables, and keyboard-open Connecticut shared definitions before verifying the county-equivalent explanation plus retained local city entries. Two further existing policy hashes rebound; exclusions unchanged. October 28 homepage/scroll repair: the 585 exclusions and skip predicates remain unchanged. Independent review accepts only the two modified test-source hash bindings; see operations/homepage-flow-20261028/independent-review.json.",
   "sourceFiles": {
     "tests/browser/area-heading-layout.spec.mjs": "aae26998c5ed903dd48e42c140cd66eb30bb9ff2275086ac586ff87cfeb523fb",
-    "tests/browser/audit-layout-regression.spec.mjs": "50b5c909469ab7d0c598ba22d23f274fd3d7905916e5537f284518d8d92b0bcb",
+    "tests/browser/audit-layout-regression.spec.mjs": "4b595a53f4ddcff47be5bd1ee71ce705e469e3457950c8dfacd197d19fbe0fea",
     "tests/browser/buyer-journeys.spec.mjs": "4b52170428b484e4e276cfa138c9c92c761c92da3cd610b1397ff77c4dbb47a4",
     "tests/browser/floating-tools.spec.mjs": "81df441e41165e408aad758d02fc3b042e411404d507ab6491c85690e487211f",
     "tests/browser/footer-surfaces.spec.mjs": "a66dc9fcd7cb90c14bcb88887e31ceec7985b44de6455d3f9382ed385eec84ce",
@@ -23,7 +23,7 @@
     "tests/browser/northeast-coverage.spec.mjs": "3627fb05ded06b083d8d6f95547f0550307a82e2839eef097b85c7abd4df4beb",
     "tests/browser/palette-clarity.spec.mjs": "97e2ab19e074804410befc2b513877a1e4a7967a1f55959b2e9ca5c2cdfa1148",
     "tests/browser/regional-directory.spec.mjs": "bdc5087f5d728115d26c5a9c1bb98f04ba56b824aa047d1d2def99211a62b06b",
-    "tests/browser/shared-controls.spec.mjs": "de8757318c964c26242179bc55fbfe59e62f1cb1130a4e0c49c6e879cabe8c0f",
+    "tests/browser/shared-controls.spec.mjs": "383f49721759444c71d37ac21f208a582df0cab46cca3e291861355bd297fac2",
     "tests/browser/site-accessibility.spec.mjs": "4fa345631db704a5c8ebe10546bbc9d6b2301fca7bd15ee222ed064f68e130a6",
     "tests/browser/site-health.spec.mjs": "47c8ff3f2cfc301acfc87d89a8dcaf3f6ccb89ae6db93dbb93e4c990aa64cab1",
     "tests/browser/texas-planning.spec.mjs": "00ac0cf47b0cd956d117e8c43624ad2b2692535dec3e2b3a610a36fb4d063dab"

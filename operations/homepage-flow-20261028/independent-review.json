@@ -1,0 +1,73 @@
+{
+  "reviewer": "gpt-6-astra /root/astra_homeflow_review",
+  "reviewedAt": "2026-10-28T03:01:05.002Z",
+  "baseCommit": "7dbf77a48a8260b8d1d839b913d982100ed40a19",
+  "status": "PASS_WITH_RUNTIME_VALIDATION_PENDING",
+  "findings": [],
+  "reviewedFiles": [
+    {
+      "file": "src/assets/page-navigation.js",
+      "sha256": "95d8b2401eb8479ec02de8fbad3a023a4d5222ef7bf0687c28b09acb8c0b562d",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 0
+    },
+    {
+      "file": "src/premium-site.mjs",
+      "sha256": "833309649bbabe68030559021519417bf89275c6856b71c73e437c602fa186c7",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 0
+    },
+    {
+      "file": "tests/browser/ux-improvements.spec.mjs",
+      "sha256": "be42d9cdd950b0b66fca498f1c53c241f0e5aef3ae07a044f36821737d7cea83",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 0
+    },
+    {
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "sha256": "383f49721759444c71d37ac21f208a582df0cab46cca3e291861355bd297fac2",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 8
+    },
+    {
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "sha256": "4b595a53f4ddcff47be5bd1ee71ce705e469e3457950c8dfacd197d19fbe0fea",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 21
+    }
+  ],
+  "exclusionReview": {
+    "policyUnchanged": true,
+    "totalExclusions": 585,
+    "policySha256BeforeRebinding": "4b1588d3771060c6f0c49f10413d6b444a9535f74f40072f05272574f912f0b6",
+    "approvedRebindingFiles": [
+      "tests/browser/shared-controls.spec.mjs",
+      "tests/browser/audit-layout-regression.spec.mjs"
+    ],
+    "scope": "Only source SHA bindings may change. All exclusion identities, reasons, counts and skip predicates must remain unchanged. Renamed UX tests have no policy exclusions."
+  },
+  "checks": [
+    "All five edited JS/MJS source and test files pass node --check.",
+    "Original form-field collision and focused-control collision logic retained exactly; removed behavior is prose-gap relocation/suppression.",
+    "Top hysteresis, focus-return action, editing-form class, visual viewport scheduling and CSS focus exception retained.",
+    "Homepage order and founder removal match requested scope; About rendering unchanged; gallery retains fictional labels.",
+    "Removed prose-clear assertions replaced by anchored visibility and dense frame sampling; focused-control collision tests retained."
+  ],
+  "limits": [
+    "No browser or build run by reviewer; primary owns runtime verification.",
+    "Fresh build and focused tests on final source are required before publication. Earlier three failures arose with superseded whole-form guard and are not treated as passing.",
+    "Safe-area inset devices and real provider behavior require existing device/provider gates; synthetic fixed-bottom tests do not independently establish those."
+  ],
+  "followUpReview": {
+    "reviewedAt": "2026-10-28T03:10:16.451Z",
+    "file": "tests/browser/shared-controls.spec.mjs",
+    "previousSha256": "63acc4166438c128132272bcbfbc58cb21cc3c614eaeab6cf6a75218e5b5a172",
+    "sha256": "383f49721759444c71d37ac21f208a582df0cab46cca3e291861355bd297fac2",
+    "status": "PASS",
+    "scope": "Two footer-scroll additions before asserting contact launcher visibility; fixed placement may overlap an unfocused inquiry field at the initial or post-blur position. Focus-hidden assertion remains; unobstructed footer recovery still checks editing state clears. Dedicated pre-focus inquiry collision test remains unchanged.",
+    "skipPredicatesUnchanged": true,
+    "all585ExclusionsUnchanged": true,
+    "otherReviewedHashesUnchanged": true,
+    "primaryReportedValidation": "27 UX checks passed; 6 form checks passed, 2 existing skips; updated viewport test passed. Reviewer did not independently execute runtime checks."
+  }
+}
