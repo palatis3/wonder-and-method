@@ -9,6 +9,6 @@ The floating chat and back-to-top controls keep their bottom corners during ordi
 - Independent Astra source review found no actionable issue. The 585 existing browser exclusions and skip predicates are unchanged; two test-source hash bindings were independently reviewed.
 - All 1,046 unit tests passed. All 27 focused UX tests passed across desktop, phone and reduced-motion projects. Form/focus checks passed after the final correction, including the viewport/blur recovery regression.
 - The content review identified exactly eight intended changes: the homepage, navigation script, asset manifest and five responsive portfolio image files.
-- All 25 changed Linux screenshot references were inspected and accepted; see `visual-review.json`. Complete exact-commit CI and production verification remain release prerequisites. Local screenshots and code review alone do not establish publication or real chat delivery.
+- All 25 changed Linux screenshot references were inspected and accepted; see `visual-review.json`. All 15 exact-source CI jobs and final production checks passed; see the [publication record](RELEASE.md). Local screenshots and code review alone do not establish real chat delivery.
 
-Private detailed logs and release records are retained under `evidence/homepage-flow-20261028/`. See the final release record for publication identity and completed verification.
+Private detailed logs and release records are retained under `evidence/homepage-flow-20261028/`. See the [final release record](RELEASE.md) for publication identity and completed verification.
