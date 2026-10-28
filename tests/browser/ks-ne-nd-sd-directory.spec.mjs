@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 const identity=href=>{const u=new URL(href,'http://127.0.0.1:4187'),p=u.pathname.split('/').filter(Boolean);return p[1]+'/'+(u.hash?u.hash.slice(1):p[2].replace(/-county$/,''));};
 const cases=[
@@ -12,7 +13,7 @@ for(const item of cases)test(`${item.state} typed search preserves source-qualif
   await page.goto(route+'?qa=1');
   await expect(page.locator('[data-cs]')).toHaveCount(route==='/areas/'?3222:item.count);
   if(route==='/areas/')expect(dataRequests).toEqual([]);
-  const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),results=page.locator('[data-county-results] li');
+  const search=directorySearch(page),results=page.locator('[data-county-results] li');
   for(const [query,expected]of item.queries){
    await search.fill(query);await expect(results).toHaveCount(expected.length);
    expect((await results.locator('a').evaluateAll(a=>a.map(x=>x.getAttribute('href')))).map(identity).sort()).toEqual(expected);
@@ -21,7 +22,7 @@ for(const item of cases)test(`${item.state} typed search preserves source-qualif
  expect(dataRequests).toHaveLength(1);expect(apiRequests).toEqual([]);
  await page.goto('/areas/'+item.state+'/?qa=1#'+item.slug);
  const entry=page.locator('details#'+item.slug);await expect(entry).toHaveAttribute('open','');
- if(item.state==='north-dakota')await expect(entry).toContainText('Inactive governmental unit');
+ if(item.state==='north-dakota')await expect(entry).toContainText('Inactive township government.');
  if(item.state==='south-dakota'){
   await expect(entry).toContainText('Fort Thompson');await expect(entry).toContainText('Gann Valley');
   await expect(entry.getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();

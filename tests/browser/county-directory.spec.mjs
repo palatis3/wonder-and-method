@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 
 test('shared township status stays with the complete Arkansas place list',async({page},testInfo)=>{
@@ -5,7 +6,7 @@ test('shared township status stays with the complete Arkansas place list',async(
  const entry=page.locator('[data-county-area]#arkansas');
  await expect(entry).toHaveAttribute('open','');
  const group=entry.locator('.county-directory > div').filter({has:page.getByRole('heading',{name:'Townships',exact:true})});
- await expect(group.locator('p.county-place-note')).toHaveText('All places in this list: Nonfunctioning legal county subdivision used by the Census; not an active municipal government.');
+ await expect(group.locator('p.county-place-note')).toHaveText('Nonfunctioning legal county subdivision used by the Census; not an active municipal government.');
  await expect(group.getByText('Arkansas',{exact:true})).toBeVisible();
  await expect(group.getByText('Barton',{exact:true})).toBeVisible();
  await expect(group.getByText('Bayou Meto',{exact:true})).toBeVisible();
@@ -16,7 +17,7 @@ test('shared township status stays with the complete Arkansas place list',async(
 
 test('city relevance keeps explicit county and state choices available',async({page})=>{
  await page.goto('/areas/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'});
+ const search=directorySearch(page);
  const best=page.locator('[data-county-best] a');
  const requests=[];page.on('request',request=>{if(new URL(request.url()).pathname.startsWith('/api/'))requests.push(request.url());});
  for(const [query,href,state] of [['Buffalo','/areas/erie-county/','New York'],['Cleveland','/areas/ohio/cuyahoga-county/','Ohio'],['Miami','/areas/florida/miami-dade-county/','Florida'],['Newark','/areas/new-jersey/essex-county/','New Jersey']]){
@@ -94,7 +95,7 @@ async function checkCountyEntry(page,{state,slug,place,group,note,servicePath}){
 
 test('county finder supports shared villages, county aliases and a useful empty state',async({page})=>{
  await page.goto('/areas/new-york/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'});
+ const search=directorySearch(page);
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  await expect(search).toBeVisible();await expect(page.locator('[data-cs]')).toHaveCount(62);await expect(visible).toHaveCount(0);
@@ -123,7 +124,7 @@ test('county finder supports shared villages, county aliases and a useful empty 
 
 test('county finder keeps keyboard navigation, matched destination and page layout usable',async({page})=>{
  await page.goto('/areas/new-york/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'});
+ const search=directorySearch(page);
  await search.fill('Penn Yan');await expect(page.locator('[data-county-results] li')).toHaveCount(1);
  await search.press('Tab');await expect(page.getByRole('button',{name:'Clear',exact:true})).toBeFocused();
  await page.keyboard.press('Tab');await expect(page.locator('[data-county-best] a')).toBeFocused();
@@ -135,7 +136,7 @@ test('county finder keeps keyboard navigation, matched destination and page layo
 
 test('combined finder disambiguates states and shared place names without sending search text',async({page})=>{
  await page.goto('/areas/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),state=page.getByRole('combobox',{name:'State, district or territory',exact:true});
+ const search=directorySearch(page),state=page.getByRole('combobox',{name:'State, district or territory',exact:true});
  const visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  await expect(page.locator('[data-cs]')).toHaveCount(3222);await expect(visible).toHaveCount(0);
@@ -169,7 +170,7 @@ test('combined finder disambiguates states and shared place names without sendin
 
 test('Ohio finder distinguishes cities, villages and cross-county destinations',async({page})=>{
  await page.goto('/areas/ohio/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),visible=page.locator('[data-county-results] li');
+ const search=directorySearch(page),visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  const county=slug=>`/areas/ohio/${slug}-county/`;
  await expect(page.locator('[data-cs]')).toHaveCount(88);await expect(visible).toHaveCount(0);
@@ -188,7 +189,7 @@ test('Ohio finder distinguishes cities, villages and cross-county destinations',
 
 test('Pennsylvania finder supports cross-county cities, community names and keyboard destinations',async({page})=>{
  await page.goto('/areas/pennsylvania/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),visible=page.locator('[data-county-results] li');
+ const search=directorySearch(page),visible=page.locator('[data-county-results] li');
  const targets=async()=>visible.locator('a').evaluateAll(links=>links.map(link=>link.getAttribute('href')).sort());
  await expect(page.locator('[data-cs]')).toHaveCount(67);await expect(visible).toHaveCount(0);
  await search.fill('Bethlehem');await expect(visible).toHaveCount(5);expect(await targets()).toEqual(["/areas/pennsylvania/armstrong-county/","/areas/pennsylvania/clarion-county/","/areas/pennsylvania/lehigh-county/","/areas/pennsylvania/northampton-county/","/areas/pennsylvania/washington-county/"]);

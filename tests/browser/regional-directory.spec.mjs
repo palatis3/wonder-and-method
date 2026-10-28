@@ -1,9 +1,10 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 import {retiredCountyRoutes} from '../../deployment/retired-county-routes.mjs';
 import currentLocationPaths from '../fixtures/current-location-paths.mjs';
 
 const hubs=[['virginia',133,'accomack'],['west-virginia',55,'jefferson'],['michigan',83,'oakland'],['district-of-columbia',1,'district-of-columbia'],['indiana',92,'marion'],['kentucky',120,'fayette'],['tennessee',95,'davidson'],['north-carolina',100,'wake'],['florida',67,'duval'],['south-carolina',46,'charleston'],['georgia',159,'richmond'],['mississippi',82,'yalobusha'],['alabama',67,'madison'],['wisconsin',72,'menominee'],['illinois',102,'cook'],['texas',254,'anderson']];
-const searchbox=page=>page.getByRole('searchbox',{name:'County, parish, municipio, region or community',exact:true});
+const searchbox=page=>directorySearch(page);
 
 test('new hubs reveal saved entry fragments with complete place lists and no horizontal overflow',async({page},testInfo)=>{
  test.setTimeout(60_000);

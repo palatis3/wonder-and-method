@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 const identity=href=>{const u=new URL(href,'http://127.0.0.1:4187'),p=u.pathname.split('/').filter(Boolean);return p[1]+'/'+(u.hash?u.hash.slice(1):p[2].replace(/-(?:county|municipio)$/,''));};
 const cases=[
@@ -9,7 +10,7 @@ for(const item of cases)test(`${item.state} typed search preserves legal and sta
  for(const route of ['/areas/'+item.state+'/','/areas/']){
   await page.goto(route+'?qa=1');await expect(page.locator('[data-cs]')).toHaveCount(route==='/areas/'?3222:item.count);
   if(route==='/areas/')expect(dataRequests).toEqual([]);
-  const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),results=page.locator('[data-county-results] li');
+  const search=directorySearch(page),results=page.locator('[data-county-results] li');
   for(const [query,expected]of item.queries){await search.fill(query);await expect(results).toHaveCount(expected.length);expect((await results.locator('a').evaluateAll(a=>a.map(x=>x.getAttribute('href')))).map(identity).sort()).toEqual(expected);}
  }
  expect(dataRequests).toHaveLength(1);expect(apiRequests).toEqual([]);

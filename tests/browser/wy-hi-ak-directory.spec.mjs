@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 import decisions from '../fixtures/wy-hi-ak-decisions.json' with {type:'json'};
 const identity=href=>{const u=new URL(href,'http://127.0.0.1:4187');const area=decisions.areas.find(a=>a.servicePath===u.pathname||a.directoryPath===u.pathname+u.hash);expect(area,href).toBeDefined();return area.areaId;};
@@ -11,7 +12,7 @@ for(const item of cases)test(`${item.state} typed search preserves county-equiva
  for(const route of ['/areas/'+item.state+'/','/areas/']){
   await page.goto(route+'?qa=1');await expect(page.locator('[data-cs]')).toHaveCount(route==='/areas/'?3222:item.count);
   if(route==='/areas/')expect(dataRequests).toEqual([]);
-  const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),results=page.locator('[data-county-results] li');
+  const search=directorySearch(page),results=page.locator('[data-county-results] li');
   for(const [query,expected]of item.queries){await search.fill(query);await expect(results).toHaveCount(expected.length);expect((await results.locator('a').evaluateAll(a=>a.map(x=>x.getAttribute('href')))).map(identity).sort()).toEqual(expected);}
  }
  expect(dataRequests).toHaveLength(1);expect(apiRequests).toEqual([]);
@@ -30,7 +31,7 @@ for(const item of cases)test(`${item.state} typed search preserves county-equiva
 });
 
 test('typed-prefix literal names remain searchable after WY and HI become state selectors',async({page})=>{
- await page.goto('/areas/?qa=1');const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),results=page.locator('[data-county-results] li');
+ await page.goto('/areas/?qa=1');const search=directorySearch(page),results=page.locator('[data-county-results] li');
  for(const [q,state]of [['borough of valley hi','Pennsylvania'],['borough of west wyoming','Pennsylvania'],['village of valley hi','Ohio'],['cdp of so hi','Arizona']]){
   await search.fill(q);await expect(results).toHaveCount(1);await expect(results.locator('.county-match-reason')).toContainText(state+' \u00b7 Matched');
   await search.fill(q+' '+state);await expect(results).toHaveCount(1);

@@ -1,14 +1,14 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 
 const areaIdentity=href=>{
  const url=new URL(href,'http://127.0.0.1:4187'),parts=url.pathname.split('/').filter(Boolean);
  return parts[1]+'/'+(url.hash?url.hash.slice(1):parts[2].replace(/-county$/,''));
 };
-const searchLabel='County, parish, municipio, region or community';
 
 test('Minnesota finder distinguishes statistical territories and retains cross-county city memberships',async({page},testInfo)=>{
  await page.goto('/areas/minnesota/?qa=1');
- const search=page.getByRole('searchbox',{name:searchLabel}),results=page.locator('[data-county-results] li');
+ const search=directorySearch(page),results=page.locator('[data-county-results] li');
  await expect(page.locator('[data-cs]')).toHaveCount(87);
  const requests=[];page.on('request',r=>{if(new URL(r.url()).pathname.startsWith('/api/'))requests.push(r.url());});
  for(const directory of ['/areas/minnesota/','/areas/']){
@@ -36,7 +36,7 @@ test('Minnesota finder distinguishes statistical territories and retains cross-c
 
 test('Oklahoma finder retains cities across counties and labels inactive towns',async({page},testInfo)=>{
  await page.goto('/areas/oklahoma/?qa=1');
- const search=page.getByRole('searchbox',{name:searchLabel}),results=page.locator('[data-county-results] li');
+ const search=directorySearch(page),results=page.locator('[data-county-results] li');
  await expect(page.locator('[data-cs]')).toHaveCount(77);
  for(const directory of ['/areas/oklahoma/','/areas/']){
   await page.goto(directory+'?qa=1');

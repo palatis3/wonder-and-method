@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {test,expect} from './fixtures.mjs';
 
 test('all guides remain browsable when search enhancement is unavailable',async({page},testInfo)=>{
@@ -44,7 +45,7 @@ test('Florida county facts, local articles and worksheets remain usable without 
  await page.goto('/areas/florida/?qa=1');await openNativeCountyLists(page,67);
  const entry=await openNativeCountyEntry(page,'brevard','Palm Bay');
  await entry.getByRole('link',{name:'Brevard County tour websites: explain launch changes before checkout',exact:true}).click();
- await expect(page.locator('#layout table')).toBeVisible();await expect(page.locator('#check')).toBeVisible();
+ const launchTables=page.locator('#layout table');await expect(launchTables).toHaveCount(2);for(const table of await launchTables.all())await expect(table).toBeVisible();await expect(page.locator('#check')).toBeVisible();
  const download=page.locator('#take-away').getByRole('link',{name:'Download the planning worksheet (text file)',exact:true});
  const response=await page.request.get(await download.getAttribute('href'));expect(response.status()).toBe(200);expect(await response.text()).toContain('Mission postponement');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
@@ -131,7 +132,7 @@ test('Texas directory entries and reviewed county briefs remain usable without J
 
 async function openNativeCountyLists(page,count){
  await expect(page.locator('[data-county-filter-controls]')).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'County, parish, municipio, region or community'})).toBeDisabled();
+ await expect(directorySearch(page)).toBeDisabled();
  await expect(page.getByText('Search needs JavaScript. Open the lists below to browse every service area.',{exact:true})).toBeVisible();
  await expect(page.locator('[data-cs]')).toHaveCount(count);
  await expect(page.locator('[data-cs]:visible')).toHaveCount(0);

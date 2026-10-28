@@ -68,7 +68,7 @@ test('dense enlarged mobile prose can temporarily hide tools without losing them
 
 test('ambiguous exact place names remain visible with their official state and type',async({page})=>{
  await page.goto('/areas/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'});
+ const search=page.getByRole('searchbox',{name:'Place'});
  await search.fill('Anchorage');
  const best=page.locator('[data-county-best]');
  await expect(best.locator('a[href="/areas/alaska/anchorage-municipality/"]')).toBeVisible();

@@ -14,7 +14,7 @@ test('Services separates three needs and keeps every choice readable at enlarged
   expect(await page.evaluate(()=>document.documentElement.scrollWidth),`${width}px enlarged=${enlarged}`).toBeLessThanOrEqual(width+1);
   await overview.getByRole('link',{name:'Ongoing help',exact:false}).click();
   await expect(page).toHaveURL(/#services-ongoing$/);
-  await expect(overview.getByRole('heading',{name:'Keep your website useful.'})).toBeInViewport();
+  await expect(overview.getByRole('heading',{name:'Choose ongoing website help.'})).toBeInViewport();
  }
 });
 

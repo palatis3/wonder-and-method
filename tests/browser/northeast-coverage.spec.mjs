@@ -1,3 +1,4 @@
+import {directorySearch} from './directory-search.mjs';
 import {readFile} from 'node:fs/promises';
 import {test,expect} from './fixtures.mjs';
 import reviewedWorksheets from '../../src/location-worksheet-links.json' with {type:'json'};
@@ -67,7 +68,7 @@ for(const width of [320,768,1440])for(const state of fixture.states){
 
 test('state and district finder preserves cross-boundary and typed names, resets focus and sends no search requests',async({page})=>{
  await page.goto('/areas/?qa=1');
- const search=page.getByRole('searchbox',{name:'County, parish, municipio, region or community'}),state=page.getByRole('combobox',{name:'State, district or territory',exact:true});
+ const search=directorySearch(page),state=page.getByRole('combobox',{name:'State, district or territory',exact:true});
  await expect(state.locator('option')).toHaveCount(53); // 50 states, Washington DC, Puerto Rico and the all-regions option.
  await expect(state.getByRole('option',{name:'South Carolina',exact:true})).toHaveAttribute('value','south-carolina');
  for(const [name,id] of [['Georgia','georgia'],['Mississippi','mississippi'],['Alabama','alabama'],['Wisconsin','wisconsin'],['Illinois','illinois'],['Louisiana','louisiana'],['Arkansas','arkansas'],['Texas','texas'],['Missouri','missouri'],['Iowa','iowa'],['Minnesota','minnesota'],['Oklahoma','oklahoma']])await expect(state.getByRole('option',{name,exact:true})).toHaveAttribute('value',id);
@@ -108,13 +109,15 @@ test('state and district finder preserves cross-boundary and typed names, resets
 
 test('planning-region entry supports keyboard use and general inquiry context without a mismatched worksheet',async({page})=>{
  await page.goto('/areas/connecticut/?qa=1');await settle(page);
+ const definitions=page.locator('#state-planning');await expect(definitions).not.toHaveAttribute('open','');await definitions.locator(':scope > summary').focus();await page.keyboard.press('Enter');await expect(definitions).toHaveAttribute('open','');
  const browse=page.locator('[data-county-browse-all]');
  await browse.locator(':scope > summary').click();await expect(browse).toHaveAttribute('open','');
  const entry=page.locator('#lower-connecticut-river-valley'),group=page.locator('.county-region').filter({has:entry});
  await group.locator(':scope > summary').click();
  const summary=entry.locator(':scope > summary');await summary.focus();await page.keyboard.press('Enter');
  await expect(entry).toHaveAttribute('open','');await expect(summary).toBeFocused();
- await expect(entry.locator('.county-area-content')).toContainText('current Census county equivalent');
+ await expect(page.getByText('This directory uses the nine current planning regions that serve as Census county equivalents. Search your town or city to find its region. Groton city and Groton town remain distinct entries; a planning-region boundary does not set a business service boundary.',{exact:true})).toBeVisible();
+ await expect(entry.locator('.county-area-content')).toContainText('Middletown, Old Saybrook and Essex are included in its directory.');
  await expect(entry.getByRole('heading',{name:'Towns',exact:true})).toBeVisible();
  await expect(entry.getByRole('heading',{name:'Census-designated places',exact:true})).toBeVisible();
  await expect(entry.getByRole('link',{name:'General website-planning worksheet (TXT)',exact:true})).toHaveCount(0);
