@@ -30,4 +30,4 @@ Linux screenshot inspection caught an inherited page-footer background on the de
 
 ## Release status
 
-The reviewed content baseline and all 26 changed or added Linux visual references are prepared. The final two Work captures confirm the repaired link group. Full exact-commit CI and production verification remain pending. A later release record will identify the tested source, production runtime and actual results. No field-performance, conversion-lift or human usability result is claimed.
+Published and verified. See [the release record](RELEASE.md) for the exact source, runtime, checks and live evidence. No field-performance, conversion-lift or human usability result is claimed.

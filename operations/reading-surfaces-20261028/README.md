@@ -14,7 +14,7 @@ The palette calculations use the [WCAG contrast method](https://www.w3.org/WAI/W
 
 Review Work and the core page families on desktop and phone; check the 320px layout, enlarged text, keyboard controls, guide disclosures, service choices and the design desk. Existing automated accessibility, reading, browser, visual and release checks remain required. Forced-colors uses system surfaces and borders; print removes the surface tints.
 
-One independent Astra reviewer passed the initial CSS and cascade review. Rendered review and final publication evidence will be recorded after the checks complete.
+Independent source review, desktop and phone visual review, exact-source CI and live publication checks are complete. See [the release record](RELEASE.md) for the application identity and evidence.
 
 ## Release corrections
 
