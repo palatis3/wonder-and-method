@@ -1,8 +1,8 @@
-/* Quiet changes of surface give long pages a rhythm without changing content,
-   spacing, illustrations or the colors used by interactive controls. */
+/* Quiet branded surfaces separate page groups and their individual items.
+   Interactive controls retain the established forest-green palette. */
 /* A section uses 90% of the available page width. Its 5% side space is
    1/18 of that section, avoiding viewport units that include a scrollbar. */
-.studio-site{--surface-sage:#edf0e8;--surface-stone:#f1eee6;--surface-process:#e7eef3;--accent:#a34f2e;--section-gutter:min(5.5555556%,4.5rem)}
+.studio-site{--surface-sage:#e3e9dd;--surface-stone:#eee5d8;--surface-process:#e5ebe4;--surface-card:#fdfcf8;--surface-border:#c3cbbb;--accent:#a34f2e;--section-gutter:min(5.5555556%,4.5rem)}
 .studio-site main>section:not(.civic-hero,.living-city-hero),
 .studio-site main>details.section,
 .studio-site .home-content>section,
@@ -300,4 +300,37 @@
  .studio-site :is(.project-milestones>li,.roi-primary,.handoff-tree,.selected-plan,.checkout-summary){background:Canvas;color:CanvasText;border-color:CanvasText}
  .studio-site :is(.process-step,.roi-primary-number){color:CanvasText}
  .studio-site :is(a.work-preview,.real-project-preview-image,.services-overview-card,.service-links){box-shadow:none}
+}
+
+/* Reading surfaces: sage groups choices, stone groups practical details,
+   and cream holds the individual item. Headings and spacing carry the same
+   grouping when color is unavailable. Keep long article prose on paper. */
+.studio-site.studio-pricing main>.studio-section,
+.studio-site.studio-service main>.studio-section:not(.real-project-preview),
+.studio-site main>:is(#process-stage-1,#process-stage-5,#process-stage-6,#communication,.about-work,.about-contact){
+ padding:clamp(1.25rem,3vw,2.5rem);margin-block:1.5rem 2rem;
+ background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:16px
+}
+.studio-site.studio-pricing main>:is(#after-launch,#payments),
+.studio-site.studio-service main>:is(#included,#source-handoff,#planning-guides,#service-questions),
+.studio-site main>:is(#process-stage-5,#communication,.about-contact){background:var(--surface-stone)}
+.studio-site.studio-pricing main>#payments::before{display:none}
+.studio-site :is(.process-timing,.guide-start,.guide-decision,.journal-callout){border:1px solid var(--surface-border);border-radius:12px}
+.studio-site :is(.guide-start,.guide-decision){background:var(--surface-sage)}
+.studio-site .journal-callout{background:var(--surface-stone);border-left:3px solid var(--accent)}
+.studio-site details.journal-toc{padding:.5rem 1.25rem;background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:12px}
+.studio-site :is(.buyer-example-grid,.about-evidence)>article{padding:1.25rem;background:var(--surface-card);border:1px solid var(--surface-border);border-radius:12px}
+.studio-site .project-milestones>li{border:1px solid var(--surface-border);border-radius:12px}
+.studio-site.studio-pricing .compact-offer{background:var(--surface-card)}
+@media(max-width:767px){
+ .studio-site.studio-pricing main>.studio-section,
+ .studio-site.studio-service main>.studio-section:not(.real-project-preview),
+ .studio-site main>:is(#process-stage-1,#process-stage-5,#process-stage-6,#communication,.about-work,.about-contact){padding:1.1rem;margin-block:1.25rem;border-radius:12px}
+ .studio-site details.journal-toc{padding:.5rem 1rem}
+}
+@media(forced-colors:active){
+ .studio-site{--surface-sage:Canvas;--surface-stone:Canvas;--surface-process:Canvas;--surface-card:Canvas;--surface-border:CanvasText}
+}
+@media print{
+ .studio-site{--surface-sage:white;--surface-stone:white;--surface-process:white;--surface-card:white;--surface-border:#777}
 }

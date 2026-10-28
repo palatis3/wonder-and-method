@@ -122,3 +122,33 @@
 .studio-site .process-artifact--compact .artifact-caption{font-size:.8rem;line-height:1.65;margin:.8rem 0 0}
 .studio-site #choose-monthly-work .seo-artifact{max-width:none;padding:1.5rem;gap:1.5rem;margin:1.5rem 0}
 .studio-site #choose-monthly-work .seo-artifact>li{line-height:1.8;font-size:.95rem}
+
+/* Group each family of work; keep the project and its explanation together. */
+.studio-site .tailored-work .work-group{padding:clamp(1.25rem,3vw,2.5rem);margin:2rem 0;background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:16px}
+.studio-site .tailored-work .work-group[aria-labelledby="work-tools"]{background:var(--surface-stone)}
+.studio-site .tailored-work .work-group>.eyebrow{margin-bottom:.75rem}
+.studio-site .tailored-work .work-gallery{padding:1.25rem 0 0;gap:1.5rem}
+.studio-site .tailored-work .work-item{background:var(--surface-card);border:1px solid var(--surface-border);border-radius:12px;align-self:stretch}
+.studio-site .tailored-work .work-item .work-preview{border:0;border-bottom:1px solid var(--surface-border);border-radius:11px 11px 0 0}
+.studio-site .tailored-work .work-caption{padding:1.25rem}
+.studio-site .tailored-work .work-caption>:last-child{margin-bottom:0}
+.studio-site .tailored-work .work-item#websites{gap:0}
+.studio-site .tailored-work .work-item#websites .work-preview{border-radius:11px}
+.studio-site .tailored-work .work-item#studies{padding:1.25rem}
+.studio-site .tailored-work .work-item#studies .work-caption{padding:1rem 0 0}
+.studio-site .tailored-work .owned-website-case{border-bottom:0;padding:1.25rem;background:var(--surface-card);border:1px solid var(--surface-border);border-radius:12px}
+.studio-site .tailored-work>.studio-closing{padding:clamp(2rem,4vw,3.5rem) 1.25rem;margin:2rem 0;background:var(--surface-stone);border:1px solid var(--surface-border);border-radius:16px}
+
+/* Shared service grouping, with lighter examples and cards inside the panel. */
+.studio-site .services-overview .services-overview-group{padding:clamp(1.25rem,3vw,2.5rem);margin-top:2rem;background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:16px}
+.studio-site .services-overview #services-improve{background:var(--surface-stone)}
+.studio-site .services-overview :is(.services-overview-card,.service-artifact){background:var(--surface-card)}
+.studio-site .services-overview .services-overview-card:hover{background:var(--paper);border-color:var(--blue)}
+.studio-site .services-overview .services-overview-next{border:1px solid var(--surface-border);background:var(--surface-stone)}
+@media(max-width:767px){
+ .studio-site .tailored-work .work-group{padding:1rem;margin:1.5rem 0;border-radius:12px}
+ .studio-site .tailored-work .work-caption{padding:1rem}
+ .studio-site .tailored-work .work-gallery{gap:1.25rem}
+ .studio-site .services-overview .services-overview-group{padding:1rem;margin-top:1.5rem;border-radius:12px}
+ .studio-site .services-overview .services-overview-card{padding:1.1rem}
+}
