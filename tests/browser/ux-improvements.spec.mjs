@@ -16,8 +16,8 @@ function proseCollisions(){
  return hits;
 }
 
-test('mobile corner tools leave ordinary prose clear and recover after dense content',async({page},testInfo)=>{
- test.skip(testInfo.project.name!=='desktop','One responsive matrix');test.setTimeout(90_000);
+test('mobile corner tools leave ordinary prose clear and recover after dense content',async({page})=>{
+ test.setTimeout(90_000);
  await page.emulateMedia({reducedMotion:'reduce'});
  for(const width of [320,390])for(const path of ['/about/','/pricing/','/work/','/areas/texas/milam-county/']){
   await page.setViewportSize({width,height:844});await page.goto(path+'?qa=1');await page.evaluate(()=>document.fonts.ready);

@@ -1,0 +1,2831 @@
+{
+  "reviewed_commit": "5ab08e6d568bde1ac90557eb9ce4782fc8a55711",
+  "captureRun": 40605440584,
+  "reviewer": "Independent Astra visual reviewer (/root/astra_release_evidence_review)",
+  "reviewedAt": "2026-10-28T00:10:49.866Z",
+  "status": "accepted",
+  "scope": "All72 Linux screenshot candidates. Exact static screenshot acceptance; no baseline or site source edits.",
+  "coverage": {
+    "images": 72,
+    "accepted": 72,
+    "held": 0,
+    "inheritedExactBaseline": 9,
+    "inheritedExactPriorAccepted": 19,
+    "manuallyReviewedChangedImages": 44,
+    "detailSheetsInspected": 79,
+    "fullPageOverviewGridsInspected": 11,
+    "hash_and_dimensions_verified": true,
+    "method": "Whole-image inheritance only for exact approved hashes. Other images compared by full-width row hashes against previously inspected candidates or committed baseline; only pixel-identical rows carry forward, including vertically shifted runs. Every changed interval inspected with80px surrounding context in unscaled generated crops; long desktop composites may be display-resized. Full-page overviews checked flow. Prior held images receive explicit fresh overlap-region review. Gray headers and strip seams are inspection artifacts. No automatic acceptance of changed pixels."
+  },
+  "inputs": [
+    {
+      "file": "evidence/human-quality-20261027/visual-diff-inventory.json",
+      "sha256": "9f470e1eaadfd1cd01de820d36c9912db09fcbe85508c506262e4e875dc27811"
+    },
+    {
+      "file": "operations/ux-improvements-20261027/linux-visual-review.json",
+      "sha256": "aa00f22673406beb9c9815403299b9b1c5b2a014a3a9fcb370f9c5ba4063f867"
+    },
+    {
+      "file": "evidence/human-quality-20261027/independent-visual-manifest.json",
+      "sha256": "20ee8003b41b4ebee97803532ac6aa3945e7307b7d56f7e2468bbc1639c4718f"
+    }
+  ],
+  "findings": [],
+  "resolvedFindings": [
+    {
+      "id": "V1",
+      "priorPriority": "P2",
+      "priorReport": "operations/ux-improvements-20261027/linux-visual-review.json",
+      "status": "resolved-in-supplied-captures",
+      "title": "Keep floating controls clear of mobile prose",
+      "affectedImages": [
+        {
+          "path": "phone/about.png",
+          "sha256": "b201317ee158c88e012cea6630b7febd077401d3fc3530df710f0d6a59f1dd60",
+          "evidence": "Chat sits in the clear right-hand gap beside the Hello, I’m Terry heading, above the opening paragraph; biography prose is unobscured."
+        },
+        {
+          "path": "phone/pricing.png",
+          "sha256": "a22679b10b63abbcd0d4c79b574853e4d10e0028e7fd167a08f95748de40c99c",
+          "evidence": "Chat sits beside Website packages in the heading gap. Editing/ownership, outside-cost and optional-care wording is unobscured."
+        },
+        {
+          "path": "phone/work.png",
+          "sha256": "8d3fa399c4849c4d858ded9951bf73a14e47e683aaf5533f91b64893f03349f2",
+          "evidence": "Chat sits in the gap below/right of the AssetRounds title and product-site line, above the paragraph. Portfolio description is unobscured."
+        },
+        {
+          "path": "phone/floating-tools-content.png",
+          "sha256": "929a912acac4548a93cf466a47fdb0f41d756a84ec3361147721cd193f934bd4",
+          "evidence": "Back-to-top sits in the gap after the price/terms paragraph before the example label. Chat sits right of EXAMPLE WEBSITE BRIEF and above its body text; neither control covers captured prose."
+        }
+      ]
+    }
+  ],
+  "unresolvedP1": 0,
+  "unresolvedP2": 0,
+  "limits": [
+    "Acceptance covers supplied screenshot states and exact hashes only, not every route, scroll position, zoom, motion or interactive state.",
+    "No per-route visual/accessibility rating or overall quality total is assigned. Content correctness and interaction/accessibility need separate evidence.",
+    "Nine committed-baseline matches are treated as already approved;19 match explicit prior independent acceptances. Unchanged pixels within the44 manual reviews inherit prior inspection; changed pixels and transition boundaries were inspected.",
+    "Captures are bound to the stated commit/run. Subsequent changes require independent evidence of unchanged pixels."
+  ],
+  "images": [
+    {
+      "path": "desktop/about.png",
+      "width": 1440,
+      "height": 3274,
+      "sha256": "c5338a90b56555a0a8a9cbdc3df170ed94378e4e51512414f55f447ec18e484f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/about.png",
+        "sha256": "c5338a90b56555a0a8a9cbdc3df170ed94378e4e51512414f55f447ec18e484f"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/alabama-entry.png",
+      "width": 850,
+      "height": 812,
+      "sha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/alabama-entry.png",
+        "sha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/care.png",
+      "width": 1440,
+      "height": 6222,
+      "sha256": "452dd96ae18992fc973d7e55c16b3c826791ed5ad3df985d9e346723b13b3f29",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\care.png",
+        "sha256": "5c63861363779c0ec9ed2113e3e0cf76aab9cf9b3df0a852051a885b4564cb31",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 5769
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            2809,
+            3424
+          ],
+          [
+            3474,
+            3810
+          ],
+          [
+            3980,
+            4471
+          ],
+          [
+            4651,
+            4828
+          ],
+          [
+            4904,
+            5065
+          ],
+          [
+            5086,
+            5328
+          ],
+          [
+            5441,
+            6222
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--care--packed-01.png",
+            "sha256": "de2dc0a0a9475c4511a81c8ab4d96df39d437902565737aa0c16462f0b66f601"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--care--packed-02.png",
+            "sha256": "767be4985575871645944542ef2fa67a13e5c8b5d978cbcec3880d56d2a1b219"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-01.png",
+          "sha256": "3fe393e6053970af33ea6b41917d75f6d922a5dcee0fd11317065882130aa9b7"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/concept.png",
+      "width": 1440,
+      "height": 3334,
+      "sha256": "844d2638e6424ebd2b8604fdeabf1158847cb97edb9bac2c03cf7371486d9455",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/concept.png",
+        "sha256": "844d2638e6424ebd2b8604fdeabf1158847cb97edb9bac2c03cf7371486d9455"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/contact.png",
+      "width": 1440,
+      "height": 2819,
+      "sha256": "af785d2c46c71bc6714bc22175a42421e5dfbb50654066238790f045c354a814",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/contact.png",
+        "sha256": "af785d2c46c71bc6714bc22175a42421e5dfbb50654066238790f045c354a814"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/county-entry.png",
+      "width": 850,
+      "height": 1748,
+      "sha256": "d5e6d7573b62317c4d29049c94986e663f6e907efe5034cb8f7726fd847e8ea2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\county-entry.png",
+        "sha256": "ca2354c93fe2cec7858ab98a777d293754ebd196e621aa78f1d96dc8491cd772",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 1716
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1107,
+            1350
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--county-entry--packed-01.png",
+            "sha256": "10fb4ce719f9f4c2eb49ac5bcd5e3bc6a93ecbe77e53a4bbcf0a1eb748cb805b"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-01.png",
+          "sha256": "3fe393e6053970af33ea6b41917d75f6d922a5dcee0fd11317065882130aa9b7"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/county-questions.png",
+      "width": 900,
+      "height": 769,
+      "sha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/county-questions.png",
+        "sha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/county.png",
+      "width": 1440,
+      "height": 4473,
+      "sha256": "6565c299bc9f92e42cefbbac8a120cfc49a482e63b02a2d7a0647f647d65ea88",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\county.png",
+        "sha256": "7345541ac365f04408c6acc70d0edb22aafb027af1e565cfea5f88d8cc0137b7",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3854
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            897,
+            2418
+          ],
+          [
+            2553,
+            2821
+          ],
+          [
+            2966,
+            3250
+          ],
+          [
+            3643,
+            3870
+          ],
+          [
+            3876,
+            4081
+          ],
+          [
+            4203,
+            4473
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--county--packed-01.png",
+            "sha256": "bf327cd48e9b792d4860b4e5274870e4fb03fc5836ad644d17fd8de4af798845"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--county--packed-02.png",
+            "sha256": "534824c684ea39c2c84271435c7b527377e339f80f97c5a78e84621821f114b0"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-01.png",
+          "sha256": "3fe393e6053970af33ea6b41917d75f6d922a5dcee0fd11317065882130aa9b7"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/district-directory.png",
+      "width": 1440,
+      "height": 3312,
+      "sha256": "e3e6645641c613684a51deda1ee9825715f7e693d67655d992fe6aeefa0267c2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\district-directory.png",
+        "sha256": "48f31571b429d2caa784402507a8969a2a88b50572e8182505a507dd3de90a26",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3128
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            787,
+            1144
+          ],
+          [
+            1163,
+            1441
+          ],
+          [
+            1517,
+            1682
+          ],
+          [
+            1894,
+            2073
+          ],
+          [
+            2100,
+            2707
+          ],
+          [
+            2716,
+            2921
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--district-directory--packed-01.png",
+            "sha256": "46aea89b94f2d2661aa6b7b3fa307d5ec07e7c99ae69623f05e90544af9b5ef7"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-01.png",
+          "sha256": "3fe393e6053970af33ea6b41917d75f6d922a5dcee0fd11317065882130aa9b7"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/floating-tools-content.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7bf508cb1cfc93d1a8d6edc1a9d047ff609ce21784d801eb6d67e6bc51d6cdc9",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\floating-tools-content.png",
+        "sha256": "195ca35a6543daca31d99228778c2e8bfb30fee78e2a2e84931ec0f528cc3cc0",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 732
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            371,
+            1000
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--floating-tools-content--packed-01.png",
+            "sha256": "d864f11c935e0fdd1e29ed6bfbee5c7079b43e988511f84b1669c426418c36f0"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-02.png",
+          "sha256": "ae985f2b02d6365ad565df7b69f091a147a4a46333c9c417b962095675840441"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/floating-tools-home.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/floating-tools-home.png",
+        "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/footer-closed.png",
+      "width": 1440,
+      "height": 385,
+      "sha256": "887ff282bc7c3f0f9ca84acde84f82735ca12e5ae266579c7c1c965528fe1d92",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/footer-closed.png",
+        "sha256": "887ff282bc7c3f0f9ca84acde84f82735ca12e5ae266579c7c1c965528fe1d92"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/footer-open.png",
+      "width": 1440,
+      "height": 2829,
+      "sha256": "f9a43893d9887d0c415b6abd9737c0cba201ab7298ffbeedc60cc068cd86b899",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/footer-open.png",
+        "sha256": "f9a43893d9887d0c415b6abd9737c0cba201ab7298ffbeedc60cc068cd86b899"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/georgia-entry.png",
+      "width": 850,
+      "height": 506,
+      "sha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/georgia-entry.png",
+        "sha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/guide.png",
+      "width": 1440,
+      "height": 9084,
+      "sha256": "4dc11dd901eb2ef36ad2e53f3f5e6729f3af569f2891ea23f200176962465de5",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\guide.png",
+        "sha256": "bf5f894b79eed4381c4324ab40b35c868dd88e2f0946783d58f923460570aef9",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 6544
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            132,
+            304
+          ],
+          [
+            465,
+            638
+          ],
+          [
+            1895,
+            2341
+          ],
+          [
+            2505,
+            2766
+          ],
+          [
+            3014,
+            3221
+          ],
+          [
+            3235,
+            3472
+          ],
+          [
+            3521,
+            4362
+          ],
+          [
+            4624,
+            7391
+          ],
+          [
+            7414,
+            7666
+          ],
+          [
+            7698,
+            7910
+          ],
+          [
+            7953,
+            8244
+          ],
+          [
+            8256,
+            8693
+          ],
+          [
+            8848,
+            9084
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--guide--packed-01.png",
+            "sha256": "0ea70442c557c4b8c19bb8a224de1145c4612557e052841858050c3377cee1bc"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--guide--packed-02.png",
+            "sha256": "385b46325f33e6f73d16dce271320ab4124d507aa6cae439744d90020bdffac6"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--guide--packed-03.png",
+            "sha256": "4c0746cd18d01d42b186c02f44dbec3408fee95507635933286c85bf6e648268"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--guide--packed-04.png",
+            "sha256": "f6ce30051d6d25edef359e52e1bb5b4f0826d4cb032038a649b5d862ca4b2381"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-02.png",
+          "sha256": "ae985f2b02d6365ad565df7b69f091a147a4a46333c9c417b962095675840441"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/home-viewport-01.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-01.png",
+        "sha256": "7953d9a4b3a0996455489c8bc509227bc8f303b4732252c5cce5cc8ba17ee825"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-02.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fe86f6351647c5110a25179d319901a16bc4559fe26bcf8388edfdee0d11f1ba",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-02.png",
+        "sha256": "fe86f6351647c5110a25179d319901a16bc4559fe26bcf8388edfdee0d11f1ba"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-03.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b39d456b6e77874d111df35b9898773e55596fca3a01ec1e5d07b182c9e334b8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-03.png",
+        "sha256": "b39d456b6e77874d111df35b9898773e55596fca3a01ec1e5d07b182c9e334b8"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-04.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d6df5a4117e51183a01a28234363414f0d0a313d8f7e30165f934a6500c034f8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-04.png",
+        "sha256": "d6df5a4117e51183a01a28234363414f0d0a313d8f7e30165f934a6500c034f8"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-05.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "00e93d28bc0b452515325ee51d91d16847b59abd2eeb22f2bb572f7b0a8ec4d3",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-05.png",
+        "sha256": "00e93d28bc0b452515325ee51d91d16847b59abd2eeb22f2bb572f7b0a8ec4d3"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-06.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b8d7753b234025bdea42ef255c20369a53dee3545eba9ec7a199dc0007b99eb2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-06.png",
+        "sha256": "b8d7753b234025bdea42ef255c20369a53dee3545eba9ec7a199dc0007b99eb2"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/home-viewport-07.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "992ce7996b7b77d6612e72b9b56ed706ed4c6417ebb2719d8e867bd128dc91a2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/home-viewport-07.png",
+        "sha256": "992ce7996b7b77d6612e72b9b56ed706ed4c6417ebb2719d8e867bd128dc91a2"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/illinois-entry.png",
+      "width": 850,
+      "height": 813,
+      "sha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/illinois-entry.png",
+        "sha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/iowa-county.png",
+      "width": 1440,
+      "height": 4788,
+      "sha256": "8e5547e404fe7f084899d3c8b28ae25e0039c527e3c7ada76937fa79c3e3e13f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\iowa-county.png",
+        "sha256": "97a7908559b1cd85daa154ae9bb14ca60d95e317b1b5d9018c694b16c551e589",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 3839
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1041,
+            2668
+          ],
+          [
+            2828,
+            3163
+          ],
+          [
+            3191,
+            3893
+          ],
+          [
+            4050,
+            4617
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--iowa-county--packed-01.png",
+            "sha256": "43d116da1c43a181e3e063d2cdf415897cc7f9663c7d77153f8f7f2770e547f9"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--iowa-county--packed-02.png",
+            "sha256": "c17bcb95e1887e26b7ead63ac460df463949b1fbc828f3d66ace8bbe44038cbf"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-02.png",
+          "sha256": "ae985f2b02d6365ad565df7b69f091a147a4a46333c9c417b962095675840441"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/iowa-entry.png",
+      "width": 850,
+      "height": 2065,
+      "sha256": "3d1b878a77041d46c2482b872ba6ad625708fa6ac3ae76b5b4f5fbe4443e59af",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\iowa-entry.png",
+        "sha256": "e7668cfb8ab2485b46063ac5aafddf1c51b15bce5860835a91d8800f6a09fe52",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 2035
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1032,
+            1235
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--iowa-entry--packed-01.png",
+            "sha256": "7a327aa2a5bc712111ba1ef6948628edcfa26465fecc3125221604a53bbaa650"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-02.png",
+          "sha256": "ae985f2b02d6365ad565df7b69f091a147a4a46333c9c417b962095675840441"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/mississippi-entry.png",
+      "width": 850,
+      "height": 505,
+      "sha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/mississippi-entry.png",
+        "sha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/missouri-county.png",
+      "width": 1440,
+      "height": 4858,
+      "sha256": "2e6c79a18fd8356966a9a7513c8a6a633cef6dac380e3304bc19e70343c79c54",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\missouri-county.png",
+        "sha256": "efc487142dffc4b9cb89ce42b54e20d85e7d1ca99669435e99da6b93d62635fb",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 3787
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1041,
+            2708
+          ],
+          [
+            3198,
+            3828
+          ],
+          [
+            3928,
+            4105
+          ],
+          [
+            4120,
+            4687
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--missouri-county--packed-01.png",
+            "sha256": "005d78b47a0f446ba2e0d22eec2d74d3b0f91f46a5b0d21da74518ff6ab6f842"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--missouri-county--packed-02.png",
+            "sha256": "e29b3f2dff59bebbe52c955146ff132d0891323ee5274634cb3fa9aa704cacd6"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-03.png",
+          "sha256": "b4522ed831ee9f7065fe01b9dca893dcc7ff4c5cf69242cef0d607dac5a6300b"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/missouri-entry.png",
+      "width": 850,
+      "height": 406,
+      "sha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/missouri-entry.png",
+        "sha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/monthly-seo.png",
+      "width": 1440,
+      "height": 6158,
+      "sha256": "d0d46557771d9af29688ad04f6a6c97cba6adae1b9f7c61c4b3e0c21b6107659",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\monthly-seo.png",
+        "sha256": "63720c66bcf817c83f17c258b7fe4693038dcea323f48efaeeb54bc4ac65b36a",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 5560
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            445,
+            823
+          ],
+          [
+            836,
+            1285
+          ],
+          [
+            1381,
+            1658
+          ],
+          [
+            1677,
+            2142
+          ],
+          [
+            2745,
+            2923
+          ],
+          [
+            2942,
+            3419
+          ],
+          [
+            3511,
+            3837
+          ],
+          [
+            4054,
+            4456
+          ],
+          [
+            4730,
+            4892
+          ],
+          [
+            5002,
+            5179
+          ],
+          [
+            5420,
+            5987
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--monthly-seo--packed-01.png",
+            "sha256": "42e4855f838cbf9bf7f1d5827eab665ab1e95600dd79efe7558572eac90aef50"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--monthly-seo--packed-02.png",
+            "sha256": "024fcf8069312262aaa822a87a155f0d055eb551a1ce882e5a522f34fb14b795"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--monthly-seo--packed-03.png",
+            "sha256": "32c66dcd68d90e01448fa29f5f9210977c7337acb838e0b2fe859cfd0a874ba6"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-03.png",
+          "sha256": "b4522ed831ee9f7065fe01b9dca893dcc7ff4c5cf69242cef0d607dac5a6300b"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/pricing.png",
+      "width": 1440,
+      "height": 5990,
+      "sha256": "fb165c79bffd18e56e9fa81735010df8f66f4c76f6f8fa495e01c870186fbf5f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/pricing.png",
+        "sha256": "fb165c79bffd18e56e9fa81735010df8f66f4c76f6f8fa495e01c870186fbf5f"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/regional-directory.png",
+      "width": 1440,
+      "height": 3639,
+      "sha256": "29f680943de171e77f5aa5358a2c44b1a125e493cec23195ba86d3e63a3024f0",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\regional-directory.png",
+        "sha256": "177a126cebb7f0cf923ea94ef40208912b8b7a6f95199302b719ec8adbe63753",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3133
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            687,
+            866
+          ],
+          [
+            1138,
+            1954
+          ],
+          [
+            2093,
+            2400
+          ],
+          [
+            2528,
+            2858
+          ],
+          [
+            2860,
+            3174
+          ],
+          [
+            3403,
+            3639
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--regional-directory--packed-01.png",
+            "sha256": "d2420bb6979704228149cdde7ae6ab38ceb46e41ed8a485ac65e31da88f7a1a4"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--regional-directory--packed-02.png",
+            "sha256": "5a247a1545525ca728f0e7384337eb40aca4fe5aca4a58e4e358f3eade83c562"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-03.png",
+          "sha256": "b4522ed831ee9f7065fe01b9dca893dcc7ff4c5cf69242cef0d607dac5a6300b"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/scope-request.png",
+      "width": 1440,
+      "height": 2765,
+      "sha256": "17d75cc851353a2973007c4c706a65669fadb81c06a5dbd2808383bcb240d6ec",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/scope-request.png",
+        "sha256": "17d75cc851353a2973007c4c706a65669fadb81c06a5dbd2808383bcb240d6ec"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/service-questions.png",
+      "width": 1296,
+      "height": 427,
+      "sha256": "e35a1e832f63ea81ea374b519e9c2f2f0bcb48b710042e67df024969c1d33a3d",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\service-questions.png",
+        "sha256": "bdd58c314444f4f8d633f792d65e0c5f582ee7f54b50160a30dcfbe99bca400f",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 424
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            81
+          ],
+          [
+            117,
+            294
+          ],
+          [
+            345,
+            427
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--service-questions--packed-01.png",
+            "sha256": "7b0f8400e0254d326579d80119bc9aa9c7fef7c5337f5358de32501348a77d99"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-03.png",
+          "sha256": "b4522ed831ee9f7065fe01b9dca893dcc7ff4c5cf69242cef0d607dac5a6300b"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/services.png",
+      "width": 1440,
+      "height": 3683,
+      "sha256": "055193094b2bd86357269402a89eb1cf11b871d82b9185ac9bedf31831e575ed",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\services.png",
+        "sha256": "634e97772ff09bced6495227acfb939fda5d17cf273162ff47479f4ec9ddcd08",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3554
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            672,
+            875
+          ],
+          [
+            1223,
+            1426
+          ],
+          [
+            1774,
+            1977
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--services--packed-01.png",
+            "sha256": "92069044c19007864e6116beb5545ec012bb542e2e09b083837dca2ef7c08f9f"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-04.png",
+          "sha256": "177bad0b5f2342fc776d339d573fa2dccc2d84c4a35441c2aa459f4e9e64a11e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/texas-county.png",
+      "width": 1440,
+      "height": 4875,
+      "sha256": "6d05c432a172b4fabf887cb12ee90c303dc708f2e3d716b9b458ee34586645fe",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\texas-county.png",
+        "sha256": "e6ef1933145b1dfab3fa374a23c2d899436e3d0ae4b0f71448c768226f51ed20",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 3743
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            971,
+            2695
+          ],
+          [
+            2807,
+            3190
+          ],
+          [
+            3218,
+            3706
+          ],
+          [
+            3789,
+            4875
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--texas-county--packed-01.png",
+            "sha256": "b948a8ebba9dc1e57ee814b98ba1ece493e30d4c486302c7f0d032171e34ac28"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--texas-county--packed-02.png",
+            "sha256": "ce3d9805539094fde224bfd5817c3617767c96aee4d56208039b1b455e1ce717"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-04.png",
+          "sha256": "177bad0b5f2342fc776d339d573fa2dccc2d84c4a35441c2aa459f4e9e64a11e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/texas-entry.png",
+      "width": 850,
+      "height": 783,
+      "sha256": "ee9da320b74f56678f3c988bd3dceef71c18c36cb0e2bc2a3c92f326360da5aa",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\desktop\\texas-entry.png",
+        "sha256": "297c5bcd64e3251966d892be2262f01537cdb50582770ffd5576f164a2345074",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 743
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            300
+          ],
+          [
+            339,
+            698
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--texas-entry--packed-01.png",
+            "sha256": "4834bf3b06298ff630b6d7a7feaf30c70326f9da8616f9897a92188db282559c"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-04.png",
+          "sha256": "177bad0b5f2342fc776d339d573fa2dccc2d84c4a35441c2aa459f4e9e64a11e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/web-design.png",
+      "width": 1440,
+      "height": 7629,
+      "sha256": "eac06002488696f885b8a139a9d4baff65a31a2ea8dbac3223c3f690d0acedca",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\desktop\\web-design.png",
+        "sha256": "10d9a64f250fc745104c0d0a3c94dde42a6b149ce267f9316524fc2165821271",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 7345
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            2866,
+            3422
+          ],
+          [
+            3497,
+            3978
+          ],
+          [
+            4033,
+            4308
+          ],
+          [
+            4312,
+            4490
+          ],
+          [
+            4565,
+            4770
+          ],
+          [
+            5056,
+            5377
+          ],
+          [
+            5721,
+            5898
+          ],
+          [
+            5976,
+            6280
+          ],
+          [
+            6445,
+            6797
+          ],
+          [
+            6800,
+            7629
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--web-design--packed-01.png",
+            "sha256": "bba998f2942ad6d07e29987547117bbe0ac3bac15c0d911a687ff1e63f96d9da"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\desktop--web-design--packed-02.png",
+            "sha256": "dd2d06e36a6b33d2ae25ec6d09084a234dacae87f4f9afef2d86e86f75d74547"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-04.png",
+          "sha256": "177bad0b5f2342fc776d339d573fa2dccc2d84c4a35441c2aa459f4e9e64a11e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "desktop/wisconsin-entry.png",
+      "width": 850,
+      "height": 501,
+      "sha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/desktop/wisconsin-entry.png",
+        "sha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "desktop/work.png",
+      "width": 1440,
+      "height": 8096,
+      "sha256": "633ca7619e3d485c8247169cecf734e8964f216513a791adff91123925333f4f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/desktop/work.png",
+        "sha256": "633ca7619e3d485c8247169cecf734e8964f216513a791adff91123925333f4f"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/about.png",
+      "width": 390,
+      "height": 4224,
+      "sha256": "b201317ee158c88e012cea6630b7febd077401d3fc3530df710f0d6a59f1dd60",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\about.png",
+        "sha256": "83a4db71e2035e882a2643ca82a7ec6274e81b612690761c7969da947caa62af",
+        "priorDisposition": "hold",
+        "exactMatchedPixelRows": 4059
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            480,
+            929
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--about--01.png",
+            "sha256": "2dda09e461f025251cebb4c5b9208aafea45bd931c31f55b03ac352bb8d04db0"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-05.png",
+          "sha256": "24be5e761840b6321127c4c6f532524f8d4f1f86d5fcb5d8e0495c6ecd2aaa5e"
+        }
+      },
+      "notes": "Chat sits in the clear right-hand gap beside the Hello, I’m Terry heading, above the opening paragraph; biography prose is unobscured."
+    },
+    {
+      "path": "phone/alabama-entry.png",
+      "width": 350,
+      "height": 948,
+      "sha256": "12869b7d7f7f6644e530dc35239a1f925267e129bd11ece8f0c7c13031f3835f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\alabama-entry.png",
+        "sha256": "9b9d7af4946294fd315bda6b7af8da674ac7d7a9f4b47a2c891f654a12babbc3",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 940
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            34,
+            540
+          ],
+          [
+            659,
+            948
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--alabama-entry--01.png",
+            "sha256": "68057601442ed36ed295308639966c2251414e46b004b315b89e42c1618208ca"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-05.png",
+          "sha256": "24be5e761840b6321127c4c6f532524f8d4f1f86d5fcb5d8e0495c6ecd2aaa5e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/care.png",
+      "width": 390,
+      "height": 8179,
+      "sha256": "90db9134e0e1b2ad11d483336b91e91ce5d7cbd35cfb3dde69d3ac2d3479e30f",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\care.png",
+        "sha256": "e74dc560e33d70613b7bcb223b4eb4ae62df2a9f26ec6258decb425cf95ea639",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 7293
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            624,
+            929
+          ],
+          [
+            3889,
+            4904
+          ],
+          [
+            4930,
+            5495
+          ],
+          [
+            5631,
+            5808
+          ],
+          [
+            5839,
+            6082
+          ],
+          [
+            6334,
+            6647
+          ],
+          [
+            6953,
+            7284
+          ],
+          [
+            7509,
+            7683
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--care--01.png",
+            "sha256": "ffb33970e0108e7b5de38aa8135a5287f3eea4b995e9ef829926a0830ba32dfd"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--care--02.png",
+            "sha256": "9156729a618e91fb3078f1cb0dc08a32b4d1fb85e335354c5018d23a61a0b935"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--care--03.png",
+            "sha256": "ce5e35d46cfe47a437c8b9abe766d73aa27d3fe1dd6851388fce8844c2b36bed"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-05.png",
+          "sha256": "24be5e761840b6321127c4c6f532524f8d4f1f86d5fcb5d8e0495c6ecd2aaa5e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/concept.png",
+      "width": 390,
+      "height": 4107,
+      "sha256": "f71e99ec8688907f5091a71bdadda88037d194f262f542fff7dcb2e4b559051a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-baseline",
+      "inheritedFrom": {
+        "file": "tests/visual/baselines/linux/phone/concept.png",
+        "sha256": "f71e99ec8688907f5091a71bdadda88037d194f262f542fff7dcb2e4b559051a"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/contact.png",
+      "width": 390,
+      "height": 3835,
+      "sha256": "df5f0f2dea0c87a2128eb28a9a3286f737074d64fcf1aeab6560026682a26fb8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\contact.png",
+        "sha256": "1e1a26845c50196f9506ecbc058c415eb6a6192c87d6385265545a927d3d5c7f",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 3753
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            561,
+            803
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--contact--01.png",
+            "sha256": "5c3608e35766370b7b4318deb28f16d9c4add4292f2bc77c9cdc1c83ec5a0343"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-05.png",
+          "sha256": "24be5e761840b6321127c4c6f532524f8d4f1f86d5fcb5d8e0495c6ecd2aaa5e"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/county-entry.png",
+      "width": 350,
+      "height": 2287,
+      "sha256": "91cf2b4df162e17727717105db5054c98df02ed06f6897c39c8a238ee75a4143",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\county-entry.png",
+        "sha256": "2d09ff4a82e5df4a377a19eafa674f18a871c4c8230936bed0ebd51bf73ee7f7",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 2255
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1776,
+            2019
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--county-entry--01.png",
+            "sha256": "1d955a1ded1fe8db6742752d29b3d8663cf645059539603207b763e3b547f00f"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-06.png",
+          "sha256": "c9cbbe6f3b2bd7c30f279bba74c1cf5341b55535212fddea36e424e5aad6679c"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/county-questions.png",
+      "width": 350,
+      "height": 982,
+      "sha256": "78ff62ee76aab0ac90004bb729fd341dd6e0cdec96f26ce070fc1b14ea1648c9",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\county-questions.png",
+        "sha256": "ea86d9b0d0315783402ea003cb2ec3d08586281c5f9561be48d8dde07a3df4a2",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 975
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            80
+          ],
+          [
+            181,
+            982
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--county-questions--01.png",
+            "sha256": "2cd4a978b2beafecc2d4baab4c1ec7ec8c1df8bcc9349145a05b320d0e7ac367"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-06.png",
+          "sha256": "c9cbbe6f3b2bd7c30f279bba74c1cf5341b55535212fddea36e424e5aad6679c"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/county.png",
+      "width": 390,
+      "height": 5276,
+      "sha256": "8795bb694e061d4e289dd73e3d90732ccc7e234d8abdd281f7e6aaf8009e941a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\county.png",
+        "sha256": "7dd4112dddc15a1d947ef03321c8df1f5613afca39c8949d707f82879933e2fd",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 4044
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            950,
+            3217
+          ],
+          [
+            3713,
+            3873
+          ],
+          [
+            3924,
+            4455
+          ],
+          [
+            4770,
+            4932
+          ],
+          [
+            5196,
+            5276
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--county--01.png",
+            "sha256": "12ef064872b15fde4b2303585cd08aaad0833d4c1382d44a9679a3845cb1dfbb"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--county--02.png",
+            "sha256": "2e422b219205127803064883c3c78004b35364570430c5569ef0d36230d9af5e"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-06.png",
+          "sha256": "c9cbbe6f3b2bd7c30f279bba74c1cf5341b55535212fddea36e424e5aad6679c"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/district-directory.png",
+      "width": 390,
+      "height": 3793,
+      "sha256": "107d755fbad1cb03bc35fad6d1fed20b250fd442159995c074ac7b72b4d42d36",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\district-directory.png",
+        "sha256": "7ee8abb79fc2007c801135af1bdcc78a623f263437e86159a9cd8d7aa285a6fb",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3442
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            328,
+            571
+          ],
+          [
+            687,
+            1600
+          ],
+          [
+            1793,
+            1953
+          ],
+          [
+            2779,
+            2951
+          ],
+          [
+            3016,
+            3194
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--district-directory--01.png",
+            "sha256": "708e1f94abe185f61102747c62873bcd6af56bb399c7f3cba751bd441383239a"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--district-directory--02.png",
+            "sha256": "b724bce84b43c15ca09a8d6cb30772e98c9c4b0e63a3205a1fb03c1aa87be120"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-06.png",
+          "sha256": "c9cbbe6f3b2bd7c30f279bba74c1cf5341b55535212fddea36e424e5aad6679c"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/floating-tools-content.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "929a912acac4548a93cf466a47fdb0f41d756a84ec3361147721cd193f934bd4",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\floating-tools-content.png",
+        "sha256": "ffb8a8321c4cbe0baaeb4f08dfd795bdb6dc345f9c1be83f738ce290b884884b",
+        "priorDisposition": "hold",
+        "exactMatchedPixelRows": 542
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            390,
+            844
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--floating-tools-content--01.png",
+            "sha256": "66e5a117026b3ea4e27ee784a7672b1b4377a228bdd5effb21661e1e906c17bf"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-07.png",
+          "sha256": "0bdb3e9682ab9c4d303fc662eb1814068f091cd14c311fdac91c6fdb9d53ca37"
+        }
+      },
+      "notes": "Back-to-top sits in the gap after the price/terms paragraph before the example label. Chat sits right of EXAMPLE WEBSITE BRIEF and above its body text; neither control covers captured prose."
+    },
+    {
+      "path": "phone/floating-tools-home.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "95dfd8c752346e8996212bc04b989289b3d486c8981f09cb51e8527484db7abc",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/phone/floating-tools-home.png",
+        "sha256": "95dfd8c752346e8996212bc04b989289b3d486c8981f09cb51e8527484db7abc"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/footer-closed.png",
+      "width": 390,
+      "height": 746,
+      "sha256": "c696384806b0afbaaf34d305b461d6602d689799642fb478261e920415b0bef6",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/phone/footer-closed.png",
+        "sha256": "c696384806b0afbaaf34d305b461d6602d689799642fb478261e920415b0bef6"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/footer-open.png",
+      "width": 390,
+      "height": 4002,
+      "sha256": "101b9cf49fdcf0d7b63200a2d014347857cdd7e29a93c2293afce4592a076483",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/phone/footer-open.png",
+        "sha256": "101b9cf49fdcf0d7b63200a2d014347857cdd7e29a93c2293afce4592a076483"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/georgia-entry.png",
+      "width": 350,
+      "height": 727,
+      "sha256": "3bc6335f54d0e0f2571bcab55273ee2a0bc83b2f6d4f93770119f81e331ffcce",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\georgia-entry.png",
+        "sha256": "70111cacf8457dab454853eb414bcfb01d75d27e3f134a1238cd782ef4860da3",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 722
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            271
+          ],
+          [
+            540,
+            727
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--georgia-entry--01.png",
+            "sha256": "afd2be658114d8034f7b5819929cf3d5f1182097f71d18782a79cfaa691e9df3"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-07.png",
+          "sha256": "0bdb3e9682ab9c4d303fc662eb1814068f091cd14c311fdac91c6fdb9d53ca37"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/guide.png",
+      "width": 390,
+      "height": 12966,
+      "sha256": "2ceae2596c1a92b92b4758ad47f4534cbad127d64c19d97afc80652ce9e50139",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\guide.png",
+        "sha256": "aa08a29973a22478c6ddc3f073987e1fd96b953e926808e977180dc469b7a4bf",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 8453
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            78,
+            250
+          ],
+          [
+            400,
+            573
+          ],
+          [
+            634,
+            929
+          ],
+          [
+            2280,
+            8501
+          ],
+          [
+            8668,
+            8978
+          ],
+          [
+            9225,
+            9445
+          ],
+          [
+            9916,
+            10713
+          ],
+          [
+            10765,
+            11445
+          ],
+          [
+            11454,
+            11615
+          ],
+          [
+            11706,
+            11933
+          ],
+          [
+            12188,
+            12721
+          ],
+          [
+            12885,
+            12966
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--01.png",
+            "sha256": "d4125dba2ec9ad36222d5808f0478572027f8621db0d298047b872d50aa84adf"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--02.png",
+            "sha256": "dc5973e6b8ef548a3ca2ac9cd956fd86e12de60961a3e68b28b9766744b86e0a"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--03.png",
+            "sha256": "9abdc4be7f7d4f6df2ebcf4fa6a37d03c6b1a4c17bde7acc0fca8c152a79dcc5"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--04.png",
+            "sha256": "90b36efa9fadd448c8242fe12071c11b06b798e22bcb85f8cf13dcae92a907a8"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--05.png",
+            "sha256": "e1c564f8ea65d31fcef6bbff8fc195ba1f5451328e20f8dc2353398d944ac783"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--guide--06.png",
+            "sha256": "fa987e169f4ef3bda0e1f8a5377aa679fe29a091bd26b60656e32e330d9e60ce"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-07.png",
+          "sha256": "0bdb3e9682ab9c4d303fc662eb1814068f091cd14c311fdac91c6fdb9d53ca37"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/home.png",
+      "width": 390,
+      "height": 8305,
+      "sha256": "0e62a4f4960aaa336aa4e5d2e711fe8b342cbb06dd407e50b02caafa3e2c81f1",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "exact-prior-approved",
+      "inheritedFrom": {
+        "report": "operations/ux-improvements-20261027/linux-visual-review.json",
+        "file": "evidence/ux-improvements-20261027/visual-candidates/phone/home.png",
+        "sha256": "0e62a4f4960aaa336aa4e5d2e711fe8b342cbb06dd407e50b02caafa3e2c81f1"
+      },
+      "comparisonReference": null,
+      "manualEvidence": null,
+      "notes": "Inherited only after exact current SHA256 equality with the approved reference."
+    },
+    {
+      "path": "phone/illinois-entry.png",
+      "width": 350,
+      "height": 1088,
+      "sha256": "4a6a33ec67eedaa623f88188402b582e729072ac12d3e821bc788dda506c2efb",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\illinois-entry.png",
+        "sha256": "5a66556fbf0a64aee5c03772c6f0c07d1966f6336ad2fe3ef7724e03a98de2a0",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 1084
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            82
+          ],
+          [
+            550,
+            896
+          ],
+          [
+            943,
+            1088
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--illinois-entry--01.png",
+            "sha256": "029eae1b83a45eaaa0ddf34b6e8243f809809298f2c1bc5d7b12c3c927ad8d09"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-07.png",
+          "sha256": "0bdb3e9682ab9c4d303fc662eb1814068f091cd14c311fdac91c6fdb9d53ca37"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/iowa-county.png",
+      "width": 390,
+      "height": 5858,
+      "sha256": "0980c1b37fe9afbdb25ad5dcd54eeae69f803f281f54d8986cc2e0febd5dcc4c",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\iowa-county.png",
+        "sha256": "85cd4e419627f846b6141eae2adfa1cd716b79e2b93d3a626b4646a93311b57b",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 4310
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1198,
+            1460
+          ],
+          [
+            1606,
+            3333
+          ],
+          [
+            3489,
+            3875
+          ],
+          [
+            3912,
+            4669
+          ],
+          [
+            4841,
+            5018
+          ],
+          [
+            5080,
+            5258
+          ],
+          [
+            5388,
+            5562
+          ],
+          [
+            5622,
+            5858
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-county--01.png",
+            "sha256": "ea55d4df1c6366c4587f3a405ddc7cca3b7c617eeeb13b235f10611dc86ce321"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-county--02.png",
+            "sha256": "326df65c18e91e6df8eacb223d9d1c42051609d76c68f414289bc5a45e3a9371"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-county--03.png",
+            "sha256": "5506b7b94a7e8570e194f0d5e43af817ba109a7a3d15cc53eb5e7442e562d339"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-08.png",
+          "sha256": "ca2e80cb435648176362fb2e00ed6325197064b91aac789f56ca0fc74a11ee3a"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/iowa-entry.png",
+      "width": 350,
+      "height": 2357,
+      "sha256": "b410a75f756ca21fd1a707754761d2521480e5dc62dc05e31c79822316bda549",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\iowa-entry.png",
+        "sha256": "98c3f0f9d53d2a65a2495521629d311a489206068890215507ef183af0c1c0f8",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 2329
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            200
+          ],
+          [
+            390,
+            564
+          ],
+          [
+            582,
+            756
+          ],
+          [
+            774,
+            951
+          ],
+          [
+            1010,
+            1343
+          ],
+          [
+            1363,
+            1540
+          ],
+          [
+            1555,
+            1729
+          ],
+          [
+            1862,
+            2036
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-entry--01.png",
+            "sha256": "dd6a1fc4b3c2f400039ec21d4beb4d4d2de82e5e8463819c3881ae9161079640"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-entry--02.png",
+            "sha256": "420c93d1ca774877c97096a1604ce50ca6b6e7c18c832a492a45014b0823ba32"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--iowa-entry--03.png",
+            "sha256": "ed42bd00fd02988d94a8fedbf7c94216309028f7c3c236cc980cad756460f58e"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-08.png",
+          "sha256": "ca2e80cb435648176362fb2e00ed6325197064b91aac789f56ca0fc74a11ee3a"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/mississippi-entry.png",
+      "width": 350,
+      "height": 641,
+      "sha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\mississippi-entry.png",
+        "sha256": "9a0e66b1619c8bfd8d7ae43b9d786c572b920991045420e0000a162b3cbbd78a",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 638
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            34,
+            324
+          ],
+          [
+            496,
+            641
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--mississippi-entry--01.png",
+            "sha256": "e360b9f5ad02755389169ed854be001b765ca1182a474ad729a3e81f6894a18d"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-08.png",
+          "sha256": "ca2e80cb435648176362fb2e00ed6325197064b91aac789f56ca0fc74a11ee3a"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/missouri-county.png",
+      "width": 390,
+      "height": 5893,
+      "sha256": "0e7c63aa79ef3b551863ae170e3784204414ec7412595b1f9d847118686e9e66",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\missouri-county.png",
+        "sha256": "76f2a3a5a55a1a6a50861bb8b113f9e2d87e73cfc724355d2e24740c03561aaa",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 4416
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            1169,
+            3339
+          ],
+          [
+            3918,
+            4410
+          ],
+          [
+            5116,
+            5294
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--missouri-county--01.png",
+            "sha256": "fd6d14e70c046322598274d3bbb0878cd6ad9c59e82abd12015979e616c47150"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--missouri-county--02.png",
+            "sha256": "7baafc2cd56f01b3bbeb1b814306c67e21706933f1519a89e56e6a30d00ee10a"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-08.png",
+          "sha256": "ca2e80cb435648176362fb2e00ed6325197064b91aac789f56ca0fc74a11ee3a"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/missouri-entry.png",
+      "width": 350,
+      "height": 488,
+      "sha256": "a418a45ff201b279b327d79e962a3e2443cdb0aeeea257595360e19982c7f44a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\missouri-entry.png",
+        "sha256": "846d14e013f5c924ff58389e1d7de47bf586a2b77247b520b729ba51d525ecea",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 484
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            411
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--missouri-entry--01.png",
+            "sha256": "ffbbb8c2c4b80bd3a5c41c74adb373fb24cf8c6f1806655bb63bf4c9d3bb6e0b"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-09.png",
+          "sha256": "59de1b65e2fb89a882a5f2515914b6cb22fbd19aa801f2c0581bcb3aa02ba3b9"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/monthly-seo.png",
+      "width": 390,
+      "height": 8265,
+      "sha256": "ad7b788b595a3cef5ddd616234f37033c47430385d3b974261c5dfedacdfee4a",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\monthly-seo.png",
+        "sha256": "d9122aef538171843265c15ee31c9c9080c64c4fc6eb19f7ea0d10fda29039eb",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 7413
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            376,
+            1424
+          ],
+          [
+            1534,
+            1722
+          ],
+          [
+            2032,
+            2705
+          ],
+          [
+            2712,
+            3387
+          ],
+          [
+            3400,
+            4316
+          ],
+          [
+            4429,
+            5075
+          ],
+          [
+            5117,
+            6240
+          ],
+          [
+            6252,
+            6574
+          ],
+          [
+            6718,
+            7274
+          ],
+          [
+            7323,
+            7501
+          ],
+          [
+            7595,
+            8021
+          ],
+          [
+            8185,
+            8265
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--monthly-seo--01.png",
+            "sha256": "70c97d101c592d1267893240cfade7116c133142a0eec115373703b0389c11b2"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--monthly-seo--02.png",
+            "sha256": "edbf60f9f9f20c325e376657856df95cc573621e92049fa3897fd86a7fdce22c"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--monthly-seo--03.png",
+            "sha256": "f1e4f485b65452379c0443be6577291c448a7919ac1fa2e0516150dcc7e0182d"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--monthly-seo--04.png",
+            "sha256": "89f1c486e1efddd79580af14b3dc2cf141bc8b0cbc97f532d64b1fc1c117ba30"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-09.png",
+          "sha256": "59de1b65e2fb89a882a5f2515914b6cb22fbd19aa801f2c0581bcb3aa02ba3b9"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/pricing.png",
+      "width": 390,
+      "height": 9539,
+      "sha256": "a22679b10b63abbcd0d4c79b574853e4d10e0028e7fd167a08f95748de40c99c",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\pricing.png",
+        "sha256": "3efdac58e394124e3495a75c436654437b2372bd64c8c831a553af9bee95350b",
+        "priorDisposition": "hold",
+        "exactMatchedPixelRows": 9375
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            420,
+            662
+          ],
+          [
+            687,
+            929
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--pricing--01.png",
+            "sha256": "06f8537aae18fa6d980ba2ffc5c628e5cfe4224bf210d6e53b8c9114f534b485"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-09.png",
+          "sha256": "59de1b65e2fb89a882a5f2515914b6cb22fbd19aa801f2c0581bcb3aa02ba3b9"
+        }
+      },
+      "notes": "Chat sits beside Website packages in the heading gap. Editing/ownership, outside-cost and optional-care wording is unobscured."
+    },
+    {
+      "path": "phone/regional-directory.png",
+      "width": 390,
+      "height": 4616,
+      "sha256": "ff90ad8108af8c0c907628ecae2d4db57cbf56c8cc9e424767e9e6d857e7d3c2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\regional-directory.png",
+        "sha256": "e5b488d8b1fa35c7c12ccc48efc7f75f344570b137d30a7e23bc51530ba1b093",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 3769
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            328,
+            571
+          ],
+          [
+            687,
+            1337
+          ],
+          [
+            1365,
+            1820
+          ],
+          [
+            1941,
+            2922
+          ],
+          [
+            3037,
+            3197
+          ],
+          [
+            3391,
+            3790
+          ],
+          [
+            3838,
+            4420
+          ],
+          [
+            4535,
+            4616
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--regional-directory--01.png",
+            "sha256": "e9c3503ce567713add9b56c1107727b0168407fb08262fa2afe67848dc70c5c9"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--regional-directory--02.png",
+            "sha256": "65b7f3cda85e83e887d6fc41629ac05cab0cd0ce9e51c1a86fc5ce6ee7e3e52a"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--regional-directory--03.png",
+            "sha256": "d1b857307712b1784c0cad951031b38e97a3a5c65d1208786a98feafd28cf467"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-09.png",
+          "sha256": "59de1b65e2fb89a882a5f2515914b6cb22fbd19aa801f2c0581bcb3aa02ba3b9"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/scope-request.png",
+      "width": 390,
+      "height": 3287,
+      "sha256": "898e31f5ef4d7cf142db906b923677e52d14665503241a07b8e20a304b507919",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\scope-request.png",
+        "sha256": "cddfc50661cefa51d3e9d3c645154226994b8493ec3d62a1a810ca3788a837b5",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 3205
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            587,
+            829
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--scope-request--01.png",
+            "sha256": "fba5234a18a50dbff4915b14b6205252bafff461f84c35c4f890c18286893f60"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-10.png",
+          "sha256": "c19b947ec827b102988886db7ba34b2fc0038cf7848583670a6d88fca7ae5544"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/service-questions.png",
+      "width": 350,
+      "height": 477,
+      "sha256": "2598ca46f77ede94fe33def4d0fe442463630852ee75558cee425bb7a5c7bbc8",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\service-questions.png",
+        "sha256": "6d4a2ebd7ec0fdc3401f4526711031ffd61ec0fed40275b0855f2807214d591f",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 476
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            165
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--service-questions--01.png",
+            "sha256": "fc090da43798ea5e1f7d90616410725dd8a09c9cc76d13e597838983870538f6"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-10.png",
+          "sha256": "c19b947ec827b102988886db7ba34b2fc0038cf7848583670a6d88fca7ae5544"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/services.png",
+      "width": 390,
+      "height": 5035,
+      "sha256": "d15385b1f9204b6bd1ef23aa61b4969dc8793db9fe2fbfeb2e46ba40e2e6926e",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\services.png",
+        "sha256": "c6921d7fab79ae32674e5186dab24c30a1bbdd35906af8dc67268871ed8ab31a",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 4805
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            596,
+            929
+          ],
+          [
+            1612,
+            1803
+          ],
+          [
+            2391,
+            2616
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--services--01.png",
+            "sha256": "f40fcb939e6f76f5f63f718f0420635da207460d88820878fa92ea78a7614a6d"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-10.png",
+          "sha256": "c19b947ec827b102988886db7ba34b2fc0038cf7848583670a6d88fca7ae5544"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/texas-county.png",
+      "width": 390,
+      "height": 5964,
+      "sha256": "ada97fbe96a49f0f455f796456d59307677e17e72dceb8a6525c23e2d4e7c16d",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\texas-county.png",
+        "sha256": "b380fb5b611e91e27bd39363ffe21e30552940411aed33a4f9f07ab8e3cd347a",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 4329
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            654,
+            929
+          ],
+          [
+            1106,
+            3381
+          ],
+          [
+            3993,
+            4452
+          ],
+          [
+            4743,
+            4912
+          ],
+          [
+            5883,
+            5964
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--texas-county--01.png",
+            "sha256": "2b88599b45a9b63bbe3e087274663d1d17444c657c7e920176d394d7bf0b1cb9"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--texas-county--02.png",
+            "sha256": "3da024de8258b06f603c62c2445a18b565434ed02c0decad19efb0185bcfd7a8"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-10.png",
+          "sha256": "c19b947ec827b102988886db7ba34b2fc0038cf7848583670a6d88fca7ae5544"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/texas-entry.png",
+      "width": 350,
+      "height": 1048,
+      "sha256": "1341531585758c381d68f4ce13b4c4254a950758ae28deb8c45145a08b359d21",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\texas-entry.png",
+        "sha256": "35f49587796488916704996a5850dee67455f2d262f582601d8652d0f5380a0e",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 1016
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            577,
+            778
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--texas-entry--01.png",
+            "sha256": "c42d7736f1c3c931e9f992d3d91899786b9abe013737ebbd09998805804c5819"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-11.png",
+          "sha256": "187ac3f5008d5d8259757072efa7069b17246e9db39a68fc1f927aade3c6072f"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/web-design.png",
+      "width": 390,
+      "height": 8880,
+      "sha256": "555daab02c59cac213c3392d4a970c3907601741746c39f6001c21bc091086d9",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\web-design.png",
+        "sha256": "f4c215ec49841cb45a80b0d9c8e316f56e1711f4e59974abd80e02b26c4f7ee4",
+        "priorDisposition": "accept",
+        "exactMatchedPixelRows": 8548
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            3220,
+            3703
+          ],
+          [
+            3816,
+            4020
+          ],
+          [
+            4250,
+            4512
+          ],
+          [
+            4645,
+            4916
+          ],
+          [
+            5193,
+            5370
+          ],
+          [
+            5454,
+            5646
+          ],
+          [
+            6087,
+            6364
+          ],
+          [
+            6379,
+            6823
+          ],
+          [
+            6855,
+            7040
+          ],
+          [
+            7579,
+            7756
+          ],
+          [
+            7790,
+            7959
+          ],
+          [
+            8137,
+            8484
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--web-design--01.png",
+            "sha256": "1533a903000cc1341763b96bc7f3a409148052303be283dc7906c3508f96847b"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--web-design--02.png",
+            "sha256": "931935603599cbedc28453043e7bf9550e2457182032afaf2d2cd22300772be2"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--web-design--03.png",
+            "sha256": "55e9203044f41928e13f90d4288418697b7a127b4e48cca46afa3b927f2dc013"
+          },
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--web-design--04.png",
+            "sha256": "81226ef8a33fe72e081de950313329809b074195998573c955e88c399e7d292f"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-11.png",
+          "sha256": "187ac3f5008d5d8259757072efa7069b17246e9db39a68fc1f927aade3c6072f"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/wisconsin-entry.png",
+      "width": 350,
+      "height": 656,
+      "sha256": "fca08a081b366233f86858a9531418a97df30e297ddc92e4bcf3b45bccaabb70",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "tests\\visual\\baselines\\linux\\phone\\wisconsin-entry.png",
+        "sha256": "4490535a6cb592db377d895373d692e110626ca8bb4d9b8e6d7942b3c355a12f",
+        "priorDisposition": "baseline",
+        "exactMatchedPixelRows": 653
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            0,
+            125
+          ],
+          [
+            126,
+            288
+          ],
+          [
+            405,
+            579
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--wisconsin-entry--01.png",
+            "sha256": "af94643560cd48b75046a34f696720d05e3096cdb91fd7c5912b25dfe4b780a3"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-11.png",
+          "sha256": "187ac3f5008d5d8259757072efa7069b17246e9db39a68fc1f927aade3c6072f"
+        }
+      },
+      "notes": "Changed pixels and surrounding layout inspected; no actionable overlap, clipping, broken layout or missing visible content found in the captured state."
+    },
+    {
+      "path": "phone/work.png",
+      "width": 390,
+      "height": 12859,
+      "sha256": "8d3fa399c4849c4d858ded9951bf73a14e47e683aaf5533f91b64893f03349f2",
+      "disposition": "accept",
+      "finding_ids": [],
+      "inspection": "manual-delta-plus-full-overview",
+      "inheritedFrom": null,
+      "comparisonReference": {
+        "file": "evidence\\ux-improvements-20261027\\visual-candidates\\phone\\work.png",
+        "sha256": "4585b7acea3d01dc4103eeb5d0ff4b0b9387e0d621788dc6a1b338d4cc1c5cd9",
+        "priorDisposition": "hold",
+        "exactMatchedPixelRows": 12753
+      },
+      "manualEvidence": {
+        "changedRowIntervals": [
+          [
+            640,
+            929
+          ]
+        ],
+        "detailSheets": [
+          {
+            "file": "evidence\\human-quality-20261027\\independent-visual-sheets\\phone--work--01.png",
+            "sha256": "e15ee30a342b3aa168a3c9cb6606ca7f38ef83d6a30734dae3576e3ead2e29e4"
+          }
+        ],
+        "fullPageOverview": {
+          "file": "evidence/human-quality-20261027/independent-visual-sheets/overview-grid-11.png",
+          "sha256": "187ac3f5008d5d8259757072efa7069b17246e9db39a68fc1f927aade3c6072f"
+        }
+      },
+      "notes": "Chat sits in the gap below/right of the AssetRounds title and product-site line, above the paragraph. Portfolio description is unobscured."
+    }
+  ]
+}

@@ -1,0 +1,2296 @@
+{
+  "reviewer": "Independent Codex reviewer (gpt-6-astra; /root/astra_release_evidence_review)",
+  "reviewedAt": "2026-10-28T00:00:36.762Z",
+  "status": "approved-metadata-rebinding",
+  "baselineCommit": "ebe755b",
+  "priorPolicySha256": "3a292a0fa79fcce60b223472e76100067b563e3c33ecda61b80db5782ab1f58b",
+  "priorPolicyBasis": "Preserve every previous skip reason and predicate. Desktop all-route cases still check both360px and1440px on all2424routes. Extend the prior terminal range2351–2370 to2351–2375 and add2376–2400/2401–2424 in the same two duplicate phone projects. All42new WY/HI/AK focused browser cases run. No coverage assertion, link check or payload/performance budget is removed. Source bindings reflect updated inventory counts and the tested Buffalo separator regression. Independently reviewed: evidence/wy-hi-ak-expansion-20261026/integration-review/global-delta/ci-approval.json.",
+  "inventory": {
+    "file": "evidence/human-quality-20261027/browser-inventory.json",
+    "sha256": "1e606b04a81f2dfdfa7e51922949c194b938e4c13929b8c711e434fe2e4f18d7",
+    "independentFreshDiscoveryIdentitySetSha256": "da8ccfa9af384fbede1f4b024f1c4ecc4ba6f0152dd64f6574d7c9c91d38cfb2",
+    "freshDiscoveryMatches": true,
+    "mode": "list",
+    "total": 2041,
+    "approvedSkips": 585,
+    "expectedExecuted": 1456,
+    "actualFullSuiteExecuted": null,
+    "actualFullSuiteSkipped": null
+  },
+  "sourceReviews": [
+    {
+      "file": "tests/browser/audit-layout-regression.spec.mjs",
+      "priorApprovedSha256": "15ce8e77aee45d0d13c300f632f33b980d7a69857f28a299c513d45bb40d1207",
+      "baselineGitSha256": "15ce8e77aee45d0d13c300f632f33b980d7a69857f28a299c513d45bb40d1207",
+      "currentSha256": "fde01d2b245af0c21ff36fd8d184bf772880e18dec7d86382bc40100670eb101",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete responsive matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix');",
+        "test.skip(!isMobile,'Touch landscape exception');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One independent viewport and text-size matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One responsive state check');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete responsive matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix');",
+        "test.skip(!isMobile,'Touch landscape exception');",
+        "test.skip(testInfo.project.name!=='desktop','One viewport matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One independent viewport and text-size matrix');",
+        "test.skip(testInfo.project.name!=='desktop','One responsive state check');"
+      ],
+      "routeFixtures": [],
+      "rationale": "Mobile tools now yield to prose: narrow always-visible assertions replaced with text collision checks and explicit footer recovery; wide visibility, positions, focus and action checks retained. This is an intentional behavior-contract change, not an unchanged-assertions claim. Skip predicates unchanged."
+    },
+    {
+      "file": "tests/browser/location-next-planning.spec.mjs",
+      "priorApprovedSha256": "fa92b027090c0cc43fa98d41e6e9367bb570299ab83af0df03d12ec5dc4396ee",
+      "baselineGitSha256": "fa92b027090c0cc43fa98d41e6e9367bb570299ab83af0df03d12ec5dc4396ee",
+      "currentSha256": "a3ba52326dade2b4d5f2baf00ce95fda3c5779c67b402a024ff61847139af152",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/location-next-paths.json",
+          "sha256": "28c31b5ec943a0386adb0658c2dc45987aff53e851e73094200ac6e9ac50a6ce",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/location-planning.spec.mjs",
+      "priorApprovedSha256": "cb765d897729ffdb55640e1bc2916cc50d08292bad35562820f0627047d6283c",
+      "baselineGitSha256": "cb765d897729ffdb55640e1bc2916cc50d08292bad35562820f0627047d6283c",
+      "currentSha256": "a8a871df9be6964f2c2e4f0bdd166a4dc32fe9db2de6c685861593ac7b57029d",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/location-followup-paths.json",
+          "sha256": "0542a6353ea9f3cb1a6dbbdc6088f7d12ac1afc880187fa9eaac0bdb41b4570c",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/location-wave-four-planning.spec.mjs",
+      "priorApprovedSha256": "6da150dcaea263cc65f1b4a2c74d1f66139ceebb9b4457e8c68d70347162b953",
+      "baselineGitSha256": "6da150dcaea263cc65f1b4a2c74d1f66139ceebb9b4457e8c68d70347162b953",
+      "currentSha256": "6420c70cbb1384073107f9bde81e5c3191ef0cb4902b4e112ba184227f462045",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/wi-il-approved-paths.json",
+          "sha256": "120465af378cb939f11fdccd8982e0ff63dfc47f4b1f2342bf153c0068a2057a",
+          "unchangedFromBaseline": true
+        },
+        {
+          "file": "tests/fixtures/ms-al-approved-paths.json",
+          "sha256": "7e3966ab4fab8186e5365d3bbe8a6fdf2c53ad561fb3951a33305240d61f7f29",
+          "unchangedFromBaseline": true
+        },
+        {
+          "file": "tests/fixtures/location-wave-four-paths.json",
+          "sha256": "d804d639afea1bbc713ef1314c22a52faae751010bbffc2303980aa3e9c06ac1",
+          "unchangedFromBaseline": true
+        },
+        {
+          "file": "tests/fixtures/south-carolina-approved-paths.json",
+          "sha256": "0f393635104904e7e305f3896b83fdfc37e659efa39d9d9d611ca7b50d249124",
+          "unchangedFromBaseline": true
+        },
+        {
+          "file": "tests/fixtures/georgia-approved-paths.json",
+          "sha256": "e0d093f1648fc5bd6db68ae0d0d1a6c8868c963889aebd00a72a49066b636eb5",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/location-wave-one-planning.spec.mjs",
+      "priorApprovedSha256": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
+      "baselineGitSha256": "169f4501ecdee8eeaa870ff9f768543b20b5c2735305c95407c2af006d01ba12",
+      "currentSha256": "b13ae0aee7c485c4072f9b481b185bb0e2444165a462958287d187fd581edb1f",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/location-wave-one-paths.json",
+          "sha256": "823281580799491addd883eb347ae7f2311c2624a67224038d0d2254d661ba64",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/location-wave-three-planning.spec.mjs",
+      "priorApprovedSha256": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
+      "baselineGitSha256": "b51411f5c760c0147e7146365f59ece142bb55b1245e7da8254c059097974f98",
+      "currentSha256": "119f05ae6d2734f21e9c1dd4154159c76d2d83a7ed9e8f0c95faf03d07bf06c1",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/location-wave-three-paths.json",
+          "sha256": "734c02ec7f3a65bbaad6d571790bbaf251aad12738a609dbb84c1645102f459a",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/location-wave-two-planning.spec.mjs",
+      "priorApprovedSha256": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
+      "baselineGitSha256": "2ed653e7ce8b13f737c6b58d2307af50ded1ab60693ddfa4417b2d958ef76786",
+      "currentSha256": "329a763dd8b5f7ec2484f8127cf9c85c65ef7a479c659be58e2b204eecc87baa",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static tables; reduced motion has separate coverage');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Same static briefs; reduced motion has separate coverage');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/location-wave-two-paths.json",
+          "sha256": "e35b56be34b429df1db26c8bb0330b9d28455750172abb8d5672def0fd6873e5",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    },
+    {
+      "file": "tests/browser/no-javascript.spec.mjs",
+      "priorApprovedSha256": "fe346c8e2de6b7ab2c60dcb73dd98af044316cbb421b4c308f2921dff7508e91",
+      "baselineGitSha256": "fe346c8e2de6b7ab2c60dcb73dd98af044316cbb421b4c308f2921dff7508e91",
+      "currentSha256": "e83ad8cd92d1bdcb13785536cb8e6a16fcc7751cd1a13199d6887d3d96b22479",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name!=='no-javascript','Native fallback coverage');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name!=='no-javascript','Native fallback coverage');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');",
+        "test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');"
+      ],
+      "routeFixtures": [],
+      "rationale": "Native disclosure expansion now opens each more-guides group; all65 visible-card and unique-link assertions preserved."
+    },
+    {
+      "file": "tests/browser/palette-clarity.spec.mjs",
+      "priorApprovedSha256": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
+      "baselineGitSha256": "250aa2044feff0e03dbb688088eda0480be8223982190de6709098c8cb78697f",
+      "currentSha256": "a9609955bbe47535989cbc8b7dfc4cf2f75f14a74213a231cd878f726dfc4804",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete phone matrix');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete phone matrix');"
+      ],
+      "routeFixtures": [],
+      "rationale": "Search count copy aligned with progressive disclosure; original matching/empty/reset/topic checks retained, extra disclosure/search/reset-state coverage added."
+    },
+    {
+      "file": "tests/browser/shared-controls.spec.mjs",
+      "priorApprovedSha256": "dce4caf88c91c5e98a001745c81cbe8bcc97f0082e0b385793e42f4bb0a91a4e",
+      "baselineGitSha256": "dce4caf88c91c5e98a001745c81cbe8bcc97f0082e0b385793e42f4bb0a91a4e",
+      "currentSha256": "de8757318c964c26242179bc55fbfe59e62f1cb1130a4e0c49c6e879cabe8c0f",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete viewport matrix');",
+        "test.skip(!isMobile,'Phone navigation');",
+        "test.skip(!isMobile,'Phone navigation');",
+        "test.skip(testInfo.project.name!=='phone','One first-visit phone trace covers session behavior');",
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion is already static');",
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion never requests a film');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name!=='desktop','One complete viewport matrix');",
+        "test.skip(!isMobile,'Phone navigation');",
+        "test.skip(!isMobile,'Phone navigation');",
+        "test.skip(testInfo.project.name!=='phone','One first-visit phone trace covers session behavior');",
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion is already static');",
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Reduced motion never requests a film');"
+      ],
+      "routeFixtures": [],
+      "rationale": "Mobile tools now yield to prose: narrow always-visible assertions replaced with text collision checks and explicit footer recovery; wide visibility, positions, focus and action checks retained. This is an intentional behavior-contract change, not an unchanged-assertions claim. Skip predicates unchanged."
+    },
+    {
+      "file": "tests/browser/texas-planning.spec.mjs",
+      "priorApprovedSha256": "df351ec1a10c43508c8062db9ed8c1b30f506d5e8e1dba327b5edeae6d5ed575",
+      "baselineGitSha256": "df351ec1a10c43508c8062db9ed8c1b30f506d5e8e1dba327b5edeae6d5ed575",
+      "currentSha256": "00ac0cf47b0cd956d117e8c43624ad2b2692535dec3e2b3a610a36fb4d063dab",
+      "priorSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Static content has the same layout; reduced motion is covered separately');"
+      ],
+      "currentSkipStatements": [
+        "test.skip(testInfo.project.name==='phone-reduced-motion','Static content has the same layout; reduced motion is covered separately');"
+      ],
+      "routeFixtures": [
+        {
+          "file": "tests/fixtures/texas-approved-paths.json",
+          "sha256": "d23573dbe4e7f856f79681b52330f22a79fc537792233d0a93f374c6af6f9110",
+          "unchangedFromBaseline": true
+        }
+      ],
+      "rationale": "Same project predicate, route fixture contents, grouping and batches. Removed table-specific assertions track removed tables; shared helper checks all three authored decisions, owner inputs with keyboard open/close, source labels/URLs/observations/date. Existing axe, overflow and contextual inquiry checks remain."
+    }
+  ],
+  "identityMappings": [
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-next-planning.spec.mjs › eight further location planning tables preserve headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-next-planning.spec.mjs › eight further location planning briefs preserve headings, owner inputs, links and accessibility",
+      "file": "tests/browser/location-next-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-planning.spec.mjs › six location planning tables preserve headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-planning.spec.mjs › six location planning briefs preserve headings, owner inputs, links and accessibility",
+      "file": "tests/browser/location-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Georgia 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Georgia 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Mississippi and Alabama 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Mississippi and Alabama 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 2 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 2 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 3 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 3 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Wisconsin and Illinois 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Wisconsin and Illinois 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 10 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 10 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 100 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 100 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 101 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 101 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 102 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 102 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 11 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 11 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 12 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 12 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 13 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 13 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 14 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 14 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 15 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 15 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 16 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 16 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 17 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 17 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 18 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 18 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 19 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 19 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 2 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 2 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 20 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 20 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 21 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 21 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 22 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 22 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 23 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 23 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 24 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 24 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 25 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 25 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 26 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 26 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 27 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 27 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 28 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 28 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 29 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 29 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 3 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 3 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 30 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 30 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 31 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 31 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 32 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 32 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 33 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 33 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 34 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 34 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 35 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 35 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 36 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 36 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 37 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 37 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 38 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 38 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 39 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 39 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 4 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 4 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 40 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 40 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 41 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 41 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 42 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 42 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 43 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 43 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 44 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 44 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 45 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 45 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 46 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 46 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 47 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 47 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 48 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 48 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 49 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 49 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 5 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 5 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 50 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 50 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 51 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 51 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 52 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 52 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 53 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 53 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 54 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 54 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 55 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 55 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 56 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 56 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 57 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 57 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 58 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 58 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 59 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 59 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 6 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 6 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 60 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 60 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 61 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 61 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 62 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 62 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 63 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 63 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 64 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 64 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 65 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 65 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 66 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 66 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 67 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 67 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 68 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 68 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 69 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 69 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 7 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 7 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 70 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 70 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 71 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 71 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 72 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 72 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 73 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 73 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 74 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 74 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 75 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 75 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 76 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 76 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 77 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 77 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 78 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 78 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 79 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 79 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 8 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 8 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 80 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 80 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 81 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 81 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 82 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 82 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 83 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 83 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 84 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 84 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 85 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 85 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 86 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 86 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 87 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 87 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 88 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 88 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 89 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 89 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 9 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 9 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 90 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 90 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 91 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 91 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 92 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 92 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 93 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 93 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 94 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 94 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 95 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 95 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 96 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 96 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 97 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 97 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 98 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 98 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 99 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 99 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-four-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 2 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 2 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 3 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 3 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 4 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 4 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 5 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 5 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 6 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 6 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 7 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 7 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 8 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 8 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-one-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 10 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 10 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 11 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 11 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 12 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 12 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 13 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 13 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 14 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 14 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 15 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 15 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 16 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 16 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 17 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 17 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 18 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 18 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 19 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 19 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 2 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 2 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 20 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 20 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 21 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 21 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 22 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 22 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 23 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 23 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 24 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 24 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 25 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 25 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 26 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 26 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 27 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 27 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 28 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 28 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 29 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 29 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 3 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 3 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 30 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 30 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 31 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 31 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 32 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 32 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 4 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 4 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 5 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 5 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 6 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 6 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 7 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 7 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 8 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 8 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 9 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 9 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-three-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 1 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 1 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 10 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 10 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 11 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 11 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 12 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 12 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 13 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 13 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 14 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 14 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 15 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 15 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 16 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 16 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 17 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 17 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 18 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 18 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 19 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 19 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 2 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 2 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 20 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 20 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 21 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 21 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 22 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 22 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 23 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 23 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 24 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 24 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 3 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 3 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 4 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 4 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 5 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 5 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 6 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 6 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 7 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 7 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 8 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 8 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 9 preserves table headings, phone labels, links and accessibility",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 9 preserves visible decisions, owner inputs, links and accessibility",
+      "file": "tests/browser/location-wave-two-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 1 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 1 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 10 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 10 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 11 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 11 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 12 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 12 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 13 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 13 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 14 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 14 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 15 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 15 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 16 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 16 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 17 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 17 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 18 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 18 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 19 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 19 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 2 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 2 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 20 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 20 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 21 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 21 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 22 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 22 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 23 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 23 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 24 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 24 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 25 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 25 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 26 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 26 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 27 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 27 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 28 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 28 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 29 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 29 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 3 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 3 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 30 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 30 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 31 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 31 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 32 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 32 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 33 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 33 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 34 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 34 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 35 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 35 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 36 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 36 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 4 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 4 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 5 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 5 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 6 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 6 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 7 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 7 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 8 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 8 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    },
+    {
+      "priorIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 9 preserves complete briefs, table semantics, source notes and inquiry context",
+      "currentIdentity": "[phone-reduced-motion] › tests/browser/texas-planning.spec.mjs › Texas county batch 9 preserves complete briefs, visible decisions, source notes and inquiry context",
+      "file": "tests/browser/texas-planning.spec.mjs"
+    }
+  ],
+  "reasonMappings": [
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-next-planning.spec.mjs › eight further location planning briefs preserve headings, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-planning.spec.mjs › six location planning briefs preserve headings, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Georgia 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Mississippi and Alabama 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 2 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location South Carolina 3 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location Wisconsin and Illinois 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 10 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 100 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 101 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 102 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 11 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 12 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 13 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 14 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 15 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 16 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 17 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 18 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 19 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 2 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 20 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 21 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 22 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 23 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 24 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 25 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 26 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 27 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 28 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 29 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 3 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 30 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 31 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 32 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 33 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 34 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 35 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 36 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 37 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 38 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 39 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 4 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 40 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 41 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 42 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 43 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 44 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 45 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 46 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 47 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 48 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 49 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 5 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 50 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 51 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 52 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 53 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 54 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 55 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 56 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 57 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 58 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 59 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 6 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 60 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 61 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 62 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 63 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 64 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 65 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 66 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 67 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 68 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 69 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 7 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 70 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 71 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 72 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 73 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 74 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 75 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 76 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 77 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 78 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 79 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 8 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 80 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 81 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 82 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 83 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 84 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 85 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 86 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 87 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 88 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 89 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 9 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 90 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 91 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 92 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 93 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 94 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 95 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 96 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 97 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 98 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-four-planning.spec.mjs › location wave four 99 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 2 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 3 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 4 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 5 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 6 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 7 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-one-planning.spec.mjs › location wave 8 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 10 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 11 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 12 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 13 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 14 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 15 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 16 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 17 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 18 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 19 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 2 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 20 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 21 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 22 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 23 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 24 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 25 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 26 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 27 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 28 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 29 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 3 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 30 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 31 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 32 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 4 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 5 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 6 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 7 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 8 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-three-planning.spec.mjs › location wave three 9 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 1 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 10 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 11 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 12 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 13 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 14 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 15 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 16 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 17 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 18 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 19 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 2 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 20 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 21 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 22 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 23 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 24 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 3 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 4 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 5 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 6 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 7 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 8 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    },
+    {
+      "identity": "[phone-reduced-motion] › tests/browser/location-wave-two-planning.spec.mjs › location wave two 9 preserves visible decisions, owner inputs, links and accessibility",
+      "priorReason": "Same static tables; reduced motion has separate coverage",
+      "currentReason": "Same static briefs; reduced motion has separate coverage"
+    }
+  ],
+  "reasonMappingAuthorization": "Parent approved accurate tables-to-briefs noun updates after reviewer identified exact-runtime-reason mismatch. Coverage rationale and predicates are unchanged.",
+  "newTests": {
+    "file": "tests/browser/ux-improvements.spec.mjs",
+    "sha256": "bf15ad85da7f2d420ade17000da64920a6164323554064883fe675319b4083fe",
+    "identities": [
+      "[desktop] › tests/browser/ux-improvements.spec.mjs › mobile corner tools leave ordinary prose clear and recover after dense content",
+      "[desktop] › tests/browser/ux-improvements.spec.mjs › mobile reading placement retains focus, refreshes after disclosure and viewport changes",
+      "[desktop] › tests/browser/ux-improvements.spec.mjs › dense enlarged mobile prose can temporarily hide tools without losing them",
+      "[phone] › tests/browser/ux-improvements.spec.mjs › mobile corner tools leave ordinary prose clear and recover after dense content",
+      "[phone] › tests/browser/ux-improvements.spec.mjs › mobile reading placement retains focus, refreshes after disclosure and viewport changes",
+      "[phone] › tests/browser/ux-improvements.spec.mjs › dense enlarged mobile prose can temporarily hide tools without losing them",
+      "[phone-reduced-motion] › tests/browser/ux-improvements.spec.mjs › mobile corner tools leave ordinary prose clear and recover after dense content",
+      "[phone-reduced-motion] › tests/browser/ux-improvements.spec.mjs › mobile reading placement retains focus, refreshes after disclosure and viewport changes",
+      "[phone-reduced-motion] › tests/browser/ux-improvements.spec.mjs › dense enlarged mobile prose can temporarily hide tools without losing them"
+    ],
+    "allIncluded": true,
+    "allUnexcluded": true,
+    "noSkipStatements": true,
+    "executionEvidence": {
+      "file": "output/human-quality-20261027/release-ux-results.json",
+      "sha256": "b7ad8624f8856e6f86faaee75b52b429a24fb239ea45644fae5da10f35ebe42b",
+      "passed": 3,
+      "skipped": 0,
+      "failed": 0,
+      "rows": [
+        {
+          "title": "mobile corner tools leave ordinary prose clear and recover after dense content",
+          "project": "desktop",
+          "status": "expected",
+          "resultStatuses": [
+            "passed"
+          ]
+        },
+        {
+          "title": "mobile corner tools leave ordinary prose clear and recover after dense content",
+          "project": "phone",
+          "status": "expected",
+          "resultStatuses": [
+            "passed"
+          ]
+        },
+        {
+          "title": "mobile corner tools leave ordinary prose clear and recover after dense content",
+          "project": "phone-reduced-motion",
+          "status": "expected",
+          "resultStatuses": [
+            "passed"
+          ]
+        }
+      ],
+      "remainingSixNewProjectCases": "Included and unexcluded; completed execution evidence not yet available at this checkpoint. Parent final suite ongoing."
+    }
+  },
+  "helper": {
+    "file": "tests/browser/location-brief-checks.mjs",
+    "sha256": "8ce3e7dd38b86f186b969e578d9577881552fecc8b0fd4d9e61a66ab2600cfd2"
+  },
+  "findings": [
+    {
+      "issue": "New UX responsive matrix initially skipped two phone projects without policy approval.",
+      "resolution": "Source owner removed new desktop-only skip; all three project instances remain included. No exclusions added."
+    },
+    {
+      "issue": "Renamed planning cases and runtime reason noun made prior metadata stale.",
+      "resolution": "Exact one-to-one title maps and tables-to-briefs reason maps; no predicate or route narrowing."
+    }
+  ],
+  "limitations": [
+    "List mode proves discovery, not execution. Full-suite actual counts must come from completed CI receipts; expected counts are2041 total,1456 executed,585 skipped.",
+    "Source review permits intended visible-brief and prose-safe floating-tool behavior changes; it does not claim every obsolete table or always-visible assertion remains.",
+    "Existing fixture source bytes compared to baseline after CRLF normalization. Prior approved file hashes preserved alongside current byte hashes."
+  ],
+  "currentPolicySha256": "384c8f101f2c38983e3cee0468d59d0747170effe982228722982ea9668f8d83",
+  "validation": {
+    "allPolicySourceHashesCurrent": true,
+    "all585ExclusionsResolveToCurrentInventory": true,
+    "allReasonsPresentInCurrentSource": true,
+    "exclusionsAdded": 0,
+    "exclusionsRemoved": 0,
+    "identityChanges": 210,
+    "reasonNounChanges": 174
+  }
+}

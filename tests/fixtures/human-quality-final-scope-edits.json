@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-27",
+  "reviewer": "Codex primary exact source-delta review",
+  "status": "accepted-source-scope-clarification",
+  "basis": "Assign specialist physical/engineering work to the business and distinguish website software assessment. No new capability, included service, fact, route, price, source or authored brief was added.",
+  "records": [
+    {
+      "path": "/areas/new-jersey/essex-county/",
+      "before": {
+        "areaId": "new-jersey/essex",
+        "market": "Essex County, NJ",
+        "lead": "A catalog can help a buyer select an industrial part while still handing the request to a quotation process. Custom work needs a useful alternative when no catalog selection fits.",
+        "decisionTitle": "Preserve the catalog selection without implying a completed purchase.",
+        "decision": "Minor Rubber’s Bloomfield site separates standard catalog components from custom molding and extrusion. It describes standard products as available to find and quote through the catalog, and its separate cart page is explicitly an RFQ cart.",
+        "scopes": [
+          {
+            "title": "Preserve the catalog selection without implying a completed purchase.",
+            "pages": [
+              "Keep the known part identifiable",
+              "Give a custom requirement an appropriate route",
+              "Show what the supplier still needs to approve"
+            ],
+            "request": "Can I request this known part, or should I explain a custom component instead?",
+            "supplies": "Product references and existing catalog/RFQ destinations. Approved initial questions for a custom-component inquiry. The supplier’s quotation and suitability-review wording.",
+            "check": "A catalog selection stays identifiable; a custom inquiry can proceed without a made-up part number; neither is called an approved purchase."
+          }
+        ],
+        "scopeTrigger": "The proposal improves product explanations and the existing handoff. CAD processing, engineering assessment, inventory synchronization and ordering systems require separate work.",
+        "quoteQuestions": [
+          "Product references and existing catalog/RFQ destinations.",
+          "Approved initial questions for a custom-component inquiry.",
+          "The supplier’s quotation and suitability-review wording."
+        ],
+        "coverageNote": "Minor Rubber lists its facility in Bloomfield, Essex County. This example concerns its published catalog and custom-capability routes, not a claim that it is a studio client.",
+        "sources": [
+          {
+            "url": "https://www.minorrubber.com/",
+            "label": "Minor Rubber: catalog and custom capabilities",
+            "observation": "Standard-product quotation and custom manufacturing routes."
+          },
+          {
+            "url": "https://www.minorrubber.com/product-catalog.html?page=cart",
+            "label": "Minor Rubber: RFQ cart",
+            "observation": "The product-selection destination is labeled as a request-for-quotation cart."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "new-jersey/essex"
+        ],
+        "path": "/areas/new-jersey/essex-county/",
+        "title": "Web Design for Essex County, NJ",
+        "description": "Web design for Essex County, NJ. Preserve the catalog selection without implying a completed purchase.",
+        "servedAreas": [
+          {
+            "name": "Essex County",
+            "state": "New Jersey",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/new-jersey/#essex",
+            "label": "Essex County place directory"
+          }
+        ],
+        "relatedGuides": [],
+        "checkedDate": "2026-10-27",
+        "legacyWorksheet": "/assets/county-briefs/new-jersey-essex.txt"
+      },
+      "after": {
+        "areaId": "new-jersey/essex",
+        "market": "Essex County, NJ",
+        "lead": "A catalog can help a buyer select an industrial part while still handing the request to a quotation process. Custom work needs a useful alternative when no catalog selection fits.",
+        "decisionTitle": "Preserve the catalog selection without implying a completed purchase.",
+        "decision": "Minor Rubber’s Bloomfield site separates standard catalog components from custom molding and extrusion. It describes standard products as available to find and quote through the catalog, and its separate cart page is explicitly an RFQ cart.",
+        "scopes": [
+          {
+            "title": "Preserve the catalog selection without implying a completed purchase.",
+            "pages": [
+              "Keep the known part identifiable",
+              "Give a custom requirement an appropriate route",
+              "Show what the supplier still needs to approve"
+            ],
+            "request": "Can I request this known part, or should I explain a custom component instead?",
+            "supplies": "Product references and existing catalog/RFQ destinations. Approved initial questions for a custom-component inquiry. The supplier’s quotation and suitability-review wording.",
+            "check": "A catalog selection stays identifiable; a custom inquiry can proceed without a made-up part number; neither is called an approved purchase."
+          }
+        ],
+        "scopeTrigger": "The proposal improves product explanations and the existing handoff. CAD processing and engineering assessment remain with the business or its qualified specialists. Inventory synchronization and ordering software require separate website scope.",
+        "quoteQuestions": [
+          "Product references and existing catalog/RFQ destinations.",
+          "Approved initial questions for a custom-component inquiry.",
+          "The supplier’s quotation and suitability-review wording."
+        ],
+        "coverageNote": "Minor Rubber lists its facility in Bloomfield, Essex County. This example concerns its published catalog and custom-capability routes, not a claim that it is a studio client.",
+        "sources": [
+          {
+            "url": "https://www.minorrubber.com/",
+            "label": "Minor Rubber: catalog and custom capabilities",
+            "observation": "Standard-product quotation and custom manufacturing routes."
+          },
+          {
+            "url": "https://www.minorrubber.com/product-catalog.html?page=cart",
+            "label": "Minor Rubber: RFQ cart",
+            "observation": "The product-selection destination is labeled as a request-for-quotation cart."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a fixed page count. The written proposal names the actual pages, forms and connections.",
+        "areaIds": [
+          "new-jersey/essex"
+        ],
+        "path": "/areas/new-jersey/essex-county/",
+        "title": "Web Design for Essex County, NJ",
+        "description": "Web design for Essex County, NJ. Preserve the catalog selection without implying a completed purchase.",
+        "servedAreas": [
+          {
+            "name": "Essex County",
+            "state": "New Jersey",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/new-jersey/#essex",
+            "label": "Essex County place directory"
+          }
+        ],
+        "relatedGuides": [],
+        "checkedDate": "2026-10-27",
+        "legacyWorksheet": "/assets/county-briefs/new-jersey-essex.txt"
+      },
+      "beforeSha256": "037204a0d205dac516b13c5f4283763255c5a246e6ef13dba8d48c55a944d6aa",
+      "afterSha256": "18f6909a64a867decefe8af2a5476524ba857d10c2e17bc1d07c38c67bfe4d0d",
+      "changedFields": [
+        "scopeTrigger"
+      ]
+    },
+    {
+      "path": "/areas/wyoming/natrona-county/",
+      "before": {
+        "areaId": "wyoming/natrona",
+        "market": "Natrona County, WY",
+        "lead": "A room with a projection screen is not necessarily a room with every device a presenter needs. Explain the published features and the remaining questions before an organizer relies on them for a meeting.",
+        "decisionTitle": "Distinguish a meeting room’s presentation features from the equipment supplied.",
+        "decision": "Casper/Natrona County International Airport describes its Training Room as including a projector screen and having conference-phone capability. The published description does not identify a complete presentation or remote-meeting equipment package. That distinction should remain clear in the rental introduction.",
+        "scopes": [
+          {
+            "title": "Distinguish a meeting room’s presentation features from the equipment supplied.",
+            "pages": [
+              "Name the actual included item",
+              "Describe capability without promising a connection",
+              "Carry the agreed equipment into preparation"
+            ],
+            "request": "What presentation equipment is included, and what must we arrange or confirm ourselves?",
+            "supplies": "The exact screen, devices and accessories included in the room rental. What conference-phone capability means in the current facility and how it is arranged. The contact and process for confirming presenter equipment and a preparation check.",
+            "check": "A fictional laptop presenter identifies the listed screen and knows to confirm projection, sound and remote-participant needs before treating the room as fully equipped."
+          }
+        ],
+        "scopeTrigger": "Venue staff confirms the actual equipment and connection arrangements. Missing details are questions, not claims that equipment is unavailable. No connection, device, room layout or reservation was tested; audiovisual installation and booking integration require separate scope.",
+        "quoteQuestions": [
+          "The exact screen, devices and accessories included in the room rental.",
+          "What conference-phone capability means in the current facility and how it is arranged.",
+          "The contact and process for confirming presenter equipment and a preparation check."
+        ],
+        "coverageNote": "The airport’s facility-rental page identifies the Training Room at Casper/Natrona County International Airport. Wonder and Method works online from Buffalo; this is a public planning example, not a client or inspected venue.",
+        "sources": [
+          {
+            "url": "https://iflycasper.com/facility-rentals/",
+            "label": "Casper/Natrona County International Airport: Training Room features",
+            "observation": "Lists use of a projector screen and conference-phone capability, with an administration contact for reservations and information."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. You supply and approve current business facts; the written proposal identifies the actual work.",
+        "areaIds": [
+          "wyoming/natrona"
+        ],
+        "path": "/areas/wyoming/natrona-county/",
+        "title": "Web Design for Natrona County, WY",
+        "description": "Web design for Natrona County, WY. Distinguish a meeting room’s presentation features from the equipment supplied.",
+        "servedAreas": [
+          {
+            "name": "Natrona County",
+            "state": "Wyoming",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/wyoming/#natrona",
+            "label": "Natrona County place directory"
+          }
+        ],
+        "relatedGuides": [],
+        "checkedDate": "2026-10-27"
+      },
+      "after": {
+        "areaId": "wyoming/natrona",
+        "market": "Natrona County, WY",
+        "lead": "A room with a projection screen is not necessarily a room with every device a presenter needs. Explain the published features and the remaining questions before an organizer relies on them for a meeting.",
+        "decisionTitle": "Distinguish a meeting room’s presentation features from the equipment supplied.",
+        "decision": "Casper/Natrona County International Airport describes its Training Room as including a projector screen and having conference-phone capability. The published description does not identify a complete presentation or remote-meeting equipment package. That distinction should remain clear in the rental introduction.",
+        "scopes": [
+          {
+            "title": "Distinguish a meeting room’s presentation features from the equipment supplied.",
+            "pages": [
+              "Name the actual included item",
+              "Describe capability without promising a connection",
+              "Carry the agreed equipment into preparation"
+            ],
+            "request": "What presentation equipment is included, and what must we arrange or confirm ourselves?",
+            "supplies": "The exact screen, devices and accessories included in the room rental. What conference-phone capability means in the current facility and how it is arranged. The contact and process for confirming presenter equipment and a preparation check.",
+            "check": "A fictional laptop presenter identifies the listed screen and knows to confirm projection, sound and remote-participant needs before treating the room as fully equipped."
+          }
+        ],
+        "scopeTrigger": "Venue staff confirms the actual equipment and connection arrangements. Missing details are questions, not claims that equipment is unavailable. No connection, device, room layout or reservation was tested. Audiovisual installation remains the venue’s responsibility; booking integration requires a separate software assessment.",
+        "quoteQuestions": [
+          "The exact screen, devices and accessories included in the room rental.",
+          "What conference-phone capability means in the current facility and how it is arranged.",
+          "The contact and process for confirming presenter equipment and a preparation check."
+        ],
+        "coverageNote": "The airport’s facility-rental page identifies the Training Room at Casper/Natrona County International Airport. Wonder and Method works online from Buffalo; this is a public planning example, not a client or inspected venue.",
+        "sources": [
+          {
+            "url": "https://iflycasper.com/facility-rentals/",
+            "label": "Casper/Natrona County International Airport: Training Room features",
+            "observation": "Lists use of a projector screen and conference-phone capability, with an administration contact for reservations and information."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a required page count. You supply and approve current business facts; the written proposal identifies the actual work.",
+        "areaIds": [
+          "wyoming/natrona"
+        ],
+        "path": "/areas/wyoming/natrona-county/",
+        "title": "Web Design for Natrona County, WY",
+        "description": "Web design for Natrona County, WY. Distinguish a meeting room’s presentation features from the equipment supplied.",
+        "servedAreas": [
+          {
+            "name": "Natrona County",
+            "state": "Wyoming",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/wyoming/#natrona",
+            "label": "Natrona County place directory"
+          }
+        ],
+        "relatedGuides": [],
+        "checkedDate": "2026-10-27"
+      },
+      "beforeSha256": "795de4298cfcbb3099de11e277ca2ceee926fa5d0ea3b105a8d4e5526ccfa88f",
+      "afterSha256": "d61eea306bb0f7c6cfd4e3c46a85faa89950392f5128bb085584c0322869f99a",
+      "changedFields": [
+        "scopeTrigger"
+      ]
+    }
+  ]
+}

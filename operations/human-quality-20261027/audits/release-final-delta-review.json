@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "reviewedAt": "2026-10-28T00:15:11.7820360Z",
+  "reviewer": "Independent Astra /root/astra_release_evidence_review",
+  "scope": "Two final source scope clarifications and exact inverse fixture chain",
+  "records": [
+    "/areas/new-jersey/essex-county/",
+    "/areas/wyoming/natrona-county/"
+  ],
+  "findingCount": 0,
+  "basis": [
+    "Only scopeTrigger changes in each record; specialist engineering or physical installation responsibility is assigned to business/venue.",
+    "No new capability, source, route, price or authored brief is added.",
+    "Rendered locationServicePage output is identical with before and after records.",
+    "Inverse fixture checks exact full after object and SHA-256 plus before SHA-256, preserving earlier authority chain.",
+    "Unexpected scope, source observation or market mutation is rejected."
+  ],
+  "testCommand": "node --test tests/human-quality-final-scope.test.mjs tests/human-quality-preservation.test.mjs",
+  "testsPassed": 10,
+  "testsFailed": 0,
+  "sourceFixtureHashes": {
+    "tests/fixtures/human-quality-final-scope-edits.json": "fd3fe5091ae47cfa57784bcf28de09c8ca726b5a2513134e6ee8b5f16f7a464e",
+    "tests/fixtures/reviewed-human-quality-final-scope-edits.mjs": "b1b923454e7c8ca37b91365c4feb0166d81dd2dce9e00a6351292821598359f5",
+    "tests/fixtures/reviewed-human-quality-op-family-edits.mjs": "92408ea2cd7d510d1784a50a32f5c6908ce2b55d1b23139df73d74630cf6311d",
+    "tests/human-quality-final-scope.test.mjs": "744e7c1270ebbec742e8822ff4197c4ce455a0ec72fbfc594314467ac6f51d9e"
+  }
+}

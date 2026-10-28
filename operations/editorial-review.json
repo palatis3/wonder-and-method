@@ -81,6 +81,69 @@
       "reason": "The sentence connects the request-not-completion boundary with the returning maker’s required confirmation step. Concrete actions explain what must be confirmed without inventing an immediate drop-off or collection entitlement.",
       "reviewer": "Codex primary: exact complete emitted sentence reviewed",
       "reviewedAt": "2026-10-27T19:16:37.472Z"
+    },
+    {
+      "route": "/areas/virginia/prince-edward-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "6e54f17a72826d53ac4ccc2e8fef30c3919b803fb67223ecc57b9c942829001c",
+      "disposition": "retain",
+      "reason": "The fictional split-delivery example keeps the request and its availability/price boundary together. The semicolon distinguishes what the buyer may ask from what the studio has not established; removing the boundary would mislead.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.463Z"
+    },
+    {
+      "route": "/areas/texas/hudspeth-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "7a351c82c10547b014df5a992ca32b692d09b73292ac6bc5d8a2674a3635d193",
+      "disposition": "retain",
+      "reason": "This is one sourced route instruction with the review date, successive road names, distances and final parking destination. The complete ordered chain is the useful information, and the surrounding heading identifies it as an arrival decision rather than generic prose.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
+    },
+    {
+      "route": "/areas/texas/jones-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "a5daf18228c42db68f403c007f15a506717e52b06c7d86391ec30920e543b36f",
+      "disposition": "retain",
+      "reason": "The semicolon separates the organizer’s two concrete dance-floor dress conditions while keeping them with the named event and hat-check option. These are attributed operator conditions, not studio eligibility rules or a generalized recommendation.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
+    },
+    {
+      "route": "/areas/texas/walker-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "97a8971795d2c72859fb4c8a3c013c27e5e94976e61e5c9559b7db32ade05f95",
+      "disposition": "retain",
+      "reason": "The complete paragraph gives a colon-led list of three permitted check-in/payment points and their addresses. The detector splits the third proper name at E.; the actual rendered text continues with Don Walker, Sr. Education Center and its address. Exact official names and alternatives remain useful beside the arrival-map instruction.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
+    },
+    {
+      "route": "/areas/missouri/harrison-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "fc10e968863274bd196c8b62e09a2f8a629e2599550f8ead93f1c355f3520400",
+      "disposition": "retain",
+      "reason": "The sentence is a parallel named-unit comparison: each cabin’s party count stays beside its kitchen and laundry facilities. It provides concrete differences without adding another repetitive table or implying the cabins are interchangeable.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
+    },
+    {
+      "route": "/areas/north-dakota/bottineau-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "b3f38e8abafcd36f521b0abcc7ebae96ca40640c29eeb5391738f36f480820c8",
+      "disposition": "retain",
+      "reason": "The colon connects a concrete staff-confirmation request to the unresolved per-participant pricing basis and separate lesson appointment. Both limits matter before combining rental and instruction costs; the source uncertainty remains explicit.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
+    },
+    {
+      "route": "/areas/montana/meagher-county/",
+      "rule": "long-sentence",
+      "evidenceSha256": "da03b66b75da6ad9ad0d69b4a565320c4b536166a7eaa88d08ed37fe3806df5c",
+      "disposition": "retain",
+      "reason": "This is a dated, attributed price list with each admission amount attached to its exact age band. Keeping the short parallel list intact preserves meaningful distinctions; it is not an unsourced universal or current-price promise.",
+      "reviewer": "Codex primary: complete current flagged passage and surrounding context reviewed",
+      "reviewedAt": "2026-10-28T00:15:16.464Z"
     }
   ]
 }
