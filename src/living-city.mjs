@@ -1,6 +1,6 @@
 import {serviceRegionLabel} from './assets/service-state-info.js';
 import {conceptCatalog} from './portfolio-concepts.mjs';
-import {conceptPreviewPicture} from './concept-previews.mjs';
+import {conceptPreviewPicture,conceptPreviewSourceSet} from './concept-previews.mjs';
 import captures from './city-preview-captures.json' with {type:'json'};
 import {escapeHtml as e,money} from './shared.mjs';
 
@@ -11,15 +11,15 @@ const projectCopy={
 };
 const url=(media,key,fallback)=>'/assets'+(media?.files?.[key]?.path||'/living-city/'+fallback);
 const sourceSet=(media,key,small,fallback,width)=>{
- const full=url(media,key,fallback),variant=media?.files?.[small];
- return `${variant?`/assets${variant.path} ${variant.width}w, `:''}${full} ${media?.files?.[key]?.width||width}w`;
+ const full=url(media,key,fallback),variant=media?.files?.[small],medium=key.startsWith('mobile')?media?.files?.mobileMediumPoster:null;
+ return `${variant?`/assets${variant.path} ${variant.width}w, `:''}${medium?`/assets${medium.path} ${medium.width}w, `:''}${full} ${media?.files?.[key]?.width||width}w`;
 };
 export function livingCityPosterPreloads(config={}){
  const media=config.livingCityMedia;
  const initialMobilePoster=media?.files?.mobileWebPoster?'mobileWebPoster':'mobilePoster';
  return `<link rel="preload" as="image" href="${url(media,initialMobilePoster,'mobile-poster.webp')}" imagesrcset="${sourceSet(media,initialMobilePoster,'mobileSmallPoster','mobile-poster.webp',828)}" imagesizes="100vw" media="(max-width:1023px)" fetchpriority="high"><link rel="preload" as="image" href="${url(media,'desktopPoster','desktop-poster.webp')}" imagesrcset="${sourceSet(media,'desktopPoster','desktopSmallPoster','desktop-poster.webp',1440)}" imagesizes="100vw" media="(min-width:1024px)" fetchpriority="high">`;
 }
-const previewSourceSet=capture=>[...(capture.variants||[]),capture].map(item=>`${item.path} ${item.width}w`).join(', ');
+const previewSourceSet=conceptPreviewSourceSet;
 
 // Decorative star maps are original patterns, with no interactive or spoken content.
 const nightSky=`<div class="city-night" aria-hidden="true">
@@ -36,15 +36,17 @@ export function livingCityHome(config={},offers,{afterHero=''}={}){
  const desktop=url(media,'desktopPoster','desktop-poster.webp');
  const mobile=url(media,'mobilePoster','mobile-poster.webp');
  const initialMobilePoster=media?.files?.mobileWebPoster?'mobileWebPoster':'mobilePoster';
+ // Match the mobile visual order in streamed HTML: copy must arrive before the scene.
+ // Otherwise the first painted sky moves when the later copy is reordered above it.
  return `<div class="living-city" data-living-city data-edition="living-city">
  <section class="city-hero" data-city-stage aria-labelledby="hero-heading">
+  <div class="city-copy"><p class="city-eyebrow"><span class="city-independent">Independent </span>web design &amp; SEO</p><h1 id="hero-heading">Web design &amp; SEO.<br>Built for small businesses.</h1><p class="city-lede">Custom websites, clear writing, and SEO to help customers find your business and get in touch. Made in Buffalo.</p><div class="city-actions"><a class="city-primary" href="/contact/">Ask about your website <span aria-hidden="true">→</span></a><a class="city-explore" href="#featured-work">See a live website</a></div><p class="city-location">${offers?`Websites from ${money(offers.launch_site.public_price)}. `:'Based in Buffalo. '}Serving businesses online across ${e(serviceRegionLabel)}.</p>
+  <div class="city-controls"><button type="button" data-city-play aria-controls="city-film" hidden>Play motion</button><button type="button" data-city-replay aria-controls="city-film" hidden>Replay introduction</button><span class="city-status" data-city-status role="status" aria-live="polite"></span></div></div>
   <div class="city-scene"><picture>
    <source media="(max-width:1023px)" srcset="${sourceSet(media,initialMobilePoster,'mobileSmallPoster','mobile-poster.webp',828)}" sizes="100vw" width="828" height="1216">
    <img class="city-poster" src="${desktop}" srcset="${sourceSet(media,'desktopPoster','desktopSmallPoster','desktop-poster.webp',1440)}" sizes="100vw" width="1440" height="960" alt="A waterfront neighborhood at dusk: Fieldwork’s glass greenhouse, Northline’s timber and stone studio, and Hearthside’s warmly lit pizzeria." fetchpriority="high" decoding="async">
   </picture><video id="city-film" class="city-film" data-city-film${config.livingCityMotionReady?` data-desktop-src="${url(media,'desktopVideo','desktop-film.mp4')}" data-mobile-src="${url(media,'mobileVideo','mobile-film.mp4')}"`:''} data-desktop-poster="${desktop}" data-mobile-poster="${mobile}" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
   <div class="city-atmosphere" aria-hidden="true"><div class="city-stars" aria-hidden="true">${Array.from({length:18},()=>'<span class="city-star"></span>').join('')}</div>${nightSky}</div></div>
-  <div class="city-copy"><p class="city-eyebrow"><span class="city-independent">Independent </span>web design &amp; SEO</p><h1 id="hero-heading">Web design &amp; SEO.<br>Built for small businesses.</h1><p class="city-lede">Custom websites, clear writing, and SEO to help customers find your business and get in touch. Made in Buffalo.</p><div class="city-actions"><a class="city-primary" href="/contact/">Ask about your website <span aria-hidden="true">→</span></a><a class="city-explore" href="#featured-work">See a live website</a></div><p class="city-location">${offers?`Websites from ${money(offers.launch_site.public_price)}. `:'Based in Buffalo. '}Serving businesses online across ${e(serviceRegionLabel)}.</p>
-  <div class="city-controls"><button type="button" data-city-play aria-controls="city-film" hidden>Play motion</button><button type="button" data-city-replay aria-controls="city-film" hidden>Replay introduction</button><span class="city-status" data-city-status role="status" aria-live="polite"></span></div></div>
   <div class="city-showcase" role="group" aria-label="A closer look at the website concepts">
    ${conceptCatalog.map((item,index)=>{const copy=projectCopy[item.id],capture=captures.records.find(c=>c.id===item.id&&c.camera==='desktop');return `<article class="city-reveal city-reveal--${item.id}" data-city-showcase="${item.id}" hidden><div class="city-reveal-bar" aria-hidden="true"><span class="city-reveal-dots">● ● ●</span><span>${e(item.name.toLowerCase())} / website concept</span><span>0${index+1} / 03</span></div><div class="city-reveal-window"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-city-preview-src="${capture.path}" data-city-preview-srcset="${previewSourceSet(capture)}" width="${capture.width}" height="${capture.height}" alt="" decoding="async"><span class="city-reveal-gleam" aria-hidden="true"></span></div><div class="city-reveal-copy"><p class="city-reveal-category">${e(copy.stage)}</p><p class="city-reveal-title">${e(item.name)}</p><p>${e(copy.detail)}</p><a href="#website-examples" data-city-jump="${item.id}">See ${e(item.name)} details <span aria-hidden="true">↓</span></a></div></article>`;}).join('')}
   </div>

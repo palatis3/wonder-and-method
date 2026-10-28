@@ -162,7 +162,7 @@ html:not(.nav-ready) .studio-home.edition-living-city .city-copy{padding-top:26p
 /* The sky continues after the introduction; every effect shares the playback state. */
 .city-night{position:absolute;z-index:1;bottom:calc(71% + 18px);left:48%;width:34%;height:clamp(76px,9vw,110px);pointer-events:none;overflow:hidden}
 .city-moon{position:absolute;right:0;bottom:0;width:clamp(60px,6vw,88px);height:auto;aspect-ratio:1}
-.city-moon-surface{position:absolute;inset:0;background:url('/assets/living-city-night/crescent-moon.webp') center/contain no-repeat;filter:drop-shadow(0 0 8px #ffe8b94d)}
+.city-moon-surface{position:absolute;inset:0;background:url('/assets/living-city-night/crescent-moon-192.webp') center/contain no-repeat;filter:drop-shadow(0 0 8px #ffe8b94d)}
 .city-moon-halo{position:absolute;inset:-28%;border-radius:50%;background:radial-gradient(ellipse,#b9dcf21c 0%,#b9dcf20a 35%,transparent 67%);opacity:.6}
 .city-constellations{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .city-star-route{stroke:#b9d9e7;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;opacity:.24}

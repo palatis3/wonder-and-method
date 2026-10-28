@@ -79,9 +79,11 @@ test('reduced motion has a static moon and star map with no shooting stars',asyn
 });
 
 test('failed moon and film assets keep the homepage copy and project navigation usable',async({page},testInfo)=>{
- await page.route(/\/crescent-moon\.webp(?:\?.*)?$/,route=>route.abort('failed'));
+ let failedMoonRequests=0;
+ await page.route(/\/crescent-moon(?:-\d+)?\.webp(?:\?.*)?$/,route=>{failedMoonRequests++;return route.abort('failed');});
  await page.route(/\/living-city\/[^/?]+\.mp4(?:\?.*)?$/,route=>route.abort('failed'));
  await page.goto('/?qa=1');
+ await expect.poll(()=>failedMoonRequests).toBeGreaterThan(0);
  if(testInfo.project.name!=='phone-reduced-motion'){
   if(page.viewportSize().width<=1023)await page.locator('[data-city-play]').click();
   await expect(page.locator(rootSelector)).toHaveAttribute('data-city-state','error');

@@ -42,6 +42,42 @@ Native select line height remains browser-controlled; its letter and word
 spacing are still checked. These checks supplement the full browser inventory
 and do not establish a complete manual accessibility audit.
 
+## Performance coverage
+
+`npm run check:performance` measures the exact built artifact on nine representative
+routes: home, pricing, contact, payments, a guide, a state page, work, services and
+web design. Each gets three cold Lighthouse loads with both the mobile and desktop
+presets. The required `performance` job fails when a budget is exceeded:
+
+| Metric | Limit | Across three loads |
+| --- | --- | --- |
+| First Contentful Paint | 1.8 seconds | Median |
+| Largest Contentful Paint | 2.5 seconds | Median |
+| Total Blocking Time | 200 milliseconds | Median |
+| Cumulative Layout Shift | 0.1 | Maximum |
+| Speed Index | 3.4 seconds | Median |
+| Lighthouse performance score | At least 90 | Median |
+
+Six additional homepage probes cover 390px, 412px and 1440px viewports with
+streamed HTML and delayed fonts/modules. The streamed fixture pauses after the
+hero artwork and requires a paint before the response completes. This catches
+the partial-document layout jump that an immediate localhost response can miss.
+Every probe checks the full CLS session-window score, horizontal overflow,
+JavaScript errors and completed hero initialization. Because the probe sends no
+input, a second session-window check includes every observed shift, even those
+Chromium mobile emulation marks as recent-input events. It uses a fresh browser
+context and includes the initial consent choice UI.
+
+The job retains per-run HTML/JSON reports, startup screenshots and `summary.json`
+under `output/ci/performance/`, even on failure. Lighthouse reports also retain
+image-delivery, unused-CSS, render-blocking and request-chain diagnostics. No
+budget or report is silently accepted or rewritten in CI.
+
+These are synthetic lab tests against the local production build with compressed
+text transfer. External HTTPS requests are blocked. They do not measure the CDN,
+third-party execution after consent, every route, or every visitor's connection.
+Continue checking deployed PageSpeed and field Core Web Vitals after releases.
+
 ## Local commands and release evidence
 
 - `npm run technical:check`: all technical checks locally, including the two new gates.

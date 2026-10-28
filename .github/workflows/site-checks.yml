@@ -276,7 +276,7 @@ jobs:
         with:
           name: site-build-${{ github.run_attempt }}
       - run: npm run ci:browser -- verify-build
-      - name: Measure three cold mobile Lighthouse runs per representative page
+      - name: Check streamed startup and three cold mobile and desktop loads per page
         run: npm run check:performance
       - name: Retain measured metrics and Lighthouse reports
         if: always()

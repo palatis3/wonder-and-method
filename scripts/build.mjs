@@ -13,7 +13,7 @@ import {googleAnalyticsEnabled} from '../src/google-analytics.mjs';
 import {writeOwnedProof} from './build-owned-proof.mjs';
 import {versionPublicDocumentLinks} from './version-public-documents.mjs';
 import {fingerprintStaticAssets,versionAssetReferences} from './version-static-assets.mjs';
-import {pageStyleFamily} from './page-family-styles.mjs';
+import {pageStyleFamily,pageFamilyStyles} from './page-family-styles.mjs';
 import {priceList} from '../src/shared.mjs';
 import {civicAssetState,copyCivicAssets} from './build-civic-assets.mjs';
 import {livingCityAssetState,copyLivingCityAssets} from './build-living-city-assets.mjs';
@@ -50,6 +50,16 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
  return {shared:await minify(shared),plans:await minify(plans),guides:await minify(guides)};
 }
 
+export async function buildHomeStyles(assets,shared,html){
+ const dynamic=(await Promise.all(['analytics-consent.js','site-navigation.js','page-navigation.js'].map(name=>readFile(resolve(assets,name),'utf8')))).join('\n');
+ const retained=pageFamilyStyles(shared,html,dynamic).css;
+ const city=await readFile(resolve(assets,'living-city.css'),'utf8');
+ const consent=html.includes('href="/assets/analytics-consent.css"')?await readFile(resolve(assets,'analytics-consent.css'),'utf8'):'';
+ // The homepage's current cascade is shared, city, then consent. Keep that
+ // order while removing component rules that cannot match this document.
+ return minifyBrowserAsset([retained,city,consent].join('\n'),'css');
+}
+
 export function applyCssBundles(html,boot,{family,path}={}){
  const overview=html.includes('class="services-overview"');
  const tailored=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-audit/','/services/website-addons/','/services/website-care/','/services/seo/','/process/'].includes(path);
@@ -63,10 +73,12 @@ export function applyCssBundles(html,boot,{family,path}={}){
  // Package selectors do not target the identity. Brand rules now lead the shared
  // cascade, preserving their position before the general layout overrides.
  // The shared bundle has the same URL on plan and non-plan pages for cache reuse.
- const styles=`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}`;
+ const home=family==='home'&&city;
+ if(home)html=html.replace('<link rel="stylesheet" href="/assets/analytics-consent.css">','');
+ const styles=home?'<link rel="stylesheet" href="/assets/site-home.css">':`${plans?'<link rel="stylesheet" href="/assets/site-plans.css">':''}${guides?'<link rel="stylesheet" href="/assets/site-guides.css">':''}<link rel="stylesheet" href="/assets/site.css">${city?'<link rel="stylesheet" href="/assets/living-city.css">':''}`;
  // Discover the home hero's blocking styles before its font/image preloads
- // and module requests. Keep the two stylesheets in their existing cascade.
- if(family==='home'&&city&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
+ // and module requests.
+ if(home&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
  return html.replace('</head>',styles+(tailored?'<link rel="stylesheet" href="/assets/tailored-visuals.css">':'')+(overview?'<link rel="stylesheet" href="/assets/services-overview.css">':'')+'</head>');
 }
 
@@ -197,6 +209,8 @@ const css=await buildCssBundles(resolve(root,'src/assets'),{includeChat:Boolean(
 await writeFile(resolve(output,'assets/site.css'),css.shared);
 await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
 await writeFile(resolve(output,'assets/site-guides.css'),css.guides);
+const home=pages.find(page=>page.path==='/'&&page.html.includes('href="/assets/living-city.css"'));
+if(home)await writeFile(resolve(output,'assets/site-home.css'),await buildHomeStyles(resolve(root,'src/assets'),css.shared,home.html));
 // A single versioned base survives navigation between page families. Keep the
 // existing section additions and cascade order; family only controls discovery.
 for(const page of pages)page.html=applyCssBundles(page.html,boot,{family:pageStyleFamily(page.path),path:page.path});

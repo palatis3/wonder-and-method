@@ -138,6 +138,20 @@
       },
       "psnrToSourcePoster": 41.123,
       "purpose": "Initial mobile picture; original video poster and film remain unchanged."
+    },
+    "mobileMediumPoster": {
+      "path": "/living-city/mobile-medium-poster.webp",
+      "width": 724,
+      "height": 1063,
+      "bytes": 43730,
+      "sha256": "9abfdc8100062a6fc33a889ae8f1a194494fcdeab12555376aa3dd15b5c35568",
+      "encoding": "webp-lossy",
+      "quality": 82,
+      "derivedFrom": {
+        "path": "/living-city/mobile-poster.webp",
+        "sha256": "148548f9eb9a3fe39c86a214b48a86fcf8ca96ae7444b18b78485eb8e71a72bf"
+      },
+      "purpose": "Intermediate responsive opening image; video poster and film remain unchanged."
     }
   }
 }

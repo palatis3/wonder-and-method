@@ -34,7 +34,7 @@ target=Path(sys.argv[1])
 image.save(target,format='WEBP',quality=92,method=6)
 records=[dict(file=target.name,width=image.width,height=image.height)]
 for width in json.loads(sys.argv[2]):
-    if width>=image.width: continue
+    if width>image.width: continue
     height=round(image.height*width/image.width)
     resized=image.resize((width,height),Image.Resampling.LANCZOS)
     variant=target.with_name(target.stem+'-'+str(width)+'.webp')
@@ -47,7 +47,7 @@ async function encode(bytes,file,widths){
  if(sharp){
   await sharp(bytes).webp({quality:92,effort:6}).toFile(resolve(output,file));
   const base=await sharp(resolve(output,file)).metadata();encoded.push({file,width:base.width,height:base.height});
-  for(const width of widths.filter(width=>width<base.width)){
+  for(const width of widths.filter(width=>width<=base.width)){
    const variant=file.replace('.webp','-'+width+'.webp');
    await sharp(bytes).resize({width,withoutEnlargement:true}).webp({quality:84,effort:6}).toFile(resolve(output,variant));
    const meta=await sharp(resolve(output,variant)).metadata();encoded.push({file:variant,width:meta.width,height:meta.height});
@@ -81,14 +81,14 @@ try{
    await page.locator('.concept-hero img').evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
    const clip=await page.locator('.portfolio-concept').evaluate(article=>{const box=article.getBoundingClientRect(),hero=article.querySelector('.concept-hero').getBoundingClientRect();return {x:box.x+scrollX,y:box.y+scrollY,width:box.width,height:hero.bottom-box.top};});
    const bytes=await page.screenshot({clip,animations:'disabled'}),file=id+'-showcase-'+camera+'.webp';
-   const [base,...variants]=await encode(bytes,file,camera==='desktop'?[480,640,960]:[350]);
+   const [base,...variants]=await encode(bytes,file,camera==='desktop'?[480,640,960]:[350,525,700]);
    records.push({id,camera,viewport,deviceScaleFactor,clip,...base,variants});
   }
   await page.close();
  }
  if(JSON.stringify(await hashes())!==JSON.stringify(sourceHashes))throw Error('Capture sources changed during the run; capture the finished build again.');
  await writeFile(resolve(root,'src/city-preview-captures.json'),JSON.stringify({capturedAt:new Date().toISOString(),encoder,sourceHashes,builtPages,records},null,2)+'\n');
- console.log('Captured six actual concept previews, nine desktop variants and three phone variants with '+encoder+'.');
+ console.log('Captured six actual concept previews, nine desktop variants and nine phone variants with '+encoder+'.');
 }finally{
  await browser?.close();
  // createServer closes its synthetic database when the server emits close.

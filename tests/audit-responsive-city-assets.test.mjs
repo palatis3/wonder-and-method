@@ -103,20 +103,20 @@ test('responsive capture variants are real smaller WebP files with matching dime
  const paths=new Set();let variantCount=0;
  for(const record of captures.records){
   if(record.camera==='desktop')assert.deepEqual(record.variants.map(variant=>variant.width),[480,640,960]);
-  else {assert.deepEqual(record.variants.map(variant=>variant.width),[350]);assert.equal(record.viewport.width,390);assert.equal(record.deviceScaleFactor,2);assert.ok(record.clip.width<=390);assert.equal(record.width,record.clip.width*2);}
+  else {assert.deepEqual(record.variants.map(variant=>variant.width),[350,525,700]);assert.equal(record.viewport.width,390);assert.equal(record.deviceScaleFactor,2);assert.ok(record.clip.width<=390);assert.equal(record.width,record.clip.width*2);}
   for(const asset of [record,...record.variants]){
    assert.ok(!paths.has(asset.path),asset.path);paths.add(asset.path);
-   assert.match(asset.path,/^\/assets\/work\/concepts\/(?:fieldwork|northline|hearthside)-showcase-(?:desktop|phone)(?:-(?:350|480|640|960))?\.webp$/);
+   assert.match(asset.path,/^\/assets\/work\/concepts\/(?:fieldwork|northline|hearthside)-showcase-(?:desktop|phone)(?:-(?:350|480|525|640|700|960))?\.webp$/);
    const bytes=await read('src'+asset.path);
    assert.equal(bytes.length,asset.bytes,asset.path);assert.equal(hash(bytes),asset.sha256,asset.path);
    assert.deepEqual(webpDimensions(bytes),{width:asset.width,height:asset.height},asset.path);
    if(asset!==record){
-    variantCount++;assert.ok(asset.width<record.width);assert.ok(asset.bytes<record.bytes);
+    variantCount++;assert.ok(asset.width<=record.width);assert.ok(asset.bytes<record.bytes);
     assert.ok(Math.abs(asset.height-record.height*asset.width/record.width)<=0.51,asset.path+' must retain the complete aspect ratio');
    }
   }
  }
- assert.equal(paths.size,18);assert.equal(variantCount,12);
+ assert.equal(paths.size,24);assert.equal(variantCount,18);
 });
 
 test('the smaller initial mobile poster preserves the city dimensions and every original asset',async()=>{

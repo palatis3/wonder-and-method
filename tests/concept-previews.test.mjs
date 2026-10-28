@@ -7,7 +7,8 @@ import {workGallery} from '../src/work-gallery.mjs';
 function elements(html,name){const found=[];const visit=node=>{if(node.tagName===name)found.push(Object.fromEntries(node.attrs.map(a=>[a.name,a.value])));for(const child of node.childNodes||[])visit(child);};visit(parseFragment(html));return found;}
 test('responsive preview reserves the selected phone proportions and provides a desktop fallback',()=>{
  const html=conceptPreviewPicture('fieldwork',{alt:'Fieldwork <design> "example"',sizes:'50vw',phoneSizes:'90vw'}),[source]=elements(html,'source'),[img]=elements(html,'img');
- assert.equal(source.media,'(max-width:767px)');assert.match(source.srcset,/fieldwork-showcase-phone-350\.webp 350w/);assert.match(source.srcset,/fieldwork-showcase-phone\.webp 700w/);assert.equal(source.sizes,'90vw');assert.ok(Number(source.height)>Number(source.width));
+ assert.equal(source.media,'(max-width:767px)');assert.match(source.srcset,/fieldwork-showcase-phone-350\.webp 350w/);assert.match(source.srcset,/fieldwork-showcase-phone-700\.webp 700w/);assert.equal(source.sizes,'90vw');assert.ok(Number(source.height)>Number(source.width));
+ const widths=source.srcset.split(',').map(item=>item.trim().split(' ').at(-1));assert.equal(new Set(widths).size,widths.length,'Each responsive width has exactly one candidate');
  assert.match(img.src,/showcase-desktop\.webp$/);assert.equal(img.sizes,'50vw');assert.equal(img.loading,'lazy');assert.equal(img.alt,'Fieldwork <design> "example"');assert.equal(elements(html,'design').length,0);assert.throws(()=>conceptPreviewPicture('missing'),/Missing concept capture/);
 });
 test('work gallery prioritizes the featured image and lazily loads every later concept',()=>{
