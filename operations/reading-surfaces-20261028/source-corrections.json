@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-28",
+  "scope": "Two confirmed HTTP404 source URLs replaced by the same operator public hosted pages. Independent source review verified the cited content. Historical before-record remains immutable acceptance evidence, not a current link recommendation.",
+  "changes": [
+    {
+      "areaId": "oklahoma/grant",
+      "path": "/areas/oklahoma/grant-county/",
+      "beforeRecord": {
+        "areaId": "oklahoma/grant",
+        "market": "Grant County, OK",
+        "lead": "Distinguish an identified feed order from a request for a supplementation discussion.",
+        "decisionTitle": "Distinguish an identified feed order from a request for a supplementation discussion.",
+        "decision": "Farmers Grain Company lists bulk feed delivery and bag mineral alongside feed and supplement lines. Its feed page also describes on-farm consultation and hay sampling with a feed specialist. The company gives its contact address in Pond Creek.\n\nA feed-business website can let a producer explain whether they already know the product needed or want a specialist discussion first. The consultation route should preserve the purpose of the inquiry, while a product request should carry the product and delivery question. The business confirms what its locations can supply and what a consultation involves.",
+        "scopes": [
+          {
+            "title": "Distinguish an identified feed order from a request for a supplementation discussion",
+            "pages": [
+              "Provide a direct route for a named product and delivery inquiry.",
+              "Explain the specialist conversation and hay-sampling service without prescribing a program.",
+              "Carry the relevant location and broad delivery area into follow-up."
+            ],
+            "request": "Identify a known feed product or ask for a specialist discussion, then give the relevant location and delivery question for the company to review.",
+            "supplies": "Current product names, order contact and location-specific fulfillment information. Approved service descriptions and the questions the specialist needs first. Actual delivery coverage and staff who confirm arrangements.",
+            "check": "A product listing does not imply stock at every branch. An unsure producer can ask for a discussion without inventing a product selection. The Pond Creek contact address does not become a promise that every listed mill is in Grant County."
+          }
+        ],
+        "scopeTrigger": "A focused edit can clarify known product on the existing page. A fuller project can connect known product, advice request, location and delivery across the introduction and staff handoff. Agree the actual pages, approved information and update owner before selecting forms or connections.",
+        "quoteQuestions": [
+          "How do you distinguish an order inquiry from a specialist consultation?",
+          "Which locations actually fulfill the products you list?",
+          "What location detail is needed before discussing bulk delivery?"
+        ],
+        "coverageNote": "Website project planning for Grant County, using the public Farmers Grain Company example associated with Pond Creek. Wonder and Method works online from Buffalo, New York. Named organizations are public examples, not clients, partners or endorsements.",
+        "sources": [
+          {
+            "url": "https://www.farmersgraincompany.com/fccp-feed-21791",
+            "label": "Farmers Grain Company: feed",
+            "observation": "Farmers Grain Company lists bulk feed delivery and bag mineral alongside feed and supplement lines. Its feed page also describes on-farm consultation and hay sampling with a feed specialist. The company gives its contact address in Pond Creek."
+          },
+          {
+            "url": "https://www.farmersgraincompany.com/cbloc-2513",
+            "label": "Farmers Grain Company: pond",
+            "observation": "Additional operator information used to verify the specific facilities, service or location described above."
+          }
+        ],
+        "outlineNote": "These are content groupings, not a prescribed page count. The written proposal identifies the actual pages, forms and connections. The operator approves current facts and confirms actual arrangements.",
+        "areaIds": [
+          "oklahoma/grant"
+        ],
+        "path": "/areas/oklahoma/grant-county/",
+        "title": "Web Design for Grant County, OK",
+        "description": "Web design for Grant County, OK. Plan website content to distinguish an identified feed order from a request for a supplementation discussion.",
+        "servedAreas": [
+          {
+            "name": "Grant County",
+            "state": "Oklahoma",
+            "type": "County"
+          }
+        ],
+        "directoryLinks": [
+          {
+            "path": "/areas/oklahoma/#grant",
+            "label": "Grant County place directory"
+          }
+        ],
+        "relatedGuides": [
+          {
+            "path": "/guides/quote-request-form/",
+            "label": "Quote request form"
+          }
+        ],
+        "checkedDate": "2026-10-26",
+        "planningTable": {
+          "title": "Distinguish an identified feed order from a request for a supplementation discussion",
+          "intro": "Proposed website explanations and acceptance checks. The owner supplies current information and confirms each actual customer arrangement.",
+          "columns": [
+            "Reader choice",
+            "Website content",
+            "Owner information",
+            "Acceptance check"
+          ],
+          "rows": [
+            [
+              "Known product",
+              "Provide a direct route for a named product and delivery inquiry.",
+              "Current product names, order contact and location-specific fulfillment information.",
+              "A product listing does not imply stock at every branch."
+            ],
+            [
+              "Advice request",
+              "Explain the specialist conversation and hay-sampling service without prescribing a program.",
+              "Approved service descriptions and the questions the specialist needs first.",
+              "An unsure producer can ask for a discussion without inventing a product selection."
+            ],
+            [
+              "Location and delivery",
+              "Carry the relevant location and broad delivery area into follow-up.",
+              "Actual delivery coverage and staff who confirm arrangements.",
+              "The Pond Creek contact address does not become a promise that every listed mill is in Grant County."
+            ]
+          ]
+        }
+      },
+      "beforeRecordSha256": "5adc9c793b68326a45279db87406588ac6a51f35264e30a7a50194293c996913",
+      "afterRecordSha256": "f186bd7a45f2dd34ee4e88ec2d0ed3d5095b76412c425a8099ac204702597919",
+      "changedFields": [
+        "sources"
+      ],
+      "reviewedUrls": [
+        "https://farmersgraincompany.o.bushelsites.com/fccp-feed-21791",
+        "https://farmersgraincompany.o.bushelsites.com/cbloc-2513"
+      ],
+      "reviewEvidence": "Private evidence/reading-surfaces-20261028/source-link-repair/ and independent-review.json"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {beforeReviewedReadingSourceCorrections} from './reviewed-reading-source-corrections.mjs';
 import {createHash} from 'node:crypto';
 import ledger from './human-quality-edits.json' with {type:'json'};
 import {beforeResidualHumanQualityEdits,beforeResidualHumanQualityFaqEdits,residualFaqPaths} from './reviewed-human-quality-residual-edits.mjs';
@@ -6,6 +7,7 @@ const hash=x=>createHash('sha256').update(JSON.stringify(x)??'undefined').digest
 const records=new Map(ledger.records.map(row=>[row.path,row])),faqs=new Map(ledger.faqs.map(row=>[row.path,row]));
 assert.equal(records.size,ledger.records.length);assert.equal(faqs.size,ledger.faqs.length);
 export function beforeReviewedHumanQualityEdits(value){
+ value=beforeReviewedReadingSourceCorrections(value);
  value=beforeResidualHumanQualityEdits(value);
  const row=records.get(value.path);if(!row)return value;
  assert.equal(hash(value),row.afterSha256,value.path+' approved human quality revision');
