@@ -15,3 +15,7 @@ The palette calculations use the [WCAG contrast method](https://www.w3.org/WAI/W
 Review Work and the core page families on desktop and phone; check the 320px layout, enlarged text, keyboard controls, guide disclosures, service choices and the design desk. Existing automated accessibility, reading, browser, visual and release checks remain required. Forced-colors uses system surfaces and borders; print removes the surface tints.
 
 One independent Astra reviewer passed the initial CSS and cascade review. Rendered review and final publication evidence will be recorded after the checks complete.
+
+## Release corrections
+
+The full release checks identified two assertions that still expected the previous surface colors. Their three palette constants now match the approved CSS; coverage, test identities and exclusions are unchanged. The link gate also found two retired Farmers Grain Company URLs on the Grant County, Oklahoma page. The corresponding public Bushel-hosted feed and Pond Creek pages return HTTP 200 and retain the cited information. Only those two source links and that page’s reviewed-content date changed; its prose is unchanged. The corrections received independent review.

@@ -36,7 +36,7 @@ for(let offset=0;offset<routes.length;offset+=25){
     expect(health.h1,`${path} heading`).toBe(1);expect(health.brokenImages,path).toEqual([]);expect(health.badFonts,path).toEqual([]);
     expect(health.bodyFont,path).toContain('Manrope');expect(health.footer,path).toBe(1);expect(health.top,path).toBe(1);expect(health.chat,path).toBe(1);expect(health.footerGroups,path).toBe(4);expect(errors,path).toEqual([]);
     expect(new Set(health.footerDestinations).size,path+' unique footer destinations').toBe(health.footerDestinations.length);
-    expect(health.palette,path+' shared palette').toEqual(['#f8f7f2','#334739','#edf0e8','#e7eef3','#f1eee6','#a34f2e']);
+    expect(health.palette,path+' shared palette').toEqual(['#f8f7f2','#334739','#e3e9dd','#e5ebe4','#eee5d8','#a34f2e']);
     expect(health.footerBackground,path+' footer canvas').toBe('rgb(248, 247, 242)');
     // Presence alone misses controls hidden by a future CSS or boot-script edit.
     await expect(page.locator('.support-chat-launch')).toHaveCount(1);

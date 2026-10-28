@@ -30,7 +30,7 @@ test('semantic surfaces use the approved palette without tinting ordinary guide 
    return {width:innerWidth,scroll:document.documentElement.scrollWidth,tokens:['--paper','--blue','--surface-sage','--surface-process','--surface-stone','--accent'].map(key=>body.getPropertyValue(key).trim()),guideSections:[...document.querySelectorAll('.journal-prose>section')].map(el=>getComputedStyle(el,'::before').content)};
   });
   expect(result.scroll,path).toBeLessThanOrEqual(result.width+1);
-  expect(result.tokens).toEqual(['#f8f7f2','#334739','#edf0e8','#e7eef3','#f1eee6','#a34f2e']);
+  expect(result.tokens).toEqual(['#f8f7f2','#334739','#e3e9dd','#e5ebe4','#eee5d8','#a34f2e']);
   for(const content of result.guideSections)expect(content,path).toBe('none');
  }
 });
