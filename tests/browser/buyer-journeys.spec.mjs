@@ -40,7 +40,7 @@ test('neutral contact stays unclassified while explicit offer requests preserve 
 test('checkout keeps its fixed offer and priorities while welcoming questions in the same form',async({page})=>{
  await page.goto('/checkout/grow/?offer=launch_site&priority=page&priority_two=article&billing=monthly#inquiry');
  await expect(page.getByRole('heading',{name:'Request Grow monthly SEO',exact:true})).toBeVisible();
- await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.inquiry-next')).toContainText('one business day');
+ await expect(page.locator('.request-summary')).toHaveCount(0);await expect(page.locator('.inquiry-expectation')).toContainText('one business day');
  await expect(page.locator('#service')).toHaveValue('grow');
  await expect(page.locator('#request_kind')).toHaveValue('checkout');
  await expect(page.locator('[data-request-label]')).toHaveText('Your message (required)');await expect(page.locator('#message-help')).toContainText('What would you like help with each month?');
@@ -112,7 +112,7 @@ test('authorized annual calculator fixture restores monthly cycles after switchi
 
 test('portfolio previews, SEO topic navigation and early process overview work by keyboard',async({page,isMobile})=>{
  await page.goto('/work/?qa=1');
- const preview=page.locator('#fieldwork a.text-link');await preview.focus();await expect(preview).toBeFocused();
+ const preview=page.locator('#fieldwork').getByRole('link',{name:'Explore the Fieldwork website',exact:true});await preview.focus();await expect(preview).toBeFocused();
  await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/fieldwork\//);await expect(page.locator('.concept-notice')).toContainText('Fictional concept');
  await page.goto('/services/seo/?qa=1');
  const request=page.getByRole('link',{name:'Request Improve',exact:true});await request.focus();await page.keyboard.press('Enter');
