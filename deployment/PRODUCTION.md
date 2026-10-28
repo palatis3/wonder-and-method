@@ -1,10 +1,12 @@
 # Production website
 
-Current published application: [Colorado, Utah and Puerto Rico](../operations/co-ut-pr-expansion-20261026/RELEASE.md), source `76a5b665f52447579de68703de60b57003b7ea05`, runtime `22055743-5bfc-41d9-9507-55485ed6ad4b`, deployed 2026-10-27T00:22:53.176Z. All 2,299 routes and 2,969 assets match the tested build; exact-source CI, live verification, Search Console submission and scheduled recovery with external monitoring receipt are complete.
+Current published application: [Human-first content and reading improvements](../operations/human-quality-20261027/RELEASE.md), source `adb4716b97355cc0c2825c7c188d0fff1e4828f8`, runtime `cea22fa7-8071-42b8-9520-8ebfdffc0111`, deployed 2026-10-28T02:16:02.391Z. All 2,424 routes and 3,094 assets match the tested build; exact-source CI, 33 live browser checks, Search Console submission and scheduled recovery with external monitoring receipts are complete. All 2,394 requested page revisions and final score records are complete. No database migration was required. Later documentation-only commits do not change the deployed application identity.
 
-The [Idaho and Montana candidate](../operations/id-mt-expansion-20261026/RELEASE.md) adds 69 reviewed service pages and two state directories. It remains pending final exact-source CI and production verification.
+The current application includes the earlier Idaho and Montana pages. Their [candidate-stage record](../operations/id-mt-expansion-20261026/RELEASE.md) remains historical; its pending-publication statements do not describe the current application.
 
 ## Retained prior release record
+
+Previously published application: [Colorado, Utah and Puerto Rico](../operations/co-ut-pr-expansion-20261026/RELEASE.md), source `76a5b665f52447579de68703de60b57003b7ea05`, runtime `22055743-5bfc-41d9-9507-55485ed6ad4b`, deployed 2026-10-27T00:22:53.176Z. Its 2,299 routes and 2,969 assets, exact-source CI, live checks, Search Console submission and scheduled/external recovery evidence remain historical.
 
 Previously published application: [Analytics consent layout correction](../operations/ANALYTICS_CONSENT_FIX_20261026.md). Source `7276436059258d34aa826ac0162c7b80b9497a32`; authenticated Worker `efb7d38d-3130-430a-9fe7-39039fc8fb4a`; deployed 2026-10-26T20:45:51.274Z. All 15 CI jobs, all-route/asset verification, 54 live journeys, 14 consent-layout cases, fresh-backup restore and scheduled/external recovery passed. No database migration.
 
