@@ -31,6 +31,7 @@ async function settle(page){
 for(const [name,path] of [
  ['home','/'],['services','/services/'],['pricing','/pricing/'],['web-design','/services/web-design/'],
  ['monthly-seo','/services/seo/'],['care','/services/website-care/'],
+ ['redesign','/services/website-redesign/'],['contractors','/services/contractor-websites/'],['audit','/services/website-audit/'],['addons','/services/website-addons/'],['process','/process/'],
  ['work','/work/'],['contact','/contact/'],['scope-request','/checkout/focused-site/'],
  ['guide','/guides/ai-search-visibility/'],['county','/areas/erie-county/'],
  ['about','/about/'],['concept','/work/fieldwork/'],

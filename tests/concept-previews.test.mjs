@@ -12,6 +12,6 @@ test('responsive preview reserves the selected phone proportions and provides a 
 });
 test('work gallery prioritizes the featured image and lazily loads every later concept',()=>{
  const images=elements(workGallery({}),'img'),high=images.filter(image=>image.fetchpriority==='high');assert.equal(high.length,1);assert.equal(high[0].src,'/assets/work/assetrounds/desktop.webp');
- const concepts=images.filter(image=>image.src.includes('/concepts/'));assert.equal(concepts.length,3);for(const image of concepts){assert.match(image.src,/-showcase-desktop\.webp$/);assert.equal(image.loading,'lazy');assert.equal(image.fetchpriority,undefined);}
- assert.equal(elements(workGallery({}),'source').filter(source=>source.media==='(max-width:767px)').length,3);
+ const concepts=images.filter(image=>image.src.includes('/concepts/')&&image.src.endsWith('.webp'));assert.equal(concepts.length,3);for(const image of concepts){assert.match(image.src,/-showcase-desktop\.webp$/);assert.equal(image.loading,'lazy');assert.equal(image.fetchpriority,undefined);}
+ assert.equal(elements(workGallery({}),'source').filter(source=>source.media==='(max-width:767px)'&&source.srcset.includes('/concepts/')).length,3);
 });

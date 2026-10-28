@@ -8,12 +8,13 @@ import {studioSearchStudy} from '../src/studio-search-study.mjs';
 import {projectCalendar,conceptDebrief} from '../src/buyer-experience.mjs';
 import {buffaloStudy} from '../src/buffalo-study.mjs';
 
-test('Work keeps every project and both films with a useful early inquiry route',()=>{
+test('Work keeps every project and both films with useful early project navigation and concept inquiries',()=>{
  const items=workItems({homeEdition:'living-city'}),html=workGallery({homeEdition:'living-city'});
  assert.deepEqual(items.map(item=>item.id),['assetrounds','fieldwork','northline','hearthside','websites','search','handoff','workflow','buffalo-civic','studies']);
  assert.equal(new Set(items.slice(1,4).map(item=>item.details)).size,3);
  assert.equal((html.match(/class="work-group"/g)||[]).length,3);
- assert.ok(html.indexOf('goal=new_website')<html.indexOf('id="fieldwork"'));
+ assert.ok(html.indexOf('href="/work/assetrounds/"')<html.indexOf('id="fieldwork"'));
+ assert.match(html,/concept=fieldwork&amp;request_kind=question#inquiry/);
  for(const id of ['website-decisions','creative-samples','buffalo-civic','studies'])assert.match(html,new RegExp(`id="${id}"`));
  assert.match(html,/poster="\/assets\/waterfront\/film-poster-landscape.webp"/);
  assert.match(html,/<source src="\/assets\/waterfront\/film-landscape.mp4" type="video\/mp4">/);

@@ -467565,12 +467565,12 @@
       "schemaSha256": "2fc347957774e1527d32f21dc9c60340e032b734d1e0624c5c0f5030e2867a71"
     },
     "index.html": {
-      "htmlSha256": "9ad1b41faf023895c4198ee09702b7bd66396fd74ebe2158bef81fd65c3482b5",
+      "htmlSha256": "fc013baf98a4991f10337759e326fcb226ee0e6781931e43e7610ccd7abfb434",
       "title": "Web Design &amp; SEO for Small Businesses | Wonder and Method",
       "description": "Small business websites from $1,400 with writing, research and original graphics. From Buffalo, serving 50 states, Washington, DC, and Puerto Rico online.",
       "canonical": "https://wonderandmethod.com/",
       "robots": "index,follow",
-      "textSha256": "eb3b6a329dfe41548313a1886de92211ca8b1dba89976dd8aef8784260300cf8",
+      "textSha256": "2e26d4ee45d30b817c66d7cee6de11da6900fd003cf3cca45e3c435532f209c4",
       "headings": [
         [
           "h1",
@@ -467755,6 +467755,7 @@
         "/services/website-redesign/",
         "/terms/",
         "/work/",
+        "/work/#design-desk",
         "/work/assetrounds/",
         "/work/fieldwork/",
         "/work/hearthside/",
@@ -468440,12 +468441,12 @@
       "schemaSha256": "31677df129823e4ba9caa1e6e4da4e5350ae33a5b4394e7c45702775c390b94e"
     },
     "process/index.html": {
-      "htmlSha256": "cadcf47dd6b84bcf97bb62fae58d24ac7c3cfb62670b95509337a931c0d6b785",
+      "htmlSha256": "0a02485a22c92b97e85776d2332d16fd4712e453154ab7b5dcf0a9b2f7659797",
       "title": "Your website project, step by step | Wonder and Method",
       "description": "Six steps from your first inquiry to design, approval, launch and website files. See timing, feedback responsibilities and what you receive.",
       "canonical": "https://wonderandmethod.com/process/",
       "robots": "index,follow",
-      "textSha256": "f2e045847d4b7de850e8ef5e27ee499a9827513e9930787d97fc1fbd520b8b94",
+      "textSha256": "cca61828c1ed4f9db25e845f171067a4068377a65a1bc54860edf454881a4a02",
       "headings": [
         [
           "h1",
@@ -468474,6 +468475,10 @@
         [
           "h2",
           "Receive your files and fixes"
+        ],
+        [
+          "h3",
+          "Files you can inspect and keep"
         ],
         [
           "h2",
@@ -468599,17 +468604,18 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "31677df129823e4ba9caa1e6e4da4e5350ae33a5b4394e7c45702775c390b94e"
     },
     "services/contractor-websites/index.html": {
-      "htmlSha256": "b554737f9dd58b0d9ae4f001c2a4a69881036848973a9682e32c8710237c6123",
+      "htmlSha256": "2ca8de092aaac9de31a26367838cbaaf61e4e1fdcda13130dd4bcfa7d9d71ff4",
       "title": "Websites for Contractors and Trades | Wonder and Method",
       "description": "Websites for contractors and trades with clear job types, project examples, service areas and estimate requests. Work online with a Buffalo designer.",
       "canonical": "https://wonderandmethod.com/services/contractor-websites/",
       "robots": "index,follow",
-      "textSha256": "3df0dc8c5595c2a705263c062caf0be016d288cdaf8e67006071e2d3fd4213d2",
+      "textSha256": "3cf781d5669367b58266bc68e5d8e6fb2e3f4296f9a5a881fd23a78c935455e4",
       "headings": [
         [
           "h1",
@@ -468621,7 +468627,7 @@
         ],
         [
           "h2",
-          "Try a remodeling website concept."
+          "Show the work. Explain the next step."
         ],
         [
           "h2",
@@ -468772,21 +468778,23 @@
       "media": [
         "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">",
         "<img src=\"/assets/work/concepts/fieldwork-desktop.webp?v=BUILD\" width=\"1200\" height=\"900\" srcset=\"/assets/work/concepts/fieldwork-desktop-240.webp?v=BUILD 240w, /assets/work/concepts/fieldwork-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/fieldwork-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/fieldwork-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/fieldwork-desktop.webp?v=BUILD 1200w\" sizes=\"(max-width:767px) calc(100vw - 40px), 340px\" loading=\"lazy\" alt=\"Fieldwork website concept.\">",
-        "<img src=\"/assets/work/concepts/northline-desktop.webp?v=BUILD\" width=\"1200\" height=\"900\" srcset=\"/assets/work/concepts/northline-desktop-240.webp?v=BUILD 240w, /assets/work/concepts/northline-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/northline-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/northline-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/northline-desktop.webp?v=BUILD 1200w\" sizes=\"(max-width:767px) calc(100vw - 40px), 340px\" loading=\"lazy\" alt=\"Northline website concept.\">"
+        "<img src=\"/assets/work/concepts/northline-showcase-desktop.webp?v=BUILD\" srcset=\"/assets/work/concepts/northline-showcase-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/northline-showcase-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/northline-showcase-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/northline-showcase-desktop.webp?v=BUILD 1240w\" sizes=\"(max-width:767px) calc(100vw - 80px), 520px\" width=\"1240\" height=\"734\" loading=\"lazy\" decoding=\"async\" alt=\"Northline fictional remodeling website with service options and its illustrated house.\">",
+        "<source media=\"(max-width:767px)\" srcset=\"/assets/work/concepts/northline-showcase-phone-350.webp?v=BUILD 350w, /assets/work/concepts/northline-showcase-phone.webp?v=BUILD 700w\" sizes=\"calc(100vw - 80px)\" width=\"700\" height=\"1754\">"
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "08f8ca5c5687941d4c59e2ac4f4192ab48cd85e1908ef02427ae6bc4c9b1457c"
     },
     "services/index.html": {
-      "htmlSha256": "0f6091c5a29a290f50c2523ea2d79cf47e460bc6a33910aadb55547e963f1083",
+      "htmlSha256": "820882dc6d445a3d21cf2ae0c25f0fd021c920f96522798d3f1d9b1bd66ab6b0",
       "title": "Website Services for Small Businesses | Wonder and Method",
       "description": "Compare website design, redesign, SEO, monthly care and repairs. Find the right service, see prices and choose the next step for your business.",
       "canonical": "https://wonderandmethod.com/services/",
       "robots": "index,follow",
-      "textSha256": "ff22e3e32151d6d2f64781365285fc37112dbf9a447a03a21386cfee2ca7a005",
+      "textSha256": "038cde22f5f28dd705667eac1a4652531daf2f03c2b8eddbcd47d628097f146f",
       "headings": [
         [
           "h1",
@@ -468927,6 +468935,7 @@
         "/areas/west-virginia/",
         "/areas/wisconsin/",
         "/areas/wyoming/",
+        "/assets/buyer-packs/keep-running-sample?v=BUILD",
         "/contact/",
         "/contact/#inquiry",
         "/contact/?request_kind=question#inquiry",
@@ -468943,28 +468952,34 @@
         "/services/web-design/",
         "/services/website-addons/",
         "/services/website-audit/",
+        "/services/website-audit/#sample-findings",
         "/services/website-care/",
         "/services/website-redesign/",
         "/terms/",
-        "/work/"
+        "/work/",
+        "/work/assetrounds/"
       ],
       "media": [
-        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">",
+        "<img src=\"/assets/audit-samples/northline-after.png?v=BUILD\" width=\"320\" height=\"844\" alt=\"After: the same Northline text wraps within the screen.\" loading=\"lazy\">",
+        "<img src=\"/assets/audit-samples/northline-before.png?v=BUILD\" width=\"320\" height=\"844\" alt=\"Before: enlarged Northline text extends beyond the narrow screen.\" loading=\"lazy\">",
+        "<img src=\"/assets/work/assetrounds/desktop.webp?v=BUILD\" width=\"1440\" height=\"1000\" srcset=\"/assets/work/assetrounds/desktop-480.webp?v=BUILD 480w, /assets/work/assetrounds/desktop-960.webp?v=BUILD 960w, /assets/work/assetrounds/desktop-1440.webp?v=BUILD 1440w\" sizes=\"(max-width:767px) calc(100vw - 80px), 480px\" alt=\"AssetRounds product website with its illuminated-sign illustration.\" loading=\"lazy\" decoding=\"async\">"
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/services-overview.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "31677df129823e4ba9caa1e6e4da4e5350ae33a5b4394e7c45702775c390b94e"
     },
     "services/seo/index.html": {
-      "htmlSha256": "c7311031a0845ddd3d3e8ee5ea7129f5fc4095f5f5efc136d67cb38c6012160a",
+      "htmlSha256": "e8bfdc79f8b2d8bde57a77819d3ba25755633431efc0a6c9567c0ca4b5d8026e",
       "title": "Monthly SEO for Small Businesses | Wonder and Method",
       "description": "Monthly SEO from a Buffalo studio: research, writing and completed improvements. Improve $400/month; Grow $800/month. A site review may be needed.",
       "canonical": "https://wonderandmethod.com/services/seo/",
       "robots": "index,follow",
-      "textSha256": "ef50d92d7bfbb592445937f63e19786f9a0e14a7c0cc95112fa88f3d9d5e568b",
+      "textSha256": "bcc91bd1a9b823c38d0b951c70c959072655b67a0a6d3a6bfdf0545d8914e437",
       "headings": [
         [
           "h1",
@@ -469145,17 +469160,18 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "34e431f010a091c25560d3a0935410a2a2c55af4d0339430bb31107e85e5803d"
     },
     "services/web-design/index.html": {
-      "htmlSha256": "b15a147a95682cbdfedfc7433790a51f552d673dcdbd9ee288ad9122a0404d32",
+      "htmlSha256": "a94d3aecd0b5c83108e1cb80e5fbdaee643371526805ae6d77516d11ca527b7b",
       "title": "Small Business Web Design | Wonder and Method",
       "description": "Custom websites from $1,400. Work with a Buffalo designer on writing, research, SEO and original graphics for a 6-, 15- or 30-page website.",
       "canonical": "https://wonderandmethod.com/services/web-design/",
       "robots": "index,follow",
-      "textSha256": "ae840e36a8d8ac4ca75f68abcd1ff332534970689e2e2fa1c5a76bd3f07e95f0",
+      "textSha256": "d1b5d704e062ea01c8fdf498405953b3db59594eedfd6cde44c2f7f57d54f809",
       "headings": [
         [
           "h1",
@@ -469357,6 +469373,7 @@
         "/services/website-redesign/",
         "/terms/",
         "/work/",
+        "/work/#design-desk",
         "/work/assetrounds/",
         "/work/buffalo-civic/",
         "/work/fieldwork/",
@@ -469370,17 +469387,18 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "86b0ad21f58376696c0f7abb0247de203eac91bde348518535dc9082a5ae7e20"
     },
     "services/website-addons/index.html": {
-      "htmlSha256": "4a7abd3034dcd5e951ebc501dac4b8c3107a53a846c971cd0db2e1567829b1bc",
+      "htmlSha256": "5783aeb75004581483d4fec6338a04ef32732dd43555eabc7aa6727946a921d2",
       "title": "Website add-ons and fixed prices | Wonder and Method",
       "description": "Add pages, forms, booking, payments or business tools to your website. Compare fixed fees and included work before requesting an add-on quote.",
       "canonical": "https://wonderandmethod.com/services/website-addons/",
       "robots": "index,follow",
-      "textSha256": "8d0db245a6cb1094cdf611fb5e36edae9ca472d458b12497e726ebc2edd9f8a8",
+      "textSha256": "830f557bef7d90fe07d62aac6ecb9c20d8ef6af912667d5ddba7256de47fb158",
       "headings": [
         [
           "h1",
@@ -469449,6 +469467,10 @@
         [
           "h2",
           "Custom applications"
+        ],
+        [
+          "h3",
+          "Keep track of the next step."
         ],
         [
           "h3",
@@ -469611,16 +469633,18 @@
         "/work/lead-workbench/"
       ],
       "media": [
-        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">"
+        "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">",
+        "<img src=\"/assets/work/lead-workbench.webp?v=BUILD\" width=\"1200\" height=\"900\" srcset=\"/assets/work/lead-workbench-240.webp?v=BUILD 240w, /assets/work/lead-workbench-480.webp?v=BUILD 480w, /assets/work/lead-workbench-640.webp?v=BUILD 640w, /assets/work/lead-workbench-960.webp?v=BUILD 960w, /assets/work/lead-workbench.webp?v=BUILD 1200w\" sizes=\"(max-width:767px) calc(100vw - 80px), 480px\" alt=\"The inquiry tracker demonstration with fictional inquiries and stage controls.\" loading=\"lazy\" decoding=\"async\">"
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "35e2976a20709d1aa6a2178354ad2e9ce14c0d188524011a95c1e95dd2ed2734"
     },
     "services/website-audit/index.html": {
-      "htmlSha256": "5339ec23cace38403a1fed5fc075543d195a0b8cd7a1f9740047282072b33c7b",
+      "htmlSha256": "093973931391517935c106bf6b765e973c2aacacb128b841739535284e34698e",
       "title": "Website Audits and Small Fixes | Wonder and Method",
       "description": "Website Baseline $399: review and priorities. Audit &amp; Fix Sprint $750: review plus up to two agreed small fixes on a supported site.",
       "canonical": "https://wonderandmethod.com/services/website-audit/",
@@ -469802,17 +469826,18 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "048cc61750edbd069181251897e424176403efc4d44f8275471109d0f0099073"
     },
     "services/website-care/index.html": {
-      "htmlSha256": "966c1a7cd4a3967261d384c0ae36adc10667cc2e760e7f2133ee48b7e99255cb",
+      "htmlSha256": "0e1165b18d652fab02c09d17f2ea4f5612ee1f4f7eb2fb89d0024827051d8ce1",
       "title": "Monthly Website Care and Maintenance | Wonder and Method",
       "description": "Website checks, changes you send and a report for $150/month. Existing sites may need the $399 Website Baseline. See coverage and limits.",
       "canonical": "https://wonderandmethod.com/services/website-care/",
       "robots": "index,follow",
-      "textSha256": "930b5ebd08b4e68f29e5c6c49d24b404848f5083d06d8641de0af01bbb6e452b",
+      "textSha256": "4391eabc48da0135cbef3b4858aeb59f926ba113e537b6fa43194ce19d1fa2af",
       "headings": [
         [
           "h1",
@@ -469821,6 +469846,10 @@
         [
           "h2",
           "Your monthly report."
+        ],
+        [
+          "h3",
+          "A small change, followed through."
         ],
         [
           "h2",
@@ -469994,17 +470023,18 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "48dac20d563b58c93026e2b12173321e1fd9a9d020c7ef432bd524289ef9e4ff"
     },
     "services/website-redesign/index.html": {
-      "htmlSha256": "51365e6d17c968ede6d769cac5c9f48f8609976e7adf25369c41f1ce67527a0e",
+      "htmlSha256": "d421f9f0bce6d7337c5f7193d409f7c18f1eb084afc7a13f541b1119acd3d87f",
       "title": "Website Redesign for Small Businesses | Wonder and Method",
       "description": "Rebuild a website around clear services, useful content and a working inquiry path. Packages from $1,400; review the existing site first.",
       "canonical": "https://wonderandmethod.com/services/website-redesign/",
       "robots": "index,follow",
-      "textSha256": "c64faa072a3327a81247b086b5961da49c05adefe7139c0c5f27013165739552",
+      "textSha256": "9898a47efd461621046c8985e55266f3cc281515a2bf299965c9285ca8bee127",
       "headings": [
         [
           "h1",
@@ -470048,6 +470078,22 @@
         ],
         [
           "h2",
+          "Keep the useful parts. Plan what changes."
+        ],
+        [
+          "h3",
+          "Keep"
+        ],
+        [
+          "h3",
+          "Improve"
+        ],
+        [
+          "h3",
+          "Move"
+        ],
+        [
+          "h2",
           "Your website and your files."
         ],
         [
@@ -470075,6 +470121,7 @@
         "migration",
         "page-top",
         "redesign-example",
+        "redesign-map-title",
         "redesign-packages",
         "related-planning-guides",
         "service-areas",
@@ -470189,7 +470236,8 @@
       ],
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "cb414891be0667d4f60e40526ef211852f01bfa62ced731f3976146530fd96fe"
     },
@@ -471383,32 +471431,20 @@
       "schemaSha256": "8831b6ca7fbae8063f4c48c5c8266c38d8b2c6e51e10248e8ee65f518235a4be"
     },
     "work/index.html": {
-      "htmlSha256": "a032aadadb68ef6f022ca510bff5c7aa0af632c2eb254faa9e7023bcb704840a",
+      "htmlSha256": "78dff9704500e2407cf4a7a66a441df09b2c8a87fe4cadf9ff018b24ecb6cf33",
       "title": "Website Portfolio &amp; Design Concepts | Wonder and Method",
       "description": "Explore Wonder and Method studio work: websites, search planning, a working lead-list demo, brand design and original animation.",
       "canonical": "https://wonderandmethod.com/work/",
       "robots": "index,follow",
-      "textSha256": "b135b32d3d58f6f5217c94681a02b9a7a6561dd598562fe30b712a4897a2be8d",
+      "textSha256": "7d165f54a75162755b469bece4f94a0f671db0c0f800c9966eeae59f3d74ef21",
       "headings": [
         [
           "h1",
-          "Website projects, concepts and design studies."
+          "Websites, concepts and design studies."
         ],
         [
           "h2",
-          "AssetRounds."
-        ],
-        [
-          "h3",
-          "The website task"
-        ],
-        [
-          "h3",
-          "My work: website design and build"
-        ],
-        [
-          "h3",
-          "Three decisions you can inspect"
+          "Three businesses. Three different starting points."
         ],
         [
           "h2",
@@ -471421,6 +471457,14 @@
         [
           "h2",
           "Hearthside"
+        ],
+        [
+          "h2",
+          "See what a design choice changes."
+        ],
+        [
+          "h3",
+          "A garden to come home to."
         ],
         [
           "h2",
@@ -471473,6 +471517,8 @@
         "assetrounds",
         "buffalo-civic",
         "creative-samples",
+        "design-desk",
+        "design-desk-title",
         "fieldwork",
         "footer-areas-heading",
         "footer-information-heading",
@@ -471500,6 +471546,7 @@
       "links": [
         "#assetrounds",
         "#buffalo-civic",
+        "#design-desk",
         "#fieldwork",
         "#main",
         "#page-top",
@@ -471590,12 +471637,12 @@
         "/work/assetrounds/",
         "/work/buffalo-civic/",
         "/work/fieldwork/",
+        "/work/fieldwork/landscaping/",
         "/work/hearthside/",
         "/work/lead-workbench/",
         "/work/northline/",
         "/work/source-handoff/",
-        "/work/studio-search/",
-        "https://assetrounds.com/"
+        "/work/studio-search/"
       ],
       "media": [
         "<img class=\"brand-emblem\" src=\"/assets/brand/emblem.svg?v=BUILD\" width=\"1144\" height=\"740\" alt=\"\" aria-hidden=\"true\">",
@@ -471605,14 +471652,15 @@
         "<img src=\"/assets/creative-samples/photo-before.webp?v=BUILD\" width=\"1200\" height=\"800\" srcset=\"/assets/creative-samples/photo-before-240.webp?v=BUILD 240w, /assets/creative-samples/photo-before-480.webp?v=BUILD 480w, /assets/creative-samples/photo-before-640.webp?v=BUILD 640w, /assets/creative-samples/photo-before-960.webp?v=BUILD 960w, /assets/creative-samples/photo-before.webp?v=BUILD 1200w\" sizes=\"(max-width:767px) calc(100vw - 40px), 620px\" alt=\"AI-generated example: cream ceramic mugs and a bowl on a warm wooden table with tools in the background.\" loading=\"lazy\">",
         "<img src=\"/assets/source-handoff/folder-map.svg?v=BUILD\" width=\"1200\" height=\"900\" alt=\"A delivery folder with start-here instructions, website source, hosting files, documentation and verification.\" loading=\"lazy\" decoding=\"async\">",
         "<img src=\"/assets/waterfront/film-poster-landscape.webp?v=BUILD\" width=\"1200\" height=\"750\" alt=\"Illustrated waterfront architecture and changing light.\" loading=\"lazy\" decoding=\"async\">",
-        "<img src=\"/assets/work/assetrounds/desktop.webp?v=BUILD\" width=\"1440\" height=\"1000\" srcset=\"/assets/work/assetrounds/desktop-480.webp?v=BUILD 480w, /assets/work/assetrounds/desktop-960.webp?v=BUILD 960w, /assets/work/assetrounds/desktop-1440.webp?v=BUILD 1440w\" sizes=\"(max-width:767px) calc(100vw - 40px), (max-width:1200px) 68vw, 940px\" alt=\"Actual AssetRounds desktop homepage: product introduction beside an illuminated-sign illustration and sample inspection record.\" fetchpriority=\"high\" decoding=\"async\">",
-        "<img src=\"/assets/work/assetrounds/mobile.webp?v=BUILD\" width=\"390\" height=\"844\" alt=\"Actual AssetRounds phone homepage, with a compact menu, sign illustration and launch-list button.\" loading=\"lazy\" decoding=\"async\">",
+        "<img src=\"/assets/work/assetrounds/desktop.webp?v=BUILD\" width=\"1440\" height=\"1000\" srcset=\"/assets/work/assetrounds/desktop-480.webp?v=BUILD 480w, /assets/work/assetrounds/desktop-960.webp?v=BUILD 960w, /assets/work/assetrounds/desktop-1440.webp?v=BUILD 1440w\" sizes=\"(max-width:767px) calc(100vw - 40px), (max-width:1200px) 52vw, 650px\" alt=\"Actual AssetRounds website with its product introduction and illuminated-sign example.\" fetchpriority=\"high\" decoding=\"async\">",
         "<img src=\"/assets/work/concepts/fieldwork-showcase-desktop.webp?v=BUILD\" srcset=\"/assets/work/concepts/fieldwork-showcase-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/fieldwork-showcase-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/fieldwork-showcase-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/fieldwork-showcase-desktop.webp?v=BUILD 1240w\" sizes=\"(max-width:767px) calc(100vw - 42px), (max-width:1023px) calc(45vw - 22px), (max-width:1440px) calc(30vw - 29px), 404px\" width=\"1240\" height=\"776\" loading=\"lazy\" decoding=\"async\" alt=\"Fieldwork fictional website, showing its actual page design\">",
+        "<img src=\"/assets/work/concepts/fieldwork.svg?v=BUILD\" width=\"1200\" height=\"900\" alt=\"Illustrated garden plan with curved planting beds, a stepping-stone path and layered foliage.\" loading=\"lazy\" decoding=\"async\">",
         "<img src=\"/assets/work/concepts/hearthside-showcase-desktop.webp?v=BUILD\" srcset=\"/assets/work/concepts/hearthside-showcase-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/hearthside-showcase-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/hearthside-showcase-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/hearthside-showcase-desktop.webp?v=BUILD 1240w\" sizes=\"(max-width:767px) calc(100vw - 42px), (max-width:1023px) calc(45vw - 22px), (max-width:1440px) calc(30vw - 29px), 404px\" width=\"1240\" height=\"738\" loading=\"lazy\" decoding=\"async\" alt=\"Hearthside fictional website, showing its actual page design\">",
         "<img src=\"/assets/work/concepts/northline-showcase-desktop.webp?v=BUILD\" srcset=\"/assets/work/concepts/northline-showcase-desktop-480.webp?v=BUILD 480w, /assets/work/concepts/northline-showcase-desktop-640.webp?v=BUILD 640w, /assets/work/concepts/northline-showcase-desktop-960.webp?v=BUILD 960w, /assets/work/concepts/northline-showcase-desktop.webp?v=BUILD 1240w\" sizes=\"(max-width:767px) calc(100vw - 42px), (max-width:1023px) calc(45vw - 22px), (max-width:1440px) calc(30vw - 29px), 404px\" width=\"1240\" height=\"734\" loading=\"lazy\" decoding=\"async\" alt=\"Northline fictional website, showing its actual page design\">",
         "<img src=\"/assets/work/intent-map.svg?v=BUILD\" width=\"1200\" height=\"900\" alt=\"Three customer questions mapped to the web design, pricing and website budget pages.\" loading=\"lazy\" decoding=\"async\">",
         "<img src=\"/assets/work/lead-workbench.webp?v=BUILD\" width=\"1200\" height=\"900\" srcset=\"/assets/work/lead-workbench-240.webp?v=BUILD 240w, /assets/work/lead-workbench-480.webp?v=BUILD 480w, /assets/work/lead-workbench-640.webp?v=BUILD 640w, /assets/work/lead-workbench-960.webp?v=BUILD 960w, /assets/work/lead-workbench.webp?v=BUILD 1200w\" sizes=\"(max-width:767px) 238px, 318px\" alt=\"The inquiry tracker demo with fictional inquiries and stage controls.\" loading=\"lazy\" decoding=\"async\">",
         "<img src=\"/assets/work/studio-website.webp?v=BUILD\" width=\"1425\" height=\"990\" srcset=\"/assets/work/studio-website-240.webp?v=BUILD 240w, /assets/work/studio-website-480.webp?v=BUILD 480w, /assets/work/studio-website-640.webp?v=BUILD 640w, /assets/work/studio-website-960.webp?v=BUILD 960w, /assets/work/studio-website.webp?v=BUILD 1425w\" sizes=\"(max-width:767px) 238px, 318px\" alt=\"The Wonder and Method studio website and project navigation.\" loading=\"lazy\" decoding=\"async\">",
+        "<source media=\"(max-width:767px)\" srcset=\"/assets/work/assetrounds/mobile.webp?v=BUILD\" width=\"390\" height=\"844\">",
         "<source media=\"(max-width:767px)\" srcset=\"/assets/work/concepts/fieldwork-showcase-phone-350.webp?v=BUILD 350w, /assets/work/concepts/fieldwork-showcase-phone.webp?v=BUILD 700w\" sizes=\"calc(100vw - 42px)\" width=\"700\" height=\"1670\">",
         "<source media=\"(max-width:767px)\" srcset=\"/assets/work/concepts/hearthside-showcase-phone-350.webp?v=BUILD 350w, /assets/work/concepts/hearthside-showcase-phone.webp?v=BUILD 700w\" sizes=\"calc(100vw - 42px)\" width=\"700\" height=\"1518\">",
         "<source media=\"(max-width:767px)\" srcset=\"/assets/work/concepts/northline-showcase-phone-350.webp?v=BUILD 350w, /assets/work/concepts/northline-showcase-phone.webp?v=BUILD 700w\" sizes=\"calc(100vw - 42px)\" width=\"700\" height=\"1754\">",
@@ -471622,7 +471670,8 @@
       "styles": [
         "<link rel=\"stylesheet\" href=\"/assets/analytics-consent.css?v=BUILD\">",
         "<link rel=\"stylesheet\" href=\"/assets/living-city.css?v=BUILD\">",
-        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">"
+        "<link rel=\"stylesheet\" href=\"/assets/site.css?v=BUILD\">",
+        "<link rel=\"stylesheet\" href=\"/assets/tailored-visuals.css?v=BUILD\">"
       ],
       "schemaSha256": "b45e95dff2a6038f9c1cb5bd22d0b201dfa5bf5691bcecf5855fb61f1d1bc530"
     },
@@ -473708,7 +473757,7 @@
   },
   "assets": {
     "_headers": {
-      "sha256": "8c327967512954423bf27306fa8eb886d54e71f9250978d068126b86c50de145"
+      "sha256": "560d782f557d7292293831f841d4deb668e49eda908b7a37e9077644bd47c703"
     },
     "apple-touch-icon.png": {
       "sha256": "12acdeeed7fc5df2720d009ee8d020a9dc5d6658ec7fadd7a653d850172cd0f6"
@@ -473720,7 +473769,7 @@
       "sha256": "0ac0c2403e7f5f3cf9f986d0406a0993f0e7903cd7e6d582ce9fe3242845276f"
     },
     "assets/asset-hashes.json": {
-      "sha256": "02477e6629ffff782416d241bc902f1f3ef52db25e30db014f14f03373c41578"
+      "sha256": "858a3dd881b96ea93317a98340f6ac03afb972913c0436e1a09980a32ef91fab"
     },
     "assets/audit-samples/northline-after.png": {
       "sha256": "eaea67ae7ce63d171b381104b0d474ca8e5226bde4a5ee0bfe5b2dcc043ea108"
@@ -473777,7 +473826,7 @@
       "sha256": "02ac704a8183ef572f00bd7cb73b0e11b63eccd925356666ac9e641edb7a8f6c"
     },
     "assets/buyer-packs/owned-audit-two-fix-record.json": {
-      "sha256": "733968339192ef2a569acdb9cf315eca89388ad16521d21d22e413e83cd04626"
+      "sha256": "6321b5ad89f7713c6a0ddf42fe3e62f96c0796051d870e7f46894888cea71f9f"
     },
     "assets/calculator.js": {
       "sha256": "efa0dfd0615b5385720c9d8dae868e806b1544dd55e1f362124f0962d2798c98"
@@ -473871,6 +473920,9 @@
     },
     "assets/creative-samples/photo-before.webp": {
       "sha256": "771a6f3cb657b0eabfd413da8d914f2a0e6c21fc910c535b9fa5b21f9069403a"
+    },
+    "assets/design-desk.js": {
+      "sha256": "0dddec45561c33ac057f6d3e29584b1c6ca24bb6f0192c053692741f0a4fefef"
     },
     "assets/fonts/font-1.woff2": {
       "sha256": "7234ed860a9cc83045413c4faee63c960a8f2d1917adcf728119307d56e0d783"
@@ -481441,6 +481493,9 @@
     "assets/support-chat.js": {
       "sha256": "153aef73583a6f1b44b678e749d927a0bb696b745667278c9ab5ea9e07a679a8"
     },
+    "assets/tailored-visuals.css": {
+      "sha256": "c2c60e620c5b675413950ddee2c7e225cdf109364663ea846fc8f2e15cfa66a8"
+    },
     "assets/waterfront/arrow-up-right.svg": {
       "sha256": "80337586f0a23fcf15e6e9eb9662dc024b7a69ddb916776ec42b66b2bc8036b7"
     },
@@ -481676,7 +481731,7 @@
       "sha256": "764dc5ca3a223f6d457d142f87e06136fb4835c16d657e4d4af9de2acf91bda4"
     },
     "sitemap.xml": {
-      "sha256": "132ae1efc798b903c42d14fbe44f003f8b2f7c0decb67d32064a95989005da86"
+      "sha256": "9a5a11177c96f6d2e82911c8796fa0d1566cb1e903d139a82a3a15076ce5682a"
     }
   }
 }

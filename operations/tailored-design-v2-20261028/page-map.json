@@ -1,0 +1,143 @@
+{
+  "version": 2,
+  "date": "2026-10-28",
+  "status": "plan-only",
+  "sourceRevision": "d290c89",
+  "supersedes": "tailored-plan.html",
+  "selectedIdeas": [
+    1,
+    2,
+    3,
+    6
+  ],
+  "newRoutes": [],
+  "routes": [
+    {
+      "name": "Work",
+      "url": "/work/",
+      "depth": "Major",
+      "change": "Split opening with one featured AssetRounds preview; shorten duplicated case-study content; retain all existing work; add the Fieldwork design desk.",
+      "acceptance": "The opening shows real website work; each concept can be inspected; the desk explains a design decision; inquiry remains easy to find."
+    },
+    {
+      "name": "Services",
+      "url": "/services/",
+      "depth": "Major",
+      "change": "Add a concise evidence panel to each of the existing Build / Improve / Ongoing groups. Keep the seven service cards, prices and group anchors.",
+      "acceptance": "A visitor can distinguish a new website, a repair and ongoing help without using an interaction or opening an example."
+    },
+    {
+      "name": "Web design",
+      "url": "/services/web-design/",
+      "depth": "Refine existing example",
+      "change": "The AssetRounds preview is already directly after the introduction. Improve its framing and explanation in place; add one quiet design-desk link.",
+      "acceptance": "Exactly one featured example; current writing example, starting price and primary inquiry remain available."
+    },
+    {
+      "name": "Website redesign",
+      "url": "/services/website-redesign/",
+      "depth": "Targeted",
+      "change": "Add an illustrative Keep / Improve / Move page map beside the existing redesign explanation.",
+      "acceptance": "The map explains content and address decisions without implying a completed client redesign."
+    },
+    {
+      "name": "Contractor websites",
+      "url": "/services/contractor-websites/",
+      "depth": "Targeted",
+      "change": "Pair the actual Northline concept capture with one short note connecting services, project evidence and an estimate request.",
+      "acceptance": "The example is labeled fictional and links to the existing concept; trade-specific information remains more prominent than decoration."
+    },
+    {
+      "name": "Website reviews & fixes",
+      "url": "/services/website-audit/",
+      "depth": "Targeted",
+      "change": "Refine auditSample() in place: show the existing Northline before/after enlarged-text repair and its Finding / Action / Check explanation.",
+      "acceptance": "Preserve the local-preview provenance and same-width/text-size explanation; distinguish screenshot evidence from the separate two-fix record."
+    },
+    {
+      "name": "Website add-ons",
+      "url": "/services/website-addons/",
+      "depth": "Targeted",
+      "change": "Show the existing inquiry tracker demonstration near the custom-tools category.",
+      "acceptance": "Caption explains that the browser demo does not send email or connect to a live customer system; prices and scope remain readable."
+    },
+    {
+      "name": "Website care",
+      "url": "/services/website-care/",
+      "depth": "Targeted",
+      "change": "Show approved hours/photo change → updated page → check record, based on the current illustrative care scenario.",
+      "acceptance": "Customer-supplied information and approval remain explicit; the visual does not imply autonomous updates or new package inclusions."
+    },
+    {
+      "name": "Monthly SEO",
+      "url": "/services/seo/",
+      "depth": "Targeted",
+      "change": "Refine the existing monthly example into customer question → researched page improvement → published page and checks.",
+      "acceptance": "Research, writing, publication and checks remain parts of ONE agreed improvement. Keep the existing sample and real studio page-planning link; no invented outcomes."
+    },
+    {
+      "name": "Process",
+      "url": "/process/",
+      "depth": "Targeted",
+      "change": "Add compact proposal, design-review and handoff artifacts beside the matching stages. Retain the timing panel and current sequence.",
+      "acceptance": "Customer/studio responsibilities, payment triggers and stage anchors remain intact; illustrations do not duplicate or renumber milestones."
+    },
+    {
+      "name": "Homepage",
+      "url": "/",
+      "depth": "One connection",
+      "change": "Add one contextual “Try a design direction” link near the existing concept examples, pointing to /work/#design-desk.",
+      "acceptance": "Living city, section order, existing AssetRounds preview, primary actions, navigation and footer retain their behavior."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "Must fix",
+      "topic": "Concept image versus production",
+      "finding": "The approved image shows the intended composition, but invents some artwork and a mini-site menu.",
+      "resolution": "Use its hierarchy, palette and rhythm. Use actual project captures and the existing Fieldwork drawing in production; omit fake preview navigation."
+    },
+    {
+      "priority": "Must fix",
+      "topic": "Duplicate proof",
+      "finding": "V1 says to move the Web Design example earlier, although it already follows the intro. Work also has a separate full case study.",
+      "resolution": "Refine Web Design in place; use one compact Work feature and send detailed inspection to the existing case-study page."
+    },
+    {
+      "priority": "Must fix",
+      "topic": "Phone composition",
+      "finding": "V1 lists breakpoints but does not establish the reading order or space budget of the desk.",
+      "resolution": "Define phone-first hero and desk orders; show the result immediately after its controls; put explanations underneath."
+    },
+    {
+      "priority": "Must fix",
+      "topic": "Shared rendering boundaries",
+      "finding": "assetRoundsPreview() is used on Home and Web Design; assetRoundsCase() is used on Work and its detail page. Process milestones are also shared.",
+      "resolution": "Use explicit opt-in variants or separate landing components. Keep current defaults for unmodified callers."
+    },
+    {
+      "priority": "Must fix",
+      "topic": "Category navigation",
+      "finding": "The mockup can be interpreted as filtering tabs. Existing Work categories are anchor links.",
+      "resolution": "Keep ordinary in-page links, visible content and working fragment URLs. No filter, horizontal swipe requirement or tab semantics."
+    },
+    {
+      "priority": "Improve",
+      "topic": "Reason behind each example",
+      "finding": "The original visual direction is strong but could still produce an attractive wall of examples.",
+      "resolution": "Each example answers one visitor question, carries one sentence about a design decision and offers one clear inspection link."
+    },
+    {
+      "priority": "Improve",
+      "topic": "Acceptance criteria",
+      "finding": "A generic “all six combinations work” misses resize, failed initialization, link carry-through and visual changes below the fold.",
+      "resolution": "Add a state matrix, real phone review, zoom/reflow, current source baseline, link and asset checks, and an evidence checklist."
+    },
+    {
+      "priority": "Improve",
+      "topic": "Delivery discipline",
+      "finding": "The plan can be built as one large change before the new visual system is proven.",
+      "resolution": "Prove Work and one service group first; review a reusable component sheet; then adapt details and Process."
+    }
+  ]
+}

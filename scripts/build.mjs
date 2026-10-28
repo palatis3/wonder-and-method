@@ -50,8 +50,9 @@ export async function buildCssBundles(assets,{includeChat=false}={}){
  return {shared:await minify(shared),plans:await minify(plans),guides:await minify(guides)};
 }
 
-export function applyCssBundles(html,boot,{family}={}){
+export function applyCssBundles(html,boot,{family,path}={}){
  const overview=html.includes('class="services-overview"');
+ const tailored=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/website-audit/','/services/website-addons/','/services/website-care/','/services/seo/','/process/'].includes(path);
  const plans=html.includes('href="/assets/package-visuals.css"');
  const guides=html.includes('href="/assets/journal.css"');
  const city=html.includes('href="/assets/living-city.css"');
@@ -66,7 +67,7 @@ export function applyCssBundles(html,boot,{family}={}){
  // Discover the home hero's blocking styles before its font/image preloads
  // and module requests. Keep the two stylesheets in their existing cascade.
  if(family==='home'&&city&&html.includes('</title>'))return html.replace('</title>','</title>'+styles);
- return html.replace('</head>',styles+(overview?'<link rel="stylesheet" href="/assets/services-overview.css">':'')+'</head>');
+ return html.replace('</head>',styles+(tailored?'<link rel="stylesheet" href="/assets/tailored-visuals.css">':'')+(overview?'<link rel="stylesheet" href="/assets/services-overview.css">':'')+'</head>');
 }
 
 export async function buildBrowserBundles(root,config){
@@ -198,7 +199,7 @@ await writeFile(resolve(output,'assets/site-plans.css'),css.plans);
 await writeFile(resolve(output,'assets/site-guides.css'),css.guides);
 // A single versioned base survives navigation between page families. Keep the
 // existing section additions and cascade order; family only controls discovery.
-for(const page of pages)page.html=applyCssBundles(page.html,boot,{family:pageStyleFamily(page.path)});
+for(const page of pages)page.html=applyCssBundles(page.html,boot,{family:pageStyleFamily(page.path),path:page.path});
 const prices=priceList(offers);
 await writeFile(resolve(output,'assets/prices.json'),JSON.stringify(prices));
 await writeBuyerPacks(output,offers);

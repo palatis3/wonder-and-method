@@ -41,7 +41,7 @@ test('cost preset exposes assumptions and recalculates actual edited inputs',asy
 });
 
 test('concept preference and optional website context survive the inquiry route',async({page})=>{
- await page.goto('/work/');await page.getByRole('link',{name:'Ask about a Fieldwork direction',exact:true}).click();
+ await page.goto('/work/');await page.locator('#fieldwork').getByRole('link',{name:'Ask about a Fieldwork direction',exact:true}).click();
  await expect(page.locator('#request-summary')).toContainText('Fieldwork');await expect(page.locator('[name=concept]')).toHaveValue('fieldwork');
  await expect(page.locator('[data-project-details]')).not.toHaveAttribute('open','');
  await page.locator('[data-project-details]>summary').click();await expect(page.locator('#website')).toBeVisible();
