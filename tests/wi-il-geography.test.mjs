@@ -120,8 +120,8 @@ test('compressed dictionary preserves every term while keeping the existing payl
 test('WI/IL retain the original five routes and the separately reviewed county additions',()=>{
  const pages=renderPages({config,offers,map,geography:erieGeography}),routes=pages.map(page=>page.path).filter(path=>!isLater(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1224);assert.equal(approvedPaths.length,5);
- assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
- assert.deepEqual(Object.keys(dates).filter(path=>!isLater(path)).sort(),[...preservation.dateRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
+ assert.deepEqual(routes,['/work/assetrounds/',...preservation.renderedRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>!isLater(path)).sort(),['/work/assetrounds/',...preservation.dateRoutes,...approvedPaths,...countyDepth.filter(path=>!isLater(path))].sort());
  const indexed=[...crawlFiles(config,pages).sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>!isLater(path)).sort();
  assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));
  assert.deepEqual(records.filter(record=>additions.some(state=>record.path.startsWith('/areas/'+state+'/'))).map(record=>record.path).sort(),[...approvedPaths.slice(2),...countyDepth.filter(path=>!isLater(path))].sort());

@@ -1,7 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {updateLead,pipelineReport} from '../scripts/lead-pipeline.mjs';
+import {updateLead,pipelineReport,pipelineProgression} from '../scripts/lead-pipeline.mjs';
 const input={economic_buyer_id:'fixture-buyer',inquiry_reference:'fixture-ref',buyer_job:'Make the service clearer',appropriate_offer:'focused_site',source:'referral'};
+test('recorded progression deduplicates reopened stages and excludes incomplete histories',()=>{
+ const stages=['received','qualified','proposal','qualified','won'];
+ const valid={stage:'won',stage_history:stages.map((stage,i)=>({stage,at:`2026-10-${String(i+10).padStart(2,'0')}T12:00:00Z`}))};
+ const r=pipelineProgression({rows:[valid,{stage:'proposal'},{stage:'qualified',stage_history:[{stage:'qualified',at:'2026-10-10'}]},{stage:'received',stage_history:[{stage:'received',at:'bad'}]}]});
+ assert.equal(r.recorded_from_receipt,1);assert.equal(r.excluded_incomplete_histories,3);assert.equal(r.ever_recorded_at_stage.qualified,1);assert.equal(r.percent_of_recorded_receipts.won,100);
+ assert.equal(pipelineProgression({rows:[]}).percent_of_recorded_receipts.won,null);
+ assert.equal(pipelineProgression({rows:[{stage:'proposal',stage_history:[{stage:'received',at:'2026-10-11'},{stage:'proposal',at:'2026-10-10'}]}]}).recorded_from_receipt,0);
+});
+test('malformed history entries are excluded without breaking the private report',()=>{
+ const received={stage:'received',at:'2026-10-10'},won={stage:'won',at:'2026-10-12'};
+ const rows=[{stage:'received',stage_history:[null]},...[null,undefined,'received',42,[],{}].map(bad=>({stage:'won',stage_history:[received,bad,won]}))];
+ const report=pipelineReport({rows});
+ assert.equal(report.progression.recorded_from_receipt,0);
+ assert.equal(report.progression.excluded_incomplete_histories,7);
+ assert.equal(report.progression.percent_of_recorded_receipts.won,null);
+});
+
 test('one buyer retains one reference and stage updates do not inflate lead counts',()=>{
  const first=updateLead({rows:[]},input,'2026-10-17T12:00:00Z');
  const second=updateLead(first,{...input,stage:'qualified'},'2026-10-18T12:00:00Z');

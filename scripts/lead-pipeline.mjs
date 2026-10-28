@@ -54,13 +54,25 @@ export function updateLead(board,input,now=new Date().toISOString()){
  return copy;
 }
 
+export function pipelineProgression(board){
+ const rows=(board.rows||[]).filter(row=>pipelineStages.includes(row.stage));
+ // Only histories recorded from receipt support a common starting cohort.
+ const complete=rows.filter(row=>{
+  const h=row.stage_history;
+  return Array.isArray(h)&&h.length>0&&h.every(item=>item!==null&&typeof item==='object'&&!Array.isArray(item))&&h[0].stage==='received'&&h.at(-1).stage===row.stage&&h.every((item,i)=>pipelineStages.includes(item.stage)&&Number.isFinite(Date.parse(item.at))&&(!i||Date.parse(item.at)>=Date.parse(h[i-1].at)));
+ });
+ const reached=Object.fromEntries(pipelineStages.map(stage=>[stage,complete.filter(row=>row.stage_history.some(item=>item.stage===stage)).length]));
+ const percent=count=>complete.length?Math.round(count/complete.length*1000)/10:null;
+ return {recorded_from_receipt:complete.length,excluded_incomplete_histories:rows.length-complete.length,ever_recorded_at_stage:reached,percent_of_recorded_receipts:{qualified:percent(reached.qualified),proposal:percent(reached.proposal),won:percent(reached.won)},limits:'One buyer counted once per stage. Stages can be skipped or reopened; counts need not form a descending funnel. These are recorded lead histories, not attributed website visitors. Null percentages mean no eligible histories. No claim of causal improvement or recognized revenue.'};
+}
+
 export function pipelineReport(board,now=new Date().toISOString()){
  const rows=(board.rows||[]).filter(row=>pipelineStages.includes(row.stage));
  const count=items=>Object.fromEntries(pipelineStages.map(stage=>[stage,items.filter(row=>row.stage===stage).length]));
  const group=key=>Object.fromEntries([...new Set(rows.map(row=>row[key]||'unknown'))].sort().map(value=>[value,count(rows.filter(row=>(row[key]||'unknown')===value))]));
  const unsuccessful=rows.filter(row=>row.stage!=='won');
  const missingRetention=unsuccessful.filter(row=>!row.inquiry_retention_due_at).length;
- return {as_of:now,total_recorded_buyers:rows.length,current_stages:count(rows),by_service:group('appropriate_offer'),by_stated_source:group('source'),overdue_next_actions:rows.filter(row=>!['won','lost'].includes(row.stage)&&row.next_action_date&&Date.parse(row.next_action_date)<Date.parse(now.slice(0,10))).length,retention_reviews_due:unsuccessful.filter(row=>retentionState(row,Date.parse(now)).reviewDue).length,retention_dates_missing:missingRetention,retention_contacts_unknown:unsuccessful.filter(row=>!retentionState(row,Date.parse(now)).knownContact).length,limits:'Current stage counts only; sources are stated, not attributed. No unique-visitor conversion rate, revenue recognition or client result is inferred. Unknown contact dates, inconsistent or expired deadlines, and expired exceptions need review. Retention flags require review across D1, Gmail and private exports.'};
+ return {as_of:now,progression:pipelineProgression(board),total_recorded_buyers:rows.length,current_stages:count(rows),by_service:group('appropriate_offer'),by_stated_source:group('source'),overdue_next_actions:rows.filter(row=>!['won','lost'].includes(row.stage)&&row.next_action_date&&Date.parse(row.next_action_date)<Date.parse(now.slice(0,10))).length,retention_reviews_due:unsuccessful.filter(row=>retentionState(row,Date.parse(now)).reviewDue).length,retention_dates_missing:missingRetention,retention_contacts_unknown:unsuccessful.filter(row=>!retentionState(row,Date.parse(now)).knownContact).length,limits:'Current stage counts only; sources are stated, not attributed. No unique-visitor conversion rate, revenue recognition or client result is inferred. Unknown contact dates, inconsistent or expired deadlines, and expired exceptions need review. Retention flags require review across D1, Gmail and private exports.'};
 }
 
 async function main(){

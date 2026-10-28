@@ -33,7 +33,7 @@ test('California/New Mexico preserve all 1853 prior service records and FAQs wit
 
 test('all 91 assessed counties remain browseable while the 9 no-addition entries do not acquire service pages',()=>{
  const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.html]));
- assert.equal(pages.size,2424);assert.equal(decisions.counties.length,91);
+ assert.equal(pages.size,2425);assert.equal(decisions.counties.length,91);
  const noAdd=decisions.counties.filter(x=>x.serviceDecision==='NO_ADDITION');assert.equal(noAdd.length,9);
  for(const entry of decisions.counties){
   const [route,fragment]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${fragment}"`),entry.areaId);

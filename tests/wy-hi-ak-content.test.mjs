@@ -29,7 +29,7 @@ test('WY/HI/AK preserve all 2215 prior services and 278 FAQ pairs while adding e
  assert.deepEqual(Object.keys(historicalFaqs).sort(),Object.keys(preservation.faqs).sort());
  for(const [p,h]of Object.entries(preservation.faqs))assert.equal(digest(beforeReviewedUxFaqEdits(p,faqs[p])),h,p);
  assert.equal(Object.keys(historicalFaqs).length,208);assert.equal(Object.values(historicalFaqs).flat().length,278);
- assert.equal(pages.size,2424);assert.equal((crawlFiles(config,rendered).sitemap.match(/<loc>/g)||[]).length,2412);
+ assert.equal(pages.size,2425);assert.equal((crawlFiles(config,rendered).sitemap.match(/<loc>/g)||[]).length,2413);
  assert.equal([...pages.keys()].filter(p=>/^\/guides\/[^/]+\/$/.test(p)).length,65);
 });
 

@@ -55,9 +55,9 @@ test('broad service coverage has 50 states a federal district and Puerto Rico an
  assert.deepEqual(serviceAreas({...config,serviceCoverage:{...config.serviceCoverage,regions:['Ohio']}}),[{'@type':'State',name:'Ohio'}]);
 });
 
-test('metadata and sitemap cover 2424 public pages while retired county URLs resolve to their state entries',()=>{
+test('metadata and sitemap cover 2425 public pages while retired county URLs resolve to their state entries',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,2424);assert.equal((sitemap.match(/<loc>/g)||[]).length,2412);
+ assert.equal(pages.length,2425);assert.equal((sitemap.match(/<loc>/g)||[]).length,2413);
  assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,65);
  assert.deepEqual(pages.filter(item=>approvedLocationPaths.includes(item.path)).map(item=>item.path).sort(),approvedLocationPaths);
  assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,2320);
@@ -66,7 +66,7 @@ test('metadata and sitemap cover 2424 public pages while retired county URLs res
   const [hub,slug]=destination.split('#');assert.ok(page(hub),destination);if(slug)assert.ok(page(hub).html.includes(`id="${slug}"`));
   assert.ok(sitemap.includes(`<loc>${config.origin+hub}</loc>`));
  }
- assert.equal(new Set(pages.map(item=>item.path)).size,2424);
+ assert.equal(new Set(pages.map(item=>item.path)).size,2425);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{
@@ -75,9 +75,9 @@ test('public descriptions stay within the editorial budget without removing coun
  const timeline=page('/guides/website-redesign-timeline/');assert.equal(timeline.title,'Website redesign timeline and common delays');assert.equal(schema(timeline.path).find(node=>node['@type']==='Article').headline,timeline.title);assert.match(timeline.html,/<h1>Website redesign timeline and common delays<\/h1>/);
 });
 
-test('Work ItemList points to seven existing pages while the visible video and studio section remain',()=>{
+test('Work ItemList points to eight existing pages while the visible video and studio section remain',()=>{
  const collection=schema('/work/').find(node=>node['@type']==='CollectionPage'),items=collection.mainEntity.itemListElement;
- assert.equal(items.length,7);
+ assert.equal(items.length,8);
  for(const [index,item]of items.entries()){
   const url=new URL(item.url);assert.equal(url.origin,config.origin);assert.equal(url.hash,'');assert.equal(url.search,'');assert.ok(page(url.pathname),item.url);assert.equal(item.position,index+1);
  }

@@ -101,6 +101,7 @@ test('floating help yields to visible inquiry controls even before focus',async(
  await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>document.fonts.ready);
  const name=page.locator('#name');
+ await page.locator('[data-project-details]>summary').click();
  // Recreate a field at the fixed launcher's height, without first focusing it.
  await page.evaluate(()=>{const input=document.querySelector('#website');scrollTo({top:Math.max(0,scrollY+input.getBoundingClientRect().top-(innerHeight-70)),behavior:'instant'});});
  await expect.poll(()=>page.evaluate(()=>{

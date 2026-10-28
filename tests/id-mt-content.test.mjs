@@ -29,7 +29,7 @@ test('ID/MT preserve 2146 prior services and 278 FAQ pairs with exactly 69 servi
 });
 
 test('all 100 areas retain directory destinations and 31 no-additions remain directory-only',()=>{
- assert.equal(pages.size,2424);assert.equal(decisions.areas.length,100);
+ assert.equal(pages.size,2425);assert.equal(decisions.areas.length,100);
  assert.equal(decisions.areas.filter(x=>x.serviceDecision==='NO_ADDITION').length,31);
  for(const entry of decisions.areas){
   const [route,id]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${id}"`));

@@ -74,7 +74,7 @@ test('contact starts with required fields and keeps optional choices and labeled
  assert.ok(html.indexOf('id="email"')<html.indexOf('id="message"'));
  assert.ok(html.indexOf('id="message"')<html.indexOf('name="goal"'));
  assert.ok(html.indexOf('id="message"')<html.indexOf('id="service"'));
- assert.match(html,/<details class="inquiry-extra"><summary>Business details \(optional\)<\/summary>/);
+ assert.match(html,/<details class="inquiry-extra" data-project-details><summary>Website and business details \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));
  assert.match(html,/one SEO improvement a month/);assert.match(html,/two SEO improvements a month/);

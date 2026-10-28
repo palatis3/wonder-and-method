@@ -270,7 +270,7 @@ test('server-rendered proposal, general question and fixed monthly context work 
   else await expect(page.locator('.request-summary')).toBeHidden();
  }
  await expect(page.locator('[data-request-label]')).toContainText('Your message');
- await page.locator('#website').fill('https://example.com/');await page.locator('#name').fill('No-script fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic question submitted with JavaScript disabled.');
+ await page.locator('[data-project-details]>summary').click();await page.locator('#website').fill('https://example.com/');await page.locator('#name').fill('No-script fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic question submitted with JavaScript disabled.');
  let submitted;
  await page.route('http://127.0.0.1:4187/api/inquiries',async route=>{
   submitted=Object.fromEntries(new URLSearchParams(route.request().postData()));

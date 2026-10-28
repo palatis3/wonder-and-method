@@ -33,7 +33,7 @@ test('North/South Dakota preserve all 1770 prior service records and FAQs with e
 
 test('all 119 assessed counties remain browseable while the 36 no-addition entries do not acquire service pages',()=>{
  const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.html]));
- assert.equal(pages.size,2424);assert.equal(decisions.counties.length,119);
+ assert.equal(pages.size,2425);assert.equal(decisions.counties.length,119);
  const noAdd=decisions.counties.filter(x=>x.serviceDecision==='NO_ADDITION');assert.equal(noAdd.length,36);
  for(const entry of decisions.counties){
   const [route,fragment]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${fragment}"`),entry.areaId);

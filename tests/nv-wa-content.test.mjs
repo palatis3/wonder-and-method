@@ -30,7 +30,7 @@ test('Nevada/Washington preserve all 1983 prior records and all FAQs with exactl
  assert.deepEqual(['nevada','washington'].map(state=>locationServices.filter(x=>x.areaId.startsWith(state+'/')).length),[14,36]);
 });
 test('all 56 areas retain directory destinations and the six no-addition decisions remain directory-only',()=>{
- assert.equal(pages.size,2424);assert.equal(decisions.counties.length,56);
+ assert.equal(pages.size,2425);assert.equal(decisions.counties.length,56);
  const noAdd=decisions.counties.filter(x=>x.serviceDecision==='NO_ADDITION');assert.equal(noAdd.length,6);
  assert.deepEqual(noAdd.map(x=>x.areaId).sort(),['nevada/eureka','nevada/lander','nevada/nye','washington/columbia','washington/cowlitz','washington/pierce']);
  for(const entry of decisions.counties){

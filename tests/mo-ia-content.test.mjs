@@ -32,7 +32,7 @@ test('Missouri/Iowa retain every prior service and FAQ and exactly the independe
 
 test('all 166 new briefs have discoverable directory links, concrete scopes and truthful provider schema',()=>{
  const pages=new Map(renderPages({config,offers,map,geography}).map(p=>[p.path,p.html]));
- assert.equal(pages.size,2424);
+ assert.equal(pages.size,2425);
  for(const path of approved.slice(2)){
   const entry=byPath.get(path),html=pages.get(path);assert(html,path);
   assert(entry.scopes.length>=1,path);assert(entry.scopes.every(s=>s.request&&s.supplies&&s.check&&s.pages.length),path);

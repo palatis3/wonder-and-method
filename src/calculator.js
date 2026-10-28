@@ -12,6 +12,16 @@ export function bindCostCalculator(calculator,prices,doc=document){
  let cyclesEdited=false;
  let hostingEdited=false;
  const annualOption=[...(field('billing').options||[])].find(option=>option.value==='annual');
+ // Public examples are an allowlist of transparent assumptions, never a quote.
+ const presetName=new URLSearchParams(doc.defaultView?.location?.search||'').get('estimate');
+ const presets={'launch-none':['launch','none'],'focused-keep_running':['focused','keep_running'],'existing-improve':['existing','improve']};
+ if(Object.hasOwn(presets,presetName)){
+  const [build,plan]=presets[presetName];field('build').value=build;field('plan').value=plan;
+  field('cycles').value='12';monthlyCycles='12';field('hostingMonths').value='12';
+  field('hostingMonthly').value='20';field('external').value='120';field('baseline').checked=true;field('sprint').checked=false;
+  const providers=calculator.querySelector('.provider-estimate');if(providers)providers.open=true;
+  const notice=doc.createElement('p');notice.className='cost-example-notice';notice.textContent='Illustrative preset loaded: 12 months, $20/month hosting and $120 for other outside bills. Replace these assumptions with your actual costs. Tax and approved extras remain separate; nothing is booked.';calculator.prepend(notice);
+ }
  if(annualOption){annualOption.disabled=prices.annual_available!==true;annualOption.hidden=prices.annual_available!==true;}
  if(prices.annual_available!==true&&field('billing').value==='annual')field('billing').value='monthly';
  const update=()=>{

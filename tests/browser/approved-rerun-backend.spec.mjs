@@ -77,7 +77,7 @@ test('enhanced form preserves county provenance, optional URL, selected extras a
  await expect(page.locator('#request-summary')).toContainText('From service-area page: Erie County, PA');await expect(page.locator('#message-help')).toContainText('when you tested it');
  await expect(page.locator('#website')).not.toHaveAttribute('required');
  await expect(page.locator('[data-addon-picker]')).toBeVisible();await expect(page.locator('[data-addon-picker]')).not.toHaveAttribute('open');
- await expect(page.locator('[data-addon-remove=standard_page]')).toBeVisible();await expect(page.locator('#business')).toBeHidden();await page.getByText('Business details (optional)',{exact:true}).click();await expect(page.locator('#business')).toBeVisible();
+ await expect(page.locator('[data-addon-remove=standard_page]')).toBeVisible();await expect(page.locator('#business')).toBeHidden();await page.getByText('Website and business details (optional)',{exact:true}).click();await expect(page.locator('#business')).toBeVisible();
  await page.locator('#name').fill('Synthetic Person');await page.locator('#email').fill('synthetic@example.test');await page.locator('#business_location').fill('Fictional town');await page.locator('#message').fill('Synthetic drafted diagnostic details.');
  await page.locator('#package-choice summary').click();await page.locator('#service').selectOption('keep_running');await expect(page.locator('#message')).toHaveValue('Synthetic drafted diagnostic details.');await expect(page.locator('#county')).toHaveValue('pennsylvania/erie-county');
  await page.getByRole('button',{name:'Send message',exact:true}).click();await expect(page.locator('#inquiry-confirmation')).toContainText('No email was sent');
@@ -131,6 +131,7 @@ test('inquiry field errors clear during correction and update the summary withou
 
 test('inquiry blur validation catches whitespace and malformed email without interrupting first entry',async({page})=>{
  const network=await mount(page,inquiryForm({live:false}),formScript);
+ await page.locator('[data-project-details]>summary').click();
  await page.locator('#name').fill('   ');
  await expect(page.locator('#name-error')).toBeEmpty();
  await page.locator('#website').focus();

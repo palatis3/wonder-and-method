@@ -29,7 +29,7 @@ test('CO/UT/PR preserve 2033 prior services and 275 FAQ pairs with exactly 113 s
 });
 
 test('all 171 areas retain directory destinations and 58 no-additions remain directory-only',()=>{
- assert.equal(pages.size,2424);assert.equal(decisions.areas.length,171);
+ assert.equal(pages.size,2425);assert.equal(decisions.areas.length,171);
  assert.equal(decisions.areas.filter(x=>x.serviceDecision==='NO_ADDITION').length,58);
  for(const entry of decisions.areas){
   const [route,id]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${id}"`));

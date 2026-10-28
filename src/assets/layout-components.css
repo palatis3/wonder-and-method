@@ -277,3 +277,21 @@ html:not(.nav-ready) .studio-site .menu-toggle{display:none}
 .studio-site.studio-pricing #website-packages>.editing-model{padding-block:.75rem;margin:.75rem 0}
 .studio-site.studio-pricing .pricing-common-costs{margin:.5rem 0 1.25rem;font-size:1rem;line-height:1.5}
 @media(max-width:767px){.studio-site.studio-pricing .pricing-intro h1{font-size:2.5rem}.studio-site.studio-pricing .pricing-intro .page-jump{gap:.1rem 1rem}.studio-site.studio-pricing #website-packages{padding-top:1.25rem}.studio-site.studio-pricing #website-packages>h2{margin-bottom:.6rem}.studio-site.studio-pricing .pricing-intro .page-jump a{font-size:.9375rem}}
+/* Buyer decision examples use the existing reading palette and native disclosures. */
+.buyer-details{margin:1.5rem 0;padding:1.2rem;border:1px solid var(--line,#b8c3b8);border-radius:12px}
+.buyer-details>summary{font-size:1.08rem;font-weight:650;cursor:pointer;min-height:44px;display:list-item}
+.buyer-example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin:1.5rem 0}
+.buyer-example-grid article{min-width:0;padding-top:1rem;border-top:1px solid var(--line,#b8c3b8)}
+.buyer-example-grid h3,.buyer-update-example h3{font-size:1.4rem;line-height:1.25}
+.buyer-cost-presets li{margin:1rem 0;line-height:1.7}
+.buyer-update-example{max-width:800px;margin-top:2rem;padding:1.25rem;border-left:3px solid #315c49;background:#f0f2eb}
+.buyer-accountability,.offer-proof{font-size:.95rem;line-height:1.6}
+.package-guide form{max-width:650px;margin:1.5rem 0}
+.package-guide label{display:block;font-weight:650;margin:1rem 0 .5rem}
+.package-guide select{display:block;width:100%;max-width:100%;padding:.8rem;font:inherit;border:1px solid #78877d;border-radius:6px;background:#fff;color:#17362d}
+.package-guide button{margin-top:1.5rem}
+.package-guide-result{margin-top:1.5rem;padding:1rem;border-left:3px solid #315c49;background:#f0f2eb}
+.package-guide-result:focus{outline:2px solid #315c49;outline-offset:4px}
+.inquiry-expectation{margin:0 0 1.5rem;padding:1rem;border-left:3px solid #315c49;background:#f0f2eb}
+.inquiry-expectation p{margin:.25rem 0}
+@media(max-width:800px){.buyer-example-grid{grid-template-columns:1fr}.buyer-details{padding:1rem}.buyer-cost-presets{padding-left:1.2rem}}

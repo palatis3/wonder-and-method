@@ -45,8 +45,8 @@ test('Georgia adds only the seven approved routes, retaining every existing rout
  const routes=pages.map(page=>page.path).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.equal(preservation.renderedRoutes.length,1210);
  assert.equal(approvedPaths.length,7);
- assert.deepEqual(routes,[...preservation.renderedRoutes,...approvedPaths].sort());
- assert.deepEqual(Object.keys(dates).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),[...preservation.dateRoutes,...approvedPaths].sort());
+ assert.deepEqual(routes,['/work/assetrounds/',...preservation.renderedRoutes,...approvedPaths].sort());
+ assert.deepEqual(Object.keys(dates).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort(),['/work/assetrounds/',...preservation.dateRoutes,...approvedPaths].sort());
  const sitemap=crawlFiles(config,pages).sitemap;
  const indexed=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>new URL(match[1]).pathname).filter(path=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths].includes(path)&&!/^\/areas\/(mississippi|alabama|wisconsin|illinois|louisiana|arkansas|texas|missouri|iowa)\//.test(path)).sort();
  assert.deepEqual(indexed,routes.filter(path=>path!=='/404/'&&!excluded.includes(path)));

@@ -63,7 +63,7 @@ if(form){
    if(payments)payments.textContent=additions.ids.length&&isBuild?addonBuildPayments(base.price+additions.total):'';
   }
   const website=field('website'),websiteDetails=inquiryWebsiteField(current);
-  website.required=websiteDetails.required;website.placeholder=websiteDetails.placeholder;
+  website.required=websiteDetails.required;const projectDetails=form.querySelector('[data-project-details]');if(projectDetails){projectDetails.querySelector('summary').textContent='Website and business details'+(websiteDetails.required?' (website required for this review)':' (optional)');if(websiteDetails.required)projectDetails.open=true;}website.placeholder=websiteDetails.placeholder;
   form.querySelector('#website-help').textContent=websiteDetails.help;
   const websiteLabel=form.querySelector('label[for=website]'),websiteNote=websiteLabel?.querySelector('.field-note');if(websiteLabel&&websiteNote){websiteNote.textContent='('+websiteDetails.note+')';websiteLabel.replaceChildren(document.createTextNode(websiteDetails.label+' '),websiteNote);}
   const label=form.querySelector('[data-request-label]');
