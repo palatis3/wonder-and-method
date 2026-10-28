@@ -79,6 +79,9 @@ test('shared header contact and the single floating top link remain reachable ac
   if(isMobile&&path==='/contact/')await expect(page.locator('.header-contact')).toHaveCount(0);
   await inViewport(contact);await expect(page.locator('.back-to-top')).not.toBeInViewport();
   if(path==='/contact/'){
+   const email=page.locator('#inquiry input[name="email"]');await email.focus();
+   await expect(page.locator('.support-chat-launch')).toBeHidden();
+   await email.blur();await page.locator('footer').scrollIntoViewIfNeeded();
    await expect(page.locator('.support-chat-launch')).toBeVisible();
    await expect(page.locator('[data-chat-open]')).toHaveCount(0);await inViewport(page.locator('.support-chat-launch'));
   }else if(concept){

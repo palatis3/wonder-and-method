@@ -25,15 +25,21 @@
     },
     {
       "file": "tests/browser/shared-controls.spec.mjs",
-      "sha256": "383f49721759444c71d37ac21f208a582df0cab46cca3e291861355bd297fac2",
+      "sha256": "509fcf94121cd11996ebc8f65d36b1c28148e545d6d26b643feaf68ab006d882",
       "skipLinesUnchanged": true,
       "policyExclusionCount": 8
     },
     {
       "file": "tests/browser/audit-layout-regression.spec.mjs",
-      "sha256": "4b595a53f4ddcff47be5bd1ee71ce705e469e3457950c8dfacd197d19fbe0fea",
+      "sha256": "3e9bc3ba328980cdddc5ae9935f43a2ec789a85371275053f083df556dbccea1",
       "skipLinesUnchanged": true,
       "policyExclusionCount": 21
+    },
+    {
+      "file": "tests/browser/site-health.spec.mjs",
+      "sha256": "ab926cc560ed2db6b7ac3831be42e17fdc578d692269d172fd6359bb54265890",
+      "skipLinesUnchanged": true,
+      "policyExclusionCount": 194
     }
   ],
   "exclusionReview": {
@@ -42,7 +48,8 @@
     "policySha256BeforeRebinding": "4b1588d3771060c6f0c49f10413d6b444a9535f74f40072f05272574f912f0b6",
     "approvedRebindingFiles": [
       "tests/browser/shared-controls.spec.mjs",
-      "tests/browser/audit-layout-regression.spec.mjs"
+      "tests/browser/audit-layout-regression.spec.mjs",
+      "tests/browser/site-health.spec.mjs"
     ],
     "scope": "Only source SHA bindings may change. All exclusion identities, reasons, counts and skip predicates must remain unchanged. Renamed UX tests have no policy exclusions."
   },
@@ -69,5 +76,45 @@
     "all585ExclusionsUnchanged": true,
     "otherReviewedHashesUnchanged": true,
     "primaryReportedValidation": "27 UX checks passed; 6 form checks passed, 2 existing skips; updated viewport test passed. Reviewer did not independently execute runtime checks."
-  }
+  },
+  "testContractFollowUps": [
+    {
+      "reviewedAt": "2026-10-28T03:56:43.778Z",
+      "status": "PASS",
+      "changedFiles": [
+        {
+          "file": "tests/browser/shared-controls.spec.mjs",
+          "previousSha256": "383f49721759444c71d37ac21f208a582df0cab46cca3e291861355bd297fac2",
+          "sha256": "509fcf94121cd11996ebc8f65d36b1c28148e545d6d26b643feaf68ab006d882"
+        },
+        {
+          "file": "tests/browser/site-health.spec.mjs",
+          "previousSha256": "47c8ff3f2cfc301acfc87d89a8dcaf3f6ccb89ae6db93dbb93e4c990aa64cab1",
+          "sha256": "ab926cc560ed2db6b7ac3831be42e17fdc578d692269d172fd6359bb54265890"
+        }
+      ],
+      "all585ExclusionsUnchanged": true,
+      "skipPredicatesUnchanged": true,
+      "otherReviewedHashesUnchanged": true,
+      "scope": "Contact/form branches focus email and require hidden launcher, then blur and move to clear footer space before requiring visible fixed in-viewport controls. Existing header assertions are evaluated before scrolling. Ordinary-page scrolling and pre-focus field-collision tests remain unchanged.",
+      "evidence": "Inspected phone reduced-motion failure screenshot: textarea spans the fixed right-corner band, consistent with original overlapField suppression. Read exact two-file delta and surrounding assertions. No browser or deployment executed.",
+      "limits": "Focused reproduction rerun and replacement exact-commit CI remain required. This review does not turn the failed prior run into passing evidence."
+    },
+    {
+      "reviewedAt": "2026-10-28T03:57:33.375Z",
+      "status": "PASS",
+      "changedFiles": [
+        {
+          "file": "tests/browser/audit-layout-regression.spec.mjs",
+          "previousSha256": "4b595a53f4ddcff47be5bd1ee71ce705e469e3457950c8dfacd197d19fbe0fea",
+          "sha256": "3e9bc3ba328980cdddc5ae9935f43a2ec789a85371275053f083df556dbccea1"
+        }
+      ],
+      "all585ExclusionsUnchanged": true,
+      "skipPredicatesUnchanged": true,
+      "otherReviewedHashesUnchanged": true,
+      "scope": "Audit contact and checkout form test now requires email-focus suppression and post-blur footer recovery. Count, fixed-position, absence of duplicate inline actions, aria-describedby and lazy-provider assertions remain unchanged.",
+      "limits": "Primary reports first targeted run passed 4 tests with 2 existing skips; audit form and routes 26-50 rerun pending. Replacement exact-commit CI required. Reviewer performed no browser/deployment execution."
+    }
+  ]
 }

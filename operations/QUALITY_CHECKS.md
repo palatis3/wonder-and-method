@@ -35,3 +35,9 @@ The visual comparison uses the same Ubuntu image, Node major, pinned dependencie
 Download the matching **browser-shard-N-ATTEMPT** artifact for failed browser test details, screenshots and traces. Failed prerequisites prevent aggregation, so the combined **browser-journeys** artifact may be absent; the shared **site-build-ATTEMPT** retains core and content evidence. Download **visual-comparison** for expected/actual/difference images and its HTML report. Fix the cause and rerun all jobs together: artifacts from different run attempts cannot be combined. Do not delete assertions or raise image tolerances merely to turn a failed build green.
 
 GitHub checks do not themselves deploy the website. The deployment procedure and rollback evidence remain in [PRODUCTION.md](../deployment/PRODUCTION.md). The release gate does not alter accepted customer prices, authorize billing, or establish staffed service capacity.
+
+## Regression contract for future changes
+
+Ordinary scrolling must not reposition or hide the floating chat and back-to-top controls. Preserve their established opposite bottom corners and the existing back-to-top threshold. Visible inquiry fields, active form editing, overlapping keyboard focus and open menus retain their targeted protections. Passing text alone is not a reason to move or suppress the controls.
+
+The October 27 human-first/readability update (5ab08e6) introduced prose-gap placement after earlier work had already restored stable corner behavior. This update removes that behavior. Preserve the continuous-scroll, dense enlarged-text, focus, form and viewport regressions when applying later readability audits or reorganizing content. A test that only checks for text overlap does not establish stable scrolling behavior.

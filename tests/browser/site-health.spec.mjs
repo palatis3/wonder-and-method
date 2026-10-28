@@ -42,6 +42,12 @@ for(let offset=0;offset<routes.length;offset+=25){
     await expect(page.locator('.support-chat-launch')).toHaveCount(1);
     if(health.concept){await expect(page.locator('.concept-toolbar a[href="/work/"]')).toBeVisible();await expect(page.locator('.concept-toolbar a[href="/contact/#inquiry"]')).toBeVisible();}
     await expect(page.locator('[data-chat-open]')).toHaveCount(0);
+    // Fixed corner tools yield to inquiry fields, then recover in clear space.
+    if(health.form){
+     const email=page.locator('#inquiry input[name="email"]');await email.focus();
+     await expect(page.locator('.support-chat-launch')).toBeHidden();
+     await email.blur();await page.locator('footer').scrollIntoViewIfNeeded();
+    }
     await expect(page.locator('.support-chat-launch')).toBeVisible();await expect(page.locator('.support-chat')).toHaveCSS('position','fixed');
     await expect(page.locator('.back-to-top')).toHaveCSS('position','fixed');
     await expect(page.locator('.support-chat-launch')).toBeInViewport();
