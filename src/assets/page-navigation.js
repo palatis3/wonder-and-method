@@ -56,7 +56,7 @@ if(header){
    // Separate show/hide thresholds prevent chatter near the top boundary.
    if(active!==topLink)topLink.hidden=scrollY<(topLink.hidden?520:360);
    root.classList.toggle('editing-form',!!active?.matches('input:not([type="hidden"]),textarea,select'));
-   const formControls=[...document.querySelectorAll('#inquiry input:not([type="hidden"]),#inquiry textarea,#inquiry select,#inquiry button,#inquiry summary')].filter(field=>field.getClientRects().length&&!field.closest('[hidden],.honeypot')&&rendered(field));
+   const formControls=[...document.querySelectorAll('#inquiry input:not([type="hidden"]),#inquiry textarea,#inquiry select,#inquiry button,#inquiry summary,[data-package-guide] select,[data-package-guide] button,[data-package-guide] a[href]')].filter(field=>field.getClientRects().length&&!field.closest('[hidden],.honeypot')&&rendered(field));
    const overlapsField=control=>{const r=control.getBoundingClientRect();return formControls.some(field=>{const t=field.getBoundingClientRect();return t.width&&t.height&&Math.min(r.right,t.right)>Math.max(r.left,t.left)-8&&Math.min(r.bottom,t.bottom)>Math.max(r.top,t.top)-8;});};
    // Keep the corner buttons stationary through ordinary reading and scrolling.
    // Only actual form/focus collisions suppress them, never passing prose.
