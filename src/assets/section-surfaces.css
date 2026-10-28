@@ -318,6 +318,8 @@
 .studio-site :is(.process-timing,.guide-start,.guide-decision,.journal-callout){border:1px solid var(--surface-border);border-radius:12px}
 .studio-site :is(.guide-start,.guide-decision){background:var(--surface-sage)}
 .studio-site .journal-callout{background:var(--surface-stone);border-left:3px solid var(--accent)}
+.studio-site.studio-service .journal-callout{padding:1.1rem;margin-block:1.25rem}
+.studio-site.studio-service .journal-callout>:last-child{margin-bottom:0}
 .studio-site details.journal-toc{padding:.5rem 1.25rem;background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:12px}
 .studio-site :is(.buyer-example-grid,.about-evidence)>article{padding:1.25rem;background:var(--surface-card);border:1px solid var(--surface-border);border-radius:12px}
 .studio-site .project-milestones>li{border:1px solid var(--surface-border);border-radius:12px}
