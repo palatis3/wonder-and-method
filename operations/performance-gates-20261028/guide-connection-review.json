@@ -1,0 +1,30 @@
+{
+  "reviewedAt": "2026-10-28",
+  "scope": "One existing contextual link after the reviewed five-field Hot Springs County source repair. No guide content, destination, label, tests or thresholds changed.",
+  "decision": "Retain",
+  "before": {
+    "from": "/areas/wyoming/hot-springs-county/",
+    "to": "/guides/timed-booking-handoff/",
+    "label": "Connect session timing and check-in preparation",
+    "reason": "The full guide separates advertised time, check-in and booking status; that directly supports the museum check-in and provided-transport sequence here.",
+    "reviewedAt": "2026-10-27",
+    "reviewMethod": "Primary complete target-guide paragraph-delta review plus current complete content acceptance; prior exact local purpose, destination, label and rationale retained unchanged. No new per-pair independent review claimed.",
+    "locationPurposeSha256": "1eb5e89ee4cbfb08d98598456a40b43bffe45af285f203ea9dea2c4e11647a45",
+    "guidePurposeSha256": "036f412849beed437ecf865228de4897589b2e57486b175386731320572f33c7",
+    "reviewEvidence": "operations/human-quality-20261027/guide-connection-revalidation.json",
+    "priorReviewSha256": "fde43e0efaf0b869fbe348bccdd9125eee93fb9c772dbf89bc393c489d36cf4e"
+  },
+  "after": {
+    "from": "/areas/wyoming/hot-springs-county/",
+    "to": "/guides/timed-booking-handoff/",
+    "label": "Connect session timing and check-in preparation",
+    "reason": "The full guide separates the selected experience, admission and confirmed reservation, then carries operator-confirmed timing and check-in instructions into the handoff. That directly supports the revised museum-versus-preregistered-dig distinction and owner-confirmed arrival and transport instructions; it does not assume transport is included.",
+    "reviewedAt": "2026-10-28",
+    "reviewMethod": "Primary complete current county brief and complete target-guide review after the five-field official-tourism source repair; retain the link because selected experience, preregistration and confirmed check-in remain the customer decision.",
+    "locationPurposeSha256": "549b6f13f89d650d548e147c400a0b40f63aabaa311e4539d404525d81d8f883",
+    "guidePurposeSha256": "036f412849beed437ecf865228de4897589b2e57486b175386731320572f33c7",
+    "reviewEvidence": "operations/performance-gates-20261028/guide-connection-review.json",
+    "priorReviewSha256": "312d822e0e991a4e5c72e3e6ef766d7ac07b96d47681b5daabffb047a2de4a73"
+  },
+  "evidence": "Reviewed the full revised county decision and both scopes, plus the complete target guide. Both distinguish a selected experience and confirmed reservation from ordinary admission, with current operator-approved preparation and check-in."
+}
