@@ -1,0 +1,156 @@
+{
+  "reviewer": "Independent Astra homepage capture reviewer",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-29T17:14:20.550Z",
+  "status": "PASS",
+  "findings": [],
+  "scope": "Image-only supplement; existing implementation and helper reports unchanged.",
+  "visual": {
+    "oldImageSha256": "c3b1bf38020973a14a6644d11943a1d54c8c322d34a6eb296198bd79dca13ea9",
+    "oldVisiblePrice": "$1,400",
+    "newVisiblePrice": "$2,195",
+    "currentCTA": "See a live website",
+    "observations": "Raw screenshot and full WebP visually show the same current hero and reduced-motion notice. No price overlay, reconstructed text, compositing or synthesis is introduced."
+  },
+  "rawCapture": {
+    "path": "evidence/v4-offers-20261029/homepage-capture.jpg",
+    "sha256": "ce635f3c507041564dc105bcbf735c2d4e1fdae22d4609d31ff45374a2f9871c",
+    "capturedAt": "2026-10-29T17:10:23.344Z",
+    "width": 1426,
+    "height": 980
+  },
+  "homeAssets": [
+    {
+      "path": "src/assets/work/studio-website.webp",
+      "width": 1426,
+      "height": 980,
+      "bytes": 176110,
+      "sha256": "9b21bf236ae6c10b4981e87d062a157252aad23c8df88ad975c2a6961406ec6b",
+      "exactReencoding": true
+    },
+    {
+      "path": "src/assets/work/studio-website-240.webp",
+      "width": 240,
+      "height": 165,
+      "bytes": 7770,
+      "sha256": "db86871330cf18fd6f5ba92b37ae6a7d166900a317e48b16dd9436918344a67e",
+      "exactReencoding": true
+    },
+    {
+      "path": "src/assets/work/studio-website-480.webp",
+      "width": 480,
+      "height": 330,
+      "bytes": 24360,
+      "sha256": "1349c5c96a64ada40d02d3b43e31ad15196faae08c3bb6202498212f78714691",
+      "exactReencoding": true
+    },
+    {
+      "path": "src/assets/work/studio-website-640.webp",
+      "width": 640,
+      "height": 440,
+      "bytes": 36782,
+      "sha256": "7f1381adc7da972c87c3ae7ff71114bf951856f2d4bc15f5567d93bee5d80b3a",
+      "exactReencoding": true
+    },
+    {
+      "path": "src/assets/work/studio-website-960.webp",
+      "width": 960,
+      "height": 660,
+      "bytes": 62346,
+      "sha256": "f19aa610d16d1c41479082a28b90d71fa2da2a1c526ccc167bfcb45edf4c9025",
+      "exactReencoding": true
+    }
+  ],
+  "trackerAssets": [
+    {
+      "path": "src/assets/work/lead-workbench.webp",
+      "sha256": "f668c6f8bffd45518c9302b696c4dcbcd76ec30c9125deea106f29db885870ce",
+      "unchanged": true
+    },
+    {
+      "path": "src/assets/work/lead-workbench-240.webp",
+      "sha256": "94098871ca0940fa5b5a93b1467091774f5283e8cd377f839c9f1c97c22c91a1",
+      "unchanged": true
+    },
+    {
+      "path": "src/assets/work/lead-workbench-480.webp",
+      "sha256": "d994e82b6d5eba0843f0b54a539f69873c9a9f5fae3229c3858f214d3df0e6e4",
+      "unchanged": true
+    },
+    {
+      "path": "src/assets/work/lead-workbench-640.webp",
+      "sha256": "ff10c6d9ca40e68aefb7df1f16e911f065033b7879fe14cbe9c61a61a90e37b0",
+      "unchanged": true
+    },
+    {
+      "path": "src/assets/work/lead-workbench-960.webp",
+      "sha256": "a355204e59dd699148cc6eff03c8c3ac2406282dc1ac14b032bfd5873030a626",
+      "unchanged": true
+    }
+  ],
+  "trackerMetadataUnchanged": true,
+  "homepageSourceHashes": {
+    "src/premium-site.mjs": "833309649bbabe68030559021519417bf89275c6856b71c73e437c602fa186c7",
+    "src/home-proof.mjs": "a27f0dc7d9e607c2b00623cceaa5640031331e1336fa0c7b50132c9f9e165c70",
+    "src/site-chrome.mjs": "4e4f1ddabf6dd9ff837890aa745cea6bfd6a988877c9be8aa6ac6e158649933d",
+    "src/assets/layout-components.css": "ecb7c40e6a88dd023d87fe6deba43d3f11b090fbae79f0105a7383754d0860f1",
+    "src/assets/site-refresh.css": "c1d2d67c9459b01a8f9622842a69989ac1d8681b21678bc0acc183efcaa31136",
+    "src/living-city.mjs": "3476ab2829f1b1aad5e229469c8072fb9baf90b51888b4d736776b92bebb3b5e",
+    "src/assets/living-city.css": "75376c1129687fe19985e723b49dd2c9558cc64eecd6b30726d58bc0d184eef6",
+    "src/city-preview-captures.json": "22a4a454a6ab24050b4c9ba457dc92327c46b29e05ea4c02f7b89002f8b358d4",
+    "public/living-city/manifest.json": "5a03ce0501422e3a5a0cf4566bf818376ccb63ce965500c18706e426496d1f96",
+    "src/assets/section-surfaces.css": "60471da3ab00efb7e29fd4139252eef11c66c7d4442f227483a80e4c49d23cf1",
+    "src/assets/support-chat.css": "f3b41d08d19c497dd5ddba8bee6a6a1d1c32e15061497a48a06a266be39fda08",
+    "config/offers.json": "210a6042a9fe96e41f60667b750e56e34241785284795b68ea16bacf28b14a0a",
+    "config/site.json": "8d92bf6c6b7e5d0059d741d118fa0469b22d16aa608a38cd9848588442d5cb65",
+    "src/offer-catalog.mjs": "fa4b10488594af98df9464f64152dd6df6dda6313216e34ae7b9a6a8b8547118"
+  },
+  "historicalTrackerSourcePins": [
+    {
+      "path": "src/lead-workbench.mjs",
+      "recordedSha256": "bf62475f966a54cb746906be127c73eda3332c478bc4cbf9c468ed12c4a3b7e4",
+      "currentSha256": "5281d41c1dee0cc4e014b72115cf612245d641c2de5e1486145054999b1f2a38",
+      "currentMatchesHistorical": false,
+      "sourceUnchangedFromHEAD": true
+    },
+    {
+      "path": "src/assets/lead-workbench.js",
+      "recordedSha256": "05092cc9e50b2655246c4a6bfecbce4ebfee6f0ff4ee8812f8a93ec275648a34",
+      "currentSha256": "3e70d86ce722434a3d2dccf82e0177e7198862abc46e08d74e989d9e886858b8",
+      "currentMatchesHistorical": false,
+      "sourceUnchangedFromHEAD": true
+    },
+    {
+      "path": "src/assets/lead-workbench.css",
+      "recordedSha256": "80d791b0bde5f445bcc471bf1738d1bc8a62086854a4898601c40b0c68a2a1ee",
+      "currentSha256": "d84fac810964b4ba0054d7cc56674c74443723701187e9ccab0bfebdd2070dff",
+      "currentMatchesHistorical": false,
+      "sourceUnchangedFromHEAD": true
+    }
+  ],
+  "builtPage": {
+    "path": "dist/index.html",
+    "sha256": "4ce5088ef6298b11196ca571dfbd1ea23d68290719e56535df0881732b6c99e7"
+  },
+  "builtStyles": {
+    "dist/assets/site-home.css": "2dd8393bdf6f48c21952cb2b51f542889674023afd5a3b1b6fa3265259b2313d"
+  },
+  "sourceFileHashes": {
+    "src/portfolio-captures.json": "126fe5fd0a336e083f85a460c6bdcc14d224d92dac21a87d7ffcdb7fd3d63c14",
+    "operations/v4-offers-20261029/refresh-homepage-capture.mjs": "6f17888cdea67345f52a37b2c9951ca452cad5849a77dfa34a507fce831f8adb"
+  },
+  "verification": {
+    "allFiveHomepageMetadataDimensionsBytesAndHashesMatch": true,
+    "allFiveExactlyMatchRawCaptureTranscodes": true,
+    "allFiveTrackerAssetsAndTrackerMetadataMatchHEAD": true,
+    "all14HomepageSourceHashesMatch": true,
+    "capturedPageAndCssMatchCurrentDist": true,
+    "scriptSyntaxPass": true,
+    "scriptOnlyTranscodesResizesAndRecordsHashes": true
+  },
+  "limits": [
+    "Browser readiness and screenshot acquisition use the primary agent capture record; this reviewer inspected saved pixels rather than repeating acquisition.",
+    "All three retained historical tracker source pins (src/lead-workbench.mjs, src/assets/lead-workbench.js, src/assets/lead-workbench.css) differ from current source. Tracker metadata and all three source files are unchanged from HEAD; this inherited provenance limitation is not represented as newly verified current tracker source pins.",
+    "Linux visual baseline review remains a separate release gate."
+  ]
+}
