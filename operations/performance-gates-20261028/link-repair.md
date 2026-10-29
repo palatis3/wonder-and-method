@@ -12,3 +12,5 @@ The page now attributes the museum/dig distinction, preregistration and seasonal
 The county URL, title, lead, two proposed project scopes and quote questions remain. Five record fields changed: narrative, one scope-page label, one scope acceptance check, sources and checked date. Content review is dated October 28, 2026 in America/New_York.
 
 The rebuilt content comparison identified only this county page's text/links/HTML and its sitemap date. No link-check policy, exemption, threshold or assertion changed. All release checks must pass again on the final source commit.
+
+The historical WY/HI/AK preservation fixture remains frozen. A separate exact-record source-repair ledger verifies the complete approved current county hash and five field values before reconstructing the original accepted record for that historical comparison. Unreviewed changes to an approved field or any unrelated field still fail. Six focused tests cover reconstruction without mutation, rejection of unauthorized edits, unchanged unlisted records and all existing WY/HI/AK preservation/content checks.
