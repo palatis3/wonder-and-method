@@ -1,0 +1,3379 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Independent Astra reviewer (/root/astra_v3_final_release_review)",
+  "reviewedAt": "2026-10-29T11:42:34.257Z",
+  "sourceCommit": "fe71b8b360a13e403a4b5b41941243e24d91fe0a",
+  "captureActionsRun": "40865711303",
+  "verdict": "PENDING",
+  "layoutVerdict": "PASS",
+  "releaseApproved": false,
+  "coverage": {
+    "candidates": 92,
+    "changed": 79,
+    "new": 10,
+    "unchanged": 3,
+    "visuallyInspectedChangedAndNew": 89,
+    "contactSheetsInspected": 43,
+    "method": "Inspected all 13 desktop and 30 phone contact sheets spanning captured full heights. Desktop sheets reviewed for composition, hierarchy, colored sections, cutoffs, blank media and footer; phone panels also read at readable scale. Three unchanged phone images retained by exact SHA-256 equality. This is screenshot review, not interaction/a11y proof."
+  },
+  "findings": [
+    {
+      "id": "V3-VIS-01",
+      "priority": 2,
+      "status": "SOURCE_FIXED_SCREENSHOTS_PENDING",
+      "source": "src/service-counties.mjs:47",
+      "description": "Directory CTA still computes Care first payment as $275 + $650 Roadmap ($925), contradicting separate V3 $375/$650 onboarding and optional diagnosis.",
+      "candidates": [
+        "desktop/district-directory.png",
+        "phone/district-directory.png",
+        "desktop/regional-directory.png",
+        "phone/regional-directory.png"
+      ],
+      "required": "Replace obsolete coupled first-payment statement with approved Care/onboarding terms; recapture affected images."
+    },
+    {
+      "id": "V3-VIS-02",
+      "priority": 2,
+      "status": "SOURCE_FIXED_SCREENSHOTS_PENDING",
+      "source": "src/home-proof.mjs:17",
+      "description": "Get found in search advertises From $1,250/month although Local Search Focus begins at $850/month on the linked SEO page.",
+      "candidates": [
+        "desktop/home-viewport-02.png",
+        "phone/home.png"
+      ],
+      "required": "Derive entry price from lowest applicable current search plan; recapture affected images."
+    },
+    {
+      "id": "V3-VIS-03",
+      "priority": 3,
+      "status": "SOURCE_FIXED_SCREENSHOTS_PENDING",
+      "source": "Monthly SEO scope boundaries",
+      "description": "Excluded-scope clauses run together without punctuation, e.g. selected output Full SEO campaign and outreach A new article.",
+      "candidates": [
+        "desktop/monthly-seo.png",
+        "phone/monthly-seo.png"
+      ],
+      "required": "Join separate exclusion clauses with punctuation."
+    }
+  ],
+  "candidates": [
+    {
+      "path": "desktop/about.png",
+      "sha256": "70444979993195c2f4af191c39bf80a1632c811db6452f1a0491aac884b38072",
+      "baselineSha256": "2f26069bc147211d32114b672b769d756c9a98057cceb03ee5f4e2a68056141c",
+      "status": "changed",
+      "width": 1440,
+      "height": 3496
+    },
+    {
+      "path": "desktop/addons.png",
+      "sha256": "cde2c9099a1e98daa88540052214c2f4d31dfb56e4fd0fb9a6a10e34ffa64efa",
+      "baselineSha256": "abd690924d3d18acee519a53fdf3859c3d9baf36b52eb97380195e612e3302c1",
+      "status": "changed",
+      "width": 1440,
+      "height": 6447
+    },
+    {
+      "path": "desktop/alabama-entry.png",
+      "sha256": "e674d8461b76e914b4399ec388ef218cc1477aed81d44529289452d246c3b955",
+      "baselineSha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538",
+      "status": "changed",
+      "width": 850,
+      "height": 812
+    },
+    {
+      "path": "desktop/audit.png",
+      "sha256": "d940c5c2349c2ea978bd410cddd4f8e48f483e6e511554722a3e8a88c8a3c98b",
+      "baselineSha256": "6aea819e668b7bf06523c2749eb89eecacbc6d28f8c2d1da9addfe43f6ed9cf5",
+      "status": "changed",
+      "width": 1440,
+      "height": 5448
+    },
+    {
+      "path": "desktop/brand-messaging.png",
+      "sha256": "aa10c08b04b8da8853c033a949910b522999e3d3981b1ac2a2cd8395d347fb8b",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 1440,
+      "height": 4613
+    },
+    {
+      "path": "desktop/care.png",
+      "sha256": "c30d55aaeeee1ee198e09903b6a5b1f81772248d8d53318876ec43b74e8c6f77",
+      "baselineSha256": "dcbb2cbb526bd757bd9264bfd107e30237d7db8641a03dd8fab698060cc080bc",
+      "status": "changed",
+      "width": 1440,
+      "height": 6581
+    },
+    {
+      "path": "desktop/concept.png",
+      "sha256": "2ead6043e2e695ab673a34cd84cfeab893e84356626a410c9abbd6c5efeeaeae",
+      "baselineSha256": "844d2638e6424ebd2b8604fdeabf1158847cb97edb9bac2c03cf7371486d9455",
+      "status": "changed",
+      "width": 1440,
+      "height": 3554
+    },
+    {
+      "path": "desktop/contact.png",
+      "sha256": "9aab883cb1da3db2e33d73bc72f60e5bd870a88fb252fd20d424f44aa97454ff",
+      "baselineSha256": "0591ea6a7ed779cbfe90e8ed766f0cb7b5d5c794c2dcf26f40f263cb94203249",
+      "status": "changed",
+      "width": 1440,
+      "height": 3017
+    },
+    {
+      "path": "desktop/contractors.png",
+      "sha256": "db994b8fdcb1c78af2cf43f3a51c5ded91f9f1932f52938c83dc5ed1c358751e",
+      "baselineSha256": "3e23f368a7a2cb7d7af5c0d3df82c2c70903ae3fc8b3b55c87ed72bb494576bc",
+      "status": "changed",
+      "width": 1440,
+      "height": 6621
+    },
+    {
+      "path": "desktop/county-entry.png",
+      "sha256": "a0a8e522b6642e75446ca789dd346275c02c6e1dcf6791df4aac7dd8553ab7e4",
+      "baselineSha256": "d5e6d7573b62317c4d29049c94986e663f6e907efe5034cb8f7726fd847e8ea2",
+      "status": "changed",
+      "width": 850,
+      "height": 1748
+    },
+    {
+      "path": "desktop/county-questions.png",
+      "sha256": "e006e90eb9b935e10920972b788e5c04d20b7ed75876f9e6cd1b939f2967861e",
+      "baselineSha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8",
+      "status": "changed",
+      "width": 900,
+      "height": 768
+    },
+    {
+      "path": "desktop/county.png",
+      "sha256": "9c02a950ee3b82f1d61b2e73cf2b72792155cbb317947337cb2a6c0b953fce14",
+      "baselineSha256": "6565c299bc9f92e42cefbbac8a120cfc49a482e63b02a2d7a0647f647d65ea88",
+      "status": "changed",
+      "width": 1440,
+      "height": 8394
+    },
+    {
+      "path": "desktop/district-directory.png",
+      "sha256": "ca54955127c6f5be36f4639bf4632716845bd9a1294872cf6457dd9670c37955",
+      "baselineSha256": "e3e6645641c613684a51deda1ee9825715f7e693d67655d992fe6aeefa0267c2",
+      "status": "changed",
+      "width": 1440,
+      "height": 3559
+    },
+    {
+      "path": "desktop/ecommerce.png",
+      "sha256": "8cb4bf53467d6fa033255ad92f84564b9a03de318659246a96f8e269a8d87a99",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 1440,
+      "height": 4646
+    },
+    {
+      "path": "desktop/floating-tools-content.png",
+      "sha256": "0c082b0056f392cb6b57196ebda3b4a5f8850051b14df1732b09da1273b3a97b",
+      "baselineSha256": "a956fcca199af94e9643e68327f604dda17cf74ebb8bbcf5abaf18b2cd123b54",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/floating-tools-home.png",
+      "sha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+      "baselineSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/footer-closed.png",
+      "sha256": "e5a31cca3bedae7836adbb6fa8346089d683c7706d2e77167b56e39e40263de9",
+      "baselineSha256": "8293a4fcc99d99a77173f52cfbf9666a91807f5c990390de1dac1f83bd865c7b",
+      "status": "changed",
+      "width": 1440,
+      "height": 385
+    },
+    {
+      "path": "desktop/footer-open.png",
+      "sha256": "b75992701dbaf90a7655f9059d71768f0349594988c5a8884baeb48ae32dd2ad",
+      "baselineSha256": "88f37073255e3d6e1c8fe1d69292afd963d5fc9e90a1fd055a991b3c7515e495",
+      "status": "changed",
+      "width": 1440,
+      "height": 2829
+    },
+    {
+      "path": "desktop/georgia-entry.png",
+      "sha256": "cbb5aef229308e7b59e2a47a152b1fc945e93bd53c03434e954c242508185300",
+      "baselineSha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600",
+      "status": "changed",
+      "width": 850,
+      "height": 506
+    },
+    {
+      "path": "desktop/guide.png",
+      "sha256": "b6bbafb5cf5b51cb3cd525192cc7d988ddd3fbeaa353b6884bd95bf6d64e9435",
+      "baselineSha256": "dc6d82a5bf75e9259d71f9876d86c4f27d28fed09b1ef13dc58afce4b75063af",
+      "status": "changed",
+      "width": 1440,
+      "height": 9350
+    },
+    {
+      "path": "desktop/home-viewport-01.png",
+      "sha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+      "baselineSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-02.png",
+      "sha256": "ee1e1f810cd5479792481302bc11394a5af846e0f209ee77b2c1b011f91a4008",
+      "baselineSha256": "86e38511a98b5eb619d0d865454dc0bc5848156350d26e3c5dce337daa45b134",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-03.png",
+      "sha256": "280cf7f97cc77c87a415aaf10e4a9bca79e6337b1b88cfda5656a66e4452773d",
+      "baselineSha256": "5b220275502a99aed0201b7ff6504fd4748a8c1d2d57f8ae372d61a02e25dcdd",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-04.png",
+      "sha256": "2c803b78f62b5de2e1aec91ec161106f807575eceb914dfea971c7060fec95ae",
+      "baselineSha256": "72541797c8f43b2e79bd2ca69ce1f28c4db916d6362896408740d3b33301c754",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-05.png",
+      "sha256": "65b727e3eca0436db50426aeca1960bca9b2844dc6537e5f5ce1bfc31dc61a20",
+      "baselineSha256": "412cae077c46465b89f1d219c9c5aa6ce67853a4dcdacf7fa3636f2b5b608e7c",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-06.png",
+      "sha256": "2d06972043d3bc63f835bf02b0932d54a793a322d707c8370e65b2ef7e716a68",
+      "baselineSha256": "bccbcff2c124565b30e1335ba6114e17c041142ce5a88e92d314dfc6f033dbe1",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/home-viewport-07.png",
+      "sha256": "ce6f9715107aece05cbf692245b4e39270d2c784e7474cfe0442217294b5683f",
+      "baselineSha256": "71b720163e652be919be867e27beef2569499715cc3d7e1f4189dea78e61cea1",
+      "status": "changed",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "path": "desktop/illinois-entry.png",
+      "sha256": "57516cb3a734617cef8886314ff48b118a94e591f64bc4a359f565f0354467a2",
+      "baselineSha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd",
+      "status": "changed",
+      "width": 850,
+      "height": 813
+    },
+    {
+      "path": "desktop/iowa-county.png",
+      "sha256": "0e96616132458a406787f38731fbc4db42d9d43a8363fae41c1588906dc873d3",
+      "baselineSha256": "124a33f29a842a45d31aa9c162fd9d0570526412ed33ac7e11f7966a523bab02",
+      "status": "changed",
+      "width": 1440,
+      "height": 5075
+    },
+    {
+      "path": "desktop/iowa-entry.png",
+      "sha256": "28a9073e60813046fafc8bd0a6ba6e5c13cd4598e5522384d8711e4356bba9e4",
+      "baselineSha256": "3d1b878a77041d46c2482b872ba6ad625708fa6ac3ae76b5b4f5fbe4443e59af",
+      "status": "changed",
+      "width": 850,
+      "height": 2065
+    },
+    {
+      "path": "desktop/local-profiles.png",
+      "sha256": "1eab760a1a3326b34175f02f6618af2785715b64bc8174bd642e1417043f7060",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 1440,
+      "height": 4873
+    },
+    {
+      "path": "desktop/mississippi-entry.png",
+      "sha256": "a3c4aca22c3d8cef9a145c6bfe16388391cf0be9360440f62ce3fa418866d3f2",
+      "baselineSha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
+      "status": "changed",
+      "width": 850,
+      "height": 506
+    },
+    {
+      "path": "desktop/missouri-county.png",
+      "sha256": "334025c24aeac49178076344a08e29b646450a7dde3a6a1e11957287135ad14e",
+      "baselineSha256": "f7aaf4f92e604d03a2811a2133adbd2cfdabc1078f45b844d377b3ece3617a2d",
+      "status": "changed",
+      "width": 1440,
+      "height": 5145
+    },
+    {
+      "path": "desktop/missouri-entry.png",
+      "sha256": "0cae4a106d728d4ca3712a37abdb4bbbfba50c6030533a7a3f1f7cc0fde7320b",
+      "baselineSha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b",
+      "status": "changed",
+      "width": 850,
+      "height": 406
+    },
+    {
+      "path": "desktop/monthly-seo.png",
+      "sha256": "60b645f038d95ac4a01f2b73ee51c946444ec55fb1566779a835338bff679368",
+      "baselineSha256": "ee8af6116275023cab6b8509c8eca14720d38d63c6e8707f4bf0a6363dca9c81",
+      "status": "changed",
+      "width": 1440,
+      "height": 7164
+    },
+    {
+      "path": "desktop/pricing.png",
+      "sha256": "24b58349da8481164709fe911e4f52eee79b1ca7f57f3df43d46b8ca329d22f3",
+      "baselineSha256": "4a065ea7838e4412ad82b7536b7ccc0b1a8279c6c1b78b570e64cfdad032929f",
+      "status": "changed",
+      "width": 1440,
+      "height": 17175
+    },
+    {
+      "path": "desktop/process.png",
+      "sha256": "572ca9c5eeba1086d8df3c36fe26117154049b05f5eec7cd8acac029bbf5933d",
+      "baselineSha256": "5aa08f92bb54d3f3faf38e0307c11430e60b3456f274c7568424548049ea5649",
+      "status": "changed",
+      "width": 1440,
+      "height": 4806
+    },
+    {
+      "path": "desktop/redesign.png",
+      "sha256": "063d3aa566548a04da601ecdf0bd7a3d6ae05074cee23238f697d14c41967c5c",
+      "baselineSha256": "7d59f98fdf22dec8c7c2dadf9d29facc56c3f0638436264a77ec380113674145",
+      "status": "changed",
+      "width": 1440,
+      "height": 8008
+    },
+    {
+      "path": "desktop/regional-directory.png",
+      "sha256": "f19bf19d833b860f92fdcd615c0eed76c8f05cf9b6f527892c39f4c674803b4e",
+      "baselineSha256": "29f680943de171e77f5aa5358a2c44b1a125e493cec23195ba86d3e63a3024f0",
+      "status": "changed",
+      "width": 1440,
+      "height": 3886
+    },
+    {
+      "path": "desktop/scope-request.png",
+      "sha256": "60782325347854bff3cf0db4db8a9ad522df84665014a6ff618b322073335602",
+      "baselineSha256": "0c598e6e3e3fcc6a2d25172834751b523047f9fac989e04073fb4ba83fd84dc0",
+      "status": "changed",
+      "width": 1440,
+      "height": 3094
+    },
+    {
+      "path": "desktop/service-questions.png",
+      "sha256": "7de2271970c471caa4a5c1c2f40996fe7af1c44f299dd475e043fc805ee4d016",
+      "baselineSha256": "2468e7e7a9096bca4040027bdcc99c1bb030d03d19c52bc76b62a19a7c99b9f2",
+      "status": "changed",
+      "width": 1296,
+      "height": 380
+    },
+    {
+      "path": "desktop/services.png",
+      "sha256": "50c7b17bf21319ef78ceb8370f11d08e125abbdda6dbe0381b8c18c725e4d2f3",
+      "baselineSha256": "ab9ab447728497d88adef8729aa60416360ac639c532d351c1737c28c60be293",
+      "status": "changed",
+      "width": 1440,
+      "height": 6413
+    },
+    {
+      "path": "desktop/systems.png",
+      "sha256": "188e6c9b2d4c5949ef58f01026514818e8f67e0b3c13e6bf9d00da61ef149e5c",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 1440,
+      "height": 4692
+    },
+    {
+      "path": "desktop/texas-county.png",
+      "sha256": "b3a68d96a3e7a432f47274af689217a8da8ebf113db2c1277ba373184118d5ae",
+      "baselineSha256": "68672d1d23a1450c4259fafa1089390a38f7d5dbb2aa4060ab4fb8eb4752e00e",
+      "status": "changed",
+      "width": 1440,
+      "height": 5162
+    },
+    {
+      "path": "desktop/texas-entry.png",
+      "sha256": "0cb2e5e90060358db794f80d884a56719c8612041cfcad9ddb8d01ca09d6c59c",
+      "baselineSha256": "ee9da320b74f56678f3c988bd3dceef71c18c36cb0e2bc2a3c92f326360da5aa",
+      "status": "changed",
+      "width": 850,
+      "height": 784
+    },
+    {
+      "path": "desktop/web-design.png",
+      "sha256": "e6478fd3fd01e7454be0172c772af9d62bcead7443ffb52df2eef5936a3dc98f",
+      "baselineSha256": "e94930d1c4f50857fd2c234c0efee8e7d681d1e3a8ee9b6b3cfafdd99a4656c0",
+      "status": "changed",
+      "width": 1440,
+      "height": 7824
+    },
+    {
+      "path": "desktop/wisconsin-entry.png",
+      "sha256": "63c6935b2e50f4923d5510d9e992f701dda6c3fbdb3ae01b90c3c4637816398a",
+      "baselineSha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe",
+      "status": "changed",
+      "width": 850,
+      "height": 500
+    },
+    {
+      "path": "desktop/work.png",
+      "sha256": "077d994999b037cf06eb7a7de1c5b3f00829dc3cea0e7b579dc5c8386915d0f8",
+      "baselineSha256": "2dcf334ceada59be07e0dc6cc2b61f63edaf1955c89318af83770a11191aeecb",
+      "status": "changed",
+      "width": 1440,
+      "height": 8075
+    },
+    {
+      "path": "desktop/workflow.png",
+      "sha256": "93f764850bf9349aabc6946ebd6ac4a9586dcca2f6acaddb66ceadefdc8a6fe1",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 1440,
+      "height": 4667
+    },
+    {
+      "path": "phone/about.png",
+      "sha256": "4d9d8e06b3df74c6a95cdb9f4b7d2084e6fc7e94d1ec5b24efdda9bc62a930c8",
+      "baselineSha256": "4d9d8e06b3df74c6a95cdb9f4b7d2084e6fc7e94d1ec5b24efdda9bc62a930c8",
+      "status": "unchanged",
+      "width": 390,
+      "height": 4330
+    },
+    {
+      "path": "phone/addons.png",
+      "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+      "baselineSha256": "53d07609892c1e4402b1ded6abac354d8bdcc7c76e259c73e09d278bcd06487e",
+      "status": "changed",
+      "width": 390,
+      "height": 8952
+    },
+    {
+      "path": "phone/alabama-entry.png",
+      "sha256": "e2f60118ad5be9f7936a7d2f91f805c903810b7c91a183b15bc21d2d3fde0fa6",
+      "baselineSha256": "12869b7d7f7f6644e530dc35239a1f925267e129bd11ece8f0c7c13031f3835f",
+      "status": "changed",
+      "width": 350,
+      "height": 949
+    },
+    {
+      "path": "phone/audit.png",
+      "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+      "baselineSha256": "6b1aaac854ff14876c8cdbe295f73e7a5b8cd7e2c42ad666a39b371987aed49e",
+      "status": "changed",
+      "width": 390,
+      "height": 7218
+    },
+    {
+      "path": "phone/brand-messaging.png",
+      "sha256": "7a5094d6518ac979a38cfe92976b78d5d7edd1efa80ae30feebe667dde574a6c",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 390,
+      "height": 5224
+    },
+    {
+      "path": "phone/care.png",
+      "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+      "baselineSha256": "7affe2bcc54a13040b0b994a94d2f675ab418a84e9236ba1d97325012cc171d5",
+      "status": "changed",
+      "width": 390,
+      "height": 8852
+    },
+    {
+      "path": "phone/concept.png",
+      "sha256": "2785f43e95beadb2930ffafa10a9a83f8fd719494a7d40978d2c49233ef0f1a3",
+      "baselineSha256": "f71e99ec8688907f5091a71bdadda88037d194f262f542fff7dcb2e4b559051a",
+      "status": "changed",
+      "width": 390,
+      "height": 4107
+    },
+    {
+      "path": "phone/contact.png",
+      "sha256": "7b91c047b2b911e1ed0a7acc2c9a660edf0c7de3a75807a4081787c67e07e268",
+      "baselineSha256": "7b91c047b2b911e1ed0a7acc2c9a660edf0c7de3a75807a4081787c67e07e268",
+      "status": "unchanged",
+      "width": 390,
+      "height": 3853
+    },
+    {
+      "path": "phone/contractors.png",
+      "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+      "baselineSha256": "a5e4ee52c3219e36bd194e427326def25504c71a94f1e61a5aa3da96f51caff8",
+      "status": "changed",
+      "width": 390,
+      "height": 8797
+    },
+    {
+      "path": "phone/county-entry.png",
+      "sha256": "c02547a98d7e16c49c82d7f8d6d86c97c300587f6a59768bb561cc4585bd55b5",
+      "baselineSha256": "91cf2b4df162e17727717105db5054c98df02ed06f6897c39c8a238ee75a4143",
+      "status": "changed",
+      "width": 350,
+      "height": 2287
+    },
+    {
+      "path": "phone/county-questions.png",
+      "sha256": "daa53fc6aa7afb6555e7bc031bdb1b09c92c3730a1e2e664530201435c7ecf55",
+      "baselineSha256": "78ff62ee76aab0ac90004bb729fd341dd6e0cdec96f26ce070fc1b14ea1648c9",
+      "status": "changed",
+      "width": 350,
+      "height": 983
+    },
+    {
+      "path": "phone/county.png",
+      "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+      "baselineSha256": "8795bb694e061d4e289dd73e3d90732ccc7e234d8abdd281f7e6aaf8009e941a",
+      "status": "changed",
+      "width": 390,
+      "height": 13397
+    },
+    {
+      "path": "phone/district-directory.png",
+      "sha256": "3af6f4823da8fe5ab2af9aeb14dad27cbe909f8f6fcd6ceb38e3cf2da2182d74",
+      "baselineSha256": "c60dd50d7463a0072455b09c9c3b87bf288be5bab627b566aabc80988549feb5",
+      "status": "changed",
+      "width": 390,
+      "height": 3847
+    },
+    {
+      "path": "phone/ecommerce.png",
+      "sha256": "042a05db454b15d78bb92a1f5d78dfb90c0e4048c5d5d268ed1fa660937e0c0a",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 390,
+      "height": 5250
+    },
+    {
+      "path": "phone/floating-tools-content.png",
+      "sha256": "4880532d574dc49841ebb9172d7495340a1ad2229dbaa45fca0418f2c1f9eb75",
+      "baselineSha256": "60f740ca0d24038c1859d6039f358a472a9f5d24f5a7eb9c7d3ee40b4c95038b",
+      "status": "changed",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "phone/floating-tools-home.png",
+      "sha256": "5226a47e3b86a5aa1d95f4f41e7c445c5770dd8a5fe917bd53343689a3a10811",
+      "baselineSha256": "02548a699028d172e60a91441b2a49caa7c84d1b33b68170f88bb7440d5a630f",
+      "status": "changed",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "phone/footer-closed.png",
+      "sha256": "699de3353586a94d155a96cda023487764eb269fba307978cb24f30755f9212c",
+      "baselineSha256": "85967d08554ace200fb05d5be7d6e225bf0ad45538e9f7ec7bbed43871b7ee26",
+      "status": "changed",
+      "width": 390,
+      "height": 746
+    },
+    {
+      "path": "phone/footer-open.png",
+      "sha256": "077257d520a1001d00b081750186df30f904bb092b160b44f4a59e2bc8696095",
+      "baselineSha256": "433b1386cf1dd776d927e2d3290af6338ff3e285746ea411bdbf05d69b4d2183",
+      "status": "changed",
+      "width": 390,
+      "height": 4222
+    },
+    {
+      "path": "phone/georgia-entry.png",
+      "sha256": "413da35b964a28665446d761116c1b3f573d113023ea8538813684d87069e24e",
+      "baselineSha256": "3bc6335f54d0e0f2571bcab55273ee2a0bc83b2f6d4f93770119f81e331ffcce",
+      "status": "changed",
+      "width": 350,
+      "height": 727
+    },
+    {
+      "path": "phone/guide.png",
+      "sha256": "f86ade58eab132a84def0b0f905c9b960a997a5e652fc87a67067f243167f1f5",
+      "baselineSha256": "f86ade58eab132a84def0b0f905c9b960a997a5e652fc87a67067f243167f1f5",
+      "status": "unchanged",
+      "width": 390,
+      "height": 12986
+    },
+    {
+      "path": "phone/home.png",
+      "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+      "baselineSha256": "52ae2a48afa48f99d07bd53829df20338ef8bf2ce122ab9418d4d464c437ebec",
+      "status": "changed",
+      "width": 390,
+      "height": 8232
+    },
+    {
+      "path": "phone/illinois-entry.png",
+      "sha256": "729056b13e1fda35cddb677f5ad27ca462ddfe9aa53ba72577808906ec80f1b7",
+      "baselineSha256": "4a6a33ec67eedaa623f88188402b582e729072ac12d3e821bc788dda506c2efb",
+      "status": "changed",
+      "width": 350,
+      "height": 1088
+    },
+    {
+      "path": "phone/iowa-county.png",
+      "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+      "baselineSha256": "fc326bd4b19dbfe01cdd4d4b5d77e324c0ca39ae2165eabe6471dc532bca3e4b",
+      "status": "changed",
+      "width": 390,
+      "height": 6008
+    },
+    {
+      "path": "phone/iowa-entry.png",
+      "sha256": "3cda408bcd985d27c66535f35a21c248253f44589b2f927645e9d6825ee06147",
+      "baselineSha256": "b410a75f756ca21fd1a707754761d2521480e5dc62dc05e31c79822316bda549",
+      "status": "changed",
+      "width": 350,
+      "height": 2357
+    },
+    {
+      "path": "phone/local-profiles.png",
+      "sha256": "fb244a475ffd42ae4a88976a120fdfbbc5056deca2214f97e1b69c9c1044bfd6",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 390,
+      "height": 5790
+    },
+    {
+      "path": "phone/mississippi-entry.png",
+      "sha256": "fd4901cf2086d9569d58f800a0d84591cc7d7d2fbfe324152ac742a01dc7a6a6",
+      "baselineSha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
+      "status": "changed",
+      "width": 350,
+      "height": 641
+    },
+    {
+      "path": "phone/missouri-county.png",
+      "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+      "baselineSha256": "a3c20c86743c3d39581cb5cb4abc76e41c66c8eea0c3c8a62c4bc920aed5c7dd",
+      "status": "changed",
+      "width": 390,
+      "height": 6043
+    },
+    {
+      "path": "phone/missouri-entry.png",
+      "sha256": "0f76dc544df72ed8813a287befd85bb460c7eae367f4f595e308237c0df36565",
+      "baselineSha256": "a418a45ff201b279b327d79e962a3e2443cdb0aeeea257595360e19982c7f44a",
+      "status": "changed",
+      "width": 350,
+      "height": 487
+    },
+    {
+      "path": "phone/monthly-seo.png",
+      "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+      "baselineSha256": "d55acbc5844dbf64a72b5c081b0be5a98667dded60c266facea817f867de172b",
+      "status": "changed",
+      "width": 390,
+      "height": 9768
+    },
+    {
+      "path": "phone/pricing.png",
+      "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+      "baselineSha256": "cae1e552279804fba9e60be6d57ada11dcac330f15f1265c335b71f3c336dc17",
+      "status": "changed",
+      "width": 390,
+      "height": 29375
+    },
+    {
+      "path": "phone/process.png",
+      "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+      "baselineSha256": "a68ce4b363103bf2574ad33cdf078d37d21ec86d8d91456a0e412feab730adf7",
+      "status": "changed",
+      "width": 390,
+      "height": 6835
+    },
+    {
+      "path": "phone/redesign.png",
+      "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+      "baselineSha256": "06efb82ecc2c3d07c6f99d0908ca63fd1ea8ddc7d42c71df9e92b325617e109d",
+      "status": "changed",
+      "width": 390,
+      "height": 12378
+    },
+    {
+      "path": "phone/regional-directory.png",
+      "sha256": "58d01e3205090dea1dc03b14f794381d11459e61f67f9abd4683de17733c06cc",
+      "baselineSha256": "f33fa942a193e8f30b5e735f1036b0ccb4899ecc73aa15b7b16bf69d9136968f",
+      "status": "changed",
+      "width": 390,
+      "height": 4670
+    },
+    {
+      "path": "phone/scope-request.png",
+      "sha256": "53c61db8de885b017b08d6c7bc00b1edd3c24e9a71ef62636e23821f1c59a0ff",
+      "baselineSha256": "36f064c34eb6bf2fb91e841a93bd7e4e2ee57ad459274313c033f9ccfbc0cf1b",
+      "status": "changed",
+      "width": 390,
+      "height": 3441
+    },
+    {
+      "path": "phone/service-questions.png",
+      "sha256": "de1a340f007d4c93c145f6db8030d49ec0b9cef78dc92e5940bb3482e09069cf",
+      "baselineSha256": "70f4bbe5b41409499220d920db2614b5bbf1680c2e7582866ace616b2fb938ef",
+      "status": "changed",
+      "width": 350,
+      "height": 489
+    },
+    {
+      "path": "phone/services.png",
+      "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+      "baselineSha256": "d56c1cb2bb5cd6e42c92c0f56dca3120c03755df5148764d6d9e2bd57e618252",
+      "status": "changed",
+      "width": 390,
+      "height": 8981
+    },
+    {
+      "path": "phone/systems.png",
+      "sha256": "4e38722c11f3f70c9d97bdb4d2ad9ea6a2b35f97c47896ee70f31e685423607a",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 390,
+      "height": 5336
+    },
+    {
+      "path": "phone/texas-county.png",
+      "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+      "baselineSha256": "fde219179ca8637cfbcfd8e5a5a18632d80961b7fe81382ac9543acfc69a40aa",
+      "status": "changed",
+      "width": 390,
+      "height": 6114
+    },
+    {
+      "path": "phone/texas-entry.png",
+      "sha256": "68ad5ce25e84b1c9aed80f0b4cd0f46a55c2d19502ce6ea7d7afefa5fd62fa64",
+      "baselineSha256": "1341531585758c381d68f4ce13b4c4254a950758ae28deb8c45145a08b359d21",
+      "status": "changed",
+      "width": 350,
+      "height": 1048
+    },
+    {
+      "path": "phone/web-design.png",
+      "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+      "baselineSha256": "37bcd797cf4aec62c3f664b08be79e31a352a960cbe3e0f78e8c4e5102cf3df3",
+      "status": "changed",
+      "width": 390,
+      "height": 11902
+    },
+    {
+      "path": "phone/wisconsin-entry.png",
+      "sha256": "3e6d28aa836599c718ebc36af0f05233a6b48106f8fdb36aa1a452deac49b4c6",
+      "baselineSha256": "fca08a081b366233f86858a9531418a97df30e297ddc92e4bcf3b45bccaabb70",
+      "status": "changed",
+      "width": 350,
+      "height": 656
+    },
+    {
+      "path": "phone/work.png",
+      "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+      "baselineSha256": "e14a071b6b335198159f385343ddf3514a2f93b1897f231598b6b81eda2f4bed",
+      "status": "changed",
+      "width": 390,
+      "height": 13231
+    },
+    {
+      "path": "phone/workflow.png",
+      "sha256": "9ba0f17d8d0065d11fe178571d5ffcdd5e2b04216cfb37a11f6c1f34b0a50d2a",
+      "baselineSha256": null,
+      "status": "new",
+      "width": 390,
+      "height": 5399
+    }
+  ],
+  "contactSheets": [
+    {
+      "path": "output/v3-visual-review/desktop-01.png",
+      "sha256": "b4c3fd5771ca983840eab99f9dd28f19f982fa7cc4dd2b3a46537c4b0d5aa635",
+      "entries": [
+        {
+          "candidate": "desktop/about.png",
+          "sha256": "70444979993195c2f4af191c39bf80a1632c811db6452f1a0491aac884b38072",
+          "sourceY": [
+            0,
+            3495
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/addons.png",
+          "sha256": "cde2c9099a1e98daa88540052214c2f4d31dfb56e4fd0fb9a6a10e34ffa64efa",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/addons.png",
+          "sha256": "cde2c9099a1e98daa88540052214c2f4d31dfb56e4fd0fb9a6a10e34ffa64efa",
+          "sourceY": [
+            4350,
+            6447
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/alabama-entry.png",
+          "sha256": "e674d8461b76e914b4399ec388ef218cc1477aed81d44529289452d246c3b955",
+          "sourceY": [
+            0,
+            813
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/audit.png",
+          "sha256": "d940c5c2349c2ea978bd410cddd4f8e48f483e6e511554722a3e8a88c8a3c98b",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/audit.png",
+          "sha256": "d940c5c2349c2ea978bd410cddd4f8e48f483e6e511554722a3e8a88c8a3c98b",
+          "sourceY": [
+            4350,
+            5448
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-02.png",
+      "sha256": "934dfd265c054c74004fb6a5271bc1639e9d56e322cf4e5473d93758932a0881",
+      "entries": [
+        {
+          "candidate": "desktop/brand-messaging.png",
+          "sha256": "aa10c08b04b8da8853c033a949910b522999e3d3981b1ac2a2cd8395d347fb8b",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/brand-messaging.png",
+          "sha256": "aa10c08b04b8da8853c033a949910b522999e3d3981b1ac2a2cd8395d347fb8b",
+          "sourceY": [
+            4350,
+            4614
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/care.png",
+          "sha256": "c30d55aaeeee1ee198e09903b6a5b1f81772248d8d53318876ec43b74e8c6f77",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/care.png",
+          "sha256": "c30d55aaeeee1ee198e09903b6a5b1f81772248d8d53318876ec43b74e8c6f77",
+          "sourceY": [
+            4350,
+            6582
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/concept.png",
+          "sha256": "2ead6043e2e695ab673a34cd84cfeab893e84356626a410c9abbd6c5efeeaeae",
+          "sourceY": [
+            0,
+            3555
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/contact.png",
+          "sha256": "9aab883cb1da3db2e33d73bc72f60e5bd870a88fb252fd20d424f44aa97454ff",
+          "sourceY": [
+            0,
+            3018
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-03.png",
+      "sha256": "20eb3d13d6d4ebc2d54fa9b09fb11fc52612cc3815d340e8477afb917072588c",
+      "entries": [
+        {
+          "candidate": "desktop/contractors.png",
+          "sha256": "db994b8fdcb1c78af2cf43f3a51c5ded91f9f1932f52938c83dc5ed1c358751e",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/contractors.png",
+          "sha256": "db994b8fdcb1c78af2cf43f3a51c5ded91f9f1932f52938c83dc5ed1c358751e",
+          "sourceY": [
+            4350,
+            6621
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/county-entry.png",
+          "sha256": "a0a8e522b6642e75446ca789dd346275c02c6e1dcf6791df4aac7dd8553ab7e4",
+          "sourceY": [
+            0,
+            1748
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/county-questions.png",
+          "sha256": "e006e90eb9b935e10920972b788e5c04d20b7ed75876f9e6cd1b939f2967861e",
+          "sourceY": [
+            0,
+            769
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/county.png",
+          "sha256": "9c02a950ee3b82f1d61b2e73cf2b72792155cbb317947337cb2a6c0b953fce14",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/county.png",
+          "sha256": "9c02a950ee3b82f1d61b2e73cf2b72792155cbb317947337cb2a6c0b953fce14",
+          "sourceY": [
+            4350,
+            8394
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-04.png",
+      "sha256": "cb2ff02137234dc298905a4a072fab84540a48b9c67072ac15aeef2d4534a7ee",
+      "entries": [
+        {
+          "candidate": "desktop/district-directory.png",
+          "sha256": "ca54955127c6f5be36f4639bf4632716845bd9a1294872cf6457dd9670c37955",
+          "sourceY": [
+            0,
+            3558
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/ecommerce.png",
+          "sha256": "8cb4bf53467d6fa033255ad92f84564b9a03de318659246a96f8e269a8d87a99",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/ecommerce.png",
+          "sha256": "8cb4bf53467d6fa033255ad92f84564b9a03de318659246a96f8e269a8d87a99",
+          "sourceY": [
+            4350,
+            4647
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/floating-tools-content.png",
+          "sha256": "0c082b0056f392cb6b57196ebda3b4a5f8850051b14df1732b09da1273b3a97b",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/floating-tools-home.png",
+          "sha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/footer-closed.png",
+          "sha256": "e5a31cca3bedae7836adbb6fa8346089d683c7706d2e77167b56e39e40263de9",
+          "sourceY": [
+            0,
+            384
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-05.png",
+      "sha256": "9c66a9718738fb633c4caaace6485a526b9f712543d49e0df30ba24953a816fa",
+      "entries": [
+        {
+          "candidate": "desktop/footer-open.png",
+          "sha256": "b75992701dbaf90a7655f9059d71768f0349594988c5a8884baeb48ae32dd2ad",
+          "sourceY": [
+            0,
+            2829
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/georgia-entry.png",
+          "sha256": "cbb5aef229308e7b59e2a47a152b1fc945e93bd53c03434e954c242508185300",
+          "sourceY": [
+            0,
+            506
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/guide.png",
+          "sha256": "b6bbafb5cf5b51cb3cd525192cc7d988ddd3fbeaa353b6884bd95bf6d64e9435",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/guide.png",
+          "sha256": "b6bbafb5cf5b51cb3cd525192cc7d988ddd3fbeaa353b6884bd95bf6d64e9435",
+          "sourceY": [
+            4350,
+            8700
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/guide.png",
+          "sha256": "b6bbafb5cf5b51cb3cd525192cc7d988ddd3fbeaa353b6884bd95bf6d64e9435",
+          "sourceY": [
+            8700,
+            9351
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/home-viewport-01.png",
+          "sha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-06.png",
+      "sha256": "8e4fe54d743a0158704bf91439f45465c56f3731a318fb3ab2b9afbf7b3c2926",
+      "entries": [
+        {
+          "candidate": "desktop/home-viewport-02.png",
+          "sha256": "ee1e1f810cd5479792481302bc11394a5af846e0f209ee77b2c1b011f91a4008",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/home-viewport-03.png",
+          "sha256": "280cf7f97cc77c87a415aaf10e4a9bca79e6337b1b88cfda5656a66e4452773d",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/home-viewport-04.png",
+          "sha256": "2c803b78f62b5de2e1aec91ec161106f807575eceb914dfea971c7060fec95ae",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/home-viewport-05.png",
+          "sha256": "65b727e3eca0436db50426aeca1960bca9b2844dc6537e5f5ce1bfc31dc61a20",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/home-viewport-06.png",
+          "sha256": "2d06972043d3bc63f835bf02b0932d54a793a322d707c8370e65b2ef7e716a68",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/home-viewport-07.png",
+          "sha256": "ce6f9715107aece05cbf692245b4e39270d2c784e7474cfe0442217294b5683f",
+          "sourceY": [
+            0,
+            999
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-07.png",
+      "sha256": "362466bfd3db37878fe81a21cc6d4a164b33ceab620961a70ed8640758f37cfc",
+      "entries": [
+        {
+          "candidate": "desktop/illinois-entry.png",
+          "sha256": "57516cb3a734617cef8886314ff48b118a94e591f64bc4a359f565f0354467a2",
+          "sourceY": [
+            0,
+            813
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/iowa-county.png",
+          "sha256": "0e96616132458a406787f38731fbc4db42d9d43a8363fae41c1588906dc873d3",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/iowa-county.png",
+          "sha256": "0e96616132458a406787f38731fbc4db42d9d43a8363fae41c1588906dc873d3",
+          "sourceY": [
+            4350,
+            5076
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/iowa-entry.png",
+          "sha256": "28a9073e60813046fafc8bd0a6ba6e5c13cd4598e5522384d8711e4356bba9e4",
+          "sourceY": [
+            0,
+            2065
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/local-profiles.png",
+          "sha256": "1eab760a1a3326b34175f02f6618af2785715b64bc8174bd642e1417043f7060",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/local-profiles.png",
+          "sha256": "1eab760a1a3326b34175f02f6618af2785715b64bc8174bd642e1417043f7060",
+          "sourceY": [
+            4350,
+            4872
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-08.png",
+      "sha256": "12b992033fda1f5610e0a32bcabc62cfcbf951cb67c021fec682de491f2acd62",
+      "entries": [
+        {
+          "candidate": "desktop/mississippi-entry.png",
+          "sha256": "a3c4aca22c3d8cef9a145c6bfe16388391cf0be9360440f62ce3fa418866d3f2",
+          "sourceY": [
+            0,
+            506
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/missouri-county.png",
+          "sha256": "334025c24aeac49178076344a08e29b646450a7dde3a6a1e11957287135ad14e",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/missouri-county.png",
+          "sha256": "334025c24aeac49178076344a08e29b646450a7dde3a6a1e11957287135ad14e",
+          "sourceY": [
+            4350,
+            5145
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/missouri-entry.png",
+          "sha256": "0cae4a106d728d4ca3712a37abdb4bbbfba50c6030533a7a3f1f7cc0fde7320b",
+          "sourceY": [
+            0,
+            406
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/monthly-seo.png",
+          "sha256": "60b645f038d95ac4a01f2b73ee51c946444ec55fb1566779a835338bff679368",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/monthly-seo.png",
+          "sha256": "60b645f038d95ac4a01f2b73ee51c946444ec55fb1566779a835338bff679368",
+          "sourceY": [
+            4350,
+            7164
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-09.png",
+      "sha256": "f3000fc9251f2bb3417fa7efcf0987f4942001540590f2190699a10e57cff0b1",
+      "entries": [
+        {
+          "candidate": "desktop/pricing.png",
+          "sha256": "24b58349da8481164709fe911e4f52eee79b1ca7f57f3df43d46b8ca329d22f3",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/pricing.png",
+          "sha256": "24b58349da8481164709fe911e4f52eee79b1ca7f57f3df43d46b8ca329d22f3",
+          "sourceY": [
+            4350,
+            8700
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/pricing.png",
+          "sha256": "24b58349da8481164709fe911e4f52eee79b1ca7f57f3df43d46b8ca329d22f3",
+          "sourceY": [
+            8700,
+            13050
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/pricing.png",
+          "sha256": "24b58349da8481164709fe911e4f52eee79b1ca7f57f3df43d46b8ca329d22f3",
+          "sourceY": [
+            13050,
+            17175
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/process.png",
+          "sha256": "572ca9c5eeba1086d8df3c36fe26117154049b05f5eec7cd8acac029bbf5933d",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/process.png",
+          "sha256": "572ca9c5eeba1086d8df3c36fe26117154049b05f5eec7cd8acac029bbf5933d",
+          "sourceY": [
+            4350,
+            4806
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-10.png",
+      "sha256": "a911f3838b0a72a9d59ec7159e8ee7dc7a2551ee182a34f2991ceee6a822f947",
+      "entries": [
+        {
+          "candidate": "desktop/redesign.png",
+          "sha256": "063d3aa566548a04da601ecdf0bd7a3d6ae05074cee23238f697d14c41967c5c",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/redesign.png",
+          "sha256": "063d3aa566548a04da601ecdf0bd7a3d6ae05074cee23238f697d14c41967c5c",
+          "sourceY": [
+            4350,
+            8007
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/regional-directory.png",
+          "sha256": "f19bf19d833b860f92fdcd615c0eed76c8f05cf9b6f527892c39f4c674803b4e",
+          "sourceY": [
+            0,
+            3885
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/scope-request.png",
+          "sha256": "60782325347854bff3cf0db4db8a9ad522df84665014a6ff618b322073335602",
+          "sourceY": [
+            0,
+            3093
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/service-questions.png",
+          "sha256": "7de2271970c471caa4a5c1c2f40996fe7af1c44f299dd475e043fc805ee4d016",
+          "sourceY": [
+            0,
+            381
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/services.png",
+          "sha256": "50c7b17bf21319ef78ceb8370f11d08e125abbdda6dbe0381b8c18c725e4d2f3",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-11.png",
+      "sha256": "f791d7e9dfa4a8ea6a889f18f2c9f40e6d65efee540b39b9c3127bd0dab547e7",
+      "entries": [
+        {
+          "candidate": "desktop/services.png",
+          "sha256": "50c7b17bf21319ef78ceb8370f11d08e125abbdda6dbe0381b8c18c725e4d2f3",
+          "sourceY": [
+            4350,
+            6414
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/systems.png",
+          "sha256": "188e6c9b2d4c5949ef58f01026514818e8f67e0b3c13e6bf9d00da61ef149e5c",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/systems.png",
+          "sha256": "188e6c9b2d4c5949ef58f01026514818e8f67e0b3c13e6bf9d00da61ef149e5c",
+          "sourceY": [
+            4350,
+            4692
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/texas-county.png",
+          "sha256": "b3a68d96a3e7a432f47274af689217a8da8ebf113db2c1277ba373184118d5ae",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/texas-county.png",
+          "sha256": "b3a68d96a3e7a432f47274af689217a8da8ebf113db2c1277ba373184118d5ae",
+          "sourceY": [
+            4350,
+            5163
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/texas-entry.png",
+          "sha256": "0cb2e5e90060358db794f80d884a56719c8612041cfcad9ddb8d01ca09d6c59c",
+          "sourceY": [
+            0,
+            784
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-12.png",
+      "sha256": "73398446f9923536ecf0f5515d2a413e893ede7d2c9c658bba630b77ab055193",
+      "entries": [
+        {
+          "candidate": "desktop/web-design.png",
+          "sha256": "e6478fd3fd01e7454be0172c772af9d62bcead7443ffb52df2eef5936a3dc98f",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "desktop/web-design.png",
+          "sha256": "e6478fd3fd01e7454be0172c772af9d62bcead7443ffb52df2eef5936a3dc98f",
+          "sourceY": [
+            4350,
+            7824
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "desktop/wisconsin-entry.png",
+          "sha256": "63c6935b2e50f4923d5510d9e992f701dda6c3fbdb3ae01b90c3c4637816398a",
+          "sourceY": [
+            0,
+            499
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "desktop/work.png",
+          "sha256": "077d994999b037cf06eb7a7de1c5b3f00829dc3cea0e7b579dc5c8386915d0f8",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "desktop/work.png",
+          "sha256": "077d994999b037cf06eb7a7de1c5b3f00829dc3cea0e7b579dc5c8386915d0f8",
+          "sourceY": [
+            4350,
+            8076
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "desktop/workflow.png",
+          "sha256": "93f764850bf9349aabc6946ebd6ac4a9586dcca2f6acaddb66ceadefdc8a6fe1",
+          "sourceY": [
+            0,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/desktop-13.png",
+      "sha256": "5ca6750a5b462d264523e94522da083e440e5ee2859e8592994b3c72ba0ade3c",
+      "entries": [
+        {
+          "candidate": "desktop/workflow.png",
+          "sha256": "93f764850bf9349aabc6946ebd6ac4a9586dcca2f6acaddb66ceadefdc8a6fe1",
+          "sourceY": [
+            4350,
+            4668
+          ],
+          "panel": 0
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-01.png",
+      "sha256": "d8f11e31af62fb6639c7c039afd403941c471cb3f7b5a1ac6ac2c5bbd3daf143",
+      "entries": [
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-02.png",
+      "sha256": "703c0fa957a2c2fc8085c6c33cbb7546bdb6722a54fa20b48a614e0a685467e1",
+      "entries": [
+        {
+          "candidate": "phone/addons.png",
+          "sha256": "a73d4f93ddc2d85d4bddcfa2c3fb4245866cd7a59a49bcd0fc0f288a99dd00d0",
+          "sourceY": [
+            8700,
+            8952
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/alabama-entry.png",
+          "sha256": "e2f60118ad5be9f7936a7d2f91f805c903810b7c91a183b15bc21d2d3fde0fa6",
+          "sourceY": [
+            0,
+            949
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/audit.png",
+          "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/audit.png",
+          "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/audit.png",
+          "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/audit.png",
+          "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-03.png",
+      "sha256": "2c0148ab8ed33e9acd6b192cc4bb9317a7a38d3c090ce9d6c6038cabb7ee3cb7",
+      "entries": [
+        {
+          "candidate": "phone/audit.png",
+          "sha256": "af0a1df490fc85f594a531c12e3ff124ca1416d1a527cde55645f78ba12caf0b",
+          "sourceY": [
+            5800,
+            7218
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/brand-messaging.png",
+          "sha256": "7a5094d6518ac979a38cfe92976b78d5d7edd1efa80ae30feebe667dde574a6c",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/brand-messaging.png",
+          "sha256": "7a5094d6518ac979a38cfe92976b78d5d7edd1efa80ae30feebe667dde574a6c",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/brand-messaging.png",
+          "sha256": "7a5094d6518ac979a38cfe92976b78d5d7edd1efa80ae30feebe667dde574a6c",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/brand-messaging.png",
+          "sha256": "7a5094d6518ac979a38cfe92976b78d5d7edd1efa80ae30feebe667dde574a6c",
+          "sourceY": [
+            4350,
+            5224
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-04.png",
+      "sha256": "70890b2c143e9a96725741bd86a84c1aa42f63d70537a52e9e41353edbaa5e14",
+      "entries": [
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/care.png",
+          "sha256": "a00b17bc87fbabf5ae71439e187bff8cda6615ea72f19637cecea79b068a7bf6",
+          "sourceY": [
+            8700,
+            8852
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-05.png",
+      "sha256": "3ea320cfa5f0a8408c08ae250b937836bb0a927c2dd1aaeb802f76d7bb477576",
+      "entries": [
+        {
+          "candidate": "phone/concept.png",
+          "sha256": "2785f43e95beadb2930ffafa10a9a83f8fd719494a7d40978d2c49233ef0f1a3",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/concept.png",
+          "sha256": "2785f43e95beadb2930ffafa10a9a83f8fd719494a7d40978d2c49233ef0f1a3",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/concept.png",
+          "sha256": "2785f43e95beadb2930ffafa10a9a83f8fd719494a7d40978d2c49233ef0f1a3",
+          "sourceY": [
+            2900,
+            4107
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-06.png",
+      "sha256": "311020a48deac36bc48adf6e33f2a09291189efca9f4442f57ff5c509d3c1b9a",
+      "entries": [
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/contractors.png",
+          "sha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+          "sourceY": [
+            8700,
+            8797
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/county-entry.png",
+          "sha256": "c02547a98d7e16c49c82d7f8d6d86c97c300587f6a59768bb561cc4585bd55b5",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/county-entry.png",
+          "sha256": "c02547a98d7e16c49c82d7f8d6d86c97c300587f6a59768bb561cc4585bd55b5",
+          "sourceY": [
+            1450,
+            2287
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-07.png",
+      "sha256": "9a970b4f76b4ece09e2ed1db36c33f432830132b73a07d89ce1ebb8103727a51",
+      "entries": [
+        {
+          "candidate": "phone/county-questions.png",
+          "sha256": "daa53fc6aa7afb6555e7bc031bdb1b09c92c3730a1e2e664530201435c7ecf55",
+          "sourceY": [
+            0,
+            983
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-08.png",
+      "sha256": "c6f515a88adb2d1dccf2eabaaa3b007ca141670a4378bd7e6cc4a37142e54056",
+      "entries": [
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            8700,
+            10150
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            10150,
+            11600
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            11600,
+            13050
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/county.png",
+          "sha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+          "sourceY": [
+            13050,
+            13397
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/district-directory.png",
+          "sha256": "3af6f4823da8fe5ab2af9aeb14dad27cbe909f8f6fcd6ceb38e3cf2da2182d74",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-09.png",
+      "sha256": "63b37817022e9f978af77e4958ae00f1c364c48dafa42e8c1bf4c83a89882c76",
+      "entries": [
+        {
+          "candidate": "phone/district-directory.png",
+          "sha256": "3af6f4823da8fe5ab2af9aeb14dad27cbe909f8f6fcd6ceb38e3cf2da2182d74",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/district-directory.png",
+          "sha256": "3af6f4823da8fe5ab2af9aeb14dad27cbe909f8f6fcd6ceb38e3cf2da2182d74",
+          "sourceY": [
+            2900,
+            3847
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/ecommerce.png",
+          "sha256": "042a05db454b15d78bb92a1f5d78dfb90c0e4048c5d5d268ed1fa660937e0c0a",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/ecommerce.png",
+          "sha256": "042a05db454b15d78bb92a1f5d78dfb90c0e4048c5d5d268ed1fa660937e0c0a",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/ecommerce.png",
+          "sha256": "042a05db454b15d78bb92a1f5d78dfb90c0e4048c5d5d268ed1fa660937e0c0a",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/ecommerce.png",
+          "sha256": "042a05db454b15d78bb92a1f5d78dfb90c0e4048c5d5d268ed1fa660937e0c0a",
+          "sourceY": [
+            4350,
+            5250
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-10.png",
+      "sha256": "767d2a70816c633f59e81890501b6c7c62b77ceba71211b8c380ac6ee0f76f2e",
+      "entries": [
+        {
+          "candidate": "phone/floating-tools-content.png",
+          "sha256": "4880532d574dc49841ebb9172d7495340a1ad2229dbaa45fca0418f2c1f9eb75",
+          "sourceY": [
+            0,
+            844
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/floating-tools-home.png",
+          "sha256": "5226a47e3b86a5aa1d95f4f41e7c445c5770dd8a5fe917bd53343689a3a10811",
+          "sourceY": [
+            0,
+            844
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/footer-closed.png",
+          "sha256": "699de3353586a94d155a96cda023487764eb269fba307978cb24f30755f9212c",
+          "sourceY": [
+            0,
+            746
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/footer-open.png",
+          "sha256": "077257d520a1001d00b081750186df30f904bb092b160b44f4a59e2bc8696095",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/footer-open.png",
+          "sha256": "077257d520a1001d00b081750186df30f904bb092b160b44f4a59e2bc8696095",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/footer-open.png",
+          "sha256": "077257d520a1001d00b081750186df30f904bb092b160b44f4a59e2bc8696095",
+          "sourceY": [
+            2900,
+            4222
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-11.png",
+      "sha256": "056a4252214a79fadaf446dec1ed879224431a31d8700fa5e04930eb205b08ad",
+      "entries": [
+        {
+          "candidate": "phone/georgia-entry.png",
+          "sha256": "413da35b964a28665446d761116c1b3f573d113023ea8538813684d87069e24e",
+          "sourceY": [
+            0,
+            727
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-12.png",
+      "sha256": "d3b2405a67ad582fdf9398cf80de581a6f0bac2528930902091f972b26931397",
+      "entries": [
+        {
+          "candidate": "phone/home.png",
+          "sha256": "0b537c9402e80f1ff53394dea5c4462f5305808c49cffc96a7a2dec8279dbf45",
+          "sourceY": [
+            7250,
+            8232
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/illinois-entry.png",
+          "sha256": "729056b13e1fda35cddb677f5ad27ca462ddfe9aa53ba72577808906ec80f1b7",
+          "sourceY": [
+            0,
+            1088
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/iowa-county.png",
+          "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/iowa-county.png",
+          "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/iowa-county.png",
+          "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/iowa-county.png",
+          "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-13.png",
+      "sha256": "f17bb14f558d0ca89c79ccd7780afe0776aecc757b0996e423c2888e1e2b841f",
+      "entries": [
+        {
+          "candidate": "phone/iowa-county.png",
+          "sha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+          "sourceY": [
+            5800,
+            6008
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/iowa-entry.png",
+          "sha256": "3cda408bcd985d27c66535f35a21c248253f44589b2f927645e9d6825ee06147",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/iowa-entry.png",
+          "sha256": "3cda408bcd985d27c66535f35a21c248253f44589b2f927645e9d6825ee06147",
+          "sourceY": [
+            1450,
+            2357
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/local-profiles.png",
+          "sha256": "fb244a475ffd42ae4a88976a120fdfbbc5056deca2214f97e1b69c9c1044bfd6",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/local-profiles.png",
+          "sha256": "fb244a475ffd42ae4a88976a120fdfbbc5056deca2214f97e1b69c9c1044bfd6",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/local-profiles.png",
+          "sha256": "fb244a475ffd42ae4a88976a120fdfbbc5056deca2214f97e1b69c9c1044bfd6",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-14.png",
+      "sha256": "93659f008283c0cb48b7fb50a4a21a72178f1eb948c795002ca9944ee3b1f789",
+      "entries": [
+        {
+          "candidate": "phone/local-profiles.png",
+          "sha256": "fb244a475ffd42ae4a88976a120fdfbbc5056deca2214f97e1b69c9c1044bfd6",
+          "sourceY": [
+            4350,
+            5790
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/mississippi-entry.png",
+          "sha256": "fd4901cf2086d9569d58f800a0d84591cc7d7d2fbfe324152ac742a01dc7a6a6",
+          "sourceY": [
+            0,
+            641
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/missouri-county.png",
+          "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/missouri-county.png",
+          "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/missouri-county.png",
+          "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/missouri-county.png",
+          "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-15.png",
+      "sha256": "24a731844ca12a1dc381b2e39132a2d13e813a11ee807dde4f63b1b2ba9f341e",
+      "entries": [
+        {
+          "candidate": "phone/missouri-county.png",
+          "sha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+          "sourceY": [
+            5800,
+            6043
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/missouri-entry.png",
+          "sha256": "0f76dc544df72ed8813a287befd85bb460c7eae367f4f595e308237c0df36565",
+          "sourceY": [
+            0,
+            487
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-16.png",
+      "sha256": "0a2ffa0c6d93dd2f3364e9717bd47acae3b54600f863c7a1570c41ffefbe7eda",
+      "entries": [
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/monthly-seo.png",
+          "sha256": "aafe250c363992dfba9254314cbce87b35b662536b6b9c190b3300fcb919f398",
+          "sourceY": [
+            8700,
+            9768
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-17.png",
+      "sha256": "17595fccd345ac6a5fbb657be380bbe5abe69f0133426c1ead56b639c3317f52",
+      "entries": [
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            8700,
+            10150
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            10150,
+            11600
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            11600,
+            13050
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-18.png",
+      "sha256": "a2ed66e6402786b12f8f5de067f6f2671463d699b7f45a5bd7d08a991c348215",
+      "entries": [
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            13050,
+            14500
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            14500,
+            15950
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            15950,
+            17400
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            17400,
+            18850
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            18850,
+            20300
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            20300,
+            21750
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-19.png",
+      "sha256": "a9cb85292c7c233e23b3aff5464845fee24f25f7d595cc6d4f56ebe73291f2cd",
+      "entries": [
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            21750,
+            23200
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            23200,
+            24650
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            24650,
+            26100
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            26100,
+            27550
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            27550,
+            29000
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/pricing.png",
+          "sha256": "b3eb36d1a864ad2522c5af8efc294f7f59cfced961955e21f993560b08bcb359",
+          "sourceY": [
+            29000,
+            29375
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-20.png",
+      "sha256": "449e784fa5ace4c05daeceb7604b693aa3921e6cb7a23f8201da18054e87374b",
+      "entries": [
+        {
+          "candidate": "phone/process.png",
+          "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/process.png",
+          "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/process.png",
+          "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/process.png",
+          "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/process.png",
+          "sha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+          "sourceY": [
+            5800,
+            6835
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-21.png",
+      "sha256": "2f615825d5181a1aa49978d66005053150152f9f512b0b00683b8177ab2d3c60",
+      "entries": [
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            8700,
+            10150
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-22.png",
+      "sha256": "1f38d4a7d8876a2f0a083851ce5db9c649563caf413f730d0f8a7e87021ccf7e",
+      "entries": [
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            10150,
+            11600
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/redesign.png",
+          "sha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+          "sourceY": [
+            11600,
+            12378
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/regional-directory.png",
+          "sha256": "58d01e3205090dea1dc03b14f794381d11459e61f67f9abd4683de17733c06cc",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/regional-directory.png",
+          "sha256": "58d01e3205090dea1dc03b14f794381d11459e61f67f9abd4683de17733c06cc",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/regional-directory.png",
+          "sha256": "58d01e3205090dea1dc03b14f794381d11459e61f67f9abd4683de17733c06cc",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/regional-directory.png",
+          "sha256": "58d01e3205090dea1dc03b14f794381d11459e61f67f9abd4683de17733c06cc",
+          "sourceY": [
+            4350,
+            4670
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-23.png",
+      "sha256": "f145eec0260ad1264f161a79c05b4afb981b59d28759b84e7f256264dec9662d",
+      "entries": [
+        {
+          "candidate": "phone/scope-request.png",
+          "sha256": "53c61db8de885b017b08d6c7bc00b1edd3c24e9a71ef62636e23821f1c59a0ff",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/scope-request.png",
+          "sha256": "53c61db8de885b017b08d6c7bc00b1edd3c24e9a71ef62636e23821f1c59a0ff",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/scope-request.png",
+          "sha256": "53c61db8de885b017b08d6c7bc00b1edd3c24e9a71ef62636e23821f1c59a0ff",
+          "sourceY": [
+            2900,
+            3441
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/service-questions.png",
+          "sha256": "de1a340f007d4c93c145f6db8030d49ec0b9cef78dc92e5940bb3482e09069cf",
+          "sourceY": [
+            0,
+            489
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-24.png",
+      "sha256": "1dfe8f12303c3237ccc232f3e561c8e9c7fc6405fc024dbe047a9b915d2a15c4",
+      "entries": [
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/services.png",
+          "sha256": "91001426e92370d146376f6759b07f87e8b9e8c68d06587cb730ee4c8211e13d",
+          "sourceY": [
+            8700,
+            8981
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/systems.png",
+          "sha256": "4e38722c11f3f70c9d97bdb4d2ad9ea6a2b35f97c47896ee70f31e685423607a",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-25.png",
+      "sha256": "5ede4e39d6bba0836038764ef4a1a5648206896ca78d87bc94979d5ece3d1092",
+      "entries": [
+        {
+          "candidate": "phone/systems.png",
+          "sha256": "4e38722c11f3f70c9d97bdb4d2ad9ea6a2b35f97c47896ee70f31e685423607a",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/systems.png",
+          "sha256": "4e38722c11f3f70c9d97bdb4d2ad9ea6a2b35f97c47896ee70f31e685423607a",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/systems.png",
+          "sha256": "4e38722c11f3f70c9d97bdb4d2ad9ea6a2b35f97c47896ee70f31e685423607a",
+          "sourceY": [
+            4350,
+            5336
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/texas-county.png",
+          "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/texas-county.png",
+          "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/texas-county.png",
+          "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-26.png",
+      "sha256": "35a2ab4848aa79b4f9de0a25080ceebbe84ffeeaa19a651c75bef6f9c8859a61",
+      "entries": [
+        {
+          "candidate": "phone/texas-county.png",
+          "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/texas-county.png",
+          "sha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+          "sourceY": [
+            5800,
+            6114
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/texas-entry.png",
+          "sha256": "68ad5ce25e84b1c9aed80f0b4cd0f46a55c2d19502ce6ea7d7afefa5fd62fa64",
+          "sourceY": [
+            0,
+            1048
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-27.png",
+      "sha256": "9ae66c8cd52f3c29d64ac7c8587a0e86dbaf2fd0be81d148f7664cdb3a9e84ac",
+      "entries": [
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            8700,
+            10150
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            10150,
+            11600
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/web-design.png",
+          "sha256": "4255e0c9149a5bcb416e43d1a6925de8c328c37213c91e854e1cd10c102a1148",
+          "sourceY": [
+            11600,
+            11902
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-28.png",
+      "sha256": "fa1ad842bec021c5dff4fb8b95fe424ed4eb8dbab95fba6af3b99a76a268a50b",
+      "entries": [
+        {
+          "candidate": "phone/wisconsin-entry.png",
+          "sha256": "3e6d28aa836599c718ebc36af0f05233a6b48106f8fdb36aa1a452deac49b4c6",
+          "sourceY": [
+            0,
+            656
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            4350,
+            5800
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            5800,
+            7250
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-29.png",
+      "sha256": "d7993d85afc232a05a73d685f620aebf62b26e6aee3473a1f1072b7431231fc9",
+      "entries": [
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            7250,
+            8700
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            8700,
+            10150
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            10150,
+            11600
+          ],
+          "panel": 2
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            11600,
+            13050
+          ],
+          "panel": 3
+        },
+        {
+          "candidate": "phone/work.png",
+          "sha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+          "sourceY": [
+            13050,
+            13231
+          ],
+          "panel": 4
+        },
+        {
+          "candidate": "phone/workflow.png",
+          "sha256": "9ba0f17d8d0065d11fe178571d5ffcdd5e2b04216cfb37a11f6c1f34b0a50d2a",
+          "sourceY": [
+            0,
+            1450
+          ],
+          "panel": 5
+        }
+      ]
+    },
+    {
+      "path": "output/v3-visual-review/phone-30.png",
+      "sha256": "6c35bee1657a94a7c584c22fd6d4b00de9d0ef2fb2e871307e29bcd41b49d096",
+      "entries": [
+        {
+          "candidate": "phone/workflow.png",
+          "sha256": "9ba0f17d8d0065d11fe178571d5ffcdd5e2b04216cfb37a11f6c1f34b0a50d2a",
+          "sourceY": [
+            1450,
+            2900
+          ],
+          "panel": 0
+        },
+        {
+          "candidate": "phone/workflow.png",
+          "sha256": "9ba0f17d8d0065d11fe178571d5ffcdd5e2b04216cfb37a11f6c1f34b0a50d2a",
+          "sourceY": [
+            2900,
+            4350
+          ],
+          "panel": 1
+        },
+        {
+          "candidate": "phone/workflow.png",
+          "sha256": "9ba0f17d8d0065d11fe178571d5ffcdd5e2b04216cfb37a11f6c1f34b0a50d2a",
+          "sourceY": [
+            4350,
+            5399
+          ],
+          "panel": 2
+        }
+      ]
+    }
+  ],
+  "boundedHeadingReview": {
+    "status": "PASS",
+    "path": "src/buyer-decisions.mjs",
+    "beforeSha256": "b20b23704b4c034cf33a5882c89f811e4d2159b282bf69a2cbf22131868b5ca1",
+    "afterSha256": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7",
+    "proof": "Removing exactly the added H2 restores exact captured-source bytes. Heading follows summary inside closed details, before existing paragraph and H3 offer cards. No initial closed-state pixel change expected."
+  },
+  "limitations": [
+    "No baselines copied or accepted by this review.",
+    "Identified source corrections verified; affected-image recapture and visual review remain pending.",
+    "Fixed contact widget can overlay text at a particular scroll position; screenshots alone do not establish a new regression.",
+    "Prior helper review unchanged; no deployment or CI approval is granted."
+  ],
+  "appliedSourceReview": {
+    "reviewedAt": "2026-10-29T11:46:56.678Z",
+    "status": "PASS",
+    "scope": "Applied source corrections only; affected Linux screenshots pending",
+    "findings": [
+      "V3-VIS-01",
+      "V3-VIS-02",
+      "V3-VIS-03"
+    ],
+    "checks": [
+      "V3 directory closing removes mandatory Roadmap/Care charge and explicitly separates diagnosis from eligibility/onboarding; legacy branch retains former output.",
+      "Home search entry derives price from Local Search Focus and describes its existing-page/eligible-profile output; legacy improve fallback retained.",
+      "Monthly SEO exclusions render each approved exclusion as an escaped nested list item; no scope removed.",
+      "H2 addition follows the summary within the closed pricing disclosure and precedes H3 cards.",
+      "Fresh independent in-memory offer binding check passes 2670 assertions over 2437 routes, 15 offers, 13 modules. Mutated Local Search Focus price reaches homepage; obsolete first-payment sentence is absent from every V3 page.",
+      "Browser source differs only in two price/outcome expectations; all 587 exclusion records unchanged."
+    ],
+    "files": [
+      {
+        "path": "src/service-counties.mjs",
+        "beforeSha256": "c16d8b18365fc722e0dd3d56a4abba58305a16e953fdfdc614322664fe99dbe7",
+        "sha256": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f"
+      },
+      {
+        "path": "src/home-proof.mjs",
+        "beforeSha256": "323f885b86486bac2a4b3d716b679bdbcd36d52783fd52603adf0bd9fca3c44d",
+        "sha256": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780"
+      },
+      {
+        "path": "src/v3-service-content.mjs",
+        "beforeSha256": "28fe08129886f89cbfaf5acc48ebc16c21fec5d2c620698fec2ce13fa72d5447",
+        "sha256": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9"
+      },
+      {
+        "path": "src/buyer-decisions.mjs",
+        "beforeSha256": "b20b23704b4c034cf33a5882c89f811e4d2159b282bf69a2cbf22131868b5ca1",
+        "sha256": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7"
+      },
+      {
+        "path": "scripts/check-v3-offer-bindings.mjs",
+        "beforeSha256": "e20073eb2b468067e519911fcb9f3b1d93f49b2286aa633b75da5b975025cd28",
+        "sha256": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891"
+      },
+      {
+        "path": "tests/browser/living-city-night.spec.mjs",
+        "beforeSha256": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+        "sha256": "993c298d7eb07da14a4df6acdc4596b5f8bf3dc24138ab07c4cd020dfcd4577a"
+      }
+    ],
+    "policyRebind": {
+      "path": "config/ci-browser-exclusions.json",
+      "beforeSha256": "cd396b3dd88154f3efdc9181807a9edd1c0bd9e9e2a44a20fb7eeb734178b6d8",
+      "afterSha256": "5c827adf6363fc43f36c37ee30ffd59ae020e4665316d1cf5c784e501457d476",
+      "browserSource": "tests/browser/living-city-night.spec.mjs",
+      "exclusionsUnchanged": 587
+    },
+    "screenshots": "PENDING",
+    "releaseApproved": false
+  }
+}

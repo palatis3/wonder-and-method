@@ -164,5 +164,5 @@ test('the original 333 areas preserve their facts in state hubs, alongside appro
  for(const [retired,destination] of Object.entries(retiredCountyRoutes)){assert.ok(!byPath.has(retired)&&!servicesByPath.has(retired),retired);const [hub,slug]=destination.split('#'),target=byPath.get(hub)||servicesByPath.get(hub);assert.ok(target,destination);if(slug)assert.ok(target.body.includes(`id="${slug}"`),destination);}
  const altered=structuredClone(offers);altered.launch_site.public_price=1777;altered.baseline.one_time_price=477;altered.plans.keep_running.monthly_price=177;
  const changed=countyPages(altered);assert.equal(changed.length,53);
- for(const page of changed)for(const price of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);
+ for(const page of changed){for(const price of ['$1,777','$477','$177/month'])assert.ok(page.body.includes(price),page.path+' dynamic price '+price);assert.doesNotMatch(page.body,/\$654|first payment if a new review is needed/);assert.match(page.body,/Care eligibility and any one-time onboarding are confirmed before payment/);}
 });

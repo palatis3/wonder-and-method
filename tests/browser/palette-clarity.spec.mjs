@@ -35,8 +35,9 @@ test('one fictional tracker sample opens without enabling storage',async({page})
 });
 
 test('full package and local briefs remain available by disclosure and saved link',async({page})=>{
- await page.goto('/services/web-design/?qa=1');await page.locator('.build-compare-link').click();await expect(page).toHaveURL(/\/pricing\/(?:\?qa=1)?#every-inclusion$/);await expect(page.locator('#every-inclusion')).toHaveAttribute('open','');
- await page.goto('/pricing/?qa=1');await expect(page.locator('#every-inclusion')).not.toHaveAttribute('open','');await page.locator('#every-inclusion > summary').click();await expect(page.locator('#every-inclusion table')).toBeVisible();
+ await page.goto('/services/web-design/?qa=1');await page.locator('#every-inclusion > summary').click();await expect(page.locator('#every-inclusion')).toHaveAttribute('open','');
+ await page.goto('/pricing/?qa=1');await expect(page.locator('#every-inclusion')).not.toHaveAttribute('open','');await page.locator('#every-inclusion > summary').click();await expect(page.locator('#every-inclusion .v3-comparison-list > article')).toHaveCount(4);for(const card of await page.locator('#every-inclusion .v3-comparison-list > article').all()){await expect(card).toBeVisible();await expect(card.locator('dl')).toBeVisible();await expect(card.getByRole('link',{name:'Read the complete scope'})).toBeVisible();}
+ await page.goto('/pricing/?qa=1#every-inclusion');await expect(page.locator('#every-inclusion')).toHaveAttribute('open','');await expect(page.locator('#every-inclusion')).toBeInViewport();
  await page.goto('/areas/texas/milam-county/?qa=1');await expect(page.locator('.local-decision-steps > li')).toHaveCount(3);for(const step of await page.locator('.local-decision-steps > li').all())await expect(step).toBeVisible();await expect(page.locator('.local-brief-summary,.location-planning-table')).toHaveCount(0);await expect(page.locator('#planning-details')).not.toHaveAttribute('open','');
  await page.goto('/areas/texas/milam-county/?qa=1#planning-details');await expect(page.locator('#planning-details')).toHaveAttribute('open','');await expect(page.locator('#planning-details')).toBeInViewport();await expect(page.locator('#planning-details')).toContainText('These are public examples, not studio projects, clients or endorsements.');
 });

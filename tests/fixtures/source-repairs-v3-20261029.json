@@ -158,6 +158,224 @@
           "after": "2026-10-29"
         }
       ]
+    },
+    {
+      "path": "/areas/texas/guadalupe-county/",
+      "beforeSha256": "b0f83bb39f98810fcde9eace9cc60447b2055e10bfee9c9f572d9803484720c9",
+      "afterSha256": "9a6a148b2da0c42f116de96708f4c53909f115980844aaf3f15395aba7e55968",
+      "edits": [
+        {
+          "path": [
+            "lead"
+          ],
+          "before": "A room can provide a projector while leaving the presenting device and technical help to the organizer. I help Guadalupe County businesses turn that kind of customer decision into clear website content.",
+          "after": "A meeting room and a workable presentation setup are separate decisions. I help Guadalupe County businesses explain room-specific equipment, organizer preparation and booking confirmation before an event."
+        },
+        {
+          "path": [
+            "decisionTitle"
+          ],
+          "before": "Explain what a meeting-room projector does and does not include.",
+          "after": "Check room-specific equipment before confirming the presentation plan."
+        },
+        {
+          "path": [
+            "decision"
+          ],
+          "before": "Schertz Public Library lists projectors among its meeting-room equipment, but its policy says the library does not provide computers or technical instruction and troubleshooting. The policy describes library-provided remotes and cables, requires advance approval for personal equipment and makes the organizer responsible for presentation arrangements. For a facility website, I would place the equipment inventory beside the responsibilities it leaves with the event organizer. A projector photograph would not stand in for an equipment checklist. The inquiry could identify the planned presentation and any questions about the supplied connections, with staff-approved information explaining what the organizer must bring and arrange. The proposed content would also keep setup and cleanup inside the reserved period, so preparation is included when discussing the booking. A focused revision can clarify the room description before the existing reservation handoff; a fuller site can connect room layouts, equipment preparation and organizer responsibilities. The owner must approve the inventory and connection details rather than the website promising compatibility for every device.",
+          "after": "Guadalupe County’s room-reservation page distinguishes its larger Seguin rooms from a smaller room at the Schertz satellite building. It identifies audiovisual equipment at the Veterans Outreach Center, subject to availability. The linked county policy asks applicants to request equipment on the reservation form and verify system requirements before the meeting, during business hours; limited assistance may be available. A submitted application is not a confirmed reservation: the applicant needs the County’s approval email. For a facility website, I would put the selected room and its verified equipment beside the organizer’s preparation checklist. The inquiry should capture the presentation plan without promising that every room has the same equipment or that every device will connect. A focused revision can clarify the existing room page before its reservation handoff; a fuller site can connect room comparison, preparation and confirmation. The owner must approve room details, current conditions and the support boundary. Setup, cleanup and equipment return should be discussed before the event, with the operator confirming the allowed timetable."
+        },
+        {
+          "path": [
+            "scopes"
+          ],
+          "before": [
+            {
+              "title": "Clarify the existing service introduction",
+              "pages": [
+                "Room equipment supplied",
+                "Presenting device and technical responsibility",
+                "Setup and cleanup within the booking"
+              ],
+              "request": "Identify the presentation plan and equipment questions before handing off to the existing reservation route.",
+              "supplies": "Current projector, cable and remote inventory for each room; Approved description of personal-equipment approval and technical support boundaries; Current booking instructions and time needed for setup and cleanup.",
+              "check": "An organizer expecting a library laptop and technical setup can see those are not supplied before reserving a presentation room."
+            },
+            {
+              "title": "Build a fuller visit and preparation site",
+              "pages": [
+                "Room equipment supplied",
+                "Preparation and responsibilities",
+                "Existing inquiry and confirmation route"
+              ],
+              "request": "Identify the presentation plan and equipment questions before handing off to the existing reservation route.",
+              "supplies": "Current service descriptions, approved preparation examples, maintained contact routes and a named owner for updates.",
+              "check": "A proposed event includes setup and cleanup in its reserved time and does not receive an unverified promise that its device will connect."
+            }
+          ],
+          "after": [
+            {
+              "title": "Clarify the existing service introduction",
+              "pages": [
+                "Selected room and available equipment",
+                "Presentation preparation and assistance",
+                "Request versus confirmed reservation"
+              ],
+              "request": "Identify the presentation plan and equipment questions before handing off to the existing reservation route.",
+              "supplies": "Owner-verified equipment for each room; Current instructions for requesting equipment and checking device requirements; Approved reservation, arrival, cleanup and equipment-return instructions.",
+              "check": "An organizer can distinguish the chosen room’s confirmed equipment from an assumption and can tell that submitting a request is not approval."
+            },
+            {
+              "title": "Build a fuller visit and preparation site",
+              "pages": [
+                "Room comparison and equipment",
+                "Preparation and responsibilities",
+                "Existing request and approval route"
+              ],
+              "request": "Identify the presentation plan and equipment questions before handing off to the existing reservation route.",
+              "supplies": "Current service descriptions, approved preparation examples, maintained contact routes and a named owner for updates.",
+              "check": "An organizer knows which equipment to request, which requirements to verify before the meeting and which message confirms the reservation."
+            }
+          ]
+        },
+        {
+          "path": [
+            "scopeTrigger"
+          ],
+          "before": "A focused edit can clarify equipment and organizer responsibilities on the room page. A fuller site can join room comparison, preparation and booking instructions. The owner verifies equipment details; compatibility testing or booking-system changes need an agreed scope.",
+          "after": "A focused edit can clarify room-specific equipment, preparation and approval on an existing room page. A fuller site can join room comparison, preparation and booking instructions. The owner verifies current details; device testing or booking-system changes need an agreed scope."
+        },
+        {
+          "path": [
+            "quoteQuestions"
+          ],
+          "before": [
+            "What should the website explain about current projector, cable and remote inventory for each room?",
+            "What should the website explain about approval for personal equipment and the limits of technical support?",
+            "What should the website explain about current booking instructions and time needed for setup and cleanup?"
+          ],
+          "after": [
+            "What equipment is currently available in the selected room, and what must the organizer request?",
+            "What device checks and support arrangements should the organizer confirm before the meeting?",
+            "Which message confirms the reservation, and what arrival, cleanup and equipment-return instructions belong with it?"
+          ]
+        },
+        {
+          "path": [
+            "coverageNote"
+          ],
+          "before": "This public example is in Schertz, Guadalupe County. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project.",
+          "after": "This public example concerns Guadalupe County’s meeting-room program, including locations in Seguin and Schertz. It is not a studio client or endorsement. Wonder and Method works online from Buffalo with Texas businesses; this example does not imply a local office or completed local project."
+        },
+        {
+          "path": [
+            "sources"
+          ],
+          "before": [
+            {
+              "url": "https://www.schertz.com/598/Meeting-Room-Policy",
+              "label": "Schertz Public Library: meeting-room policy",
+              "observation": "Separates provided room equipment from organizer-supplied computers and technical arrangements; setup and cleanup use reserved time."
+            },
+            {
+              "url": "https://www.schertz.com/2181/Meeting-Spaces",
+              "label": "Schertz Public Library: meeting spaces",
+              "observation": "Lists study-room and meeting-room choices, meeting-room layouts and capacities, and the meeting-room application route."
+            }
+          ],
+          "after": [
+            {
+              "url": "https://www.guadalupetx.gov/page/PublicInformationOfficer",
+              "label": "Guadalupe County: room reservations",
+              "observation": "Distinguishes meeting locations, identifies location-specific audiovisual availability, and links the policy and request form."
+            },
+            {
+              "url": "https://www.guadalupetx.gov/upload/page/0131/docs/Room%20Reservation/Policy_GuadCo%20Room%20Reservation%20_012825.pdf",
+              "label": "Guadalupe County: Room Reservation Policy (effective January 28, 2025)",
+              "observation": "Sections 7 and 12 distinguish approval from application and describe equipment requests, advance system checks and limited assistance; section 6 covers cleanup and equipment return."
+            }
+          ]
+        },
+        {
+          "path": [
+            "checkedDate"
+          ],
+          "before": "2026-10-25",
+          "after": "2026-10-29"
+        },
+        {
+          "path": [
+            "description"
+          ],
+          "before": "Web design for Guadalupe County, TX. Planning: explain what a meeting-room projector does and does not include.",
+          "after": "Web design for Guadalupe County, TX. Planning: clarify room-specific equipment, presentation preparation and reservation approval."
+        },
+        {
+          "path": [
+            "planningTable"
+          ],
+          "before": {
+            "title": "Explain what a meeting-room projector does and does not include",
+            "intro": "Proposed content and checks for a website project. The operator supplies current terms and confirms each actual arrangement.",
+            "columns": [
+              "Planning decision",
+              "Content to prepare",
+              "Owner evidence",
+              "Acceptance check"
+            ],
+            "rows": [
+              [
+                "Room equipment supplied",
+                "Current projector, cable and remote inventory for each room",
+                "Owner-verified projector, cable and remote inventory for the selected room.",
+                "An organizer can identify the listed room equipment without assuming that a presenting computer is supplied."
+              ],
+              [
+                "Presenting device and technical responsibility",
+                "Approved description of personal-equipment approval and technical support boundaries",
+                "Current personal-equipment approval requirement and published limits on technical assistance.",
+                "An organizer planning to bring a device sees the prior-approval requirement and does not expect library troubleshooting or a promise of compatibility."
+              ],
+              [
+                "Setup and cleanup within the booking",
+                "Current booking instructions and time needed for setup and cleanup",
+                "Current requirement to complete setup, breakdown and cleanup within the reserved period.",
+                "A proposed booking includes preparation and cleanup time rather than covering only the presentation itself."
+              ]
+            ]
+          },
+          "after": {
+            "title": "Check room-specific equipment before confirming the presentation plan",
+            "intro": "Proposed content and checks for a website project. The operator supplies current terms and confirms each actual arrangement.",
+            "columns": [
+              "Planning decision",
+              "Content to prepare",
+              "Owner evidence",
+              "Acceptance check"
+            ],
+            "rows": [
+              [
+                "Selected room and available equipment",
+                "Room-specific equipment and availability",
+                "Owner-approved inventory and current request conditions.",
+                "The page does not imply that all rooms share the same equipment."
+              ],
+              [
+                "Presentation preparation and assistance",
+                "Device requirements, checks and support arrangements",
+                "Current operator instructions and confirmed assistance limits.",
+                "An organizer knows what to check in advance without receiving an unverified compatibility promise."
+              ],
+              [
+                "Request versus confirmed reservation",
+                "Request, approval and arrival instructions",
+                "Current approval message and operator-confirmed event timetable.",
+                "Submitting an inquiry is not presented as a confirmed reservation."
+              ]
+            ]
+          }
+        }
+      ]
     }
   ],
   "sourceReview": "operations/v3-offers-20261029/blaine-source-review.json"

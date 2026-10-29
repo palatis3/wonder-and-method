@@ -180,7 +180,7 @@ test('six live state hubs and retained question answers derive prices from curre
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body]));
  for(const s of fixture.states){
   const html=rendered.get(`/areas/${s.id}/`);assert.ok(html);
-  for(const price of ['$1,887','$187/month','$499','$686'])assert.ok(html.includes(price),s.id+' '+price);
+  for(const price of ['$1,887','$187/month','$499'])assert.ok(html.includes(price),s.id+' '+price);assert.doesNotMatch(html,/\$686|first payment if a new review is needed/);assert.match(html,/Care eligibility and any one-time onboarding are confirmed before payment/);
   for(const a of s.areas){const answers=northeastSearchQuestions(s.id,a.slug,changed);assert.equal(answers.length,3);assert.doesNotMatch(answers.map(answer=>answer[1]).join(' '),/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/);}
  }
 });

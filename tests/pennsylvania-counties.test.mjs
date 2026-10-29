@@ -120,7 +120,7 @@ test('state-directory prices and retained authored answers follow current offer 
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1887;changed.plans.keep_running.monthly_price=187;changed.plans.improve.monthly_price=487;changed.plans.grow.monthly_price=887;changed.baseline.one_time_price=499;changed.audit_sprint.one_time_price=975;
  const rendered=new Map(countyPages(changed).map(p=>[p.path,p.body])),html=rendered.get('/areas/pennsylvania/');assert.ok(html);
- for(const price of ['$1,887','$187/month','$499','$686'])assert.ok(html.includes(price),price);
+ for(const price of ['$1,887','$187/month','$499'])assert.ok(html.includes(price),price);assert.doesNotMatch(html,/\$686|first payment if a new review is needed/);assert.match(html,/Care eligibility and any one-time onboarding are confirmed before payment/);
  for(const slug of expectedSlugs){
   const answers=pennsylvaniaSearchQuestions(slug,changed);assert.equal(answers.length,3);
   assert.doesNotMatch(answers.map(answer=>answer[1]).join(' '),/\$1,400|\$400\/month|\$800\/month|\$150\/month|\$399|\$750/,slug);

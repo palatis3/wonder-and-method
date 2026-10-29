@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-29T11:20:03.221Z",
+  "reviewedAt": "2026-10-29T12:17:11.322Z",
   "reviewer": "Primary implementation review",
   "status": "PASS",
   "scope": "Every generated route inspected by commercial-pattern, fragment-link, offer-binding, schema/metadata and preservation checks. Pattern matches below read in full. This is not a claim of manual visual inspection of every page.",
@@ -9,7 +9,7 @@
   "offerBindings": {
     "plans": 15,
     "modules": 13,
-    "assertions": 232
+    "assertions": 2670
   },
   "patterns": {
     "retired_name": 2,
@@ -152,9 +152,16 @@
   "sourceHashes": {
     "config/offers.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
     "src/v3-offer-content.mjs": "921b7e78ed713db0bd7d54736e547abb01a65af9e3b3f69854bad9ebf8f7f45a",
-    "src/v3-service-content.mjs": "28fe08129886f89cbfaf5acc48ebc16c21fec5d2c620698fec2ce13fa72d5447",
+    "src/v3-service-content.mjs": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9",
+    "src/home-proof.mjs": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780",
+    "src/service-counties.mjs": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f",
+    "src/buyer-decisions.mjs": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7",
+    "scripts/check-v3-offer-bindings.mjs": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891",
     "src/guide-review-consolidations.mjs": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
-    "operations/v3-offers-20261029/audit-routes.mjs": "8391d3414f3b8a79c54d9cafc9b7867fb532e647124f36d4e333486195fda718"
+    "operations/v3-offers-20261029/audit-routes.mjs": "e6fd05b48e5e5f5d938db6b5eab7fd6fa641bbdeb4c449ea985aacd7e4bbf98c",
+    "src/location-service-data.json": "66ba20b73e9eb0488f83a87de7b7940714b8fdb21a99c2bf215fccb068581fc4",
+    "src/human-location-briefs.json": "69ec1316c7ce9b9d999a7e4fa24cd54b900c03b440c7f9773bc29b718dd65731",
+    "src/service-faq-offer-copy.json": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e"
   },
   "routes": [
     {
@@ -171,7 +178,7 @@
     },
     {
       "path": "/",
-      "htmlSha256": "f15801dd4ece76d5e2e22c65f3e277706289145c8cab48768aa688cc3d6f0b33"
+      "htmlSha256": "1879a7a92010813b0c692762ead4e6b1151c9bf69c4500a7292a49138beadcd6"
     },
     {
       "path": "/services/",
@@ -191,11 +198,11 @@
     },
     {
       "path": "/services/seo/",
-      "htmlSha256": "446f4a6bf7f1301aa9bc658eb762d9926775c5c62c7c30eaa3a6bb4c26c6a043"
+      "htmlSha256": "5aeb4ffd8090becf6772c56d5261e435048f2368f2f01cd5ed75190f69dde0b7"
     },
     {
       "path": "/pricing/",
-      "htmlSha256": "95d397c0b0f4d89f765b1cad38d806f3b7ccff4f6228937c917dfbb03cc2727b"
+      "htmlSha256": "b55257f7becc76f04ce7c9e0a6ff176f21d17467f5cbc96c3a6aa59d031207b3"
     },
     {
       "path": "/work/",
@@ -611,215 +618,215 @@
     },
     {
       "path": "/areas/",
-      "htmlSha256": "406583625e7f83eccc594c1bacf5452b4f012e37c6826a0e6bac59908e1e4e4b"
+      "htmlSha256": "224bf67018571505b69980cd94105480cbc3477dd86c942c1e4d7ae6870fae88"
     },
     {
       "path": "/areas/new-york/",
-      "htmlSha256": "73664f1d25146e7825c6de3fe79c4aeb4d99475a6f7daa8cd4e8fadaed544e9e"
+      "htmlSha256": "d3e6287bf1d5c4e58be4deb4fd7a5d97f0a3d820caf3c5079a9cc29631fcc268"
     },
     {
       "path": "/areas/pennsylvania/",
-      "htmlSha256": "82e0d4c00401b34d9358fa30bf4b9440d4cf9ace465d4b9a1a4d6c5d123af452"
+      "htmlSha256": "40e146943a8cd3cbaf5f80b50a867a2c3192a785b20a8fba8fbffa16999856e6"
     },
     {
       "path": "/areas/ohio/",
-      "htmlSha256": "4f43c32724bdadda2ad9efbe0f7ddd3af776c5fc50a7c43f62e6f63bfc5a542b"
+      "htmlSha256": "17fc3b329a97aeca9ac38bfa8237220b0a7c9cc858d4892590aa7f520c648d5d"
     },
     {
       "path": "/areas/new-jersey/",
-      "htmlSha256": "5b20bfeb539ba2cca18af151e1ed8f723d65c0e99fdea8f5782994a7cbf8f1e6"
+      "htmlSha256": "fb8a2b435ac3e25a80c58d64f1427497a5f3b83ae2c66b2af23a3368999fe512"
     },
     {
       "path": "/areas/connecticut/",
-      "htmlSha256": "73facefb17359d2b5c993f1c426af95a3681fab0bcb8c95edffbdf4e87e709f2"
+      "htmlSha256": "5ad90544316d1d700a4247ebc1e5039fcc2dbcf66c0d10d7523b664e95c80382"
     },
     {
       "path": "/areas/rhode-island/",
-      "htmlSha256": "354b4008d53d80eee8dc39ce7d4980bf1dbcbd3096b13f77b937dff73c2874ea"
+      "htmlSha256": "7a296ae6781c24ce44f10772ddcc9144ebe6eb83ba80a9e4686dde47ae6917c8"
     },
     {
       "path": "/areas/massachusetts/",
-      "htmlSha256": "3c6cd37e63a0f8903020c96bec1709e2e9fd77e3558eac378ffd0ff538d01bdb"
+      "htmlSha256": "2dc92880beadfa3ab4684ada9b0c327353088df8c28508f97ebff59f0fa3fed4"
     },
     {
       "path": "/areas/delaware/",
-      "htmlSha256": "41bbf0942b3975ee2e014de108173ac261cd60755391483d8aad51cb1d5f3f5b"
+      "htmlSha256": "1c111740c6326a565636282741baa7a7370f38179fb2074c2e42afd61603bc8d"
     },
     {
       "path": "/areas/vermont/",
-      "htmlSha256": "1c82982c74fbbb78628f1b2d6804ce2cc75af1a4997bd90e4349578a0b8d8680"
+      "htmlSha256": "c41ea7ad1ad667cbc63e1d77d0cf5e1e3e11f406a557e405f8e60036eb551732"
     },
     {
       "path": "/areas/new-hampshire/",
-      "htmlSha256": "ee02782704c18bde286b674125d2402c4bad27767674af68604299e757352345"
+      "htmlSha256": "4ae4a6ea3ac24196ef98b3a8f589e79deee03190957a322b5a86cb70f985da7f"
     },
     {
       "path": "/areas/maine/",
-      "htmlSha256": "bb66124fc037ae4084450860dfa3638221ecdce9daf47990751fbb3fccfbab42"
+      "htmlSha256": "7bc942580695d088d0357e32779cedfb5cb54b4a1276ce7702f2ef1a6890f4dd"
     },
     {
       "path": "/areas/maryland/",
-      "htmlSha256": "34ec3e7017f68f76612ef019313fcf3ecf238a9242ed7a66cee761d6705f5133"
+      "htmlSha256": "aed4669d898eec2c9693de15e82f85978cafabab5b30b1d5298f4ce9a0b13299"
     },
     {
       "path": "/areas/virginia/",
-      "htmlSha256": "a6568e69a22f970aafd5595db9c1caafff44c842a0a23968229e5658aa81ebd2"
+      "htmlSha256": "e9082583828128a3a515d86f9c7850213cc5b9f7bce8a52d1a556a0fa37e8b38"
     },
     {
       "path": "/areas/west-virginia/",
-      "htmlSha256": "6e0b7c46696b520201d887399b4706367e2cb9e9b524bc2388e6904ba06aae89"
+      "htmlSha256": "cb47b9f5f4893263a457fb787beb2d4f1ccd3cc4e64f723f4998c6577d078ea7"
     },
     {
       "path": "/areas/michigan/",
-      "htmlSha256": "ddf561dc47979523150d5b503de62bf5e3750a9fcaf4cf9fa718b735ecf8d836"
+      "htmlSha256": "5d143da4c007b533ac6b90cda4a7707a3ad13f5bfd4e599730c4829b8b3c31ae"
     },
     {
       "path": "/areas/district-of-columbia/",
-      "htmlSha256": "ee666f6d20eba8043d9a3b54ea8c7eaef9c6342dc6104a5e2fc36a6fae63465d"
+      "htmlSha256": "14c491147d059a497cef7021f550d641e75b261ad634960f0c538eb638640f96"
     },
     {
       "path": "/areas/indiana/",
-      "htmlSha256": "50ef7b5ae607ae182f1b0228cb25b3e3c6e69f45cc57c727d74537b4e1f3c7c4"
+      "htmlSha256": "ae845bc60e48e17fbfbafb5cd39b12c071eb681a9c41101d523ce70448102175"
     },
     {
       "path": "/areas/kentucky/",
-      "htmlSha256": "d9738de6d85467b75df267c22ecc40a9bf6a5b806c90cc9482db472a87a2a980"
+      "htmlSha256": "1947ef6a261bdd7cdbf7e00a8181b9619ffe599b0a34caa9874603a2cf2cf565"
     },
     {
       "path": "/areas/tennessee/",
-      "htmlSha256": "1538cb866d323999761b7b461427ca0fd5ca61320f6598115765555d5054251d"
+      "htmlSha256": "456e5bd2e3fa7f2952d3d7845c5f02f66f0b13774c83aaf8bd46b0d74c2cbcf8"
     },
     {
       "path": "/areas/north-carolina/",
-      "htmlSha256": "f235fa6bbfceb299bdc9858a952a8f69049a3fb468c83ca1adeb5bb094ab2a51"
+      "htmlSha256": "5cf12b37fec1a0ba2d2cab206f1dfcd551ec821324c27ca91280b7b4edbcae2c"
     },
     {
       "path": "/areas/florida/",
-      "htmlSha256": "fd29226b200bc7317265fa1a1687dcc89fc9e49a51d69c5b51a4aae6d2808ba2"
+      "htmlSha256": "8f38f884dd5ea0b15fee6dfd464ac49d3253581415c373835f7d05b5cda01062"
     },
     {
       "path": "/areas/south-carolina/",
-      "htmlSha256": "605025693928700bd11b6e78bf9cae3187267ca8d34370f21de861eb2768da0f"
+      "htmlSha256": "17fc1fcb97e327991dc42589d275d3af62b36f9e794953188dd761e37188afd3"
     },
     {
       "path": "/areas/georgia/",
-      "htmlSha256": "013fd9f4a31d3b997b8459decf7608d3ac73aba6b490e67a264bbe7d9c70c74f"
+      "htmlSha256": "f307f83ee3bec13116d922c3f750ae388e2ab91bc3b3e2122ddb7ce3cfc1aa84"
     },
     {
       "path": "/areas/mississippi/",
-      "htmlSha256": "881a60158104fc2eda745ce38768ff5c8436c9ae3554b99ce97a404cb87609b9"
+      "htmlSha256": "8327c12ef9e575fca4d833d33cf0a78970ae6547ff28e44ca25aa64156703798"
     },
     {
       "path": "/areas/alabama/",
-      "htmlSha256": "371f6716274ad86bd5141246533e5794692b83e9c4354f17cc518194cc5b24ed"
+      "htmlSha256": "11cbd3715a4fdab2256a733a4f94e701730c3c48519d005e58691d71cfefcef7"
     },
     {
       "path": "/areas/wisconsin/",
-      "htmlSha256": "85ed234d609e17d52be1c32c650e499b4f4c308474629f140604f8532c11c903"
+      "htmlSha256": "c39f091cf8bd98475e52793c099e3f317f8c1f5dbd0bcabdf351172300ee5011"
     },
     {
       "path": "/areas/illinois/",
-      "htmlSha256": "d742731fb57f75bc1cfc43b46e1c9a4a520b4922b8942f9dc791797798cef871"
+      "htmlSha256": "6767656c9c4a519ff8da16ecfd7c4b0a54b2dfcb195bc52cf59a28a1e170459a"
     },
     {
       "path": "/areas/louisiana/",
-      "htmlSha256": "8908e8c1cca8c4ab04511a6bb24209ae33bf70c4deb61e2fa35736c0297be600"
+      "htmlSha256": "b1ea2b8a4d1cb82142bd63ef6451d142d4bd6bdd6eec1c5ba9ba2920a01d00c4"
     },
     {
       "path": "/areas/arkansas/",
-      "htmlSha256": "183948481015909016e28eee89069a74712879e778b2d57533cac555caa1c0b8"
+      "htmlSha256": "dddef1b7c6dc48046c36251678ab289efdf009875d52cbafc78550489b402e42"
     },
     {
       "path": "/areas/texas/",
-      "htmlSha256": "0fbc9656be89b6718105a2fcc31af50c3438d7a1c2b6a701ac883a604fe89fc2"
+      "htmlSha256": "a342cbce855a0e3776a6e624d82bbcce6a2a0985a22d7236a9bb1590e4d3e2ea"
     },
     {
       "path": "/areas/missouri/",
-      "htmlSha256": "d31d10abed1d3ebb4d593fc468d2fabae7bf3c9ef36ca570307986b5e339512b"
+      "htmlSha256": "633dd5410e5553e19e0c6571d5bc0d036ac9d1cc683598b1837c2339b90269fe"
     },
     {
       "path": "/areas/iowa/",
-      "htmlSha256": "7c7bff939f6335e1ecb2087df6962a312041113dc258d1bcb91bd67e0282e3a2"
+      "htmlSha256": "0de523b8ad5290781f9c5cdd5e5a7f245674b00198b6aade7efbf09ac8c16810"
     },
     {
       "path": "/areas/minnesota/",
-      "htmlSha256": "9d8d44274156908f9349dc1ac286fb1cd1c79d7cd2f0a31e5a323a010d06c698"
+      "htmlSha256": "7f2707eac2de05abe1daf082b044389204cbcd62ff412ad779fcfce27e8d753f"
     },
     {
       "path": "/areas/oklahoma/",
-      "htmlSha256": "17e8e409343129d29b28b4e5eefdc78758df408cdfcb1e6d46b0ec7df9c97682"
+      "htmlSha256": "0fcd9c7402d42e3bb3b297996f931e15fce41453cf26541c4a339f53dc431c9f"
     },
     {
       "path": "/areas/kansas/",
-      "htmlSha256": "2956777450a71fd0628f4389a58f54dc6e8890f4b4fcd2e48bedad843aaf6464"
+      "htmlSha256": "0a2106a3f3c1fedbb67138a6e9c4f4ae275d25feaf1650ec56e26d50c1e248f7"
     },
     {
       "path": "/areas/nebraska/",
-      "htmlSha256": "6d09d9950dbaa006281efc4a6e716ed154affb3a6edb1e716458dccb150a2ff1"
+      "htmlSha256": "945e89faad84f7b4481afa34ca4fe36e30bad3ea8408d398db142e795a21157d"
     },
     {
       "path": "/areas/north-dakota/",
-      "htmlSha256": "27871299aca08de72836407ffff276ca7028365e1bec7f1833c835e55aa598fd"
+      "htmlSha256": "05cbb44f1dc9f1c6cdc1aca5dcf24f4c1551cadac05846c684222607d7238d6c"
     },
     {
       "path": "/areas/south-dakota/",
-      "htmlSha256": "4e810b79d5a4b947e182d90683effc775002827435ddd54615e0bb4358cd09b6"
+      "htmlSha256": "5f46e3f7839348a05fe646e33e787720672a3b149e73bffa705972a3fec0db3a"
     },
     {
       "path": "/areas/california/",
-      "htmlSha256": "8eb844f66af2fec41151c30270b8f0bfa000590f193474df5ca21d054070f430"
+      "htmlSha256": "cb6598a8c86c89d47fdd66c5c8639fd12ba68f127ed2a7c5a9d640004aed684d"
     },
     {
       "path": "/areas/new-mexico/",
-      "htmlSha256": "65538a5892454afec1b91dcb293f33fd4df847c31caff66c334cbe0c3e2e71b3"
+      "htmlSha256": "b511b2a97cd9708b3cfbff8ccb868dbad50c9bede30718f6f43ce0a50fc80e8b"
     },
     {
       "path": "/areas/arizona/",
-      "htmlSha256": "258e4065454236d349bfea14452bc347299b7c6f8347db83764fe3544e96c081"
+      "htmlSha256": "1d2bf9c73fb7adfde67b626c23cd6ff715dbe97fb71a36ee779e20ff8c3b1539"
     },
     {
       "path": "/areas/oregon/",
-      "htmlSha256": "7ec42041106abf12cbee90b10a3ca4ed575df4ad8228d59cd8ede2230e40e697"
+      "htmlSha256": "254b4e730bd4c770f1ff38effe5523fd2fb3255a9e0b274d30c90975083ecde3"
     },
     {
       "path": "/areas/nevada/",
-      "htmlSha256": "dc4372b96723cb48980443a67e6cf6c88f5ee9cf672915311fb7cc806a656493"
+      "htmlSha256": "231d4c286ec66ff49e22d0fd376b339ee02fe8773b725f71acc7fbc5eff7ce4d"
     },
     {
       "path": "/areas/washington/",
-      "htmlSha256": "31a3fa1bc2ef35e36b69a3f07e555e20e807bfd5da23c1b040fca315cc2b465f"
+      "htmlSha256": "390c8f770b497a354d5616db96bdff8a6461965bec4b703b1b0aa26550e468d0"
     },
     {
       "path": "/areas/colorado/",
-      "htmlSha256": "96dffb56bd7e5235c23d2e489001d81bf4167f701a4ab499b19fb161af8342ea"
+      "htmlSha256": "eacd86a4b66e4ad2f6b699289ebe65c362b386a1c4c3fe9fee08b27076ff0aa5"
     },
     {
       "path": "/areas/utah/",
-      "htmlSha256": "a3229b4513c58b5c0cd0bc59f4bac37d6b1d6f3686ee7e69f1bfe946dde4635e"
+      "htmlSha256": "ed47aaced24f599121f87964a96674eccfa0989ac774dd62dde7dcc4f32490c9"
     },
     {
       "path": "/areas/puerto-rico/",
-      "htmlSha256": "0015689c2a20ad65bc995f264c6ecae2090871d3c55abaf76a2a0c92e5623d14"
+      "htmlSha256": "e3da0bb285bc48630d45babe950320f8841afaf53bbf174615005f95c5814d06"
     },
     {
       "path": "/areas/idaho/",
-      "htmlSha256": "1b32d77d32297cf7483a2ca89eef0fe4f2a995879ed111d32dc52e0c725b08e6"
+      "htmlSha256": "5dec0f0c2e8a896162cc7ae6330034029444ee57154e4b06f884a501c074bba1"
     },
     {
       "path": "/areas/montana/",
-      "htmlSha256": "09da16433588178c9e53cfce21c61ea4f221912f57e57283c788962effd03ac9"
+      "htmlSha256": "fa13e32905d03334d587b2b6a78fa6636443c3ca735c6f2141561155b86f209b"
     },
     {
       "path": "/areas/wyoming/",
-      "htmlSha256": "3bdfe08bc19409934c67bc9c9a637cdba857e47ee46d941f415edee62ea6cbe5"
+      "htmlSha256": "c9e3ede90f3f8046441960da0190cf0b14824319efeb1673d316b27acf9a0e93"
     },
     {
       "path": "/areas/hawaii/",
-      "htmlSha256": "eeab7c6543c743a785b15633fd17c46f013d3d6fb841d9c9924d20bc9cd850ad"
+      "htmlSha256": "1d2ea6113d6acb97cb0863beceadb3e4126ac359d6187304be474f2903be1264"
     },
     {
       "path": "/areas/alaska/",
-      "htmlSha256": "b9b05868131203839b9ede6dadab48d0d7c6f0e1fe8165ff895644804cf533d7"
+      "htmlSha256": "5f2f294b45d8bad3f8175310cc6309bbdacd2ec6d0e6d276208b182e0c67c257"
     },
     {
       "path": "/areas/massachusetts/barnstable-county/",
@@ -1275,7 +1282,7 @@
     },
     {
       "path": "/areas/ohio/cuyahoga-county/",
-      "htmlSha256": "fccedd0abb390cf78530195f54b94cc4861c774ca8a418cc4d6d9063190de489"
+      "htmlSha256": "c94222ee2373f5be32f87303a68667756d61dd622ea90de09643170a32bb3317"
     },
     {
       "path": "/areas/ohio/delaware-county/",
@@ -5675,7 +5682,7 @@
     },
     {
       "path": "/areas/texas/guadalupe-county/",
-      "htmlSha256": "b8412e9b3eeb911efde0fc08a78474d5d6c74269e181a310b75457990ca48de5"
+      "htmlSha256": "d135faf40709eedde5e271d0eef5ecc76f116bf1df91b09a3b266e9db0835eb2"
     },
     {
       "path": "/areas/texas/hale-county/",
@@ -9423,7 +9430,7 @@
     },
     {
       "path": "/areas/idaho/blaine-county/",
-      "htmlSha256": "c943b9c7adcdc079ec04b691fda3a25926a366af20000ba6b5888015ad3e76ba"
+      "htmlSha256": "df3de06ba011d61b1dfe2a63b6cf1830a37a3e844cf965f42a7691599d3b530e"
     },
     {
       "path": "/areas/idaho/bonner-county/",
@@ -9909,6 +9916,5 @@
   "limits": [
     "Astra separately reviewed the implementation; Linux CI and visual comparison remain pending.",
     "Content hash baseline records intended V3 catalog, shared navigation and service changes; reviewed research records remain protected by their fixtures."
-  ],
-  "lineEndingNormalization": "Exact CRLF-to-LF-only restoration documented in eol-normalization.json; rendered commercial content unchanged."
+  ]
 }

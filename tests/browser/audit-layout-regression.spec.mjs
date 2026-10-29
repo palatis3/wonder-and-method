@@ -32,7 +32,7 @@ function coveredContent(){
 }
 
 for(const [width,height] of [[320,640],[390,844],[844,390],[683,328],[1440,900]])test(`floating page tools remain reachable and leave focused controls clear at ${width}x${height}`,async({page},testInfo)=>{
- test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');
+ test.skip(testInfo.project.name!=='desktop','One viewport matrix covers the responsive sweep');test.setTimeout(90_000); // All scroll stops across three complete pages, including the expanded V3 pricing page.
  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});
  await page.clock.install();
  for(const path of ['/pricing/','/areas/erie-county/','/work/studio-search/']){

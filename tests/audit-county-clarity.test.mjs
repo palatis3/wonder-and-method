@@ -175,7 +175,7 @@ test('all 2 remaining retired county routes point to preserved entries and publi
  const changed=structuredClone(offers);
  changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.audit_sprint.one_time_price=877;changed.plans.keep_running.monthly_price=177;
  const rendered=countyPages(changed);assert.equal(rendered.length,53);
- for(const page of rendered)for(const text of ['$1,777','$477','$177/month','$654'])assert.ok(page.body.includes(text),page.path+' '+text);
+ for(const page of rendered){for(const text of ['$1,777','$477','$177/month'])assert.ok(page.body.includes(text),page.path+' '+text);assert.doesNotMatch(page.body,/\$654|first payment if a new review is needed/);assert.match(page.body,/Care eligibility and any one-time onboarding are confirmed before payment/);}
  const links=serviceAreaLinks();
  assert.equal((links.match(/href=/g)||[]).length,1);assert.match(links,/href="\/areas\/">50 states, Washington, DC, and Puerto Rico/);assert.doesNotMatch(links,/-county\//);
 });

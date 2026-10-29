@@ -7,7 +7,7 @@ const patterns={
  retired_payment:/\b50%[^.]{0,160}\b30%[^.]{0,160}\b20%|50\s*\/\s*30\s*\/\s*20/,
  review_time:/add (?:your review time|two (?:customer )?review windows|up to ten business days)|five business days each|two review windows of up to five/i,
  old_design:/all three (?:packages|plans)|every (?:website|package|plan)[^.]{0,100}custom design|no (?:visual or )?drag.and.drop editor|no log.in editing dashboard|one (?:original )?(?:animated (?:homepage )?feature or (?:one )?3D|3D centerpiece)/i,
- old_care:/updates[^.]{0,90}backups[^.]{0,50}(?:not included|separate)|backups[^.]{0,80}restores[^.]{0,70}not included|starting review[^.]{0,150}\$650|\$650[^.]{0,110}starting review/i,
+ old_care:/first payment if a new review is needed|updates[^.]{0,90}backups[^.]{0,50}(?:not included|separate)|backups[^.]{0,80}restores[^.]{0,70}not included|starting review[^.]{0,150}\$650|\$650[^.]{0,110}starting review/i,
  old_repair:/up to two (?:agreed )?(?:small |contained )?fixes|one small fix (?:if|when)|first small fix|baseline fix/i,
  old_extras:/extra (?:social |promotional )?graphics? or (?:short )?newsletter|additional (?:social |promotional )?graphic or newsletter|extra graphic or short newsletter|Grow.{0,80}(?:graphic|excerpt)/i,
  bad_encoding:/\u00c2[\u0080-\u00bf]|\u00e2[\u0080-\u00bf\u20ac]|\u00c3[\u0080-\u00bf]/,

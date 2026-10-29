@@ -10,7 +10,18 @@ test('stacked and desktop planning tables retain accessible headers, rows and ce
   await expect(page.locator('.location-planning-table,.local-brief-summary')).toHaveCount(0);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),path).toBeLessThanOrEqual(1);
  }
- for(const path of ['/payments/','/guides/brevard-county-launch-tour-website/','/guides/custom-website-or-template/']){
+ // V3 payments use one named, ordered schedule per website plan.
+ await page.goto('/payments/');
+ const schedules=page.locator('.v3-payment-list > article');await expect(schedules).toHaveCount(4);
+ for(const schedule of await schedules.all()){
+  await expect(schedule.getByRole('heading',{level:3})).toBeVisible();
+  const stages=schedule.getByRole('list');await expect(stages).toBeVisible();
+  await expect(stages.getByRole('listitem')).toHaveCount(3);
+  const snapshot=await stages.ariaSnapshot();expect(snapshot).toMatch(/- list/);expect(snapshot).toMatch(/- listitem/);
+  for(const stage of await stages.getByRole('listitem').all())await expect(stage).toContainText(/\$[\d,]+.*(?:40|30)%/);
+ }
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)).toBeLessThanOrEqual(1);
+ for(const path of ['/guides/brevard-county-launch-tour-website/','/guides/custom-website-or-template/']){
   const response=await page.goto(path);expect(response.status(),path).toBe(200);
   for(const details of await page.locator('main details').all())if(await details.getAttribute('open')===null)await details.locator(':scope > summary').click();
   const table=page.locator('table.responsive-table').first();await expect(table).toBeVisible();

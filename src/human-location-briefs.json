@@ -7394,30 +7394,30 @@
   {
     "route": "/areas/idaho/blaine-county/",
     "inputHash": "11bbe38286698d90518db3b49ae4a2717fd42aa94a4c8fea9a3f10f977af2c3f",
-    "heading": "Separate the fitting visit from next-morning equipment pickup.",
-    "intro": "Missing an online reservation cutoff does not necessarily mean every rental is sold out. Your preparation page can explain the documented in-person route, its current hours and the different location where the selected equipment is collected.",
-    "customerQuestion": "I missed the online window. If I am fitted in the Village, where should I collect the equipment tomorrow?",
+    "heading": "Separate rental delivery and fitting from final-day collection.",
+    "intro": "Equipment arrival and end-of-rental collection are different appointments. A preparation page can keep each arrangement clear when a guest leaves early, changes accommodation or extends the rental.",
+    "customerQuestion": "If I leave before equipment collection, what arrangement should I confirm?",
     "decisions": [
       {
-        "label": "Explain the remaining booking conversation",
-        "body": "State what the advance online cutoff means and name the owner-approved in-person option. Keep seasonal operating hours separate from the cutoff so visitors can check whether that route is currently available."
+        "label": "Identify the delivery and fitting appointment",
+        "body": "Put the agreed accommodation address and arrival instructions beside the delivery appointment. Ask the owner to confirm fitting preparation and how changes should be reported, rather than treating the office address as the guest’s delivery location."
       },
       {
-        "label": "Show both physical locations",
-        "body": "Give the fitting place and selected mountain pickup point distinct labels. Repeat the approved pickup point in the preparation instructions so a visitor does not return to the fitting shop by assumption."
+        "label": "Plan collection separately from departure",
+        "body": "Show the operator-approved collection instructions alongside the guest’s departure plan. For a guest leaving earlier, identify who confirms access and where equipment may be left; do not assume checkout time is the collection time."
       },
       {
-        "label": "Recheck changes to mountain or product",
-        "body": "Explain the rental categories actually offered at each pickup site. If a customer changes mountain or equipment type, keep the request with staff until the product and handoff have been checked together."
+        "label": "Reconfirm changed dates or accommodation",
+        "body": "Keep an extension or address change with staff until delivery and collection arrangements have both been checked. Repeat the confirmed details in the preparation summary without promising live availability or an automatic reschedule."
       }
     ],
     "ownerInputs": [
-      "Current online cutoff and in-person fitting hours.",
-      "Approved product/location combinations.",
-      "Transfer, pickup and stock-question contact."
+      "Approved delivery coverage, fitting preparation and appointment wording.",
+      "Current collection instructions, equipment location and access arrangements.",
+      "Staff contact and confirmation procedure for changed dates or accommodation."
     ],
-    "sourceBridge": "Sun Valley describes a 48-hour online reservation window and an in-person option at Pete Lane’s Village Rental Center after that window is missed. Customers can be fitted in the Village for equipment waiting the next morning at a selected mountain base. Bald and Dollar Mountains have distinct rental offerings.",
-    "limits": "The operator approves the route, seasonal hours and actual equipment availability; content cannot guarantee next-day stock. Live inventory, cutoff calculations, transfers and booking integrations require separate scope. Clear fitting and pickup instructions can support the existing reservation arrangement."
+    "sourceBridge": "Ski Butlers’ Sun Valley page identifies a Ketchum office and describes delivery and fitting at accommodations, followed by equipment collection after the final rental day. Its FAQ gives a 4–8pm collection window and says guests need not be present. Those separate handoffs make an early-departure question useful to clarify with the operator.",
+    "limits": "This is a proposed content and handoff check, not a claim that the provider has a website problem. The operator confirms current coverage, availability, access and collection arrangements. A focused preparation page can support the existing reservation system; live scheduling, access handling and booking integrations need separate scope."
   },
   {
     "route": "/areas/idaho/bonner-county/",
@@ -51718,30 +51718,30 @@
   {
     "route": "/areas/texas/guadalupe-county/",
     "inputHash": "af2491a44cc93755f6e9a12512e2e797245ffcc1cb78a6074fc6a6cd803b99d3",
-    "heading": "Explain what comes with the projector.",
-    "intro": "A projector listing does not tell an organizer what to bring or who will make the presentation work. Place the supplied equipment and organizer responsibilities together before the reservation link.",
-    "customerQuestion": "What must I bring and arrange for this presentation?",
+    "heading": "Check room-specific equipment before confirming the presentation plan.",
+    "intro": "A room reservation does not establish which presentation equipment will be available. A preparation page can connect the selected room, equipment request and confirmation without implying that every location has the same setup.",
+    "customerQuestion": "Which equipment can I use in this room, and what must I check before the meeting?",
     "decisions": [
       {
-        "label": "List the equipment by room",
-        "body": "Identify the supplied projector, remotes and cables using the approved inventory for the selected room. Do not let a photograph imply that a computer is provided or that every room has the same connections."
+        "label": "Keep equipment tied to the selected room",
+        "body": "Use the owner-approved inventory and availability conditions for that location. Label photographs and equipment descriptions by room, so an organizer does not assume that an audiovisual setup shown for one venue is provided at another."
       },
       {
-        "label": "Explain personal-device responsibilities",
-        "body": "State that the library supplies neither computers nor technical instruction and troubleshooting. Keep advance approval for personal equipment visible and route connection questions to staff; do not promise universal device compatibility."
+        "label": "Explain requests and preparation checks",
+        "body": "Put equipment requests and advance device checks before the reservation handoff. State the operator’s current assistance limits and route unresolved questions to staff; a room photograph cannot promise device compatibility or full technical support."
       },
       {
-        "label": "Reserve time for the whole event",
-        "body": "Include setup, breakdown and cleanup within the reserved period. Send the presentation plan and unresolved equipment questions through the existing reservation process, with staff confirming the arrangement."
+        "label": "Distinguish the request from approval",
+        "body": "Explain which message confirms the reservation and which questions still need staff attention. Include operator-approved arrival, cleanup and equipment-return instructions. Confirm the event timetable rather than treating a submitted inquiry as an accepted booking."
       }
     ],
     "ownerInputs": [
-      "Room-specific projector, remote and cable inventory.",
-      "Personal-equipment approval process and technical-help boundaries.",
-      "Setup and cleanup timing rules and existing reservation destination."
+      "Room-specific equipment inventory and current availability conditions.",
+      "Equipment request instructions, device checks and confirmed assistance limits.",
+      "Approval-message wording and current arrival, cleanup and equipment-return instructions."
     ],
-    "sourceBridge": "Separates provided room equipment from organizer-supplied computers and technical arrangements; setup and cleanup use reserved time. Lists study-room and meeting-room choices, meeting-room layouts and capacities, and the meeting-room application route.",
-    "limits": "A focused edit can clarify equipment and organizer responsibilities on the room page. A fuller site can join room comparison, preparation and booking instructions. The owner verifies equipment details; compatibility testing or booking-system changes need an agreed scope."
+    "sourceBridge": "Guadalupe County’s room-reservation page distinguishes its Seguin rooms from a smaller Schertz satellite room and identifies audiovisual equipment at the Veterans Outreach Center, subject to availability. The linked policy requires equipment requests and advance system checks, allows limited assistance, and distinguishes an application from the County’s approval email.",
+    "limits": "This example concerns the county room program, not Schertz Public Library. The operator confirms current room details, equipment, assistance and timing. Do not infer audiovisual availability at the Schertz room from another location’s description. A focused page can clarify the existing handoff; compatibility testing, application processing or booking integrations need separate scope."
   },
   {
     "route": "/areas/texas/hale-county/",

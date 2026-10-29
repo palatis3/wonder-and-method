@@ -1,6 +1,15 @@
 import {readFile} from 'node:fs/promises';
 import {test,expect} from './fixtures.mjs';
-import faqsByPath from '../../src/service-faqs.json' with {type:'json'};
+import sourceFaqs from '../../src/service-faqs.json' with {type:'json'};
+import faqBindings from '../../src/service-faq-offer-copy.json' with {type:'json'};
+import offers from '../../config/offers.json' with {type:'json'};
+import {resolveOfferCopy} from '../../src/offer-catalog.mjs';
+const faqsByPath=Object.fromEntries(Object.entries(sourceFaqs).map(([path,rows])=>[path,rows.map(row=>{
+ const binding=faqBindings[path]?.find(item=>item.question===row.question);
+ if(!binding)return row;
+ const template=binding.singleBatchTemplate&&offers.plans.improve.small_change_batches===1&&offers.plans.grow.small_change_batches===1?binding.singleBatchTemplate:binding.template;
+ return {...row,answer:resolveOfferCopy(template,offers)};
+})]));
 
 const {routes}=JSON.parse(await readFile(new URL('../../evidence/build.json',import.meta.url),'utf8'));
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewer": "Independent Astra reviewer (/root/astra_v3_final_release_review)",
-  "reviewedAt": "2026-10-29T11:27:57.515Z",
+  "reviewedAt": "2026-10-29T12:18:35.603Z",
   "verdict": "PASS",
   "scope": "Bounded implementation review only; not release approval",
   "releaseApproved": false,
@@ -11,8 +11,8 @@
   "publicationApproved": false,
   "unresolvedBlockers": [],
   "pendingReleaseGates": [
-    "Regenerate/finalize build outputs after the final six-paragraph maintenance correction and complete required checks on the final commit.",
-    "CI/browser execution and actual skip reconciliation, production database/migration execution, release checks, deployment and production smoke verification remain pending and are not approved by this artifact."
+    "Updated visual captures/review, full CI and actual browser skip reconciliation remain pending.",
+    "Database/migration execution, release checks, deployment and production smoke verification remain pending and are not approved by this artifact."
   ],
   "evidence": [
     "evidence/v3-offers-20261029/final-implementation-review.json",
@@ -77,7 +77,7 @@
     "config/offers.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
     "src/offer-catalog.mjs": "af919515090cfb3f4bee2e3f6136a810f4e1ab025e0554e7c1c4a592c4f43f41",
     "src/v3-offer-content.mjs": "921b7e78ed713db0bd7d54736e547abb01a65af9e3b3f69854bad9ebf8f7f45a",
-    "src/v3-service-content.mjs": "28fe08129886f89cbfaf5acc48ebc16c21fec5d2c620698fec2ce13fa72d5447",
+    "src/v3-service-content.mjs": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9",
     "src/commercial.mjs": "8843b47ab942a476cc363e235994b88f54f82d03a4e1e378f4ac5ab48269d9bf",
     "src/payments.mjs": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398",
     "src/shared.mjs": "45d88c35a187e983c295214ae31a56e4a23e96b929f7ba08a78b530ff75beb04",
@@ -86,7 +86,7 @@
     "scripts/create-job.mjs": "d7a15bf8af6d0aaee6867ac920114c5ec67eeb0f16cfba945aaaa1b0760efc0c",
     "scripts/job-packet.mjs": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f",
     "scripts/build-buyer-packs.mjs": "32a4705fd7490fb99b94aeeefb71831de77b7c6f04d95a7aa90bfc5db91c1f56",
-    "scripts/check-v3-offer-bindings.mjs": "e20073eb2b468067e519911fcb9f3b1d93f49b2286aa633b75da5b975025cd28",
+    "scripts/check-v3-offer-bindings.mjs": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891",
     "deployment/migrations/0049_v3_offers.sql": "033d5d04116ad1dac7188f431218c456a249e20c3b8a50b805bd91affdd6520d",
     "tests/v3-migration.test.mjs": "45cd3f8213b4221cdfc75701d6c7d3cf7c9caf660e0bb75b4ec1ff9ac593deeb",
     "tests/offer-catalog.test.mjs": "cceb7a490db10d0414be6da8b1501dc8ca6a685220b572d36dc3c7d59ba76dc0",
@@ -95,15 +95,32 @@
     "src/guide-review-consolidations.mjs": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
     "src/research-guide-more.mjs": "be5c1a77323845d7b7aeeb7a95c65b57d2dddaa608818ea74a3f62e188245a99",
     "src/research-guides.mjs": "d546a1f3a5714eeb66df2eb08e1f90acc34abf61edb5e07559a1e995523f9604",
-    "src/location-service-data.json": "1ed672049c6a57a8118cc515bee317b288db738e79645ee0b350b1948bd79748",
+    "src/location-service-data.json": "66ba20b73e9eb0488f83a87de7b7940714b8fdb21a99c2bf215fccb068581fc4",
     "operations/v3-offers-20261029/guide-connection-review.json": "2ad77647f0e91ad71b6dd25b8c9d7b3af9e722a4b027d98ec7df30f81946feca",
-    "config/ci-browser-exclusions.json": "cd396b3dd88154f3efdc9181807a9edd1c0bd9e9e2a44a20fb7eeb734178b6d8",
-    "tests/browser/audit-layout-regression.spec.mjs": "84f891cac96d6d44e8412d6f3e7303e6f0360b39d7db8b3376fed6afc01f446a",
+    "config/ci-browser-exclusions.json": "c95ca064cff065aeb2047665929e90aa05d32c8e4a1f7c3d7468a2e5c251a8f3",
+    "tests/browser/audit-layout-regression.spec.mjs": "9d89f16e84d8fd4cd69dbd21f90ba1c758059bf5b355043d789bb61ad4187d21",
     "tests/browser/buyer-journeys.spec.mjs": "7d472bd92da752d6aa3cad1e50f86665ee7b88b4645822be8ed43facb131db07",
-    "tests/browser/living-city-night.spec.mjs": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+    "tests/browser/living-city-night.spec.mjs": "993c298d7eb07da14a4df6acdc4596b5f8bf3dc24138ab07c4cd020dfcd4577a",
     "tests/browser/no-javascript.spec.mjs": "1d54f1c7d72ba72f2f734f9eb3e6167402abf5f7e22132645a2ea06aa8e42866",
-    "tests/browser/site-health.spec.mjs": "4274a1db59d6de72d6434ed339eb5fdecee6f17d0b1c5b5da54974d1201b4928",
-    "scripts/ci-browser.mjs": "7d47e9847fea4aa0a143ada2ae444104509e4fcac7ffcdce418bee2f49ca5754"
+    "tests/browser/site-health.spec.mjs": "a22b672461dd9bf70d3acca5b72d0d04d327983f9ce29d3b4a18103b570397e2",
+    "scripts/ci-browser.mjs": "7d47e9847fea4aa0a143ada2ae444104509e4fcac7ffcdce418bee2f49ca5754",
+    "src/service-counties.mjs": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f",
+    "src/home-proof.mjs": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780",
+    "src/buyer-decisions.mjs": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7",
+    "src/human-location-briefs.json": "69ec1316c7ce9b9d999a7e4fa24cd54b900c03b440c7f9773bc29b718dd65731",
+    "src/service-faq-offer-copy.json": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e",
+    "tests/v3-source-repair.test.mjs": "48921680ed0400f1461392e0ebd544c397d80284025c76b84a76e0a4ff8a3717",
+    "tests/fixtures/source-repairs-v3-20261029.json": "23c9c362ffe6b6598575dbc30c0a061c2d4d65e9b9fa8fef145804160ed4fc54",
+    "tests/fixtures/reviewed-v3-source-repairs.mjs": "c72a5bf0b5d5e9fcabb28c1b59caf769020f538d6b3332dc3afa7b51e8981ebc",
+    "operations/v3-offers-20261029/human-brief-source-repairs.json": "741b75a0ba576d32d91512fcdca358ec168fcefdb2e4f7cbd12bd8b16670c3fb",
+    "tests/browser/table-semantics.spec.mjs": "518de1c0e4b69d2fac548406e3bf0175e4a9ed71394a9de3d7a0309d5fb2c0a4",
+    "tests/browser/palette-clarity.spec.mjs": "1d682efd947531ea0f34554abf2339c62131006bd5a5effd9a2bd51e38b8d90c",
+    "tests/audit-county-clarity.test.mjs": "b835d3808a6460f9cb06bc4214128b990c563099e9ba9a4b259af98efc946eac",
+    "tests/northeast-expansion.test.mjs": "7a11bc844bcebe8f3282a4d13d8edd69cd9f9fe6577d5cd273e5b8ffc989fe9c",
+    "tests/northern-expansion.test.mjs": "28a211347afa6190588fcde22facf66ac7ce8361cc69360151a0e3deaa713518",
+    "tests/ohio-counties.test.mjs": "46a144e2bbb0908db06fec4adb5c7b078bc557825c89087034a952e4bddc213f",
+    "tests/pennsylvania-counties.test.mjs": "ef81a4f20e3481668eedb4dbdc80045ee8211ddc59afadbfe0ca6a3f266aaa44",
+    "tests/regional-directory.test.mjs": "80d1b1defbe425847c71b6d105adbf42e5974717934ecbc2e8a5b1b31cd66a07"
   },
   "inspectedEvidenceHashes": {
     "output/playwright/v3-final-pricing-desktop.png": "50f3132925238cc18b5d7c5a7cfd9ddb6b6327f85ef7e6485a86b7bd7c544f5d",
@@ -115,7 +132,7 @@
     "evidence/v3-offers-20261029/blaine-applied-review.json": "f89f6ea3de150fcb4408c15bacb09e3201a680174280f6f03590f2de6ff6944d",
     "output/v3-audit/browser-inventory.json": "8e3285a000f3209d1c14323bc1a9ab7fa7bd25226f4861d6836d9c7e65ff8f37",
     "output/v3-build-final.log": "5814bef3e80f4356c52f03a74612d68ac9181275d231d60ac71bdcb0fd2b160b",
-    "evidence/build.json": "49b886641f8cd0710a082ca3230bbc492bc030fe4f83edf0e396e0c12463e0ec",
+    "evidence/build.json": "b341d0ce182417dcf2eb2988373a6920216491c300f6f5cc7c198d5ca2032492",
     "output/v3-audit/guide-final-deltas.json": "236ad0aee7bba641e84a619f04386abc4e7e396686f05372658c5f8766d26e2d"
   },
   "limitations": [
@@ -236,5 +253,207 @@
     "change": "Exactly one final newline removed; appending one newline reproduces the previously reviewed SHA-256.",
     "syntheticDatabaseRehearsal": "PASS",
     "negativeProbes": 8
+  },
+  "appliedVisualFindingsReview": {
+    "reviewedAt": "2026-10-29T11:46:56.678Z",
+    "status": "PASS",
+    "scope": "Applied source corrections only; affected Linux screenshots pending",
+    "findings": [
+      "V3-VIS-01",
+      "V3-VIS-02",
+      "V3-VIS-03"
+    ],
+    "checks": [
+      "V3 directory closing removes mandatory Roadmap/Care charge and explicitly separates diagnosis from eligibility/onboarding; legacy branch retains former output.",
+      "Home search entry derives price from Local Search Focus and describes its existing-page/eligible-profile output; legacy improve fallback retained.",
+      "Monthly SEO exclusions render each approved exclusion as an escaped nested list item; no scope removed.",
+      "H2 addition follows the summary within the closed pricing disclosure and precedes H3 cards.",
+      "Fresh independent in-memory offer binding check passes 2670 assertions over 2437 routes, 15 offers, 13 modules. Mutated Local Search Focus price reaches homepage; obsolete first-payment sentence is absent from every V3 page.",
+      "Browser source differs only in two price/outcome expectations; all 587 exclusion records unchanged."
+    ],
+    "files": [
+      {
+        "path": "src/service-counties.mjs",
+        "beforeSha256": "c16d8b18365fc722e0dd3d56a4abba58305a16e953fdfdc614322664fe99dbe7",
+        "sha256": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f"
+      },
+      {
+        "path": "src/home-proof.mjs",
+        "beforeSha256": "323f885b86486bac2a4b3d716b679bdbcd36d52783fd52603adf0bd9fca3c44d",
+        "sha256": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780"
+      },
+      {
+        "path": "src/v3-service-content.mjs",
+        "beforeSha256": "28fe08129886f89cbfaf5acc48ebc16c21fec5d2c620698fec2ce13fa72d5447",
+        "sha256": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9"
+      },
+      {
+        "path": "src/buyer-decisions.mjs",
+        "beforeSha256": "b20b23704b4c034cf33a5882c89f811e4d2159b282bf69a2cbf22131868b5ca1",
+        "sha256": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7"
+      },
+      {
+        "path": "scripts/check-v3-offer-bindings.mjs",
+        "beforeSha256": "e20073eb2b468067e519911fcb9f3b1d93f49b2286aa633b75da5b975025cd28",
+        "sha256": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891"
+      },
+      {
+        "path": "tests/browser/living-city-night.spec.mjs",
+        "beforeSha256": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+        "sha256": "993c298d7eb07da14a4df6acdc4596b5f8bf3dc24138ab07c4cd020dfcd4577a"
+      }
+    ],
+    "policyRebind": {
+      "path": "config/ci-browser-exclusions.json",
+      "beforeSha256": "cd396b3dd88154f3efdc9181807a9edd1c0bd9e9e2a44a20fb7eeb734178b6d8",
+      "afterSha256": "5c827adf6363fc43f36c37ee30ffd59ae020e4665316d1cf5c784e501457d476",
+      "browserSource": "tests/browser/living-city-night.spec.mjs",
+      "exclusionsUnchanged": 587
+    },
+    "screenshots": "PENDING",
+    "releaseApproved": false
+  },
+  "finalSourceAppliedReview": {
+    "reviewedAt": "2026-10-29T12:18:35.603Z",
+    "reviewer": "Independent Astra reviewer",
+    "verdict": "PASS",
+    "scope": "Bounded final source repair and browser assertion review",
+    "releaseApproved": false,
+    "checks": [
+      "Exact proposed Guadalupe row and both complete human briefs are applied; original inputHash values retained and additive ledger equals the reviewed proposal.",
+      "Both actual default locationServicePage bodies match the independently proposed body hashes and occur verbatim in dist. Retired claims absent in both built pages.",
+      "Independent node source-repair run passes 3/3: exact before/after reconstruction, mutations rejected, full default rendering and historical provenance.",
+      "Payments browser check now inspects all four semantic ordered schedules and three money/percentage stages each; the two guide table checks remain.",
+      "Comparison browser check covers native disclosure, four visible definition-list cards, complete-scope links and saved-hash opening.",
+      "Site-health FAQ expectation resolves current approved catalog bindings, retaining all existing questions and assertions; Care FAQ now describes the included care allowance once.",
+      "Layout timeout increases to 90 seconds without removing any viewport, page, scroll stop or assertion. No browser skip predicate or exclusion identity/reason changes."
+    ],
+    "repaired": [
+      {
+        "route": "/areas/idaho/blaine-county/",
+        "bodySha256": "fa6f7ee0340960564462e1e07bc7d864a40de0facfbd4ad5e760095d4a0d5afd",
+        "builtSha256": "39c078f3ac0bac0d7a5b7ce326b22bb5f178ab17f3123e67c72e9f3ae9e633e7",
+        "briefSha256": "8587240749b44ffd66b397788220f701ca25584170f360b77d8bc0d54e0c0074"
+      },
+      {
+        "route": "/areas/texas/guadalupe-county/",
+        "bodySha256": "ab1ac25fe05b55140a5d90faba043a1a04ae2e6ee7e5b2c2680eef2a6d31ec81",
+        "builtSha256": "64606a0f9c545f7416ac93d9b1cb8506476b1436d2cac6b44e6d48d983e04626",
+        "briefSha256": "2522ececd8498bbe6c888009dcc53a655e4ea6c0f4da061c50a18e718a058fb3"
+      }
+    ],
+    "browserPolicyRebinds": [
+      {
+        "path": "tests/browser/audit-layout-regression.spec.mjs",
+        "beforeSha256": "84f891cac96d6d44e8412d6f3e7303e6f0360b39d7db8b3376fed6afc01f446a",
+        "afterSha256": "9d89f16e84d8fd4cd69dbd21f90ba1c758059bf5b355043d789bb61ad4187d21"
+      },
+      {
+        "path": "tests/browser/palette-clarity.spec.mjs",
+        "beforeSha256": "97e2ab19e074804410befc2b513877a1e4a7967a1f55959b2e9ca5c2cdfa1148",
+        "afterSha256": "1d682efd947531ea0f34554abf2339c62131006bd5a5effd9a2bd51e38b8d90c"
+      },
+      {
+        "path": "tests/browser/site-health.spec.mjs",
+        "beforeSha256": "4274a1db59d6de72d6434ed339eb5fdecee6f17d0b1c5b5da54974d1201b4928",
+        "afterSha256": "a22b672461dd9bf70d3acca5b72d0d04d327983f9ce29d3b4a18103b570397e2"
+      }
+    ],
+    "exclusionsUnchanged": 587,
+    "files": [
+      {
+        "path": "src/location-service-data.json",
+        "sha256": "66ba20b73e9eb0488f83a87de7b7940714b8fdb21a99c2bf215fccb068581fc4"
+      },
+      {
+        "path": "src/human-location-briefs.json",
+        "sha256": "69ec1316c7ce9b9d999a7e4fa24cd54b900c03b440c7f9773bc29b718dd65731"
+      },
+      {
+        "path": "src/service-faq-offer-copy.json",
+        "sha256": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e"
+      },
+      {
+        "path": "tests/v3-source-repair.test.mjs",
+        "sha256": "48921680ed0400f1461392e0ebd544c397d80284025c76b84a76e0a4ff8a3717"
+      },
+      {
+        "path": "tests/fixtures/source-repairs-v3-20261029.json",
+        "sha256": "23c9c362ffe6b6598575dbc30c0a061c2d4d65e9b9fa8fef145804160ed4fc54"
+      },
+      {
+        "path": "tests/fixtures/reviewed-v3-source-repairs.mjs",
+        "sha256": "c72a5bf0b5d5e9fcabb28c1b59caf769020f538d6b3332dc3afa7b51e8981ebc"
+      },
+      {
+        "path": "operations/v3-offers-20261029/human-brief-source-repairs.json",
+        "sha256": "741b75a0ba576d32d91512fcdca358ec168fcefdb2e4f7cbd12bd8b16670c3fb"
+      },
+      {
+        "path": "tests/browser/table-semantics.spec.mjs",
+        "sha256": "518de1c0e4b69d2fac548406e3bf0175e4a9ed71394a9de3d7a0309d5fb2c0a4"
+      },
+      {
+        "path": "tests/browser/palette-clarity.spec.mjs",
+        "sha256": "1d682efd947531ea0f34554abf2339c62131006bd5a5effd9a2bd51e38b8d90c"
+      },
+      {
+        "path": "tests/browser/site-health.spec.mjs",
+        "sha256": "a22b672461dd9bf70d3acca5b72d0d04d327983f9ce29d3b4a18103b570397e2"
+      },
+      {
+        "path": "tests/browser/audit-layout-regression.spec.mjs",
+        "sha256": "9d89f16e84d8fd4cd69dbd21f90ba1c758059bf5b355043d789bb61ad4187d21"
+      },
+      {
+        "path": "config/ci-browser-exclusions.json",
+        "sha256": "c95ca064cff065aeb2047665929e90aa05d32c8e4a1f7c3d7468a2e5c251a8f3"
+      }
+    ],
+    "pending": [
+      "Updated visual captures and review",
+      "Full CI, actual browser exclusion reconciliation, database, release and deployment gates"
+    ]
+  },
+  "currentBuildMetadataReview": {
+    "path": "evidence/build.json",
+    "sha256": "b341d0ce182417dcf2eb2988373a6920216491c300f6f5cc7c198d5ca2032492",
+    "mode": "production",
+    "routeCount": 2437,
+    "gated": [],
+    "scope": "Metadata and two repaired county bodies checked; earlier full-render checks are historical evidence, not a new exhaustive run."
+  },
+  "directoryAssertionReview": {
+    "reviewedAt": "2026-10-29T12:19:17.441Z",
+    "verdict": "PASS",
+    "scope": "Six one-line dynamic directory price assertions",
+    "finding": "Preserves all individual mutated price expectations, route inventories and tests; rejects retired automatic Roadmap-plus-Care sums and wording, requires eligibility/onboarding disclosure. Matches independently accepted directoryClosing V3 semantics.",
+    "execution": "Primary reports targeted rerun pending; no full-suite pass claimed.",
+    "files": [
+      {
+        "path": "tests/audit-county-clarity.test.mjs",
+        "sha256": "b835d3808a6460f9cb06bc4214128b990c563099e9ba9a4b259af98efc946eac"
+      },
+      {
+        "path": "tests/northeast-expansion.test.mjs",
+        "sha256": "7a11bc844bcebe8f3282a4d13d8edd69cd9f9fe6577d5cd273e5b8ffc989fe9c"
+      },
+      {
+        "path": "tests/northern-expansion.test.mjs",
+        "sha256": "28a211347afa6190588fcde22facf66ac7ce8361cc69360151a0e3deaa713518"
+      },
+      {
+        "path": "tests/ohio-counties.test.mjs",
+        "sha256": "46a144e2bbb0908db06fec4adb5c7b078bc557825c89087034a952e4bddc213f"
+      },
+      {
+        "path": "tests/pennsylvania-counties.test.mjs",
+        "sha256": "ef81a4f20e3481668eedb4dbdc80045ee8211ddc59afadbfe0ca6a3f266aaa44"
+      },
+      {
+        "path": "tests/regional-directory.test.mjs",
+        "sha256": "80d1b1defbe425847c71b6d105adbf42e5974717934ecbc2e8a5b1b31cd66a07"
+      }
+    ]
   }
 }

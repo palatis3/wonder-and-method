@@ -92,7 +92,7 @@ test('failed moon and film assets keep the homepage copy and project navigation 
  await expect(page.getByRole('heading',{name:'Web design & SEO. Built for small businesses.'})).toBeVisible();
  await expect(page.locator('.city-location')).toHaveText('Websites from $2,950. Serving businesses online across 50 states, Washington, DC, and Puerto Rico.');
  await expect(page.locator('.home-starting-points')).toContainText('From $2,950');
- await expect(page.locator('#seo-services')).toContainText('From $1,250/month');await expect(page.locator('#seo-services')).toContainText('Useful content and researched website improvements');
+ await expect(page.locator('#seo-services')).toContainText('From $850/month');await expect(page.locator('#seo-services')).toContainText('Improve an existing page or eligible local profile');
  await expect(page.locator('.home-choice-grid>a')).toHaveCount(4);
  for(const card of await page.locator('.home-choice-grid>a').all()){await expect(card.locator('a,button,input,select,textarea')).toHaveCount(0);await expect(card.locator('.starting-price')).toHaveCount(1);}
  await expect(page.getByRole('link',{name:'Something is broken',exact:true})).toHaveAttribute('href','/services/website-audit/');
