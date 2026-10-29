@@ -1,0 +1,62 @@
+{
+  "route": "/areas/puerto-rico/rincon-municipio/",
+  "ledgerSHA256": "d22a4879b2540b8e3b6b41f1f3985c8dceda12f3abc6bb1b3c8b9baf607e1785",
+  "changes": [
+    {
+      "before": {
+        "from": "/areas/puerto-rico/rincon-municipio/",
+        "to": "/guides/experience-product-choice/",
+        "label": "Help visitors choose the actual service",
+        "reason": "The experience guide separates access, participation expectations and booking channels of different options. That supports instruction versus experienced-surfer guidance and private versus open groups, so a private lesson request does not enter the wrong guide service.",
+        "reviewedAt": "2026-10-27",
+        "reviewMethod": "Primary complete target-guide paragraph-delta review plus current complete content acceptance; prior exact local purpose, destination, label and rationale retained unchanged. No new per-pair independent review claimed.",
+        "locationPurposeSha256": "a1c5486fc0405bf055875ac8eb268178aa6e178b603a5e6a44b3d2a8f5728e10",
+        "guidePurposeSha256": "f256d1ae3efc12b49a0536e643ac405cfd57af51e10ad6f0a7c2fe2a6bfb150a",
+        "reviewEvidence": "operations/human-quality-20261027/guide-connection-revalidation.json",
+        "priorReviewSha256": "9223739980f8cfc19d8baf5d44fe333ef3aab18bdf03890ea82b916b3a7e3797"
+      },
+      "after": {
+        "from": "/areas/puerto-rico/rincon-municipio/",
+        "to": "/guides/experience-product-choice/",
+        "label": "Help visitors choose the actual service",
+        "reason": "The guide helps explain product inclusions and the difference between service options before the booking handoff. That supports choosing a private group or one-to-one surf lesson and separating included lesson equipment from additional rental.",
+        "reviewedAt": "2026-10-29",
+        "reviewMethod": "Rechecked both complete guides against the revised current-source Rincón brief. Destination and label remain; rationale follows the new private-group, individual-lesson and preparation decisions.",
+        "locationPurposeSha256": "bcaa661670e515bd3ecc843ab68ede89a947a2a55fb27e9a414f1dad1c65daa9",
+        "guidePurposeSha256": "f256d1ae3efc12b49a0536e643ac405cfd57af51e10ad6f0a7c2fe2a6bfb150a",
+        "reviewEvidence": "operations/v4-offers-20261029/rincon-guide-connections.json",
+        "priorReviewSha256": "17b72a4e3da674acc23ceb37221044c9c25f9aa8d15f42db26f3e3376ff53c09"
+      }
+    },
+    {
+      "before": {
+        "from": "/areas/puerto-rico/rincon-municipio/",
+        "to": "/guides/departure-address/",
+        "label": "Keep the actual meeting point attached to the selected activity",
+        "reason": "The departure guide uses the selected experience's confirmed meeting instructions rather than a recognizable attraction or picture. That supports keeping a home-beach photograph separate from the break chosen by the surf guide for current conditions.",
+        "reviewedAt": "2026-10-27",
+        "reviewMethod": "Primary complete target-guide paragraph-delta review plus current complete content acceptance; prior exact local purpose, destination, label and rationale retained unchanged. No new per-pair independent review claimed.",
+        "locationPurposeSha256": "a1c5486fc0405bf055875ac8eb268178aa6e178b603a5e6a44b3d2a8f5728e10",
+        "guidePurposeSha256": "2bbe970b0d5154068c9d700fe7cf2843c54b8b49be38ebfd23b253adabda3729",
+        "reviewEvidence": "operations/human-quality-20261027/guide-connection-revalidation.json",
+        "priorReviewSha256": "ddea0cbaa979833db6e35dc19e48df00917380a6979cf78f18af4d511811748f"
+      },
+      "after": {
+        "from": "/areas/puerto-rico/rincon-municipio/",
+        "to": "/guides/departure-address/",
+        "label": "Keep the actual meeting point attached to the selected activity",
+        "reason": "The guide keeps the selected activity attached to the operator-confirmed meeting instructions. That supports carrying the chosen surf lesson and party arrangement into preparation without treating a beach photograph as a confirmed meeting point.",
+        "reviewedAt": "2026-10-29",
+        "reviewMethod": "Rechecked both complete guides against the revised current-source Rincón brief. Destination and label remain; rationale follows the new private-group, individual-lesson and preparation decisions.",
+        "locationPurposeSha256": "bcaa661670e515bd3ecc843ab68ede89a947a2a55fb27e9a414f1dad1c65daa9",
+        "guidePurposeSha256": "2bbe970b0d5154068c9d700fe7cf2843c54b8b49be38ebfd23b253adabda3729",
+        "reviewEvidence": "operations/v4-offers-20261029/rincon-guide-connections.json",
+        "priorReviewSha256": "62ab88d8fd6d2fd100800ecc57c320c47955e72378d6bf3b1fb4cae3dc3b95f9"
+      }
+    }
+  ],
+  "status": "PASS",
+  "reviewedAt": "2026-10-29T19:47:47.164Z",
+  "reviewMethod": "Primary prepared; independent Astra reviewer read both complete current guides and source captures and explicitly approved both exact candidate rationales before application.",
+  "updatedLedgerSHA256": "9a6002ebd84c05db0ae1ff23fedeb74b88c77b5387f41c24acffe1d1fc017991"
+}
