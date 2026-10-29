@@ -1,0 +1,143 @@
+{
+  "status": "PASS_SELECTIVE_APPROVAL",
+  "reviewer": "Independent Astra reviewer (gpt-6-astra; /root/astra_performance_review)",
+  "sourceCommit": "05374ca6e4bf25eb67606a2efc41dfca70b3cef8",
+  "captureRunId": 40791187888,
+  "artifactId": 12860914501,
+  "artifactDigest": "sha256:a56a36e140b5b6412952d7aa3f4ed3c02880fcf044162a5df154e5e32be924a9",
+  "totalCandidates": 82,
+  "changedCandidates": 16,
+  "unchangedRetained": 66,
+  "approvedFiles": [
+    {
+      "file": "desktop/floating-tools-home.png",
+      "candidateSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "originalSha256": "1b69bbd4cbddfc4986fa6bc00ecd5ab43d33c27d78ba7e5a42f4f55d8d15d1b9",
+      "decision": "approve",
+      "reason": "Only the decorative moon derivative changes; hero copy, navigation, scene framing and floating controls remain intact."
+    },
+    {
+      "file": "desktop/footer-closed.png",
+      "candidateSha256": "8293a4fcc99d99a77173f52cfbf9666a91807f5c990390de1dac1f83bd865c7b",
+      "originalSha256": "685feecf45416e716071b671b1b661fb2be3e65e56c3bee406c7d69113d0a510",
+      "decision": "approve",
+      "reason": "Minor downstream fractional alignment in footer capture; all collapsed labels and expanded directory links remain legible and complete."
+    },
+    {
+      "file": "desktop/footer-open.png",
+      "candidateSha256": "88f37073255e3d6e1c8fe1d69292afd963d5fc9e90a1fd055a991b3c7515e495",
+      "originalSha256": "b26ed1993c6175f52ec09870c8d85e63089eb768e0acee9f4aa4174cc1825577",
+      "decision": "approve",
+      "reason": "Minor downstream fractional alignment in footer capture; all collapsed labels and expanded directory links remain legible and complete."
+    },
+    {
+      "file": "desktop/home-viewport-01.png",
+      "candidateSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "originalSha256": "1b69bbd4cbddfc4986fa6bc00ecd5ab43d33c27d78ba7e5a42f4f55d8d15d1b9",
+      "decision": "approve",
+      "reason": "Only the decorative moon derivative changes; hero copy, navigation, scene framing and floating controls remain intact."
+    },
+    {
+      "file": "desktop/home-viewport-02.png",
+      "candidateSha256": "86e38511a98b5eb619d0d865454dc0bc5848156350d26e3c5dce337daa45b134",
+      "originalSha256": "aed787e44a547dc07fa6c65cdd97af5a3f557f9915ea35fad50f365b192653a9",
+      "decision": "approve",
+      "reason": "Expected AssetRounds responsive derivative resampling; later content has a small subpixel vertical offset, with text, links and layout preserved."
+    },
+    {
+      "file": "desktop/home-viewport-03.png",
+      "candidateSha256": "5b220275502a99aed0201b7ff6504fd4748a8c1d2d57f8ae372d61a02e25dcdd",
+      "originalSha256": "3e96a1363e2a07876c19b9490c8682394da1ada20d4a97215d6064dfd804ba18",
+      "decision": "approve",
+      "reason": "Expected AssetRounds responsive derivative resampling; later content has a small subpixel vertical offset, with text, links and layout preserved."
+    },
+    {
+      "file": "desktop/home-viewport-04.png",
+      "candidateSha256": "72541797c8f43b2e79bd2ca69ce1f28c4db916d6362896408740d3b33301c754",
+      "originalSha256": "a6844dc53e6519ef387d276a7c33aa1baad7ea3aaad95549a435ebd2e8b1cff5",
+      "decision": "approve",
+      "reason": "Minor downstream vertical raster alignment after responsive image height rounding; inspected complete viewport with preserved content, spacing and controls."
+    },
+    {
+      "file": "desktop/home-viewport-05.png",
+      "candidateSha256": "412cae077c46465b89f1d219c9c5aa6ce67853a4dcdacf7fa3636f2b5b608e7c",
+      "originalSha256": "024e35d85cb92ea43f569f16740f3ddd0ac89863240bf72eea3ca1c3be56d1cf",
+      "decision": "approve",
+      "reason": "Minor downstream vertical raster alignment after responsive image height rounding; inspected complete viewport with preserved content, spacing and controls."
+    },
+    {
+      "file": "desktop/home-viewport-06.png",
+      "candidateSha256": "bccbcff2c124565b30e1335ba6114e17c041142ce5a88e92d314dfc6f033dbe1",
+      "originalSha256": "9e8a5cc1b19ff52ddc41cae5d931bcaf643adf6b88eb4dc2bd3daffa93dbb9e5",
+      "decision": "approve",
+      "reason": "Minor downstream vertical raster alignment after responsive image height rounding; inspected complete viewport with preserved content, spacing and controls."
+    },
+    {
+      "file": "desktop/home-viewport-07.png",
+      "candidateSha256": "71b720163e652be919be867e27beef2569499715cc3d7e1f4189dea78e61cea1",
+      "originalSha256": "fd489667d908e780035ae6423d084ca215d2ca4795ffd6c599e1a351b5acdd8a",
+      "decision": "approve",
+      "reason": "Minor downstream vertical raster alignment after responsive image height rounding; inspected complete viewport with preserved content, spacing and controls."
+    },
+    {
+      "file": "desktop/service-questions.png",
+      "candidateSha256": "2468e7e7a9096bca4040027bdcc99c1bb030d03d19c52bc76b62a19a7c99b9f2",
+      "originalSha256": "fdac52fe6bba5e9a3f6e632ddf6b3c2185cbcf2ca739db3f61a1a7125d746588",
+      "decision": "approve",
+      "reason": "One-pixel element screenshot height difference from fractional positioning; heading, complete answer, link, padding and border remain intact."
+    },
+    {
+      "file": "desktop/web-design.png",
+      "candidateSha256": "e94930d1c4f50857fd2c234c0efee8e7d681d1e3a8ee9b6b3cfafdd99a4656c0",
+      "originalSha256": "aa9afaf7244132065c86416e61414f7bebbcab10e0595a0bb602734fbf07db09",
+      "decision": "approve",
+      "reason": "Expected AssetRounds derivative resampling and downstream subpixel alignment; inspected all 1000px vertical regions through the footer. Work full-page height differs by one pixel. No clipping or missing content."
+    },
+    {
+      "file": "desktop/work.png",
+      "candidateSha256": "2dcf334ceada59be07e0dc6cc2b61f63edaf1955c89318af83770a11191aeecb",
+      "originalSha256": "31bd925693bc7429a9768f50e4a5e9b06b4f865349ad6e66ae90dcce5096d9ed",
+      "decision": "approve",
+      "reason": "Expected AssetRounds derivative resampling and downstream subpixel alignment; inspected all 1000px vertical regions through the footer. Work full-page height differs by one pixel. No clipping or missing content."
+    },
+    {
+      "file": "phone/floating-tools-home.png",
+      "candidateSha256": "02548a699028d172e60a91441b2a49caa7c84d1b33b68170f88bb7440d5a630f",
+      "originalSha256": "e4d6222e87e877f4e8a1b3ea333c301b5b337dffe05cbd74d5a87a22d0444d9e",
+      "decision": "approve",
+      "reason": "Only the decorative moon pixels change; full image comparison bounds confirm all remaining pixels are unchanged."
+    },
+    {
+      "file": "phone/home.png",
+      "candidateSha256": "52ae2a48afa48f99d07bd53829df20338ef8bf2ce122ab9418d4d464c437ebec",
+      "originalSha256": "64e6987aa6e5b555cdf2973058808f37e3e7f8d3c8d736829c501c83ebd70430",
+      "decision": "approve",
+      "reason": "Only the decorative moon pixels change; full image comparison bounds confirm all remaining pixels are unchanged."
+    }
+  ],
+  "retainedFiles": [
+    {
+      "file": "phone/work.png",
+      "candidateSha256": "28f620589f1a1d008bf27aa3d60df5d2c54ca6a41931cf9627c319cc47cc0ecd",
+      "retainSha256": "e14a071b6b335198159f385343ddf3514a2f93b1897f231598b6b81eda2f4bed",
+      "decision": "retain-original",
+      "reason": "The candidate differs only inside the unchanged mobile AssetRounds hero source; no intended phone hero update explains it. The ordinary Linux phone/work test passed. Keep the existing reference rather than accepting capture/resampling noise."
+    }
+  ],
+  "rejectedFiles": [],
+  "unresolvedFindings": [],
+  "verification": {
+    "allChangeBoundsIndependentlyRecomputed": true,
+    "all16ChangedReferencesVisuallyInspected": true,
+    "desktopWorkAndWebDesignFullHeightInspected": true,
+    "expandedFooterFullHeightInspected": true,
+    "noVisualAssertionMaskToleranceOrFixtureChanges": true,
+    "baselineFilesEditedByReviewer": false,
+    "all16ChangedCandidateAndOriginalHashesChecked": true
+  },
+  "limits": [
+    "Approval applies only to the 15 listed exact candidate files. Keep phone/work.png and all 66 byte-identical references unchanged.",
+    "Page screenshot thumbnails are slightly softer with the smaller derivatives, but surrounding page text and illustrative content remain readable.",
+    "This review does not replace the required full exact-commit CI rerun after the reference update."
+  ]
+}

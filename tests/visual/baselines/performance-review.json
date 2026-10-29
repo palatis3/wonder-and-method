@@ -1,0 +1,585 @@
+{
+  "captureCommit": "05374ca6e4bf25eb67606a2efc41dfca70b3cef8",
+  "captureRun": 40791187888,
+  "artifactId": 12860914501,
+  "artifactSha256": "sha256:a56a36e140b5b6412952d7aa3f4ed3c02880fcf044162a5df154e5e32be924a9",
+  "reviewedAt": "2026-10-29T00:11:41.519560+00:00",
+  "review": "15 exact candidates independently approved; 67 existing images retained. Prior reviewed.json remains historical. No assertions, masks or thresholds changed.",
+  "independentReviewSha256": "35e0b218220e0043459c7c71cd70e7de6d155e628dae6370ce739ceb63f6ee8d",
+  "files": [
+    {
+      "file": "linux/desktop/about.png",
+      "sha256": "2f26069bc147211d32114b672b769d756c9a98057cceb03ee5f4e2a68056141c",
+      "width": 1440,
+      "height": 3276,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/addons.png",
+      "sha256": "abd690924d3d18acee519a53fdf3859c3d9baf36b52eb97380195e612e3302c1",
+      "width": 1440,
+      "height": 8299,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/alabama-entry.png",
+      "sha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538",
+      "width": 850,
+      "height": 812,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/audit.png",
+      "sha256": "6aea819e668b7bf06523c2749eb89eecacbc6d28f8c2d1da9addfe43f6ed9cf5",
+      "width": 1440,
+      "height": 7300,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/care.png",
+      "sha256": "dcbb2cbb526bd757bd9264bfd107e30237d7db8641a03dd8fab698060cc080bc",
+      "width": 1440,
+      "height": 6510,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/concept.png",
+      "sha256": "844d2638e6424ebd2b8604fdeabf1158847cb97edb9bac2c03cf7371486d9455",
+      "width": 1440,
+      "height": 3334,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/contact.png",
+      "sha256": "0591ea6a7ed779cbfe90e8ed766f0cb7b5d5c794c2dcf26f40f263cb94203249",
+      "width": 1440,
+      "height": 2797,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/contractors.png",
+      "sha256": "3e23f368a7a2cb7d7af5c0d3df82c2c70903ae3fc8b3b55c87ed72bb494576bc",
+      "width": 1440,
+      "height": 6337,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/county-entry.png",
+      "sha256": "d5e6d7573b62317c4d29049c94986e663f6e907efe5034cb8f7726fd847e8ea2",
+      "width": 850,
+      "height": 1748,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/county-questions.png",
+      "sha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8",
+      "width": 900,
+      "height": 769,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/county.png",
+      "sha256": "6565c299bc9f92e42cefbbac8a120cfc49a482e63b02a2d7a0647f647d65ea88",
+      "width": 1440,
+      "height": 4473,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/district-directory.png",
+      "sha256": "e3e6645641c613684a51deda1ee9825715f7e693d67655d992fe6aeefa0267c2",
+      "width": 1440,
+      "height": 3312,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/floating-tools-content.png",
+      "sha256": "a956fcca199af94e9643e68327f604dda17cf74ebb8bbcf5abaf18b2cd123b54",
+      "width": 1440,
+      "height": 1000,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/floating-tools-home.png",
+      "sha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/footer-closed.png",
+      "sha256": "8293a4fcc99d99a77173f52cfbf9666a91807f5c990390de1dac1f83bd865c7b",
+      "width": 1440,
+      "height": 385,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/footer-open.png",
+      "sha256": "88f37073255e3d6e1c8fe1d69292afd963d5fc9e90a1fd055a991b3c7515e495",
+      "width": 1440,
+      "height": 2829,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/georgia-entry.png",
+      "sha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600",
+      "width": 850,
+      "height": 506,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/guide.png",
+      "sha256": "dc6d82a5bf75e9259d71f9876d86c4f27d28fed09b1ef13dc58afce4b75063af",
+      "width": 1440,
+      "height": 9130,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/home-viewport-01.png",
+      "sha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-02.png",
+      "sha256": "86e38511a98b5eb619d0d865454dc0bc5848156350d26e3c5dce337daa45b134",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-03.png",
+      "sha256": "5b220275502a99aed0201b7ff6504fd4748a8c1d2d57f8ae372d61a02e25dcdd",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-04.png",
+      "sha256": "72541797c8f43b2e79bd2ca69ce1f28c4db916d6362896408740d3b33301c754",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-05.png",
+      "sha256": "412cae077c46465b89f1d219c9c5aa6ce67853a4dcdacf7fa3636f2b5b608e7c",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-06.png",
+      "sha256": "bccbcff2c124565b30e1335ba6114e17c041142ce5a88e92d314dfc6f033dbe1",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/home-viewport-07.png",
+      "sha256": "71b720163e652be919be867e27beef2569499715cc3d7e1f4189dea78e61cea1",
+      "width": 1440,
+      "height": 1000,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/illinois-entry.png",
+      "sha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd",
+      "width": 850,
+      "height": 813,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/iowa-county.png",
+      "sha256": "124a33f29a842a45d31aa9c162fd9d0570526412ed33ac7e11f7966a523bab02",
+      "width": 1440,
+      "height": 4788,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/iowa-entry.png",
+      "sha256": "3d1b878a77041d46c2482b872ba6ad625708fa6ac3ae76b5b4f5fbe4443e59af",
+      "width": 850,
+      "height": 2065,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/mississippi-entry.png",
+      "sha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
+      "width": 850,
+      "height": 505,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/missouri-county.png",
+      "sha256": "f7aaf4f92e604d03a2811a2133adbd2cfdabc1078f45b844d377b3ece3617a2d",
+      "width": 1440,
+      "height": 4858,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/missouri-entry.png",
+      "sha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b",
+      "width": 850,
+      "height": 406,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/monthly-seo.png",
+      "sha256": "ee8af6116275023cab6b8509c8eca14720d38d63c6e8707f4bf0a6363dca9c81",
+      "width": 1440,
+      "height": 6171,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/pricing.png",
+      "sha256": "4a065ea7838e4412ad82b7536b7ccc0b1a8279c6c1b78b570e64cfdad032929f",
+      "width": 1440,
+      "height": 6720,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/process.png",
+      "sha256": "5aa08f92bb54d3f3faf38e0307c11430e60b3456f274c7568424548049ea5649",
+      "width": 1440,
+      "height": 4478,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/redesign.png",
+      "sha256": "7d59f98fdf22dec8c7c2dadf9d29facc56c3f0638436264a77ec380113674145",
+      "width": 1440,
+      "height": 6739,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/regional-directory.png",
+      "sha256": "29f680943de171e77f5aa5358a2c44b1a125e493cec23195ba86d3e63a3024f0",
+      "width": 1440,
+      "height": 3639,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/scope-request.png",
+      "sha256": "0c598e6e3e3fcc6a2d25172834751b523047f9fac989e04073fb4ba83fd84dc0",
+      "width": 1440,
+      "height": 2743,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/service-questions.png",
+      "sha256": "2468e7e7a9096bca4040027bdcc99c1bb030d03d19c52bc76b62a19a7c99b9f2",
+      "width": 1296,
+      "height": 380,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/services.png",
+      "sha256": "ab9ab447728497d88adef8729aa60416360ac639c532d351c1737c28c60be293",
+      "width": 1440,
+      "height": 4659,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/texas-county.png",
+      "sha256": "68672d1d23a1450c4259fafa1089390a38f7d5dbb2aa4060ab4fb8eb4752e00e",
+      "width": 1440,
+      "height": 4875,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/texas-entry.png",
+      "sha256": "ee9da320b74f56678f3c988bd3dceef71c18c36cb0e2bc2a3c92f326360da5aa",
+      "width": 850,
+      "height": 783,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/web-design.png",
+      "sha256": "e94930d1c4f50857fd2c234c0efee8e7d681d1e3a8ee9b6b3cfafdd99a4656c0",
+      "width": 1440,
+      "height": 7440,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/desktop/wisconsin-entry.png",
+      "sha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe",
+      "width": 850,
+      "height": 501,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/desktop/work.png",
+      "sha256": "2dcf334ceada59be07e0dc6cc2b61f63edaf1955c89318af83770a11191aeecb",
+      "width": 1440,
+      "height": 7882,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/phone/about.png",
+      "sha256": "4d9d8e06b3df74c6a95cdb9f4b7d2084e6fc7e94d1ec5b24efdda9bc62a930c8",
+      "width": 390,
+      "height": 4330,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/addons.png",
+      "sha256": "53d07609892c1e4402b1ded6abac354d8bdcc7c76e259c73e09d278bcd06487e",
+      "width": 390,
+      "height": 14556,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/alabama-entry.png",
+      "sha256": "12869b7d7f7f6644e530dc35239a1f925267e129bd11ece8f0c7c13031f3835f",
+      "width": 350,
+      "height": 948,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/audit.png",
+      "sha256": "6b1aaac854ff14876c8cdbe295f73e7a5b8cd7e2c42ad666a39b371987aed49e",
+      "width": 390,
+      "height": 10398,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/care.png",
+      "sha256": "7affe2bcc54a13040b0b994a94d2f675ab418a84e9236ba1d97325012cc171d5",
+      "width": 390,
+      "height": 9197,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/concept.png",
+      "sha256": "f71e99ec8688907f5091a71bdadda88037d194f262f542fff7dcb2e4b559051a",
+      "width": 390,
+      "height": 4107,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/contact.png",
+      "sha256": "7b91c047b2b911e1ed0a7acc2c9a660edf0c7de3a75807a4081787c67e07e268",
+      "width": 390,
+      "height": 3853,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/contractors.png",
+      "sha256": "a5e4ee52c3219e36bd194e427326def25504c71a94f1e61a5aa3da96f51caff8",
+      "width": 390,
+      "height": 8597,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/county-entry.png",
+      "sha256": "91cf2b4df162e17727717105db5054c98df02ed06f6897c39c8a238ee75a4143",
+      "width": 350,
+      "height": 2287,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/county-questions.png",
+      "sha256": "78ff62ee76aab0ac90004bb729fd341dd6e0cdec96f26ce070fc1b14ea1648c9",
+      "width": 350,
+      "height": 982,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/county.png",
+      "sha256": "8795bb694e061d4e289dd73e3d90732ccc7e234d8abdd281f7e6aaf8009e941a",
+      "width": 390,
+      "height": 5276,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/district-directory.png",
+      "sha256": "c60dd50d7463a0072455b09c9c3b87bf288be5bab627b566aabc80988549feb5",
+      "width": 390,
+      "height": 3793,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/floating-tools-content.png",
+      "sha256": "60f740ca0d24038c1859d6039f358a472a9f5d24f5a7eb9c7d3ee40b4c95038b",
+      "width": 390,
+      "height": 844,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/floating-tools-home.png",
+      "sha256": "02548a699028d172e60a91441b2a49caa7c84d1b33b68170f88bb7440d5a630f",
+      "width": 390,
+      "height": 844,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/phone/footer-closed.png",
+      "sha256": "85967d08554ace200fb05d5be7d6e225bf0ad45538e9f7ec7bbed43871b7ee26",
+      "width": 390,
+      "height": 745,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/footer-open.png",
+      "sha256": "433b1386cf1dd776d927e2d3290af6338ff3e285746ea411bdbf05d69b4d2183",
+      "width": 390,
+      "height": 4001,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/georgia-entry.png",
+      "sha256": "3bc6335f54d0e0f2571bcab55273ee2a0bc83b2f6d4f93770119f81e331ffcce",
+      "width": 350,
+      "height": 727,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/guide.png",
+      "sha256": "f86ade58eab132a84def0b0f905c9b960a997a5e652fc87a67067f243167f1f5",
+      "width": 390,
+      "height": 12986,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/home.png",
+      "sha256": "52ae2a48afa48f99d07bd53829df20338ef8bf2ce122ab9418d4d464c437ebec",
+      "width": 390,
+      "height": 8123,
+      "decision": "approved replacement"
+    },
+    {
+      "file": "linux/phone/illinois-entry.png",
+      "sha256": "4a6a33ec67eedaa623f88188402b582e729072ac12d3e821bc788dda506c2efb",
+      "width": 350,
+      "height": 1088,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/iowa-county.png",
+      "sha256": "fc326bd4b19dbfe01cdd4d4b5d77e324c0ca39ae2165eabe6471dc532bca3e4b",
+      "width": 390,
+      "height": 5858,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/iowa-entry.png",
+      "sha256": "b410a75f756ca21fd1a707754761d2521480e5dc62dc05e31c79822316bda549",
+      "width": 350,
+      "height": 2357,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/mississippi-entry.png",
+      "sha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
+      "width": 350,
+      "height": 641,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/missouri-county.png",
+      "sha256": "a3c20c86743c3d39581cb5cb4abc76e41c66c8eea0c3c8a62c4bc920aed5c7dd",
+      "width": 390,
+      "height": 5893,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/missouri-entry.png",
+      "sha256": "a418a45ff201b279b327d79e962a3e2443cdb0aeeea257595360e19982c7f44a",
+      "width": 350,
+      "height": 488,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/monthly-seo.png",
+      "sha256": "d55acbc5844dbf64a72b5c081b0be5a98667dded60c266facea817f867de172b",
+      "width": 390,
+      "height": 8857,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/pricing.png",
+      "sha256": "cae1e552279804fba9e60be6d57ada11dcac330f15f1265c335b71f3c336dc17",
+      "width": 390,
+      "height": 11781,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/process.png",
+      "sha256": "a68ce4b363103bf2574ad33cdf078d37d21ec86d8d91456a0e412feab730adf7",
+      "width": 390,
+      "height": 6629,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/redesign.png",
+      "sha256": "06efb82ecc2c3d07c6f99d0908ca63fd1ea8ddc7d42c71df9e92b325617e109d",
+      "width": 390,
+      "height": 10879,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/regional-directory.png",
+      "sha256": "f33fa942a193e8f30b5e735f1036b0ccb4899ecc73aa15b7b16bf69d9136968f",
+      "width": 390,
+      "height": 4616,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/scope-request.png",
+      "sha256": "36f064c34eb6bf2fb91e841a93bd7e4e2ee57ad459274313c033f9ccfbc0cf1b",
+      "width": 390,
+      "height": 3292,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/service-questions.png",
+      "sha256": "70f4bbe5b41409499220d920db2614b5bbf1680c2e7582866ace616b2fb938ef",
+      "width": 350,
+      "height": 489,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/services.png",
+      "sha256": "d56c1cb2bb5cd6e42c92c0f56dca3120c03755df5148764d6d9e2bd57e618252",
+      "width": 390,
+      "height": 6483,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/texas-county.png",
+      "sha256": "fde219179ca8637cfbcfd8e5a5a18632d80961b7fe81382ac9543acfc69a40aa",
+      "width": 390,
+      "height": 5964,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/texas-entry.png",
+      "sha256": "1341531585758c381d68f4ce13b4c4254a950758ae28deb8c45145a08b359d21",
+      "width": 350,
+      "height": 1048,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/web-design.png",
+      "sha256": "37bcd797cf4aec62c3f664b08be79e31a352a960cbe3e0f78e8c4e5102cf3df3",
+      "width": 390,
+      "height": 9466,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/wisconsin-entry.png",
+      "sha256": "fca08a081b366233f86858a9531418a97df30e297ddc92e4bcf3b45bccaabb70",
+      "width": 350,
+      "height": 656,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    },
+    {
+      "file": "linux/phone/work.png",
+      "sha256": "e14a071b6b335198159f385343ddf3514a2f93b1897f231598b6b81eda2f4bed",
+      "width": 390,
+      "height": 13259,
+      "decision": "retained unchanged from 05374ca6e4bf25eb67606a2efc41dfca70b3cef8"
+    }
+  ]
+}
