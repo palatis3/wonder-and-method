@@ -1,3 +1,4 @@
+import {isV3,v3Packs} from './v3-offer-content.mjs';
 import {normalizeOfferCatalog,countWords,titleCount} from './offer-catalog.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 import {annualEnrollmentAvailable, acceptedAnnualTerms, baselineEnrollmentNote, monthlyPlanDetails, monthlyPauseSummary} from './monthly-content.mjs';
@@ -58,6 +59,7 @@ function monthlyInclusions(o, id, terms) {
 }
 
 export function buyerPacks(o) {
+ if(isV3(o))return v3Packs(o);
  o=normalizeOfferCatalog(o);
  return ids.map(id => {
   const build = id.endsWith('_site'), monthly = Object.hasOwn(o.plans, id);

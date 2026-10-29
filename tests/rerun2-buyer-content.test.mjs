@@ -15,7 +15,7 @@ const inquiry={name:'Synthetic owner',email:'synthetic@example.test',message:'Pl
 test('existing-site requests accept public addresses without requesting the website',()=>{
  for(const site of ['example.com','https://example.com/broken-page','http://example.com:8080/','example.com:8080','https://bücher.de/','https://8.8.8.8/']){
   assert.ok(publicWebsiteAddress(site),site);
-  for(const service of ['website_baseline','audit_fix_sprint','keep_running','improve','grow'])
+  for(const service of ['website_baseline','audit_fix_sprint','keep_running','improve','local_focus','grow'])
    assert.deepEqual(validateInquiry({...inquiry,service,website:site}).errors,{},service+': '+site);
  }
  for(const website of ['not yet','@social','ftp://example.com','https://user:secret@example.com','localhost','https://127.1/','http://2130706433/','http://0x7f000001/','http://192.168.2.1/','http://169.254.169.254/','https://internal.local/','a..com']){
@@ -60,13 +60,13 @@ test('generated media inventories do not keep obsolete images alive while linked
 });
 test('monthly first-payment alternatives and website editing limits appear before the request form',()=>{
  const pages=checkoutPages(offers,intakeContent(config));
- for(const [slug,first,repeat]of [['keep-running','$549','$150'],['improve','$799','$400'],['grow','$1,199','$800']]){
+ for(const [slug,first,repeat]of [['keep-running','$375','$275'],['improve','$375','$1,250'],['local-focus','$375','$850'],['grow','$375','$1,750']]){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body,header=page.slice(0,page.indexOf('<form'));
-  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);assert.match(header,/No minimum term/);
+  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/usable prior handoff or paid review reduces duplicated work/);assert.match(header,/month-to-month/);
  }
- for(const slug of ['launch-site','focused-site','signature-site']){
+ for(const slug of ['launch-site','focused-site','business-site','signature-site']){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  assert.match(page.slice(0,page.indexOf('<form')),/No visual or drag-and-drop editor is included/);
+  assert.match(page.slice(0,page.indexOf('<form')),/platform and editing workflow before booking/);
   assert.match(page,/name="request_kind" value="checkout"/);
  }
 });

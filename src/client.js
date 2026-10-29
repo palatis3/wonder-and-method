@@ -41,7 +41,7 @@ if(form){
   }
   const current={service,...context};
   const additions=priceAddons(normalizeAddonSelection(values));
-  const isBuild=['launch_site','focused_site','signature_site'].includes(service);
+  const isBuild=['launch_site','focused_site','business_site','signature_site','storefront'].includes(service);
   const interest=field('care_interest'),interestPanel=form.querySelector('[data-care-interest]'),allowInterest=inquiryAllowsMonthlyInterest(values);
   if(interest){interest.value=context.care_interest||'';interest.disabled=!allowInterest;}
   if(interestPanel)interestPanel.hidden=!allowInterest;
@@ -59,7 +59,7 @@ if(form){
     }));
    }
    const project=addonSummary.querySelector('[data-addon-project-total]'),payments=addonSummary.querySelector('[data-addon-payments]'),base=inquiryOffer(service);
-   if(project)project.textContent=additions.ids.length&&isBuild?'Package + selected additions: '+money(base.price+additions.total)+' in one-time studio fees.':'';
+   if(project)project.textContent=additions.ids.length&&isBuild?'Package + selected additions: '+money(base.price+additions.total)+' in one-time studio fees before scope credits.':'';
    if(payments)payments.textContent=additions.ids.length&&isBuild?addonBuildPayments(base.price+additions.total):'';
   }
   const website=field('website'),websiteDetails=inquiryWebsiteField(current);

@@ -1,4 +1,4 @@
-import searchExcluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
+import searchExcluded from './fixtures/current-search-excluded-public-paths.mjs';
 import {robotsDirective} from '../src/seo.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';

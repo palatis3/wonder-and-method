@@ -1,3 +1,4 @@
+import {isV3,v3List,v3Timing} from './v3-offer-content.mjs';
 import defaultOffers from '../config/offers.json' with {type:'json'};
 import {pageDisplayNames,serviceNavigationPaths} from './display-names.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
@@ -17,7 +18,7 @@ export function compatibilityGuide() {
   const cases=[
     ['A website I built','Send the address and the change you need. I check the source files and publishing notes before agreeing on care or a small fix.'],
     ['A website with an existing editor','Tell me the platform and what needs changing. I check access, recovery options, export limits and whether the task is practical.'],
-    ['Plugins or custom software','Share the problem and any maintenance history. Plugin conflicts, malware and complex applications may need a specialist. Standard care does not include software updates, backups or restores.'],
+    ['Plugins or custom software','Share the problem and any maintenance history. Plugin conflicts, malware and complex applications may need a specialist. Care includes the supported maintenance and recovery checks agreed for the platform. Major upgrades, malware and unrelated incident recovery need a separate scope.'],
     ['You are not sure what it uses','The website address and a short description are enough to start. You do not need to diagnose it yourself.']
   ];
   return `<section class="studio-section compatibility-guide" id="website-fit"><p class="eyebrow">Your existing website</p><h2>Can I work with your site?</h2><p>I assess the actual site and task before offering care, an Audit &amp; Fix Sprint or a redesign. WordPress, Wix, Squarespace and Webflow differ in access and export options; none is automatically covered.</p><div class="compatibility-grid">${cases.map(([title,text])=>`<article><h3>${title}</h3><p>${text}</p></article>`).join('')}</div><p>Before work starts, we agree on the task, delegated access, recovery route and completion checks. Send a public website address first; keep passwords and private exports out of the inquiry form.</p><a class="button" href="/contact/?offer=unsure&amp;goal=fix&amp;request_kind=question#inquiry">Ask if I can help</a></section>`;
@@ -31,7 +32,8 @@ export function processOverview(config) {
   return `<section class="process-overview" aria-labelledby="process-overview-title"><h2 id="process-overview-title">Your schedule</h2><p>${e(config.projectTiming)}</p><p>Your proposal names the start, two review dates and launch target before payment. Send one combined list of changes at each review. Written approval is required; silence is not approval.</p></section>`;
 }
 
-export function projectCalendar() {
+export function projectCalendar(o=defaultOffers) {
+  if(isV3(o))return `<section class="studio-section" id="project-calendar"><h2>How reviews affect the launch date</h2><p>${e(v3Timing(o))}</p><p>Two business days for each consolidated review are included in the planned delivery window. Focused, Custom and Business include two rounds; Signature includes three. Your proposal sets start, review and launch dates. Longer feedback delays, missing inputs or approved extra work move the agreed dates. Silence is never approval.</p><p>You receive the agreed paid files, account and license inventory, editing guide and recorded demonstrations. A 30-day defect-reporting window follows website launch; it does not delay the paid handoff.</p></section>`;
   return `<section class="studio-section" id="project-calendar"><h2>How reviews affect the launch date</h2><p>Planned build work takes 3–5 business days for Launch Website, 5–8 business days for Focused Website and 7–10 business days for Signature Website, once the page list, business facts, photos and account access are ready. I write the content; you approve its accuracy and review the design and working website.</p><p>Add your review time: two rounds, each allowing up to five business days. Your written proposal confirms the start, review and launch dates. Missing information or extra work can move them; we agree on any revised dates. Silence is not approval.</p><p>I send the paid website files and publishing instructions within five business days after the paid work is finished, or after settling the account if the project stops early. The separate 30-day correction period for build defects does not delay delivery.</p></section>`;
 }
 

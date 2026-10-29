@@ -5,28 +5,34 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket,buildJobPacket} from '../scripts/job-packet.mjs';
+import {currentOfferIds,offerRecord,normalizeOfferCatalog} from '../src/offer-catalog.mjs';
+import {v3Policy} from '../src/v3-offer-content.mjs';
+const legacy=JSON.parse(await readFile(new URL('../operations/historical/offers-2026-10-24-pre-v3.json',import.meta.url),'utf8'));
 const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8'));
 
-test('one-off and recurring scopes and packets retain their own review, correction and exit terms',async()=>{
- for(const id of ['audit_fix_sprint','website_baseline','keep_running','improve','grow']){
-  const recurring=Object.hasOwn(offers.plans,id);
-  for(const billing of recurring?['monthly','annual']:['monthly']){
-   const scope=await draftScope(id,'synthetic-service-terms',{billing}),html=renderJobPacket(scope,{},offers);
-   assert.doesNotMatch(JSON.stringify(scope),/consolidated design round|consolidated staging round|after launch|design_review_window|staging_review_window|target_launch/);
-   assert.doesNotMatch(html,/consolidated design round|consolidated staging round|30 calendar days after launch|design review window|staging review window|target launch/);
-   assert.ok(html.includes(scope.included_revisions),id+' revisions are rendered');
-   if(recurring){
-    assert.match(scope.defect_window,/My own defects and already-promised launch work are corrected or completed without using a paid allowance/);assert.match(scope.defect_window,/still owe it to you/);
-    assert.doesNotMatch(scope.defect_window,/30 calendar days/);assert.equal(scope.paid_work_rights,offers.monthly_terms.exit);
-    assert.equal(scope.schedule.service_end,null);
-    if(id==='keep_running')assert.match(scope.included_revisions,/related small-change batch/);else assert.match(scope.included_revisions,/One consolidated refinement and QA per main improvement/);
-    if(billing==='annual'){assert.match(scope.cancellation_reconciliation,/within ten business days/);assert.match(scope.cancellation_reconciliation,/Undisputed unearned amounts/);}
-   }else{
-    assert.equal(scope.defect_window,offers.one_off_terms.correction);assert.match(html,/30 calendar days after your written approval of its completion/);
-    assert.equal(scope.included_revisions,id==='website_baseline'?offers.baseline.refinement:offers.one_off_terms.acceptance);assert.match(scope.included_revisions,/One round of (?:changes|these changes)/);assert.match(scope.included_revisions,/checks.*included/);assert.equal(scope.paid_work_rights,offers.one_off_terms.ownership);assert.equal(scope.cancellation_reconciliation,offers.one_off_terms.remedy);
-    assert.equal(scope.schedule.written_completion_acceptance,null);assert.ok(scope.acceptance_tests.length>0);
-   }
-  }
+test('current scopes and packets retain their distinct approved review, correction and exit terms',async()=>{
+ for(const id of currentOfferIds(offers)){
+  const p=offerRecord(normalizeOfferCatalog(offers),id),recurring=Object.hasOwn(offers.plans,id),build=['launch_site','focused_site','business_site','signature_site','storefront'].includes(id);
+  const scope=await draftScope(id,'synthetic-service-terms'),html=renderJobPacket(scope,{},offers);
+  assert.equal(scope.defect_window,p.v3.support);assert.ok(html.includes(scope.included_revisions));
+  assert.deepEqual(scope.commercial_boundaries.deliverables,p.v3.includes);
+  assert.ok(p.v3.acceptance.every(check=>scope.acceptance_tests.includes(check)));
+  assert.equal(scope.paid_work_rights,v3Policy(offers,'money_and_ownership','Deliverables and licenses'));
+  assert.equal(scope.cancellation_reconciliation,v3Policy(offers,'money_and_ownership','Project cancellation')+' '+v3Policy(offers,'money_and_ownership','Exit'));
+  if(!build)assert.doesNotMatch(JSON.stringify(scope.schedule),/design_review_window|staging_review_window|target_launch/);
+  if(recurring){assert.equal(scope.schedule.service_end,null);assert.equal(scope.service_period.cycles,1);assert.equal(scope.billing_option,'monthly');}
+  else if(!build){assert.equal(scope.schedule.written_completion_acceptance,null);assert.ok(scope.acceptance_tests.length>0);}
+  if(id==='website_baseline')assert.match(scope.defect_window,/14.*clarification/);
+  if(id==='audit_fix_sprint')assert.match(scope.defect_window,/30.*defect/);
+ }
+});
+
+test('historically accepted annual scopes retain their own refund and exit terms',async()=>{
+ for(const id of ['keep_running','improve','grow']){
+  const scope=await draftScope(id,'synthetic-historical-annual',{billing:'annual',catalog:legacy}),html=renderJobPacket(scope,{},offers);
+  assert.match(scope.cancellation_reconciliation,/within ten business days/);assert.match(scope.cancellation_reconciliation,/Undisputed unearned amounts/);
+  assert.equal(scope.paid_work_rights,legacy.monthly_terms.exit);assert.equal(scope.service_period.cycles,12);
+  assert.ok(html.includes(scope.included_revisions));assert.doesNotMatch(html,/Commercial mismatch/);
  }
 });
 
@@ -35,7 +41,7 @@ test('local invoice drafts use exact milestones, escape client data and provide 
  scope.buyer_job='<script>alert("private")</script>';
  const html=renderJobPacket(scope,{entries:[{type:'Fit',note:'<img src=https://example.invalid/pixel>'}]},offers);
  assert.equal((html.match(/class="invoice"/g)||[]).length,3);
- for(const amount of ['$1,175.00','$705.00','$470.00'])assert.ok(html.includes(amount));
+ for(const amount of ['$1,800.00','$1,350.00'])assert.ok(html.includes(amount));
  assert.ok(html.includes('&lt;script&gt;'));assert.ok(html.includes('&lt;img'));
  assert.ok(!/<(?:script|img|iframe|form)\b/i.test(html));
  assert.ok(!/href=["']https?:/i.test(html));

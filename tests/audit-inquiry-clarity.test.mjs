@@ -18,7 +18,7 @@ import worker from '../deployment/worker.mjs';
 import offers from '../config/offers.json' with {type:'json'};
 import site from '../config/site.json' with {type:'json'};
 
-const builds=['launch_site','focused_site','signature_site'],monthly=['keep_running','improve','grow'];
+const builds=['launch_site','focused_site','business_site','signature_site'],monthly=['keep_running','improve','local_focus','grow'];
 const fixture={name:'Synthetic owner',email:'fixture@example.test',message:'Please help with this fictional website request.'};
 const decode=value=>value.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#39;',"'").replaceAll('&lt;','<').replaceAll('&gt;','>');
 const attrs=tag=>Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(match=>[match[1],decode(match[2])]));
@@ -38,13 +38,13 @@ function nativeValues(html){
 const visibleText=html=>html.replace(/<details\b[^>]*>([\s\S]*?)<\/details>/g,(_match,inside)=>inside.match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/)?.[1]||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 
 test('all checkouts lead with price and no-charge reassurance, with complete scope and payment steps in a native disclosure',()=>{
- const pages=checkoutPages(offers,{live:true});assert.equal(pages.length,8);
+ const pages=checkoutPages(offers,{live:true});assert.equal(pages.length,15);
  for(const page of pages){
   const id=page.path.split('/')[2].replaceAll('-','_'),offer=shared.inquiryOffer(id),formStart=page.body.indexOf('<form');
   const before=page.body.slice(0,formStart),header=before.split('</header>')[0],scope=before.match(/<aside class="checkout-summary">([\s\S]*?)<\/aside>/)?.[1];
-  assert.ok(scope,id);const serviceType={keep_running:' website care',improve:' monthly SEO',grow:' monthly SEO'}[id]||'';assert.match(header,new RegExp('<h1>Request '+shared.escapeHtml(offer.name)+serviceType+'</h1>'));
-  assert.ok(header.includes(shared.money(offer.price)));assert.ok(page.title.includes(shared.money(offer.price)));
-  assert.match(scope,/<details class="checkout-overview"><summary>What you get and when you pay<\/summary>/);
+  assert.ok(scope,id);const serviceType='';assert.match(header,new RegExp('<h1>Request '+shared.escapeHtml(offer.name)+serviceType+'</h1>'));
+  assert.ok(header.includes(shared.money(offer.price)));assert.ok(page.description.includes(shared.money(offer.price)));
+  assert.match(scope,/<details class="checkout-overview"><summary>Scope, timing and payments<\/summary>/);
   assert.match(header,/Free to ask\. Nothing is booked or charged\./);
   assert.match(header,/cost (?:separately|extra)/);
   assert.equal(page.body.split(site.responseWindow).length-1,1,id);
@@ -53,14 +53,15 @@ test('all checkouts lead with price and no-charge reassurance, with complete sco
   assert.ok(page.body.includes(shared.escapeHtml(shared.inquirySubmitLabel(id,true,'checkout'))));
   if(builds.includes(id)){
    for(const milestone of offers[id].payment_schedule)assert.ok(scope.includes(shared.money(milestone.amount)));
-   assert.match(scope,/after written proposal approval/);assert.match(scope,/written design approval/);assert.match(scope,/written working-site approval, before launch/);
-   assert.match(scope,/No visual or drag-and-drop editor is included/);assert.match(scope,/30 calendar days after launch/);
+   assert.match(scope,/Reserve your agreed start/);assert.match(scope,/Approve copy and design direction/);assert.match(scope,/Approve staging before launch/);
+   assert.match(scope,/platform and editing workflow before booking/);assert.match(scope,/30 calendar days from launch/);
   }
   if(monthly.includes(id)){
-   assert.ok(header.includes(shared.money(offers.baseline.one_time_price+offer.price)));
-   assert.match(scope,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);
-   assert.match(scope,/do not pay for it twice/);assert.match(scope,/New websites I build include this review/);
-   assert.match(scope,/Not included in monthly care:.*updates.*backups, restores and malware cleanup/);
+   assert.match(scope,/\$375/);assert.match(scope,/\$650/);
+   assert.match(scope,/usable prior handoff or paid review reduces duplicated work/);
+   assert.match(scope,/not an automatic enrollment charge/);
+   assert.match(scope,/Eligibility and the exact first invoice are confirmed before payment/);
+
   }
  }
 });
@@ -77,7 +78,7 @@ test('contact starts with required fields and keeps optional choices and labeled
  assert.match(html,/<details class="inquiry-extra" data-project-details><summary>Website and business details \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));
- assert.match(html,/one SEO improvement a month/);assert.match(html,/two SEO improvements a month/);
+ assert.match(html,/Website Improvement Partnership — \$1,250\/month/);assert.match(html,/Local Search Partnership — \$1,750\/month/);
  const source=html.match(/<select id="found_via"[^>]*>([\s\S]*?)<\/select>/)[1];
  assert.deepEqual([...source.matchAll(/<option value="([^"]*)"/g)].map(match=>match[1]),['','search','maps','ai','referral','social','other']);
  assert.ok(html.indexOf('id="found_via"')>html.indexOf('id="business_location"'));
@@ -117,12 +118,12 @@ test('extras appear only when relevant and survive native monthly prefill and co
  for(const service of builds)assert.match(inquiryFormMarkup({live:true},{service,checkout:true}),/<div data-inquiry-addons>/);
  for(const service of [...monthly,'website_baseline','audit_fix_sprint'])assert.doesNotMatch(inquiryFormMarkup({live:true},{service,checkout:true}),/data-addon-picker/);
  const extras=prefillInquiryHtml(plain,new URL('https://example.test/contact/?addons=booking_setup&request_kind=checkout'));
- assert.match(extras,/Asking about: Booking system setup \(\$400 extra\)/);
+ assert.match(extras,/Asking about: Booking or Deposit Setup \(\$850 extra\)/);
  assert.match(extras,/data-change-service href="#service" hidden/);assert.doesNotMatch(extras,/data-clear-addons[^>]* hidden/);
- const monthlyPage=prefillInquiryHtml(inquiryFormMarkup({live:true},{service:'grow',checkout:true}),new URL('https://example.test/checkout/grow/?addons=booking_setup,contact_form&goal=fix'));
+ const monthlyPage=prefillInquiryHtml(inquiryFormMarkup({live:true},{service:'grow',checkout:true}),new URL('https://example.test/checkout/grow/?addons=booking_setup,guided_quote_form&goal=fix'));
  assert.doesNotMatch(monthlyPage,/data-addon-picker/);assert.match(monthlyPage,/<fieldset data-retained-addons>/);
  const values={...nativeValues(monthlyPage),...fixture},checked=validateInquiry(values);
- assert.deepEqual(checked.errors,{});assert.deepEqual(checked.value.add_ons,['booking_setup','contact_form']);assert.equal(checked.value.service,'grow');
+ assert.deepEqual(checked.errors,{});assert.deepEqual(checked.value.add_ons,['booking_setup','guided_quote_form']);assert.equal(checked.value.service,'grow');
  assert.equal(checked.value.request_kind,'checkout');assert.equal(checked.value.website,'');
  const correction=inquiryResponseHtml({...checked.value,status:422,message:'Check your message.',errors:{message:'Please add more detail.'},retry:checked.value});
  for(const id of checked.value.add_ons)assert.match(correction,new RegExp(`name="addon_${id}"[^>]* checked`));
@@ -189,9 +190,9 @@ function clientFixture({service='unsure',fixed=false,kind=fixed?'checkout':'',qu
 
 test('enhanced service changes reveal relevant extras, keep priced context and preserve neutral analytics',()=>{
  const ui=clientFixture();assert.equal(ui.fields.request_kind.value,'');assert.equal(ui.selectors['[data-inquiry-addons]'].hidden,true);
- ui.fields.service.value='focused_site';ui.change(ui.fields.service);assert.equal(ui.selectors['[data-inquiry-addons]'].hidden,false);assert.equal(ui.button.textContent,'Send message');assert.match(ui.summary.textContent,/Focused Website \(\$2,350\)/);
+ ui.fields.service.value='focused_site';ui.change(ui.fields.service);assert.equal(ui.selectors['[data-inquiry-addons]'].hidden,false);assert.equal(ui.button.textContent,'Send message');assert.match(ui.summary.textContent,/Custom Website \(\$4,500\)/);
  const booking=ui.checks.find(input=>input.name==='addon_booking_setup');booking.checked=true;ui.change(booking);
- ui.fields.service.value='unsure';ui.change(ui.fields.service);assert.match(ui.summary.textContent,/Asking about: Booking system setup \(\$400 extra\)/);assert.equal(ui.selectors['[data-change-service]'].hidden,true);assert.equal(ui.selectors['[data-clear-addons]'].hidden,false);
+ ui.fields.service.value='unsure';ui.change(ui.fields.service);assert.match(ui.summary.textContent,/Asking about: Booking or Deposit Setup \(\$850 extra\)/);assert.equal(ui.selectors['[data-change-service]'].hidden,true);assert.equal(ui.selectors['[data-clear-addons]'].hidden,false);
  ui.selectors['[data-clear-addons]'].dispatch('click',{preventDefault(){}});assert.equal(booking.checked,false);assert.equal(ui.selectors['[data-inquiry-addons]'].hidden,true);assert.equal(ui.fields.service.focused,true);
  ui.form.dispatch('input');assert.deepEqual(ui.counts,[['request_start','unsure']]);assert.equal(ui.fields.request_kind.value,'');
 });
@@ -217,12 +218,12 @@ test('fixed-fee review wording stays consistent through native, enhanced and sav
 });
 
 test('enhanced checkout preserves offer-specific buttons and the same website rule after query hydration',()=>{
- const build=clientFixture({fixed:true,service:'focused_site',query:'?addons=booking_setup'});assert.equal(build.button.textContent,'Request my Focused proposal');
- build.change(build.checks.find(input=>input.name==='addon_booking_setup'));assert.equal(build.button.textContent,'Request my Focused proposal');
- const care=clientFixture({fixed:true,service:'grow',query:'?goal=fix&addons=booking_setup'});assert.equal(care.fields.website.required,false);assert.equal(care.button.textContent,'Request a Grow proposal');assert.equal(care.selectors['[data-retained-addons]'].hidden,false);
+ const build=clientFixture({fixed:true,service:'focused_site',query:'?addons=booking_setup'});assert.equal(build.button.textContent,'Request my Custom proposal');
+ build.change(build.checks.find(input=>input.name==='addon_booking_setup'));assert.equal(build.button.textContent,'Request my Custom proposal');
+ const care=clientFixture({fixed:true,service:'grow',query:'?goal=fix&addons=booking_setup'});assert.equal(care.fields.website.required,false);assert.equal(care.button.textContent,'Request a Local Search Partnership proposal');assert.equal(care.selectors['[data-retained-addons]'].hidden,false);
  const selected=care.checks.find(input=>input.name==='addon_booking_setup');assert.equal(selected.checked,true);assert.equal(selected.disabled,false);
  const review=clientFixture({fixed:true,service:'website_baseline'});assert.equal(review.fields.website.required,true);
- const question=clientFixture({fixed:true,service:'website_baseline',query:'?request_kind=question'});assert.equal(question.fields.website.required,false);assert.equal(question.fields.request_kind.value,'question');assert.equal(question.button.textContent,'Send my Website Baseline question');
+ const question=clientFixture({fixed:true,service:'website_baseline',query:'?request_kind=question'});assert.equal(question.fields.website.required,false);assert.equal(question.fields.request_kind.value,'question');assert.equal(question.button.textContent,'Send my Website Roadmap question');
 });
 
 test('enhanced neutral and explicit question submissions retain intent and use distinct saved events',async()=>{
@@ -252,7 +253,7 @@ test('native need choices retain each actual goal and never manufacture a defaul
 });
 
 test('monthly interest preserves website intent, price, receipts and correction',()=>{
- for(const service of builds)for(const care_interest of ['keep_running','improve','grow','discuss']){
+ for(const service of builds)for(const care_interest of ['keep_running','improve','local_focus','grow','discuss']){
   const html=prefillInquiryHtml(inquiryFormMarkup({live:false},{service,checkout:true}),new URL('https://example.test/checkout/'+service.replaceAll('_','-')+'/?care_interest='+care_interest));
   const values={...nativeValues(html),...fixture};const checked=validateInquiry(values);
   assert.deepEqual(checked.errors,{});assert.equal(checked.value.care_interest,care_interest);assert.equal(checked.value.service,service);assert.equal(checked.value.request_kind,'checkout');assert.equal(checked.value.billing,undefined);

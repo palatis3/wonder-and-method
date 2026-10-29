@@ -1,3 +1,5 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
+import {beforeReviewedV3OfferFaqCollection} from './fixtures/reviewed-v3-offer-edits.mjs';
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -25,7 +27,8 @@ import {createHash} from 'node:crypto';
 import expected from './fixtures/wi-il-geography.json' with {type:'json'};
 import preservation from './fixtures/wi-il-preservation.json' with {type:'json'};
 import records from '../src/location-service-data.json' with {type:'json'};
-import faqs from '../src/service-faqs.json' with {type:'json'};
+import currentFaqs from '../src/service-faqs.json' with {type:'json'};
+const faqs=beforeReviewedV3OfferFaqCollection(currentFaqs);
 import {wiIlGeography,wiIlAreaInventory} from '../src/wi-il-geography.mjs';
 import {serviceStates,countyDirectory,countySearchText,countySearchAsset} from '../src/service-area-directory.mjs';
 import {parseCountyQuery,countyMatch,decodeCountyNames,decodeCountySearchCards,decodeCountySearchAsset,unpackCountySearch,unpackCountyBase91} from '../src/assets/county-directory.js';
@@ -34,7 +37,7 @@ const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrP
 
 const additions=['wisconsin','illinois'];
 const laterStates=['louisiana','arkansas','texas','missouri','iowa',...mnOkStates];
-const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
+const isLater=path=>v3OfferPaths.includes(path)||laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 test('WI/IL preserve every earlier commercial record, FAQ and directory identity',()=>{
  const prior=records.filter(record=>!additions.some(state=>record.path.startsWith('/areas/'+state+'/'))&&!isLater(record.path));

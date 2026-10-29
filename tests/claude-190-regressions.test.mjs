@@ -43,27 +43,21 @@ test('explicit decision-pack requests stay proposals without JavaScript and reta
  const {inquiryForm}=await import('../src/inquiry-form.mjs');
  const {prefillInquiryHtml}=await import('../src/inquiry-prefill.mjs');
  const {default:offers}=await import('../config/offers.json',{with:{type:'json'}});
- const labels={launch_site:'Request my Launch proposal',focused_site:'Request my Focused proposal',signature_site:'Request my Signature proposal',keep_running:'Request a Keep Running proposal',improve:'Request an Improve proposal',grow:'Request a Grow proposal',website_baseline:'Request my Website Baseline',audit_fix_sprint:'Request my Audit & Fix proposal'};
+ const labels={launch_site:'Request my Focused proposal',focused_site:'Request my Custom proposal',business_site:'Request my Business Custom proposal',signature_site:'Request my Signature Custom proposal',keep_running:'Request a Website Care proposal',improve:'Request a Website Improvement Partnership proposal',local_focus:'Request a Local Search Focus proposal',grow:'Request a Local Search Partnership proposal',website_baseline:'Request my Website Roadmap',audit_fix_sprint:'Request my Website Repair proposal',brand_message:'Request my Brand & Message Sprint proposal',storefront:'Request my Storefront Launch proposal',local_presence:'Request my Local Presence Setup proposal',workflow:'Request my Workflow Automation Sprint proposal',systems:'Request my Custom Systems Discovery proposal'};
  for(const pack of buyerPacks(offers)){
   assert.equal(pack.request,'/checkout/'+pack.id.replaceAll('_','-')+'/');const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'},{checkout:true,service:pack.id}),new URL(pack.request,'https://example.test'));
   assert.match(html,/name="request_kind" value="checkout"/);
   assert.ok(html.includes('<button type="submit" data-request-submit>'+escapeHtml(labels[pack.id])+'</button>'),pack.id+' named request');
   assert.ok(html.includes('type="hidden" id="service" name="service" value="'+pack.id+'"'));
   if(pack.id.endsWith('_site')){
-   const text=pack.sections.flatMap(section=>section.items).join(' '),graphics=offers[pack.id].graphic_counts;
-   assert.match(text,new RegExp(graphics.launch+' announcement graphics?'));
-   for(const pattern of [/mobile.*reduced-motion/,/browser-tab icon, branded image for shared page links from approved assets and page-sharing checks/,/Extra variants, identity redesign and original photography are separate/])assert.match(text,pattern,pack.id);
-   if(graphics.promotional){
-    assert.match(text,new RegExp(graphics.promotional+' promotional graphics for agreed uses \\('+graphics.total+' distinct designs total\\)'));
-    assert.match(text,new RegExp(graphics.supplied_photo_edits+' supplied-photo edits'));
-    for(const pattern of [/color-and-font guide, clean existing-logo files and a social profile picture/,/Resizing does not count as another graphic/,/final images are included, editing templates and presentation decks are separate/])assert.match(text,pattern,pack.id);
-   }else assert.match(text,/simple color-and-font guide/);
+   const text=pack.sections.flatMap(section=>section.items).join(' ');
+   assert.match(text,/supplied.*photographs|photographs.*supplied/i);assert.match(text,/original.*graphic/i);
+   assert.match(text,/recorded demonstration/);assert.match(text,/reduced-motion behavior/);
+   assert.match(text,/third-party|licensed|license/i);assert.match(text,/not.*guarantee|not guaranteed/i);
    if(pack.id==='signature_site'){
-    for(const pattern of [/One custom animated homepage feature or 3D centerpiece: one concept, scene and final web output/,/lightweight mobile, still and reduced-motion versions/,/Agree on references, duration and performance limits before production/,/the same two review rounds cover it/,/Complex simulations, characters, multiple productions and custom interactive 3D are separate/])assert.match(text,pattern,pack.id);
-   }else{
-    assert.match(text,/Custom design and purposeful interface animation/);
-    assert.match(text,/A custom animated homepage feature or 3D centerpiece is separate/);
-   }
+    for(const pattern of [/one custom lightweight motion/i,/20 seconds/,/static\/reduced-motion fallback/i,/three.*review rounds/i])assert.match(text,pattern,pack.id);
+   }else assert.doesNotMatch(text,/One custom animated homepage feature or 3D centerpiece/);
+
   }
  }
 });

@@ -19,7 +19,7 @@ function sourceCategory(){
  if(host===location.hostname)return 'internal';
  return classify(host)||'referral';
 }
-const services=['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure'];
+const services=['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems','unsure'];
 const sent=new Set();
 // Carry an explicit QA opt-out through same-site page navigation, without storage.
 if(new URLSearchParams(location.search).has('qa')&&new URLSearchParams(location.search).get('qa')!=='resume')document.addEventListener('click',event=>{

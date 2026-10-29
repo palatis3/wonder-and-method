@@ -1,3 +1,4 @@
+import {minifyBrowserAsset} from './build.mjs';
 // Capture current local concept pages; keep the surrounding studio navigation out.
 // node scripts/capture-city-previews.mjs [Sharp module path | --python] [local origin] [--serve]
 // --serve owns a synthetic dist server on port 4192 and closes it after capture.
@@ -65,7 +66,7 @@ const records=[];
 try{
  if(args.includes('--serve')){const {createServer}=await import('./server.mjs');local=await createServer({runtime:resolve(root,'.runtime/city-preview-captures'),siteDir:resolve(root,'dist'),port:4192});}
  const css=await fetch(new URL('/assets/portfolio-concepts.css',origin));
- if(!css.ok||await css.text()!==await readFile(resolve(root,'src/assets/portfolio-concepts.css'),'utf8'))throw Error('The served concept CSS is stale; build the current source first.');
+ if(!css.ok||await css.text()!==await minifyBrowserAsset(await readFile(resolve(root,'src/assets/portfolio-concepts.css'),'utf8'),'css'))throw Error('The served concept CSS is stale; build the current source first.');
  browser=await chromium.launch({headless:true});
  for(const camera of ['desktop','phone']){
   const viewport=camera==='desktop'?{width:1440,height:1200}:{width:390,height:1440},deviceScaleFactor=camera==='desktop'?1:2;

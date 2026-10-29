@@ -1,3 +1,4 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -16,6 +17,9 @@ import {readFile,readdir} from 'node:fs/promises';
 import {DatabaseSync} from 'node:sqlite';
 import {journeyPages} from '../deployment/journey-dimensions.mjs';
 import {journeyPageKey} from '../src/journey-page-key.mjs';
+const v3PageKeys=new Set(v3OfferPaths.map(journeyPageKey));
+// Compare this historical migration before the twelve explicit 0049 additions.
+
 import worker from '../deployment/worker.mjs';
 import paths from './fixtures/georgia-approved-paths.json' with {type:'json'};
 
@@ -29,7 +33,7 @@ test('migration 0030 adds exactly seven Georgia keys and preserves all 1182 hist
  const old=allowed(sql.at(-2),'page'),next=allowed(sql.at(-1),'page'),added=paths.map(journeyPageKey).sort();
  assert.equal(paths.length,7);assert.equal(old.length,1182);assert.equal(next.length,1189);
  assert.deepEqual(next.filter(key=>!old.includes(key)),added);assert.ok(old.every(key=>next.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>!laterPageKeys.has(key)).filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')&&!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).sort(),next.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!v3PageKeys.has(key)).filter(key=>!laterPageKeys.has(key)).filter(key=>!key.startsWith('areas_mississippi')&&!key.startsWith('areas_alabama')&&!key.startsWith('areas_wisconsin')&&!key.startsWith('areas_illinois')).sort(),next.slice().sort());
  for(const field of ['event','service','source'])assert.deepEqual(allowed(sql.at(-1),field),allowed(sql.at(-2),field));
  const db=new DatabaseSync(':memory:');t.after(()=>db.close());db.exec(sql.slice(0,-1).join('\n'));
  const insert=()=>db.prepare('INSERT INTO journey_counts(day,event,service,page,source,total) VALUES(?,?,?,?,?,?)');

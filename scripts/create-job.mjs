@@ -1,14 +1,15 @@
 import {normalizeOfferCatalog} from '../src/offer-catalog.mjs';
 import {quotedOffer} from '../src/commercial.mjs';
 import {addonSelectionFromQuery} from '../src/addons.mjs';
+import {v3Policy} from '../src/v3-offer-content.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(import.meta.dirname,'..');
-export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule,catalog}={}){
+export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure',catalog}={}){
  const offers=normalizeOfferCatalog(catalog??JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8')));
  if(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(clientId))throw new Error('Use a simple lowercase client ID, without personal information.');
- const {add_on_quote,...offer}=quotedOffer(offers,offerId,billing,{add_ons,payment_schedule}),scope=JSON.parse(await readFile(resolve(root,'operations/templates/accepted-scope.json'),'utf8'));
+ const {add_on_quote,...offer}=quotedOffer(offers,offerId,billing,{add_ons,payment_schedule,add_on_credits,care_variant,onboarding_variant}),scope=JSON.parse(await readFile(resolve(root,'operations/templates/accepted-scope.json'),'utf8'));
  const commercialSnapshot={version:offers.version,offer_id:offerId,billing,offer,provider_policy:offers.provider_policy,ownership_and_billing:offers.ownership_and_billing,...(add_on_quote?{add_on_quote}:{}),...(Object.hasOwn(offers.plans,offerId)?{monthly_terms:offers.monthly_terms,...(billing==='annual'?{annual_terms:offers.annual_terms}:{}),priority_menu:offer.priorities?offers.priority_menu:[]}:{one_off_terms:offers.one_off_terms})};
  const finish=draft=>{
   if(!add_on_quote)return draft;
@@ -18,6 +19,15 @@ export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],
   draft.buyer_confirmation={...draft.buyer_confirmation,add_ons_and_total_understood:null,accepted_commercial_digest:null};
   return draft;
  };
+ if(offers.catalog_format===3&&offer.v3){
+  const v=offer.v3,recurring=Object.hasOwn(offers.plans,offerId),build=['launch_site','focused_site','business_site','signature_site','storefront'].includes(offerId);
+  const sharedChecks=build?offers.v3_policies.shared_launch_standards.map(([label])=>v3Policy(offers,'shared_launch_standards',label)):[];
+  return finish({...scope,status:'DRAFT — not accepted, booked, invoiced or paid',client_id:clientId,version:1,offer_id:offerId,billing_option:recurring?'monthly':'one_off',fixed_price:offer.public_price,commercial_source:'config/offers.json',commercial_version:offers.version,commercial_snapshot:commercialSnapshot,
+   commercial_boundaries:{purpose:v.result,fit:v.fit,deliverables:[...v.includes],page_scope:offer.page_scope??null,inputs:[...v.inputs],stages:structuredClone(v.stages),planned_timing:v.timeline,scope_note:v.note??null,provider_policy:offers.provider_policy,launch_acceptance:sharedChecks,overlap_credits:v3Policy(offers,'money_and_ownership','Reuse and credits'),replacement_modules:v3Policy(offers,'money_and_ownership','Replacement modules'),...(recurring?{onboarding:offers.care_variants,monthly_service:v3Policy(offers,'money_and_ownership','Monthly service'),unused_work:v3Policy(offers,'money_and_ownership','Unused monthly work')}:{}),...(offerId==='audit_fix_sprint'?{fixed_scope_obligation:'The six planned implementation hours set scope before booking; unchanged accepted deliverables remain owed if studio effort was underestimated. New dependencies or changed requirements require an agreed remedy before extra fees.'}:{})},
+   included_revisions:'The review rounds and refinement limits stated in the included deliverables and delivery stages apply. Changes outside the accepted direction require a written scope change.',defect_window:v.support,acceptance_tests:[...v.acceptance,...sharedChecks],paid_work_rights:v3Policy(offers,'money_and_ownership','Deliverables and licenses'),cancellation_reconciliation:v3Policy(offers,'money_and_ownership','Project cancellation')+' '+v3Policy(offers,'money_and_ownership','Exit'),
+   schedule:recurring?{booked_start:null,input_due:null,cycle_review_window:null,service_end:null}:build?{booked_start:null,input_due:null,design_review_window:null,staging_review_window:null,target_launch:null,correction_end:null}:{booked_start:null,input_due:null,completion_review_window:null,written_completion_acceptance:null,correction_end:null},service_period:recurring?{start:null,end:null,timezone:null,cycles:1,renewal:'Exact next billing date and written cancellation route required before enrollment'}:null,
+   milestones:offer.payment_schedule.map(x=>({...x,due_date:null,approval_reference:null,invoice_system_reference:null,payment_confirmed:false})),exclusions:[...v.excludes],external_costs:[],accepted_at:null});
+ }
  if(!offerId.endsWith('_site')){
   const recurring=Object.hasOwn(offers.plans,offerId);
   const serviceTerms=offerId==='website_additions'?{
@@ -52,7 +62,14 @@ async function main(){
   const key=arg.split('=')[0];
   if(seen.has(key))throw Error('Supply each job option once.');seen.add(key);
   if(arg==='--annual')options.billing='annual';
+  else if(arg.startsWith('--care-variant='))options.care_variant=arg.slice('--care-variant='.length);
+  else if(arg.startsWith('--onboarding-variant='))options.onboarding_variant=arg.slice('--onboarding-variant='.length);
   else if(arg.startsWith('--addons='))options.add_ons=addonSelectionFromQuery(arg.slice('--addons='.length));
+  else if(arg.startsWith('--addon-credits=')){
+   const path=arg.slice('--addon-credits='.length);if(!path)throw Error('Provide the reviewed scope credits JSON file.');
+   const bytes=await readFile(resolve(path));if(bytes.length>16000)throw Error('Scope credits file is too large.');
+   options.add_on_credits=JSON.parse(bytes.toString('utf8'));
+  }
   else if(arg.startsWith('--payment-schedule=')){
    const path=arg.slice('--payment-schedule='.length);if(!path)throw Error('Provide the agreed payment schedule JSON file.');
    const bytes=await readFile(resolve(path));if(bytes.length>16000)throw Error('Payment schedule file is too large.');

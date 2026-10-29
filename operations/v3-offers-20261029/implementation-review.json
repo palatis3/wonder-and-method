@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Independent Astra reviewer (/root/astra_v3_final_release_review)",
+  "reviewedAt": "2026-10-29T11:27:57.515Z",
+  "verdict": "PASS",
+  "scope": "Bounded implementation review only; not release approval",
+  "releaseApproved": false,
+  "releaseStatus": "PENDING",
+  "ciApproved": false,
+  "databaseApproved": false,
+  "publicationApproved": false,
+  "unresolvedBlockers": [],
+  "pendingReleaseGates": [
+    "Regenerate/finalize build outputs after the final six-paragraph maintenance correction and complete required checks on the final commit.",
+    "CI/browser execution and actual skip reconciliation, production database/migration execution, release checks, deployment and production smoke verification remain pending and are not approved by this artifact."
+  ],
+  "evidence": [
+    "evidence/v3-offers-20261029/final-implementation-review.json",
+    "evidence/v3-offers-20261029/final-implementation-review.md",
+    "evidence/v3-offers-20261029/blaine-applied-review.json"
+  ],
+  "browserExclusionReview": {
+    "status": "PASS",
+    "rebinds": [
+      {
+        "path": "tests/browser/audit-layout-regression.spec.mjs",
+        "beforeSha256": "3e9bc3ba328980cdddc5ae9935f43a2ec789a85371275053f083df556dbccea1",
+        "afterSha256": "5fa545bacf6e5fcbbef59bb303579f1509077d2ebabc2fc5403309ad55594585"
+      },
+      {
+        "path": "tests/browser/buyer-journeys.spec.mjs",
+        "beforeSha256": "0b17fa3cbea7c8b499e0b7335c12ba2c18cb3160306ac7f7da222e57ffbbcc1f",
+        "afterSha256": "7d472bd92da752d6aa3cad1e50f86665ee7b88b4645822be8ed43facb131db07"
+      },
+      {
+        "path": "tests/browser/living-city-night.spec.mjs",
+        "beforeSha256": "e2bf272971489d27869224ea075bc4d90627b4c27c63ff760538e41e638d0102",
+        "afterSha256": "c79cd44728cfe0e6a45781819a8313d2a8e2cb75b88e2e382d256342264594d6"
+      },
+      {
+        "path": "tests/browser/no-javascript.spec.mjs",
+        "beforeSha256": "3e086b05c3acd52fe226cd2094738d7549c97c367123bcccc6b2b86951514444",
+        "afterSha256": "1d54f1c7d72ba72f2f734f9eb3e6167402abf5f7e22132645a2ea06aa8e42866"
+      }
+    ],
+    "exclusions": 587,
+    "originalExclusionsPreserved": true,
+    "skipPredicatesAndReasonsUnchanged": true,
+    "sourceReview": [
+      "audit-layout-regression: V3 headings/15-card markup and anchors; width/readability checks retained.",
+      "buyer-journeys: 15 checkout destinations, current terms, explicit historical annual fixture plus additional V3 annual-gate test; focus/failure/receipt behavior retained.",
+      "living-city-night: current public price assertions only; asset-failure interception and skips unchanged.",
+      "no-javascript: bound current FAQ answers, all15 checkouts, updated totals/addition identities and current labels; native correction/receipt/payload checks retained."
+    ],
+    "inventoryCount": 2074,
+    "inventoryStatus": "passed",
+    "finalBatch": "2426–2437",
+    "evidence": "All587 policy identities exist in the passed2074-test inventory. The original585 identities/reasons remain unchanged. Four rebound hashes had exact committed-HEAD predecessors and unchanged skip statements. Two new duplicate-project exclusions use the unchanged site-health predicate/reason; desktop executes all2437 routes at both360/1440 widths. Initial review mistakenly searched only the2401 batch; the corrected full inventory confirms2426–2437 was already present.",
+    "originalExclusionsCount": 585,
+    "addedExclusions": [
+      {
+        "identity": "[phone-reduced-motion] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2426–2437",
+        "file": "tests/browser/site-health.spec.mjs",
+        "reason": "One complete desktop/phone matrix"
+      },
+      {
+        "identity": "[phone] › tests/browser/site-health.spec.mjs › all-route resources, landmarks and responsive layout 2426–2437",
+        "file": "tests/browser/site-health.spec.mjs",
+        "reason": "One complete desktop/phone matrix"
+      }
+    ],
+    "buildRoutes": 2437
+  },
+  "sourceHashes": {
+    "operations/v3-offers-20261029/approved-plan-catalog.json": "a5a1a68b0976dd895cd1f01f0a693e83664bca6a3513f49a7d05dede6f12105f",
+    "operations/v3-offers-20261029/approved-operating-design.json": "f73f1558657dc075c1b2eb48a66d13ae2fcc7a907c251901426d8b6c691e71e8",
+    "config/offers.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
+    "src/offer-catalog.mjs": "af919515090cfb3f4bee2e3f6136a810f4e1ab025e0554e7c1c4a592c4f43f41",
+    "src/v3-offer-content.mjs": "921b7e78ed713db0bd7d54736e547abb01a65af9e3b3f69854bad9ebf8f7f45a",
+    "src/v3-service-content.mjs": "28fe08129886f89cbfaf5acc48ebc16c21fec5d2c620698fec2ce13fa72d5447",
+    "src/commercial.mjs": "8843b47ab942a476cc363e235994b88f54f82d03a4e1e378f4ac5ab48269d9bf",
+    "src/payments.mjs": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398",
+    "src/shared.mjs": "45d88c35a187e983c295214ae31a56e4a23e96b929f7ba08a78b530ff75beb04",
+    "src/checkout-content.mjs": "3a7354404d8c832de2728da3ca20eef8d48617065a5d25f65101694bd992e8de",
+    "src/schema.mjs": "ad7439d4c8caad2819dc647fd781510003392caa44d03e51b5ec781ef007fa81",
+    "scripts/create-job.mjs": "d7a15bf8af6d0aaee6867ac920114c5ec67eeb0f16cfba945aaaa1b0760efc0c",
+    "scripts/job-packet.mjs": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f",
+    "scripts/build-buyer-packs.mjs": "32a4705fd7490fb99b94aeeefb71831de77b7c6f04d95a7aa90bfc5db91c1f56",
+    "scripts/check-v3-offer-bindings.mjs": "e20073eb2b468067e519911fcb9f3b1d93f49b2286aa633b75da5b975025cd28",
+    "deployment/migrations/0049_v3_offers.sql": "033d5d04116ad1dac7188f431218c456a249e20c3b8a50b805bd91affdd6520d",
+    "tests/v3-migration.test.mjs": "45cd3f8213b4221cdfc75701d6c7d3cf7c9caf660e0bb75b4ec1ff9ac593deeb",
+    "tests/offer-catalog.test.mjs": "cceb7a490db10d0414be6da8b1501dc8ca6a685220b572d36dc3c7d59ba76dc0",
+    "tests/payments.test.mjs": "e393c4121bca19879c0d61ed175eb9a0f7436c6c0f0f833087f5b01d1e667cd7",
+    "src/guide-content.mjs": "7b05b5383b0d503f09c0286fee5380316470bd7892f727f0b037803a3723da82",
+    "src/guide-review-consolidations.mjs": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
+    "src/research-guide-more.mjs": "be5c1a77323845d7b7aeeb7a95c65b57d2dddaa608818ea74a3f62e188245a99",
+    "src/research-guides.mjs": "d546a1f3a5714eeb66df2eb08e1f90acc34abf61edb5e07559a1e995523f9604",
+    "src/location-service-data.json": "1ed672049c6a57a8118cc515bee317b288db738e79645ee0b350b1948bd79748",
+    "operations/v3-offers-20261029/guide-connection-review.json": "2ad77647f0e91ad71b6dd25b8c9d7b3af9e722a4b027d98ec7df30f81946feca",
+    "config/ci-browser-exclusions.json": "cd396b3dd88154f3efdc9181807a9edd1c0bd9e9e2a44a20fb7eeb734178b6d8",
+    "tests/browser/audit-layout-regression.spec.mjs": "84f891cac96d6d44e8412d6f3e7303e6f0360b39d7db8b3376fed6afc01f446a",
+    "tests/browser/buyer-journeys.spec.mjs": "7d472bd92da752d6aa3cad1e50f86665ee7b88b4645822be8ed43facb131db07",
+    "tests/browser/living-city-night.spec.mjs": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+    "tests/browser/no-javascript.spec.mjs": "1d54f1c7d72ba72f2f734f9eb3e6167402abf5f7e22132645a2ea06aa8e42866",
+    "tests/browser/site-health.spec.mjs": "4274a1db59d6de72d6434ed339eb5fdecee6f17d0b1c5b5da54974d1201b4928",
+    "scripts/ci-browser.mjs": "7d47e9847fea4aa0a143ada2ae444104509e4fcac7ffcdce418bee2f49ca5754"
+  },
+  "inspectedEvidenceHashes": {
+    "output/playwright/v3-final-pricing-desktop.png": "50f3132925238cc18b5d7c5a7cfd9ddb6b6327f85ef7e6485a86b7bd7c544f5d",
+    "output/playwright/v3-final-storefront-mobile.png": "5558086f8c2f3fbd9184bf61d2a7c6cc14526409a8bd87a012dca6f7d142a883",
+    "output/playwright/v3-business-request-mobile.png": "715f45e65a990497ab865ff795231cd46b21e6919da923a38909f832800e8236",
+    "evidence/v3-offers-20261029/final-review-probe.mjs": "3133313838c16af803b3baca9b5dd3960fe8065cad6fb458654548895edfb246",
+    "evidence/v3-offers-20261029/final-review-probe.json": "57f97291fb9855bc097dde995685641ae6c012f273e7b691b159f531babad45e",
+    "evidence/v3-offers-20261029/final-review-targeted-tests.log": "4c2b7e2c5d717a82225eda63f894dc4e75fdaaaadc299f0e7785adaf2a0520e7",
+    "evidence/v3-offers-20261029/blaine-applied-review.json": "f89f6ea3de150fcb4408c15bacb09e3201a680174280f6f03590f2de6ff6944d",
+    "output/v3-audit/browser-inventory.json": "8e3285a000f3209d1c14323bc1a9ab7fa7bd25226f4861d6836d9c7e65ff8f37",
+    "output/v3-build-final.log": "5814bef3e80f4356c52f03a74612d68ac9181275d231d60ac71bdcb0fd2b160b",
+    "evidence/build.json": "49b886641f8cd0710a082ca3230bbc492bc030fe4f83edf0e396e0c12463e0ec",
+    "output/v3-audit/guide-final-deltas.json": "236ad0aee7bba641e84a619f04386abc4e7e396686f05372658c5f8766d26e2d"
+  },
+  "limitations": [
+    "Read-only production/source review; only evidence files written.",
+    "No shared browser server or full test suite was run. No new interactive accessibility or cross-browser verification performed.",
+    "No claim of exhaustive semantic review of every geographic page; current full render received the bounded retired-copy/economics scan.",
+    "Current full-file hashes bind reviewed source, but semantic review remains bounded to the described changes; only the Blaine row of location-service-data.json was independently reviewed.",
+    "Browser policy review does not claim browser execution; final actual skip result reconciliation remains a CI gate."
+  ],
+  "eolNormalizationReview": {
+    "reviewedAt": "2026-10-29T11:26:00.903Z",
+    "proofPath": "output/v3-audit/eol-normalization.json",
+    "proofSha256": "b213c686232843f3b707dc94be27205edf99969c52f4d97beef6e4dff3bd9601",
+    "status": "PASS",
+    "sourceRebinds": [
+      {
+        "path": "config/offers.json",
+        "beforeSha256": "eb56e10b0b973b581a1cd97a05aef990b6ee49df181e153ef2f5c57be72792a5",
+        "afterSha256": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
+        "crlfReplaced": 2851,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/payments.mjs",
+        "beforeSha256": "e202104e1d9f8b33708c46cb5427dac8e45463f54ec4a8f767c75f6ee6a63a2e",
+        "afterSha256": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398",
+        "crlfReplaced": 116,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/shared.mjs",
+        "beforeSha256": "87b48915e941949b1816ac34a81ca483f2a3a32096587658b8079d3b6c0884bc",
+        "afterSha256": "45d88c35a187e983c295214ae31a56e4a23e96b929f7ba08a78b530ff75beb04",
+        "crlfReplaced": 158,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/schema.mjs",
+        "beforeSha256": "f46bbbfffb033a757513cef4b7032d40859eea9cc4a9069c24a1fb843d7a7357",
+        "afterSha256": "ad7439d4c8caad2819dc647fd781510003392caa44d03e51b5ec781ef007fa81",
+        "crlfReplaced": 50,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "scripts/create-job.mjs",
+        "beforeSha256": "6287fb5e2191b5f1a6e34995d2c751ea237b3c0f0dd9e181a7a664a992732a04",
+        "afterSha256": "d7a15bf8af6d0aaee6867ac920114c5ec67eeb0f16cfba945aaaa1b0760efc0c",
+        "crlfReplaced": 82,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "scripts/job-packet.mjs",
+        "beforeSha256": "00df0e207f333a082e091e67c0e9f244bb81da3c0e12c414b9d9eb0d162f9a76",
+        "afterSha256": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f",
+        "crlfReplaced": 80,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "scripts/build-buyer-packs.mjs",
+        "beforeSha256": "f1665262d8feab3976449f319ff64ed61ee53883b0daa9432d952a69578868bf",
+        "afterSha256": "32a4705fd7490fb99b94aeeefb71831de77b7c6f04d95a7aa90bfc5db91c1f56",
+        "crlfReplaced": 44,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/guide-content.mjs",
+        "beforeSha256": "9dd8feb910d2826c6264b14d1c7b1ab32348f4563ad1a444bf88f2fb982181c7",
+        "afterSha256": "7b05b5383b0d503f09c0286fee5380316470bd7892f727f0b037803a3723da82",
+        "crlfReplaced": 219,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/guide-review-consolidations.mjs",
+        "beforeSha256": "9fbd5042fffe18e78a8eed5101d1ba6f8273d641461bf85b7f9d31b0e0076575",
+        "afterSha256": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
+        "crlfReplaced": 310,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "src/research-guides.mjs",
+        "beforeSha256": "99cdfd466b33366984ed2baefc45abf4b511b0ac642978e22182495249987ca7",
+        "afterSha256": "d546a1f3a5714eeb66df2eb08e1f90acc34abf61edb5e07559a1e995523f9604",
+        "crlfReplaced": 218,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "tests/browser/audit-layout-regression.spec.mjs",
+        "beforeSha256": "5fa545bacf6e5fcbbef59bb303579f1509077d2ebabc2fc5403309ad55594585",
+        "afterSha256": "84f891cac96d6d44e8412d6f3e7303e6f0360b39d7db8b3376fed6afc01f446a",
+        "crlfReplaced": 173,
+        "onlyLineEndingsChanged": true
+      },
+      {
+        "path": "tests/browser/living-city-night.spec.mjs",
+        "beforeSha256": "c79cd44728cfe0e6a45781819a8313d2a8e2cb75b88e2e382d256342264594d6",
+        "afterSha256": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+        "crlfReplaced": 104,
+        "onlyLineEndingsChanged": true
+      }
+    ],
+    "policyRebinds": [
+      "tests/browser/audit-layout-regression.spec.mjs",
+      "tests/browser/living-city-night.spec.mjs"
+    ],
+    "policyUpdate": {
+      "path": "config/ci-browser-exclusions.json",
+      "beforeSha256": "f797de7d81f2cde694103274978bfffbed6d23d5284a0e8d5a7af1823be1af48",
+      "afterSha256": "cd396b3dd88154f3efdc9181807a9edd1c0bd9e9e2a44a20fb7eeb734178b6d8",
+      "reason": "Only reviewed metadata plus two proven EOL source hash rebindings; all587 exclusions unchanged."
+    },
+    "exclusionsUnchanged": 587
+  },
+  "finalMigrationFormattingReview": {
+    "reviewedAt": "2026-10-29T11:27:57.515Z",
+    "path": "deployment/migrations/0049_v3_offers.sql",
+    "beforeSha256": "745cc1f988dda8e62c55136b2e1090fd8925b52c18ae16f95e5e62701ccb3e29",
+    "afterSha256": "033d5d04116ad1dac7188f431218c456a249e20c3b8a50b805bd91affdd6520d",
+    "change": "Exactly one final newline removed; appending one newline reproduces the previously reviewed SHA-256.",
+    "syntheticDatabaseRehearsal": "PASS",
+    "negativeProbes": 8
+  }
+}

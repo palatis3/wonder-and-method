@@ -15,17 +15,17 @@ const [offers,config,map,geography]=await Promise.all(['config/offers.json','con
 const render=(values=offers)=>renderPages({config,offers:values,map,geography});
 const addonPath='/services/website-addons/';
 const packPath='/assets/buyer-packs/website-addons';
-const baseIds=['launch_site','focused_site','signature_site','keep_running','improve','grow','audit_fix_sprint','website_baseline'];
-const expectedIds=['standard_page','three_page_bundle','campaign_landing_page','contact_form','guided_quote_form','booking_setup','payment_setup','crm_connection','reporting_dashboard','small_store','job_dashboard','client_portal'];
+const baseIds=['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems'];
+const expectedIds=Object.keys({reporting_dashboard:1500,logo_identity:1800,standard_page:350,three_page_bundle:900,practical_guide:800,campaign_landing_page:1200,booking_setup:850,guided_quote_form:1200,business_email_domain:650,profile_recovery:650,print_collateral:750,care_onboarding:375,single_fix:450});
 const schema=html=>JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
 
-test('add-on service is discoverable, indexable and separate from all eight base requests',()=>{
+test('add-on service is discoverable, indexable and separate from all fifteen base requests',()=>{
  const pages=render(),catalogue=pages.find(page=>page.path===addonPath),pricing=pages.find(page=>page.path==='/pricing/');
  assert.ok(catalogue);
  assert.deepEqual(offers.add_ons.map(item=>item.id),expectedIds);
  assert.deepEqual(pages.filter(page=>page.path.startsWith('/checkout/')).map(page=>page.path).sort(),baseIds.map(id=>'/checkout/'+id.replaceAll('_','-')+'/').sort());
- assert.equal((pricing.html.match(/class="compact-offer"/g)||[]).length,8);
- assert.match(catalogue.html,/<h1>Website add-ons:<br>extra pages, forms and tools\.<\/h1>/);
+ assert.equal((pricing.html.match(/class="v3-offer-card" id="offer-[^"]+"/g)||[]).length,15);
+ assert.match(catalogue.html,/<h1>A useful addition\. A defined scope\.<\/h1>/);
  assert.match(catalogue.html,/class="studio-contact-note"/);
  assert.match(catalogue.html,/class="back-to-top"/);
  assert.match(catalogue.html,/class="support-chat/);
@@ -37,11 +37,13 @@ test('add-on service is discoverable, indexable and separate from all eight base
   assert.ok(catalogue.html.includes(e(item.scope)),item.id);
  }
  const baseCatalog=schema(pricing.html).find(item=>item['@id']===config.origin+'/pricing/#offers');
- assert.equal(baseCatalog.itemListElement.length,8);
+ assert.equal(baseCatalog.itemListElement.length,15);
  const addonCatalog=schema(pricing.html).find(item=>item['@id']===config.origin+addonPath+'#additions');
- assert.deepEqual(addonCatalog.itemListElement.map(item=>item.price),offers.add_ons.map(item=>item.public_price));
+ assert.deepEqual(addonCatalog.itemListElement.map(item=>item.price),[...offers.add_ons.map(item=>item.public_price),undefined]);
  const service=schema(catalogue.html).find(item=>item['@type']==='Service');
- assert.deepEqual(service.offers.map(item=>item.name),offers.add_ons.map(item=>item.public_name));
+ assert.deepEqual(service.offers.map(item=>item.name),[...offers.add_ons,...offers.quoted_add_ons].map(item=>item.public_name));
+ const quoted=service.offers.find(item=>item.name===offers.quoted_add_ons[0].public_name);
+ assert.equal(Object.hasOwn(quoted,'price'),false,'Inspection-only migration must not invent a fixed price.');
  for(const offer of service.offers){
   const url=new URL(offer.url);
   assert.equal(url.pathname,addonPath);
@@ -88,7 +90,7 @@ test('guide examples and public catalogue evaluate the supplied catalogue prices
   assert.ok(page.html.includes(e(item.scope)),item.id);
  }
  const cost=guideContentSections('/guides/website-project-cost/',changed).map(section=>section.body).join('');
- for(const id of ['standard_page','three_page_bundle','contact_form','guided_quote_form']){
+ for(const id of ['standard_page','three_page_bundle','practical_guide','guided_quote_form']){
   const item=changed.add_ons.find(item=>item.id===id);
   assert.ok(cost.includes(money(item.public_price)),id);
   assert.ok(cost.includes(item.public_name),id);
@@ -113,14 +115,14 @@ test('standalone download landing page retains complete TXT and index scopes wit
    readFile(join(folder,'assets/buyer-packs/website-addons.txt'),'utf8'),
    readFile(join(folder,'assets/buyer-packs/index.json'),'utf8').then(JSON.parse)
   ]);
-  assert.equal(index.length,9);
+  assert.equal(index.length,16);
   assert.deepEqual(index.filter(item=>item.kind!=='addon-catalogue').map(item=>item.id),baseIds);
   const catalog=index.find(item=>item.kind==='addon-catalogue');
   assert.equal(catalog.path,packPath);
   assert.equal(catalog.download,packPath+'.txt');
   assert.equal(Object.hasOwn(catalog,'price'),false);
   assert.equal(Object.hasOwn(catalog,'priceLabel'),false);
-  assert.deepEqual(catalog.items.map(item=>item.id),expectedIds);
+  assert.deepEqual(catalog.items.map(item=>item.id),[...expectedIds,...offers.quoted_add_ons.map(item=>item.id)]);
   assert.deepEqual(catalog.terms,changed.add_on_terms);
   assert.match(html,/name="robots" content="noindex,nofollow"/);
   assert.match(html,/href="\/assets\/site\.css\?v=[a-f0-9]{12}"/);

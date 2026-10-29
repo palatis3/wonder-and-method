@@ -1,6 +1,6 @@
 import {test,expect} from '../browser/fixtures.mjs';
 
-const routes=['/','/pricing/','/services/web-design/','/services/website-addons/','/contact/','/areas/texas/','/areas/texas/milam-county/','/guides/website-content-template/','/tools/website-roi-calculator/','/payments/','/work/','/privacy/'];
+const routes=['/','/pricing/','/services/web-design/','/services/website-addons/','/services/brand-messaging/','/services/ecommerce-websites/','/services/local-business-profiles/','/services/workflow-automation/','/services/custom-systems/','/checkout/business-site/','/contact/','/areas/texas/','/areas/texas/milam-county/','/guides/website-content-template/','/tools/website-roi-calculator/','/payments/','/work/','/privacy/'];
 const textSelectors='h1,h2,h3,p,li,label,summary,button,input,select,textarea,th,td,nav a';
 
 async function openContent(page){

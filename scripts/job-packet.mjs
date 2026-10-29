@@ -37,7 +37,7 @@ export function renderJobPacket(scope,receipt,offers){
  const snapshot=scope.commercial_snapshot;
  const snapshotValid=Boolean(snapshot&&snapshot.version===scope.commercial_version&&snapshot.offer_id===scope.offer_id&&snapshot.offer?.payment_schedule&&snapshot.provider_policy);
  const offer=snapshotValid?snapshot.offer:scope.offer_id==='website_additions'?{public_price:Number.isFinite(scope.fixed_price)?scope.fixed_price:0,payment_schedule:[]}:quotedOffer(offers,scope.offer_id,scope.billing_option==='annual'?'annual':'monthly');
- const recurring=['keep_running','improve','grow'].includes(scope.offer_id);
+ const recurring=['keep_running','improve','local_focus','grow'].includes(scope.offer_id);
  // Read the saved terms; a changed scope label or cycle count never reinterprets its price.
  const billingCompatible=!recurring||Boolean(snapshotValid&&['monthly','annual'].includes(snapshot.billing)&&snapshot.billing===scope.billing_option&&scope.service_period?.cycles===(snapshot.billing==='annual'?12:1)&&offer.public_price===(snapshot.billing==='annual'?offer.annual?.upfront_price:offer.monthly_price)&&(snapshot.billing!=='annual'||offer.annual?.cycles===12));
  if(!offer?.payment_schedule)throw new Error('A supported offer_id is required. Create a draft scope first.');

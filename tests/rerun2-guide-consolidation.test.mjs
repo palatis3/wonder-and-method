@@ -59,7 +59,7 @@ test('guide renders do not share mutable section objects or mutate offer inputs'
 
 test('build prices, scope names, page limits and payment amounts stay dynamic',()=>{
  const changed=structuredClone(offers);
- for(const [index,id] of ['launch_site','focused_site','signature_site'].entries()){
+ for(const [index,id] of ['launch_site','focused_site','business_site','signature_site'].entries()){
   changed[id].public_price=2111+index*1337;
   changed[id].marketing_page_cap=9+index*11;
   changed[id].public_name=`Probe ${id}`;
@@ -67,12 +67,12 @@ test('build prices, scope names, page limits and payment amounts stay dynamic',(
  const original=body('website-project-cost');
  // Match the public rendering boundary: derive payment amounts after changing prices.
  const revised=body('website-project-cost',normalizeOfferCatalog(changed));
- for(const id of ['launch_site','focused_site','signature_site']){
+ for(const id of ['launch_site','focused_site','business_site','signature_site']){
   assert.ok(revised.includes(money(changed[id].public_price)),id);
   assert.ok(revised.includes(changed[id].public_name),id);
   assert.ok(revised.includes(`Up to ${changed[id].marketing_page_cap} pages`),id);
  }
- for(const portion of [.5,.3,.2])assert.ok(revised.includes(money(changed.launch_site.public_price*portion)));
+ for(const portion of [.4,.3,.3])assert.ok(revised.includes(money(changed.launch_site.public_price*portion)));
  assert.notEqual(revised,original);
  assert.equal(body('website-project-cost'),original);
 });
@@ -82,18 +82,18 @@ test('review and monthly plan prices and pluralization use each render’s confi
  changed.baseline.one_time_price=383;
  changed.audit_sprint.one_time_price=887;
  changed.baseline.page_cap=13;
- for(const [index,id] of ['keep_running','improve','grow'].entries())changed.plans[id].monthly_price=177+index*226;
+ for(const [index,id] of ['keep_running','improve','local_focus','grow'].entries())changed.plans[id].monthly_price=177+index*226;
  changed.plans.improve.priorities=3;
  changed.plans.grow.priorities=4;
  for(const slug of ['website-maintenance-cost','website-care-versus-seo','seo-work-and-reporting']){
   const revised=body(slug,changed);
-  const displayed=slug==='website-maintenance-cost'?['keep_running']:slug==='seo-work-and-reporting'?['improve','grow']:['keep_running','improve','grow'];
+  const displayed=slug==='website-maintenance-cost'?['keep_running']:slug==='seo-work-and-reporting'?['improve','local_focus','grow']:['keep_running','improve','grow'];
   for(const id of displayed)assert.ok(revised.includes(money(changed.plans[id].monthly_price)),`${slug}: ${id}`);
   assert.ok(revised.includes('/pricing/#after-launch'),slug+' links the full current comparison');
  }
  const review=body('contact-form-not-working',changed);
  for(const price of [383,887])assert.ok(review.includes(money(price)));
- assert.ok(review.includes('13 agreed main pages'));
+ assert.ok(review.includes('13 agreed public pages'));
  assert.match(body('website-care-versus-seo',changed),/no automatic \$177 care charge/);
  assert.ok(body('seo-work-and-reporting',changed).includes('3 completed improvements'));
  changed.plans.improve.priorities=1;

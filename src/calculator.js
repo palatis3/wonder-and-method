@@ -11,6 +11,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
  let monthlyCycles=field('cycles').value;
  let cyclesEdited=false;
  let hostingEdited=false;
+ const annualEnabled=prices.catalog_format!==3&&prices.annual_available===true;
  const annualOption=[...(field('billing').options||[])].find(option=>option.value==='annual');
  // Public examples are an allowlist of transparent assumptions, never a quote.
  const presetName=new URLSearchParams(doc.defaultView?.location?.search||'').get('estimate');
@@ -18,15 +19,17 @@ export function bindCostCalculator(calculator,prices,doc=document){
  if(Object.hasOwn(presets,presetName)){
   const [build,plan]=presets[presetName];field('build').value=build;field('plan').value=plan;
   field('cycles').value='12';monthlyCycles='12';field('hostingMonths').value='12';
-  field('hostingMonthly').value='20';field('external').value='120';field('baseline').checked=true;field('sprint').checked=false;
+  field('hostingMonthly').value='20';field('external').value='120';field('baseline').checked=false;field('sprint').checked=false;
   const providers=calculator.querySelector('.provider-estimate');if(providers)providers.open=true;
   const notice=doc.createElement('p');notice.className='cost-example-notice';notice.textContent='Illustrative preset loaded: 12 months, $20/month hosting and $120 for other outside bills. Replace these assumptions with your actual costs. Tax and approved extras remain separate; nothing is booked.';calculator.prepend(notice);
  }
- if(annualOption){annualOption.disabled=prices.annual_available!==true;annualOption.hidden=prices.annual_available!==true;}
- if(prices.annual_available!==true&&field('billing').value==='annual')field('billing').value='monthly';
+ if(annualOption){annualOption.disabled=!annualEnabled;annualOption.hidden=!annualEnabled;}
+ if(!annualEnabled&&field('billing').value==='annual')field('billing').value='monthly';
  const update=()=>{
   const existing=field('build').value==='existing';
   const noPlan=field('plan').value==='none';
+  const variant=field('careVariant');if(variant){variant.disabled=noPlan||!['keep_running','improve'].includes(field('plan').value);if(variant.disabled)variant.value='brochure';}
+  const onboarding=field('onboarding');if(onboarding){onboarding.disabled=noPlan||!existing;if(onboarding.disabled)onboarding.value='none';}
   field('cycles').disabled=noPlan;
   const monthlyFields=calculator.querySelector?.('[data-monthly-cost-fields]');if(monthlyFields)monthlyFields.hidden=noPlan;
   field('billing').disabled=noPlan;
@@ -35,7 +38,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
    button.disabled=noPlan||field('cycles').readOnly;
    button.setAttribute('aria-pressed',String(button.dataset.costMonths===field('cycles').value));
   }
-  field('baseline').disabled=!existing||field('sprint').checked;
+  field('baseline').disabled=!existing||prices.catalog_format!==3&&field('sprint').checked;
   field('sprint').disabled=!existing;
   const projectFields=field('sprint').closest?.('fieldset');if(projectFields)projectFields.hidden=!existing;
   const baselineLabel=field('baseline').closest?.('label');
@@ -57,7 +60,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
    for(const name of [...(hasHosting?['hostingMonths']:[]),...(noPlan?[]:['cycles'])])if(!/^\d+$/.test(f.get(name)?.trim()??'')||Number(f.get(name))>120||name==='cycles'&&Number(f.get(name))<1)markError(name,'Enter a whole number of months from '+(name==='cycles'?'1':'0')+' to 120.');
    if(Object.keys(inputErrors).length)throw Error('Invalid cost inputs');
    if(hasHosting&&!noPlan&&Number(f.get('cycles'))>Number(f.get('hostingMonths'))){markError('hostingMonths','Hosting months must cover all selected months of monthly help.');throw Error('Hosting period must include all monthly service months');}
-   const v=calculateCost(prices,{add_ons:normalizeAddonSelection(Object.fromEntries((prices.add_ons||[]).filter(item=>f.has('addon_'+item.id)).map(item=>['addon_'+item.id,f.get('addon_'+item.id)]))),build:f.get('build'),plan:f.get('plan'),baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),...amounts,hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
+   const v=calculateCost(prices,{add_ons:normalizeAddonSelection(Object.fromEntries((prices.add_ons||[]).filter(item=>f.has('addon_'+item.id)).map(item=>['addon_'+item.id,f.get('addon_'+item.id)]))),build:f.get('build'),plan:f.get('plan'),careVariant:f.get('careVariant')||'brochure',onboarding:f.get('onboarding')||'none',baseline:f.has('baseline'),sprint:f.has('sprint'),cycles:noPlan?0:Number(f.get('cycles')),...amounts,hostingMonths:hasHosting?Number(f.get('hostingMonths')):12,billing:noPlan?'monthly':f.get('billing')||'monthly'});
    const summary=calculator.querySelector?.('[data-addon-summary]');if(summary){summary.hidden=!v.addonLines.length;summary.querySelector('[data-addon-names]').textContent=v.addonLines.map(item=>item.public_name).join('; ');summary.querySelector('[data-addon-total]').textContent=money(v.addonTotal);}
    const removals=summary?.querySelector('[data-addon-removals]');if(removals)removals.replaceChildren(...v.addonLines.map(item=>{const button=doc.createElement('button');button.type='button';button.dataset.addonRemove=item.id;button.textContent='Remove '+item.public_name;return button;}));
    const copy=costEstimateCopy(v,{plan:noPlan?'none':field('plan').value,prices,external:amounts.external});
@@ -73,7 +76,7 @@ export function bindCostCalculator(calculator,prices,doc=document){
  calculator.addEventListener('change',event=>{
   if(event.target===field('build')&&!cyclesEdited){monthlyCycles='12';if(field('billing').value!=='annual')field('cycles').value=monthlyCycles;}
   if(event.target===field('billing')){
-   if(field('billing').value==='annual'&&prices.annual_available===true){
+   if(field('billing').value==='annual'&&annualEnabled){
     monthlyCycles=field('cycles').value;field('cycles').value='12';
     if(!hostingEdited)field('hostingMonths').value='12';
    }else{field('billing').value='monthly';field('cycles').value=monthlyCycles;}

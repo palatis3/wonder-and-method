@@ -1,10 +1,13 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
+import {beforeReviewedV3OfferFaqCollection} from './fixtures/reviewed-v3-offer-edits.mjs';
 import {beforeReviewedUxCopyEdits,beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import {beforeReviewedSourceRepairs} from './fixtures/reviewed-source-repairs.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
-import faqs from '../src/service-faqs.json' with {type:'json'};
+import currentFaqs from '../src/service-faqs.json' with {type:'json'};
+const faqs=beforeReviewedV3OfferFaqCollection(currentFaqs);
 import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
 const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
@@ -30,7 +33,7 @@ test('WY/HI/AK preserve all 2215 prior services and 278 FAQ pairs while adding e
  assert.deepEqual(Object.keys(historicalFaqs).sort(),Object.keys(preservation.faqs).sort());
  for(const [p,h]of Object.entries(preservation.faqs))assert.equal(digest(beforeReviewedUxFaqEdits(p,faqs[p])),h,p);
  assert.equal(Object.keys(historicalFaqs).length,208);assert.equal(Object.values(historicalFaqs).flat().length,278);
- assert.equal(pages.size,2425);assert.equal((crawlFiles(config,rendered).sitemap.match(/<loc>/g)||[]).length,2413);
+ assert.equal(pages.size,2437);assert.equal((crawlFiles(config,rendered).sitemap.match(/<loc>/g)||[]).length,2418);
  assert.equal([...pages.keys()].filter(p=>/^\/guides\/[^/]+\/$/.test(p)).length,65);
 });
 
@@ -61,3 +64,24 @@ test('new briefs preserve complete scopes, valid sources and links without inven
  }
 });
 
+
+test('V3 adds exactly five indexable specialist routes and seven noindex request routes',()=>{
+ assert.equal(v3OfferPaths.length,12);assert.equal(new Set(v3OfferPaths).size,12);
+ const servicePaths=v3OfferPaths.filter(path=>path.startsWith('/services/'));
+ const requestPaths=v3OfferPaths.filter(path=>path.startsWith('/checkout/'));
+ assert.equal(servicePaths.length,5);assert.equal(requestPaths.length,7);
+ const sitemap=crawlFiles(config,rendered).sitemap;
+ for(const path of v3OfferPaths)assert.ok(pages.has(path),path);
+ for(const path of servicePaths){assert.ok(sitemap.includes(config.origin+path),path);assert.doesNotMatch(pages.get(path),/name="robots" content="noindex/);}
+ for(const path of requestPaths){assert.ok(!sitemap.includes(config.origin+path),path);assert.match(pages.get(path),/name="robots" content="noindex/);}
+ assert.equal(rendered.filter(page=>/name="robots" content="noindex/.test(page.html)).length,19);
+});
+
+test('reviewed V3 FAQ replay rejects even small unapproved changes and preserves the input',()=>{
+ const snapshot=JSON.stringify(currentFaqs);
+ const changed=structuredClone(currentFaqs);
+ changed['/areas/massachusetts/barnstable-county/'][0].answer+=' Unreviewed claim.';
+ assert.throws(()=>beforeReviewedV3OfferFaqCollection(changed),/reviewed V3 FAQ current record/);
+ assert.equal(JSON.stringify(currentFaqs),snapshot);
+ assert.equal(beforeReviewedV3OfferFaqCollection(currentFaqs)['/areas/massachusetts/barnstable-county/'][1].answer.includes('50%'),true);
+});

@@ -27,8 +27,8 @@ test('contractor page links to complete coverage and keeps a seven-item page pla
  for(const trade of ['plumbing','electrical','HVAC','roofing','exterior','remodeling','landscaping','cleaning'])assert.ok(contractor.toLowerCase().includes(trade.toLowerCase()));
  const plan=contractor.match(/<h3>A sample seven-page plan<\/h3>(.*?)<\/section>/s)[1];
  assert.equal((plan.match(/<li>/g)||[]).length,7);
- assert.match(plan,/seven pages plus Focused Website’s 2 included guides use 9 of its 15 pages/);
- assert.match(plan,/combine the service pages into a six-page Launch Website plan/);
+ assert.match(plan,/seven pages plus Business Custom Website’s 1 included guide use 8 of its 15 pages/);
+ assert.match(plan,/eight-page Focused Website plan is another option/);
  assert.doesNotMatch(contractor,/<table|compact-offer|data-label=/);
  const words=text(contractor).split(' ').length;
  assert.ok(words>=500&&words<=1200,`Contractor copy has ${words} words`);
@@ -37,9 +37,9 @@ test('contractor page links to complete coverage and keeps a seven-item page pla
 test('contractor simplification preserves payment, editing, evidence and form boundaries near the decision',()=>{
  const packages=contractor.match(/<h2>Choose the pages your customers need\.<\/h2>(.*?)<\/section>/s)[1];
  const assurances=contractor.match(/<h2>Writing, checks and future updates\.<\/h2>(.*?)<\/section>/s)[1];
- for(const id of ['launch_site','focused_site','signature_site'])assert.ok(packages.includes(money(offers[id].public_price)));
- assert.match(assurances,/50% to book, 30% when you approve the design and 20% when you approve the working website, before launch/);
- assert.match(assurances,/No visual or drag-and-drop editor is included/);
+ for(const id of ['launch_site','focused_site','business_site','signature_site'])assert.ok(packages.includes(money(offers[id].public_price)));
+ assert.match(assurances,/40% to book, 30% when you approve copy\/design direction and 30% when you approve staging, before launch/);
+ assert.match(assurances,/agree on your platform and editing workflow before booking/);
  assert.match(assurances,/Domain, hosting, paid tools, tax and approved extras are separate/);
  assert.match(contractor,/eligible business with authorized access/);
  assert.match(contractor,/A request is not a confirmed appointment or a quote/);

@@ -10,7 +10,7 @@ const config={...saved,mode:'staging',formMode:'synthetic'};
 const pages=renderPages({config,offers,map,geography});
 
 test('studio routes expose the primary journey; fictional concepts use the compact return toolbar',()=>{
- const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/services/website-addons/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
+ const expected=['/work/','/services/','/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/ecommerce-websites/','/services/seo/','/services/website-care/','/services/website-audit/','/services/brand-messaging/','/services/local-business-profiles/','/services/workflow-automation/','/services/custom-systems/','/services/website-addons/','/pricing/','/process/','/guides/','/about/','/contact/#inquiry'];
  for(const {path,html} of pages){
   const primary=html.match(/<nav id="main-nav"[^>]*>(.*?)<\/nav>/s)?.[1];
   if(/^\/work\/(?:fieldwork|northline|hearthside)\//.test(path)){assert.equal(primary,undefined,path);assert.match(html,/<header class="site-header concept-toolbar">/);assert.match(html,/<a href="\/work\/">← Back to work<\/a>/);assert.match(html,/Fictional website concept/);}

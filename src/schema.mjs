@@ -1,3 +1,5 @@
+import {currentOfferIds,offerRecord,monthlyOfferIds} from './offer-catalog.mjs';
+import {v3Price,v3ServicePath} from './v3-offer-content.mjs';
 import {serviceCoverage} from './service-area.mjs';
 // Schema.org accepts a Date or a DateTime. Keep the precision actually recorded.
 export function articleDateSchema(article) {
@@ -19,13 +21,13 @@ export function organizationSchema(config, logo) {
 
 export function commercialOffers(config, o) {
   const origin = config.origin;
-  const rows = [
+  const rows = o.catalog_format===3?currentOfferIds(o).map(id=>{const offer=offerRecord(o,id);return {id,offer,price:v3Price(offer),monthly:monthlyOfferIds.includes(id),route:v3ServicePath(o,id)};}):[
     ...['launch_site', 'focused_site', 'signature_site'].map(id => ({id, offer: o[id], price: o[id].public_price, route: '/services/web-design/'})),
     ...Object.entries(o.plans).map(([id, offer]) => ({id, offer, price: offer.monthly_price, monthly: true, route: id === 'keep_running' ? '/services/website-care/' : '/services/seo/'})),
     {id: 'website_baseline', offer: o.baseline, price: o.baseline.one_time_price, route: '/services/website-audit/'},
     {id: 'audit_fix_sprint', offer: o.audit_sprint, price: o.audit_sprint.one_time_price, route: '/services/website-audit/'}
   ];
-  return rows.map(({id, offer, price, monthly, route}) => ({'@type': 'Offer', '@id': origin + '/pricing/#offer-' + id, name: id === 'website_baseline' ? 'Website Baseline' : offer.public_name, url: origin + '/pricing/#offer-' + id, priceCurrency: 'USD', price, ...(monthly ? {description: offer.buyer_summary.outcomes.join(' '),priceSpecification: {'@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', unitCode: 'MON', unitText: 'month'}} : {}), seller: {'@id': origin + '/#studio'}, itemOffered: {'@id': origin + route + '#service'}}));
+  return rows.map(({id, offer, price, monthly, route}) => ({'@type': 'Offer', '@id': origin + '/pricing/#offer-' + id, name: offer.public_name, url: origin + '/pricing/#offer-' + id, priceCurrency: 'USD', price, ...(monthly ? {description: offer.v3?.result||offer.buyer_summary.outcomes.join(' '),priceSpecification: {'@type': 'UnitPriceSpecification', price, priceCurrency: 'USD', unitCode: 'MON', unitText: 'month'}} : {}), seller: {'@id': origin + '/#studio'}, itemOffered: {'@id': origin + route + '#service'}}));
 }
 
 export function offerCatalogSchema(config, o) {
@@ -40,7 +42,7 @@ export function offersForService(config, o, path) {
 }
 
 export function addonOffers(config,o) {
- return (o.add_ons||[]).map(item=>({'@type':'Offer','@id':config.origin+'/services/website-addons/#addon-'+item.id,name:item.public_name,url:config.origin+'/services/website-addons/#addon-'+item.id,priceCurrency:'USD',price:item.public_price,description:item.scope,seller:{'@id':config.origin+'/#studio'},itemOffered:{'@type':'Service',name:item.public_name,description:item.scope,provider:{'@id':config.origin+'/#studio'}}}));
+ return [...(o.add_ons||[]),...(o.quoted_add_ons||[])].map(item=>({'@type':'Offer','@id':config.origin+'/services/website-addons/#addon-'+item.id,name:item.public_name,url:config.origin+'/services/website-addons/#addon-'+item.id,...(item.quote_only?{}:{priceCurrency:'USD',price:item.public_price}),description:item.scope,seller:{'@id':config.origin+'/#studio'},itemOffered:{'@type':'Service',name:item.public_name,description:item.scope,provider:{'@id':config.origin+'/#studio'}}}));
 }
 
 export function addonOfferCatalogSchema(config,o) {

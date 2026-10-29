@@ -1,3 +1,5 @@
+import bindings from '../src/service-faq-offer-copy.json' with {type:'json'};
+import {resolveOfferCopy} from '../src/offer-catalog.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {parse} from 'parse5';
@@ -36,7 +38,7 @@ test('approved project answers are reachable once on the intended page, before i
  for(const page of pages){
   const nodes=descendants(parse(page.html));
   const sections=nodes.filter(node=>attr(node,'id')==='service-questions');
-  const items=faqs[page.path]||[];
+  const items=(faqs[page.path]||[]).map(row=>{const binding=bindings[page.path]?.find(x=>x.question===row.question);return binding?{...row,answer:resolveOfferCopy(binding.singleBatchTemplate&&offers.plans.improve.small_change_batches===1&&offers.plans.grow.small_change_batches===1?binding.singleBatchTemplate:binding.template,offers)}:row;});
   assert.equal(sections.length,items.length?1:0,page.path+' section count');
   if(!items.length)continue;
   const section=sections[0],details=descendants(section).filter(node=>node.tagName==='details');

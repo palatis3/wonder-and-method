@@ -1,7 +1,7 @@
 // Basic consent: no Google script, connection, cookie or event before permission.
 const panel=document.querySelector('[data-analytics-choice]');
 const preferenceKey='wm.analytics-consent.v1',maxAge=180*86400000;
-const services=['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint','unsure'];
+const services=['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems','unsure'];
 const events=new Set(['offer_select','contact_select','question_select','goal_new_website','goal_redesign','goal_fix','goal_search','goal_care','email_click','chat_open','resource_select','roi_calculate','inquiry_saved','question_saved']);
 const readPreference=()=>{try{const p=JSON.parse(localStorage.getItem(preferenceKey));return p&&['allow','decline'].includes(p.choice)&&Number.isFinite(p.at)&&p.at<=Date.now()&&Date.now()-p.at<maxAge?p.choice:null;}catch{return null;}};
 const ownerDisabled=()=>{try{return localStorage.getItem('wm.measurement-disabled')==='1';}catch{return false;}};

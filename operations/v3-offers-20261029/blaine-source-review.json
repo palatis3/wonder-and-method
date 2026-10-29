@@ -1,0 +1,238 @@
+{
+  "reviewedAt": "2026-10-29T11:01:31.029Z",
+  "independentSourceReview": {
+    "status": "LIVE_REPLACEMENT_AVAILABLE_REQUIRES_CONTENT_REVIEW",
+    "checkedAt": "2026-10-29T10:59:32.549Z",
+    "sourceRecordPath": "src/location-service-data.json",
+    "recordRoute": "/areas/idaho/blaine-county/",
+    "recordSha256": "e39c06e18cd77a022af6897927b7cab7008a88f864713c35d905a525823b753e",
+    "sourceFileSha256": "269886394de5b39be4d3b3407a22e7128cd922caac1783edc5c06228d33b53cf",
+    "candidateBudget": 6,
+    "captures": [
+      {
+        "url": "https://www.sunvalley.com/rentals/?season=winter",
+        "checkedAt": "2026-10-29T10:57:32.642347+00:00",
+        "method": "GET",
+        "status": 404,
+        "finalUrl": "https://www.sunvalley.com/rentals/?season=winter",
+        "bytes": 321,
+        "sha256": "793a5395f4e4978ffae80d53cc1c4848b0dc51322814867e9839db697105c9b5",
+        "capture": "evidence/v3-offers-20261029/blaine-live-0.html"
+      },
+      {
+        "url": "https://www.sunvalley.com/rentals/get-ready-for-your-rentals/",
+        "checkedAt": "2026-10-29T10:57:32.643138+00:00",
+        "method": "GET",
+        "status": 404,
+        "finalUrl": "https://www.sunvalley.com/rentals/get-ready-for-your-rentals/",
+        "bytes": 321,
+        "sha256": "aaed49f46e1dad68ead815fdaed296fd35fc88c23b8978c79554711face74542",
+        "capture": "evidence/v3-offers-20261029/blaine-live-1.html"
+      },
+      {
+        "url": "https://www.sunvalley.com/shopping/pete-lanes/locations/",
+        "checkedAt": "2026-10-29T10:57:32.643538+00:00",
+        "method": "GET",
+        "status": 404,
+        "finalUrl": "https://www.sunvalley.com/shopping/pete-lanes/locations/",
+        "bytes": 321,
+        "sha256": "4209da6bb641a8c69baf1ec475d9bcf09c4095ca1f31a52968556af60f580fc8",
+        "capture": "evidence/v3-offers-20261029/blaine-live-2.html"
+      },
+      {
+        "url": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "checkedAt": "2026-10-29T10:57:32.644285+00:00",
+        "method": "GET",
+        "status": 200,
+        "finalUrl": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "bytes": 275285,
+        "sha256": "cf0adec4131343e9a3ddc6734267ef01ae519c4d1eda28abf8ff2f24e53be73f",
+        "capture": "evidence/v3-offers-20261029/blaine-live-3.html"
+      },
+      {
+        "url": "https://visitsunvalley.com/web-specials/discounted-ski-rentals-with-ski-butlers/",
+        "checkedAt": "2026-10-29T10:57:32.677938+00:00",
+        "method": "GET",
+        "status": 403,
+        "finalUrl": "https://visitsunvalley.com/web-specials/discounted-ski-rentals-with-ski-butlers/",
+        "bytes": 5492,
+        "sha256": "6e4a3a529ee0a726e9a241dc53a42126a27b2f3d3a2e677a2d790457cc7354c2",
+        "capture": "evidence/v3-offers-20261029/blaine-live-4.html"
+      },
+      {
+        "url": "https://www.blacktieskis.com/sun-valley/sun-valley-ski-rentals/",
+        "checkedAt": "2026-10-29T10:57:32.692027+00:00",
+        "method": "GET",
+        "status": 403,
+        "finalUrl": "https://www.blacktieskis.com/sun-valley/sun-valley-ski-rentals/",
+        "bytes": 4545,
+        "sha256": "11ac432a696e8185b60f97d548ba7d081f8877d7763c6260c4c9dab9deac3b10",
+        "capture": "evidence/v3-offers-20261029/blaine-live-5.html"
+      }
+    ],
+    "sameFactsVerdict": "No live replacement verified for Village fitting followed by next-day mountain pickup. Three grounded official Sun Valley candidates return 404; cached search bodies are not live validation.",
+    "replacementVerdict": "The live Ski Butlers operator page supports a substantive Blaine County rental-planning example. This is a changed case, not evidence for the retired Sun Valley sequence.",
+    "claimSupport": [
+      {
+        "claim": "Local example has a Ketchum presence.",
+        "source": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "locator": "Contact Ski Butlers Sun Valley",
+        "support": "Page lists 333 Main St S #106, Ketchum, ID 83340."
+      },
+      {
+        "claim": "Equipment can be delivered to the accommodation with fitting support.",
+        "source": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "locator": "Opening rental description, How does Ski Butlers work?, and extra boot sizes FAQ",
+        "support": "The live body describes delivery to accommodations and bringing multiple boot sizes."
+      },
+      {
+        "claim": "Final-day collection differs from initial delivery.",
+        "source": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "locator": "How does pickup work?",
+        "support": "FAQ states equipment is collected at accommodations between 4–8pm on the final rental day; guest presence is not required."
+      },
+      {
+        "claim": "Address changes, early departures and access arrangements should be clarified.",
+        "source": null,
+        "support": "Explicitly hypothetical studio planning recommendation; do not attribute this workflow or any website fault to the operator."
+      }
+    ],
+    "excludedClaims": [
+      "Do not retain Pete Lane’s, Village fitting, 48-hour online cutoff, next-morning mountain transfer, or Bald/Dollar product availability claims after replacing the source.",
+      "Do not promote Sun Valley Express base pickup availability from a generic FAQ description; the live local page does not name a specific participating base.",
+      "Do not repeat provider guarantees about stock or perfect fit. No current seasonal operating/availability claim is needed."
+    ],
+    "proposedFieldChanges": {
+      "lead": "A rental confirmation should explain both how equipment reaches the guest and how it gets collected afterward. I help Blaine County businesses keep those two appointments clear.",
+      "decisionTitle": "Separate rental delivery and fitting from final-day collection.",
+      "decision": "Ski Butlers’ Sun Valley page identifies a Ketchum office and describes equipment delivery to accommodations, fitting with additional boot sizes available, and collection after the final rental day. Its FAQ gives a 4–8pm collection window and says the guest does not need to be present.\n\nFor a proposed rental website, I would label the arrival appointment and end-of-rental collection separately. Ask the owner to approve the address, access arrangements and current collection instructions before showing them in a confirmation. A customer’s departure time is not automatically the provider’s collection time.\n\nConsider a hypothetical guest leaving their accommodation before the collection window. The preparation summary should identify who confirms access and where equipment may be left. If the guest changes lodging or extends the rental, the business should reconfirm both arrangements. This is a proposed content and handoff check, not a claim that the provider currently has a website problem or that any collection request is guaranteed.",
+      "scopes": [
+        {
+          "title": "Explain delivery and fitting",
+          "pages": [
+            "Delivery appointment",
+            "Accommodation details",
+            "Fitting preparation"
+          ],
+          "request": "Make the first appointment clear before the guest expects equipment.",
+          "supplies": "Owner-approved delivery coverage, appointment wording and fitting preparation.",
+          "check": "The confirmation distinguishes equipment arrival from end-of-rental collection."
+        },
+        {
+          "title": "Plan the final-day handoff",
+          "pages": [
+            "Collection window",
+            "Departure and access",
+            "Changed accommodation or dates"
+          ],
+          "request": "Identify collection questions that need staff confirmation.",
+          "supplies": "Current collection rules, approved equipment location and the contact for changed arrangements.",
+          "check": "An early departure or changed address prompts confirmation instead of an assumed collection promise."
+        }
+      ],
+      "scopeTrigger": "A focused preparation page can clarify delivery, fitting and collection around the existing reservation system. A fuller rental website may need distinct instructions for different service options. Live scheduling, availability, access handling and booking integrations require separate scope.",
+      "quoteQuestions": [
+        "Which delivery and fitting appointment has the guest agreed?",
+        "How is final-day collection arranged if the guest leaves earlier?",
+        "What must staff reconfirm when the address or rental dates change?"
+      ],
+      "description": "Web design for Blaine County, Idaho. Separate rental delivery and fitting from final-day equipment collection.",
+      "sources": [
+        {
+          "url": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+          "label": "Ski Butlers Sun Valley: rental delivery and collection FAQ",
+          "observation": "The operator’s Sun Valley page lists a Ketchum office and describes delivery to accommodations, fitting support and final-day equipment collection. The FAQ states a 4–8pm collection window and that guests need not be present."
+        }
+      ],
+      "checkedDate": "2026-10-29"
+    },
+    "preserve": [
+      "areaId",
+      "market",
+      "coverageNote",
+      "outlineNote",
+      "areaIds",
+      "path",
+      "title",
+      "servedAreas",
+      "directoryLinks"
+    ],
+    "relatedGuideReview": [
+      {
+        "path": "/guides/timed-booking-handoff/",
+        "decision": "Re-review the complete current guide before retention. Proposed relation is two appointments and a final-day handoff, replacing old cutoff/Village-to-mountain rationale."
+      },
+      {
+        "path": "/guides/experience-product-choice/",
+        "decision": "Re-review before retention. New case is primarily a delivery/collection sequence; if current guide contributes only product-location comparison, remove this connection rather than carrying forward the old rationale."
+      }
+    ],
+    "requiredAcceptanceUpdates": [
+      "Inspect only the Blaine record change and rendered page; compare useful local depth and preserve explicit hypothetical/non-client framing.",
+      "Follow the existing reviewed source-repair mechanism; keep historical fixtures immutable and verify current/restored whole-record hashes.",
+      "Update source-repairs fixture and bounded identity/tamper test expectations for this exact repair; do not weaken unrelated historical comparison gates.",
+      "Update county guide relevance evidence and purpose fingerprints after substantive review; do not merely rewrite hashes.",
+      "Refresh county page date/fingerprint and inspect only expected county/sitemap baseline deltas before acceptance.",
+      "Rebuild, rerun source/link/content and relevant geography/source-repair tests, then full release gates. Live200 evidence does not itself approve publication."
+    ],
+    "sourceWrites": 0
+  },
+  "decision": "Apply meaningful replacement",
+  "beforeSha256": "e39c06e18cd77a022af6897927b7cab7008a88f864713c35d905a525823b753e",
+  "afterSha256": "df0e934adb36b4c8382856fe413fdf50021d5befb1eef05ab056772aac28f729",
+  "changedFields": [
+    "lead",
+    "decisionTitle",
+    "decision",
+    "scopes",
+    "scopeTrigger",
+    "quoteQuestions",
+    "sources",
+    "description",
+    "relatedGuides",
+    "checkedDate"
+  ],
+  "guideReview": {
+    "before": [
+      {
+        "from": "/areas/idaho/blaine-county/",
+        "to": "/guides/timed-booking-handoff/",
+        "label": "Booking confirmations: check-in time, ticket collection and time zones",
+        "reason": "Blaine distinguishes the online cutoff, earlier Village fitting and next-morning mountain pickup. The handoff guide keeps the product's prior actions, time and location together, helping a late-planning customer understand the remaining route without reading the cutoff as proof that all equipment is sold out.",
+        "reviewedAt": "2026-10-27",
+        "reviewMethod": "Primary complete target-guide paragraph-delta review plus current complete content acceptance; prior exact local purpose, destination, label and rationale retained unchanged. No new per-pair independent review claimed.",
+        "locationPurposeSha256": "8833058d749ca3786a3d8add68e5aec0a112968c70deb550265de6c15fc73867",
+        "guidePurposeSha256": "036f412849beed437ecf865228de4897589b2e57486b175386731320572f33c7",
+        "reviewEvidence": "operations/human-quality-20261027/guide-connection-revalidation.json",
+        "priorReviewSha256": "726a654c2091e219c8824a9755d83d9a987dd7b54032249eb67e0948bc937539"
+      },
+      {
+        "from": "/areas/idaho/blaine-county/",
+        "to": "/guides/experience-product-choice/",
+        "label": "Tour booking pages: compare access, inclusions and product options",
+        "reason": "Blaine requires rental categories and pickup mountains whose offerings differ. The experience-choice guide places practical inclusions and access constraints beside each option and preserves uncertainty, supporting product-location comparison rather than silently carrying one shop's equipment description to another.",
+        "reviewedAt": "2026-10-27",
+        "reviewMethod": "Primary complete target-guide paragraph-delta review plus current complete content acceptance; prior exact local purpose, destination, label and rationale retained unchanged. No new per-pair independent review claimed.",
+        "locationPurposeSha256": "8833058d749ca3786a3d8add68e5aec0a112968c70deb550265de6c15fc73867",
+        "guidePurposeSha256": "f256d1ae3efc12b49a0536e643ac405cfd57af51e10ad6f0a7c2fe2a6bfb150a",
+        "reviewEvidence": "operations/human-quality-20261027/guide-connection-revalidation.json",
+        "priorReviewSha256": "b6240f943fac00e98445187db1e6f4ff940b1282030f3862f0e4b658898aab4b"
+      }
+    ],
+    "after": [
+      {
+        "from": "/areas/idaho/blaine-county/",
+        "to": "/guides/timed-booking-handoff/",
+        "label": "Booking confirmations: check-in time, ticket collection and time zones",
+        "reason": "The complete guide distinguishes successive appointment steps, timing, responsibility and requested versus confirmed arrangements. Those principles directly support keeping rental delivery/fitting separate from final-day collection and confirming early-departure access.",
+        "reviewedAt": "2026-10-29",
+        "reviewMethod": "Primary complete new county case and complete target-guide review after independent live-source verification.",
+        "locationPurposeSha256": "2b0dc6c020c1a4db53e533795e64ee3ed303e4396126d8d5a6517e02478ebae2",
+        "guidePurposeSha256": "036f412849beed437ecf865228de4897589b2e57486b175386731320572f33c7",
+        "reviewEvidence": "operations/v3-offers-20261029/blaine-source-review.json",
+        "priorReviewSha256": "23cee2d1bbf77b10bf4d79449386fbc0e7d46ed39144a89c61926a24de2f0201"
+      }
+    ],
+    "removedReason": "The experience-product-choice guide compares alternative tour products and entitlements. The replacement case concerns two appointments for one rental, so the old product-location connection is removed."
+  }
+}

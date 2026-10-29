@@ -8,10 +8,11 @@ import {googleAnalyticsEnabled} from './google-analytics.mjs';
 
 const services=serviceNavigationPaths.map(path=>[path,pageDisplayNames[path]]);
 const serviceFamilies=[
- ['New or redesigned website',['/services/web-design/','/services/website-redesign/','/services/contractor-websites/']],
+ ['New or redesigned website',['/services/web-design/','/services/website-redesign/','/services/contractor-websites/','/services/ecommerce-websites/']],
  ['Monthly help',['/services/seo/','/services/website-care/']],
  ['Reviews and fixes',['/services/website-audit/']],
- ['Extra pages and tools',['/services/website-addons/']]
+ ['Business identity and visibility',['/services/brand-messaging/','/services/local-business-profiles/']],
+ ['Tools and additions',['/services/workflow-automation/','/services/custom-systems/','/services/website-addons/']]
 ];
 const navLink=(path,url,label)=>`<a href="${url==='/contact/'?'/contact/#inquiry':url}"${path===url?' aria-current="page"':!url.startsWith('/services/')&&url!=='/'&&path.startsWith(url)?' aria-current="location"':''}>${e(label)}</a>`;
 

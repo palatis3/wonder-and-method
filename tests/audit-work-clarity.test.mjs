@@ -40,20 +40,20 @@ test('plain handoff wording preserves the paid-completion trigger and full deliv
  assert.match(html,/within five business days after the paid work is finished, or after settling the account if the project stops early/);
  assert.doesNotMatch(html,/within five business days (?:of|after) (?:your )?final payment/);
  assert.match(html,/does not delay file delivery/);
- assert.match(html,/There is no drag-and-drop editor/);
+ assert.match(html,/This sample shows a source-code website handoff/);
  assert.match(html,/Read the included permission before reusing the sample/);
  assert.match(html,/one optional walkthrough call of up to 30 minutes/);
  assert.match(html,/Reusable components and third-party software retain their licenses/);
  assert.match(html,/21190e9af341b6e889c9581debe456423b2a99d93728a579aade1dabb61650c0/);
 });
 
-test('the project calendar matches current build-day units and adds both review windows',async()=>{
+test('the project calendar matches current delivery units with review windows already included',async()=>{
  const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8'));
  const html=projectCalendar();
- for(const id of ['launch_site','focused_site','signature_site'])assert.ok(html.includes(offers[id].delivery_average),id);
- assert.match(html,/two rounds, each allowing up to five business days/);
- assert.match(html,/written proposal confirms the start, review and launch dates/);
- assert.match(html,/after the paid work is finished/);
+ for(const id of ['launch_site','focused_site','business_site','signature_site'])assert.ok(html.includes(offers[id].delivery_average),id);
+ assert.match(html,/two rounds; Signature includes three/);assert.match(html,/Two business days for each consolidated review are included/);
+ assert.match(html,/proposal sets start, review and launch dates/);
+ assert.match(html,/does not delay the paid handoff/);
  assert.doesNotMatch(html,/few extra days|usual review window/);
 });
 

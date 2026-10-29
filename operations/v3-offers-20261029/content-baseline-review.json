@@ -1,0 +1,363 @@
+{
+  "reviewedAt": "2026-10-29T11:20:03.221Z",
+  "reviewer": "Primary implementation review",
+  "status": "PASS",
+  "basis": "Approved15plan13module V3 implementation; no existing page/download/asset removed, no existing canonical or robots policy changed. Added12routes and7HTML+7TXTbuyer packs. Sharednavigation and commercial text intentionally changed throughout; full research fixture tests and independently reviewed Blaine replacement preserve local research. Refreshed24citycapture assets visually checked separately.",
+  "pages": {
+    "before": 2437,
+    "after": 2456,
+    "added": [
+      "assets/buyer-packs/brand_message.html",
+      "assets/buyer-packs/business_site.html",
+      "assets/buyer-packs/local_focus.html",
+      "assets/buyer-packs/local_presence.html",
+      "assets/buyer-packs/storefront.html",
+      "assets/buyer-packs/systems.html",
+      "assets/buyer-packs/workflow.html",
+      "checkout/brand-message/index.html",
+      "checkout/business-site/index.html",
+      "checkout/local-focus/index.html",
+      "checkout/local-presence/index.html",
+      "checkout/storefront/index.html",
+      "checkout/systems/index.html",
+      "checkout/workflow/index.html",
+      "services/brand-messaging/index.html",
+      "services/custom-systems/index.html",
+      "services/ecommerce-websites/index.html",
+      "services/local-business-profiles/index.html",
+      "services/workflow-automation/index.html"
+    ],
+    "removed": []
+  },
+  "downloads": {
+    "before": 436,
+    "after": 443,
+    "added": [
+      "assets/buyer-packs/brand_message.txt",
+      "assets/buyer-packs/business_site.txt",
+      "assets/buyer-packs/local_focus.txt",
+      "assets/buyer-packs/local_presence.txt",
+      "assets/buyer-packs/storefront.txt",
+      "assets/buyer-packs/systems.txt",
+      "assets/buyer-packs/workflow.txt"
+    ],
+    "removed": []
+  },
+  "assets": {
+    "before": 2671,
+    "after": 2671,
+    "added": [],
+    "removed": []
+  },
+  "metadataChanges": [
+    {
+      "path": "areas/erie-county/index.html",
+      "field": "description",
+      "before": "Websites from $1,400, SEO and optional care for Buffalo and Erie County, NY businesses. Work directly with Terry through an online project process.",
+      "after": "Websites from $2,950, SEO and optional care for Buffalo and Erie County, NY businesses. Work directly with Terry through an online project process."
+    },
+    {
+      "path": "areas/idaho/blaine-county/index.html",
+      "field": "description",
+      "before": "Web design for Blaine County, Idaho. Keep the fitting location distinct from next-day equipment pickup.",
+      "after": "Web design for Blaine County, Idaho. Separate rental delivery and fitting from final-day equipment collection."
+    },
+    {
+      "path": "assets/buyer-packs/audit_fix_sprint.html",
+      "field": "title",
+      "before": "Audit &amp; Fix Sprint full details | Wonder and Method",
+      "after": "Website Repair Sprint full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/audit_fix_sprint.html",
+      "field": "description",
+      "before": "Audit &amp; Fix Sprint full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Website Repair Sprint full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/focused_site.html",
+      "field": "title",
+      "before": "Focused Website full details | Wonder and Method",
+      "after": "Custom Website full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/focused_site.html",
+      "field": "description",
+      "before": "Focused Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Custom Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/grow.html",
+      "field": "title",
+      "before": "Grow full details | Wonder and Method",
+      "after": "Local Search Partnership full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/grow.html",
+      "field": "description",
+      "before": "Grow full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Local Search Partnership full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/improve.html",
+      "field": "title",
+      "before": "Improve full details | Wonder and Method",
+      "after": "Website Improvement Partnership full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/improve.html",
+      "field": "description",
+      "before": "Improve full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Website Improvement Partnership full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/keep_running.html",
+      "field": "title",
+      "before": "Keep Running full details | Wonder and Method",
+      "after": "Website Care full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/keep_running.html",
+      "field": "description",
+      "before": "Keep Running full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Website Care full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/keep-running-sample.html",
+      "field": "title",
+      "before": "Sample Keep Running report | Wonder and Method",
+      "after": "Sample Website Care report | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/keep-running-sample.html",
+      "field": "description",
+      "before": "A made-up Keep Running report showing small edits, website checks, an unresolved issue and the next step.",
+      "after": "A made-up Website Care report showing small edits, website checks, an unresolved issue and the next step."
+    },
+    {
+      "path": "assets/buyer-packs/launch_site.html",
+      "field": "title",
+      "before": "Launch Website full details | Wonder and Method",
+      "after": "Focused Website full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/launch_site.html",
+      "field": "description",
+      "before": "Launch Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Focused Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/signature_site.html",
+      "field": "title",
+      "before": "Signature Website full details | Wonder and Method",
+      "after": "Signature Custom Website full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/signature_site.html",
+      "field": "description",
+      "before": "Signature Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Signature Custom Website full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/website_baseline.html",
+      "field": "title",
+      "before": "Website Baseline full details | Wonder and Method",
+      "after": "Website Roadmap full details | Wonder and Method"
+    },
+    {
+      "path": "assets/buyer-packs/website_baseline.html",
+      "field": "description",
+      "before": "Website Baseline full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal.",
+      "after": "Website Roadmap full details: review pricing, included work, limits, responsibilities and acceptance checks before requesting a written proposal."
+    },
+    {
+      "path": "assets/buyer-packs/website-addons.html",
+      "field": "description",
+      "before": "Download the complete twelve-add-on catalog: one-time prices, exact included work, limits, checks, payment and cancellation terms.",
+      "after": "Download the complete optional-additions catalog: one-time prices, exact included work, limits, checks, payment and cancellation terms."
+    },
+    {
+      "path": "checkout/audit-fix-sprint/index.html",
+      "field": "title",
+      "before": "Request Audit &amp; Fix Sprint ($750) | Wonder and Method",
+      "after": "Request Website Repair Sprint | Wonder and Method"
+    },
+    {
+      "path": "checkout/audit-fix-sprint/index.html",
+      "field": "description",
+      "before": "Audit &amp; Fix Sprint at $750. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Website Repair Sprint at $1,800. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/focused-site/index.html",
+      "field": "title",
+      "before": "Request Focused Website ($2,350) | Wonder and Method",
+      "after": "Request Custom Website | Wonder and Method"
+    },
+    {
+      "path": "checkout/focused-site/index.html",
+      "field": "description",
+      "before": "Focused Website at $2,350. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Custom Website at $4,500. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/grow/index.html",
+      "field": "title",
+      "before": "Request Grow monthly SEO plan ($800/month) | Wonder and Method",
+      "after": "Request Local Search Partnership | Wonder and Method"
+    },
+    {
+      "path": "checkout/grow/index.html",
+      "field": "description",
+      "before": "Grow at $800/month. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Local Search Partnership at $1,750/month. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/improve/index.html",
+      "field": "title",
+      "before": "Request Improve monthly SEO plan ($400/month) | Wonder and Method",
+      "after": "Request Website Improvement Partnership | Wonder and Method"
+    },
+    {
+      "path": "checkout/improve/index.html",
+      "field": "description",
+      "before": "Improve at $400/month. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Website Improvement Partnership at $1,250/month. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/keep-running/index.html",
+      "field": "title",
+      "before": "Request Keep Running website care ($150/month) | Wonder and Method",
+      "after": "Request Website Care | Wonder and Method"
+    },
+    {
+      "path": "checkout/keep-running/index.html",
+      "field": "description",
+      "before": "Keep Running at $150/month. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Website Care at $275/month. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/launch-site/index.html",
+      "field": "title",
+      "before": "Request Launch Website ($1,400) | Wonder and Method",
+      "after": "Request Focused Website | Wonder and Method"
+    },
+    {
+      "path": "checkout/launch-site/index.html",
+      "field": "description",
+      "before": "Launch Website at $1,400. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Focused Website at $2,950. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/signature-site/index.html",
+      "field": "title",
+      "before": "Request Signature Website ($3,700) | Wonder and Method",
+      "after": "Request Signature Custom Website | Wonder and Method"
+    },
+    {
+      "path": "checkout/signature-site/index.html",
+      "field": "description",
+      "before": "Signature Website at $3,700. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Signature Custom Website at $11,500. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "checkout/website-baseline/index.html",
+      "field": "title",
+      "before": "Request Website Baseline ($399) | Wonder and Method",
+      "after": "Request Website Roadmap | Wonder and Method"
+    },
+    {
+      "path": "checkout/website-baseline/index.html",
+      "field": "description",
+      "before": "Website Baseline at $399. Ask for a written proposal confirming work, payments and dates before booking.",
+      "after": "Website Roadmap at $650. Request a written proposal confirming scope, payments and dates before booking."
+    },
+    {
+      "path": "index.html",
+      "field": "description",
+      "before": "Small business websites from $1,400 with writing, research and original graphics. From Buffalo, serving 50 states, Washington, DC, and Puerto Rico online.",
+      "after": "Small business websites from $2,950 with writing, research and original graphics. From Buffalo, serving 50 states, Washington, DC, and Puerto Rico online."
+    },
+    {
+      "path": "pricing/index.html",
+      "field": "title",
+      "before": "Website, care and SEO prices | Wonder and Method",
+      "after": "Website, SEO and Business Service Pricing | Wonder and Method"
+    },
+    {
+      "path": "pricing/index.html",
+      "field": "description",
+      "before": "Websites up to 6, 15 or 30 pages with writing and research, from $1,400. Monthly care $150; SEO $400 or $800. Compare scope and payments.",
+      "after": "Compare four website plans from $2,950, monthly care and SEO, repairs and specialist projects. Clear scope, optional additions and payment stages."
+    },
+    {
+      "path": "services/index.html",
+      "field": "title",
+      "before": "Website Services for Small Businesses | Wonder and Method",
+      "after": "Website, SEO and Business Tool Services | Wonder and Method"
+    },
+    {
+      "path": "services/index.html",
+      "field": "description",
+      "before": "Compare website design, redesign, SEO, monthly care and repairs. Find the right service, see prices and choose the next step for your business.",
+      "after": "Explore websites, ecommerce, brand messaging, local presence, automation, reviews, repairs and monthly support with clear scope and prices."
+    },
+    {
+      "path": "services/seo/index.html",
+      "field": "title",
+      "before": "Monthly SEO for Small Businesses | Wonder and Method",
+      "after": "Local SEO and Website Improvement Plans | Wonder and Method"
+    },
+    {
+      "path": "services/seo/index.html",
+      "field": "description",
+      "before": "Monthly SEO from a Buffalo studio: research, writing and completed improvements. Improve $400/month; Grow $800/month. A site review may be needed.",
+      "after": "Local Search Focus from $850/month. Compare existing-page work, new content and website improvements, with brochure care included."
+    },
+    {
+      "path": "services/web-design/index.html",
+      "field": "description",
+      "before": "Custom websites from $1,400. Work with a Buffalo designer on writing, research, SEO and original graphics for a 6-, 15- or 30-page website.",
+      "after": "Websites from $2,950 with original writing, search foundations and launch checks. Compare 8, 10, 15, 20-page plans and design approaches."
+    },
+    {
+      "path": "services/website-audit/index.html",
+      "field": "title",
+      "before": "Website Audits and Small Fixes | Wonder and Method",
+      "after": "Website Reviews and Repair Sprints | Wonder and Method"
+    },
+    {
+      "path": "services/website-audit/index.html",
+      "field": "description",
+      "before": "Website Baseline $399: review and priorities. Audit &amp; Fix Sprint $750: review plus up to two agreed small fixes on a supported site.",
+      "after": "Website Roadmap: $650 for an action plan. Website Repair Sprint: $1,800 for up to three agreed fixes."
+    },
+    {
+      "path": "services/website-care/index.html",
+      "field": "title",
+      "before": "Monthly Website Care and Maintenance | Wonder and Method",
+      "after": "Website Care and Maintenance | Wonder and Method"
+    },
+    {
+      "path": "services/website-care/index.html",
+      "field": "description",
+      "before": "Website checks, changes you send and a report for $150/month. Existing sites may need the $399 Website Baseline. See coverage and limits.",
+      "after": "Brochure care $275/month; commerce care $450/month. Supported maintenance, monitoring, edits and recovery checks."
+    },
+    {
+      "path": "services/website-redesign/index.html",
+      "field": "description",
+      "before": "Rebuild a website around clear services, useful content and a working inquiry path. Packages from $1,400; review the existing site first.",
+      "after": "Rebuild a website around clear services, useful content and a working inquiry path. Packages from $2,950; review the existing site first."
+    }
+  ],
+  "lineEndingAddendum": {
+    "reviewedAt": "2026-10-29T11:25:20.016Z",
+    "asset": "assets/buyer-packs/owned-audit-two-fix-record.json",
+    "changes": [
+      "service-content.mjs",
+      "shared.mjs"
+    ],
+    "reason": "Only two current-source fingerprints change after restoring original LF endings. Reconstructing the prior record exactly matches the accepted baseline hash; all other record content is unchanged."
+  }
+}

@@ -144,7 +144,7 @@ export function consolidateReviewedGuide(path, sections) {
   const costDetails=get('costs').body.replace(/^<details><summary>[^<]*<\/summary>/,'').replace(/<\/details>$/,'').replace(/<span id="before-buying"><\/span>/,'');
   set('plans','<details><summary>Plan prices, limits and renewal terms</summary>'+planParagraphs[1]+costDetails+planParagraphs[3]+'</details>','Plan prices, limits and renewal terms');
   removeInto('costs','plans');
-  edit('compare',b=>b+p('Standard care excludes CMS, plugin and theme updates, backups, restores and malware cleanup. Assign that work to the host or an appropriate specialist.'));break;
+  edit('compare',b=>b+p('Care includes supported maintenance, documented recovery coverage and representative quarterly recovery tests. Major upgrades, malware cleanup and recovery from unrelated incidents need a separately approved scope.'));break;
  }
  case 'website-maintenance-cost':
   set('task-owners',table('Responsibility for five common requests',['Request and scope','Owner','Separately scoped work'],[
@@ -152,11 +152,11 @@ export function consolidateReviewedGuide(path, sections) {
    ['New service page: agreed Improve/Grow improvement or priced addition.','Owner approves accepted work, exclusions, coverage and evidence; agree completion checks.','Not a supplied small edit.'],
    ['Form failure: agreed care check records the failed step.','Studio records test; owner supplies authorized access or involves provider.','Repair depends on cause and scope; no unlimited repair promise.'],
    ['Booking link: check the agreed existing link.','Confirm account owner, supported connection and provider bill.','Setup or changes to the connection.'],
-   ['CMS recovery: outside standard care.','Host or suitable specialist.','CMS/plugin/theme updates, backups, restores and malware cleanup. Monitoring is not staffed 24/7 and has no guaranteed repair time.']
+   ['Platform recovery coverage: agreed at onboarding.','Studio and provider responsibilities documented before enrollment.','Supported maintenance and representative recovery tests are included. Malware and unrelated incident recovery are separately scoped. Automated monitoring is not continuous human staffing.']
   ])+paragraphs('task-owners').at(-1));
   edit('choose-care',b=>b.replace(/<p>If the site works[\s\S]*?<\/p>/,p('Use <a href="/guides/website-care-versus-seo/">care versus SEO</a> to match the work to an ongoing arrangement.')));summary('choose-care','Choose a review or ongoing help');break;
  case 'website-redesign-brief':
-  edit('editing',b=>b.replace(/<p>Describe updates[\s\S]*?<\/p>/,p('Studio websites include source files and instructions, with no log-in editing dashboard. Changes require a developer or optional care for small edits. State a browser-editing requirement before booking.')));break;
+  edit('editing',b=>b.replace(/<p>Describe updates[\s\S]*?<\/p>/,p('Studio projects agree the platform and editing workflow before booking. You receive written instructions, recorded demonstrations and the agreed files/account inventory. State the tasks your team needs to edit in a browser so that the proposal names a suitable setup.')));break;
  case 'website-project-cost': {
   const r=rows('matched-proposals');
   const keep=[2,5,7,3];
@@ -199,7 +199,7 @@ export function consolidateReviewedGuide(path, sections) {
   const keyword=get('keyword-opportunities').body;
   const worked=keyword.match(/<div class="journal-table-wrap"[\s\S]*?<\/table><\/div>/)?.[0];
   set('keyword-opportunities','<span id="local-keywords"></span>'+p('Start with the real service, actual coverage and a customer question. Combine customer evidence and Search Console with keyword estimates; record the source, database, date, geography and missing metrics. Inspect current results to distinguish a service, guide, product, map listing or comparison.')+ul(['Investigate relevant lower-competition terms, useful existing impressions and seasonal questions. Low difficulty without business fit is not an opportunity.','Compare current pages and identify a truthful contribution. Group close variants around one need and improve an existing page when it fits.','Record approved facts, the destination, why the task matters and its completion check. Estimates do not predict Maps position, and national figures for a place-name query do not count local residents.'])+worked+paragraphs('keyword-opportunities').at(-1));
-  edit('campaigns',b=>b.replace(/^<details><summary>[^<]*<\/summary>/,'').replace(/<\/details>$/,''));summary('campaigns','Grow allowance and approval rules');break;
+  edit('campaigns',b=>b.replace(/^<details><summary>[^<]*<\/summary>/,'').replace(/<\/details>$/,''));summary('campaigns','Local Search Partnership allowance and approval rules');break;
  }
  }
  switch(slug) {
@@ -255,7 +255,7 @@ export function consolidateReviewedGuide(path, sections) {
  switch(slug) {
  case 'website-maintenance-checklist': {
   const existing=paragraphs('recovery');
-  set('recovery',existing.slice(0,4).join('')+'<h3 id="maintenance-time">How long does website maintenance take?</h3>'+p('Use the <a href="#start">responsibility split above</a> to assign the task before agreeing timing. Record work time, elapsed wait for access/approval, and customer downtime separately; no universal duration fits every task.')+box('One planning example',p('For supplied opening-hour changes, the editor prepares and checks the page, waits for the owner’s approval, then publishes and retests. Preparation can occur without a planned outage. A platform change may instead require its provider to agree a maintenance window, notice and restoration plan. Record the planned window, actual interruption and completion evidence in the same log.')));break;
+  set('recovery',existing.slice(0,6).join('')+'<h3 id="maintenance-time">How long does website maintenance take?</h3>'+p('Use the <a href="#start">responsibility split above</a> to assign the task before agreeing timing. Record work time, elapsed wait for access/approval, and customer downtime separately; no universal duration fits every task.')+box('One planning example',p('For supplied opening-hour changes, the editor prepares and checks the page, waits for the owner’s approval, then publishes and retests. Preparation can occur without a planned outage. A platform change may instead require its provider to agree a maintenance window, notice and restoration plan. Record the planned window, actual interruption and completion evidence in the same log.')));break;
  }
  case 'website-migration-checklist': {
   const redirectDetails=paragraphs('redirect-example')[0];

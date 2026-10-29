@@ -1,0 +1,572 @@
+{
+  "basis": "Restore existing LF endings on edited tracked text files only; no authority or unchanged file edits.",
+  "files": [
+    {
+      "path": "config/offers.json",
+      "beforeSha256": "eb56e10b0b973b581a1cd97a05aef990b6ee49df181e153ef2f5c57be72792a5",
+      "afterSha256": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
+      "crlfReplaced": 2851,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "deployment/journey-counts.mjs",
+      "beforeSha256": "cc9544220931ddf4a3a06f1400559a18f0e8327367022710ac7e7c7a72dff84f",
+      "afterSha256": "9aa8da9d2729af1b5d23bc9f029bd99030f1c296b96062d75cb871e104d38be2",
+      "crlfReplaced": 39,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "scripts/build-buyer-packs.mjs",
+      "beforeSha256": "f1665262d8feab3976449f319ff64ed61ee53883b0daa9432d952a69578868bf",
+      "afterSha256": "32a4705fd7490fb99b94aeeefb71831de77b7c6f04d95a7aa90bfc5db91c1f56",
+      "crlfReplaced": 44,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "scripts/capture-city-previews.mjs",
+      "beforeSha256": "0c1e6d6d4756d1ba930cb3ef611dce278f66f83d4ffb09adb5d1d093347bc2f4",
+      "afterSha256": "58e874a5ce11c340e988c5e76e49d1fd453417831ff1af8c3b162df35a5052de",
+      "crlfReplaced": 97,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "scripts/check-offer-bindings.mjs",
+      "beforeSha256": "18ab4c4121420c6455ecf1f1b15cf8f868e38139371865d5e875d88f554f1602",
+      "afterSha256": "55848556ddc6fdd8fc42fd3cd746b8582b94c877332129d9ff4230aa545ba90b",
+      "crlfReplaced": 92,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "scripts/create-job.mjs",
+      "beforeSha256": "6287fb5e2191b5f1a6e34995d2c751ea237b3c0f0dd9e181a7a664a992732a04",
+      "afterSha256": "d7a15bf8af6d0aaee6867ac920114c5ec67eeb0f16cfba945aaaa1b0760efc0c",
+      "crlfReplaced": 82,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "scripts/job-packet.mjs",
+      "beforeSha256": "00df0e207f333a082e091e67c0e9f244bb81da3c0e12c414b9d9eb0d162f9a76",
+      "afterSha256": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f",
+      "crlfReplaced": 80,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/addon-content.mjs",
+      "beforeSha256": "05e7d2f743d88bc1017037f243a914eb9aa9ad0effd17dd6be8331eaf6e6b153",
+      "afterSha256": "6a900de0308693a84074fe5ba116e21cd02223ba60a10fb70b45791748ee15f8",
+      "crlfReplaced": 65,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/assets/analytics-consent.js",
+      "beforeSha256": "f9db50ce111680850f0d18a613fb106f5398fa97af8db8227642df4bdceb2bd6",
+      "afterSha256": "024cfa08df3d1dd702bf0b2a01f501dbaa3415dbfc5f22934cf3d2e48c394f97",
+      "crlfReplaced": 69,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/assets/journey-counts.js",
+      "beforeSha256": "ed5ade7bdacfbde38006fc72ce6b4e4195012f441ca4e7af0a9fa0ff2b5e37c1",
+      "afterSha256": "396fcec440f8c7c01444646a6c062d41b66883752dcda797d3e9f337ebda1026",
+      "crlfReplaced": 64,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/audit-content.mjs",
+      "beforeSha256": "85cab6d4fea1a5892dd0bf3247db81efedea46d29c6e202a2b87c2773107c1a0",
+      "afterSha256": "d184f26427c0932d65e7e7bd03dbf66bfbc809712ff6cec9fc6467e11aace84f",
+      "crlfReplaced": 24,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/audit-guide-updates.mjs",
+      "beforeSha256": "c6f9d5878a4fe52251aadf873704aa9efead8098aa9c1c1b3775f258fd8398e2",
+      "afterSha256": "d4947cc60dc1408e8458021f40a83b123bcad80ba31dc9c6bb85813a4041019a",
+      "crlfReplaced": 31,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/buyer-decisions.mjs",
+      "beforeSha256": "f2ab4be8c441952b6885b690655a530594740aa147a4d5aedf12b02eb7e0b646",
+      "afterSha256": "b20b23704b4c034cf33a5882c89f811e4d2159b282bf69a2cbf22131868b5ca1",
+      "crlfReplaced": 25,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/buyer-packs.mjs",
+      "beforeSha256": "d75ce3aa5594128717c45e93f44cb83202e2bd5f02f1a084de5fe778b4b5b91c",
+      "afterSha256": "a6243e2c8f2802b315e9a74f23f7b843af4a1705df62c63eace86f06dd2fc300",
+      "crlfReplaced": 197,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/calculator.js",
+      "beforeSha256": "26abe04292034fbdf9ad0d97527ba82ae9b7c9fc3f20ba2cc83469a67ff76f91",
+      "afterSha256": "eab199ae79f1d19a5b6625bf23f1f646a2e4b806caab869be6c2dd85e021e771",
+      "crlfReplaced": 100,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/creative-samples.mjs",
+      "beforeSha256": "8bd1165761bf7df9a1ee689f314702eadd92a1da0b5893db69e90e0ce1409732",
+      "afterSha256": "dbc8681d800aacb38518068298fda171c0fb3a67aa87f951533c7c3099e5d501",
+      "crlfReplaced": 5,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/erie-content.mjs",
+      "beforeSha256": "34dcf8cb714f70d9743d7451b4a1cf1044789ce8bb0630b6c8e23896cef992e0",
+      "afterSha256": "426ff9eb1c3e0d550c713a4f2eeaf041c3f1b07bf4477987a5647980d7eb543d",
+      "crlfReplaced": 26,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/guide-content.mjs",
+      "beforeSha256": "9dd8feb910d2826c6264b14d1c7b1ab32348f4563ad1a444bf88f2fb982181c7",
+      "afterSha256": "7b05b5383b0d503f09c0286fee5380316470bd7892f727f0b037803a3723da82",
+      "crlfReplaced": 219,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/guide-inquiry-actions.mjs",
+      "beforeSha256": "58b0000295332f68c4bd8b0ce4e2c4916cace5f66d4f07e451da3457abb44d11",
+      "afterSha256": "94a113aeb9f0682a3aa201430ab053858b9874c2b6889e60653b9fdd6a4952bb",
+      "crlfReplaced": 86,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/guide-practical-steps.mjs",
+      "beforeSha256": "b4c86255f015e76b1318d37a6dc1b0d210064f67a13c035b6820cc77b28ee477",
+      "afterSha256": "df4345279197d5081863d673766f8c8d9b97b1ab6d17134e571618afd45ea0a4",
+      "crlfReplaced": 10,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/guide-review-consolidations.mjs",
+      "beforeSha256": "9fbd5042fffe18e78a8eed5101d1ba6f8273d641461bf85b7f9d31b0e0076575",
+      "afterSha256": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
+      "crlfReplaced": 310,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/inquiry-form.mjs",
+      "beforeSha256": "19fdddc0387b8bb3ceebaaaefea8d54dc4610925d4101d53c3d4ed1d668ddb3d",
+      "afterSha256": "741a169a06716a8320810c6c3da4bd418da4f728a0b753bb89fd39a6f830c292",
+      "crlfReplaced": 82,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/location-service-pages.mjs",
+      "beforeSha256": "0294e441ad5ea52c826a04c3f1cfaf3ac13fa807568ebcaae3d6057c951f8af8",
+      "afterSha256": "ae0b52c17ef56270ec54814ace0e913204d63915c0d1abb4eeb4943eefa17f6f",
+      "crlfReplaced": 43,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/payments.mjs",
+      "beforeSha256": "e202104e1d9f8b33708c46cb5427dac8e45463f54ec4a8f767c75f6ee6a63a2e",
+      "afterSha256": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398",
+      "crlfReplaced": 116,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/project-milestones.mjs",
+      "beforeSha256": "103fe5a66f9111f0d73d6d02005af4d013eac7ef5f49f5faa1694cf6bd7569f9",
+      "afterSha256": "b94cd839ef2a0911e47dafad385be7e1913a25a8c6d5ee23f5333bf123e8b6f5",
+      "crlfReplaced": 16,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/research-guides.mjs",
+      "beforeSha256": "99cdfd466b33366984ed2baefc45abf4b511b0ac642978e22182495249987ca7",
+      "afterSha256": "d546a1f3a5714eeb66df2eb08e1f90acc34abf61edb5e07559a1e995523f9604",
+      "crlfReplaced": 218,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/schema.mjs",
+      "beforeSha256": "f46bbbfffb033a757513cef4b7032d40859eea9cc4a9069c24a1fb843d7a7357",
+      "afterSha256": "ad7439d4c8caad2819dc647fd781510003392caa44d03e51b5ec781ef007fa81",
+      "crlfReplaced": 50,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/search-content.mjs",
+      "beforeSha256": "562f4457691377046b16794da93638207e026391e353e3f530c92c9df79e0693",
+      "afterSha256": "a7fff7695e24a4ca73e64829e979ef9939dea27e32737fb75078cb47eaf45c71",
+      "crlfReplaced": 68,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/search-guides.mjs",
+      "beforeSha256": "097bd7336b61f2327322abd513a337f02cc63fe68c17dd76fdd9f865d28ff096",
+      "afterSha256": "dfa198eff3737dd379423badde0d296c4ab564795cf946c2dccc6077fdda93d4",
+      "crlfReplaced": 21,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/semrush-content-examples.mjs",
+      "beforeSha256": "0f559916008c24e57664aa6eab2b5c790aa00c98a0a657091249aab9fb50ac91",
+      "afterSha256": "726479f3bdc7b3aac59a7079c3a84908ce5b1bb79a9b05a7f7c60a579efa2cb7",
+      "crlfReplaced": 115,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/service-content.mjs",
+      "beforeSha256": "014cfef817b26e81898ebbcd74fc33e5eb32fe53ecf1e03707bfc4aa20baf3e1",
+      "afterSha256": "b8c1802aaadd6bfd2e80302c59ae9eb40632c49851186fb144e0abae8e89891b",
+      "crlfReplaced": 50,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/service-counties.mjs",
+      "beforeSha256": "eab46ab38b946ee394a3f5866d26d3e1267827d3bdc0755264c5bce84384bc4b",
+      "afterSha256": "c16d8b18365fc722e0dd3d56a4abba58305a16e953fdfdc614322664fe99dbe7",
+      "crlfReplaced": 119,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/service-faqs.json",
+      "beforeSha256": "f872208f520b3beeba41d286ceee0af7336ac54ffedc496f05590e6799a610d3",
+      "afterSha256": "16b3b37c305a20721abc889d7cd8826f009c3dbad2b6295a26904551c6091acb",
+      "crlfReplaced": 2859,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/shared.mjs",
+      "beforeSha256": "87b48915e941949b1816ac34a81ca483f2a3a32096587658b8079d3b6c0884bc",
+      "afterSha256": "45d88c35a187e983c295214ae31a56e4a23e96b929f7ba08a78b530ff75beb04",
+      "crlfReplaced": 158,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "src/source-handoff.mjs",
+      "beforeSha256": "9ca1e46d0093de668c19b6d382ca75b1b787542596ad324483add5d3b5033c44",
+      "afterSha256": "7eb63f8e8d6c49b734c0706ab7b79f1bce8f6d3c513eef890f2083fe6771fc20",
+      "crlfReplaced": 23,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-buyer-packs-clarity.test.mjs",
+      "beforeSha256": "795832d727a554fd4785eb3f5c23eea22a2eb62d66905cb054a55d46dc2b2af6",
+      "afterSha256": "47b827a1a1c1ee31e849204f3790f73cb63a2f71c142c07accf5c3cb3862ef48",
+      "crlfReplaced": 123,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-calculator-clarity.test.mjs",
+      "beforeSha256": "6de817b9e2e169478ede7d415c92f057cc82f66f36459fe02e9547aacd8fcf37",
+      "afterSha256": "9898f396459f7f341332598a6b6944da8743a4fe7b12d95eabc1d2723f6523e6",
+      "crlfReplaced": 122,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-guide-clarity.test.mjs",
+      "beforeSha256": "1ee8af0801ff7b61c0e0f2aee7667b1ee3601b87e67da1a394130a3ee72c6bce",
+      "afterSha256": "1cad4418aebe563056ca45e60dacb80d424b42a0d185de900f4367a46bf0288d",
+      "crlfReplaced": 421,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-implementation.test.mjs",
+      "beforeSha256": "084845784528f28c9adc697038d371a7067dac7d39944cf9de42ab4d48fc830b",
+      "afterSha256": "2efff0aecc3731189494364bb2022e4ec9267b2e340e292303dc54cf59d1831b",
+      "crlfReplaced": 142,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-search-metadata.test.mjs",
+      "beforeSha256": "2a3ccf103c522abe0ab54521d3759994402eec75d1b91f43f26bd3ab216d07ef",
+      "afterSha256": "b3704bc006c93d2c41b355ec537ffee3b8836c86dba1d5ddf634ea2f3ff33f8c",
+      "crlfReplaced": 85,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-service-help-clarity.test.mjs",
+      "beforeSha256": "4fd7823793f50f70739dd96afb1492b64a994e7a401acefa10322f92952fbc03",
+      "afterSha256": "dae8a9c3b4b461f6e0064f082bb0e5369ca900a13483a58649a3635e45b80d66",
+      "crlfReplaced": 89,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/audit-work-clarity.test.mjs",
+      "beforeSha256": "9ef1c6d70515f29d33307a3f7aeaf24da16fb9df3aaf5391fa2debeadb73c897",
+      "afterSha256": "cfce2c7d800dcbb95eb7b29a9c7e57576fe0096c6372d2236c367eb0dedb49ee",
+      "crlfReplaced": 68,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/browser/audit-layout-regression.spec.mjs",
+      "beforeSha256": "5fa545bacf6e5fcbbef59bb303579f1509077d2ebabc2fc5403309ad55594585",
+      "afterSha256": "84f891cac96d6d44e8412d6f3e7303e6f0360b39d7db8b3376fed6afc01f446a",
+      "crlfReplaced": 173,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/browser/buyer-decisions.spec.mjs",
+      "beforeSha256": "4b04406bf6e3cc09ff0ccd7888694ebf918d3b9832210e0eca0e7619ceba47b0",
+      "afterSha256": "45d06131ac06a34781d73601a152dde748fa2ad47d59e18482d6b4f80240c2b5",
+      "crlfReplaced": 43,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/browser/living-city-night.spec.mjs",
+      "beforeSha256": "c79cd44728cfe0e6a45781819a8313d2a8e2cb75b88e2e382d256342264594d6",
+      "afterSha256": "cf2bc7f08e4e91d14c347a6f1a2993a33cad49b1d129416afbd41a6b00cecec1",
+      "crlfReplaced": 104,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/browser/payment-schedule.spec.mjs",
+      "beforeSha256": "bcd61e617afe850f27083296c5ab590171d0d235d602769a6978a689bacfce57",
+      "afterSha256": "1c7b6ed28146b517a39db8936290123eb524e87adfa449461f42aced04221104",
+      "crlfReplaced": 1,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/browser/research-guides.spec.mjs",
+      "beforeSha256": "f615158c28555958f4ae73472983b9d91298105d2c902e05f8fdfb0e9e86502b",
+      "afterSha256": "45c7a04212dbbcd9336626bb323dabdfe2be835a9f0d7b2ca43faca712b6cecf",
+      "crlfReplaced": 51,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/business-documents.test.mjs",
+      "beforeSha256": "d29a980f475694522d460aac696ff8929dd4d7e5b9c5acf400c92602f7bd64ee",
+      "afterSha256": "c0a98d99d9ae78ae1c0dc8f9d1d39807582d474a5d4e5ee45ee1447cf1b4b06c",
+      "crlfReplaced": 80,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/buyer-experience.test.mjs",
+      "beforeSha256": "f1f1f91ed3f4b6447898e3f9c0e48897ce515ace0c7aa34832791b783a0dd478",
+      "afterSha256": "d9c470efff24d1ccb844ad936d0b487fb264ff0be990be2c4b2490c74fcc8da9",
+      "crlfReplaced": 62,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/buyer-packs.test.mjs",
+      "beforeSha256": "890f93eb60aa2ead37de6276142a773692c9c7b9f695762acffac60a390e574e",
+      "afterSha256": "d33152ae63d06bc02af4b0678a22d5420cd8a9f83ab47830a8da3468e9c07684",
+      "crlfReplaced": 95,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/claude-190-regressions.test.mjs",
+      "beforeSha256": "2c7bf62f3cb4a1d62ce1dc3c345748243c3416e05a35155271325562afa14797",
+      "afterSha256": "2b43428e250355d4102abc7614838932b612f3d0bc435351699fb498d69fb3dc",
+      "crlfReplaced": 69,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/claude-clarity-frontend.test.mjs",
+      "beforeSha256": "f777ae3d2bce90a3371f8105be8f9d525f854897d25b6764129274989f7bc3bf",
+      "afterSha256": "3e8a5449181952bb49ccd1e13eccbb069c32d4bc3eebe62c31350f757744a1fa",
+      "crlfReplaced": 78,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/content-remediation.test.mjs",
+      "beforeSha256": "df5947e72d08b19e2afb43137dfd26f641f5757813e5a27d82d894e23dbce631",
+      "afterSha256": "a227dd6021a6847cfd264428659106859640df13db9fe93f2bb8954a5ca6af01",
+      "crlfReplaced": 108,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/county-expansion-20261020.test.mjs",
+      "beforeSha256": "9e76c2747e088188c2b39e7c0fe11f035e9bbb820b7460c630be28e59168f983",
+      "afterSha256": "2974e2dde5bbecdea50045464cef979393b25a1d2f0ea443e7dbba6efc22a342",
+      "crlfReplaced": 135,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/expanded-website-packages.test.mjs",
+      "beforeSha256": "c35a35d7ef20225b446d5c4d57912b7826998e309a5a2e42da4680067fc27051",
+      "afterSha256": "38df41cfe8c51ae0c858346d85f3001362881105d3708c40b357f6c23e0610a1",
+      "crlfReplaced": 39,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/fixtures/reviewed-ux-copy-edits.mjs",
+      "beforeSha256": "115cd4355a324e71b38e44b12d5503b92b599306a647a0c18303c3a36f0b5ff5",
+      "afterSha256": "c6b8da53817c9e4bf099bac99d261dd7f095d45bf41b3a2e0a446f7580c8827e",
+      "crlfReplaced": 25,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/journal.test.mjs",
+      "beforeSha256": "9e9779e00793fb8ad1cb1d97730f1cee43748365e67b6d3ac3e6cb736d65ad07",
+      "afterSha256": "672a25e627f12e1f8646957de3896df0e63edf74dc548cefbfa0c133b08a1280",
+      "crlfReplaced": 150,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/location-services.test.mjs",
+      "beforeSha256": "61c2d80cdaaa8cc7ff1ce34409fe848df7a3044b7a5cc0812275b1b08729c7cb",
+      "afterSha256": "1432c0f4c5700f6f7f5905af5494000ae9ba702829379f21280a648919d0b428",
+      "crlfReplaced": 117,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/location-wave-four.test.mjs",
+      "beforeSha256": "37aade3f796d3115c7fd4192d14808eec3f64cb947324dfbdc7207a39df5c254",
+      "afterSha256": "5bbe982ba7ab0c364f2fc2356150bb35657247dd0eac09f108a4f5cfe0e55746",
+      "crlfReplaced": 56,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/longtail-guides.test.mjs",
+      "beforeSha256": "ad61b87361113f711831b4ac2f375b3afd39d1be41e2092ce7acbc5847ef8aaa",
+      "afterSha256": "1e71198290ad0eab81e65bbf927b702232a3ea76081448cbdfc37dd30c6a167f",
+      "crlfReplaced": 64,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/monthly-seo-growth.test.mjs",
+      "beforeSha256": "0c3b30201f09f9bd467bf1c95569f46eb59d561c20bc5846f420646f0aff9d27",
+      "afterSha256": "b733cab9064de6ae6882fd338ea5f37bbbc5bbc49b0942cf7e391aaf679cdd21",
+      "crlfReplaced": 46,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/northeast-expansion.test.mjs",
+      "beforeSha256": "46d439ac5ad96daa926bbe67e2477d969eb0c38e38c25bd12d86dd2d6a5cfc1a",
+      "afterSha256": "bd19f44813bb0aaf5265635ee8d18f1b0ff1c1e16f5757096fef07191498fa15",
+      "crlfReplaced": 186,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/northern-expansion.test.mjs",
+      "beforeSha256": "f19146fae404ee747dfc9d19f8a278321d7e1425a1eaee5d83edbcf1c3aa3feb",
+      "afterSha256": "5e962b0d159666a084e0a0b1b94db228648186e6f98f7dbabde8e09bc04c6daf",
+      "crlfReplaced": 192,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/ohio-counties.test.mjs",
+      "beforeSha256": "fa960347be47fbaf2fee0e2d3ecce0784f7e0f0662d441debacc276a2cd7c50e",
+      "afterSha256": "63a8d8b0df575055cf35334de136d1015f030bd3187a255296e51aa68ca7d911",
+      "crlfReplaced": 185,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/pennsylvania-counties.test.mjs",
+      "beforeSha256": "bd16ebec0e3b8384038e1a8c9b720b50d9cfe591a088db2af11c7491f9deeae5",
+      "afterSha256": "bd0b17ad83a426ed8f5e87df963b3a780c39951b4ecb526f1cda9efc8feb6c60",
+      "crlfReplaced": 177,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/plan-clarity.test.mjs",
+      "beforeSha256": "32ed60fde017c3399a4fc145efadee274dbc869b1cdc20f04397fd29c0e0506c",
+      "afterSha256": "c819d49a897e3890f585396b1451881a0aa6302c229b18389d697431fb6d7e52",
+      "crlfReplaced": 129,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/premium.test.mjs",
+      "beforeSha256": "31902039f217ca399a272d29816c6f0e7fa28b4a22352643cfd1104be9460ae3",
+      "afterSha256": "7035959a6c24d68c388353781e3c26b41a97c7e90b34cf6833c298094ebbcf47",
+      "crlfReplaced": 96,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/public-review-boundary.test.mjs",
+      "beforeSha256": "9bd5ba293b7ce6c99eab5e54f8198da9eaee1f44bca5bacb53f0ff06f34f1e08",
+      "afterSha256": "2adbea23b31b67490f87228b153b0d4e275c45d921c772d64640e02ac08426ca",
+      "crlfReplaced": 82,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/reading/reading-accessibility.spec.mjs",
+      "beforeSha256": "59df109289c8d1c13b6914a38eb85f4bc9cd18b26b0c0218c9afce63cb9eada3",
+      "afterSha256": "c7f8142b49ee22499bd4eebb14e45c49f0e4bfcb8048dff821a2a8cc84961b9c",
+      "crlfReplaced": 98,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/rerun2-buyer-content.test.mjs",
+      "beforeSha256": "17fc07ef5617eb5c7be170d6c4d32d21f2d9ec944fe2adf68014f220ca84731d",
+      "afterSha256": "7e3169b59cfbb9d40700e1f46d172892d2e155790fe5f54554c31154a859b389",
+      "crlfReplaced": 72,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/rerun2-content.test.mjs",
+      "beforeSha256": "ffd6e64ee0dedb6a8ee5538a2e850c3514c604d9cb6f84a464553ed4e539da7c",
+      "afterSha256": "58765ef29a76772c7394a8a9ed47b382168225d6ad4fc842cf8fbccf188f5a0e",
+      "crlfReplaced": 438,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/rerun2-guide-consolidation.test.mjs",
+      "beforeSha256": "7332bad376fdb0d9057b6ca4523c6af9e3bad35de9217ee267349444c067c7be",
+      "afterSha256": "aaa016b732decb06d6e3305264bb903fb11d797890c0f8bca7f6667e09635c7f",
+      "crlfReplaced": 116,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/research-content.test.mjs",
+      "beforeSha256": "e9fc26542fb6c79167fa04a712d992fec03f2bd664b086f32b7e9b728220859f",
+      "afterSha256": "ab3f94762f4abf6df1228d76547262b1385680d2fe188d4c29901112897f4827",
+      "crlfReplaced": 97,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/schema-crawl-regressions.test.mjs",
+      "beforeSha256": "7ce395262d9b3e57f3df340e1191967ba27f38dea6efa76347c0f24083fa5386",
+      "afterSha256": "b58e50992e66fde75997ec526c64a6c0b91b7b8256ac9ee557fbf7392798f44b",
+      "crlfReplaced": 63,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/search-eligibility-policy.test.mjs",
+      "beforeSha256": "074fb5772c2b2bca5042d6602c4ab783847c174924c2e9f949dc9a5f3890ce5a",
+      "afterSha256": "57b2f6213eecfdabb7988aa1073e1257526836783008267204662fdc0e6b9709",
+      "crlfReplaced": 40,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/search-expansion.test.mjs",
+      "beforeSha256": "821eba637fd3978ad62f34b07bc4ecd9e00d333c0a7d92fcce21049f444a828b",
+      "afterSha256": "8e6ec89ee76e777f467dfadcc9c5986111037a126dc6f9249a04db33ad329557",
+      "crlfReplaced": 66,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/seo.test.mjs",
+      "beforeSha256": "79c89c359db07835e18428f50ec08c273b7be74234c5bff60562aef4bc17c9e3",
+      "afterSha256": "a75c99c7dd1943ec1a994a11d5977b7a8a3de86492ef80c5acad6dea1f1b4db3",
+      "crlfReplaced": 42,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/service-faqs.test.mjs",
+      "beforeSha256": "7f1aba8e11b60d59d11ea0ca7fc610ac271f3d6fee981dbcdb9eaf3c30a2ca60",
+      "afterSha256": "141cae88c1ee387d81bac821013ac0c3caa5ae88d2a4c8f3810d6d38edfc5b4e",
+      "crlfReplaced": 64,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/source-handoff-offers.test.mjs",
+      "beforeSha256": "e6e49dd0168d4056f9db8a7161c29e67fb643fca5c108950538511574eda2807",
+      "afterSha256": "7d7004e21a8435a8e68bc553ebaa61443b592240799013814a1e59f911aba164",
+      "crlfReplaced": 47,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/statewide-counties.test.mjs",
+      "beforeSha256": "83584c91dbd95920c5c038a4d8e34cc4b71bbb06397f3b01fd9d6f271304fb00",
+      "afterSha256": "2590c04671f7d7d2a7fcebbeaf09a9343f4cd5ed39083eb7bf635d9088b91398",
+      "crlfReplaced": 163,
+      "otherBytesUnchanged": true
+    },
+    {
+      "path": "tests/visual/site.spec.mjs",
+      "beforeSha256": "a75ce4b569bf756f43fbe6ac2cd84650e5c224179b0051c56e59d1408259b566",
+      "afterSha256": "26c4f814733685c09990b291de739277d2dce1d4d5390711732e58b4217f7765",
+      "crlfReplaced": 110,
+      "otherBytesUnchanged": true
+    }
+  ]
+}

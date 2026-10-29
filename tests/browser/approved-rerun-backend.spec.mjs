@@ -31,13 +31,13 @@ async function mount(page,html,script,{path='/contact/',css='',bodyClass=''}={})
 
 test('ROI shows defaults, keeps stale results, debounces valid updates without focus jumps and resets accurately',async({page})=>{
  const network=await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:roiCss});
- await expect(page.locator('#roi-results')).toBeVisible();await expect(page.locator('#roi-output')).toContainText('3.1 extra serious inquiries');
+ await expect(page.locator('#roi-results')).toBeVisible();await expect(page.locator('#roi-output')).toContainText('5.5 extra serious inquiries');
  await expect(page.locator('#roi-results-title')).not.toBeFocused();
  const cost=page.locator('#roi-oneTime');await cost.fill('');await expect(page.locator('#roi-stale')).toBeVisible();await expect(page.locator('#roi-results')).toBeVisible();
- await cost.fill('2000');await expect(page.locator('#roi-stale')).toBeHidden();await expect(cost).toBeFocused();await expect(page.locator('#roi-output')).toContainText('$4,160');
+ await cost.fill('2000');await expect(page.locator('#roi-stale')).toBeHidden();await expect(cost).toBeFocused();await expect(page.locator('#roi-output')).toContainText('$5,660');
  await cost.fill('2000.');await expect(page.locator('#roi-stale')).toBeVisible();
  await cost.fill('bad');await page.getByRole('button',{name:'Calculate scenario'}).click();await expect(cost).toBeFocused();await expect(cost).toHaveAttribute('aria-invalid','true');await expect(page.locator('#roi-results')).toBeVisible();
- await page.getByRole('button',{name:'Reset example'}).click();await expect(cost).toHaveValue('2350');await expect(page.locator('#roi-stale')).toBeHidden();await expect(page.locator('#roi-output')).toContainText('$4,510');
+ await page.getByRole('button',{name:'Reset example'}).click();await expect(cost).toHaveValue('4500');await expect(page.locator('#roi-stale')).toBeHidden();await expect(page.locator('#roi-output')).toContainText('$8,160');
  await page.getByRole('button',{name:'Calculate scenario'}).click();await expect(page.locator('#roi-results-title')).toBeFocused();assertNoPersonalNetwork(network);
 });
 
@@ -85,13 +85,13 @@ test('enhanced form preserves county provenance, optional URL, selected extras a
 });
 
 test('build picker stays collapsed with selected summary and remove controls preserve other additions',async({page})=>{
- const path='/checkout/launch-site/?addons=standard_page,contact_form';
+ const path='/checkout/launch-site/?addons=standard_page,guided_quote_form';
  const html=prefillInquiryHtml(inquiryForm({live:false},{checkout:true,service:'launch_site'}),new URL('http://synthetic.test'+path));
  await mount(page,html,formScript,{path});
- await expect(page.locator('[data-addon-picker]')).not.toHaveAttribute('open');expect(await page.locator('input[name^="addon_"]').count()).toBe(12);
- const contactFormPrice=offers.add_ons.find(item=>item.id==='contact_form').public_price,standardPagePrice=offers.add_ons.find(item=>item.id==='standard_page').public_price;
+ await expect(page.locator('[data-addon-picker]')).not.toHaveAttribute('open');expect(await page.locator('input[name^="addon_"]').count()).toBe(13);
+ const contactFormPrice=offers.add_ons.find(item=>item.id==='guided_quote_form').public_price,standardPagePrice=offers.add_ons.find(item=>item.id==='standard_page').public_price;
  await expect(page.locator('[data-addon-summary]')).toBeVisible();await expect(page.locator('[data-addon-project-total]')).toContainText(money(offers.launch_site.public_price+contactFormPrice+standardPagePrice));
- await page.locator('[data-addon-remove=standard_page]').click();await expect(page.locator('[name=addon_standard_page]')).not.toBeChecked();await expect(page.locator('[name=addon_contact_form]')).toBeChecked();await expect(page.locator('[data-addon-project-total]')).toContainText(money(offers.launch_site.public_price+contactFormPrice));
+ await page.locator('[data-addon-remove=standard_page]').click();await expect(page.locator('[name=addon_standard_page]')).not.toBeChecked();await expect(page.locator('[name=addon_guided_quote_form]')).toBeChecked();await expect(page.locator('[data-addon-project-total]')).toContainText(money(offers.launch_site.public_price+contactFormPrice));
 });
 
 function assertNoPersonalNetwork(network){expect(network.filter(row=>row.method==='POST')).toHaveLength(0);}

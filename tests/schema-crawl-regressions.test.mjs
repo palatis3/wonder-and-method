@@ -1,4 +1,4 @@
-import searchExcluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
+import searchExcluded from './fixtures/current-search-excluded-public-paths.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -16,7 +16,7 @@ const schema = page => JSON.parse(page.html.match(/<script type="application\/ld
 test('catalog offers lead to visible pricing anchors and resolve to named service entities', () => {
   const pricing = pages.find(page => page.path === '/pricing/');
   const catalog = schema(pricing).find(node => node['@type'] === 'OfferCatalog');
-  assert.equal(catalog.itemListElement.length, 8);
+  assert.equal(catalog.itemListElement.length, 15);
   for (const offer of catalog.itemListElement) {
     const target = new URL(offer.url);
     assert.equal(target.pathname, '/pricing/');
@@ -27,7 +27,7 @@ test('catalog offers lead to visible pricing anchors and resolve to named servic
     assert.ok(service.offers.some(item => item['@id'] === offer['@id']));
   }
   const seo = schema(pages.find(page => page.path === '/services/seo/')).find(node => node['@type'] === 'Service');
-  assert.deepEqual(seo.offers.map(item => item.price), [offers.plans.improve.monthly_price, offers.plans.grow.monthly_price]);
+  assert.deepEqual(seo.offers.map(item => item.price), [offers.plans.improve.monthly_price, offers.plans.local_focus.monthly_price, offers.plans.grow.monthly_price]);
   assert.ok(seo.offers.every(item => item.priceSpecification.unitCode === 'MON'));
 });
 

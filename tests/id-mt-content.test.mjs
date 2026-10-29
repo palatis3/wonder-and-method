@@ -1,9 +1,11 @@
+import {beforeReviewedV3OfferFaqCollection} from './fixtures/reviewed-v3-offer-edits.mjs';
 import {beforeReviewedUxCopyEdits,beforeReviewedUxFaqEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {locationServices} from '../src/location-service-index.mjs';
-import faqs from '../src/service-faqs.json' with {type:'json'};
+import currentFaqs from '../src/service-faqs.json' with {type:'json'};
+const faqs=beforeReviewedV3OfferFaqCollection(currentFaqs);
 import {beforeReviewedHumanQualityFaqCollection} from './fixtures/reviewed-human-quality-edits.mjs';
 const historicalFaqs=beforeReviewedHumanQualityFaqCollection(faqs);
 import approved from './fixtures/id-mt-approved-paths.json' with {type:'json'};
@@ -29,7 +31,7 @@ test('ID/MT preserve 2146 prior services and 278 FAQ pairs with exactly 69 servi
 });
 
 test('all 100 areas retain directory destinations and 31 no-additions remain directory-only',()=>{
- assert.equal(pages.size,2425);assert.equal(decisions.areas.length,100);
+ assert.equal(pages.size,2437);assert.equal(decisions.areas.length,100);
  assert.equal(decisions.areas.filter(x=>x.serviceDecision==='NO_ADDITION').length,31);
  for(const entry of decisions.areas){
   const [route,id]=entry.directoryPath.split('#');assert(pages.get(route).includes(`id="${id}"`));

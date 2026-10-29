@@ -153,7 +153,7 @@ test('fixed review checkouts keep the website constraint while native correction
    const response=await worker.fetch(request(proposal,{native:true,html:true}),env,ctx);assert.equal(response.status,422);
    const html=await response.text();assert.doesNotMatch(html,/<script\b/);assert.match(html,/<select id="service"/);
    assert.doesNotMatch(html.match(/<input id="website"[^>]*>/)[0],/\brequired\b/);
-   assert.match(html,/For a Website Baseline or Audit &amp; Fix Sprint proposal, add the public website address to review/);
+   assert.match(html,/For a Website Roadmap or Website Repair Sprint proposal, add the public website address to review/);
    assert.match(html,/For other services, a website or social page is optional/);
    assert.match(html,/Website or social page: Please add a public website address/);
    const restored=nativeFields(html);restored.service=nextService;

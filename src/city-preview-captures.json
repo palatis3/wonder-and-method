@@ -1,15 +1,15 @@
 {
-  "capturedAt": "2026-10-25T02:27:02.812Z",
+  "capturedAt": "2026-10-29T10:44:57.621Z",
   "encoder": "python-pillow",
   "sourceHashes": {
     "src/portfolio-concepts.mjs": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3",
     "src/assets/portfolio-concepts.css": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30",
-    "src/buyer-experience.mjs": "510bbb5ca65c92e28f4e0e8f327bfd5d19275f12669275b7ea7b4c6c232a4841"
+    "src/buyer-experience.mjs": "60c32ae19240bc0dd54acab4ba05f226dcbdae4d7635c8ccd8f8c692b1e5ab7c"
   },
   "builtPages": {
-    "/work/fieldwork/": "1069059ab39e7c90af827ca4022421c8217811e46579638d0b4b7f001dae210c",
-    "/work/northline/": "c7e24c5651719b279a6d181949aa14b3b644c37506b138d00077bbc2ac283617",
-    "/work/hearthside/": "e9861be73a7ff0bc40daf396eda748c432ccb7a79423087650329ef44ec244f7"
+    "/work/fieldwork/": "b6423392b3ffbb880fcc82bbd3bad21eb4197246fbd12c5dd0644c4484dac9f0",
+    "/work/northline/": "6078831e73b23798f6b5f531f1062c41858c0937a68a2478315dd47abd9e231a",
+    "/work/hearthside/": "bc083eede1a7493c636d18165bb2a9c6ecff2b1abea760cd9da04b8f45628d2d"
   },
   "records": [
     {
@@ -22,36 +22,36 @@
       "deviceScaleFactor": 1,
       "clip": {
         "x": 100,
-        "y": 190.390625,
+        "y": 154.390625,
         "width": 1240,
         "height": 776.78125
       },
       "path": "/assets/work/concepts/fieldwork-showcase-desktop.webp",
       "width": 1240,
       "height": 776,
-      "bytes": 56964,
-      "sha256": "58ae5afbe393d253f5ce223e7a7ae91598ae677aaecd940b597837485aad09a4",
+      "bytes": 56904,
+      "sha256": "6ccc68ae638c1d4a0008e2cfb68a33dbd36e65feb2e6699c3f58c9a7361eeaad",
       "variants": [
         {
           "path": "/assets/work/concepts/fieldwork-showcase-desktop-480.webp",
           "width": 480,
           "height": 300,
-          "bytes": 10856,
-          "sha256": "d9c9315a983d02a413111ec8e5d6e9a479fc407f828b60c8a6f6face3cd01f4c"
+          "bytes": 10832,
+          "sha256": "4155e3953a7ebf266a902cf3ae45e9eff2d6924663082de8d48c6b4450ddbd81"
         },
         {
           "path": "/assets/work/concepts/fieldwork-showcase-desktop-640.webp",
           "width": 640,
           "height": 401,
-          "bytes": 16816,
-          "sha256": "7c7adbc20793a94e4cd4ff9cafa9939aa9e38b078027b43ce518991c8d07f03d"
+          "bytes": 16786,
+          "sha256": "0f715534f264cc01ba185ecf222db19f38898ab8178c8f445175db54f32fb92a"
         },
         {
           "path": "/assets/work/concepts/fieldwork-showcase-desktop-960.webp",
           "width": 960,
           "height": 601,
-          "bytes": 29576,
-          "sha256": "dbae8ddd86caa6525aad36fe2c328a0a463b406de82f2a9f077286b30ff9aee6"
+          "bytes": 29586,
+          "sha256": "be433982f0d1f82dbbc7aa3d91a6c68108024d62144a810350b4dc899f559633"
         }
       ]
     },
@@ -65,36 +65,36 @@
       "deviceScaleFactor": 1,
       "clip": {
         "x": 100,
-        "y": 190.390625,
+        "y": 154.390625,
         "width": 1240,
         "height": 734
       },
       "path": "/assets/work/concepts/northline-showcase-desktop.webp",
       "width": 1240,
       "height": 734,
-      "bytes": 48070,
-      "sha256": "c90d2af00f1092ff4875bf9b485a7030894abc0e852b818fbcdae6f47bd58465",
+      "bytes": 48040,
+      "sha256": "8f4bc201669555a3ea2b17408e3ef12d258c87f01bf6da7cba52291dedc12aed",
       "variants": [
         {
           "path": "/assets/work/concepts/northline-showcase-desktop-480.webp",
           "width": 480,
           "height": 284,
-          "bytes": 9586,
-          "sha256": "e7358af01d99e265704123406e2e28b38a2a17f2cf98ff212754f7ee1809beb8"
+          "bytes": 9582,
+          "sha256": "3334945c4f0ef0e9b2154affd3107c1449ab9a5293a18c53fc65accf39277181"
         },
         {
           "path": "/assets/work/concepts/northline-showcase-desktop-640.webp",
           "width": 640,
           "height": 379,
-          "bytes": 14490,
-          "sha256": "3cdcaed890218ea00213d93d55d52b9d6e97c07d7b3c9fe19c31aed9b168b5d3"
+          "bytes": 14468,
+          "sha256": "1c4aaf787f10e064f365636bfc3eed7de8955c7b4bc5a49c1e191d629d52ac6a"
         },
         {
           "path": "/assets/work/concepts/northline-showcase-desktop-960.webp",
           "width": 960,
           "height": 568,
-          "bytes": 24982,
-          "sha256": "f41cefc087dbb9a68ae3e758381ebca73206ec9c31bd99d90f9f2cbf0fdd0a49"
+          "bytes": 25020,
+          "sha256": "f636f4b5082b73d796102a5ce501212f567177d813377d9994dc2403c428478b"
         }
       ]
     },
@@ -108,36 +108,36 @@
       "deviceScaleFactor": 1,
       "clip": {
         "x": 100,
-        "y": 190.390625,
+        "y": 154.390625,
         "width": 1240,
         "height": 738.796875
       },
       "path": "/assets/work/concepts/hearthside-showcase-desktop.webp",
       "width": 1240,
       "height": 738,
-      "bytes": 55234,
-      "sha256": "16735ce5bc8e536ea11cf1dd54900d98046554d5eefd3f56db8c5a83d6062828",
+      "bytes": 55258,
+      "sha256": "bab642ec8f314a3d1926e6487828d59650399bf07c992e42fccccb0032d3b6f7",
       "variants": [
         {
           "path": "/assets/work/concepts/hearthside-showcase-desktop-480.webp",
           "width": 480,
           "height": 286,
-          "bytes": 11550,
-          "sha256": "cb050525ebd7c81058b19e62bb07f31754f163265a8f72fa49df3a4f356ebd2e"
+          "bytes": 11526,
+          "sha256": "4126e7223a66edbcee48bd1405c3183ac5d5212c70caf34772ebc6db30acdf27"
         },
         {
           "path": "/assets/work/concepts/hearthside-showcase-desktop-640.webp",
           "width": 640,
           "height": 381,
-          "bytes": 17046,
-          "sha256": "36831b46814bb2fb7f1a1239ff77c24a4fe8570f21eac8ef610dd616ca1558d1"
+          "bytes": 17056,
+          "sha256": "ba2a499401e26a682936fd1392a0bb1e2d99961d3ce10eb31c7b93fc82fd4e2e"
         },
         {
           "path": "/assets/work/concepts/hearthside-showcase-desktop-960.webp",
           "width": 960,
           "height": 571,
-          "bytes": 28114,
-          "sha256": "5c1d36155903f17b52ec3c1f29eb24f3929a55ef66abdfc3791b67dc5b64291a"
+          "bytes": 28100,
+          "sha256": "e9c5440794792f018793a765158f9d972089fccd88211e1f8019aab0e2ff0be6"
         }
       ]
     },
@@ -151,36 +151,36 @@
       "deviceScaleFactor": 2,
       "clip": {
         "x": 20,
-        "y": 140,
+        "y": 160.109375,
         "width": 350,
         "height": 835.578125
       },
       "path": "/assets/work/concepts/fieldwork-showcase-phone.webp",
       "width": 700,
       "height": 1670,
-      "bytes": 90874,
-      "sha256": "204a44789ad24cf7feb25f05054d7db54cf5f3ca5f406967576cab8c57fd634b",
+      "bytes": 92180,
+      "sha256": "640933a197c83212587bb04ad530f29404c6e1d30c0d8afb60b7f38882d6ac55",
       "variants": [
         {
           "path": "/assets/work/concepts/fieldwork-showcase-phone-350.webp",
           "width": 350,
           "height": 835,
-          "bytes": 27004,
-          "sha256": "c9cc8ac8f9bce82d0017523f4593219aee19ac35e28c130334720456fb3b1cb9"
+          "bytes": 27660,
+          "sha256": "5913e4d9316c889e3f7f5936f35bae9b3d703d8cf1982de1216e9322d3fac03b"
         },
         {
           "path": "/assets/work/concepts/fieldwork-showcase-phone-525.webp",
           "width": 525,
           "height": 1252,
-          "bytes": 45204,
-          "sha256": "a3f339ff6da334a38618edecb674abdb87691dbd53c59d2291f3ce9dd88d5091"
+          "bytes": 48176,
+          "sha256": "838d50591daf05523eba1df61953b2885392521534a9e75b3699a0f49cf10d8a"
         },
         {
           "path": "/assets/work/concepts/fieldwork-showcase-phone-700.webp",
           "width": 700,
           "height": 1670,
-          "bytes": 63478,
-          "sha256": "59619cd17313ca6418d983b2b089e871cbfb06cb069f651b056bd6a1b24f5b8f"
+          "bytes": 68030,
+          "sha256": "7b47fd79763c28690c87e09827e90e2169550dd3ec65359c1f7eece45a2024d0"
         }
       ]
     },
@@ -194,36 +194,36 @@
       "deviceScaleFactor": 2,
       "clip": {
         "x": 20,
-        "y": 140,
+        "y": 160.109375,
         "width": 350,
         "height": 877.96875
       },
       "path": "/assets/work/concepts/northline-showcase-phone.webp",
       "width": 700,
       "height": 1754,
-      "bytes": 81302,
-      "sha256": "e5354e253f3bc744e02c279113a02d1e1944c325dccf86ec111806144269436a",
+      "bytes": 81346,
+      "sha256": "59d49833d09cb4300105568a131b4afd55f721a6a98763bac623f0b9534d680e",
       "variants": [
         {
           "path": "/assets/work/concepts/northline-showcase-phone-350.webp",
           "width": 350,
           "height": 877,
-          "bytes": 25478,
-          "sha256": "9c60d9a44e832b0c8f72540552b3e87dac66863ee78434221bd979ccd2aeff91"
+          "bytes": 25476,
+          "sha256": "97b323288926b084a087c9ffc131a812c787d86ea3e39b5e9bfadda4b81454c8"
         },
         {
           "path": "/assets/work/concepts/northline-showcase-phone-525.webp",
           "width": 525,
           "height": 1316,
-          "bytes": 41330,
-          "sha256": "a63f646c710a2097291b89f7b69c812ee1af6e9b610045d9d2d2ece33b5f568e"
+          "bytes": 43344,
+          "sha256": "d67866536314a06aa27f17d30db8608c05dbeea484c2bc99048b93cb7ddfcbd3"
         },
         {
           "path": "/assets/work/concepts/northline-showcase-phone-700.webp",
           "width": 700,
           "height": 1754,
-          "bytes": 56412,
-          "sha256": "06e30a6bb9d03663d6c662b18f8f5ca61778a1fedf36539215410f52eca8ab07"
+          "bytes": 60950,
+          "sha256": "d1d6ae2065664edf02344929df22ed94e2396871fdc2703f4baec2b81e886d55"
         }
       ]
     },
@@ -237,36 +237,36 @@
       "deviceScaleFactor": 2,
       "clip": {
         "x": 20,
-        "y": 140,
+        "y": 160.109375,
         "width": 350,
         "height": 759
       },
       "path": "/assets/work/concepts/hearthside-showcase-phone.webp",
       "width": 700,
       "height": 1518,
-      "bytes": 75000,
-      "sha256": "e1fc6d882f9e7d1e3185b3df0a7702a8378ba77c465f368261e9614e3b48f7c8",
+      "bytes": 74932,
+      "sha256": "97ec18a556be0b9fb4d561cc1e9a5d826f0c2254bfa4f587e74514d7a7993064",
       "variants": [
         {
           "path": "/assets/work/concepts/hearthside-showcase-phone-350.webp",
           "width": 350,
           "height": 759,
-          "bytes": 23338,
-          "sha256": "bf39e5204b926a7fa17730e49395756ec18b803fed618b069bd42e5cd49e1302"
+          "bytes": 23318,
+          "sha256": "e241bf63b3d49859e0bdc922f7ea5722e77a2fd0d2b06057352bb4865477de94"
         },
         {
           "path": "/assets/work/concepts/hearthside-showcase-phone-525.webp",
           "width": 525,
           "height": 1138,
-          "bytes": 37506,
-          "sha256": "a4ffa905b035daa9e0448a4ac00ba9e91d5089a30333a9388d40f33bd7080f70"
+          "bytes": 39276,
+          "sha256": "1baf138137523e68d1c0ce586459700356e411560628415c4179a72906503008"
         },
         {
           "path": "/assets/work/concepts/hearthside-showcase-phone-700.webp",
           "width": 700,
           "height": 1518,
-          "bytes": 52740,
-          "sha256": "15a1360767de1b21ff0d2fb4d664eb68a2bc87bd2ef27bb00ca217f542a4f745"
+          "bytes": 55196,
+          "sha256": "70d5007d466ab8139b4abad947f9171b26b6dfeeefd3658085509e059da80693"
         }
       ]
     }

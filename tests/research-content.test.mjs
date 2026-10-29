@@ -1,3 +1,4 @@
+import v3Paths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import {publicRouteRedirect} from '../deployment/public-route-canonical.mjs';
 import {retiredCountyRoutes} from '../deployment/retired-county-routes.mjs';
 import semrushGuidePaths from './fixtures/semrush-guide-paths.json' with {type:'json'};
@@ -22,14 +23,14 @@ const routes=[...researchGuides.map(x=>x.path),'/tools/website-roi-calculator/']
 
 test('historical 278-route coverage resolves through live pages or permanent county destinations and seven content routes remain',async()=>{
  const previous=JSON.parse(await read('tests/fixtures/pre-content-guide-routes.json'));
- assert.equal(previous.length,278);assert.equal(pages.length,2425);
+ assert.equal(previous.length,278);assert.equal(pages.length,2437);
  for(const path of ['/areas/louisiana/','/areas/arkansas/'])assert.ok(pages.some(page=>page.path===path),path);
  for(const route of previous){
   const destination=publicRouteRedirect(new URL(route,config.origin),'GET')?.slice(config.origin.length);
   if(destination){const [hub,slug]=destination.split('#');assert.ok(!pages.some(page=>page.path===route),route);const target=pages.find(page=>page.path===hub);assert.ok(target,destination);if(slug)assert.ok(target.html.includes(`id="${slug}"`),destination);}
   else assert.ok(pages.some(page=>page.path===route),route);
  }
- assert.deepEqual(pages.filter(page=>!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&!floridaGuidePaths.has(page.path)&&!semrushGuidePaths.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/assetrounds/'&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
+ assert.deepEqual(pages.filter(page=>!v3Paths.includes(page.path)&&!previous.includes(page.path)&&!operatingGuidePaths.has(page.path)&&!floridaGuidePaths.has(page.path)&&!semrushGuidePaths.includes(page.path)&&!longtailGuides.some(item=>item.path===page.path)&&page.path!=='/work/assetrounds/'&&page.path!=='/work/buffalo-civic/'&&!page.path.startsWith('/areas/')).map(page=>page.path).sort(),routes.slice().sort());
 });
 
 test('ROI example reconciles costs, contribution, payback and break-even',()=>{
@@ -63,8 +64,8 @@ test('six distinct guides are complete, linked, approved, downloadable and indiv
   assert.ok(sections.length>=(conciseGuides[guide.path]?.length||6));assert.ok(body.replace(/<[^>]*>/g,' ').split(/\s+/).length>=minimumWords,guide.path);assert.equal(new Set(sections.map(s=>s.id)).size,sections.length);
   if(conciseGuides[guide.path])assert.deepEqual(sections.map(section=>section.id),conciseGuides[guide.path],guide.path+' retains every practical topic after the clarity edit');
   if(guide.path==='/guides/website-redesign-timeline/'){
-   for(const id of ['launch_site','focused_site','signature_site'])assert.ok(body.includes(offers[id].delivery_target.match(/\d+[–-]\d+/)[0]+' business days'),id);
-   assert.match(body,/two review rounds, each allowing up to five business days/);assert.match(body,/Reviews, late inputs and added work extend the elapsed schedule/);
+   for(const id of ['launch_site','focused_site','business_site','signature_site'])assert.ok(body.includes(offers[id].delivery_target.replace(/^Build-time target: /,'').replace(/\.$/,'')),id);
+   assert.match(body,/Normal two-business-day review windows are already included: two rounds for Focused, Custom and Business Custom, and three for Signature Custom/);assert.match(body,/Missing inputs or approved scope changes can move dates/);
   }
   if(guide.path==='/guides/website-handover-checklist/'){
    assert.match(body,/source files, images, configuration notes and build instructions/);assert.match(body,/within five business days after the paid work is finished, or after a canceled account is settled/);assert.match(body,/Your accounts stay under your control throughout/);

@@ -11,35 +11,20 @@ import {createServer} from '../scripts/server.mjs';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket} from '../scripts/job-packet.mjs';
 const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8')),prices=priceList(offers);
+const historical=JSON.parse(await readFile(new URL('../operations/historical/offers-2026-10-24-pre-v3.json',import.meta.url),'utf8'));
 const lead={name:'Synthetic Pack Test',email:'synthetic@example.test',business:'Fictional test only',website:'',service:'improve',message:'A synthetic request to verify chosen service context.'};
 
-test('eight decision packs carry acceptance, payments, costs, limits and the exact request',()=>{
- const expected={launch_site:1400,focused_site:2350,signature_site:3700,keep_running:150,improve:400,grow:800,audit_fix_sprint:750,website_baseline:399};
+test('fifteen V3 decision packs carry acceptance, payment, ownership and exact request routes',()=>{
+ const expected={launch_site:2950,focused_site:4500,business_site:7500,signature_site:11500,keep_running:275,improve:1250,local_focus:850,grow:1750,website_baseline:650,audit_fix_sprint:1800,brand_message:1800,storefront:8500,local_presence:950,workflow:2500,systems:2000};
  const packs=buyerPacks(offers);assert.deepEqual(packs.map(p=>p.id),Object.keys(expected));
- for(const p of packs){
-  assert.equal(p.price,expected[p.id]);assert.equal(p.request,'/checkout/'+p.id.replaceAll('_','-')+'/');
-  assert.match(p.scopeStatus,/does not book work, accept terms or make a payment/);
-  const text=JSON.stringify(p.sections);
-  for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/outside/i,/cancel/i,/provider/i,/five business days/i,/export limits/i])assert.match(text,pattern,p.id);
-  assert.match(text,/pay.*directly/i,p.id);assert.match(text,/silence.*(?:not|never)/i,p.id);
-  assert.doesNotMatch(text,/worked.*fee example|Illustrative completed month/i,p.id);
+ for(const p of packs){assert.equal(p.price,expected[p.id]);assert.equal(p.request,'/checkout/'+p.id.replaceAll('_','-')+'/');assert.match(p.scopeStatus,/does not book work, accept terms or make a payment/);
+  const text=JSON.stringify(p.sections);for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/outside/i,/cancel/i,/provider/i,/export limits/i,/not pay twice/])assert.match(text,pattern,p.id);
  }
- for(const p of packs.filter(p=>p.id.endsWith('_site'))){
-  const text=JSON.stringify(p.sections);
-  assert.match(text,/50%/);assert.match(text,/30%/);assert.match(text,/20%/);assert.match(text,/approve the design in writing/);
-  assert.match(text,/dated list of completed work, outside costs you approved and payments received/);assert.match(text,/five business days after paid completion or settling an early cancellation/);
-  assert.match(text,/30 calendar days after launch/);assert.match(text,/receive your paid files without waiting/i);
-  assert.match(text,/I do not disable your paid website/);
- }
- for(const id of ['audit_fix_sprint','website_baseline']){
-  const text=JSON.stringify(packs.find(p=>p.id===id).sections);
-  assert.match(text,/up to 12 agreed main pages/);assert.match(text,/Before payment, I check that I can safely work on the site/);
-  assert.match(text,/unearned amount to be refunded/);assert.match(text,/30 calendar days after your written approval of its completion/);
-  assert.match(text,/does not include or require a new year of hosting/);assert.match(text,/specialist certification are separate/);
- }
+ for(const id of ['launch_site','focused_site','business_site','signature_site','storefront']){const text=JSON.stringify(packs.find(p=>p.id===id).sections);assert.match(text,/40%/);assert.match(text,/30%/);assert.doesNotMatch(text,/50%|20%/);assert.match(text,/unearned prepaid fees/);}
 });
 
-test('monthly packs gate new annual sales while retaining accepted annual cancellation rights',()=>{
+test('historical packs retain their accepted annual cancellation rights',()=>{
+ const offers=historical,prices=priceList(historical);
  const packs=buyerPacks(offers);assert.equal(offers.annual_enrollment_gate.verified,false);
  for(const [id,upfront,equivalent,refund] of [['keep_running',1710,142.5,1140],['improve',4560,380,3040],['grow',9120,760,6080]]){
   const p=packs.find(p=>p.id===id),text=JSON.stringify(p.sections);assert.ok(!Object.hasOwn(p,'annual'));assert.equal(p.baselineFee,399);
@@ -54,7 +39,8 @@ test('monthly packs gate new annual sales while retaining accepted annual cancel
  }
 });
 
-test('annual estimator charges twelve cycles upfront and keeps refunds distinct from hosting',()=>{
+test('historical annual estimator keeps accepted twelve-cycle fees distinct from hosting',()=>{
+ const offers=historical,prices=priceList(historical);
  for(const id of ['keep_running','improve','grow']){
   assert.throws(()=>calculateCost(prices,{build:'existing',plan:id,billing:'annual',cycles:11}),/twelve cycles/);
   const cost=calculateCost(prices,{build:'existing',plan:id,billing:'annual',cycles:12,hostingMonthly:20,hostingMonths:12,external:120});
@@ -67,12 +53,14 @@ test('annual estimator charges twelve cycles upfront and keeps refunds distinct 
  assert.equal(calculateCost(prices,{plan:'improve',billing:'annual',cycles:12,hostingMonthly:null,external:0}).total,null);
 });
 
-test('annual and one-off quote snapshots retain their actual payment and exit terms',async()=>{
- const annual=await draftScope('improve','synthetic-annual',{billing:'annual'});assert.equal(annual.fixed_price,4560);assert.equal(annual.milestones.length,1);assert.equal(annual.milestones[0].amount,4560);assert.equal(annual.service_period.cycles,12);assert.equal(annual.service_period.start,null);assert.equal(annual.accepted_at,null);assert.match(annual.commercial_boundaries.annual_terms.renewal,/no automatic annual charge/);assert.match(renderJobPacket(annual,{},offers),/\$4,560\.00/);
+test('historical annual and one-off snapshots retain accepted payment and exit terms',async()=>{
+ const offers=historical;
+ const originalDraft=draftScope;const historicalDraft=(id,client,options={})=>originalDraft(id,client,{...options,catalog:historical});
+ const annual=await historicalDraft('improve','synthetic-annual',{billing:'annual'});assert.equal(annual.fixed_price,4560);assert.equal(annual.milestones.length,1);assert.equal(annual.milestones[0].amount,4560);assert.equal(annual.service_period.cycles,12);assert.equal(annual.service_period.start,null);assert.equal(annual.accepted_at,null);assert.match(annual.commercial_boundaries.annual_terms.renewal,/no automatic annual charge/);assert.match(renderJobPacket(annual,{},offers),/\$4,560\.00/);
  assert.equal(annual.commercial_boundaries.enrollment_gate.verified,false);assert.match(JSON.stringify(annual.commercial_boundaries.enrollment_gate),/independent buffer/);
- const sprint=await draftScope('audit_fix_sprint','synthetic-sprint');assert.deepEqual(sprint.milestones.map(m=>m.amount),[375,375]);assert.match(sprint.milestones[1].event,/After you approve the finished work in writing/);assert.equal(sprint.milestones[1].approval_reference,null);assert.equal(sprint.milestones[1].payment_confirmed,false);
- const baseline=await draftScope('website_baseline','synthetic-baseline');assert.equal(baseline.milestones[0].amount,399);assert.match(baseline.commercial_boundaries.acceptance,/review and ordered fix list either way/);assert.match(baseline.commercial_boundaries.terms.remedy,/unearned amount to be refunded/);
- await assert.rejects(()=>draftScope('launch_site','synthetic-invalid',{billing:'annual'}),/only available/);
+ const sprint=await historicalDraft('audit_fix_sprint','synthetic-sprint');assert.deepEqual(sprint.milestones.map(m=>m.amount),[375,375]);assert.match(sprint.milestones[1].event,/After you approve the finished work in writing/);assert.equal(sprint.milestones[1].approval_reference,null);assert.equal(sprint.milestones[1].payment_confirmed,false);
+ const baseline=await historicalDraft('website_baseline','synthetic-baseline');assert.equal(baseline.milestones[0].amount,399);assert.match(baseline.commercial_boundaries.acceptance,/review and ordered fix list either way/);assert.match(baseline.commercial_boundaries.terms.remedy,/unearned amount to be refunded/);
+ await assert.rejects(()=>historicalDraft('launch_site','synthetic-invalid',{billing:'annual'}),/only available/);
 });
 
 test('optional fit choices are allowlisted and never become arbitrary query or message content',()=>{
@@ -91,4 +79,17 @@ test('native validation and corrected submission retain offer choices without pe
   const saved=await fetch(url+'/api/inquiries',{method:'POST',body:new URLSearchParams({...lead,...choices})});assert.equal(saved.status,201);const savedHtml=await saved.text();assert.match(savedHtml,/Annual prepaid/);assert.match(savedHtml,/Prepare a newsletter/);
   const payload=JSON.parse(db.prepare('SELECT payload FROM inquiries').get().payload);assert.equal(payload.billing,'annual');assert.equal(payload.priority,'email');assert.equal(payload.baseline_status,'needed');
  }finally{await new Promise(done=>server.close(done));await rm(runtime,{recursive:true,force:true});}
+});
+
+test('current V3 annual requests are rejected and monthly care is charged once',async()=>{
+ for(const id of ['keep_running','improve','local_focus','grow']){
+  await assert.rejects(()=>draftScope(id,'synthetic-no-new-annual',{billing:'annual'}),/annual/i);
+  assert.throws(()=>calculateCost(prices,{build:'existing',plan:id,billing:'annual',cycles:12}),/Annual enrollment is unavailable/);
+ }
+ for(const [id,monthly] of [['keep_running',275],['improve',1250],['local_focus',850],['grow',1750]]){
+  const cost=calculateCost(prices,{build:'existing',plan:id,cycles:1,hostingMonths:1,hostingMonthly:0,external:0});
+  assert.equal(cost.total,monthly);assert.equal(cost.baselineFee,0);assert.equal(cost.onboardingFee,0);
+ }
+ assert.equal(calculateCost(prices,{build:'existing',plan:'keep_running',careVariant:'commerce',cycles:1,hostingMonths:1,hostingMonthly:0,external:0}).total,450);
+ assert.equal(calculateCost(prices,{build:'existing',plan:'improve',careVariant:'commerce',cycles:1,hostingMonths:1,hostingMonthly:0,external:0}).total,1425);
 });

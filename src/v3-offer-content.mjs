@@ -1,0 +1,92 @@
+import {normalizeOfferCatalog,offerRecord,buildOfferIds,monthlyOfferIds,currentOfferIds,countWords,titleCount} from './offer-catalog.mjs';
+import {escapeHtml as e,money} from './shared.mjs';
+
+export const isV3=o=>o?.catalog_format===3;
+export const v3List=items=>`<ul>${items.map(t=>`<li>${e(t)}</li>`).join('')}</ul>`;
+const customerPolicies={
+ 'Website and store payments':'40% reserves the agreed start, 30% is due after approval of copy and design direction, and 30% after staging acceptance before the scheduled launch. Your proposal lists the dollar amounts and approval milestones. Production starts after scope approval and initial payment.',
+ 'Monthly service':'One month is billed in advance on an agreed date. Service is month-to-month, with no annual lock-in. Cancel before the next billing date to prevent renewal; the current paid cycle remains available. Your agreement includes renewal dates and cancellation instructions.',
+ 'Unused monthly work':'Unused edit and output allowances do not accumulate. If inputs are missing, I flag this by day 10 and propose an agreed alternative. If no useful work can proceed, we arrange a pause before the next cycle. If I miss an agreed output for my own reasons, you choose a dated carry-forward or a proportionate credit or refund for the undelivered work.',
+ 'Project cancellation':'If a project ends early, we reconcile completed agreed work and approved nonrecoverable outside expenses, then return unearned prepaid fees. The proposal sets the reconciliation and payment timetable. Existing agreements retain their accepted terms.',
+ 'Outside costs':'Your proposal lists domain, hosting or platform, fonts or stock assets, apps, payment and integration usage, backup tools and other outside fees before you sign. Listed prices are studio service fees in USD; applicable tax is shown separately.',
+ 'Reuse and credits':'When a usable paid review, strategy or existing setup replaces work in the new scope, your proposal identifies what is reused and the corresponding credit. You do not pay twice for overlapping work.',
+ 'Accounts':'You own your domain and business or platform accounts from the start wherever the provider supports this. I use delegated access. Your existing accounts and data remain yours, including during a billing disagreement.',
+ 'Deliverables and licenses':'You receive the agreed original deliverables and editable source files under the project agreement after the relevant fees are paid. The handoff identifies licensed fonts, stock assets, open-source components, platform restrictions and any AI-assisted assets. Those materials retain their applicable license and ownership limits.',
+ 'Exit':'You receive the current account, license and export inventory plus agreed source files. I remove delegated access when requested after handoff and explain platform export limits. A new migration or extra training is quoted before work; Google Business Profile handoffs follow its prompt separation rules.',
+ 'Replacement modules':'If an addition replaces included work, you pay only for the incremental scope. For example, a guided form upgrade credits the ordinary form work it replaces. Your proposal records that credit and the checks that still apply.',
+ 'Layouts and accessibility checks':'I check the agreed mobile and desktop layouts, keyboard navigation, focus, headings, labels, contrast, form validation and reduced-motion behavior. Automated checks and manual review of essential journeys use WCAG 2.2 AA as the reference. This is not an independent certification or an exhaustive accessibility audit.',
+ 'Browser and journey checks':'Essential journeys are checked in current Chrome and Firefox, with WebKit-based coverage. Your completion record identifies the browsers and any physical devices tested. Form receipt and confirmation are verified; stores include the agreed transaction scenarios.',
+ 'Performance':'At kickoff we agree representative pages and performance budgets, including the homepage and each materially different key page or journey. The proposed lab targets for studio-controlled pages are median FCP ≤1.8s, LCP ≤2.5s, TBT ≤200ms and Speed Index ≤3.4s across three desktop and three mobile runs per representative page, with worst CLS ≤0.1. Reports use consistent test conditions; I remedy studio-controlled failures before launch.',
+ 'Performance limits':'Hosted-platform constraints, vendor scripts and third-party checkout are identified before booking. Any necessary exception includes its specific cause, effect and your acceptance. Lab results do not guarantee every visitor’s experience or replace field Core Web Vitals, including INP.',
+ 'Search foundations':'Launch checks cover indexability, canonical URLs, sitemap, metadata, relevant structured data and agreed redirects. Search Console is verified or submitted when access is available. These tasks support discovery without promising indexing, rankings or traffic.',
+ 'Ownership and handoff':'Your handoff includes the account and license inventory, agreed source files, an editing guide and recorded demonstration, recovery responsibilities, tested contact or booking path, outside costs and support dates. We verify your access and one real editing task. Optional live training is available within the plan allowance.'
+};
+export const v3Policy=(o,group,title)=>customerPolicies[title]??o.v3_policies[group].find(([label])=>label===title)?.[1]??'';
+export const v3ServicePath=(o,id)=>offerRecord(o,id)?.service_path||(buildOfferIds.includes(id)?'/services/web-design/':id==='keep_running'?'/services/website-care/':['improve','local_focus','grow'].includes(id)?'/services/seo/':'/services/website-audit/');
+export const v3Price=p=>p.public_price??p.monthly_price??p.one_time_price;
+const brief={
+ launch_site:['Up to 8 pages with original writing and search-ready page planning.','An established design direction adapted to your brand, one original graphic and up to eight prepared images.','One tested contact form and one link or embed for an existing booking/payment tool.'],
+ focused_site:['Up to 10 pages with original writing, useful FAQs and one supplied-evidence case study within the total.','Original homepage art direction and up to three reusable interior page types.','Basic GA4, Search Console and one inquiry-success event, with approved consent settings.'],
+ business_site:['Up to 15 pages, including one researched practical guide within the total.','Original visual direction, a deeper service structure and up to two primary inquiry journeys.','Basic measurement, tested forms, source files and a recorded editing handoff.'],
+ signature_site:['Up to 20 pages, including up to two researched practical guides within the total.','A distinctive visual system for a larger service portfolio and up to three inquiry journeys.','One lightweight motion treatment for a hero or diagram, up to 20 seconds, with reduced-motion and still fallbacks.'],
+ keep_running:['Brochure care: $275/month for up to 20 pages. Commerce care: $450/month for up to 100 products.','Monitoring, monthly checks and supported maintenance, with quarterly recovery tests.','One batch of supplied edits: up to 30 minutes for a brochure site or 45 minutes for a store.'],
+ improve:['One main improvement each month: a new page, up to two page rewrites, an ordinary form/journey or a bounded section.','Research, writing, implementation, one feedback round and checks for the selected work.','Brochure Website Care included; a supported commerce site adds $175/month.'],
+ local_focus:['One monthly output: improve an existing service page OR selected profile fields and review messages.','One location and service area, profile accuracy checks and a factual action report.','Brochure Website Care included, with no second Care bill for the same site.'],
+ grow:['Two monthly content/SEO units; a researched guide uses both units.','One local profile, priority listings, a 90-day plan and conditional, relevant outreach.','Brochure Website Care included; report delivered work and available search observations.'],
+ website_baseline:['An evidence-backed review and prioritized action plan for one existing website.','Clear recommendations, supporting evidence and a review of what another provider could implement.','Review and guidance only; implementation is quoted separately.'],
+ audit_fix_sprint:['Up to three agreed fixes within six planned implementation hours.','Confirm the affected pages, exact changes and acceptance checks before work.','Implemented work, before-and-after evidence, retesting and a clear handoff.'],
+ brand_message:['Clarify your audience, positioning, offer and core business messages.','A usable message framework and visual-direction brief for the next stage.','Original logo production is available as a separately scoped addition.'],
+ storefront:['A branded storefront with up to six information pages and 20 supplied products.','A supported platform, agreed payments/shipping setup and a tested checkout path.','Order-notification checks, launch approval, account inventory and recorded handoff.'],
+ local_presence:['Set up or improve one eligible, client-owned local business profile.','Consistent business details, agreed priority listings and a record of submissions.','Two follow-up checks within 30 days; platform verification and rankings are not guaranteed.'],
+ workflow:['Connect one defined workflow across supported tools.','Implement and test the agreed trigger, actions and failure path.','Document account ownership, usage costs and how to maintain the workflow.'],
+ systems:['Map requirements, users, data, risks and acceptance criteria before a custom build.','A buildable scope, prototype/specification and a go/no-go recommendation.','Production software is separately quoted after discovery.']
+};
+export function v3Summary(o,id){
+ o=normalizeOfferCatalog(o);const p=offerRecord(o,id);if(!p?.v3)throw Error('Unknown V3 offer: '+id);
+ const points=[...brief[id]];
+ if(buildOfferIds.includes(id))points[0]=points[0].replace(/Up to \d+ pages/,`Up to ${p.marketing_page_cap} pages`);
+ if(id==='keep_running')points[0]=`Brochure care: ${money(p.monthly_price)}/month for up to ${o.care_variants.brochure.page_cap} pages. Commerce care: ${money(o.care_variants.commerce.price)}/month for up to ${o.care_variants.commerce.product_cap} products.`;
+ if(id==='improve'){
+  points[0]=`${titleCount(p.priorities)} main website improvement${p.priorities===1?'':'s'} each month: choose a new page, up to two page rewrites, an ordinary form/journey or a bounded section for each output.`;
+  points[2]=`Brochure Website Care included; a supported commerce site adds ${money(o.care_variants.improvement_commerce_supplement)}/month.`;
+ }
+ if(id==='grow'){
+  points[0]=`${titleCount(p.priorities)} monthly content/SEO units; a researched guide uses two units.`;
+  points[1]=`One local profile, priority listings, a ${p.growth_plan.days}-day plan and conditional, relevant outreach.`;
+ }
+ if(['business_site','signature_site'].includes(id))points[0]=`Up to ${p.marketing_page_cap} pages, including up to ${countWords(p.launch_content.articles)} researched practical guide${p.launch_content.articles===1?'':'s'} within the total.`;
+ return {id,name:p.public_name,build:buildOfferIds.includes(id),monthly:monthlyOfferIds.includes(id),price:v3Price(p),fit:p.v3.fit,points,briefPoints:points,offer:p};
+}
+export function v3Cards(o,ids,{anchors=false,compact=false,firstYear=false}={}){
+ return `<div class="v3-offer-grid${compact?' v3-offer-grid--compact':''}" role="group" aria-label="Service options">${ids.map(id=>{
+ const s=v3Summary(o,id),p=s.offer;
+ return `<article class="v3-offer-card"${anchors?` id="offer-${e(id)}"`:''}><p class="eyebrow">${s.monthly?'Ongoing partnership':s.build?'Website project':'Focused project'}</p><h3>${e(s.name)}</h3><p class="v3-price">${money(s.price)} <span>${s.monthly?'/month':'fixed fee'}</span></p><p class="v3-result">${e(p.v3.result)}</p>${v3List(s.briefPoints)}<p class="v3-timing"><strong>Planned timing:</strong> ${e(p.v3.timeline)}.</p>${s.build&&firstYear?`<p>Monthly help is optional. First-year cost is this project fee plus your actual domain, platform and tool bills, tax and approved extras.</p>`:''}<details><summary>Who this is for</summary><p>${e(p.v3.fit)}</p></details><div class="offer-purchase-actions"><a class="button" href="/checkout/${id.replaceAll('_','-')}/">Request ${e(s.name)}</a><a class="text-link" href="/assets/buyer-packs/${id}">Full scope &amp; terms</a></div></article>`;
+ }).join('')}</div>`;
+}
+export function v3Editing(o){return 'We agree on your platform and editing workflow before booking. You receive written instructions, a recorded demonstration and an account/source inventory. The proposal explains which changes you can make yourself and which need a developer. Your domain and service accounts stay under your control; platform and third-party license limits are recorded.';}
+export function v3Enrollment(o){const v=o.care_variants;return `Care starts after a compatibility and recovery check. Existing-site onboarding is ${money(v.brochure.onboarding)} for a brochure site or ${money(v.commerce.onboarding)} for a store when needed. A usable prior handoff or paid review reduces duplicated work and the quoted fee. The ${o.baseline.public_name} is a separate diagnostic service, not an automatic enrollment charge. Eligibility and the exact first invoice are confirmed before payment.`;}
+export function v3CareBoundary(){return 'Care includes the supported maintenance and representative recovery tests agreed for your platform. Major upgrades, abandoned plugins, malware cleanup and recovery from unrelated incidents are separately approved work. I correct maintenance regressions I cause, including necessary rollback. Monitoring is automated; human response and triage follow the business calendar.';}
+export function v3Timing(o,id){return (id?`${offerRecord(o,id).public_name}: ${offerRecord(o,id).v3.timeline}. `:buildOfferIds.map(key=>`${o[key].public_name}: ${o[key].v3.timeline}`).join('; ')+'. ')+o.delivery_conditions;}
+export function v3MonthlyDetails(o,id){const p=o.plans[id];if(!p?.v3)throw Error('Unknown monthly plan');return {
+ included:p.v3.includes,acceptance:[...p.v3.acceptance,'Defect corrections and already-promised work never consume a paid monthly output.'],
+ renewal:[`${money(p.monthly_price)}/month; ${v3Policy(o,'money_and_ownership','Monthly service')}`,v3Policy(o,'money_and_ownership','Unused monthly work')],
+ exit:[v3Policy(o,'money_and_ownership','Exit'),v3Policy(o,'money_and_ownership','Project cancellation')],exclusions:p.v3.excludes
+};}
+export function v3Packs(o){o=normalizeOfferCatalog(o);return currentOfferIds(o).map(id=>{
+ const s=v3Summary(o,id),p=s.offer,v=p.v3;
+ const row=(title,items,disclosure=false)=>({title,items:(Array.isArray(items)?items:[items]).filter(Boolean),disclosure});
+ const stages=v.stages.map(([stage,text])=>stage+': '+text);
+ const payments=s.monthly?v3MonthlyDetails(o,id).renewal:p.payment_schedule.map(m=>`${money(m.amount)} — ${m.event} (${m.percent}%).`);
+ const includes=v.includes.map(t=>t.replace('preparation, testing, communication and contingency are budgeted separately.','preparation, testing, communication and handoff are included in the fixed fee.'));
+ const sections=[row('Is this right for me?',[v.fit,v.result]),row('What you get',includes),row('What is not included?',v.excludes,true),row('Before we start',v.inputs),row('Delivery and review',[`Planned delivery: ${v.timeline}.`,...stages,o.delivery_conditions]),row('How you approve the work',v.acceptance),row('Payments and outside costs',[...payments,v3Policy(o,'money_and_ownership','Outside costs'),v3Policy(o,'money_and_ownership','Reuse and credits')]),row('Support after delivery',v.support),row('Ownership and cancellation',[v3Policy(o,'money_and_ownership','Accounts'),v3Policy(o,'money_and_ownership','Deliverables and licenses'),v3Policy(o,'money_and_ownership','Project cancellation'),v3Policy(o,'money_and_ownership','Exit')],true)];
+ if(id==='local_presence')sections.push(row('Eligibility and assessment',v.note));
+ if(id==='audit_fix_sprint')sections.push(row('Your fixed scope','The six-hour implementation allowance defines the scope before booking. I finish the unchanged accepted deliverables even if I underestimate the time. A newly discovered dependency or changed requirement needs an agreed remedy before extra charges. Where independent known faults fit Single Website Fix, I compare those additions with the coordinated sprint rather than automatically charging for a sprint.'));
+ if(s.monthly)sections.push(row('Care eligibility and onboarding',v3Enrollment(o)));
+  sections.push(row('Optional website add-ons','Explore additional pages, guides, measurement, identity and useful tools at https://wonderandmethod.com/services/website-addons/. Your included work stays included; the proposal credits overlapping work before confirming an addition.'));
+  if(s.build||id==='storefront')sections.push(row('Launch checks and handoff',o.v3_policies.shared_launch_standards.filter(([label])=>['Layouts and accessibility checks','Browser and journey checks','Performance','Performance limits','Search foundations','Ownership and handoff'].includes(label)).map(([label])=>label+': '+v3Policy(o,'shared_launch_standards',label)),true));
+ sections.push(row('Questions and communication','Email or the agreed text channel anytime. During active delivery and the applicable support period, I acknowledge within one business day, Monday–Friday, 9am–5pm Eastern, excluding announced holidays. Written reviews and recorded demonstrations are standard; calls are optional. The next action and resolution estimate are separate from acknowledgement.'));
+ // Avoid repeated sentences within a pack while keeping every distinct rule.
+ const seen=new Set(),segmenter=new Intl.Segmenter('en',{granularity:'sentence'});
+ for(const section of sections)section.items=section.items.map(item=>[...segmenter.segment(item)].map(({segment})=>{const key=segment.trim().replace(/\s+/gu,' ').toLowerCase();if(seen.has(key))return '';seen.add(key);return segment;}).join('').trim()).filter(Boolean);
+ return {id,name:s.name,summary:s,scopeStatus:'Proposal details. Sending a request does not book work, accept terms or make a payment.',request:`/checkout/${id.replaceAll('_','-')}/`,price:s.price,priceLabel:s.monthly?'/month':'fixed fee',sections};
+});}

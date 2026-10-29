@@ -9,17 +9,20 @@ import {inquiryContextSummary} from '../src/shared.mjs';
 const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const offers=await load('config/offers.json'),config=await load('config/site.json');
 
-test('monthly checkout states setup plus the first cycle and the baseline waiver',()=>{
+test('monthly checkout explains conditional onboarding and prevents duplicate review fees',()=>{
  const pages=checkoutPages(offers,intakeContent(config));
- for(const [slug,total] of [['keep-running','$549'],['improve','$799'],['grow','$1,199']]){
-  const body=pages.find(p=>p.path===`/checkout/${slug}/`).body;
-  const header=body.split('</header>')[0];assert.ok(header.includes(total));assert.match(body,/previous Website Baseline, website I built or Audit &amp; Fix Sprint already provides a usable review/);assert.match(body,/up to 12 agreed main pages/);assert.match(body,/updates.*backups.*restores.*malware cleanup/);assert.ok(body.includes(total));assert.match(body,/\$399.*Website Baseline/);assert.match(body,/do not pay for it twice/);
+ for(const [slug,monthly] of [['keep-running','$275'],['improve','$1,250'],['local-focus','$850'],['grow','$1,750']]){
+  const body=pages.find(p=>p.path===`/checkout/${slug}/`).body,before=body.slice(0,body.indexOf('<form'));
+  assert.ok(before.includes(monthly));assert.match(before,/\$375/);assert.match(before,/\$650/);
+  assert.match(before,/usable prior handoff or paid review reduces duplicated work/);assert.match(before,/not an automatic enrollment charge/);
+  assert.match(before,/Eligibility and the exact first invoice are confirmed before payment/);assert.match(before,/month-to-month/);
  }
 });
-test('all eight offers have request-only checkout with the exact service preserved without JavaScript',()=>{
- const pages=checkoutPages(offers,intakeContent(config));assert.equal(pages.length,8);assert.equal(new Set(pages.map(p=>p.path)).size,8);
+
+test('all fifteen offers have request-only checkout with the exact service preserved without JavaScript',()=>{
+ const pages=checkoutPages(offers,intakeContent(config));assert.equal(pages.length,15);assert.equal(new Set(pages.map(p=>p.path)).size,15);
  for(const page of pages){const id=page.path.split('/')[2].replaceAll('-','_');assert.match(page.body,new RegExp(`name="service" value="${id}"`));assert.match(page.body,/name="request_kind" value="checkout"/);assert.match(page.body,/Nothing is booked or charged when you send this/);assert.match(page.body,/action="\/api\/inquiries"/);assert.doesNotMatch(page.body,/buy\.stripe\.com|invoice\.stripe\.com|name="(?:card|cvc|card_number)"/);}
- assert.match(pages.find(p=>p.path.includes('audit-fix-sprint')).body,/\$375/);assert.match(pages.find(p=>p.path.includes('website-baseline')).body,/\$399/);assert.match(pages.find(p=>p.path.includes('focused-site')).body,/\$1,175/);
+ assert.match(pages.find(p=>p.path.includes('audit-fix-sprint')).body,/\$900/);assert.match(pages.find(p=>p.path.includes('website-baseline')).body,/\$650/);assert.match(pages.find(p=>p.path.includes('focused-site')).body,/\$1,800/);
 });
 test('checkout and service-question context survives validation, status and native correction',()=>{
  for(const kind of ['checkout','question']){
@@ -47,7 +50,8 @@ test('checkout explains the email reply and preserves synthetic-preview boundari
 test('build checkout keeps editing limits in the package details before the form and outside costs accessible',()=>{
  for(const page of checkoutPages(offers,intakeContent(config)).filter(p=>/-site\/$/.test(p.path))){
   const beforeForm=page.body.slice(0,page.body.indexOf('<form'));
-  assert.match(beforeForm,/No visual or drag-and-drop editor is included/);assert.match(beforeForm,/Future changes require editing and publishing the website files/);assert.match(beforeForm,/You can do this yourself if you have those skills, use another developer, or ask me about optional care/);assert.match(page.body,/Domain, hosting, paid tools and approved extras cost separately/);
-  assert.ok(page.body.indexOf('No visual or drag-and-drop editor is included')<page.body.indexOf('<form'));assert.match(page.body,/href="\/assets\/buyer-packs\//);
+  assert.match(beforeForm,/platform and editing workflow before booking/);assert.match(beforeForm,/which changes you can make yourself/);assert.match(beforeForm,/which need a developer/);
+  assert.match(beforeForm,/outside fees before you sign|cost separately/);assert.match(page.body,/href="\/assets\/buyer-packs\//);
+
  }
 });

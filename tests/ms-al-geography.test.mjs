@@ -1,3 +1,4 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -30,7 +31,7 @@ const mnOkStates=[...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrP
 
 const states=['mississippi','alabama'];
 const laterStates=['wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates];
-const isLater=path=>laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
+const isLater=path=>v3OfferPaths.includes(path)||laterStates.some(state=>path.startsWith('/areas/'+state+'/'));
 const isAddition=path=>states.some(state=>path.startsWith('/areas/'+state+'/'));
 
 test('MS and AL preserve all 1088 earlier records and 1284 earlier area identities',()=>{

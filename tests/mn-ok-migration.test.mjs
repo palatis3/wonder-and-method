@@ -1,3 +1,4 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -8,6 +9,9 @@ import paths from './fixtures/mn-ok-approved-paths.json' with {type:'json'};
 import ksNePaths from './fixtures/ks-ne-approved-paths.json' with {type:'json'};
 import ndSdPaths from './fixtures/nd-sd-approved-paths.json' with {type:'json'};
 import {journeyPageKey} from '../src/journey-page-key.mjs';
+const v3PageKeys=new Set(v3OfferPaths.map(journeyPageKey));
+// Compare this historical migration before the twelve explicit 0049 additions.
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
@@ -64,7 +68,7 @@ test('0040 adds exactly two Minnesota/Oklahoma directories and 141 reviewed coun
  assert.equal(nextKeys.length,1759);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].sort(),[...nextKeys,...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...azOrPaths.map(journeyPageKey),...nvWaPaths.map(journeyPageKey),...coUtPrPaths.map(journeyPageKey),...idMtPaths.map(journeyPageKey),...wyHiAkPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey)].sort());
+ assert.deepEqual([...journeyPages].filter(key=>!v3PageKeys.has(key)).sort(),[...nextKeys,...ksNePaths.map(journeyPageKey),...caNmPaths.map(journeyPageKey),...azOrPaths.map(journeyPageKey),...nvWaPaths.map(journeyPageKey),...coUtPrPaths.map(journeyPageKey),...idMtPaths.map(journeyPageKey),...wyHiAkPaths.map(journeyPageKey),...ndSdPaths.map(journeyPageKey)].sort());
  // SQLite quotes the renamed table. Only the 143 approved page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()).replaceAll('\r\n','\n'),oldSchema.replaceAll('\r\n','\n'));
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

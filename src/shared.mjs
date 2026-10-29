@@ -1,4 +1,4 @@
-import {normalizeOfferCatalog,countWords} from './offer-catalog.mjs';
+import {normalizeOfferCatalog,countWords,offerRecord,buildOfferIds,monthlyOfferIds} from './offer-catalog.mjs';
 import {normalizeAddonSelection,priceAddons} from './addons.mjs';
 import offers from '../config/offers.json' with {type:'json'};
 import {serviceAreaContextOptions as countyContextOptions} from './inquiry-area-context.mjs';
@@ -8,7 +8,7 @@ export const money=value=>new Intl.NumberFormat('en-US',{style:'currency',curren
 export const moneyExact=value=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);
 export function inquiryNeedsWebsite(value={}){return value.request_kind==='checkout'&&['website_baseline','audit_fix_sprint'].includes(resolveServiceId(value.service));}
 export function inquiryWebsiteField(value={}){
- const required=inquiryNeedsWebsite(value),monthly=['keep_running','improve','grow'].includes(resolveServiceId(value.service));
+ const required=inquiryNeedsWebsite(value),monthly=['keep_running','improve','local_focus','grow'].includes(resolveServiceId(value.service));
  return required?{label:'Website to review',note:'required',required,placeholder:'example.com',help:'Use a website address, such as example.com. It can be offline or broken; I do not need passwords.'}
  :monthly?{label:'Your website',note:'if you have one',required,placeholder:'example.com',help:'No website yet, or I’m building your site? Leave blank and say so in your message.'}
   :{label:'Website or social page',note:'optional',required,placeholder:'example.com or @yourbusiness',help:'A link, social handle or short note is fine. Leave blank if you do not have one.'};
@@ -19,17 +19,18 @@ export function shortInquiryReference(reference){
  return 'WM-'+reference.replaceAll('-','').slice(0,12).toUpperCase().match(/.{4}/g).join('-');
 }
 const cents=value=>{const n=Math.round((value+Number.EPSILON)*100);if(!Number.isSafeInteger(n))throw new Error('Invalid cost inputs');return n;};
-export const inquiryChoices=[['launch_site',offers.launch_site.public_name],['focused_site',offers.focused_site.public_name],['signature_site',offers.signature_site.public_name],['keep_running',offers.plans.keep_running.public_name+' — website care'],['improve',offers.plans.improve.public_name+' — monthly SEO and website improvement'],['grow',offers.plans.grow.public_name+' — monthly SEO and website improvements'],['audit_fix_sprint',offers.audit_sprint.public_name],['website_baseline',offers.baseline.public_name],['unsure','Help me choose']];
+export const inquiryChoices=[...offers.service_menu.map(p=>[p.id,p.name]),['unsure','Help me choose']];
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 // The browser build projects offers.json to these public names and prices only.
 export function inquiryOffer(service,o=offers){
- const id=resolveServiceId(service),monthly=['keep_running','improve','grow'].includes(id);
- const offer=['launch_site','focused_site','signature_site'].includes(id)?o[id]:monthly?o.plans[id]:id==='website_baseline'?o.baseline:id==='audit_fix_sprint'?o.audit_sprint:null;
+ const id=resolveServiceId(service),monthly=['keep_running','improve','local_focus','grow'].includes(id);
+ const offer=offerRecord(o,id);
  return offer?{id,name:offer.public_name,price:monthly?offer.monthly_price:offer.public_price??offer.one_time_price,monthly}:null;
 }
 export function inquiryChoiceLabel(service,o=offers){
  const offer=inquiryOffer(service,o);if(!offer)return 'Not sure — help me choose';
+ if(o.catalog_format===3)return `${offer.name} — ${money(offer.price)}${offer.monthly?'/month':''}`;
  const monthly={keep_running:'website care',improve:`${countWords(o.plans.improve.priorities)} SEO improvement${o.plans.improve.priorities===1?'':'s'} a month`,grow:`${countWords(o.plans.grow.priorities)} SEO improvement${o.plans.grow.priorities===1?'':'s'} a month`};
  return offer.monthly?`${offer.name} — ${monthly[offer.id]} (${money(offer.price)}/mo)`:`${offer.name} — ${money(offer.price)}${offer.id==='website_baseline'?' review':''}`;
 }
@@ -37,7 +38,7 @@ export function inquirySubmitLabel(service='',checkout=false,requestKind='',o=of
  if(!checkout)return 'Send message';
  const offer=inquiryOffer(service,o);if(!offer)return 'Request my proposal';
  if(requestKind==='question')return `Send my ${offer.name} question`;
- return offer.monthly?`Request ${offer.id==='improve'?'an':'a'} ${offer.name} proposal`:offer.id==='website_baseline'?`Request my ${offer.name}`:offer.id==='audit_fix_sprint'?`Request my ${offer.name.replace(' Sprint','')} proposal`:`Request my ${offer.name.replace(' Website','')} proposal`;
+ return offer.monthly?`Request ${/^[aeiou]/i.test(offer.name)?'an':'a'} ${offer.name} proposal`:offer.id==='website_baseline'?`Request my ${offer.name}`:offer.id==='audit_fix_sprint'?`Request my ${offer.name.replace(' Sprint','')} proposal`:`Request my ${offer.name.replace(' Website','')} proposal`;
 }
 export function inquiryMessagePrompt(service='',requestKind='checkout',neutral=false){
  return 'Your message';
@@ -52,8 +53,8 @@ export function inquiryMessageHelp(service='',requestKind='checkout',goal='',neu
   :goal==='care'?'What ongoing help would be useful for your website?'
   :id==='website_baseline'?`Tell me what seems wrong, or what you want the ${catalog.baseline.public_name} review to help you decide.`
   :id==='audit_fix_sprint'?'Include the page address, what goes wrong and what should happen instead.'
-  :['keep_running','improve','grow'].includes(id)?'What would you like help with each month?'
-  :['launch_site','focused_site','signature_site'].includes(id)?'What do you do, where do you work and what should your new website help people do? Add a deadline if you have one.'
+  :['keep_running','improve','local_focus','grow'].includes(id)?'What would you like help with each month?'
+  :['launch_site','focused_site','business_site','signature_site'].includes(id)?'What do you do, where do you work and what should your new website help people do? Add a deadline if you have one.'
   :neutral?'Ask a question, or tell me what you’d like to change.':'Tell me what you need and any important dates.';
  return hint+(requestKind==='checkout'?' Questions are welcome here too.':'')+' No passwords, payment details or sensitive information. Use 10–3,000 characters.';
 }
@@ -63,21 +64,21 @@ export const inquiryContextFields={
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
  found_via:{label:'How did you find me?',services:inquiryChoices.map(([id])=>id),options:[['google','Google Search'],['search','Google or another search engine'],['maps','Google Maps / Business Profile'],['ai','AI assistant (ChatGPT, Copilot or similar)'],['referral','Personal recommendation'],['social','Social media'],['directory','Business directory'],['returning','I have visited before'],['other','Another way']]},
  request_kind:{label:'Request type',services:inquiryChoices.map(([id])=>id),options:[['checkout','Proposal request'],['question','Ask a question']]},
- care_interest:{label:'Monthly help to discuss after launch (not enrolled)',services:['launch_site','focused_site','signature_site','unsure'],options:[['keep_running',offers.plans.keep_running.public_name+' website care'],['improve',offers.plans.improve.public_name+' monthly SEO'],['grow',offers.plans.grow.public_name+' monthly SEO'],['discuss','Help me compare the options']]},
- booking_choice:{label:'A booking or newsletter connection',services:['launch_site','focused_site','signature_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
+ care_interest:{label:'Monthly help to discuss after launch (not enrolled)',services:['launch_site','focused_site','business_site','signature_site','unsure'],options:[['keep_running',offers.plans.keep_running.public_name+' website care'],['improve',offers.plans.improve.public_name],['local_focus',offers.plans.local_focus.public_name],['grow',offers.plans.grow.public_name],['discuss','Help me compare the options']]},
+ booking_choice:{label:'A booking or newsletter connection',services:['launch_site','focused_site','business_site','signature_site'],options:[['booking','Ready booking link/embed'],['newsletter','Ready newsletter link/embed'],['decide','Choose after fit review']]},
  priority:{label:'First monthly improvement',services:['improve','grow'],options:[['page','Improve a service page or supported inquiry path'],['article','Research and write an article or customer guide'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
  priority_two:{label:'Second connected Grow improvement',services:['grow'],options:[['page','Improve a service page or supported inquiry path'],['article','Research and write an article or customer guide'],['gbp','Update an eligible business profile'],['graphic','Promotional graphic'],['email','Prepare a newsletter draft or setup'],['decide','Choose after review']]},
  baseline_status:{label:'Existing baseline',services:['keep_running','improve','grow','website_baseline','audit_fix_sprint'],options:[['new_build','Recent paid studio build'],['sprint','Usable prior Sprint'],['needed','No usable baseline'],['unknown','Needs review']]},
- billing:{label:'Service billing',services:['keep_running','improve','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
+ billing:{label:'Service billing',services:['keep_running','improve','local_focus','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
 };
-export function inquiryAllowsMonthlyInterest(value={}){const service=resolveServiceId(value.service);return ['launch_site','focused_site','signature_site'].includes(service)||service==='unsure'&&['new_website','redesign'].includes(value.goal);}
+export function inquiryAllowsMonthlyInterest(value={}){const service=resolveServiceId(value.service);return ['launch_site','focused_site','business_site','signature_site'].includes(service)||service==='unsure'&&['new_website','redesign'].includes(value.goal);}
 export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&(key!=='care_interest'||inquiryAllowsMonthlyInterest(value))&&field.options.some(([id])=>id===value[key]))result[key]=value[key];try{const ids=normalizeAddonSelection(value);if(ids.length)result.add_ons=ids;}catch{/* Invalid selections are rejected by inquiry validation. */}return result;}
 // Public forms keep useful link context, without offering inactive annual enrollment.
 // The broader validator/receipt allowlist remains compatible with historical records.
 export function publicInquiryContext(value={},annualEnabled=false){
  const result=selectedInquiryContext(value);
  if(!annualEnabled&&result.billing==='annual')delete result.billing;
- if(!['launch_site','focused_site','signature_site','unsure'].includes(resolveServiceId(value.service))||['fix','care'].includes(result.goal))delete result.concept;
+ if(!['launch_site','focused_site','business_site','signature_site','unsure'].includes(resolveServiceId(value.service))||['fix','care'].includes(result.goal))delete result.concept;
  return result;
 }
 export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.county||value.add_ons?.length);}
@@ -90,7 +91,7 @@ export function inquiryRequestSummary(value={},o=offers,{includeGoal=true}={}){
  if(context.add_ons?.length)parts.push(priceAddons(context.add_ons,o.add_ons).lines.map(item=>`${item.public_name} (${money(item.public_price)} extra)`).join(', '));
  return (context.add_ons?.length&&!offer?'Asking about: ':'')+parts.join(' · ');
 }
-export const priceList=input=>{const o=input.provider_policy?normalizeOfferCatalog(input):input;return ({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});};
+export const priceList=input=>{const o=input.provider_policy?normalizeOfferCatalog(input):input;if(o.catalog_format===3)return {catalog_format:3,add_ons:o.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,business:o.business_site.public_price,signature:o.signature_site.public_price,...Object.fromEntries(['brand_message','storefront','local_presence','workflow','systems'].map(id=>[id,o[id].public_price])),...Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.monthly_price])),baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,care_variants:o.care_variants,annual_available:false,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),commercial_version:o.version,provider_model:o.provider_policy.model};return ({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});};
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {
  if(!prices.hosting_credit||prices.provider_model)throw new Error('Legacy calculation requires a saved hosting-credit snapshot');
@@ -98,7 +99,7 @@ export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
  if(plan!=='none'&&cycles>0&&serviceStart+cycles-1>hostingMonths)throw new Error('Hosting period must include all monthly service months');
  const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:prices[plan];
- const baselineFee=baseline&&build==='existing'&&!sprint?prices.baseline:0;
+ const baselineFee=baseline&&build==='existing'&&(prices.catalog_format===3||!sprint)?prices.baseline:0;
  const once=buildFee+(sprint?prices.sprint:0)+baselineFee,serviceTotal=once+(billing==='annual'?annualUpfront:monthly*cycles);
  if(!Number.isFinite(once)||!Number.isFinite(monthly))throw new Error('Missing service price');
  const buildMonths=build==='existing'?0:Math.min(hostingMonths,prices.hosting_credit?.[build]??0);
@@ -118,29 +119,34 @@ export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=
 }
 
 // Current prospective terms: studio work plus directly paid provider costs, without subsidies.
-export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly',add_ons=[]}={}) {
+export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly',add_ons=[],careVariant='brochure',onboarding='none'}={}) {
  if(prices.provider_model!=='client_owned_direct_billing')throw new Error('Use the explicit legacy calculator with a saved historical snapshot');
- if(!['launch','focused','signature','existing'].includes(build)||!['none','keep_running','improve','grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
+ if(!['launch','focused',...(prices.catalog_format===3?['business','brand_message','storefront','local_presence','workflow','systems']:[]),'signature','existing'].includes(build)||!['none','keep_running','improve',...(prices.catalog_format===3?['local_focus']:[]),'grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
  if(plan!=='none'&&cycles<1)throw new Error('Monthly plans require at least one month');
  if(hostingMonthly!==null&&plan!=='none'&&cycles>hostingMonths)throw new Error('Hosting period must include all monthly service months');
- const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:prices[plan];
- const baselineFee=baseline&&build==='existing'&&!sprint?prices.baseline:0;
+ if(!['brochure','commerce'].includes(careVariant)||!['none','brochure','commerce'].includes(onboarding)||careVariant==='commerce'&&!['none','keep_running','improve'].includes(plan))throw Error('Choose a supported care variant');
+ if(prices.catalog_format===3&&billing==='annual')throw Error('Annual enrollment is unavailable');
+ const variantMonthly=careVariant==='commerce'?(plan==='keep_running'?prices.care_variants?.commerce.price:plan==='improve'?prices.improve+prices.care_variants?.improvement_commerce_supplement:0):prices[plan];
+ const onboardingFee=onboarding==='none'?0:prices.care_variants?.[onboarding]?.onboarding;
+ if(onboarding!=='none'&&add_ons.includes('care_onboarding'))throw Error('Choose onboarding only once');
+ const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:variantMonthly;
+ const baselineFee=baseline&&build==='existing'&&(prices.catalog_format===3||!sprint)?prices.baseline:0;
  const additions=priceAddons(add_ons,prices.add_ons||[]);
- const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee)+cents(additions.total),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
+ const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee)+cents(additions.total)+cents(onboardingFee),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
  const externalCents=external===null?null:cents(external),grossCents=hostingMonthly===null?null:cents(hostingMonthly)*hostingMonths,totalCents=externalCents===null||grossCents===null?null:serviceCents+grossCents+externalCents;
  const knownSubtotalCents=serviceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
  if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents,knownSubtotalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
- return {once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
+ return {onboardingFee,careVariant,once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
 }
 
 export function costEstimateCopy(v,{plan='none',prices={},external=null}={}){
  const empty=v.once===0&&plan==='none'&&v.grossHosting===null&&external===null;
  const missing=v.missingComponents.map(key=>key==='hosting'?'hosting':'domain, email and other paid tools');
  const total=empty?'Choose work or enter provider costs to estimate a total.':`${v.complete?'Estimated total':'Your estimate so far'}: ${money(v.knownSubtotal)}`;
- const onceDetails=[...(v.addonTotal?['selected additions: '+money(v.addonTotal)]:[]),...(v.baselineFee&&v.baselineFee!==v.once?['website review: '+money(v.baselineFee)]:[])];
+ const onceDetails=[...(v.onboardingFee?['care onboarding: '+money(v.onboardingFee)]:[]),...(v.addonTotal?['selected additions: '+money(v.addonTotal)]:[]),...(v.baselineFee&&v.baselineFee!==v.once?['website review: '+money(v.baselineFee)]:[])];
  const breakdown=empty?'':`${money(v.once)} one-time${onceDetails.length?' (including '+onceDetails.join('; ')+')':''}`+(plan==='none'?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[plan]*12)}; annual savings ${money(prices[plan]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payment${v.cycles===1?'':'s'} of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting (${v.hostingMonths} month${v.hostingMonths===1?'':'s'}): ${money(v.grossHosting)}.`)+(external===null?'':` Domain, email and tools: ${money(external)}.`);
- const note=(missing.length?`Still to add: ${missing.join('; ')}. `:'')+'Tax, unselected items and work beyond the listed allowances are extra.';
+ const note=(missing.length?`Still to add: ${missing.join('; ')}. `:'')+'Tax, unselected items and work beyond the listed allowances are extra. '+(prices.catalog_format===3?'This estimate uses listed fees before scope credits. Included onboarding and reusable setup are credited in your written proposal; overlapping work is never billed twice.':'');
  return {total,breakdown,note};
 }
 

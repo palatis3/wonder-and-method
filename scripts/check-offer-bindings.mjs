@@ -4,6 +4,7 @@ import {renderPages} from '../src/pages.mjs';
 import {buyerPacks} from '../src/buyer-packs.mjs';
 import {journal,journalArticle} from '../src/journal.mjs';
 import {escapeHtml} from '../src/shared.mjs';
+import {assertV3OfferBindings} from './check-v3-offer-bindings.mjs';
 
 // Deliberately unequal values expose shared-limit assumptions. This never writes
 // a catalog or changes an accepted commercial snapshot.
@@ -22,11 +23,13 @@ export function offerBindingProbe(offers){
   'plans.grow.public_name':'Probe & Campaign','plans.grow.monthly_price':901.09,'plans.grow.priorities':4,'plans.grow.small_change_batches':4,'plans.grow.review_minutes':35,'plans.grow.search_scope.active_topics':3,'plans.grow.search_scope.competitor_limit':4,'plans.grow.growth_plan.days':120,
   'plans.grow.promotion_reuse.quantity':2,'plans.grow.promotion_reuse.graphic_sizes':4,'plans.grow.promotion_reuse.newsletter_max_words':200
  };
+ if(offers.catalog_format===3){delete set['focused_site.launch_content.articles'];set['business_site.launch_content.articles']=3;for(const path of Object.keys(set))if(path.includes('promotion_reuse'))delete set[path];}
  for(const [path,value] of Object.entries(set))setCatalogValue(probe,path,value);
  return normalizeOfferCatalog(probe);
 }
 
 export function assertOfferBindings({config,offers,map,geography}){
+ if(offers.catalog_format===3)return assertV3OfferBindings({config,offers,map,geography});
  const probe=offerBindingProbe(offers),pages=renderPages({config,offers:probe,map,geography});
  const routes=new Map(pages.map(page=>[page.path,page]));let assertions=0;
  const has=(path,text)=>{assert.ok(routes.get(path)?.html.includes(text),`Catalog binding missing on ${path}: ${text}`);assertions++;};

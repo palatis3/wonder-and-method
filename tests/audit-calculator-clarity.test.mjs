@@ -45,12 +45,12 @@ test('formatted ROI money preserves the calculation and percentage values remain
 
 test('ROI preset uses offer prices and a reconciled provider assumption with formulas still available',()=>{
  const html=websiteRoiPage();
- assert.match(html,/name="oneTime" type="text" inputmode="decimal" value="2350"/);
- assert.match(html,/name="monthlyCost" type="text" inputmode="decimal" value="180"/);
+ assert.match(html,/name="oneTime" type="text" inputmode="decimal" value="4500"/);
+ assert.match(html,/name="monthlyCost" type="text" inputmode="decimal" value="305"/);
  assert.match(html,/name="closeRate" type="number" inputmode="decimal" min="0" max="100"/);
- assert.match(html,/25 means one in four/);assert.match(html,/optional Keep Running/);
+ assert.match(html,/25 means one in four/);assert.match(html,/optional Website Care/);
  assert.match(html,/<details><summary>How this is calculated<\/summary>/);
- assert.match(html,/\$20\/month hosting and \$120\/year/);assert.match(html,/\$4,510/);assert.match(html,/\$1,490/);
+ assert.match(html,/\$20\/month hosting and \$120\/year/);assert.match(html,/\$8,160/);assert.match(html,/\$2,160/);
  const revised=websiteRoiPage({...offers,focused_site:{...offers.focused_site,public_price:2500},plans:{...offers.plans,keep_running:{...offers.plans.keep_running,monthly_price:175}}});
  assert.match(revised,/name="oneTime" type="text" inputmode="decimal" value="2500"/);assert.match(revised,/name="monthlyCost" type="text" inputmode="decimal" value="205"/);assert.match(revised,/\$4,960/);
  const estimator=costCalculator(offers);for(const name of ['hostingMonthly','external'])assert.match(estimator,new RegExp('name="'+name+'" type="text" inputmode="decimal"'));
@@ -69,11 +69,11 @@ function costFixture(initial={}){
 
 test('cost estimate itemizes entered domain/tools and keeps dollars and cents in the total',()=>{
  const app=costFixture();try{
-  assert.equal(app.output['cost-total'].textContent,'Estimated total: $7,290');
-  assert.equal(app.output['cost-breakdown'].textContent,'$2,350 one-time + 12 monthly payments of $400. Direct hosting (12 months): $120. Domain, email and tools: $20.');
+  assert.equal(app.output['cost-total'].textContent,'Estimated total: $19,640');
+  assert.equal(app.output['cost-breakdown'].textContent,'$4,500 one-time + 12 monthly payments of $1,250. Direct hosting (12 months): $120. Domain, email and tools: $20.');
   app.fields.external.value='$2,350.50';app.fields.hostingMonthly.value='$10.25';app.update();
-  assert.equal(app.output['cost-total'].textContent,'Estimated total: $9,623.50');assert.match(app.output['cost-breakdown'].textContent,/Direct hosting \(12 months\): \$123\. Domain, email and tools: \$2,350.50\./);
-  app.fields.external.value=' ';app.update();assert.match(app.output['cost-total'].textContent,/Your estimate so far: \$7,273/);assert.doesNotMatch(app.output['cost-breakdown'].textContent,/Domain, email and tools:/);
+  assert.equal(app.output['cost-total'].textContent,'Estimated total: $21,973.50');assert.match(app.output['cost-breakdown'].textContent,/Direct hosting \(12 months\): \$123\. Domain, email and tools: \$2,350.50\./);
+  app.fields.external.value=' ';app.update();assert.match(app.output['cost-total'].textContent,/Your estimate so far: \$19,623/);assert.doesNotMatch(app.output['cost-breakdown'].textContent,/Domain, email and tools:/);
  }finally{app.restore();}
 });
 
@@ -88,10 +88,10 @@ test('cost inputs show individual errors and reveal invalid fields inside outsid
  }finally{app.restore();}
 });
 
-test('an existing-site review appears once and is superseded by the Sprint without changing prices',()=>{
+test('a Roadmap and Repair Sprint remain distinct services with proposal-specific reuse credits',()=>{
  const app=costFixture({build:'existing',plan:'none',hostingMonthly:'',external:''});try{
-  assert.equal(app.output['cost-breakdown'].textContent,'$399 one-time.');assert.match(app.output['cost-total'].textContent,/\$399/);
-  app.fields.sprint.checked=true;app.update();assert.equal(app.fields.baseline.disabled,true);assert.equal(app.output['cost-breakdown'].textContent,'$750 one-time.');
+  assert.equal(app.output['cost-breakdown'].textContent,'$650 one-time.');assert.match(app.output['cost-total'].textContent,/\$650/);
+  app.fields.sprint.checked=true;app.update();assert.equal(app.fields.baseline.disabled,false);assert.equal(app.output['cost-breakdown'].textContent,'$2,450 one-time (including website review: $650).');
  }finally{app.restore();}
 });
 

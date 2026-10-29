@@ -217736,45 +217736,45 @@
   {
     "areaId": "idaho/blaine",
     "market": "Blaine County, ID",
-    "lead": "The place that fits a rental customer can differ from the place that hands over the equipment the next morning. I help Blaine County businesses explain that sequence when online and in-person booking routes differ.",
-    "decisionTitle": "Keep the fitting location distinct from next-day equipment pickup.",
-    "decision": "Sun Valley’s rental page describes advance online reservations and an in-person option at Pete Lane’s Village Rental Center when the 48-hour online window has been missed. Customers can be fitted in the Village for equipment waiting the next morning at a selected mountain base area. The page also distinguishes rental types available at Bald and Dollar Mountains.\n\nFor a proposed rental website, I would explain the remaining booking route when the online cutoff has passed without equating that cutoff with sold-out inventory. Show the fitting place, fitting window and chosen pickup place as separate facts. Before handing off a request, check that the product is offered at the selected location. The owner should approve the available route and current seasonal hours; a content page cannot guarantee next-day stock.\n\nUse a hypothetical customer who arrives late in the planning window, gets fitted in the Village and expects to collect gear there the following morning. The preparation summary should repeat the chosen mountain pickup point and the earlier Village visit. If the customer changes mountains or rental category, staff should recheck the handoff instead of carrying the first location forward. The online cutoff and seasonal operating status should have separate wording.",
+    "lead": "A rental confirmation should explain both how equipment reaches the guest and how it gets collected afterward. I help Blaine County businesses keep those two appointments clear.",
+    "decisionTitle": "Separate rental delivery and fitting from final-day collection.",
+    "decision": "Ski Butlers’ Sun Valley page identifies a Ketchum office and describes equipment delivery to accommodations, fitting with additional boot sizes available, and collection after the final rental day. Its FAQ gives a 4–8pm collection window and says the guest does not need to be present.\n\nFor a proposed rental website, I would label the arrival appointment and end-of-rental collection separately. Ask the owner to approve the address, access arrangements and current collection instructions before showing them in a confirmation. A customer’s departure time is not automatically the provider’s collection time.\n\nConsider a hypothetical guest leaving their accommodation before the collection window. The preparation summary should identify who confirms access and where equipment may be left. If the guest changes lodging or extends the rental, the business should reconfirm both arrangements. This is a proposed content and handoff check, not a claim that the provider currently has a website problem or that any collection request is guaranteed.",
     "scopes": [
       {
-        "title": "Explain the late-planning route",
+        "title": "Explain delivery and fitting",
         "pages": [
-          "Online advance window",
-          "In-person fitting option",
-          "Current seasonal hours"
+          "Delivery appointment",
+          "Accommodation details",
+          "Fitting preparation"
         ],
-        "request": "Tell the visitor which documented route remains available to discuss.",
-        "supplies": "Approved cutoff wording, fitting hours and the contact for stock questions.",
-        "check": "A closed online window is not labeled as proof that all rental inventory is sold out."
+        "request": "Make the first appointment clear before the guest expects equipment.",
+        "supplies": "Owner-approved delivery coverage, appointment wording and fitting preparation.",
+        "check": "The confirmation distinguishes equipment arrival from end-of-rental collection."
       },
       {
-        "title": "Preserve both locations",
+        "title": "Plan the final-day handoff",
         "pages": [
-          "Fitting place",
-          "Selected mountain pickup",
-          "Rental types by location"
+          "Collection window",
+          "Departure and access",
+          "Changed accommodation or dates"
         ],
-        "request": "Carry the selected pickup point into preparation instructions.",
-        "supplies": "Current product-location combinations and the actual transfer and pickup process.",
-        "check": "Changing a pickup mountain prompts a check of the selected equipment and instructions."
+        "request": "Identify collection questions that need staff confirmation.",
+        "supplies": "Current collection rules, approved equipment location and the contact for changed arrangements.",
+        "check": "An early departure or changed address prompts confirmation instead of an assumed collection promise."
       }
     ],
-    "scopeTrigger": "A focused preparation page can distinguish fitting and pickup around the current reservation system. A fuller rental site may need product-location explanations. Live stock, cutoff calculations, transfers and booking integrations require separate scope.",
+    "scopeTrigger": "A focused preparation page can clarify delivery, fitting and collection around the existing reservation system. A fuller rental website may need distinct instructions for different service options. Live scheduling, availability, access handling and booking integrations require separate scope.",
     "quoteQuestions": [
-      "What does the online cutoff mean and which in-person route remains?",
-      "Where does fitting happen versus pickup?",
-      "Which rental categories are offered at each pickup site?"
+      "Which delivery and fitting appointment has the guest agreed?",
+      "How is final-day collection arranged if the guest leaves earlier?",
+      "What must staff reconfirm when the address or rental dates change?"
     ],
     "coverageNote": "For website projects in Blaine County, Idaho. Wonder and Method is based in Buffalo, New York, and works online. Named organizations are public planning examples, not clients, partners or endorsements.",
     "sources": [
       {
-        "url": "https://www.sunvalley.com/rentals/?season=winter",
-        "label": "Sun Valley: rental locations and rental FAQ",
-        "observation": "Sun Valley’s rental page describes advance online reservations and an in-person option at Pete Lane’s Village Rental Center when the 48-hour online window has been missed. Customers can be fitted in the Village for equipment waiting the next morning at a selected mountain base area. The page also distinguishes rental types available at Bald and Dollar Mountains."
+        "url": "https://www.skibutlers.com/snowboard-ski-rentals/sun-valley",
+        "label": "Ski Butlers Sun Valley: rental delivery and collection FAQ",
+        "observation": "The operator’s Sun Valley page lists a Ketchum office and describes delivery to accommodations, fitting support and final-day equipment collection. The FAQ states a 4–8pm collection window and that guests need not be present."
       }
     ],
     "outlineNote": "These are content groupings, not a prescribed page count. The written proposal names the pages, forms and connections. You supply and approve current business information.",
@@ -217783,7 +217783,7 @@
     ],
     "path": "/areas/idaho/blaine-county/",
     "title": "Web Design for Blaine County, ID",
-    "description": "Web design for Blaine County, Idaho. Keep the fitting location distinct from next-day equipment pickup.",
+    "description": "Web design for Blaine County, Idaho. Separate rental delivery and fitting from final-day equipment collection.",
     "servedAreas": [
       {
         "name": "Blaine County",
@@ -217801,13 +217801,9 @@
       {
         "path": "/guides/timed-booking-handoff/",
         "label": "Booking confirmations: check-in time, ticket collection and time zones"
-      },
-      {
-        "path": "/guides/experience-product-choice/",
-        "label": "Tour booking pages: compare access, inclusions and product options"
       }
     ],
-    "checkedDate": "2026-10-26"
+    "checkedDate": "2026-10-29"
   },
   {
     "areaId": "idaho/bonner",

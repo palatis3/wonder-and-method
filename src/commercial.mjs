@@ -1,7 +1,7 @@
 import {normalizeOfferCatalog} from './offer-catalog.mjs';
 import {normalizeAddonSelection,priceAddons} from './addons.mjs';
 
-const builds=['launch_site','focused_site','signature_site'];
+const builds=['launch_site','focused_site','business_site','signature_site','storefront'];
 const requireValue=(condition,message)=>{if(!condition)throw Error(message);};
 const toCents=value=>{
  requireValue(Number.isFinite(value)&&value>=0&&Number.isSafeInteger(Math.round(value*100))&&Math.abs(value*100-Math.round(value*100))<0.000001,'Commercial prices must be nonnegative amounts in whole cents.');
@@ -30,8 +30,24 @@ export function validateAddonPaymentSchedule(schedule,total){
  return result;
 }
 
-function composeAddons(offers,id,base,ids,paymentSchedule){
- const priced=priceAddons(ids,offers.add_ons);
+function composeAddons(offers,id,base,ids,paymentSchedule,adjustments=[],onboardingVariant='brochure'){
+ requireValue(['brochure','commerce'].includes(onboardingVariant),'Choose brochure or commerce onboarding.');
+ requireValue(onboardingVariant==='brochure'||offers.catalog_format===3&&ids.includes('care_onboarding'),'Commerce onboarding requires the current onboarding addition.');
+ const addonCatalog=offers.add_ons.map(item=>item.id==='care_onboarding'&&onboardingVariant==='commerce'?{...item,public_name:item.public_name+' — Commerce',public_price:offers.care_variants.commerce.onboarding,scope:'Commerce onboarding for one supported store. '+item.scope}:item);
+ requireValue(Array.isArray(adjustments)&&adjustments.length<=ids.length,'Provide one reviewed credit per selected addition.');
+ const credits=new Map();
+ for(const item of adjustments){
+  requireValue(item&&Object.keys(item).sort().join(',')==='credit,id,reason'&&ids.includes(item.id)&&!credits.has(item.id),'Each reviewed credit must identify one selected addition.');
+  const listed=addonCatalog.find(line=>line.id===item.id);
+  requireValue(Number.isFinite(item.credit)&&item.credit>0&&Number.isInteger(item.credit*100)&&item.credit<listed.public_price&&typeof item.reason==='string'&&item.reason.trim().length>=10&&item.reason.length<=1000&&!/[\u0000-\u001f]/.test(item.reason),'Record a positive credit below the listed fee and its written scope reason. Fully included work must be removed from the additions.');
+  credits.set(item.id,{listed_price:listed.public_price,credit:item.credit,reason:item.reason.trim()});
+ }
+ if(offers.catalog_format===3&&builds.includes(id)){
+  requireValue(!ids.includes('care_onboarding'),'Care onboarding is included with a new website; remove this addition.');
+  for(const addon of ids.filter(item=>item==='guided_quote_form'||item==='reporting_dashboard'&&id!=='launch_site'))requireValue(credits.has(addon),'This addition overlaps included work. Record a reviewed incremental-scope credit before creating its quote.');
+ }
+ const priced=priceAddons(ids,addonCatalog.map(item=>credits.has(item.id)?{...item,public_price:(toCents(item.public_price)-toCents(credits.get(item.id).credit))/100}:item));
+ if(credits.size)for(const line of priced.lines)if(credits.has(line.id))line.scope_credit=credits.get(line.id);
  if(!priced.ids.length){
   requireValue(id!=='website_additions','Choose at least one add-on for a standalone additions project.');
   requireValue(paymentSchedule===undefined,'A separate payment schedule is only available for a standalone additions project.');
@@ -44,8 +60,8 @@ function composeAddons(offers,id,base,ids,paymentSchedule){
  let schedule;
  if(standalone)schedule=validateAddonPaymentSchedule(paymentSchedule,total);
  else{
-  requireValue(paymentSchedule===undefined,'Build additions use the existing 50% / 30% / 20% approval schedule.');
-  requireValue(same(base.payment_schedule?.map(stage=>stage.percent),[50,30,20]),'The build payment schedule requires review.');
+  requireValue(paymentSchedule===undefined,'Build additions follow the catalog version’s approval schedule.');
+  requireValue(same(base.payment_schedule?.map(stage=>stage.percent),offers.catalog_format===3?[40,30,30]:[50,30,20]),'The build payment schedule requires review.');
   let remaining=toCents(total);
   schedule=base.payment_schedule.map((stage,index)=>{
    const amount=index===2?remaining:Math.round(toCents(total)*stage.percent/100);remaining-=amount;
@@ -56,28 +72,38 @@ function composeAddons(offers,id,base,ids,paymentSchedule){
   schema_version:1,catalog_version:offers.add_on_terms.version,selection:priced.ids,
   base_price:basePrice,base_payment_schedule:standalone?[]:structuredClone(base.payment_schedule),
   lines:priced.lines,add_ons_total:priced.total,project_total:total,
-  payment_rule:standalone?'agreed_standalone':'build_50_30_20',terms:structuredClone(offers.add_on_terms)
+  payment_rule:standalone?'agreed_standalone':offers.catalog_format===3?'build_40_30_30':'build_50_30_20',terms:structuredClone(offers.add_on_terms)
  }};
 }
 
-export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_schedule}={}){
+export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure'}={}){
  offers=normalizeOfferCatalog(offers);
+ requireValue(['brochure','commerce'].includes(care_variant),'Choose brochure or commerce care.');
+ requireValue(care_variant==='brochure'||offers.catalog_format===3&&['keep_running','improve'].includes(id),'Commerce care is available only with Website Care or Website Improvement Partnership.');
  const ids=normalizeAddonSelection({add_ons},offers.add_ons||[]);
  if(id==='website_additions'){
   requireValue(billing!=='annual','Standalone additions are one-time work, not an annual plan.');
   const terms=offers.add_on_terms||{};
-  return composeAddons(offers,id,{public_name:'Website additions',scope:'The individually listed website additions and their agreed acceptance checks.',acceptance:'Approve each selected addition against the agreed work and checks. Silence is not approval.',refinement:terms.support,exclusions:[terms.providers||'Provider costs are separate.', 'Additional units, changes of direction and unlisted work require a separate written agreement.']},ids,payment_schedule);
+  return composeAddons(offers,id,{public_name:'Website additions',scope:'The individually listed website additions and their agreed acceptance checks.',acceptance:'Approve each selected addition against the agreed work and checks. Silence is not approval.',refinement:terms.support,exclusions:[terms.providers||'Provider costs are separate.', 'Additional units, changes of direction and unlisted work require a separate written agreement.']},ids,payment_schedule,add_on_credits,onboarding_variant);
  }
  requireValue(!ids.length||builds.includes(id),'One-time add-ons require a separate website_additions project for this service.');
  if(offers.plans[id]){
+  requireValue(!add_on_credits.length,'Credits require selected one-time additions.');
+  requireValue(onboarding_variant==='brochure','Quote onboarding as a separate one-time addition.');
   if(!['monthly','annual'].includes(billing))throw Error('Choose monthly or annual billing.');
-  const p=offers.plans[id],price=billing==='annual'?p.annual.upfront_price:p.monthly_price;
-  return {...p,public_price:price,payment_schedule:[{event:billing==='annual'?'after fit and written twelve-cycle scope/dates, before service starts':'after fit and written first-cycle scope/dates, before service starts',percent:100,amount:price}],exclusions:offers.monthly_terms.excluded};
+  if(offers.catalog_format===3&&billing==='annual')throw Error('New annual enrollment is unavailable; accepted agreements retain their saved terms.');
+  const p=offers.plans[id],monthly=care_variant==='commerce'?(id==='keep_running'?offers.care_variants.commerce.price:p.monthly_price+offers.care_variants.improvement_commerce_supplement):p.monthly_price,price=billing==='annual'?p.annual.upfront_price:monthly;
+  const v3=p.v3?structuredClone(p.v3):undefined;
+  if(v3&&care_variant==='commerce'){
+   if(id==='keep_running')v3.includes=v3.includes.filter(line=>!line.startsWith('Brochure Care:'));
+   else v3.includes[0]=`Commerce Care is included once for a supported store; the monthly fee includes the ${offers.care_variants.improvement_commerce_supplement} USD commerce supplement. No separate Care charge applies to the same site.`;
+  }
+  return {...p,...(v3?{v3,care_variant}:{}),monthly_price:monthly,public_price:price,payment_schedule:[{event:billing==='annual'?'after fit and written twelve-cycle scope/dates, before service starts':'after fit and written first-cycle scope/dates, before service starts',percent:100,amount:price}],exclusions:offers.catalog_format===3?p.v3.excludes:offers.monthly_terms.excluded};
  }
  const p=offers[id]||(id==='audit_fix_sprint'?offers.audit_sprint:id==='website_baseline'?offers.baseline:null);
  if(!p)throw Error('Choose a current build, monthly plan, Sprint or baseline.');
  if(billing==='annual')throw Error('Annual billing is only available for the three ongoing plans.');
- return composeAddons(offers,id,{...p,public_price:p.public_price??p.one_time_price,exclusions:p.exclusions||[offers.audit_sprint.boundaries,offers.one_off_terms.extra_costs]},ids,payment_schedule);
+ return composeAddons(offers,id,{...p,public_price:p.public_price??p.one_time_price,exclusions:p.exclusions||[offers.audit_sprint.boundaries,offers.one_off_terms.extra_costs]},ids,payment_schedule,add_on_credits,onboarding_variant);
 }
 
 // Validate against the frozen composition, never the current catalog. This keeps
@@ -92,6 +118,11 @@ export function assertAddonCommercialSnapshot(scope){
  requireValue(snapshot.offer_id===scope.offer_id&&snapshot.version===scope.commercial_version,'Add-on scope and snapshot identity must match.');
  requireValue(Array.isArray(quote.lines)&&quote.lines.every(line=>typeof line.scope==='string'&&line.scope.trim()&&['acceptance','exclusions'].every(key=>Array.isArray(line[key])&&line[key].length&&line[key].every(text=>typeof text==='string'&&text.trim()))),'Frozen add-on scope, exclusions and acceptance checks are required.');
  const priced=priceAddons(quote.selection,quote.lines);
+ for(const line of quote.lines)if(line.scope_credit){
+  const c=line.scope_credit;
+  requireValue(Object.keys(c).sort().join(',')==='credit,listed_price,reason'&&Number.isFinite(c.listed_price)&&Number.isFinite(c.credit)&&c.credit>0&&c.credit<c.listed_price&&toCents(c.listed_price)-toCents(c.credit)===toCents(line.public_price)&&typeof c.reason==='string'&&c.reason.trim().length>=10,'Frozen scope credits must reconcile to the accepted line price and written reason.');
+  priced.lines.find(item=>item.id===line.id).scope_credit=structuredClone(c);
+ }
  requireValue(priced.ids.length>0&&same(priced.ids,quote.selection)&&same(priced.ids,scope.add_ons)&&same(priced.lines,quote.lines),'Selected add-ons differ from their frozen line items.');
  const standalone=scope.offer_id==='website_additions';
  requireValue(standalone||builds.includes(scope.offer_id),'One-time additions cannot be included in a recurring or review invoice.');
@@ -102,7 +133,8 @@ export function assertAddonCommercialSnapshot(scope){
   requireValue(quote.base_price===0&&same(quote.base_payment_schedule,[])&&quote.payment_rule==='agreed_standalone','Standalone additions must have their own explicit schedule.');
   expected=validateAddonPaymentSchedule(snapshot.offer.payment_schedule,total);
  }else{
-  requireValue(quote.base_price>0&&quote.payment_rule==='build_50_30_20'&&same(quote.base_payment_schedule?.map(stage=>stage.percent),[50,30,20]),'Build additions require the preserved base price and 50% / 30% / 20% schedule.');
+  const expectedPercentages=quote.payment_rule==='build_50_30_20'?[50,30,20]:quote.payment_rule==='build_40_30_30'?[40,30,30]:null;
+  requireValue(quote.base_price>0&&expectedPercentages&&same(quote.base_payment_schedule?.map(stage=>stage.percent),expectedPercentages),'Build additions require the preserved base price and a recognized approval schedule.');
   validateAddonPaymentSchedule(quote.base_payment_schedule,quote.base_price);
   let remaining=toCents(total);
   expected=quote.base_payment_schedule.map((stage,index)=>{const amount=index===2?remaining:Math.round(toCents(total)*stage.percent/100);remaining-=amount;return {event:stage.event,percent:stage.percent,amount:amount/100};});

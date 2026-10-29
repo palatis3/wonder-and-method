@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {quotedOffer,assertAddonCommercialSnapshot,canonicalCommercialJson} from './commercial.mjs';
 
 export const paymentAccounts={test:'acct_1UQHQMLt5KTaVn9K',live:'acct_1UQHQFLjuTLH94aN'};
-export const offerIds=['launch_site','focused_site','signature_site','keep_running','improve','grow','website_baseline','audit_fix_sprint'];
+export const offerIds=['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems'];
 const labels={launch_site:'Launch website',focused_site:'Focused website',signature_site:'Signature website',keep_running:'Keep Running',improve:'Improve',grow:'Grow',website_baseline:'Website baseline',audit_fix_sprint:'Audit & Fix Sprint',website_additions:'Website additions'};
 const requireValue=(condition,message)=>{if(!condition)throw Error(message);};
 const nonempty=value=>typeof value==='string'&&value.trim().length>0;
@@ -35,9 +35,9 @@ export function assertAddonAcceptance(scope,{allowDraft=false}={}){
 
 export function paymentCatalog(offers){
  offers=normalizeOfferCatalog(offers);
- return offerIds.map(id=>{
+ return offerIds.filter(id=>offers[id]||offers.plans?.[id]||['website_baseline','audit_fix_sprint'].includes(id)).map(id=>{
   const recurring=Object.hasOwn(offers.plans,id),offer=quotedOffer(offers,id);
-  const prices=recurring?['monthly','annual'].map(billing=>({key:billing,amount:cents(quotedOffer(offers,id,billing).public_price),label:billing==='annual'?'Twelve prepaid cycles; manual renewal only':'One agreed monthly service cycle'})):offer.payment_schedule.map((milestone,index)=>({key:`milestone-${index+1}`,amount:cents(milestone.amount),label:milestone.event}));
+  const prices=recurring?(offers.catalog_format===3?['monthly']:['monthly','annual']).map(billing=>({key:billing,amount:cents(quotedOffer(offers,id,billing).public_price),label:billing==='annual'?'Twelve prepaid cycles; manual renewal only':'One agreed monthly service cycle'})):offer.payment_schedule.map((milestone,index)=>({key:`milestone-${index+1}`,amount:cents(milestone.amount),label:milestone.event}));
   return {id,name:offer.public_name,version:offers.version,currency:'usd',prices:prices.map(price=>({...price,lookup_key:`wm_${id}_${price.key}_${digest([offers.version,price.amount]).slice(0,12)}`}))};
  });
 }
@@ -51,7 +51,7 @@ export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={})
  requireValue(/^[a-z0-9][a-z0-9-]{0,60}$/.test(scope.client_id||''),'A nonpersonal client ID is required.');
  requireValue(confirmation.accepted_version===scope.version&&dated(confirmation.accepted_at)&&Date.parse(confirmation.accepted_at)<=+now&&nonempty(confirmation.written_acceptance_reference)&&nonempty(scope.named_approver),'Written acceptance of this exact scope version and named approver required.');
  for(const key of ['page_copy_limits','self_editing_understood','required_optional_bills','approvals','ownership_and_exit','questions_resolved'])requireValue(confirmation[key]===true,`Buyer confirmation missing: ${key}.`);
- if(['launch_site','focused_site','signature_site'].includes(scope.offer_id)&&snapshot.offer.editing_mode==='source_code'){
+ if(['launch_site','focused_site','business_site','signature_site','storefront'].includes(scope.offer_id)&&snapshot.offer.editing_mode==='source_code'){
   for(const key of ['source_folder_zip_and_build_notes_understood','initial_launch_ready_service_limits_and_exclusions_understood','optional_handoff_call_and_separate_growth_work_understood'])requireValue(confirmation[key]===true,`Buyer confirmation missing: ${key}.`);
  }
  requireValue(nonempty(scope.schedule?.booked_start),'Agreed start date required.');
@@ -69,7 +69,7 @@ export function prepareInvoice(scope,billing,milestoneIndex,{now=new Date()}={})
  requireValue(Number.isInteger(milestoneIndex)&&milestoneIndex>=0&&milestoneIndex<original.length,'Choose an existing milestone.');
  const milestone=scope.milestones[milestoneIndex];
  requireValue(nonempty(milestone.approval_reference),'Record written milestone approval; silence never triggers billing.');
- const plan=['keep_running','improve','grow'].includes(scope.offer_id);
+ const plan=['keep_running','improve','local_focus','grow'].includes(scope.offer_id);
  if(plan){
   const period=scope.service_period;
   requireValue(['monthly','annual'].includes(scope.billing_option)&&snapshot.billing===scope.billing_option,'Service billing must match the accepted snapshot.');

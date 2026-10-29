@@ -38,7 +38,7 @@ test('owner checks come first and diagnostic offers preserve correct intent',()=
  assert.deepEqual(form.slice(0,5).map(x=>x.id),['five-minute-check','page','platform-settings','verify','review-options']);
  const body=form.map(x=>x.body).join('');assert.match(body,/A site may not store a separate inquiry record/);assert.match(body,/<h3>WordPress<\/h3><p>Identify the form plugin/);assert.match(body,/SPF, DKIM and DMARC/);
  const rendered=journalArticle(journal.find(item=>item.path==='/guides/contact-form-not-working/'),offers,journal);
- assert.match(rendered,/offer=website_baseline&amp;goal=fix&amp;request_kind=question#inquiry/);assert.match(body,/Audit &amp; Fix Sprint.*up to two small fixes in total/);
+ assert.match(rendered,/offer=website_baseline&amp;goal=fix&amp;request_kind=question#inquiry/);assert.match(body,/Website Repair Sprint.*up to three agreed fixes/);
  const search=journalSections('/guides/website-not-showing-on-google/',offers);assert.deepEqual(search.slice(0,3).map(s=>s.id),['define','inspection-steps','specific-index-checks']);assert.match(search.find(s=>s.id==='inspection-steps').body,/Search Console/);
  const launch=journalSections('/guides/website-launch-checklist/',offers).map(x=>x.body).join('');assert.match(launch,/restore the previous version/);assert.match(launch,/Not checked, Works, Needs fixing, Need access, Not applicable or Blocked/);assert.match(launch,/Explain any blocked check and who can resolve it/);assert.match(launch,/does not guarantee indexing/);
 });
@@ -66,9 +66,9 @@ test('state directories retain places and give each of 3222 areas a direct servi
 
 test('catalog monthly entities match their services; public payment information and inquiry forms are indexable',()=>{
  const monthly=commercialOffers(config,offers).filter(x=>x.priceSpecification);
- assert.deepEqual(monthly.map(x=>new URL(x.itemOffered['@id']).pathname),['/services/website-care/','/services/seo/','/services/seo/']);
+ assert.deepEqual(monthly.map(x=>new URL(x.itemOffered['@id']).pathname),['/services/website-care/','/services/seo/','/services/seo/','/services/seo/']);
  assert.equal(offersForService(config,offers,'/services/website-care/').length,1);
- assert.equal(offersForService(config,offers,'/services/seo/').length,2);
+ assert.equal(offersForService(config,offers,'/services/seo/').length,3);
  assert.equal(privateRoute('/payments/'),false);assert.equal(routeIndexEligible('/payments/'),true);
  assert.equal(privateRoute('/checkout/'),false);assert.equal(privateRoute('/api/inquiries'),true);
  assert.doesNotMatch(guideIllustrationAlt({path:'/guides/website-redesign-brief/'}),/\?\./);

@@ -1,3 +1,4 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -11,6 +12,9 @@ import moIaPaths from './fixtures/mo-ia-approved-paths.json' with {type:'json'};
 import texasPaths from './fixtures/texas-approved-paths.json' with {type:'json'};
 import paths from './fixtures/county-depth-approved-paths.json' with {type:'json'};
 import {journeyPageKey} from '../src/journey-page-key.mjs';
+const v3PageKeys=new Set(v3OfferPaths.map(journeyPageKey));
+// Compare this historical migration before the twelve explicit 0049 additions.
+
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
@@ -67,7 +71,7 @@ test('0037 adds exactly the 28 reviewed county keys and preserves populated rows
  assert.equal(nextKeys.length,1231);
  assert.deepEqual(nextKeys.filter(key=>!oldKeys.includes(key)).sort(),keys);
  assert.ok(oldKeys.every(key=>nextKeys.includes(key)));
- assert.deepEqual([...journeyPages].filter(key=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths].map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
+ assert.deepEqual([...journeyPages].filter(key=>!v3PageKeys.has(key)).filter(key=>![...ksNePaths,...caNmPaths,...azOrPaths,...nvWaPaths,...coUtPrPaths,...idMtPaths,...wyHiAkPaths,...ndSdPaths,...mnOkPaths,...moIaPaths,...texasPaths].map(journeyPageKey).includes(key)).sort(),nextKeys.slice().sort());
  // SQLite quotes the renamed table. Only the 28 page literals may differ.
  assert.equal(keys.reduce((text,key)=>text.replace(",'"+key+"'",''),schema()),oldSchema);
  assert.equal(db.sqlite.prepare('PRAGMA integrity_check').get().integrity_check,'ok');

@@ -10,7 +10,11 @@ test('all guides remain browsable when search enhancement is unavailable',async(
  await expect(page.locator('.journal-card:visible')).toHaveCount(65);
  const hrefs=await page.locator('.journal-card h3 a').evaluateAll(links=>links.map(link=>link.getAttribute('href')));expect(new Set(hrefs).size).toBe(65);
 });
-import faqsByPath from '../../src/service-faqs.json' with {type:'json'};
+import historicalFaqs from '../../src/service-faqs.json' with {type:'json'};
+import faqBindings from '../../src/service-faq-offer-copy.json' with {type:'json'};
+import offers from '../../config/offers.json' with {type:'json'};
+import {resolveOfferCopy} from '../../src/offer-catalog.mjs';
+const faqsByPath=Object.fromEntries(Object.entries(historicalFaqs).map(([path,rows])=>[path,rows.map(row=>{const binding=faqBindings[path]?.find(b=>b.question===row.question);return binding?{...row,answer:resolveOfferCopy(binding.singleBatchTemplate&&offers.plans.improve.small_change_batches===1&&offers.plans.grow.small_change_batches===1?binding.singleBatchTemplate:binding.template,offers)}:row;})]));
 
 test('service and county project answers remain accessible by keyboard without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
@@ -69,12 +73,12 @@ test('footer destinations and single back-to-top link work without JavaScript',a
 
 test('checkout terms remain available by keyboard without JavaScript',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
- for(const id of ['launch-site','focused-site','signature-site','website-baseline','audit-fix-sprint','keep-running','improve','grow']){
+ for(const id of ['launch-site','focused-site','business-site','signature-site','website-baseline','audit-fix-sprint','keep-running','improve','local-focus','grow','brand-message','storefront','local-presence','workflow','systems']){
   await page.goto('/checkout/'+id+'/?qa=1');
   const overview=page.locator('.checkout-overview'),summary=overview.locator('summary');
   await expect(page.locator('#name')).toBeVisible();await expect(overview).not.toHaveAttribute('open','');
   await summary.focus();await page.keyboard.press('Enter');await expect(overview).toHaveAttribute('open','');
-  await expect(overview.getByRole('heading',{name:['launch-site','focused-site','signature-site'].includes(id)?'Your project and payments':'Payment steps',exact:true})).toBeVisible();
+  await expect(overview.getByRole('heading',{name:'Payment steps',exact:true})).toBeVisible();
   await expect(overview.getByRole('link',{name:'Payments and cancellation',exact:true})).toBeVisible();
  }
 });
@@ -110,7 +114,7 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
  await expect(page.getByText('The interactive calculator needs JavaScript. Open “How this is calculated” below for the example and formulas.',{exact:true})).toBeVisible();
  await page.locator('#worked-example summary').click();await expect(page.locator('#worked-example details')).toHaveAttribute('open','');
  await expect(page.getByRole('heading',{name:'The example, step by step',exact:true})).toBeVisible();
- for(const value of ['$4,510','$1,490','33%','7.3 months'])await expect(page.locator('#worked-example')).toContainText(value);
+ for(const value of ['$8,160','-$2,160','-26.5%','23.1 months'])await expect(page.locator('#worked-example')).toContainText(value);
  await page.goto('/guides/website-content-template/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();
  const template=page.locator('a[href^="/assets/guides/website-content-template.txt"]').first();await expect(template).toBeVisible();await expect(template).toHaveAttribute('download','');
  const download=await page.request.get(await template.getAttribute('href'));expect(download.status()).toBe(200);expect((await download.text()).length).toBeGreaterThan(300);
@@ -228,32 +232,32 @@ test('native additions prefill, correction and receipt preserve all selected wor
  await page.goto('/contact/?addons=standard_page,booking_setup&request_kind=checkout#inquiry');
  await expect(page.locator('#inquiry-addon-standard_page')).toBeChecked();
  await expect(page.locator('#inquiry-addon-booking_setup')).toBeChecked();
- await expect(page.locator('[data-addon-total]')).toHaveText('$650');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$1,200');
  await page.locator('[data-addon-picker] > summary').click();
- await page.locator('#inquiry-addon-contact_form').check();
+ await page.locator('#inquiry-addon-guided_quote_form').check();
  await page.locator('#name').fill('Native additions fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic request for several agreed additions.');
  await page.getByRole('button',{name:'Send message',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Please check these details',exact:true})).toBeVisible();
- for(const id of ['standard_page','booking_setup','contact_form'])await expect(page.locator('#inquiry-addon-'+id)).toBeChecked();
- await expect(page.locator('[data-addon-total]')).toHaveText('$850');
+ for(const id of ['standard_page','booking_setup','guided_quote_form'])await expect(page.locator('#inquiry-addon-'+id)).toBeChecked();
+ await expect(page.locator('[data-addon-total]')).toHaveText('$2,400');
  await page.getByRole('button',{name:'Send message',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test inquiry recorded.',exact:true})).toBeVisible();
- await expect(page.locator('.inquiry-confirmation')).toContainText('One-time additions subtotal: $850');
+ await expect(page.locator('.inquiry-confirmation')).toContainText('One-time additions subtotal: $2,400');
  expect(payloads[1]).toEqual(payloads[0]);
- expect(payloads[1].add_ons).toEqual(['booking_setup','contact_form','standard_page']);
+ expect(payloads[1].add_ons).toEqual(['booking_setup','guided_quote_form','standard_page']);
 });
 
 test('native checkout retains chosen additions and welcomes questions without another form',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
- await page.goto('/checkout/launch-site/?addons=contact_form,booking_setup#inquiry');
- await expect(page.locator('[data-addon-project-total]')).toContainText('$2,000');
- await expect(page.locator('[data-addon-payments]')).toContainText('$1,000 to book (50%)');
+ await page.goto('/checkout/launch-site/?addons=guided_quote_form,booking_setup#inquiry');
+ await expect(page.locator('[data-addon-project-total]')).toContainText('$5,000');
+ await expect(page.locator('[data-addon-payments]')).toContainText('$2,000 to book (40%)');
  await expect(page.locator('[data-checkout-question]')).toHaveCount(0);
  await expect(page.locator('#message-help')).toContainText('Questions are welcome here too');
  await expect(page.locator('#service')).toHaveValue('launch_site');
  await expect(page.locator('#request_kind')).toHaveValue('checkout');
- await expect(page.getByRole('button',{name:'Request my Launch proposal',exact:true})).toBeVisible();
- await expect(page.locator('#inquiry-addon-contact_form')).toBeChecked();
+ await expect(page.getByRole('button',{name:'Request my Focused proposal',exact:true})).toBeVisible();
+ await expect(page.locator('#inquiry-addon-guided_quote_form')).toBeChecked();
  await expect(page.locator('#inquiry-addon-booking_setup')).toBeChecked();
 });
 
@@ -262,7 +266,7 @@ test('server-rendered proposal, general question and fixed monthly context work 
  for(const [path,service,kind,label] of [
   ['/contact/?request_kind=checkout#inquiry','unsure','checkout','Send message'],
   ['/contact/?request_kind=question#inquiry','unsure','question','Send message'],
-  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Request a Grow proposal']
+  ['/checkout/grow/?offer=launch_site&priority=article#inquiry','grow','checkout','Request a Local Search Partnership proposal']
  ]){
   await page.goto(path);await expect(page.locator('#service')).toHaveValue(service);await expect(page.locator('#request_kind')).toHaveValue(kind);
   await expect(page.getByRole('button',{name:label,exact:true})).toBeVisible();
@@ -276,6 +280,6 @@ test('server-rendered proposal, general question and fixed monthly context work 
   submitted=Object.fromEntries(new URLSearchParams(route.request().postData()));
   await route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><html lang="en"><title>Synthetic receipt</title><h1>Test request received</h1><p>No email sent.</p></html>'});
  });
- await page.getByRole('button',{name:'Request a Grow proposal',exact:true}).click();
+ await page.getByRole('button',{name:'Request a Local Search Partnership proposal',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test request received'})).toBeVisible();expect(submitted).toMatchObject({service:'grow',request_kind:'checkout',priority:'article',website:'https://example.com/'});
 });

@@ -36,7 +36,7 @@ test('corner placement retains focus across scrolling, disclosures and viewport 
  await page.evaluate(()=>scrollBy({top:-100,behavior:'instant'}));
  await expect(chat).toBeFocused();await expect(chat).toBeVisible();expect((await chat.boundingBox()).y).toBeCloseTo(focusedBox.y,0);
  await page.evaluate(()=>document.activeElement.blur());
- const summary=page.locator('details.pricing-detail-table>summary').first();await summary.click();
+ const summary=page.locator('#every-inclusion>summary').first();await summary.click();
  await expect(summary).toBeFocused();await expect(summary.locator('..')).toHaveAttribute('open','');
  for(const viewport of [{width:320,height:640},{width:1440,height:1000}]){
   await page.setViewportSize(viewport);await page.evaluate(()=>{document.activeElement.blur();scrollTo({top:680,behavior:'instant'});});
@@ -87,7 +87,7 @@ test('ambiguous exact place names remain visible with their official state and t
 test('contact starts with the message and preserves selected service after validation',async({page})=>{
  await page.goto('/contact/?offer=launch_site&goal=new_website&request_kind=question&qa=1');
  await expect(page.locator('#service')).toHaveValue('launch_site');
- await expect(page.locator('#request-summary')).toContainText('Launch Website');
+ await expect(page.locator('#request-summary')).toContainText('Focused Website');
  const order=await page.locator('#inquiry input,#inquiry textarea').evaluateAll(fields=>fields.filter(f=>['name','email','message','goal-new_website'].includes(f.id)).map(f=>f.id));
  expect(order).toEqual(['name','email','message','goal-new_website']);
  await page.locator('#inquiry button[type="submit"]').click();
@@ -115,15 +115,13 @@ test('floating help yields to visible inquiry controls even before focus',async(
 
 test('price choices expose editing and booking terms before optional detail',async({page})=>{
  await page.goto('/pricing/?qa=1');
- const editing=page.locator('#website-packages>.editing-model'),card=page.locator('#offer-launch_site');
- await expect(editing).toContainText('no visual or drag-and-drop editor');
- expect(await editing.evaluate((el)=>!!(el.compareDocumentPosition(document.querySelector('#offer-launch_site'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
- await expect(card).toContainText('$700 to book after proposal approval');
- const comparison=page.locator('details.pricing-detail-table');
- await expect(comparison).not.toHaveAttribute('open','');
- await comparison.locator('summary').click();
- await expect(comparison.locator('table')).toBeVisible();
- await comparison.locator('summary').click();await expect(comparison.locator('table')).toBeHidden();
+ const editing=page.locator('#ownership');await expect(editing).toBeVisible();
+ await expect(editing).toContainText('platform and editing workflow before booking');await expect(editing).toContainText('which changes you can make yourself');
+ const payment=page.locator('#payments .v3-payment-list article').first();await expect(payment).toContainText('$1,180');await expect(payment).toContainText('40%');await expect(payment).toContainText('Reserve your agreed start');
+ const comparison=page.locator('#every-inclusion');
+ await expect(comparison).not.toHaveAttribute('open','');await comparison.locator('summary').click();
+ await expect(comparison.locator('.v3-comparison-list')).toBeVisible();
+ await comparison.locator('summary').click();await expect(comparison.locator('.v3-comparison-list')).toBeHidden();
 });
 
 test('guide contents and direct fragments reveal optional operator examples',async({page})=>{

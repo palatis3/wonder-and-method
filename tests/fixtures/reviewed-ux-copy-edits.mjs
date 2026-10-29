@@ -1,3 +1,4 @@
+import {beforeReviewedV3SourceRepairs} from './reviewed-v3-source-repairs.mjs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import review from './ux-copy-edits.json' with {type:'json'};
@@ -20,5 +21,5 @@ function restore(value,change,path){
  assert.equal(digest(before),change.beforeSha256,path+' prior accepted record');
  return before;
 }
-export const beforeReviewedUxCopyEdits=record=>restore(beforeReviewedHumanQualityEdits(record),records.get(record.path),record.path);
+export const beforeReviewedUxCopyEdits=record=>restore(beforeReviewedHumanQualityEdits(beforeReviewedV3SourceRepairs(record)),records.get(record.path),record.path);
 export const beforeReviewedUxFaqEdits=(path,answers)=>restore(beforeReviewedHumanQualityFaqEdits(path,answers),faqs.get(path),path);

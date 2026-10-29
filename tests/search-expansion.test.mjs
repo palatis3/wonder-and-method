@@ -1,4 +1,4 @@
-import excluded from './fixtures/search-excluded-public-paths.json' with {type:'json'};
+import excluded from './fixtures/current-search-excluded-public-paths.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -47,10 +47,10 @@ test('canonical asset redirects become permanent without changing query or unrel
  }
 });
 test('search descriptions derive from current prices and supplements link to diagnosis',()=>{
- const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.audit_sprint.one_time_price=775;revised.plans.improve.monthly_price=150;revised.baseline.one_time_price=425;
- assert.ok(searchMetadata['/services/web-design/'].description(revised).includes('from $1,625.'));
- assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes('Website Baseline $425'));assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes('Audit & Fix Sprint $775'));
- assert.ok(searchMetadata['/services/seo/'].description(revised).includes('Improve $150/month'));assert.doesNotMatch(searchMetadata['/services/website-care/'].description(revised),/Grow|SEO|growth/);for(const target of newGuides.filter(path=>!path.includes('contact-form')))assert.ok(searchSupplement('/services/seo/',revised).includes(`href="${target}"`));
+ const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.audit_sprint.one_time_price=775;revised.plans.local_focus.monthly_price=150;revised.plans.improve.monthly_price=150;revised.baseline.one_time_price=425;
+ assert.ok(searchMetadata['/services/web-design/'].description(revised).includes('from $1,625 '));
+ assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes(revised.baseline.public_name+': $425'));assert.ok(searchMetadata['/services/website-audit/'].description(revised).includes(revised.audit_sprint.public_name+': $775'));
+ assert.ok(searchMetadata['/services/seo/'].description(revised).includes(revised.plans.local_focus.public_name+' from $150/month'));assert.doesNotMatch(searchMetadata['/services/website-care/'].description(revised),/Grow|SEO|growth/);for(const target of newGuides.filter(path=>!path.includes('contact-form')))assert.ok(searchSupplement('/services/seo/',revised).includes(`href="${target}"`));
 });
 
 test('HTTPS-only transport policy includes subdomains on live redirects and failures without affecting other hosts',async()=>{

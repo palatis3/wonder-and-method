@@ -13,7 +13,7 @@ export function applyOfferChanges(current,changeSet,{usedVersions=[]}={}){
  if(!changeSet.set||typeof changeSet.set!=='object'||Array.isArray(changeSet.set)||!Object.keys(changeSet.set).length)throw Error('Provide at least one field in set.');
  const next=structuredClone(current);
  for(const [path,value] of Object.entries(changeSet.set)){
-  if(!/^(launch_site|focused_site|signature_site|plans|baseline|audit_sprint|add_ons|monthly_terms|one_off_terms|annual_terms|add_on_terms)\./.test(path)||derived.test(path))throw Error('Not an editable source field: '+path);
+  if(!/^(launch_site|focused_site|business_site|signature_site|brand_message|storefront|local_presence|workflow|systems|plans|baseline|audit_sprint|add_ons|quoted_add_ons|care_variants|monthly_terms|one_off_terms|annual_terms|add_on_terms)\./.test(path)||derived.test(path))throw Error('Not an editable source field: '+path);
   const old=catalogValue(next,path);
   if(old===undefined||old!==null&&typeof old==='object'||typeof old!==typeof value&&old!==null)throw Error('Set an existing scalar field with its original type: '+path);
   if(Object.hasOwn(next.copy_templates||{},path)&&!Object.hasOwn(changeSet.templates||{},path))throw Error('This prose is derived; edit its source fields or supply its matching template: '+path);

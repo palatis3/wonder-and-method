@@ -8,6 +8,7 @@ import {bindCostCalculator} from '../src/calculator.js';
 import {priceList} from '../src/shared.mjs';
 
 const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8'));
+const historical=JSON.parse(await readFile(new URL('../operations/historical/offers-2026-10-24-pre-v3.json',import.meta.url),'utf8'));
 test('compact chrome preserves service, pricing, process and contact navigation',()=>{
  const html=siteHeader('/services/seo/');
  for(const path of ['/services/','/pricing/','/process/','/contact/#inquiry'])assert.ok(html.includes(`href="${path}"`));
@@ -34,25 +35,25 @@ test('service navigation marks only listed current pages and keeps secondary ser
  }
 });
 
-function calculatorFixture(annual=true){
+function calculatorFixture(annual=true,catalog=offers){
  const fields=Object.fromEntries(Object.entries({build:'focused',plan:'grow',cycles:'11',hostingMonths:'12',hostingMonthly:'25',external:'',billing:'monthly',baseline:'on',sprint:'on'}).map(([name,value])=>[name,{name,value,disabled:false,checked:name==='baseline',options:name==='billing'?[{value:'monthly'},{value:'annual'}]:[],setAttribute(){},removeAttribute(){},closest(){return null;}}]));
  const listeners={},calculator={elements:{namedItem:name=>fields[name]},querySelectorAll:()=>[],addEventListener:(name,handler)=>listeners[name]=handler};
  const output=Object.fromEntries(['cost-total','cost-breakdown','calculator-error','external-note'].map(id=>[id,{textContent:''}]));
  class Data{constructor(){this.values=new Map(Object.entries(fields).filter(([name,f])=>!f.disabled&&(!['baseline','sprint'].includes(name)||f.checked)).map(([name,f])=>[name,f.value]));}get(name){return this.values.get(name)??null;}has(name){return this.values.has(name);}}
  const original=globalThis.FormData;globalThis.FormData=Data;
- const update=bindCostCalculator(calculator,{...priceList(offers),annual_available:annual},{querySelector:id=>output[id.slice(1)]});
+ const update=bindCostCalculator(calculator,{...priceList(catalog),annual_available:annual},{querySelector:id=>output[id.slice(1)]});
  return {fields,output,update,event:(type,name)=>listeners[type]({target:fields[name]}),restore:()=>{globalThis.FormData=original;}};
 }
 test('calculator includes known hosting while naming other unknown costs',()=>{
  const f=calculatorFixture();try{
   assert.equal(f.output['calculator-error'].textContent,'');
-  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$11,425/);
+  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$24,025/);
   assert.match(f.output['external-note'].textContent,/Still to add: domain, email and other paid tools/);
-  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$11,475/);
+  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$24,075/);
  }finally{f.restore();}
 });
-test('annual toggling restores unedited defaults and preserves edited monthly counts',()=>{
- const f=calculatorFixture();try{
+test('historical annual toggling restores unedited defaults and preserves edited monthly counts',()=>{
+ const f=calculatorFixture(true,historical);try{
   f.fields.billing.value='annual';f.event('change','billing');assert.equal(f.fields.cycles.value,'12');
   assert.match(f.output['cost-breakdown'].textContent,/same 12 months billed monthly/);
   f.fields.billing.value='monthly';f.event('change','billing');assert.equal(f.fields.cycles.value,'11');
@@ -65,5 +66,13 @@ test('unverified annual enrollment cannot be selected by the calculator',()=>{
  const f=calculatorFixture(false);try{
   assert.equal(f.fields.billing.options[1].disabled,true);assert.equal(f.fields.billing.options[1].hidden,true);
   f.fields.billing.value='annual';f.event('change','billing');assert.equal(f.fields.billing.value,'monthly');
+ }finally{f.restore();}
+});
+
+test('current V3 annual enrollment stays disabled even if an availability boolean is toggled',()=>{
+ const f=calculatorFixture(true);try{
+  assert.equal(f.fields.billing.options[1].disabled,true);assert.equal(f.fields.billing.options[1].hidden,true);
+  f.fields.billing.value='annual';f.event('change','billing');assert.equal(f.fields.billing.value,'monthly');
+  assert.equal(f.output['calculator-error'].textContent,'');
  }finally{f.restore();}
 });

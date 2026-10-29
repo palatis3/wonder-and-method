@@ -1,6 +1,6 @@
 import {everydayUpdates} from './buyer-decisions.mjs';
 export function sourceHandoff() {
- return `<header class="page-intro editor-intro"><p class="eyebrow">Example delivery for a fictional business</p><h1>Sample website files.</h1><p class="lede">Download a sample website, its editable files and instructions for the next person who looks after it.</p><p id="code-editing"><strong>Every website package includes editable source code.</strong> You or a developer can make changes, check them and publish. There is no drag-and-drop editor. Before booking, I confirm the technology, compatible hosting and who will handle later changes.</p>${everydayUpdates()}</header>
+ return `<header class="page-intro editor-intro"><p class="eyebrow">Example delivery for a fictional business</p><h1>Sample website files.</h1><p class="lede">Download a sample website, its editable files and instructions for the next person who looks after it.</p><p id="code-editing"><strong>This sample shows a source-code website handoff.</strong> You or a developer can edit, check and publish these example files. For a new project, we agree the platform and editing workflow before booking; supported visual platforms and custom code have different export and editing limits.</p>${everydayUpdates()}</header>
  <section class="studio-section" id="inside-folder"><h2>What is in the folder?</h2><figure class="handoff-tree"><figcaption>Inside the actual Maple Studio sample ZIP</figcaption><pre><code>START-HERE.txt
 website-source/
   public/

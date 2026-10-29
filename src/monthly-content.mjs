@@ -1,10 +1,12 @@
+import {isV3,v3Enrollment,v3MonthlyDetails,v3CareBoundary,v3Cards,v3List} from './v3-offer-content.mjs';
 import {normalizeOfferCatalog,countWords,titleCount} from './offer-catalog.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
 
 export const monthlyDisplayLabels=Object.freeze({smallChanges:'set of small text, photo or link changes',futureTopics:'future-topic list',growthPlan:'rolling 90-day plan'});
 export const monthlySearchChecks='available Google search or page-speed warnings where access allows';
-export function monthlySmallChanges(o,id,{capitalized=false}={}){const count=o.plans[id].small_change_batches;const label=`${countWords(count)} ${count===1?monthlyDisplayLabels.smallChanges:monthlyDisplayLabels.smallChanges.replace(/^set /,'sets ')} you send each month`;return capitalized?label[0].toUpperCase()+label.slice(1):label;}
+export function monthlySmallChanges(o,id,{capitalized=false}={}){if(isV3(o))return `${capitalized?'One':'one'} batch of supplied text/image edits, up to 30 minutes a month (45 minutes with Commerce Care)`;const count=o.plans[id].small_change_batches;const label=`${countWords(count)} ${count===1?monthlyDisplayLabels.smallChanges:monthlyDisplayLabels.smallChanges.replace(/^set /,'sets ')} you send each month`;return capitalized?label[0].toUpperCase()+label.slice(1):label;}
 export function monthlySmallChangeTerms(o,id) {
+ if(isV3(o))return `One monthly batch of supplied text/image edits, up to 30 minutes for Brochure Care or 45 minutes for Commerce Care. New pages, original writing and new functionality use a separately agreed output or project. Unused client allocations do not accumulate; work delayed by me remains owed or receives an agreed credit/refund.`;
  const ids=id?[id]:['keep_running','improve','grow'];
  const allowance=new Set(ids.map(key=>o.plans[key].small_change_batches)).size===1
   ? monthlySmallChanges(o,ids[0],{capitalized:true}).replace(' you send each month',' each month')+'.'
@@ -12,6 +14,7 @@ export function monthlySmallChangeTerms(o,id) {
  return allowance+' '+o.monthly_terms.small_batch.slice(o.monthly_terms.small_batch.indexOf('.')+1).trim();
 }
 export function monthlyGuidePlanSummaries(o){
+ if(isV3(o))return ['keep_running','improve','local_focus','grow'].map(id=>({id,name:o.plans[id].public_name,price:o.plans[id].monthly_price,work:o.plans[id].v3.result}));
  return ['keep_running','improve','grow'].map(id=>{
   const p=o.plans[id],grow=id==='grow';
   const work=id==='keep_running'?`Automated availability and security-certificate monitoring; monthly website, form and agreed-tool checks, including ${monthlySearchChecks}; plus ${monthlySmallChanges(o,id)}; a monthly report and quarterly website check. Recurring keyword research and new content are separate.`:`The same care plus ${grow?'deeper ':''}research and ${p.priorities} ${grow?'connected ':'completed '}improvement${p.priorities===1?'':'s'} each month. ${grow?`A rolling ${p.growth_plan.days}-day plan, refreshed monthly, and ${countWords(p.promotion_reuse.quantity)} extra graphic${p.promotion_reuse.quantity===1?'':'s'} or newsletter excerpt${p.promotion_reuse.quantity===1?'':'s'}.`:`A ${monthlyDisplayLabels.futureTopics}, refreshed quarterly.`} ${p.advisor}${id==='improve'?' The opportunity brief is a short note explaining the customer question, available research and proposed page or action.':''}`;
@@ -20,12 +23,13 @@ export function monthlyGuidePlanSummaries(o){
 }
 export const monthlyGuidePlanLines=o=>monthlyGuidePlanSummaries(o).map(p=>`<strong>${e(p.name)} — ${money(p.price)}/month:</strong> ${e(p.work)}`);
 
-export function monthlyPauseSummary(o){return `For ${o.plans.improve.public_name} and ${o.plans.grow.public_name}: confirm useful work and ready inputs five business days before renewal. Otherwise, the next monthly invoice pauses. Missing inputs receive notice. `+o.monthly_terms.pause;}
+export function monthlyPauseSummary(o){if(isV3(o))return `By day 10, I flag missing inputs and propose an agreed alternative. If no useful work can proceed, we agree a pause before the next cycle. If I miss an agreed output, you choose a dated carry-forward or a proportionate credit/refund for the undelivered work.`;return `For ${o.plans.improve.public_name} and ${o.plans.grow.public_name}: confirm useful work and ready inputs five business days before renewal. Otherwise, the next monthly invoice pauses. Missing inputs receive notice. `+o.monthly_terms.pause;}
 
 export const annualEnrollmentAvailable = o => o.annual_enrollment_gate?.verified === true;
-export const standardCareExclusion = 'CMS, plugin and theme software updates, backups and restores, and malware cleanup are not included in standard care. These need a separate suitability assessment or a specialist.';
+export const standardCareExclusion = v3CareBoundary();
 
 export function baselineEnrollmentNote(o) {
+ if(isV3(o))return v3Enrollment(o);
  return `A new paid website I build includes its starting review. An existing website may need the one-time ${money(o.baseline.one_time_price)} ${o.baseline.public_name}. It covers a supported existing website with up to ${o.baseline.page_cap} agreed main pages and includes an ordered fix list and a first small fix if safe and feasible. A previous ${o.baseline.public_name}, website I built or ${o.audit_sprint.public_name} avoids this charge when its review is still usable. I confirm this before payment. Larger existing sites need an assessment and a separate agreement on the review work.`;
 }
 
@@ -34,7 +38,7 @@ export function baselineEnrollmentNote(o) {
 export function acceptedAnnualTerms(o) {
  return [
   'These terms apply only if you already have an accepted annual agreement. Your saved agreement determines its price and dates; this is not an offer to enroll.',
-  'Annual payment covers twelve service periods, with the same monthly work and sequence. It does not bring twelve months of work forward. Any separately agreed Website Baseline is charged only when needed.',
+  'Annual payment covers twelve service periods, with the same monthly work and sequence. It does not bring twelve months of work forward. Any separately agreed onboarding or review follows that saved agreement.',
   o.annual_terms.renewal,
   o.annual_terms.cancellation,
   o.annual_terms.refund_timing,
@@ -44,6 +48,7 @@ export function acceptedAnnualTerms(o) {
 }
 
 export function monthlyPlanDetails(o, id) {
+ if(isV3(o))return v3MonthlyDetails(o,id);
  o=normalizeOfferCatalog(o);
  const p = o.plans[id];
  if (!p) throw Error('Unknown monthly plan');
@@ -97,12 +102,14 @@ export function monthlySearchMethod(o, {id = 'keyword-opportunities'} = {}) {
 }
 
 export function monthlySharedScope(o){
+ if(isV3(o))return `<section class="studio-section"><h2>Care included once. Useful work clearly defined.</h2><p>All four monthly options include brochure-site care. Choose the improvement or search scope you need; overlapping work is credited before booking.</p><p>${e(v3CareBoundary())}</p><p>${e(v3Enrollment(o))}</p></section>`;
  const ids=['keep_running','improve','grow'],plans=ids.map(id=>o.plans[id]);
  const smallChanges = new Set(plans.map(p=>p.small_change_batches)).size===1 ? monthlySmallChanges(o,'keep_running') : ids.map(id=>`${o.plans[id].public_name}: ${monthlySmallChanges(o,id)}`).join('; ');
  return `<p>Every plan includes automated monitoring, monthly website and contact-form checks, ${e(smallChanges)}, a quarterly website check and a monthly report.</p>`;
 }
 
 export function monthlyScopeTable(o,{showCommonScope=true,expanded=true}={}) {
+ if(isV3(o))return v3Cards(o,['keep_running','improve','local_focus','grow']);
  const ids = ['keep_running', 'improve', 'grow'];
  const plans = ids.map(id => o.plans[id]);
  const rows = [
@@ -118,5 +125,6 @@ export function monthlyScopeTable(o,{showCommonScope=true,expanded=true}={}) {
 }
 
 export function monthlyCampaignExample(o) {
+ if(isV3(o))return `<section class="studio-section"><h2>A useful month of search work.</h2><p>For example, Local Search Partnership could research, write and publish two service pages, or one researched guide using both content units. The report records the actual work, checks, available observations and next priorities. This is an illustration, not a promised ranking or traffic result.</p></section>`;
  return `<section class="studio-section" id="growth-campaign-example"><p class="eyebrow">Example only</p><h2>What one Grow month could include.</h2><p>A restaurant wants clearer catering information. A ${money(o.plans.grow.monthly_price)} Grow month could include:</p><ol class="audit-steps"><li>Rewrite the catering page using approved menus, lead times and minimums.</li><li>Publish a separate event-planning guide and link it to that page.</li><li>Reuse the approved content in a simple graphic with a short caption, or a newsletter excerpt of up to 150 words.</li></ol><p>The page and guide are the two improvements; the extra graphic or newsletter excerpt and supplied care edits are separate. This is a fictional example, not a client result. We agree on different work when it better fits the business.</p></section>`;
 }

@@ -1,0 +1,1676 @@
+{
+  "version": 3,
+  "date": "2026-10-28",
+  "title": "Wonder and Method — Clear Value, Distinct Choices",
+  "positioning": "Midrange and higher-end websites, local search and practical digital work, delivered with an AI-assisted workflow.",
+  "status": "Proposed V3 operating design. Independent review applies to a controlled pilot; no live offer or existing commitment changes.",
+  "inputs": {
+    "business_hours_week": 50,
+    "capacity_allocation": {
+      "planned_client_delivery": 32,
+      "sales_and_administration": 8,
+      "learning_and_internal_systems": 5,
+      "uncommitted_business_reserve": 5
+    },
+    "preferred_positioning": "Midrange and higher-end; latest user choice supersedes V1 preference for only fewer premium clients",
+    "confirmed_capabilities_file": "capabilities.json",
+    "excluded_now": [
+      "Social media services, including templates and posting",
+      "Advertising setup, creative and campaign management",
+      "Ongoing email campaign management while marked learning",
+      "In-person business photography/video"
+    ],
+    "unconfirmed": [
+      "New customer interviews for case-study production"
+    ],
+    "assisted": [
+      "Original logos and logo cleanup",
+      "Some motion/video production",
+      "Email writing"
+    ],
+    "v2_answers": "discovery.json",
+    "additional_competitors": "research/new-competitors.json",
+    "v1_source_hashes": {
+      "plan-catalog.json": "28f71d2653837fec4f5691c3b15148c66a480b4723ec54fb625747d6f16504fd",
+      "operating-design.json": "9952036130fc7b6a003ad38d4b435a207c835f82f1a16e107fc24e79a04eb15d"
+    },
+    "v3_decisions": "User chose 8 / 10 / 15 / 20 pages at unchanged fees after reviewing the closest published comparisons. This supersedes the earlier 7 / 9 / 12 / 20 draft and explicit Business 12 request. Storefront information pages rise 5→6; products, audit samples, maintained-site limits, collection entries and module quantities remain separate units."
+  },
+  "economics": {
+    "currency": "USD",
+    "target_after_direct_cost_per_hour": 110,
+    "project_direct_cost_fraction": 0.04,
+    "care_direct_cost_fraction": 0.1,
+    "contingency_fraction": 0.25,
+    "meaning": "Fee less modeled direct costs divided by complete reserved owner hours. Focused reserves 100% above its seven-hour base; other scopes reserve 25%. These scenario ratios are not profit, wages, demand forecasts or measured delivery rates.",
+    "assumptions": "The larger V3 scope reserves 14 / 17.5 / 32.5 / 51.25 complete owner hours for Focused / Custom / Business / Signature. These are unmeasured planning judgments, including communication, research, revisions, QA and support. Track actual AI/Semrush/tool costs, payment fees, overhead and tax separately. Client-paid hosting and subscriptions are separate. No word-count efficiency is assumed to justify cutting the accepted deliverable.",
+    "pilot_gate": "Log at least three complete projects/cycles per offer before reducing reserves or describing a repeatable turnaround. Include intake, manual factual/design review, AI supervision, calls, revisions, QA, launch, post-launch checks and defect work. Track AI waiting and client waiting separately. Underestimation does not reduce the accepted deliverable; adjust future scope, fees, dates or booking limits when observed work requires it."
+  },
+  "plans": [
+    {
+      "id": "roadmap",
+      "name": "Website Roadmap",
+      "route": "Find the right next step",
+      "price": 650,
+      "mode": "project",
+      "timeline": "5 business days",
+      "visibility": "Public offer",
+      "fit": "An owner with an existing website who needs an independent diagnosis and a practical decision about fixes, a rebuild or ongoing work.",
+      "result": "An evidence-backed action plan that another competent provider could also implement.",
+      "includes": [
+        "One structured written owner intake; one website/domain; up to 10 agreed public pages and one primary inquiry journey. Optional 60-minute discovery appointment.",
+        "Review message clarity, navigation, mobile usability, basic accessibility, performance, search visibility foundations and the contact journey. Use read-only analytics/Search Console access where available; record missing data.",
+        "Inspect up to three relevant competitor websites for useful differences. This is a bounded comparison, not a market-size study.",
+        "Deliver a concise findings report with screenshots, affected URLs, severity, why each finding matters, and the next action. Prioritize up to 10 findings into now / next / later.",
+        "Provide a proposed 90-day sequence, an outline of the recommended scope, and an estimate for W&M implementation if requested.",
+        "Written findings explanation plus a recorded walkthrough and one consolidated factual-correction round; optional 30-minute findings appointment."
+      ],
+      "excludes": [
+        "Repairs or new page production",
+        "Penetration testing, legal accessibility certification, exhaustive SEO crawling, or revenue attribution",
+        "Private application screens, stores with complex checkout, or several websites"
+      ],
+      "stages": [
+        [
+          "Day 1",
+          "Written intake, access check and confirmed page/journey sample."
+        ],
+        [
+          "Day 2",
+          "Tool-assisted inspection, manual verification and competitor context."
+        ],
+        [
+          "Day 3",
+          "Evidence-backed priorities and report draft."
+        ],
+        [
+          "Day 4",
+          "Findings walkthrough and consolidated factual corrections."
+        ],
+        [
+          "Day 5",
+          "Verify corrections and deliver the final report and next steps."
+        ]
+      ],
+      "inputs": [
+        "Website URL; main business goal and known problems",
+        "Read-only analytics access if available; permission and a safe method to test the form",
+        "One decision maker and accurate business/service information"
+      ],
+      "acceptance": [
+        "Every priority links to evidence and an affected page or journey.",
+        "Recommendations distinguish a confirmed fault from a hypothesis.",
+        "The owner can identify the first three actions, their dependencies and who should do them."
+      ],
+      "hours": [
+        [
+          "Intake and scope",
+          1
+        ],
+        [
+          "Competitor context",
+          0.5
+        ],
+        [
+          "Inspection and evidence",
+          1.25
+        ],
+        [
+          "Report and sequencing",
+          0.5
+        ],
+        [
+          "Walkthrough and correction",
+          0.75
+        ]
+      ],
+      "note": "A Roadmap is optional. Do not require it when an owner can proceed directly to a clearly scoped build. If its paid work is reused in a later engagement, remove the overlapping work and show the resulting credit in that proposal; do not bill for the same discovery twice.",
+      "example": "A service company receives a documented decision to repair its inquiry form and rewrite two pages before considering a full rebuild.",
+      "support": "For 14 calendar days after delivery, answer clarification questions about the report and correct factual errors. Implementation is a new scope.",
+      "estimate_basis": "Four owner hours is a proposed assisted-review estimate. The agreed call lengths, manual validation and factual-correction round remain included.",
+      "contingency_fraction": 0.25
+    },
+    {
+      "id": "message",
+      "name": "Brand & Message Sprint",
+      "route": "Find the right next step",
+      "price": 1800,
+      "mode": "project",
+      "timeline": "3 weeks",
+      "visibility": "By proposal",
+      "fit": "An established business whose audience, offer or message is unclear enough to hold back a website project.",
+      "result": "A usable message and visual-direction brief for the business and its next website.",
+      "includes": [
+        "Written positioning workbook and decision exchange; one business and one primary market. Optional 90-minute workshop and 45-minute decision appointment.",
+        "Review supplied business/customer evidence and up to three competitors. Develop up to two primary customer profiles from that evidence, marking assumptions.",
+        "One positioning statement, one main value proposition, a message hierarchy, up to three service/offer descriptions, and five headline options with a selected recommendation.",
+        "A voice guide with three short before/after writing examples; a homepage content outline rather than a completed website.",
+        "One visual direction using the existing identity: color palette, type pairing, image direction and a compact usage guide.",
+        "Two consolidated review rounds: message decisions, then selected-direction refinement. Editable documents and recorded/written handoff; optional 45-minute appointment."
+      ],
+      "excludes": [
+        "New original logo or business naming",
+        "Customer interviews, surveys, trademark research, photography or a full brand campaign",
+        "Full website copy or implementation; social media and advertising services"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Written discovery, supplied-evidence review and competitor comparison."
+        ],
+        [
+          "Week 2",
+          "Positioning, messages and visual-direction presentation; first feedback round."
+        ],
+        [
+          "Week 3",
+          "Selected-direction refinements, second round and handoff."
+        ]
+      ],
+      "inputs": [
+        "Owner participation; current offers, prices and real customer evidence",
+        "Existing logo/files and permissioned examples",
+        "One approver willing to choose a direction"
+      ],
+      "acceptance": [
+        "Approved audience and positioning decisions are explicit.",
+        "Claims trace to supplied facts; unverified claims are removed or marked.",
+        "The brief contains copy examples, color/type specifications and usable source documents."
+      ],
+      "hours": [
+        [
+          "Discovery and administration",
+          2
+        ],
+        [
+          "Evidence and competitor research",
+          2
+        ],
+        [
+          "Positioning and messages",
+          3
+        ],
+        [
+          "Visual direction and guide",
+          2
+        ],
+        [
+          "Revisions",
+          2
+        ],
+        [
+          "Handoff",
+          1
+        ]
+      ],
+      "note": "Website plans already include the discovery needed for their agreed scope. Sell this sprint only when a separate positioning decision is genuinely needed. Reused work reduces the subsequent website scope and fee.",
+      "example": "A company offering unrelated services chooses a primary audience, organizes three offers, and gains a clear brief before commissioning its website.",
+      "support": "30 calendar days to report defects against the accepted scope. New requests, third-party changes and ongoing maintenance are separately scoped.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "repair",
+      "name": "Website Repair Sprint",
+      "route": "Fix or connect what exists",
+      "price": 1800,
+      "mode": "project",
+      "timeline": "5–10 business days",
+      "visibility": "Public offer",
+      "fit": "An owner with a functioning, accessible website and a small number of specific problems worth fixing without a rebuild.",
+      "result": "A finite set of agreed improvements, implemented and retested with before/after evidence.",
+      "includes": [
+        "A short access/platform check, written scope confirmation and reproduction of the reported problems; optional 45-minute scope appointment.",
+        "Agree up to three bounded fixes before booking. The total implementation work must fit six planned production hours; preparation, testing, communication and contingency are budgeted separately.",
+        "Typical eligible fixes: correct a form delivery/confirmation path; fix a mobile layout issue in one shared component; optimize specified first-party images/fonts; repair agreed metadata/indexability settings; or rewrite and implement one existing page for its agreed purpose.",
+        "Create a backup or rollback path before changes. Use a preview/staging environment when the platform supports it.",
+        "Implement the exact accepted fix list, run the defined checks, and provide a change log and before/after evidence.",
+        "One consolidated preview-feedback round and written/recorded handoff; optional 30-minute appointment. W&M-caused defects are corrected without consuming a paid addition."
+      ],
+      "excludes": [
+        "A whole-site redesign, unbounded speed cleanup or guaranteed Lighthouse score",
+        "Malware recovery, unsupported legacy plugins, major migrations or custom application repair",
+        "New checkout, complex integrations, third-party outages or recovery of inaccessible accounts"
+      ],
+      "stages": [
+        [
+          "Days 1–2",
+          "Confirm access, reproduce each problem, record rollback and agree the up-to-three-fix scope."
+        ],
+        [
+          "Days 2–4",
+          "Implement the agreed fixes and perform initial regression checks."
+        ],
+        [
+          "Days 4–8",
+          "One consolidated review, corrections and retesting; a five-day completion requires feedback by day 4."
+        ],
+        [
+          "Days 5–10",
+          "Explicit acceptance, approved release, before/after evidence and handoff. Larger faults remain a separately quoted scope."
+        ]
+      ],
+      "inputs": [
+        "Working administrator access and an authorized owner",
+        "A clear problem list and permission for test submissions",
+        "A recoverable environment or separately approved recovery setup"
+      ],
+      "acceptance": [
+        "Each agreed fix passes its written before/after check.",
+        "Changed forms are tested through receipt and confirmation, not just the submit button.",
+        "No identified material regression in the touched pages or shared components."
+      ],
+      "hours": [
+        [
+          "Diagnosis and scoping",
+          1
+        ],
+        [
+          "Backup and environment",
+          1
+        ],
+        [
+          "Implementation",
+          6
+        ],
+        [
+          "Testing",
+          2
+        ],
+        [
+          "Review and refinement",
+          1
+        ],
+        [
+          "Handoff and administration",
+          1
+        ]
+      ],
+      "note": "The six-hour production allowance is a pre-sale scoping tool, not permission to stop halfway through an accepted fixed-fee deliverable. If work cannot be bounded, recommend Roadmap or a separate estimate before taking the project. Choose the coordinated sprint when shared components, investigation or regression work require one combined scope. If requests are genuinely independent known faults that fit Single Website Fix, quote those modules where appropriate; three requests do not automatically require the higher sprint fee.",
+      "example": "Repair one failed inquiry notification, improve its confirmation message, and correct one mobile navigation issue.",
+      "support": "30 calendar days to report defects against the accepted scope. New requests, third-party changes and ongoing maintenance are separately scoped.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "focused",
+      "name": "Focused Website",
+      "route": "Build a website",
+      "price": 2950,
+      "mode": "project",
+      "timeline": "5–10 business days",
+      "visibility": "Public offer",
+      "fit": "A new or established service business with one clear offer, one decision maker and ready business facts, needing a complete professional presence.",
+      "result": "A complete eight-page website with original writing, an established design direction adapted to your business, and a tested inquiry path.",
+      "includes": [
+        "Structured written intake, one audience, one primary inquiry journey and an eight-page plan. Review up to two relevant competitors. An optional 30-minute kickoff can replace the written kickoff.",
+        "Up to eight marketing pages with original AI-assisted writing, edited and checked against approved business facts. Content is as concise or detailed as the topic, reader and search intent require; there is no word quota or word-count surcharge for the agreed page purpose.",
+        "Select and adapt one established W&M layout direction. Apply the client’s logo, colors, typography, spacing and imagery consistently. The client sees the design approach before booking; a newly art-directed visual system is a Custom Website scope.",
+        "Prepare up to eight supplied/licensed photographs and one simple original website graphic. No original logo, commissioned photography or motion production.",
+        "One contact form with up to eight fields, one notification destination, spam controls and confirmation; one existing booking/payment tool link or embed. New provider configuration and automations are separate.",
+        "One agreed supported platform. If needed, one standard content collection with up to six supplied entries using the established component set. Up to three client-supplied policy pages are formatted outside the eight marketing-page count.",
+        "Two consolidated review rounds: copy/design direction, then complete preview. Shared launch checks, audit/check record and explicit launch approval. Written editing guide and recorded demonstration; optional 20-minute handoff appointment.",
+        "Client-controlled domain and service accounts, an ownership/license inventory, checks within two business days and around day 14 after launch, and 30-day defect support. Optional Care is separate.",
+        "Search-ready page planning: map each agreed service or buyer question to its page; review search intent and relevant query themes, write unique titles/descriptions, connect related pages with internal links, and apply the shared technical search checks. Search demand informs useful content; rankings are not guaranteed.",
+        "Written communication by default: email or the agreed text channel anytime, with acknowledgement within one business day during active delivery/support. Weekly project updates; optional calls by appointment. No call is required to buy, give feedback or receive the handoff.",
+        "Launch handover pack: page and account inventory, test/check record, editing guide with recorded demonstration, support dates, and a prioritized next-90-days recommendation sheet. This is a handoff recommendation, not ongoing SEO delivery or a new full audit."
+      ],
+      "excludes": [
+        "A new visual identity, original art direction or multiple homepage concepts",
+        "Store, portal, custom calculator, conditional form, migration or custom application",
+        "New tool-account setup, original field research, ongoing SEO, social media and advertising"
+      ],
+      "stages": [
+        [
+          "Before day 1",
+          "Confirm facts, photographs, logo, access, page inventory, selected established design direction, approver and booked start."
+        ],
+        [
+          "Days 1–2",
+          "Kickoff, page plan, edited copy and direction preview; first review. A five-day completion requires this approval on day 1 or 2."
+        ],
+        [
+          "Days 2–4",
+          "Build the approved pages and form; complete preview and second review. The earliest path needs feedback by day 3 and corrections/checks by day 4."
+        ],
+        [
+          "Days 5–10",
+          "Finish agreed corrections, launch tests, explicit approval, launch and handoff. Normal two-business-day feedback windows fit the later end; missing inputs extend the calendar by agreement."
+        ]
+      ],
+      "inputs": [
+        "Accurate business facts, services, existing logo and permissioned photographs before the booked start",
+        "One approver; consolidated feedback within two business days at each gate",
+        "Platform/domain access and approved policy wording; accept the established design approach"
+      ],
+      "acceptance": [
+        "All agreed pages, approved copy and supplied policy text are complete.",
+        "The selected design approach is consistent across mobile and desktop.",
+        "The shared quality checks and audit record are complete, including a tested inquiry destination and confirmation.",
+        "The owner explicitly approves launch and receives access, responsibilities and handoff."
+      ],
+      "hours": [
+        [
+          "Written intake and page plan",
+          0.75
+        ],
+        [
+          "Competitor/query research and review",
+          0.5
+        ],
+        [
+          "Writing, factual checks and revisions",
+          2
+        ],
+        [
+          "Design adaptation and revision",
+          0.75
+        ],
+        [
+          "Build and content entry",
+          1
+        ],
+        [
+          "Manual QA, audit review and launch",
+          1
+        ],
+        [
+          "Communication, handoff and support",
+          1
+        ]
+      ],
+      "note": "The lower fee reflects a focused service scope and a disclosed established design system. It preserves the same applicable launch-quality standard. AI execution time, client waiting and queue time are tracked separately from owner hours. Unreviewed AI output is not a deliverable.",
+      "example": "Home, Services, Service A, Process, About, Work/Proof, FAQ and Contact: eight useful pages with original writing and a clear next step.",
+      "support": "30 calendar days from launch to report defects against the accepted scope. Send email/text anytime; acknowledgement within one business day during the published business calendar. Timely reported defects remain covered until corrected. New requests and ongoing maintenance are separately scoped.",
+      "market_band": "Midrange",
+      "contingency_fraction": 1.0,
+      "estimate_basis": "Seven complete owner hours plus 100% reserve = 14 reserved hours. V3 expands to eight pages and explicit research, original writing, review and handoff work. The earlier owner estimate of 3–4 hours for six pages is unmeasured; this is a new pilot budget, not a turnaround guarantee.",
+      "page_limit": 8
+    },
+    {
+      "id": "essential",
+      "name": "Custom Website",
+      "route": "Build a website",
+      "price": 4500,
+      "mode": "project",
+      "timeline": "2–3 weeks",
+      "visibility": "Public offer",
+      "fit": "A service business that wants a distinct visual identity for its website, up to two related service groups and one main customer journey, without the deeper multi-journey scope of Business.",
+      "result": "A ten-page website with an original visual direction, stronger service explanations, supplied proof and a clear inquiry path.",
+      "includes": [
+        "Written discovery workbook and follow-up questions; review up to three competitors, prioritize up to two related service groups, and deliver a page plan plus concise message brief. Optional discovery appointment up to 90 minutes can replace the written exchange.",
+        "Up to ten marketing pages with original writing from verified business facts, shaped to the topic, reader and search intent without a word cap. One may be a proof/case-study page from client-supplied evidence and approved statements; it counts inside the ten pages.",
+        "An original homepage visual direction and up to three reusable interior page types, designed around the client’s brand and content rather than selecting the Focused plan’s established layout. Responsive desktop/mobile design; existing-logo color/type/image direction.",
+        "Up to three simple original website graphics and preparation of up to eight supplied or licensed photographs. No mandatory asset quota: agree the useful assets in the page plan.",
+        "One contact form, up to eight fields, one notification destination, spam controls and a confirmation message. One existing-tool booking or payment link/embed; no new account configuration or workflow automation.",
+        "One agreed platform and one content collection if needed, with up to six supplied entries. The platform and editing tasks are selected before booking.",
+        "Shared website launch standards, two consolidated review rounds, a written editing guide, recorded demonstration and ownership/handoff inventory. Optional training appointment up to 45 minutes.",
+        "Up to three client-approved policy pages inserted separately from the ten marketing pages; W&M formats the supplied text.",
+        "Search-ready page planning: map each agreed service or buyer question to its page; review search intent and relevant query themes, write unique titles/descriptions, connect related pages with internal links, and apply the shared technical search checks. Search demand informs useful content; rankings are not guaranteed.",
+        "Written communication by default: email or the agreed text channel anytime, with acknowledgement within one business day during active delivery/support. Weekly project updates; optional calls by appointment. No call is required to buy, give feedback or receive the handoff.",
+        "Launch handover pack: page and account inventory, test/check record, editing guide with recorded demonstration, support dates, and a prioritized next-90-days recommendation sheet. This is a handoff recommendation, not ongoing SEO delivery or a new full audit.",
+        "Basic inquiry measurement: connect one client-owned GA4 property and Search Console property, and test page views plus one primary inquiry-success event through a supported native integration. Configure one compatible consent tool using client-approved settings where required; its subscription is a disclosed client cost. Excludes GTM/custom tagging, dashboards, cross-domain/server-side tracking and extra events. Confirm platform feasibility before booking; no silent omission if unavailable. Preserve existing working measurement and avoid duplicates."
+      ],
+      "excludes": [
+        "Original logo, ecommerce, membership, portal, custom calculator or database application",
+        "A researched practical guide, more than one main customer journey, extra content collections or mass location-page generation. A long service page is still a standard page when it serves the agreed purpose; word count alone does not turn it into a guide.",
+        "New third-party tool configuration other than the explicitly included basic measurement setup; ongoing SEO, social media or advertising."
+      ],
+      "stages": [
+        [
+          "Before week 1",
+          "Complete readiness and confirm the platform, scope, outside costs and booked start."
+        ],
+        [
+          "Week 1",
+          "Written owner discovery, competitor context, page plan, copy and original homepage direction; first consolidated review."
+        ],
+        [
+          "Week 2",
+          "Approved design build, complete preview, second review, corrections, launch checks, approval and handoff on the earliest path."
+        ],
+        [
+          "Week 3 if needed",
+          "Use the included normal review allowance and complete agreed refinements, tests, launch and handoff. No required stage is omitted."
+        ]
+      ],
+      "inputs": [
+        "Business facts, services, differentiators, approved proof and existing brand assets",
+        "One approver; feedback within two business days per round",
+        "Domain/platform access and approved policy wording"
+      ],
+      "acceptance": [
+        "Ten-or-fewer agreed marketing pages and all approved policy pages are complete.",
+        "The owner approves copy, visual direction and launch.",
+        "The primary inquiry reaches its intended destination and produces a clear confirmation.",
+        "The handoff proves account access and the editing tasks the client will own."
+      ],
+      "hours": [
+        [
+          "Written discovery and scope",
+          1.5
+        ],
+        [
+          "Research and page planning",
+          1.5
+        ],
+        [
+          "Writing and revision",
+          4
+        ],
+        [
+          "Original visual direction",
+          2
+        ],
+        [
+          "Build and content entry",
+          1.5
+        ],
+        [
+          "QA and launch",
+          1.5
+        ],
+        [
+          "Communication, handoff and support",
+          1
+        ],
+        [
+          "Basic measurement setup and verification",
+          1
+        ]
+      ],
+      "note": "The $1,550 upgrade from Focused adds two page slots, original homepage art direction, up to three reusable interior types, a message brief, two related service groups, up to three graphics and a longer optional training allocation. Focused is a complete professional site; Custom buys original design and deeper explanation. Avoid upselling Custom for page count alone.",
+      "example": "Home, Services overview, Service A, Service B, Process, About, Project Story, FAQ, What to Expect and Contact: ten purposeful pages with one cohesive original design.",
+      "support": "30 calendar days from launch to report defects against the accepted scope. Send email/text anytime; acknowledgement within one business day during the published business calendar. Timely reported defects remain covered until corrected. New requests and ongoing maintenance are separately scoped.",
+      "market_band": "Midrange / custom",
+      "estimate_basis": "14 complete owner hours plus 25% reserve = 17.5 reserved hours. Includes ten pages, original design, deeper discovery, basic measurement and the complete launch/handoff scope. Unmeasured pilot estimate.",
+      "contingency_fraction": 0.25,
+      "page_limit": 10
+    },
+    {
+      "id": "business",
+      "name": "Business Custom Website",
+      "route": "Build a website",
+      "price": 7500,
+      "mode": "project",
+      "timeline": "3–4 weeks",
+      "visibility": "Public offer",
+      "fit": "A service company with several distinct services or customer groups that needs stronger explanation, proof and content structure.",
+      "result": "A coherent website that connects its services, supporting evidence and up to two primary inquiry journeys.",
+      "includes": [
+        "Written owner/staff discovery and follow-up questions; review up to five competitors, prioritize up to three service groups and two distinct customer journeys. Optional appointments up to 90 minutes with the owner and 60 minutes with a staff expert can replace the written discovery.",
+        "Up to 15 marketing pages with original writing. One can be a researched practical guide answering one agreed buyer question; one can be a proof/case-study page from supplied evidence. Both count inside the 15-page total. Content length follows topic, reader and search intent, without a word cap.",
+        "A custom homepage and up to five reusable interior page types, designed for desktop and mobile; an expanded digital style sheet using the existing identity.",
+        "Up to six simple original website graphics and preparation of up to 15 supplied/licensed photographs.",
+        "Up to two forms of eight fields each, two notification destinations total, spam controls and confirmations. Up to two existing-tool links/embeds.",
+        "One agreed platform and up to two content collections, with up to 12 supplied entries total. Up to 15 agreed legacy URL redirects when replacing a site.",
+        "One proof/case-study page can be written from supplied records and approved statements within the page count. New customer interviews are not included.",
+        "Shared launch standards, two consolidated review rounds, a written editing guide and recorded demonstrations, 30-day defect correction and up to three supplied policy pages outside the marketing-page total. Optional training appointment up to 60 minutes.",
+        "Search-ready page planning: map each agreed service or buyer question to its page; review search intent and relevant query themes, write unique titles/descriptions, connect related pages with internal links, and apply the shared technical search checks. Search demand informs useful content; rankings are not guaranteed.",
+        "Written communication by default: email or the agreed text channel anytime, with acknowledgement within one business day during active delivery/support. Weekly project updates; optional calls by appointment. No call is required to buy, give feedback or receive the handoff.",
+        "Launch handover pack: page and account inventory, test/check record, editing guide with recorded demonstration, support dates, and a prioritized next-90-days recommendation sheet. This is a handoff recommendation, not ongoing SEO delivery or a new full audit.",
+        "Basic inquiry measurement: connect one client-owned GA4 property and Search Console property, and test page views plus one primary inquiry-success event through a supported native integration. Configure one compatible consent tool using client-approved settings where required; its subscription is a disclosed client cost. Excludes GTM/custom tagging, dashboards, cross-domain/server-side tracking and extra events. Confirm platform feasibility before booking; no silent omission if unavailable. Preserve existing working measurement and avoid duplicates."
+      ],
+      "excludes": [
+        "An original visual identity, complex automation, store, portal or custom application",
+        "More than two audience journeys or three service groups without a new scope",
+        "Customer interviews, ongoing publishing, social media or advertising"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Written discovery, competitor review, journey/page plan, copy and design direction; first consolidated review."
+        ],
+        [
+          "Week 2",
+          "Build the approved pages, content collections, forms and redirects; complete preview and second review."
+        ],
+        [
+          "Week 3",
+          "Finish corrections, cross-device and migration checks, approval, launch and training on the earliest path."
+        ],
+        [
+          "Week 4 if needed",
+          "Finish agreed refinements and normal review cycles; all acceptance checks, launch and handoff remain required."
+        ]
+      ],
+      "inputs": [
+        "A knowledgeable owner and access to one staff expert if used",
+        "Evidence for case-study claims, service details and permissioned assets",
+        "A list of old URLs and account access for any replacement site"
+      ],
+      "acceptance": [
+        "The agreed services and both journeys are understandable and complete.",
+        "Content collections can be edited through the demonstrated workflow.",
+        "Agreed redirects resolve correctly and forms are tested end to end.",
+        "The practical guide/proof page uses approved facts and remains within scope."
+      ],
+      "hours": [
+        [
+          "Written discovery and scope",
+          2.5
+        ],
+        [
+          "Research and architecture",
+          2.5
+        ],
+        [
+          "Writing and revision",
+          8
+        ],
+        [
+          "Design",
+          3.5
+        ],
+        [
+          "Build and content entry",
+          3.5
+        ],
+        [
+          "QA and launch",
+          3
+        ],
+        [
+          "Communication, handoff and support",
+          2
+        ],
+        [
+          "Basic measurement setup and verification",
+          1
+        ]
+      ],
+      "note": "The upgrade from Custom buys five more page slots plus a researched guide, three service groups, two customer journeys/forms, two content collections, more original graphics and a 15-URL redirect allowance. A larger service menu with distinct inquiry routes is the best-fit trigger.",
+      "example": "A professional-services firm explains three service groups, shows supplied project evidence, answers a buyer question in depth and routes inquiries by service.",
+      "support": "30 calendar days from launch to report defects against the accepted scope. Send email/text anytime; acknowledgement within one business day during the published business calendar. Timely reported defects remain covered until corrected. New requests and ongoing maintenance are separately scoped.",
+      "market_band": "Higher-end",
+      "estimate_basis": "26 complete owner hours plus 25% reserve = 32.5 reserved hours. Includes 15 pages, one researched guide, two journeys, basic measurement and full launch/handoff scope. Unmeasured pilot estimate.",
+      "contingency_fraction": 0.25,
+      "page_limit": 15
+    },
+    {
+      "id": "signature",
+      "name": "Signature Custom Website",
+      "route": "Build a website",
+      "price": 11500,
+      "mode": "project",
+      "timeline": "4–6 weeks",
+      "visibility": "Public offer",
+      "fit": "A mature business whose offer hierarchy, visual presentation and proof justify a deeper custom project.",
+      "result": "A distinctive, well-structured website with a clear buying path across a more complex service portfolio.",
+      "includes": [
+        "Written positioning and journey workbook plus owner/staff follow-ups; review up to five competitors, up to six service groups and three audience journeys. Optional two-hour workshop plus two 45-minute appointments can replace the written discovery.",
+        "Up to 20 marketing pages, including up to two researched practical guides answering two agreed buyer questions and up to two proof pages from supplied evidence. Guides and proof pages count inside the 20-page total. Writing is as concise or detailed as the topic, reader and search intent require, without a word cap.",
+        "Two initial homepage concepts, one selected direction, and up to seven reusable interior page types. A more developed digital design system with layout, spacing, color, type and reusable components.",
+        "One custom lightweight motion treatment: a hero sequence or animated explanatory diagram up to 20 seconds, with an accessible static/reduced-motion fallback. Scope its storyboard before production.",
+        "Up to eight simple original website graphics and preparation of up to 24 supplied/licensed photographs.",
+        "Up to three forms of 10 fields each and three notification destinations total; up to three existing-tool links/embeds. One form may show/hide up to two field groups; scoring, CRM automation and calculations are separate.",
+        "Up to three content collections with 20 supplied entries total; up to 25 agreed legacy URL redirects. Up to two proof pages from supplied material fit within the page count.",
+        "Shared launch standards, three consolidated review rounds, written editing guides and recorded demonstrations, ownership inventory and up to three supplied policy pages outside the marketing-page total. Optional two 45-minute training appointments.",
+        "Search-ready page planning: map each agreed service or buyer question to its page; review search intent and relevant query themes, write unique titles/descriptions, connect related pages with internal links, and apply the shared technical search checks. Search demand informs useful content; rankings are not guaranteed.",
+        "Written communication by default: email or the agreed text channel anytime, with acknowledgement within one business day during active delivery/support. Weekly project updates; optional calls by appointment. No call is required to buy, give feedback or receive the handoff.",
+        "Launch handover pack: page and account inventory, test/check record, editing guide with recorded demonstration, support dates, and a prioritized next-90-days recommendation sheet. This is a handoff recommendation, not ongoing SEO delivery or a new full audit.",
+        "Basic inquiry measurement: connect one client-owned GA4 property and Search Console property, and test page views plus one primary inquiry-success event through a supported native integration. Configure one compatible consent tool using client-approved settings where required; its subscription is a disclosed client cost. Excludes GTM/custom tagging, dashboards, cross-domain/server-side tracking and extra events. Confirm platform feasibility before booking; no silent omission if unavailable. Preserve existing working measurement and avoid duplicates."
+      ],
+      "excludes": [
+        "Custom 3D scenes, open-ended animation, complex calculators or applications",
+        "Customer interview production, original photography or a complete new logo identity",
+        "Unlimited concepts, ongoing content production, social media or ads"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Written discovery and decisions, page/journey plan, copy and two initial homepage concepts; first review and concept selection."
+        ],
+        [
+          "Week 2",
+          "Develop the selected visual system, content and motion storyboard; second review."
+        ],
+        [
+          "Week 3",
+          "Complete pages, collections, forms, redirects and motion; integrated preview and third consolidated review."
+        ],
+        [
+          "Week 4",
+          "Corrections, acceptance tests, approval, launch, training and handoff on the earliest path."
+        ],
+        [
+          "Weeks 5–6 if needed",
+          "Allow the agreed review windows, deeper refinements and launch coordination; preserve every required acceptance step."
+        ]
+      ],
+      "inputs": [
+        "A decision-making owner, a staff expert and organized proof/content sources",
+        "Prompt approval of the concept and motion storyboard",
+        "Authority to approve claims, privacy wording and account setup"
+      ],
+      "acceptance": [
+        "All three agreed audience journeys lead to the intended next action.",
+        "The selected visual direction is applied consistently.",
+        "Motion has a usable static/reduced-motion fallback and passes agreed performance checks.",
+        "Pages, collections, redirects and forms match the approved scope inventory."
+      ],
+      "hours": [
+        [
+          "Written discovery and decisions",
+          4
+        ],
+        [
+          "Research and architecture",
+          5
+        ],
+        [
+          "Writing and revision",
+          8
+        ],
+        [
+          "Design and motion",
+          8
+        ],
+        [
+          "Build and content entry",
+          7
+        ],
+        [
+          "QA and launch",
+          5
+        ],
+        [
+          "Communication, handoff and support",
+          3
+        ],
+        [
+          "Basic measurement setup and verification",
+          1
+        ]
+      ],
+      "note": "The upgrade from Business adds five page slots, a second researched guide, up to six service groups and three journeys, two initial homepage concepts, a fuller design system, one bounded motion feature, a third form/collection and a larger redirect allowance. Sell it when those decisions and content are useful; unused page slots are not a promise of higher rankings.",
+      "example": "An established regional business explains six service groups, demonstrates its work and uses one restrained custom visual feature to explain its process.",
+      "support": "30 calendar days from launch to report defects against the accepted scope. Send email/text anytime; acknowledgement within one business day during the published business calendar. Timely reported defects remain covered until corrected. New requests and ongoing maintenance are separately scoped.",
+      "market_band": "Higher-end / signature",
+      "estimate_basis": "41 complete owner hours plus 25% reserve = 51.25 reserved hours. Includes 20 pages, two researched guides, original concepts and bounded motion, basic measurement and full launch/handoff scope. Unmeasured pilot estimate.",
+      "contingency_fraction": 0.25,
+      "page_limit": 20
+    },
+    {
+      "id": "store",
+      "name": "Storefront Launch",
+      "route": "Build a website",
+      "price": 8500,
+      "mode": "project",
+      "timeline": "6–8 weeks",
+      "visibility": "By proposal",
+      "fit": "A business with a straightforward physical-product catalog, approved fulfillment rules and readiness to operate an online store.",
+      "result": "A branded storefront with a tested path from product selection through checkout and order notification.",
+      "includes": [
+        "Written commerce intake; one store, currency, language and primary selling country. Optional 90-minute commerce discovery.",
+        "Shopify is the reference scope. Select one existing theme, configure its supported sections and apply custom art direction. A fully custom theme, WooCommerce or another platform receives a separate estimate.",
+        "Up to 20 supplied products, up to three option types per product and 100 sellable variants in total. Client supplies a clean product sheet, product facts, prices, inventory and photos.",
+        "Up to six marketing/information pages with original purpose-led copy, plus formatting of up to three client-approved policy pages. Product copy is edited from supplied facts to explain each product clearly; additional product research is separately agreed.",
+        "One payment provider, one shipping origin, up to three client-specified shipping zones/rules, and one collection structure with up to five collections.",
+        "Configure platform tax settings from the client's approved instructions; tax determination, registrations, duties and accounting advice are outside the service.",
+        "Configure standard order/customer notifications, contact form, inventory settings and up to two compatible off-the-shelf apps. App fees are direct client costs.",
+        "Test representative purchase, failed payment, discount, shipping, refund/cancellation and notification cases using the platform's supported test methods.",
+        "Two consolidated review rounds, written operator instructions and recorded demonstrations, launch checklist and ownership inventory. Optional 90-minute operator training appointment."
+      ],
+      "excludes": [
+        "Subscriptions, marketplaces, wholesale/B2B pricing, international commerce or ERP integration",
+        "Custom checkout, complex product builders, regulated-product approval or fulfillment operations",
+        "Product photography, managing orders, ongoing promotions, social media or ads"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Catalog/readiness review, commerce discovery and platform/theme agreement."
+        ],
+        [
+          "Week 2",
+          "Store structure, art direction, marketing copy and first review."
+        ],
+        [
+          "Weeks 3–4",
+          "Configure catalog, checkout, shipping, apps and notifications."
+        ],
+        [
+          "Week 5",
+          "Integrated preview and second review."
+        ],
+        [
+          "Weeks 6–7",
+          "Test representative transactions, complete operator training and launch with owner approval when all acceptance checks pass."
+        ],
+        [
+          "Week 8 if needed",
+          "Complete remaining refinements/tests, obtain approval and launch; perform the first operational check."
+        ]
+      ],
+      "inputs": [
+        "Accurate catalog sheet, product rights, shipping/return rules and fulfillment owner",
+        "Verified payment-provider account and client-approved tax configuration",
+        "Store policies, inventory and test access; authorization before any real transaction"
+      ],
+      "acceptance": [
+        "The approved product/variant sample matches the catalog and prices.",
+        "Agreed shipping and payment scenarios pass and order notifications arrive.",
+        "The owner can add a product, fulfill an order and issue a refund in training.",
+        "Any platform/app limitation is recorded before launch acceptance."
+      ],
+      "hours": [
+        [
+          "Discovery and commerce scope",
+          4
+        ],
+        [
+          "Catalog and information planning",
+          6
+        ],
+        [
+          "Writing and product editing",
+          10
+        ],
+        [
+          "Design and theme configuration",
+          12
+        ],
+        [
+          "Commerce and catalog setup",
+          12
+        ],
+        [
+          "Testing and launch",
+          8
+        ],
+        [
+          "Training and communication",
+          6
+        ]
+      ],
+      "note": "",
+      "example": "A local maker launches 20 products with ordinary shipping and a clear returns policy, then operates orders in their own Shopify account.",
+      "support": "30 calendar days to report defects against the accepted scope. New requests, third-party changes and ongoing maintenance are separately scoped.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "58 complete owner hours plus 25% reserve. V3 increases five information pages to six and removes copy word caps while preserving the supplied-product-facts research boundary."
+    },
+    {
+      "id": "local-setup",
+      "name": "Local Presence Setup",
+      "route": "Improve local visibility",
+      "price": 950,
+      "mode": "project",
+      "timeline": "3 weeks of active work; verification may take longer",
+      "visibility": "Public offer",
+      "fit": "One eligible local business/location whose business information, profile access and basic customer actions need to be put in order.",
+      "result": "An accurate, client-owned local-presence foundation with a documented list of completed and pending platform actions.",
+      "includes": [
+        "One written eligibility/access and owner intake; optional 45-minute appointment. Obtain authorization before claiming or changing a profile.",
+        "Create or improve one Google Business Profile: accurate category choice, business details, services, description, hours, contact/website links and up to 10 supplied images where supported.",
+        "Support one standard verification route with written preparation instructions and up to two written assistance exchanges or optional 30-minute appointments. The owner supplies authentic evidence and performs identity/location steps required by the platform, which can include a vendor-required video step; a W&M sales or delivery call is never mandatory.",
+        "Set up or correct one Bing Places and one Apple Business Connect listing where eligible and supported; record vendor approval dependencies.",
+        "Check consistency against up to five existing website pages. Provide a correction list; up to five simple name/address/phone/hour corrections on an accessible supported website are included.",
+        "Provide a neutral review-request template, the available review link and a simple request process. No incentives, review gating or promises of review volume.",
+        "One consolidated accuracy review, change log, owner-access verification and written/recorded handoff; optional 30-minute appointment."
+      ],
+      "excludes": [
+        "Guaranteed verification, ranking, reviews, map placement or lead volume",
+        "Suspension appeals, ownership disputes, duplicate mergers, bulk locations or mass citation submissions",
+        "Ongoing profile posting, social media management or advertising"
+      ],
+      "stages": [
+        [
+          "Days 1–3",
+          "Eligibility, ownership, information and image collection."
+        ],
+        [
+          "Days 4–7",
+          "Prepare and submit the agreed profiles/corrections; provide verification instructions."
+        ],
+        [
+          "Days 8–10",
+          "Website consistency corrections, review-request process and client accuracy review."
+        ],
+        [
+          "Days 11–15",
+          "Complete available changes and hand off completed/pending items."
+        ],
+        [
+          "Up to day 30 after first submission",
+          "Two included follow-up checks on platform decisions; assistance remains within the specified sessions."
+        ]
+      ],
+      "inputs": [
+        "A real eligible business, explicit authorization and a client-controlled owner account",
+        "Accurate service area/address, hours, phone and evidence required by each platform",
+        "Owner attendance for verification when required"
+      ],
+      "acceptance": [
+        "The client retains profile ownership; W&M uses delegated access.",
+        "Each submitted change is logged with its status; unresolved verification is clearly marked.",
+        "The fee is explained as W&M service work; Google Business Profile itself is free.",
+        "Approved listing data and website corrections are consistent."
+      ],
+      "hours": [
+        [
+          "Eligibility and intake",
+          1
+        ],
+        [
+          "Google profile and verification help",
+          2
+        ],
+        [
+          "Other two profiles",
+          1
+        ],
+        [
+          "Website consistency",
+          0.75
+        ],
+        [
+          "Review-request process",
+          0.75
+        ],
+        [
+          "Review and handoff",
+          1
+        ]
+      ],
+      "note": "The service is complete when the agreed preparation, submissions, assistance and handoff are delivered; platform approval is a separate dependency. If eligibility fails at intake, stop before setup and charge only the agreed completed assessment portion, returning the unearned balance. The written assessment portion is $150 within the $950 total, not an additional charge. If the project stops at an ineligible assessment, deliver the findings and refund any prepaid amount above that $150; if no assessment work began, no assessment fee is earned.",
+      "example": "A service-area business gains owner-controlled profiles, correct hours and contact details, and a usable review-request process.",
+      "support": "Two status follow-up checks within 30 days after first submission plus correction of W&M data-entry errors. Appeals and extended platform support are separately scoped.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "workflow",
+      "name": "Workflow Automation Sprint",
+      "route": "Fix or connect what exists",
+      "price": 2500,
+      "mode": "project",
+      "timeline": "4 weeks",
+      "visibility": "By proposal",
+      "fit": "A business repeatedly copying inquiry or operational data between existing tools and able to identify one clear process owner.",
+      "result": "One reliable, documented workflow that saves a defined manual step and has an understandable failure path.",
+      "includes": [
+        "Written process intake; map one trigger-to-outcome workflow and define success, duplicates and failures. Optional 90-minute process workshop.",
+        "Connect up to three existing tools using supported native integrations, Zapier/Make or one straightforward documented API connector.",
+        "One trigger, up to five action steps, two conditional branches and 15 mapped fields. One-way transfer; no historic data migration or bidirectional synchronization.",
+        "Use client-owned accounts and appropriately scoped access. Store credentials through the selected platform's supported credential mechanism.",
+        "Implement duplicate handling where the tools support stable identifiers, validation of required data, one failure notification destination and a documented manual fallback.",
+        "Test at least five agreed scenarios: normal, missing/invalid input, duplicate, provider failure and retry/recovery behavior.",
+        "One consolidated review round, written/recorded operator training, workflow diagram, connection inventory and monitoring instructions. Optional 60-minute operator appointment."
+      ],
+      "excludes": [
+        "Unbounded API development, legacy systems, bespoke authentication or complex data reconciliation",
+        "Financial decisions, medical/legal decision automation, payroll or automated irreversible account changes",
+        "Ongoing campaign management, bulk outreach or unattended AI decisions with material consequences"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Map the process, inspect tool capabilities and agree acceptance cases."
+        ],
+        [
+          "Week 2",
+          "Build the workflow in a test environment using representative test data."
+        ],
+        [
+          "Week 3",
+          "Run failure/duplicate scenarios and client acceptance review."
+        ],
+        [
+          "Week 4",
+          "Controlled activation, training and first-week observation."
+        ]
+      ],
+      "inputs": [
+        "An owner for the process and access to all tools",
+        "A working manual process, representative test data and permission to connect systems",
+        "Paid integration plans if required, with approved usage limits"
+      ],
+      "acceptance": [
+        "The agreed normal and exception cases pass.",
+        "A failure reaches a named person and can be handled manually.",
+        "The client owns the accounts and can disable the workflow.",
+        "The measured manual step removed is described without promising unmeasured savings."
+      ],
+      "hours": [
+        [
+          "Discovery and administration",
+          2
+        ],
+        [
+          "Design and feasibility",
+          2
+        ],
+        [
+          "Configuration and implementation",
+          6
+        ],
+        [
+          "Testing and exception handling",
+          3
+        ],
+        [
+          "Review and training",
+          2
+        ],
+        [
+          "Activation and observation",
+          1
+        ]
+      ],
+      "note": "",
+      "example": "A valid inquiry creates a CRM record, assigns a category and notifies the owner; duplicates and failed transfers are handled explicitly.",
+      "support": "30 calendar days to report defects against the accepted scope. New requests, third-party changes and ongoing maintenance are separately scoped.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "care",
+      "name": "Website Care",
+      "route": "Keep the website working",
+      "price": 275,
+      "mode": "monthly",
+      "timeline": "Monthly; onboarding takes 5–10 business days",
+      "visibility": "Public offer",
+      "fit": "A healthy website on a supported platform with a documented recovery method and a named owner for hosting and accounts.",
+      "result": "Regular checks, controlled maintenance and a small edit allowance, with clear responsibility when a problem needs larger work.",
+      "includes": [
+        "Brochure Care: $275/month for one brochure/service website, up to 20 maintained marketing pages and one ordinary inquiry journey.",
+        "Commerce Care: $450/month for one supported straightforward store, up to 100 products, one checkout and one ordinary inquiry journey. Platform/app limits remain as documented at onboarding.",
+        "Automated availability monitoring at least every 15 minutes, with alerts to W&M during business hours; no promise of continuous human attendance.",
+        "One monthly manual mobile/desktop check of the homepage, navigation, primary form and key conversion path. Commerce includes a supported checkout/order-notification test.",
+        "One planned maintenance window per month: test supported first-party dependencies or WordPress updates in staging; vendor-hosted platforms use the responsibilities table instead.",
+        "A documented backup/recovery setup and quarterly representative restore/rollback test appropriate to the platform. Confirm exactly which data are covered.",
+        "One batch of supplied text/image edits up to 30 minutes for Brochure Care or 45 minutes for Commerce Care. No new page design or original copywriting.",
+        "A monthly work log, exception list and next action. Support acknowledgement within one business day; site-down or failed-checkout reports are triaged within one business day during business hours."
+      ],
+      "excludes": [
+        "24/7 response, guaranteed uptime, unlimited repairs or a security guarantee",
+        "Malware remediation, major version migrations, abandoned plugins, new features or recovery of third-party services",
+        "Custom applications, portals, complex stores, regulated-data systems or fulfillment operations"
+      ],
+      "stages": [
+        [
+          "Onboarding days 1–3",
+          "Inventory accounts/platform, known issues, recovery coverage and essential journeys."
+        ],
+        [
+          "Onboarding days 4–10",
+          "Verify recovery method and alerts; agree maintenance window and responsible contacts."
+        ],
+        [
+          "Each month",
+          "Run checks, approved maintenance, one edit batch and work report."
+        ],
+        [
+          "Quarterly",
+          "Test representative restoration/rollback and review coverage."
+        ]
+      ],
+      "inputs": [
+        "Supported healthy platform with authorized access",
+        "Client-paid hosting, licenses and backup/monitoring tools where required",
+        "A contact for critical decisions and responsibility for renewals"
+      ],
+      "acceptance": [
+        "Each monthly report identifies checks performed, work completed and unresolved exceptions.",
+        "The recovery method is tested for the components it claims to cover.",
+        "Edits and maintenance are checked before/after; provider-caused regressions are corrected.",
+        "Outside-cost and support boundaries remain visible."
+      ],
+      "hours": [
+        [
+          "Monitoring review and checks",
+          0.25
+        ],
+        [
+          "Maintenance",
+          0.6
+        ],
+        [
+          "Edit allowance",
+          0.5
+        ],
+        [
+          "Reporting and communication",
+          0.15
+        ],
+        [
+          "Quarterly restore allowance, monthly average",
+          0.3
+        ]
+      ],
+      "note": "Existing-site onboarding is $375 for Brochure Care or $650 for Commerce Care, after a free eligibility check. It is already included when starting immediately after a W&M build with a completed handoff. An unsafe or unmaintainable site needs separately agreed remediation first. Commerce risk-adjusted monthly labor is 3.5 hours; Brochure Care is 2.25 hours. Quarterly restore tests and rollbacks needed to correct W&M-caused maintenance regressions are included. An actual restoration after an unrelated outage, data loss or compromise requires triage and an approved separate scope/fee before recovery work. At 18 maintained marketing pages, review likely additions. Before crossing the 20-page limit, agree a maintenance extension and fee or select an existing-page improvement that stays within the cap; no automatic upgrade or retroactive charge.",
+      "example": "A small service site receives a monthly form test, controlled updates, a supplied price-list edit and a plain-language maintenance report.",
+      "support": "Business hours: Monday–Friday, 9am–5pm America/New_York, excluding announced holidays. Response targets are acknowledgement/triage targets, not guaranteed resolution times. A direct emergency provider contact is recorded.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "partnership",
+      "name": "Website Improvement Partnership",
+      "route": "Keep improving",
+      "price": 1250,
+      "mode": "monthly",
+      "timeline": "Monthly; use an initial 90-day roadmap",
+      "visibility": "Public offer",
+      "fit": "An owner with a stable website who wants a prioritized improvement completed every month and a clear explanation of the work.",
+      "result": "One useful website improvement each month, delivered alongside Brochure Care.",
+      "includes": [
+        "Brochure Care is included once; do not add a separate $275 Care charge for the same site. A supported commerce site adds $175/month to replace Brochure Care with Commerce Care.",
+        "A written monthly priority exchange (or optional 30-minute appointment), a rolling 90-day backlog and one agreed main improvement.",
+        "Select one monthly output: one new standard page for one agreed purpose using the established design; rewrite/implement up to two existing pages for their existing agreed purposes; improve one ordinary form/journey; or add one bounded section/component to improve an existing buying path.",
+        "Bounded desk/keyword research for that selected output, copy/design/implementation, one consolidated feedback round and the relevant acceptance test.",
+        "A monthly report showing the actual change, available observations, limitations and the next priority. Review existing GA4/Search Console data when accessible.",
+        "Up to 20 marketing pages in the maintained site. Additional site complexity or several unrelated websites require a new scope."
+      ],
+      "excludes": [
+        "A rebuild, a new integration or a deliverable too large for the selected monthly output",
+        "Full SEO campaign, link acquisition, several locations, extensive content production or guaranteed lead gains",
+        "Ads, social media or email campaign management; new analytics installation"
+      ],
+      "stages": [
+        [
+          "Days 1–3 of the cycle",
+          "Choose the output, acceptance check and required inputs."
+        ],
+        [
+          "Days 4–12",
+          "Research, write/design and implement in preview."
+        ],
+        [
+          "Days 13–17",
+          "One consolidated feedback round and refinement."
+        ],
+        [
+          "Days 18–22",
+          "QA, publish with approval and complete the work report."
+        ],
+        [
+          "Remaining business days",
+          "Care work, observation and next-cycle preparation."
+        ]
+      ],
+      "inputs": [
+        "A supported stable website, baseline recovery access and a business priority",
+        "Existing measurement access if results will be discussed",
+        "One approver and timely facts/feedback"
+      ],
+      "acceptance": [
+        "The monthly output is named before production and completed with evidence.",
+        "The report separates completed work from unproven business impact.",
+        "Included Care obligations are fulfilled without double billing.",
+        "The owner can see the next priority and any blocker."
+      ],
+      "hours": [
+        [
+          "Included Brochure Care",
+          1.8
+        ],
+        [
+          "Priority and research",
+          1
+        ],
+        [
+          "Production and revision",
+          3.6
+        ],
+        [
+          "QA and publication",
+          1
+        ],
+        [
+          "Reporting and communication",
+          0.8
+        ]
+      ],
+      "note": "Month-to-month; a 90-day roadmap is a planning horizon, not a three-month lock-in. A larger task is split into independently useful, agreed monthly milestones or quoted separately. Hours are internal planning limits; the agreed fixed output is not silently shortened. At 18 maintained marketing pages, review likely additions. Before crossing the 20-page limit, agree a maintenance extension and fee or select an existing-page improvement that stays within the cap; no automatic upgrade or retroactive charge.",
+      "example": "Month 1: rewrite a weak service page. Month 2: build a useful FAQ page. Month 3: improve the inquiry form and confirmation journey.",
+      "support": "Care response targets apply. Plan one main improvement at a time. Provider-caused defects are corrected; extra requests are queued or quoted before work.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "local-focus",
+      "name": "Local Search Focus",
+      "route": "Improve local visibility",
+      "price": 850,
+      "mode": "monthly",
+      "timeline": "Monthly; initial review at 90 days",
+      "visibility": "Public offer",
+      "fit": "One eligible local business with a working brochure site and established profile access, needing a consistent but bounded search program.",
+      "result": "One completed local-search improvement each month, with measurement, profile checks and included brochure-site care.",
+      "includes": [
+        "Included Brochure Website Care for one supported site; no second Care bill for the same site. Hosting/provider subscriptions remain client-paid.",
+        "A brief Search Console/profile performance review and a priority list for one location and one service area. Missing access/data is recorded; do not manufacture a baseline.",
+        "Choose one substantive output for the month: rewrite one existing service page for one agreed purpose with titles/internal links, OR optimize up to three agreed profile fields and prepare a compliant review-request message plus up to five owner-approved review-reply drafts.",
+        "A monthly factual check of the profile’s core name/address-or-service-area/phone/hours and a short action report. Corrections required by the business are identified; additional implementation beyond the chosen output is scoped.",
+        "One consolidated review round on the chosen output and written monthly review (or optional 20-minute appointment). Retest the changed page/profile and record completion."
+      ],
+      "excludes": [
+        "New profile creation/verification or recovery, multiple locations, citation campaigns and link outreach",
+        "A new article/page each month, two simultaneous main outputs or a full technical rebuild",
+        "Social content/posting, advertising, ranking or lead guarantees"
+      ],
+      "stages": [
+        [
+          "Cycle days 1–5",
+          "Care/checks, data review and agreement on one exact output and acceptance test."
+        ],
+        [
+          "Cycle days 6–15",
+          "Research, prepare and implement the selected page or profile output."
+        ],
+        [
+          "Cycle days 16–23",
+          "One consolidated review and corrections; publish only approved business claims/profile changes."
+        ],
+        [
+          "Cycle day 24 through cycle end",
+          "Retest, summarize the work, complete any due Care tasks and select the next priority, on business days within the actual paid cycle."
+        ]
+      ],
+      "inputs": [
+        "Verified eligible business/profile with owner authorization and suitable account access",
+        "Accurate business details and approval of claims or public replies",
+        "One supported site and one approver; review within two business days"
+      ],
+      "acceptance": [
+        "The selected output is delivered and its agreed check recorded.",
+        "Care duties and the core profile check are completed.",
+        "The report separates work performed from ranking/traffic changes and identifies missing data."
+      ],
+      "hours": [
+        [
+          "Included Brochure Care",
+          1.8
+        ],
+        [
+          "Search/profile review",
+          0.5
+        ],
+        [
+          "Selected improvement",
+          1.5
+        ],
+        [
+          "Profile facts and QA",
+          0.4
+        ],
+        [
+          "Report and client review",
+          0.5
+        ],
+        [
+          "Coordination and corrections",
+          0.3
+        ]
+      ],
+      "note": "Choose this when one focused monthly output is enough. Local Search Partnership retains the larger content/profile scope. Website Improvement Partnership is a different priority, not an automatic upgrade. One monthly package per site; consolidate overlapping work before quoting.",
+      "example": "A new local service business improves an existing service page this month, then chooses profile/review-request improvements next month; both months include the agreed care and checks.",
+      "support": "Month-to-month. Care targets apply; platform approvals and external publication decisions remain outside W&M control.",
+      "estimate_basis": "Five base owner hours is a new provisional V2 estimate for this bounded monthly scope, not a retained V1 estimate. Measure full care, revisions, review and completion work; the written outputs remain owed.",
+      "market_band": "Midrange ongoing",
+      "contingency_fraction": 0.25
+    },
+    {
+      "id": "local-search",
+      "name": "Local Search Partnership",
+      "route": "Improve local visibility",
+      "price": 1750,
+      "mode": "monthly",
+      "timeline": "Monthly; first assessment at 90 days",
+      "visibility": "Public offer",
+      "fit": "An eligible single-location service business with an accessible website and willingness to supply real expertise and proof.",
+      "result": "A maintained local website/profile, a documented content plan and two bounded search improvements each month.",
+      "includes": [
+        "Brochure Care for one supported website is included once. One business location, one primary service market and up to 20 maintained marketing pages.",
+        "An initial 90-day topic and local-presence plan; monthly Search Console/GA4/profile review where data are available. Track up to 10 agreed non-branded query themes, without presenting unstable ranking checks as guaranteed results.",
+        "Two content/SEO units each month. One unit is one new standard page for one agreed purpose OR refreshes to up to two existing pages for their existing agreed purposes OR one bounded technical/indexability fix with an explicit acceptance check. A researched guide answering one agreed buyer question uses both units.",
+        "For content units: bounded query research, writing from client expertise, page titles/headings/internal links, implementation and one consolidated review round.",
+        "Monthly accuracy review of one Google Business Profile; up to five simple data/service/hour updates and up to five owner-approved review-reply drafts where there are reviews to answer.",
+        "Check up to five agreed priority business listings; submit up to one correction where access permits. Submissions and approvals are reported separately.",
+        "Up to two individualized outreach pitches per month only when a truthful, relevant story/resource and approved recipient list exist. If no suitable opportunity exists, substitute one additional priority-listing correction; no guaranteed placement or backlink.",
+        "A written monthly strategy review (or optional 30-minute appointment) and report on completed work, available impressions/clicks/inquiries, attribution limits and next priorities."
+      ],
+      "excludes": [
+        "Multiple locations, national SEO, large ecommerce SEO or unlimited pages",
+        "Bulk/paid links, guaranteed rankings, review incentives or guaranteed lead/revenue increases",
+        "Social content calendars, profile posting campaigns, advertising and email campaigns"
+      ],
+      "stages": [
+        [
+          "Cycle 1, days 1–5",
+          "Confirm eligibility/access, baseline observations and 90-day plan."
+        ],
+        [
+          "Each cycle, days 1–5",
+          "Agree two units and gather current client expertise/proof."
+        ],
+        [
+          "Days 6–15",
+          "Produce content/fixes; profile/listing work and approved outreach."
+        ],
+        [
+          "Days 16–20",
+          "One feedback round, QA and publish approved work."
+        ],
+        [
+          "By cycle end",
+          "Report completed work and available observations; choose next priorities."
+        ],
+        [
+          "After three cycles",
+          "Evaluate useful output, search signals and inquiry quality; continue, narrow or change the approach."
+        ]
+      ],
+      "inputs": [
+        "An eligible location/profile, client ownership and permitted access",
+        "Real service expertise, accurate facts and permission to use proof",
+        "Existing measurement or separately purchased setup; approval before outreach/replies"
+      ],
+      "acceptance": [
+        "Two defined units are completed; units are not counted twice for one edit.",
+        "Local changes and outreach are logged with submitted/approved status.",
+        "Reports distinguish search signals and inquiries from proven causation.",
+        "Care is performed and duplicate care billing is prevented."
+      ],
+      "hours": [
+        [
+          "Included Brochure Care",
+          1.8
+        ],
+        [
+          "Research and analysis",
+          1.4
+        ],
+        [
+          "Content/technical production",
+          4
+        ],
+        [
+          "Profile work",
+          1
+        ],
+        [
+          "Listings",
+          0.75
+        ],
+        [
+          "Review replies",
+          0.5
+        ],
+        [
+          "Outreach or substitute",
+          0.5
+        ],
+        [
+          "QA and publication",
+          0.75
+        ],
+        [
+          "Reporting and client communication",
+          1
+        ]
+      ],
+      "note": "Start only after basic measurement/access and site health are ready. Local Presence Setup is required only when genuinely missing; existing usable setup is not charged again. New measurement setup is a separate module. Search outcomes often take time and are not guaranteed. At 18 maintained marketing pages, review likely additions. Before crossing the 20-page limit, agree a maintenance extension and fee or select an existing-page improvement that stays within the cap; no automatic upgrade or retroactive charge.",
+      "example": "A local service company publishes one helpful service page, refreshes two older pages, corrects an inconsistent listing and receives a report separating the work from early search signals.",
+      "support": "Month-to-month. Care targets apply; platform approvals and external publication decisions remain outside W&M control.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    },
+    {
+      "id": "systems",
+      "name": "Custom Systems Discovery",
+      "route": "Fix or connect what exists",
+      "price": 2000,
+      "mode": "project",
+      "timeline": "3 weeks; build scheduled only after discovery",
+      "visibility": "By proposal",
+      "fit": "An owner considering a portal, internal dashboard, custom calculator, API integration or AI-assisted workflow beyond the standard Workflow Sprint.",
+      "result": "A buildable scope and a go/no-go decision before committing to custom software.",
+      "includes": [
+        "Written stakeholder intake and follow-ups for one proposed system, up to three user roles and two integrations. Optional two 60-minute stakeholder appointments.",
+        "Map the essential user journeys, data inventory, permissions, source systems and one prioritized minimum viable release.",
+        "Create low-fidelity wireframes for up to five key screens and one focused technical feasibility spike. The spike is exploratory and is not production software.",
+        "Document acceptance criteria, failure/recovery cases, hosting and third-party dependencies, data retention responsibilities and support ownership.",
+        "Identify exclusions, unresolved decisions and risks; provide a phased implementation estimate and proposed maintenance arrangement.",
+        "One consolidated review round and written/recorded handoff of diagrams, wireframes and specification. Optional 60-minute appointment. Client can use deliverables to seek other quotes."
+      ],
+      "excludes": [
+        "Production build, unlimited feasibility research or a promise that every idea is viable",
+        "Compliance certification or handling live sensitive records during discovery",
+        "Unbounded autonomous AI, new foundation-model development or a fixed-price portal before its data/permissions are known"
+      ],
+      "stages": [
+        [
+          "Week 1",
+          "Stakeholder interviews, workflow/data/permission map and feasibility questions."
+        ],
+        [
+          "Week 2",
+          "Wireframes, one spike and prioritized release/acceptance criteria."
+        ],
+        [
+          "Week 3",
+          "Review, revisions, estimate and go/no-go handoff."
+        ]
+      ],
+      "inputs": [
+        "A process owner and decision maker",
+        "Representative synthetic or de-identified test data and tool documentation",
+        "A clear business problem, approximate budget and willingness to narrow scope"
+      ],
+      "acceptance": [
+        "The first release has named screens, roles, data flows and acceptance tests.",
+        "Unknowns and feasibility limits are recorded honestly.",
+        "The build estimate separates implementation, external fees and ongoing support.",
+        "Discovery files are usable without retaining W&M for the build."
+      ],
+      "hours": [
+        [
+          "Discovery and administration",
+          2
+        ],
+        [
+          "Workflow and data mapping",
+          2
+        ],
+        [
+          "Wireframes",
+          3
+        ],
+        [
+          "Feasibility spike",
+          3
+        ],
+        [
+          "Specification and estimate",
+          2
+        ],
+        [
+          "Review and handoff",
+          1
+        ]
+      ],
+      "note": "Custom builds are quoted after discovery. Planning model only: 120–300 complete delivery hours at a chosen $120–$150 gross hourly rate implies roughly $14,400–$45,000 before unusual external costs; this is not a package price or market average. Calendar milestones are set from the accepted scope and reserved capacity, not promised from this range.",
+      "example": "A business exploring a client portal receives five-screen wireframes, a role/access map and an achievable first-release specification before buying development.",
+      "support": "14 days of clarification and factual corrections to the discovery deliverables. Production warranty, monitoring, backups, incident response and maintenance are specified in the later build agreement.",
+      "contingency_fraction": 0.25,
+      "estimate_basis": "Retained scope-specific V1 planning estimate; no measured delivery history supplied. AI assistance is available but no blanket percentage time saving is assumed."
+    }
+  ],
+  "modules": [
+    {
+      "id": "M1",
+      "name": "Measurement & Reporting Setup",
+      "price": 1500,
+      "when": "A site has no dependable measurement setup.",
+      "scope": "One domain; one GA4 property, one Search Console property and one Tag Manager container as needed; up to five agreed events, including up to two key conversion events; one compatible consent tool configuration from client-approved settings; one dashboard with two existing sources and eight metrics; event/debug/consent-behavior checks and a written/recorded handoff with optional 45-minute appointment.",
+      "timeline": "2–3 weeks",
+      "hours": 10,
+      "excludes": "Cross-domain tracking, server-side tagging, historical data repair, legal privacy advice, subscription fees and campaign management.",
+      "gate": "Only collect approved data; do not send names, emails or form-message text as analytics events. Verify events fire as intended and avoid duplicate conversions. When added to Custom, Business or Signature, remove the already-included property, basic event and consent setup and quote only incremental work. Do not add the full standalone fee by default."
+    },
+    {
+      "id": "M2",
+      "name": "Original Logo & Small Identity Kit",
+      "price": 1800,
+      "when": "The business needs a new logo and can approve a bounded assisted-design process.",
+      "scope": "Two initial concepts; one chosen concept; two consolidated refinement rounds; primary/secondary/one-color variants; SVG/PDF/PNG exports, color/type specifications and a short usage sheet. W&M checks vector construction, legibility, licensing/provenance and export quality.",
+      "timeline": "2–3 weeks",
+      "hours": 12,
+      "excludes": "Naming, trademark clearance, unlimited concepts, commissioned typefaces and large illustration systems.",
+      "gate": "Pilot by proposal only until a portfolio-quality sample has passed independent visual review. Do not promise uniqueness/trademark availability or use an unedited generated bitmap as a vector logo."
+    },
+    {
+      "id": "M3",
+      "name": "Additional Standard Page",
+      "price": 350,
+      "when": "A build or existing site needs one additional page in the established design.",
+      "scope": "One purpose, original copy from supplied facts, with length matched to the agreed purpose, bounded research, existing page type, metadata, internal links, implementation and one revision.",
+      "timeline": "3–5 business days",
+      "hours": 2,
+      "excludes": "New template, specialist research, interactive tools and new integrations.",
+      "gate": "Page and inquiry path checked on desktop/mobile. A bundle of three is $900 only when sharing the same research/design foundation; plan 5.5 base hours total."
+    },
+    {
+      "id": "M4",
+      "name": "Researched Practical Guide",
+      "price": 800,
+      "when": "One buyer question deserves more explanation than a standard page.",
+      "scope": "One guide from client expertise plus bounded desk research, with enough detail to answer the agreed buyer question; one simple explanatory graphic; existing template; metadata, links and one revision.",
+      "timeline": "5–10 business days",
+      "hours": 5,
+      "excludes": "Original customer interviews, scientific/legal research, downloadable publication design and ongoing updates.",
+      "gate": "Claims checked and sources linked. This is separate only if the chosen website/monthly plan does not already include it."
+    },
+    {
+      "id": "M5",
+      "name": "Offer Landing Page",
+      "price": 1200,
+      "when": "One specific offer needs a dedicated conversion page.",
+      "scope": "One page with purpose-led copy, one offer and primary action, one custom arrangement using the established brand, one ordinary form up to eight fields, thank-you state and two review rounds.",
+      "timeline": "5–10 business days",
+      "hours": 6,
+      "excludes": "Advertising creation/management, media spend, a complete new brand and analytics installation.",
+      "gate": "The page works without buying ads. Test message/form/confirmation and any already-installed conversion event."
+    },
+    {
+      "id": "M6",
+      "name": "Booking or Deposit Setup",
+      "price": 850,
+      "when": "A website link is not enough and one tool needs actual configuration.",
+      "scope": "One existing booking OR payment/deposit provider; one calendar/team member or one payment/deposit rule; up to three appointment/service types where applicable; notifications, embed/link and test cases.",
+      "timeline": "1–2 weeks",
+      "hours": 5.5,
+      "excludes": "Custom scheduling, marketplace payouts, complex cancellation calculations, tax advice and provider fees.",
+      "gate": "Owner controls account; timezone/confirmation/cancellation rules are tested. Booking plus payment together is scoped as Workflow Sprint if the combined process exceeds this module."
+    },
+    {
+      "id": "M7",
+      "name": "Guided Quote Request",
+      "price": 1200,
+      "when": "A business needs to gather better inquiry details.",
+      "scope": "One form up to 15 fields, three conditional groups, one file upload type if the chosen platform provides safe supported handling, two notification destinations, confirmation and test cases.",
+      "timeline": "1–2 weeks",
+      "hours": 8,
+      "excludes": "Binding instant quotations, payment, calculations, CRM integration and collection of sensitive regulated records.",
+      "gate": "Test branches, missing fields, attachment limits, delivery and confirmation. Use a standard form when it answers the buyer's need."
+    },
+    {
+      "id": "M8",
+      "name": "Business Email & Domain Setup",
+      "price": 650,
+      "when": "A new website launch needs one domain and email service organized.",
+      "scope": "One domain and one provider; up to five mailboxes/aliases, provider-prescribed DNS/email authentication, access inventory and test sending/receiving.",
+      "timeline": "5–10 business days; DNS/provider waits vary",
+      "hours": 4,
+      "excludes": "Historic mailbox migration, deliverability guarantees, mass email campaigns and provider subscriptions.",
+      "gate": "Preserve existing DNS records and plan rollback. Client owns and pays for the provider."
+    },
+    {
+      "id": "M9",
+      "name": "Profile Recovery Assessment",
+      "price": 650,
+      "when": "An eligible local profile has a suspension or ownership problem.",
+      "scope": "One profile, evidence/eligibility review, one supported appeal or ownership request where appropriate, a case log and two follow-up checks over 30 days.",
+      "timeline": "1 week preparation; platform decision time varies",
+      "hours": 4,
+      "excludes": "Guaranteed reinstatement, fabricated evidence, repeated unsupported appeals or legal representation.",
+      "gate": "Client authorization and genuine evidence required. If the case is ineligible, deliver the assessment and charge only the completed agreed assessment portion. The assessment portion is $250 within the $650 total. If work stops after assessment, deliver the findings and return prepaid fees above the completed $250 assessment; no assessment fee is earned before assessment work begins."
+    },
+    {
+      "id": "M10",
+      "name": "Print Collateral Pair",
+      "price": 750,
+      "when": "A client needs two small matching items using an approved identity.",
+      "scope": "Choose two: business card, single-page flyer, two-sided information sheet or one-page PDF overview; supplied/approved copy up to 500 words total, two review rounds and print-ready exports.",
+      "timeline": "1–2 weeks",
+      "hours": 5,
+      "excludes": "Printing, shipping, complex brochures, original photography and social templates.",
+      "gate": "Check printer specifications, bleed, fonts, image resolution and a client-approved proof before release."
+    },
+    {
+      "id": "M11",
+      "name": "Existing-Site Care Onboarding",
+      "price": 375,
+      "when": "A site built elsewhere is entering Care or an included-Care partnership.",
+      "scope": "Brochure $375 / Commerce $650: access and platform inventory, known-issue check, recovery coverage, baseline journey tests, monitoring setup and owner responsibilities.",
+      "timeline": "5–10 business days",
+      "hours": 2.5,
+      "excludes": "Remediation of pre-existing faults, unavailable backups, hosting fees and custom applications.",
+      "gate": "Commerce plan allows 4 base hours. Do not charge again after a W&M build with the same completed handoff. Reject or separately scope an unsafe/unmaintainable starting state."
+    },
+    {
+      "id": "M12",
+      "name": "Migration or Larger Integration",
+      "price": null,
+      "when": "A move or connection exceeds the named page/tool limits.",
+      "scope": "Written scope with source/target inventory, data mapping, redirect plan, recovery steps, testing, cutover window and named post-launch responsibility.",
+      "timeline": "Set after inspection",
+      "hours": null,
+      "excludes": "No generic fixed price before platform/data/dependency inspection.",
+      "gate": "Use Roadmap for a website migration diagnosis or Custom Systems Discovery for substantial data/application uncertainty. Do not sell the same diagnosis twice."
+    },
+    {
+      "id": "M13",
+      "name": "Single Website Fix",
+      "price": 450,
+      "hours": 3,
+      "timeline": "3–5 business days",
+      "when": "One already-reproduced, bounded fault on an accessible supported site; uncertainty requiring a wider diagnosis belongs in the Roadmap.",
+      "scope": "One agreed fix with no more than two planned implementation hours, plus access/rollback preparation, regression checks and before/after evidence. Quote the exact URL/component and acceptance check before booking.",
+      "excludes": "A second independent fault, malware/incident response, a rebuild, private application work or open-ended troubleshooting.",
+      "gate": "Reproduce the fault before agreeing the fixed scope; confirm backup/rollback, permission and a verifiable success check. W&M finishes the unchanged agreed fix even if its internal estimate is wrong; if a newly discovered dependency changes the scope, agree a remedy before extra charges. When several requests interact, compare one coordinated Repair Sprint with separate fixes and quote the useful scope; do not stack modules to hide common diagnosis or force a sprint solely because three requests exist."
+    }
+  ],
+  "sources": [
+    {
+      "id": "V4",
+      "title": "V4 consolidated research and recommendations",
+      "url": "../offer-research-v4-20261028/offer-research-v4.html",
+      "note": "328 competitors; 166 providers with numerical schedules; 295 schedule entries; 3,080 captured review records across 146 domains. Purposive sample, not a market census or proof of W&M economics."
+    },
+    {
+      "id": "V4R",
+      "title": "V4 customer-review analysis",
+      "url": "../offer-research-v4-20261028/reviews/analysis-findings.md",
+      "note": "Operational lessons about response, scope, calendars, ownership, handoff and reporting. Historical self-selected reviews; not representative satisfaction rates or verified causal outcomes."
+    },
+    {
+      "id": "G1",
+      "title": "Google Business Profile third-party policies",
+      "url": "https://support.google.com/business/answer/7353941?hl=en",
+      "note": "Client ownership/access, service-fee transparency, disclosure notice and prompt disengagement."
+    },
+    {
+      "id": "G2",
+      "title": "Business Profile eligibility and ownership",
+      "url": "https://support.google.com/business/answer/13763036?hl=en",
+      "note": "Check eligibility and authority; an online-only business is generally ineligible. Work with the owner for verification."
+    },
+    {
+      "id": "G3",
+      "title": "Google SEO Starter Guide",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "note": "Search visibility/indexing is not guaranteed; changes may take weeks or months and may not create a noticeable impact."
+    },
+    {
+      "id": "B1",
+      "title": "Oak Harbor public offer and FAQ, observed in V4",
+      "url": "https://oakharborwebdesigns.com/",
+      "note": "V4 observed five-page purchase at $3,800 plus $25/month hosting, or $175/month with a 12-month minimum and different ownership terms. Not an equivalent price comparison."
+    },
+    {
+      "id": "B2",
+      "title": "Team 218 pricing, observed in V4",
+      "url": "https://team218.com/pricing/",
+      "note": "V4 observed a $2,500–$8,000 custom-site range, different content/care/payment conditions, and roughly 4–6-week delivery language."
+    },
+    {
+      "id": "B3",
+      "title": "Keisha Michelle packages, observed in V4",
+      "url": "https://www.keishamichelle.co/packages",
+      "note": "V4 observed $2,500 / $4,500 / $7,500 bundles combining differing branding and website scopes. Useful scope context, not evidence of W&M's attainable price."
+    },
+    {
+      "id": "B4",
+      "title": "Cerulean website service, observed in V4",
+      "url": "https://www.ceruleancyber.com/services/webdev",
+      "note": "V4 observed $2,449 for up to five pages with copy rewriting and $3,749 for a larger rebuild. Rewriting supplied material differs from original copy development."
+    },
+    {
+      "id": "G4",
+      "title": "Google Analytics: avoid personally identifiable information",
+      "url": "https://support.google.com/analytics/answer/6366371?hl=en",
+      "note": "Do not send names, email addresses or other prohibited personal identifiers to Analytics."
+    },
+    {
+      "id": "W1",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "note": "Reference for defined accessibility checks, not a certification claim."
+    },
+    {
+      "id": "P1",
+      "title": "About PageSpeed Insights",
+      "url": "https://developers.google.com/speed/docs/insights/v5/about",
+      "note": "Distinguish lab observations from real-user field experience."
+    },
+    {
+      "id": "V1",
+      "title": "Preserved V1 plan guide",
+      "url": "../fresh-plans-20261028/fresh-plans.html",
+      "note": "The three original custom-website prices are retained. V2 adds a midrange website path, recalibrates selected smaller services, and changes scheduling assumptions."
+    },
+    {
+      "id": "N1",
+      "title": "Sprout Media Lab",
+      "url": "https://www.sproutmedialab.com/website-packages-pricing/",
+      "note": "$4,500 for five pages or $7,500 for fifteen, using WordPress/Elementor. Hosting is shown at $49/$99 with cadence unspecified; a $6,500 build depends on a separate marketing commitment. Base-page writing quantity, revision count and delivery window are not established. This is useful custom-price context, not identical scope. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N2",
+      "title": "Reimann Labs",
+      "url": "https://reimannlabs.com/web-design.html",
+      "note": "Foundation starts at $2,500, typically up to five pages with two revisions; Advanced starts at $7,500. Optional management is $59/month; eligible credit-card surcharge up to 3% is disclosed. The 1–2-week timeline applies to the one-page Launch product, not the multipage Foundation. Content-writing quantity remains unspecified. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N3",
+      "title": "Signal Grove Digital",
+      "url": "https://signalgrovedigital.com/pricing",
+      "note": "Professional starts at $2,950 for 5–7 pages with a stated 2–4-week window; Premium Growth starts at $4,950 with different functionality. Hosting alone is $49/month; Care is $99/month including hosting. SEO Starter is $299/month with a content output and profile post, Care Plus included, and 30-day cancellation notice. Word/revision limits are unspecified. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N4",
+      "title": "MCC Solutions",
+      "url": "https://mcc-solutionsnj.com/websites/services/website-care",
+      "note": "Care starts at $99/month; Care plus SEO checking at $199/month. A local SEO audit starts at $500 once. Local SEO starts at $500/month with a three-month minimum; higher levels start at $900/$1,500. Care’s analytics distinction is inconsistent between description and pricing. Scope and included hosting need a quote. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N5",
+      "title": "Premier Digital Studio",
+      "url": "https://premierdigitalstudio.com/",
+      "note": "Five-page lump sum: $3,800 plus $25/month hosting; edits/support optionally add $50/month. The $175/month managed alternative includes hosting and has a 12-month minimum; it is not the same ownership arrangement, and a buyout is available. Copy quantity, revisions and delivery window were not established. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N6",
+      "title": "RGV Web Design",
+      "url": "https://rgvwebsitedesign.com/pricing",
+      "note": "Five-page WordPress build: $750 plus mandatory $65/month Care, including hosting. Ten/fifteen pages are $950/$1,300 plus the same recurring fee. The first Care month is due at the start. Copy, revisions, ownership, recurring minimum term and timeline are unspecified; these are not build-only prices. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N7",
+      "title": "Texas Site Builder",
+      "url": "https://texassitebuilder.com/pricing",
+      "note": "Six-page Standard advertises $850 and 3–4 weeks; a separate $250 platform-styling offer and $2,500 application-like package are different work. The FAQ says maintenance is included while also offering paid optional maintenance. The duration and boundary are unresolved; do not compare this as an established all-in lifetime cost. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    },
+    {
+      "id": "N8",
+      "title": "Red Moon Web Design",
+      "url": "https://redmoonwebdesign.com/",
+      "note": "Five-page ownership offer: $2,400 upfront plus $20/month hosting; optional edits add $50/month. Local Presence is $115/month including hosting. A six-month term appears in the pricing header; its application should be confirmed. Local Growth entitlements conflict between pages, and transfer terms are not established. Do not merge the conflicting promises. These US providers publish dollar symbols; explicit ISO currency codes were not established."
+    }
+  ]
+}

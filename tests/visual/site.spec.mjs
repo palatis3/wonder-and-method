@@ -32,6 +32,7 @@ for(const [name,path] of [
  ['home','/'],['services','/services/'],['pricing','/pricing/'],['web-design','/services/web-design/'],
  ['monthly-seo','/services/seo/'],['care','/services/website-care/'],
  ['redesign','/services/website-redesign/'],['contractors','/services/contractor-websites/'],['audit','/services/website-audit/'],['addons','/services/website-addons/'],['process','/process/'],
+ ['brand-messaging','/services/brand-messaging/'],['ecommerce','/services/ecommerce-websites/'],['local-profiles','/services/local-business-profiles/'],['workflow','/services/workflow-automation/'],['systems','/services/custom-systems/'],
  ['work','/work/'],['contact','/contact/'],['scope-request','/checkout/focused-site/'],
  ['guide','/guides/ai-search-visibility/'],['county','/areas/erie-county/'],
  ['about','/about/'],['concept','/work/fieldwork/'],

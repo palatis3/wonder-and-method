@@ -8,9 +8,9 @@ const milestones=[
 ];
 
 export function projectMilestones(offers=defaultOffers,{offerId=null,compact=false,stageAnchors=false,headingLevel=3,preview=false,artifact=null}={}){
- if(offerId&&!['launch_site','focused_site','signature_site'].includes(offerId))throw Error('Website milestones only apply to website builds');
+ if(offerId&&!['launch_site','focused_site','business_site','signature_site','storefront'].includes(offerId))throw Error('Website milestones only apply to website builds');
  if(![2,3].includes(headingLevel))throw Error('Unsupported milestone heading level');
  const schedule=offers[offerId||'launch_site'].payment_schedule;
- if(preview)return `<ol class="process-summary">${milestones.map((step,index)=>`<li><span class="process-step" aria-hidden="true">0${index+1}</span><h3>${step.title}</h3><p>${e(step.you)}</p><p><strong>${schedule[index].percent}%</strong> — ${e(step.payment)}.</p></li>`).join('')}</ol><p>Build time begins when your agreed facts, photos and access are ready. Add two customer review windows of up to five business days each; silence is never approval.</p>`;
+ if(preview)return `<ol class="process-summary">${milestones.map((step,index)=>`<li><span class="process-step" aria-hidden="true">0${index+1}</span><h3>${step.title}</h3><p>${e(step.you)}</p><p><strong>${schedule[index].percent}%</strong> — ${e(step.payment)}.</p></li>`).join('')}</ol><p>Build time begins at a ready, booked start. Normal two-business-day feedback windows are included in the planned delivery range; launch needs your explicit approval.</p>`;
  return `<ol class="project-milestones${compact?' project-milestones--compact':''}">${milestones.map((step,index)=>`<li${stageAnchors?` id="process-stage-${index+2}"`:''}><h${headingLevel}><span class="milestone-number" aria-hidden="true">${index+1}.</span> ${step.title}</h${headingLevel}><dl><dt>You</dt><dd>${e(step.you)}</dd><dt>I</dt><dd>${e(step.studio)}</dd><dt>Payment</dt><dd><strong>${offerId?money(schedule[index].amount)+' · ':''}${schedule[index].percent}%</strong> — ${e(step.payment)}.</dd></dl>${artifact?artifact(index):''}</li>`).join('')}</ol>`;
 }

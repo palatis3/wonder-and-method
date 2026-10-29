@@ -301,7 +301,7 @@ test('all 23 guides, historical bookmarks and existing download files survive',(
  for(const url of existingDownloads)assert.ok(existsSync(file(url)),url);
 });
 
-test('form troubleshooting finishes owner checks before help and points to the Baseline',()=>{
+test('form troubleshooting finishes owner checks before help and points to the Roadmap',()=>{
  const ids=sections('contact-form-not-working').map(x=>x.id);
  assert.deepEqual(ids.slice(0,5),['five-minute-check','page','platform-settings','verify','review-options']);
  const html=article('contact-form-not-working');
@@ -309,7 +309,7 @@ test('form troubleshooting finishes owner checks before help and points to the B
  assert.match(body('contact-form-not-working'),/site dashboard, open Automations/);
  assert.match(body('contact-form-not-working'),/Log out and send another test/);
  assert.doesNotMatch(body('contact-form-not-working'),/applicable agreement|additional contact-form scope|quarantine|approved retention/);
- assert.match(html,/\$399 Website Baseline/);assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);assert.match(html,/That fix can be the form if the diagnosed problem fits; a repair is not guaranteed/);assert.doesNotMatch(html,/web person/);
+ assert.match(html,/\$650 Website Roadmap/);assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);assert.match(html,/No implementation is included/);assert.doesNotMatch(html,/web person/);
  assert.match(guideInquiry(path('contact-form-not-working')).href,/offer=website_baseline&amp;goal=fix/);
  assert.match(sections('contact-form-not-working').find(x=>x.id==='review-options').body,/href="\/services\/website-audit\/#offer-website_baseline"/);
  assert.match(sections('contact-form-not-working').at(-1).body,/^<details>/);
@@ -336,13 +336,13 @@ test('prices and payment examples recalculate from the supplied offers',()=>{
  raw.baseline.one_time_price=450;
  const changed=normalizeOfferCatalog(raw);
  const cost=body('website-project-cost',changed);
- for(const price of [2000,3000,4500,1000,600,400,5760])assert.ok(cost.includes(money(price)),String(price));
- assert.match(cost,/10 simple old-to-new redirects/);
+ for(const price of [2000,3000,4500,800,600,5760])assert.ok(cost.includes(money(price)),String(price));
+ assert.match(cost,/Redirects and migration are assessed and quoted separately/);
  assert.match(cost,/assumed \$20 × 12 months/);
  assert.match(cost,/assumed yearly total/);
- assert.ok(body('website-maintenance-cost',changed).includes(money(3210)));
+ assert.ok(body('website-maintenance-cost',changed).includes(money(3135)));
  assert.ok(body('contact-form-not-working',changed).includes(money(450)));
- assert.ok(article('contact-form-not-working',changed).includes('$450 Website Baseline'));assert.ok(article('contact-form-not-working',changed).includes('Get help fixing your form'));
+ assert.ok(article('contact-form-not-working',changed).includes('$450 Website Roadmap'));assert.ok(article('contact-form-not-working',changed).includes('Ask about fixing your form'));
 });
 
 test('timeline uses configuration, names both review windows, and preserves the handoff trigger',()=>{
@@ -350,8 +350,8 @@ test('timeline uses configuration, names both review windows, and preserves the 
  changed.launch_site.delivery_target='Build-time target: 11–14 business days.';
  for(const content of [guideDecision(path('website-redesign-timeline'),changed),body('website-redesign-timeline',changed)]){
   assert.match(content,/11–14 business days/);
-  assert.match(content,/two review rounds|two review/);
-  assert.match(content,/five business days/);
+  assert.match(content,/review rounds|review windows/);
+  assert.match(content,/two-business-day review windows/);
  }
  const handover=body('website-handover-checklist');
  assert.match(handover,/within five business days after the paid work is finished/);
@@ -363,22 +363,19 @@ test('timeline uses configuration, names both review windows, and preserves the 
  for(const row of rows.slice(1))for(const cell of row.slice(0,3))assert.ok(stages.includes(cell),cell);
 });
 
-test('monthly care retains exclusions, the current review requirement and written pause choice',()=>{
+test('monthly care describes conditional onboarding, supported maintenance and written pause choice',()=>{
  for(const slug of ['website-maintenance-cost','website-care-versus-seo','website-project-cost']){
-  const text=body(slug);
-  assert.match(text,/previous Website Baseline, studio build or Audit &amp; Fix Sprint/);
-  assert.match(text,/current, usable review/);
+  const text=body(slug);assert.match(text,/\$375/);assert.match(text,/\$650/);
+  assert.match(text,/usable.*(?:handoff|review)|(?:handoff|review).*usable/i);
+  assert.match(text,/not.*(?:mandatory|automatic).*enrollment|separate diagnostic service/);
+  assert.doesNotMatch(text,/starts with the one-time.*Website Roadmap|start with the.*Website Roadmap unless/);
  }
  for(const slug of ['website-maintenance-cost','website-care-versus-seo']){
-  assert.match(body(slug),/plugin/);
-  assert.match(body(slug),/theme/);
-  assert.match(body(slug),/backup/);
-  assert.match(body(slug),/restore/);
-  assert.match(body(slug),/malware/);
+  assert.match(body(slug),/maintenance|software/i);assert.match(body(slug),/recovery|backup/i);assert.match(body(slug),/malware/i);
  }
- assert.match(body('website-care-versus-seo'),/Keep Running’s checks continue/);
+ assert.match(body('website-care-versus-seo'),/Website Care’s checks continue/);
  assert.match(body('website-care-versus-seo'),/agree in writing whether care/);
- assert.match(body('website-care-versus-seo'),/no automatic \$150 care charge/);
+ assert.match(body('website-care-versus-seo'),/no automatic \$275 care charge/);
  assert.doesNotMatch(body('website-care-versus-seo'),/Historic prepaid rights/);
 });
 

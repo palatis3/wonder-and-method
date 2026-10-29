@@ -298,7 +298,7 @@ test('new notification text is readable and frozen byte-for-byte across retry an
   const sender = async (_url, options) => { bodies.push(options.body); return new Response('', { status: 503 }); };
   await notifyInquiry(env, id, sender, now);
   const first = JSON.parse(bodies[0]);
-  assert.match(first.subject, /Focused Website/);
+  assert.match(first.subject, /Custom Website/);
   assert.match(first.text, /Name: Synthetic Owner/);
   assert.match(first.text, /Request type: Ask a question/);
   env.NOTIFICATION_TO = 'different@example.test';

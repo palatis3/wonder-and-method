@@ -80,7 +80,7 @@ test('2266 approved commercial pages preserve 2276 directory identities, truthfu
  const hampton=locationServices.find(entry=>entry.path==='/areas/virginia/hampton-roads/');assert.equal(hampton.areaIds.length,8);assert.ok(hampton.coverageNote.includes('selected'));
  const changed=structuredClone(offers);changed.launch_site.public_price=1777;changed.baseline.one_time_price=477;changed.plans.keep_running.monthly_price=177;
  for(const page of locationServicePages(changed)){
-  for(const value of ['$1,777','$2,350','$3,700'])assert.ok(page.body.includes(value),page.path+' '+value);
+  for(const value of ['$1,777','$4,500','$7,500','$11,500'])assert.ok(page.body.includes(value),page.path+' '+value);
   assert.match(page.body,/href="\/pricing\/"/);assert.match(page.body,/href="\/services\/website-audit\/"/);
   assert.doesNotMatch(page.body,/\$654/,'A local build brief does not imply mandatory monthly enrollment');
  }

@@ -19,16 +19,16 @@ test('home, Buffalo web design and service navigation describe distinct visitor 
  const paths=['/','/services/web-design/','/services/'];
  assert.equal(new Set(paths.map(path=>searchMetadata[path].title)).size,3);
  assert.match(searchMetadata['/'].title,/Small Businesses/);assert.match(description('/'),/Buffalo.*50 states.*DC/);
- assert.match(searchMetadata['/services/web-design/'].title,/Small Business Web Design/);assert.match(description('/services/web-design/'),/writing, research, SEO and original graphics/);
- assert.match(description('/services/'),/^Compare .*Find the right service/);
+ assert.match(searchMetadata['/services/web-design/'].title,/Small Business Web Design/);assert.match(description('/services/web-design/'),/original writing, search foundations and launch checks/);
+ assert.match(description('/services/'),/^Explore websites, ecommerce, brand messaging/);
  for(const path of paths){assert.equal(page(path).title,searchMetadata[path].title);assert.equal(page(path).description,description(path));}
 });
 
 test('search descriptions stay concise and derive prices and page allowances from current offers',()=>{
  for(const path of Object.keys(searchMetadata)){const text=description(path);assert.ok(text.length<=160,path+': '+text.length);assert.doesNotMatch(text,/without (?:promising|inventing)|scoped SEO|Label demonstrations/i,path);}
- const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.launch_site.marketing_page_cap=7;revised.focused_site.marketing_page_cap=16;revised.signature_site.marketing_page_cap=31;revised.plans.improve.monthly_price=425;revised.plans.grow.monthly_price=850;
- assert.match(description('/',revised),/from \$1,625/);assert.match(description('/services/web-design/',revised),/from \$1,625\./);assert.match(description('/services/web-design/',revised),/7-, 16- or 31-page/);
- assert.match(description('/services/seo/',revised),/Improve \$425\/month; Grow \$850\/month/);assert.match(description('/areas/erie-county/',revised),/from \$1,625/);
+ const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.launch_site.marketing_page_cap=7;revised.focused_site.marketing_page_cap=16;revised.signature_site.marketing_page_cap=31;revised.plans.local_focus.monthly_price=425;revised.plans.improve.monthly_price=425;revised.plans.grow.monthly_price=850;
+ assert.match(description('/',revised),/from \$1,625/);assert.match(description('/services/web-design/',revised),/from \$1,625 /);assert.match(description('/services/web-design/',revised),/7, 16, 15, 31-page/);
+ assert.match(description('/services/seo/',revised),/Local Search Focus from \$425\/month/);assert.match(description('/areas/erie-county/',revised),/from \$1,625/);
 });
 
 test('Erie metadata stays specific while same-named counties in Pennsylvania and Ohio have their own reviewed pages',()=>{
@@ -55,9 +55,9 @@ test('broad service coverage has 50 states a federal district and Puerto Rico an
  assert.deepEqual(serviceAreas({...config,serviceCoverage:{...config.serviceCoverage,regions:['Ohio']}}),[{'@type':'State',name:'Ohio'}]);
 });
 
-test('metadata and sitemap cover 2425 public pages while retired county URLs resolve to their state entries',()=>{
+test('metadata and sitemap cover 2437 public pages while retired county URLs resolve to their state entries',()=>{
  const sitemap=crawlFiles(config,pages).sitemap;
- assert.equal(pages.length,2425);assert.equal((sitemap.match(/<loc>/g)||[]).length,2413);
+ assert.equal(pages.length,2437);assert.equal((sitemap.match(/<loc>/g)||[]).length,2418);
  assert.equal(pages.filter(item=>/^\/guides\/[^/]+\/$/.test(item.path)).length,65);
  assert.deepEqual(pages.filter(item=>approvedLocationPaths.includes(item.path)).map(item=>item.path).sort(),approvedLocationPaths);
  assert.equal(pages.filter(item=>item.path.startsWith('/areas/')).length,2320);
@@ -66,7 +66,7 @@ test('metadata and sitemap cover 2425 public pages while retired county URLs res
   const [hub,slug]=destination.split('#');assert.ok(page(hub),destination);if(slug)assert.ok(page(hub).html.includes(`id="${slug}"`));
   assert.ok(sitemap.includes(`<loc>${config.origin+hub}</loc>`));
  }
- assert.equal(new Set(pages.map(item=>item.path)).size,2425);
+ assert.equal(new Set(pages.map(item=>item.path)).size,2437);
 });
 
 test('public descriptions stay within the editorial budget without removing county context',()=>{

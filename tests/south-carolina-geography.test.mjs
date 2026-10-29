@@ -1,3 +1,4 @@
+import v3OfferPaths from './fixtures/v3-offer-paths.json' with {type:'json'};
 import wyHiAkPaths from './fixtures/wy-hi-ak-approved-paths.json' with {type:'json'};
 import idMtPaths from './fixtures/id-mt-approved-paths.json' with {type:'json'};
 import coUtPrPaths from './fixtures/co-ut-pr-approved-paths.json' with {type:'json'};
@@ -48,7 +49,7 @@ test('SC adds exactly 46 identities while retaining every historical identity an
  for(const route of semrushGuidePaths)assert.ok(Object.hasOwn(dates,route),'Approved subsequent guide '+route);
  const retiredRequests=['fieldwork','northline','hearthside'].map(id=>`/work/${id}/request/`);
  for(const path of retiredRequests){assert.ok(baseline.routes.includes(path));assert.ok(!Object.hasOwn(dates,path));assert.equal(publicRouteRedirect(new URL(path,'https://wonderandmethod.com'),'GET'),'https://wonderandmethod.com'+path.replace('request/',''));}
- assert.deepEqual([...Object.keys(dates).filter(p=>p!=='/work/assetrounds/'&&!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates].some(state=>p.startsWith('/areas/'+state+'/'))&&!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
+ assert.deepEqual([...Object.keys(dates).filter(p=>!v3OfferPaths.includes(p)&&p!=='/work/assetrounds/'&&!['georgia','mississippi','alabama','wisconsin','illinois','louisiana','arkansas','texas','missouri','iowa',...mnOkStates].some(state=>p.startsWith('/areas/'+state+'/'))&&!paths.includes(p)&&!semrushGuidePaths.includes(p)),...retiredRequests].sort(),baseline.routes);
 });
 test('SC search indexes every county and distinguishes cross-county Summerville from a wrong state',()=>{
  const cards=serviceStates.flatMap(state=>state.counties.map(county=>({state:state.id,slug:county.slug,terms:countySearchText(county,state,state.regions.find(r=>r.slugs.includes(county.slug))).split('|')})));

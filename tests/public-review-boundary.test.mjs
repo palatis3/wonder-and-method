@@ -74,7 +74,7 @@ test('public identity uses Terry without a personal profile in any page or metad
 });
 
 test('public cleanup retains commercial percentages, owned-work limits and responsible identity',()=>{
- const pricing=pages.find(p=>p.path==='/pricing/').html;for(const percentage of ['50%','30%','20%'])assert.ok(pricing.includes(percentage),percentage);
+ const pricing=pages.find(p=>p.path==='/pricing/').html;for(const percentage of ['40%','30%','50%'])assert.ok(pricing.includes(percentage),percentage);
  assert.doesNotMatch(pricing,/Save 5%|billing=annual/);
  const work=pages.find(p=>p.path==='/work/').html;assert.doesNotMatch(work,/six guides|Our standard of care/i);assert.match(work,/A live product website, fictional business concepts, and the details behind the design/);assert.match(work,/Maple Studio is fictional/);assert.match(work,/fictional inquiries in your browser/);assert.match(work,/do not establish traffic, ranking or sales results/);assert.match(work,/href="\/work\/lead-workbench\/"/);
  const about=pages.find(p=>p.path==='/about/').html;for(const value of [config.founderName,config.founderBio,config.businessIdentity,config.contactEmail])assert.ok(about.includes(value.replaceAll('&','&amp;')),value);assert.match(about,/one-person web studio, operated by/);assert.match(about,/Hello, I’m Terry/);assert.doesNotMatch(about,/project lead|owner-approved/);
