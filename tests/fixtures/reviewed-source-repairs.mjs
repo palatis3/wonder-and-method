@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import review from './source-repairs-20261028.json' with {type:'json'};
+import v4Review from './source-repairs-v4-20261029.json' with {type:'json'};
 const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const records=new Map(review.records.map(row=>[row.path,row]));
+const rows=[...review.records,...v4Review.records];
+const records=new Map(rows.map(row=>[row.path,row]));
+assert.equal(records.size,rows.length,'Reviewed source repairs must have unique paths');
 
 // Accept only the full independently reviewed current record, then reconstruct
 // its original value for the frozen historical preservation test.

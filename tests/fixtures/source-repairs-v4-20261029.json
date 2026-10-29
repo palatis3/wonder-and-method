@@ -1,0 +1,25 @@
+{
+  "reviewedDate": "2026-10-29",
+  "reason": "Follow the official Anchorage Parks and Recreation reservation source to its current address; visible claims are unchanged.",
+  "sourceCommitBeforeRepair": "044c82341e0378a1d6b0fd750e7781df022c5677",
+  "sourceCommitAfterRepair": "0d1e7238da7f5702af87bba0d77cfc51d500c438",
+  "review": "evidence/v4-offers-20261029/source-link-review.json",
+  "records": [
+    {
+      "path": "/areas/alaska/anchorage-municipality/",
+      "beforeSha256": "a96ede5827e02979180e1ccd9575cdbd21779a17aa31a748c112af8605be20fd",
+      "afterSha256": "9207a61ad2b1fea7c338d235037d8bca8ed089a48f773cc113d51b247b809f3f",
+      "edits": [
+        {
+          "path": [
+            "sources",
+            0,
+            "url"
+          ],
+          "before": "https://www.muni.org/Departments/parks/Pages/Reservations.aspx",
+          "after": "https://www.muni.org/departments/parks_and_recreation/reservations/index.php"
+        }
+      ]
+    }
+  ]
+}
