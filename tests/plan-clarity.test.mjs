@@ -56,7 +56,7 @@ test('historical annual agreements preserve twelve cycles and original refunds',
 
 test('V4 monthly cards distinguish four outputs and included care',()=>{
  const packs=buyerPacks(offers);assert.equal(packs.length,15);
- for(const [id,count,price] of [['keep_running',0,149],['improve',1,399],['local_focus',1,299],['grow',2,599]]){
+ for(const [id,count,price] of [['keep_running',0,149],['improve',1,399],['local_focus',1,299],['grow',5,449]]){
   assert.equal(offers.plans[id].priorities,count);assert.equal(packs.find(p=>p.id===id).price,price);
  }
  const monthly=planCards(offers);assert.equal((monthly.match(/class="[^"\n]*\bv3-offer-card\b[^"\n]*"/g)||[]).length,4);

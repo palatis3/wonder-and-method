@@ -11,8 +11,8 @@ const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.
 const [offers,config,map,geography,previous]=await Promise.all(['config/offers.json','config/site.json','authority/v5/site-map.json','authority/v5/geography.json','operations/historical/offers-2026-10-24-pre-v3.json'].map(read));
 
 test('V4 monthly contracts snapshot approved outputs, care and honest measurement',async()=>{
- const approved=await read('operations/v4-offers-20261029/approved-catalog.json');
- for(const [id,price] of [['keep_running',149],['improve',399],['local_focus',299],['grow',599]]){
+ const approved=await read('operations/v4-offers-20261029/approved-catalog.json');const amendment=await read('operations/v4-offers-20261029/approved-content-amendment.json');approved.plans=approved.plans.map(p=>p.id===amendment.replacesPlan?amendment.plan:p);
+ for(const [id,price] of [['keep_running',149],['improve',399],['local_focus',299],['grow',449]]){
   const plan=offers.plans[id],scope=await draftScope(id,'synthetic-monthly-upgrade'),source=approved.plans.find(p=>p.id===plan.v3_plan_id);
   assert.equal(plan.monthly_price,price);assert.equal(source.price,price);const approvedIncludes=source.includes.map(line=>line.replace('Select one monthly output: one new', 'Select one monthly output: for each output, choose one new').replaceAll('their existing agreed purposes','their existing purposes').replace('uses both units.','uses two units.'));assert.deepEqual(plan.v3.includes,approvedIncludes);const expectedIncludes=quotedOffer(offers,id).v3.includes;assert.deepEqual(scope.commercial_boundaries.deliverables,expectedIncludes);assert.equal(scope.commercial_snapshot.offer.care_variant,'brochure');
   assert.deepEqual(scope.commercial_snapshot.offer.v3.includes,expectedIncludes);assert.deepEqual(scope.exclusions,source.excludes);
@@ -32,7 +32,7 @@ test('V4 care and local-search packs preserve distinct included work and avoid d
  const care=text('keep_running');for(const pattern of [/quarterly/i,/recovery/i,/60 minutes/,/one business day/,/maintenance/i])assert.match(care,pattern);
  const improve=text('improve');assert.match(improve,/one (?:agreed )?main/i);assert.match(improve,/Care.*optional|optional.*Care/i);
  const focus=text('local_focus');assert.match(focus,/one new standard page OR refresh up to two existing pages/);assert.match(focus,/Care.*optional|optional.*Care/i);assert.match(focus,/avoid invented baselines/);
- const grow=text('grow');for(const pattern of [/Two content\/SEO units/,/guide.*two units/,/up to five.*listing/i,/up to two short owner-approved Google profile update posts/i,/in addition to the two content\/SEO units/,/Care.*optional|optional.*Care/i])assert.match(grow,pattern);
+ const grow=text('grow');for(const pattern of [/Five new researched articles/,/Each complete article counts once/,/up to five.*listing/i,/up to two short owner-approved Google profile update posts/i,/additional to all five articles/,/Care.*optional|optional.*Care/i])assert.match(grow,pattern);
  for(const id of ['improve','local_focus','grow'])assert.doesNotMatch(text(id),/1 extra graphic or short excerpt|150-word newsletter/);
 });
 

@@ -82,14 +82,14 @@ test('current service and county prose follows renamed plans and V4 monthly quan
  const pages=renderPages({config,offers:changed,map,geography}),seo=pages.find(p=>p.path==='/services/seo/').html,care=pages.find(p=>p.path==='/services/website-care/').html,county=countyServiceCards(changed);
  const card=(html,id)=>html.match(new RegExp('<article class="[^"]*\\bv3-offer-card\\b[^"]*" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1]||'';
  assert.match(card(seo,'improve'),/<h3>Progress<\/h3>/);assert.match(card(seo,'improve'),/(?:3|three) main (?:website improvements|outputs?)/i);
- assert.match(card(seo,'grow'),/<h3>Campaign<\/h3>/);assert.match(card(seo,'grow'),/(?:4|four) (?:monthly )?content\/SEO units/i);
+ assert.match(card(seo,'grow'),/<h3>Campaign<\/h3>/);assert.match(card(seo,'grow'),/(?:4|four) (?:new )?researched articles/i);
  assert.match(care,/Steady Care/);assert.match(care,/\$175\.03/);
  for(const name of ['Starter Website','Complete Website',changed.business_site.public_name,'Progress','Local Search Focus','Campaign'])assert.ok(county.includes(name),name);
  for(const html of [seo,care,county])assert.doesNotMatch(html,/extra social graphic|newsletter excerpts|one small fix if|up to two agreed fixes total|monthly first payments are/i);
  const escaped=structuredClone(changed);escaped.plans.keep_running.public_name='Care & Support';escaped.launch_site.public_name='Start & Launch';
  assert.match(countyServiceCards(escaped),/Start &amp; Launch/);assert.doesNotMatch(countyServiceCards(escaped),/&amp;amp;/);assert.match(servicesOverview(escaped),/Care &amp; Support/);
  const currentSeo=seoContent(offers),currentCare=careContent(offers),currentCounty=countyServiceCards(offers);
- assert.match(currentSeo,/one (?:main |useful )?(?:website improvement|output)/i);assert.match(currentSeo,/two (?:monthly )?content\/SEO units/i);assert.match(currentSeo,/Local Search Focus/);
+ assert.match(currentSeo,/one (?:main |useful )?(?:website improvement|output)/i);assert.match(currentSeo,/five (?:new )?researched articles/i);assert.match(currentSeo,/Local Search Focus/);
  assert.match(currentCare,/\$149/);assert.match(currentCounty,/Website Roadmap/);assert.match(currentCounty,/no implementation|review only|action plan/i);
 });
 
@@ -131,14 +131,14 @@ test('the build probe exercises all current offers, form and page limits without
  assert.match(text('launch_site'),/(?:3|three) contact forms/i);assert.match(text('launch_site'),/(?:7|seven) (?:agreed )?fields/i);
  assert.match(text('focused_site'),/(?:4|four) contact forms/i);assert.match(text('focused_site'),/(?:18|eighteen) marketing pages/i);
  assert.match(text('signature_site'),/(?:35|thirty-five) marketing pages/i);assert.match(text('signature_site'),/(?:5|five) researched (?:practical )?guides/i);
- assert.match(text('improve'),/(?:3|three) (?:agreed )?(?:main )?improvements/i);assert.match(text('grow'),/(?:4|four) content\/SEO units/i);
+ assert.match(text('improve'),/(?:3|three) (?:agreed )?(?:main )?improvements/i);assert.match(text('grow'),/(?:4|four) (?:new )?researched articles/i);
  assert.doesNotMatch(text('grow'),/extra social graphic|newsletter excerpts/i);
  for(const key of ['form_field_limit','training_minutes']){const invalid=structuredClone(offers);invalid.launch_site[key]=-1;assert.throws(()=>normalizeOfferCatalog(invalid),/must be an integer/);}
 });
 
 test('bound FAQ and inquiry copy uses current names and quantities with one HTML escape',()=>{
  const changed=offerBindingProbe(offers),county=serviceFaqSection('/areas/suffolk-county/',changed);
- assert.match(county,/Probe &amp; Progress includes three agreed website improvements/);assert.match(county,/Probe &amp; Campaign includes four content\/SEO units/);assert.match(county,/Local Search Focus/);assert.doesNotMatch(county,/&amp;amp;/);
+ assert.match(county,/Probe &amp; Progress includes three agreed website improvements/);assert.match(county,/Probe &amp; Campaign includes four researched articles/);assert.match(county,/Local Search Focus/);assert.doesNotMatch(county,/&amp;amp;/);
  assert.match(inquiryMessageHelp('website_baseline','checkout','',false,publicOfferProjection(changed)),/Probe & Review/);
  assert.match(serviceFaqSection('/areas/new-jersey/monmouth-county/',offers),/Website Care includes one set of small text, photo or link changes/);
 });
@@ -209,7 +209,7 @@ test('downloaded buyer documents and the report sample follow the same changed c
   const [baseline,launch,grow,sample]=await Promise.all(['website_baseline.txt','launch_site.txt','grow.txt','keep-running-sample.html'].map(read));
   assert.match(baseline,/Probe & Review/i);assert.doesNotMatch(baseline,/Website Baseline/);
   assert.match(launch,/(?:3|three) contact forms/i);assert.match(launch,/(?:7|seven) (?:agreed )?fields/i);
-  assert.match(grow,/(?:4|four) content\/SEO units/i);assert.match(grow,/35-minute|35 minutes/);
+  assert.match(grow,/(?:4|four) (?:new )?researched articles/i);assert.match(grow,/35-minute|35 minutes/);
   assert.doesNotMatch(grow,/Agree two units|Two defined units|two bounded search improvements/);assert.match(grow,/120-day topic and local-presence plan/);
   assert.doesNotMatch(grow,/extra social graphic|newsletter excerpts/i);
   assert.match(sample,/<title>Sample Probe &amp; Care report/);

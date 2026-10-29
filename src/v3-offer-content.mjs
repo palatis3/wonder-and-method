@@ -90,6 +90,13 @@ export function v3Packs(o){o=normalizeOfferCatalog(o);return currentOfferIds(o).
   if(s.build||id==='storefront')sections.push(row('Launch checks and handoff',o.v3_policies.shared_launch_standards.filter(([label])=>['Layouts and accessibility checks','Browser and journey checks','Performance','Performance limits','Search foundations','Ownership and handoff'].includes(label)).map(([label])=>label+': '+v3Policy(o,'shared_launch_standards',label)),true));
  sections.push(row('Questions and communication','Email or the agreed text channel anytime. During active delivery and the applicable support period, I acknowledge within one business day, Monday–Friday, 9am–5pm Eastern, excluding announced holidays. Written reviews and recorded demonstrations are standard; calls are optional. The next action and resolution estimate are separate from acknowledgement.'));
  if(o.catalog_revision===4)for(const section of sections)if(['Before we start','How you approve the work','Questions and communication','Hosting and first-cycle setup'].includes(section.title))section.disclosure=true;
+ if(o.catalog_revision===4&&id==='grow'){
+  // Keep each rule once: the dedicated hosting/setup/onboarding sections retain these full terms.
+  const included=sections.find(x=>x.title==='What you get');included.items=included.items.filter(x=>!x.startsWith('When Brochure Care')&&!x.startsWith('For the first three approved'));
+  // The planned timeline and acceptance checks already describe production and completion.
+  const delivery=sections.find(x=>x.title==='Delivery and review');delivery.items=delivery.items.slice(0,1);
+  sections.push(row('Delivery conditions',o.delivery_conditions,true));
+ }
  // Avoid repeated sentences within a pack while keeping every distinct rule.
  const seen=new Set(),segmenter=new Intl.Segmenter('en',{granularity:'sentence'});
  for(const section of sections)section.items=section.items.map(item=>[...segmenter.segment(item)].map(({segment})=>{const key=segment.trim().replace(/\s+/gu,' ').toLowerCase();if(seen.has(key))return '';seen.add(key);return segment;}).join('').trim()).filter(Boolean);

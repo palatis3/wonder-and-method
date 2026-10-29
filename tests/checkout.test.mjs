@@ -11,7 +11,7 @@ const offers=await load('config/offers.json'),config=await load('config/site.jso
 
 test('monthly checkout explains conditional onboarding and prevents duplicate review fees',()=>{
  const pages=checkoutPages(offers,intakeContent(config));
- for(const [slug,monthly] of [['keep-running','$149'],['improve','$299'],['local-focus','$199'],['grow','$499']]){
+ for(const [slug,monthly] of [['keep-running','$149'],['improve','$299'],['local-focus','$199'],['grow','$349']]){
   const body=pages.find(p=>p.path===`/checkout/${slug}/`).body,before=body.slice(0,body.indexOf('<form'));
   assert.ok(before.includes(monthly));assert.match(before,/\$195/);assert.match(before,/\$395/);
   assert.match(before,/waived immediately after a W&amp;M build/);assert.match(before,/Production-only plans have no Care onboarding charge/);

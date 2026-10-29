@@ -23,7 +23,7 @@ test('a question retains useful context and the public price without adopting bi
 test('proposal summaries stay concise while hidden selected details remain available to submit',()=>{
   const value={service:'grow',request_kind:'checkout',billing:'monthly',priority:'page',priority_two:'article'};
   const summary=inquiryRequestSummary(value);
-  assert.match(summary,/^Local Search Partnership \(from \$499\/month\)/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/payment|scope|billing/i);
+  assert.match(summary,/^Local Search Partnership \(from \$349\/month\)/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/payment|scope|billing/i);
   assert.equal(inquiryRequestSummary({service:'unsure',request_kind:'question'}),'');
   const html=inquiryForm({live:true},{checkout:true,service:'grow',value});
   assert.match(html,/type="hidden" id="service" name="service" value="grow"/);assert.match(html,/name="priority_two" value="article"/);

@@ -368,7 +368,7 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.equal((article('website-project-cost').match(/<caption>Current studio website prices<\/caption>/g)||[]).length,1);
  assert.match(article('website-project-cost'),/Illustrative first-year budget — replace the provider assumptions/);assert.match(article('website-project-cost'),/Replace \$20\/month hosting and \$120\/year other bills with your actual renewal prices/);
  const scope=journalSections('/guides/seo-work-and-reporting/',offers).find(section=>section.id==='scope').body;
- assert.match(scope,/Website Improvement Partnership — from \$299\/month:.*1 completed improvement/);assert.match(scope,/Local Search Partnership — from \$499\/month:.*2 content\/SEO units/);
+ assert.match(scope,/Website Improvement Partnership — from \$299\/month:.*1 completed improvement/);assert.match(scope,/Local Search Partnership — from \$349\/month:.*5 researched articles/);
  assert.match(article('website-maintenance-checklist'),/supported maintenance and representative recovery tests/);assert.doesNotMatch(article('website-maintenance-checklist'),/does not include CMS, plugin or theme updates, backups or restores/);assert.match(article('website-maintenance-checklist'),/Monitoring is automated/);assert.ok(hrefs(article('website-maintenance-checklist')).includes('/services/website-care/'));
  assert.match(careContent(offers),/not a guaranteed resolution time/);
  assert.match(seoServiceContent(offers),/href="\/services\/website-care\/"/);assert.match(careContent(offers),/\$149/);

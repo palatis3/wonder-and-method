@@ -15,7 +15,7 @@ const historical=JSON.parse(await readFile(new URL('../operations/historical/off
 const lead={name:'Synthetic Pack Test',email:'synthetic@example.test',business:'Fictional test only',website:'',service:'improve',message:'A synthetic request to verify chosen service context.'};
 
 test('fifteen V4 decision packs carry acceptance, payment, ownership and exact request routes',()=>{
- const expected={launch_site:2195,focused_site:2995,business_site:4495,signature_site:6495,keep_running:149,improve:399,local_focus:299,grow:599,website_baseline:199,audit_fix_sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495};
+ const expected={launch_site:2195,focused_site:2995,business_site:4495,signature_site:6495,keep_running:149,improve:399,local_focus:299,grow:449,website_baseline:199,audit_fix_sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495};
  const packs=buyerPacks(offers);assert.deepEqual(packs.map(p=>p.id),Object.keys(expected));
  for(const p of packs){assert.equal(p.price,expected[p.id]);assert.equal(p.request,'/checkout/'+p.id.replaceAll('_','-')+'/');assert.match(p.scopeStatus,/does not book work, accept terms or make a payment/);
   const text=JSON.stringify(p.sections);for(const pattern of [/accept/i,/payment/i,/ownership|handoff/i,/outside/i,/cancel/i,/provider/i,/export limits/i,/not pay twice/])assert.match(text,pattern,p.id);
@@ -86,7 +86,7 @@ test('current V4 annual requests are rejected and monthly care is charged once',
   await assert.rejects(()=>draftScope(id,'synthetic-no-new-annual',{billing:'annual'}),/annual/i);
   assert.throws(()=>calculateCost(prices,{build:'existing',plan:id,billing:'annual',cycles:12}),/Annual enrollment is unavailable/);
  }
- for(const [id,monthly] of [['keep_running',149],['improve',399],['local_focus',299],['grow',599]]){
+ for(const [id,monthly] of [['keep_running',149],['improve',399],['local_focus',299],['grow',449]]){
   const cost=calculateCost(prices,{build:'existing',plan:id,cycles:1,hostingMonths:1,hostingMonthly:0,external:0});
   assert.equal(cost.total,monthly);assert.equal(cost.baselineFee,0);assert.equal(cost.onboardingFee,0);
  }

@@ -1,0 +1,224 @@
+{
+  "status": "PASS",
+  "reviewedAt": "2026-10-29T18:22:24.885Z",
+  "reviewer": "Astra independent commercial release review",
+  "scope": "User-approved five-article Local Search Partnership amendment to the actual V4 site release. Not a general release or deployment approval.",
+  "authority": "User requested $50 below the inspected $399/four-article entry plan and one additional article, then expressly confirmed $349 production-only, $449 Brochure Care and $595 Commerce Care. This review treats those prices as authorized and does not reopen them.",
+  "prices": {
+    "production": 349,
+    "brochure": 449,
+    "commerce": 595
+  },
+  "monthlyCompleteOutputs": 5,
+  "blockers": [],
+  "files": [
+    {
+      "path": "operations/v4-offers-20261029/approved-content-amendment.json",
+      "sha256": "f107d16ad5a7abc2d094f227e37d3296883fc41fe1aec67f2d6999cc4fa16f93"
+    },
+    {
+      "path": "operations/v4-offers-20261029/approved-catalog.json",
+      "sha256": "c1e7c12e560c33b1eed4fa8369fbd6a2cc147d8457dfba06aa44575344966b7a"
+    },
+    {
+      "path": "operations/v4-offers-20261029/create-catalog.py",
+      "sha256": "7107e3f6e20e507bc336f2ae4132f43de6b02cca2119c8b5448548179a6ade47"
+    },
+    {
+      "path": "config/offers.json",
+      "sha256": "f518e500d6d8bfa9ce4f108738300193c8dab9c0f38e1c8e986c54b6c788cd4d"
+    },
+    {
+      "path": "src/offer-catalog.mjs",
+      "sha256": "fa4b10488594af98df9464f64152dd6df6dda6313216e34ae7b9a6a8b8547118"
+    },
+    {
+      "path": "src/commercial.mjs",
+      "sha256": "de9c8943aaabb3f5a9f2177d45cfc08db9354e2a1620850243486dda950fb333"
+    },
+    {
+      "path": "src/shared.mjs",
+      "sha256": "b359f8d7c488f4d2ed34a99575394d843e3c3efea8fffadb78bea0f0c17eca81"
+    },
+    {
+      "path": "scripts/create-job.mjs",
+      "sha256": "b1a58ccf68e0438e61992084f0aa559231ea24fe424e9a68bd9cd029113cb02b"
+    },
+    {
+      "path": "src/v4-offer-story.mjs",
+      "sha256": "53d586b9f23aec3917ec3d7738020a5467112302683466440c03a2001b840741"
+    },
+    {
+      "path": "src/v3-offer-content.mjs",
+      "sha256": "d31c98698ccdce702a0f67da7a66abf677a3fd5bb84bcf47bdea01f2d8d7f427"
+    },
+    {
+      "path": "src/guide-content.mjs",
+      "sha256": "083033e2c04a5147a652aeb38c4f3fc51686c0815183b62c5884f2a0a76cdbb0"
+    },
+    {
+      "path": "src/service-faqs.mjs",
+      "sha256": "fabe9d422ee34a479b65536ca9b9bb8cb36bd978a6d64a51b9dc94a0a4a609e6"
+    },
+    {
+      "path": "tests/v4-offers.test.mjs",
+      "sha256": "e00211e4616869be2da7a5dae6ad3e0ddcfb736a7434b2451a4b439e165d2b61"
+    },
+    {
+      "path": "output/v4-offers/amendment-targeted.log",
+      "sha256": "ac8188a1620b48f85be078433073cd25b5a2da6bf2196857acb0547a4b18d0c1"
+    },
+    {
+      "path": "operations/historical/offers-2026-10-29-v3.json",
+      "sha256": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6"
+    },
+    {
+      "path": "src/research-guide-more.mjs",
+      "sha256": "866865ed0db35590e4be579c611026108d14447644f26b296bf4a42f47223746"
+    },
+    {
+      "path": "output/v4-offers/amendment-build.log",
+      "sha256": "6638fc44cca29a898e89f4365f194647eb5946769aa7faa0e6aa643197cd48bc"
+    }
+  ],
+  "verified": {
+    "authorityChain": "Amendment replaces local-search only. Generator validates the base approved-catalog hash and records the amendment SHA256 in regenerated config; current normalized config matches that hash.",
+    "outputs": "Five new distinct complete researched articles or useful service pages per paid cycle. Research, original writing from checked sources/client expertise, factual review, on-page SEO, internal links, publishing, one consolidated review and checks are included. Process steps are not additional deliverables; one page cannot count twice. Existing-page refresh/repair substitution requires explicit written agreement.",
+    "retainedAdditionalScope": "One local profile with bounded updates/reply drafts, priority-listing checks and one correction, two profile posts, 90-day plan, reporting and one additional conversion improvement remain. Care is optional and maintenance is excluded from production-only.",
+    "quoteAndDraft": "Independently executed quotedOffer and draftScope for all three variants; selected fees, five-output acceptance, all included deliverables, full offer snapshot, renewal/cap clause and timing match.",
+    "costExamples": {
+      "conditions": "Three paid cycles; existing site; $20/month documented eligible hosting; no separately selected onboarding or extras.",
+      "productionTotal": 1107,
+      "brochureTotal": 1347,
+      "commerceTotal": 1845,
+      "interpretation": "Brochure offsets $60 against studio invoices and adds the same $60 paid to host. Other variants have no hosting offset."
+    },
+    "historicalPreservation": "Independently drafted historical V3 grow: $1750, two defined units and original generic priority menu retained; historical input remained byte-equivalent after serialization.",
+    "timing": "First article within 10 business days of a ready paid cycle; remaining articles on agreed calendar, all five within that paid cycle. Facts, access, permissions and agreed topics are readiness inputs; results/vendor approval are not guaranteed.",
+    "buyerPack": {
+      "mainPathWords": 786,
+      "unchangedMainLimit": 900,
+      "fullItemsWords": 1398,
+      "unchangedDownloadLimit": 1600,
+      "visibleTiming": true,
+      "deliveryConditionsRetainedInDisclosure": true,
+      "duplicateSentenceCheck": "PASS",
+      "deduplicationReview": "Only duplicate hosting/setup summaries and redundant stage summaries removed from V4 grow. Independently checked retained five outputs, complete-cycle timing, $25 hosting offset, excluded Commerce/production offset, first-three Care onboarding waiver, native GA4/Search Console/inquiry-event setup, full outputs despite setup, ready paid start, two-day consolidated reviews and accepted-cycle preservation. Other packs unchanged by this branch."
+    }
+  },
+  "resolvedFindings": [
+    {
+      "issue": "Growing five-page monthly library versus existing 30-page scope",
+      "resolution": "A standalone inclusion requires projected next-five-page coverage review before renewal, agreed scope/fee expansion before payment or no renewal, all five accepted outputs preserved, and separate Care coverage limits retained. Verified in each quote and saved draft."
+    },
+    {
+      "issue": "Generic saved priority menu allowed unrelated substitutes",
+      "resolution": "V4 grow snapshots now contain an empty generic priority menu. Other/historical plans retain their existing behavior; five-output acceptance is authoritative."
+    },
+    {
+      "issue": "First-cycle workload exceeds ordinary recurring allocation",
+      "resolution": "Amendment capacityReview explicitly records 35.21875 Brochure and 39.28125 Commerce first-cycle reserved hours against the ordinary four-week 32-hour allocation, requires full dated capacity before acceptance, and rejects treating three-client eligibility as three available full retainers."
+    }
+  ],
+  "economics": {
+    "baseBrochureHours": 23.675,
+    "reservedBrochureHours": 29.59375,
+    "firstCycleHours": {
+      "production": 27.96875,
+      "brochure": 35.21875,
+      "commerce": 39.28125
+    },
+    "regularBrochureHeadroomInFourWeekAllocation": 2.40625,
+    "stressHours": 36.9921875,
+    "illustrativeBrochureStressContributionPerHour": 10.25,
+    "assessment": "Arithmetic is consistent. This is a thin introductory acquisition model with unmeasured hours; the contribution proxy is not profit, wages or sustainable pricing evidence. Actual dated intake capacity remains a separate required booking gate. No available booking slot or completed capacity allocation is asserted by this review."
+  },
+  "tests": {
+    "path": "output/v4-offers/amendment-targeted.log",
+    "passed": 28,
+    "failed": 0,
+    "skipped": 0,
+    "method": "Inspected latest 28-pass/0-fail targeted log, including unchanged commercial/clarity thresholds; independently executed current quote/draft/cost/historical assertions before pack-only cleanup, then current buyer-pack entitlement and length assertions plus all existing relation integrity checks. The earlier 30-test log was superseded and is not claimed as the current run."
+  },
+  "limitations": [
+    "No live submission, payment, publication or deployment performed.",
+    "No source, test or baseline edited by reviewer; only these two review artifacts written.",
+    "Competitor pricing is the supplied authorization context, not independently refreshed competitor research.",
+    "PASS applies to exact hashed amendment/source/test inputs; changed commercial inputs require revalidation."
+  ],
+  "guideReview": {
+    "status": "PASS",
+    "method": "Read complete current SEO work/reporting article rendered directly from current renderPages. Reviewed its source delta: obsolete two-content-unit/one-guide scope replaced by five complete researched articles or useful service pages at $349 production. Research, publication/QA, contextual metrics, no guaranteed results and separate campaign work remain. Care and redesign timeline full article reviews from the prior checkpoint remain valid against identical fingerprints.",
+    "freshBuildVerified": true,
+    "ledgerPath": "operations/google-quality-audit-20261023/related-guide-review.json",
+    "ledgerSHA256": "d22a4879b2540b8e3b6b41f1f3985c8dceda12f3abc6bb1b3c8b9baf607e1785",
+    "rowsChecked": 2674,
+    "uniqueGuideDestinations": 41,
+    "changedAssociations": 0,
+    "rebindRequired": false,
+    "locationCheck": "Every existing relation still matches its actual locationPurposeFingerprint and destination/label; every linked fresh-build article matches the ledger guide fingerprint. No new county facts or external research claimed.",
+    "guides": [
+      {
+        "path": "/guides/seo-work-and-reporting/",
+        "currentFingerprint": "106cbc52f9e0175c63a73ce7af0ed535e08831cea1c5ac655917608b66a8d3e3",
+        "retainedRelations": 0,
+        "note": "No existing relation row points to this commercially updated guide."
+      },
+      {
+        "path": "/guides/website-maintenance-checklist/",
+        "currentFingerprint": "727f60aeab070b3870f80310357472bf04480dcf565e3f6a16e9fe9b626a0c5e",
+        "retainedRelations": 34,
+        "note": "Same fingerprint as prior reviewed and applied rebind."
+      },
+      {
+        "path": "/guides/website-redesign-timeline/",
+        "currentFingerprint": "64ed10a910e614054fdb2720f44c9a690597270324ed4be80442fd4011957a4c",
+        "retainedRelations": 2,
+        "note": "Same fingerprint as prior reviewed and applied rebind."
+      }
+    ]
+  },
+  "finalRegressionSupplement": {
+    "status": "PASS",
+    "reviewedAt": "2026-10-29T18:22:24.885Z",
+    "files": [
+      {
+        "path": "src/assets/guides/website-redesign-schedule.csv",
+        "sha256": "8239ddededcc8fbf78ce5f774eb10e83c15888448e3da4660089d9dcf2f5355d"
+      },
+      {
+        "path": "tests/claude-clarity-frontend.test.mjs",
+        "sha256": "bdad2f5a370dc1d29191b10d520d6358e479c0ed3fcd959158789d25abc9a2bf"
+      },
+      {
+        "path": "tests/offer-catalog.test.mjs",
+        "sha256": "77e44eb65c1c2b136a23f5263a38488e5f2bcaf81d026e386094a8347aef614f"
+      },
+      {
+        "path": "output/v4-offers/amendment-regressions.log",
+        "sha256": "69ef9d6f6c5a7fb66fe8be5a783b0d047467f0e3678790ee9a464bf522f26836"
+      }
+    ],
+    "changes": [
+      {
+        "path": "src/assets/guides/website-redesign-schedule.csv",
+        "finding": "Only final payment changes 20% to 30%; matches approved current catalog milestone and previously reviewed rendered redesign guide. Remaining schedule cells unchanged."
+      },
+      {
+        "path": "tests/claude-clarity-frontend.test.mjs",
+        "finding": "Expected calculator known subtotal changes 9859 to 8209 and complete total with $50 external changes 9909 to 8259. Difference1650 equals (599−449)×11 cycles. Exact current fixture arithmetic: 2995 build +449×11 service +25×11 hosting =8209; plus50 =8259. Unedited hosting months synchronize to11 in bindCostCalculator, and baseline is disabled for new build. Unknown-external-cost warning assertions remain."
+      },
+      {
+        "path": "tests/offer-catalog.test.mjs",
+        "finding": "Mutation assertions still require4 researched articles after probe changes quantity to4, whereas current-catalog assertion requires5. Retained name/escaping/retired-promotion guards, 35-minute review and120-day-plan assertions. This updates output semantics without weakening quantity-mutation coverage."
+      }
+    ],
+    "verification": {
+      "targetedPassed": 30,
+      "targetedFailed": 0,
+      "targetedSkipped": 0,
+      "method": "Read exact diffs and final targeted log. Independently checked current calculation, documented frontend month synchronization, current catalog final-payment30%, current quantity5 and probe quantity4. Did not rerun supplied suite."
+    },
+    "scope": "Supplement only. Previous evidence retained; full suite/build are separate primary release checks."
+  }
+}

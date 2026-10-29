@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "reviewedAt": "2026-10-29T18:06:00.546Z",
+  "scope": "Actual V4 site release: retained contextual relevance for five commercially updated guides and proposed ledger refresh only.",
+  "reviewer": "Astra independent release review",
+  "guideCount": 5,
+  "connectionCount": 211,
+  "blockers": [],
+  "evidencePath": "evidence/v4-offers-20261029/guide-deltas.json",
+  "evidenceSHA256": "104b87ebbfdb60ecba99526a7311b97fc41fb2d7d010ecbf21d5a6aa2c5771cd",
+  "previousLedgerSHA256": "87c440a29fbc9935bd4aa8e84f4a8f8ac71d759fcb41f130ef748f19c3702b6e",
+  "files": [
+    {
+      "path": "src/research-guide-more.mjs",
+      "sha256": "866865ed0db35590e4be579c611026108d14447644f26b296bf4a42f47223746"
+    },
+    {
+      "path": "src/guide-content.mjs",
+      "sha256": "81ebe9af03833bc6e3629e4e75e2ca3624c0be887ead9cc0a7d3e4d9f4048dde"
+    },
+    {
+      "path": "tests/v4-offers.test.mjs",
+      "sha256": "2ff16eadbe7c8d8d7fa4473c2de875246b5720872e68a73665e0f67a96c8f7c9"
+    },
+    {
+      "path": "config/offers.json",
+      "sha256": "210a6042a9fe96e41f60667b750e56e34241785284795b68ea16bacf28b14a0a"
+    },
+    {
+      "path": "operations/v4-offers-20261029/refresh-guide-reviews.mjs",
+      "sha256": "37651ff9b049c34eeb542f26bc489a661668d99a218a6c3225b5255fc435128e"
+    },
+    {
+      "path": "evidence/v4-offers-20261029/guide-deltas.json",
+      "sha256": "104b87ebbfdb60ecba99526a7311b97fc41fb2d7d010ecbf21d5a6aa2c5771cd"
+    },
+    {
+      "path": "output/v4-offers/guide-payment-final-check.log",
+      "sha256": "5e80dfedf2d9d5fb2beac8f2d235219effdeb75637468b854289d0300ccba890"
+    }
+  ],
+  "guides": [
+    {
+      "path": "/guides/contractor-website-checklist/",
+      "connections": 168,
+      "beforeHash": "6cb1d55e4d385ba8fa1560d346f7e61476ee580db798739483e524fa9ccb3e2e",
+      "afterHash": "b12287e150b52e730961efe28bd2cfe292e2d61097a33feb9eafc629d4059e47",
+      "beforeMatchesSaved": true,
+      "purposeRetained": true,
+      "rationale": "Accepted jobs, actual project roles, permissioned evidence, coverage and estimate preparation remain intact. The conditional quote-request form price changes from $1,200 to $695 without changing its human-quote scope."
+    },
+    {
+      "path": "/guides/website-redesign-timeline/",
+      "connections": 2,
+      "beforeHash": "422ad1cf68b406c54cac8432b05a7b836dec8306969f057a33f4e6b26c02aab4",
+      "afterHash": "64ed10a910e614054fdb2720f44c9a690597270324ed4be80442fd4011957a4c",
+      "beforeMatchesSaved": true,
+      "purposeRetained": true,
+      "rationale": "Dependencies, input readiness, written approvals and launch checks remain intact. Delivery ranges change to current catalog targets; the example now uses Focused Website and included two-business-day review windows. Both table and closing text correctly state 30% final/staging approval."
+    },
+    {
+      "path": "/guides/contact-form-not-working/",
+      "connections": 2,
+      "beforeHash": "8d0c09ae931710bae1f810863020380f5f7930fcd52b35dbe69450b114a7824d",
+      "afterHash": "75dba96520ff7ef29691370175bb04bcb76144455ab085e9c0d182b333df3d4a",
+      "beforeMatchesSaved": true,
+      "purposeRetained": true,
+      "rationale": "Submission-to-receipt-to-notification-to-reply diagnosis and technical checks remain intact. Roadmap and Repair Sprint prices change to $199 and $849; existing diagnostic and bounded repair scope remain explicit."
+    },
+    {
+      "path": "/guides/website-maintenance-checklist/",
+      "connections": 34,
+      "beforeHash": "3574ed478028df9d8076b9ac93da2f11ca478178f18ec7473fa7427e86f18e14",
+      "afterHash": "727f60aeab070b3870f80310357472bf04480dcf565e3f6a16e9fe9b626a0c5e",
+      "beforeMatchesSaved": true,
+      "purposeRetained": true,
+      "rationale": "Task ownership, monthly checks, current information, downloads, retesting and recovery responsibility remain intact. Care pricing explicitly distinguishes $149 Brochure and $295 Commerce, with 60-minute edits and $195/$395 onboarding plus defined waivers and eligibility checks."
+    },
+    {
+      "path": "/guides/service-area-pages/",
+      "connections": 5,
+      "beforeHash": "3bbe9d38337ff6ca428555b4b4266bc3dbb57cc538e3d552429387b065dfa961",
+      "afterHash": "58ad9010aa88639901a1d6caa77133f554968720020f45de54d127b4e708fa97",
+      "beforeMatchesSaved": true,
+      "purposeRetained": true,
+      "rationale": "Substantive page-purpose, actual delivery coverage, address-level conditions, maintained boundaries and physical-presence distinctions remain intact. Additional-page pricing changes to $195/$525 without weakening the warning against near-identical town pages."
+    }
+  ],
+  "verification": {
+    "completeArticleReview": "Read complete current before/after article texts for all five guides. Retained the prior independent worker substantive review of all 211 original rationales; its complete article/rationale review is documented in the inherited checkpoint. Rechecked all 211 exact original rows against the unchanged ledger and actual location data.",
+    "integrity": "All before/after normalized article text SHA256 values match the evidence; all five dist article fingerprints match afterHash. All 211 original rows deep-equal the current ledger, have the expected beforeHash, retain actual destination/label associations, and match locationPurposeFingerprint on full current entries including planningTable.",
+    "tests": {
+      "path": "output/v4-offers/guide-payment-final-check.log",
+      "pass": 23,
+      "fail": 0,
+      "method": "Inspected existing targeted test log and rendered payment regression test; did not rerun unchanged tests."
+    },
+    "resolvedFindings": [
+      "Timeline final-payment table now derives 30% from the catalog, agreeing with the closing milestones.",
+      "Retired Launch/five-day review arithmetic replaced by current Focused Website delivery example including normal review windows.",
+      "Maintenance price sentence explicitly distinguishes Brochure and Commerce Care."
+    ]
+  },
+  "updaterReview": {
+    "path": "operations/v4-offers-20261029/refresh-guide-reviews.mjs",
+    "executed": false,
+    "status": "PASS",
+    "findings": "Requires review PASS, unchanged source ledger hash, five guides/211 relations, matching saved prior hashes, matching rendered current guide hashes, current location fingerprints and actual destination/label associations. Updates guide hash and review provenance only; preserves existing rows, rationale, destination, label and location hash. Evidence records complete before/after rows, prior row hashes, review hash, previous/updated ledger hashes and changed guide fingerprints. Exclusive creation prevents overwriting prior V4 connection evidence.",
+    "applicationCondition": "Apply against these exact reviewed evidence and updater hashes; re-review any guide text or updater changes."
+  },
+  "limitations": [
+    "No new research of county facts, business claims or external provider instructions.",
+    "No live form submissions, publication, ledger mutation or test-baseline edits performed.",
+    "Separate Local Search Partnership commercial changes are outside this bounded review.",
+    "PASS addresses this guide/ledger checkpoint, not overall release readiness or CI completion."
+  ]
+}

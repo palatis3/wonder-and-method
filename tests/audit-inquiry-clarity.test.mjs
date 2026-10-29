@@ -78,7 +78,7 @@ test('contact starts with required fields and keeps optional choices and labeled
  assert.match(html,/<details class="inquiry-extra" data-project-details><summary>Website and business details \(optional\)<\/summary>/);
  assert.ok(html.indexOf('id="business"')>html.indexOf('id="message"'));
  for(const [id]of shared.inquiryChoices)assert.ok(html.includes(shared.escapeHtml(shared.inquiryChoiceLabel(id))));
- assert.match(html,/Website Improvement Partnership — from \$299\/month/);assert.match(html,/Local Search Partnership — from \$499\/month/);
+ assert.match(html,/Website Improvement Partnership — from \$299\/month/);assert.match(html,/Local Search Partnership — from \$349\/month/);
  const source=html.match(/<select id="found_via"[^>]*>([\s\S]*?)<\/select>/)[1];
  assert.deepEqual([...source.matchAll(/<option value="([^"]*)"/g)].map(match=>match[1]),['','search','maps','ai','referral','social','other']);
  assert.ok(html.indexOf('id="found_via"')>html.indexOf('id="business_location"'));

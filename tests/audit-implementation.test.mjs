@@ -16,7 +16,7 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
  const prices=priceList(offers);
  const {add_ons,...basePrices}=prices;
  assert.equal(basePrices.catalog_format,3);assert.equal(basePrices.annual_available,false);
- for(const [key,expected] of Object.entries({launch:2195,focused:2995,business:4495,signature:6495,keep_running:149,improve:399,local_focus:299,grow:599,baseline:199,sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495}))assert.equal(basePrices[key],expected,key);
+ for(const [key,expected] of Object.entries({launch:2195,focused:2995,business:4495,signature:6495,keep_running:149,improve:399,local_focus:299,grow:449,baseline:199,sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495}))assert.equal(basePrices[key],expected,key);
  assert.equal(basePrices.provider_model,'client_owned_direct_billing');assert.equal(basePrices.commercial_version,offers.version);
  assert.deepEqual(add_ons,offers.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})));
  for(const name of ['launch','focused','business','signature']){
@@ -52,7 +52,7 @@ test('Launch survives a real synthetic request and remains recoverable without s
 test('current estimates itemize separate diagnostic, repair and care fees before proposal credits',()=>{
  const prices=priceList(offers);
  assert.equal(calculateCost(prices,{build:'existing',plan:'improve',baseline:true,cycles:12}).serviceTotal,199+399*12);
- assert.equal(calculateCost(prices,{build:'existing',plan:'grow',baseline:true,sprint:true,cycles:1}).serviceTotal,199+849+599);
+ assert.equal(calculateCost(prices,{build:'existing',plan:'grow',baseline:true,sprint:true,cycles:1}).serviceTotal,199+849+449);
  assert.equal(calculateCost(prices,{build:'signature',plan:'keep_running',baseline:true,cycles:1}).serviceTotal,6495+149);
  assert.equal(calculateCost(prices,{build:'existing',plan:'none',baseline:true,cycles:0}).serviceTotal,199);
 });

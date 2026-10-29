@@ -15,7 +15,13 @@ import {serviceFaqSection} from '../src/service-faqs.mjs';
 import {websiteDefectSupport} from '../src/offer-copy.mjs';
 
 const offers=normalizeOfferCatalog(raw),prices=priceList(offers);
-const variants={keep_running:{brochure:149,commerce:295},improve:{production:299,brochure:399,commerce:545},local_focus:{production:199,brochure:299,commerce:445},grow:{production:499,brochure:599,commerce:745}};
+test('redesign timeline uses the accepted catalog payment stages throughout the guide',()=>{
+ const guide=guideContentSections('/guides/website-redesign-timeline/',offers).map(s=>s.body).join(' ');
+ assert.match(guide,/You approve the finished website in writing; 30% final payment before launch/);
+ assert.match(guide,/30% direction approval and 30% staging approval milestones/);
+ assert.doesNotMatch(guide,/20% final payment/);
+});
+const variants={keep_running:{brochure:149,commerce:295},improve:{production:299,brochure:399,commerce:545},local_focus:{production:199,brochure:299,commerce:445},grow:{production:349,brochure:449,commerce:595}};
 const valid={name:'Synthetic visitor',email:'visitor@example.com',message:'Please help me select the appropriate plan.'};
 
 test('current process, cost guide, handoff and local FAQs retain every tier’s defect-reporting window',()=>{
@@ -105,4 +111,9 @@ test('public catalog exposes choice prices while complete scope downloads stay r
   const main=pack.sections.filter(s=>!s.disclosure).flatMap(s=>s.items).join(' ');
   assert.ok(main.split(/\s+/u).length<900,pack.id+' main reading path');
  }
+});
+
+test('five-article Partnership cannot substitute the generic priority menu or silently overrun coverage',async()=>{
+ for(const care_variant of ['production','brochure','commerce']){const draft=await draftScope('grow','synthetic-five-articles',{care_variant});assert.deepEqual(draft.commercial_snapshot.priority_menu,[]);assert.match(draft.commercial_boundaries.deliverables.join(' '),/Every accepted cycle still includes all five outputs/);assert.match(draft.commercial_boundaries.deliverables.join(' '),/Agree any scope or fee expansion before payment/);}
+ const legacy=await draftScope('grow','synthetic-v3-menu',{catalog:historical});assert.ok(legacy.commercial_snapshot.priority_menu.length>0);
 });

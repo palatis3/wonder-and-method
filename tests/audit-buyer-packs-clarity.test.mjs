@@ -14,7 +14,7 @@ const packs=buyerPacks(offers);
 const body=pack=>pack.sections.flatMap(section=>[packSectionTitle(section),...section.items]).join('\n');
 const count=(text,part)=>text.split(part).length-1;
 const words=text=>text.trim().split(/\s+/u).length;
-const expected={launch_site:2195,focused_site:2995,business_site:4495,signature_site:6495,keep_running:149,improve:399,local_focus:299,grow:599,website_baseline:199,audit_fix_sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495};
+const expected={launch_site:2195,focused_site:2995,business_site:4495,signature_site:6495,keep_running:149,improve:399,local_focus:299,grow:449,website_baseline:199,audit_fix_sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495};
 const plainHtml=html=>html.replace(/<[^>]*>/gu,'').replace(/&amp;/gu,'&').replace(/&#39;/gu,"'").replace(/&quot;/gu,'"').replace(/&lt;/gu,'<').replace(/&gt;/gu,'>');
 
 async function withOutput(run){
