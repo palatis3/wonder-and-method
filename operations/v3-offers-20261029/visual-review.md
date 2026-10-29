@@ -1,14 +1,9 @@
 # V3 visual candidate review
 
-FAIL pending two corrections. Release approval remains false.
+PASS. All five visual findings are resolved. Release approval remains false.
 
-Final capture run 40872555231 at fe8e69657c24c2bea6d99a82f8e28ad2b917edba contains 92 images. All 10 changed images were inspected over their full captured height using 30 native-scale sheets/slices. Prior coverage is retained only for 82 byte-identical images. All final and prior hashes are recorded in visual-review.json. Eleven additional desktop closing crops were inspected.
+Reviewed capture run 40874459989 at commit 18286b18913cbc025d872b97e5a6d3dfcb1efa46. All 92 current image hashes are recorded in visual-review.json. Sixty-six files are byte-identical to the second reviewed capture. For the 26 changed files, exact full-width pixel prefix/suffix comparison preserves unchanged regions; every changed band was inspected at native scale. This includes all 24 complete closing panels, both homepage wording changes, and the changed/shifted phone brand-messaging and SEO footer regions.
 
-The three earlier findings are resolved: directory Care/onboarding is separate from Roadmap, homepage search starts at $850/month, and SEO exclusions have distinct list items.
+The desktop closing actions now have clear spacing, and phone actions remain legible, centered and separated. Homepage entry-plan wording now accurately says thoughtful design, original writing and search foundations. The earlier directory onboarding, search price and SEO exclusion corrections remain verified through unchanged hashes/pixels. No unresolved visual issue was found.
 
-1. V3-VIS-04: shared desktop closing links concatenate and touch the primary pill. Confirmed across pricing, services, web design, addons, audit, care, SEO and five specialist pages. Add an explicitly spaced action group and recapture. This preexisting defect was missed in the earlier review; its layout PASS is superseded.
-2. V3-VIS-05: the homepage entry card promises Custom design beside the $2,950 established-layout plan. Replace with accurate design-neutral wording and recapture desktop and phone.
-
-No other changed-image clipping, missing imagery, broken card boundaries or footer failures found. This is static screenshot review, not interaction/accessibility proof. No baseline was copied. Full CI and publication remain pending.
-
-Source addendum: VIS04 and VIS05 source fixes independently PASS. New closing flex/gap/target rules survive pruning and occur in the linked CSS for all 12 affected built routes; current built homepage uses accurate design-neutral wording. Independent family-style tests pass 2/2. Visual verdict remains FAIL pending corrected captures.
+Historical captures, findings and hash provenance are retained in the JSON report. Pixel evidence: output/v3-visual-review/approved/hash-pixel-comparison.json. No baselines, source or tests were edited by the reviewer. This is static visual approval; final full CI, browser exclusion reconciliation, publication and production smoke verification remain pending.

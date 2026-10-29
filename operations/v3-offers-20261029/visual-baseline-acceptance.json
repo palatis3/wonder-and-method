@@ -1,0 +1,562 @@
+{
+  "acceptedAt": "2026-10-29T12:43:50.760Z",
+  "status": "PASS",
+  "captureCommit": "18286b18913cbc025d872b97e5a6d3dfcb1efa46",
+  "captureRun": "40874459989",
+  "reviewSha256": "dbbbbb4e412817cabddc047ec91d045ddcbcca31b1793615b02310bc2401b1f1",
+  "files": [
+    {
+      "path": "desktop/about.png",
+      "beforeSha256": "2f26069bc147211d32114b672b769d756c9a98057cceb03ee5f4e2a68056141c",
+      "afterSha256": "70444979993195c2f4af191c39bf80a1632c811db6452f1a0491aac884b38072",
+      "changed": true
+    },
+    {
+      "path": "desktop/addons.png",
+      "beforeSha256": "abd690924d3d18acee519a53fdf3859c3d9baf36b52eb97380195e612e3302c1",
+      "afterSha256": "811b38e2a9dfc8a84ae79f7148c0bd23006e40b1be04827d04bc54fde1d7a9ec",
+      "changed": true
+    },
+    {
+      "path": "desktop/alabama-entry.png",
+      "beforeSha256": "6d162d9fb8ee3c657e2532f7c0035a76c90560d700e723e21fc31cf22cbef538",
+      "afterSha256": "e674d8461b76e914b4399ec388ef218cc1477aed81d44529289452d246c3b955",
+      "changed": true
+    },
+    {
+      "path": "desktop/audit.png",
+      "beforeSha256": "6aea819e668b7bf06523c2749eb89eecacbc6d28f8c2d1da9addfe43f6ed9cf5",
+      "afterSha256": "dd22e806ab3a4d85ab1623ab457309b510644fcf82174f6d4005f7db164bec7a",
+      "changed": true
+    },
+    {
+      "path": "desktop/brand-messaging.png",
+      "beforeSha256": null,
+      "afterSha256": "a21ff446a5701da7e370374418ea71c1d2a1104e57397a79c1c207b5525e7955",
+      "changed": true
+    },
+    {
+      "path": "desktop/care.png",
+      "beforeSha256": "dcbb2cbb526bd757bd9264bfd107e30237d7db8641a03dd8fab698060cc080bc",
+      "afterSha256": "0c912fc2afaf3528ee2f5ee0e2e5616435e9cf850a50f1f117f7c5589e596faa",
+      "changed": true
+    },
+    {
+      "path": "desktop/concept.png",
+      "beforeSha256": "844d2638e6424ebd2b8604fdeabf1158847cb97edb9bac2c03cf7371486d9455",
+      "afterSha256": "2ead6043e2e695ab673a34cd84cfeab893e84356626a410c9abbd6c5efeeaeae",
+      "changed": true
+    },
+    {
+      "path": "desktop/contact.png",
+      "beforeSha256": "0591ea6a7ed779cbfe90e8ed766f0cb7b5d5c794c2dcf26f40f263cb94203249",
+      "afterSha256": "9aab883cb1da3db2e33d73bc72f60e5bd870a88fb252fd20d424f44aa97454ff",
+      "changed": true
+    },
+    {
+      "path": "desktop/contractors.png",
+      "beforeSha256": "3e23f368a7a2cb7d7af5c0d3df82c2c70903ae3fc8b3b55c87ed72bb494576bc",
+      "afterSha256": "db994b8fdcb1c78af2cf43f3a51c5ded91f9f1932f52938c83dc5ed1c358751e",
+      "changed": true
+    },
+    {
+      "path": "desktop/county-entry.png",
+      "beforeSha256": "d5e6d7573b62317c4d29049c94986e663f6e907efe5034cb8f7726fd847e8ea2",
+      "afterSha256": "a0a8e522b6642e75446ca789dd346275c02c6e1dcf6791df4aac7dd8553ab7e4",
+      "changed": true
+    },
+    {
+      "path": "desktop/county-questions.png",
+      "beforeSha256": "9ba7a0051a984e4276d835b28c16766393852a8567ad00451ce36c06be9faff8",
+      "afterSha256": "e006e90eb9b935e10920972b788e5c04d20b7ed75876f9e6cd1b939f2967861e",
+      "changed": true
+    },
+    {
+      "path": "desktop/county.png",
+      "beforeSha256": "6565c299bc9f92e42cefbbac8a120cfc49a482e63b02a2d7a0647f647d65ea88",
+      "afterSha256": "9c02a950ee3b82f1d61b2e73cf2b72792155cbb317947337cb2a6c0b953fce14",
+      "changed": true
+    },
+    {
+      "path": "desktop/district-directory.png",
+      "beforeSha256": "e3e6645641c613684a51deda1ee9825715f7e693d67655d992fe6aeefa0267c2",
+      "afterSha256": "18faf7b6dc82edec2fab2f228483e2696adcea8ff2da60abf4bab270e6b3a07a",
+      "changed": true
+    },
+    {
+      "path": "desktop/ecommerce.png",
+      "beforeSha256": null,
+      "afterSha256": "7b1929600152fb500a239c519fd7caa84fdc009ac65c40bff58e7828dc7e5ac1",
+      "changed": true
+    },
+    {
+      "path": "desktop/floating-tools-content.png",
+      "beforeSha256": "a956fcca199af94e9643e68327f604dda17cf74ebb8bbcf5abaf18b2cd123b54",
+      "afterSha256": "0c082b0056f392cb6b57196ebda3b4a5f8850051b14df1732b09da1273b3a97b",
+      "changed": true
+    },
+    {
+      "path": "desktop/floating-tools-home.png",
+      "beforeSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "afterSha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+      "changed": true
+    },
+    {
+      "path": "desktop/footer-closed.png",
+      "beforeSha256": "8293a4fcc99d99a77173f52cfbf9666a91807f5c990390de1dac1f83bd865c7b",
+      "afterSha256": "e5a31cca3bedae7836adbb6fa8346089d683c7706d2e77167b56e39e40263de9",
+      "changed": true
+    },
+    {
+      "path": "desktop/footer-open.png",
+      "beforeSha256": "88f37073255e3d6e1c8fe1d69292afd963d5fc9e90a1fd055a991b3c7515e495",
+      "afterSha256": "1eb4b24ad5be70823cca2989778c99188dbc1039279720bb781e92e602966583",
+      "changed": true
+    },
+    {
+      "path": "desktop/georgia-entry.png",
+      "beforeSha256": "8411a1019a20cda22bf4d85846a3557889fe01a7854ad6eb69622d95fa5a7600",
+      "afterSha256": "cbb5aef229308e7b59e2a47a152b1fc945e93bd53c03434e954c242508185300",
+      "changed": true
+    },
+    {
+      "path": "desktop/guide.png",
+      "beforeSha256": "dc6d82a5bf75e9259d71f9876d86c4f27d28fed09b1ef13dc58afce4b75063af",
+      "afterSha256": "b6bbafb5cf5b51cb3cd525192cc7d988ddd3fbeaa353b6884bd95bf6d64e9435",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-01.png",
+      "beforeSha256": "03eb75d96bd86dce5da0aa30991167c36665ea4d312a48dc22f19159118c7936",
+      "afterSha256": "bbd356f5d76358ee055f6c0822bdefd29387fd9f81b8455812d29429a425c436",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-02.png",
+      "beforeSha256": "86e38511a98b5eb619d0d865454dc0bc5848156350d26e3c5dce337daa45b134",
+      "afterSha256": "cf92ff69aa09f88df66ca973eae7a0320bf7171ea7026e2b5e7e2148bf80ffec",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-03.png",
+      "beforeSha256": "5b220275502a99aed0201b7ff6504fd4748a8c1d2d57f8ae372d61a02e25dcdd",
+      "afterSha256": "280cf7f97cc77c87a415aaf10e4a9bca79e6337b1b88cfda5656a66e4452773d",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-04.png",
+      "beforeSha256": "72541797c8f43b2e79bd2ca69ce1f28c4db916d6362896408740d3b33301c754",
+      "afterSha256": "2c803b78f62b5de2e1aec91ec161106f807575eceb914dfea971c7060fec95ae",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-05.png",
+      "beforeSha256": "412cae077c46465b89f1d219c9c5aa6ce67853a4dcdacf7fa3636f2b5b608e7c",
+      "afterSha256": "65b727e3eca0436db50426aeca1960bca9b2844dc6537e5f5ce1bfc31dc61a20",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-06.png",
+      "beforeSha256": "bccbcff2c124565b30e1335ba6114e17c041142ce5a88e92d314dfc6f033dbe1",
+      "afterSha256": "2d06972043d3bc63f835bf02b0932d54a793a322d707c8370e65b2ef7e716a68",
+      "changed": true
+    },
+    {
+      "path": "desktop/home-viewport-07.png",
+      "beforeSha256": "71b720163e652be919be867e27beef2569499715cc3d7e1f4189dea78e61cea1",
+      "afterSha256": "ce6f9715107aece05cbf692245b4e39270d2c784e7474cfe0442217294b5683f",
+      "changed": true
+    },
+    {
+      "path": "desktop/illinois-entry.png",
+      "beforeSha256": "5dfe0e642b21e18e2ac2673642925db1523be71c9257852539e7206b04c8dffd",
+      "afterSha256": "57516cb3a734617cef8886314ff48b118a94e591f64bc4a359f565f0354467a2",
+      "changed": true
+    },
+    {
+      "path": "desktop/iowa-county.png",
+      "beforeSha256": "124a33f29a842a45d31aa9c162fd9d0570526412ed33ac7e11f7966a523bab02",
+      "afterSha256": "0e96616132458a406787f38731fbc4db42d9d43a8363fae41c1588906dc873d3",
+      "changed": true
+    },
+    {
+      "path": "desktop/iowa-entry.png",
+      "beforeSha256": "3d1b878a77041d46c2482b872ba6ad625708fa6ac3ae76b5b4f5fbe4443e59af",
+      "afterSha256": "28a9073e60813046fafc8bd0a6ba6e5c13cd4598e5522384d8711e4356bba9e4",
+      "changed": true
+    },
+    {
+      "path": "desktop/local-profiles.png",
+      "beforeSha256": null,
+      "afterSha256": "dfea1f6622fa807046daffbecd274b0e86488d72a1a9257bd99fdec37d343456",
+      "changed": true
+    },
+    {
+      "path": "desktop/mississippi-entry.png",
+      "beforeSha256": "b03c57e4800b81b66d4e73b0617202223bc343ede0d4a11af327c69a736e4164",
+      "afterSha256": "a3c4aca22c3d8cef9a145c6bfe16388391cf0be9360440f62ce3fa418866d3f2",
+      "changed": true
+    },
+    {
+      "path": "desktop/missouri-county.png",
+      "beforeSha256": "f7aaf4f92e604d03a2811a2133adbd2cfdabc1078f45b844d377b3ece3617a2d",
+      "afterSha256": "334025c24aeac49178076344a08e29b646450a7dde3a6a1e11957287135ad14e",
+      "changed": true
+    },
+    {
+      "path": "desktop/missouri-entry.png",
+      "beforeSha256": "7d8230b38c3a7c6572c4040bc91e0abbffe4ab5dd990e3f4c20cd0a72d307b8b",
+      "afterSha256": "0cae4a106d728d4ca3712a37abdb4bbbfba50c6030533a7a3f1f7cc0fde7320b",
+      "changed": true
+    },
+    {
+      "path": "desktop/monthly-seo.png",
+      "beforeSha256": "ee8af6116275023cab6b8509c8eca14720d38d63c6e8707f4bf0a6363dca9c81",
+      "afterSha256": "fb687a7500daf7dc0b83f4b1e5cd0563e50b6f221ff4ae522e503e0e82ff1a77",
+      "changed": true
+    },
+    {
+      "path": "desktop/pricing.png",
+      "beforeSha256": "4a065ea7838e4412ad82b7536b7ccc0b1a8279c6c1b78b570e64cfdad032929f",
+      "afterSha256": "836706e95c093454d84cc80ce37ce5f8c9d771740db864a188eed6c48a3b7262",
+      "changed": true
+    },
+    {
+      "path": "desktop/process.png",
+      "beforeSha256": "5aa08f92bb54d3f3faf38e0307c11430e60b3456f274c7568424548049ea5649",
+      "afterSha256": "572ca9c5eeba1086d8df3c36fe26117154049b05f5eec7cd8acac029bbf5933d",
+      "changed": true
+    },
+    {
+      "path": "desktop/redesign.png",
+      "beforeSha256": "7d59f98fdf22dec8c7c2dadf9d29facc56c3f0638436264a77ec380113674145",
+      "afterSha256": "063d3aa566548a04da601ecdf0bd7a3d6ae05074cee23238f697d14c41967c5c",
+      "changed": true
+    },
+    {
+      "path": "desktop/regional-directory.png",
+      "beforeSha256": "29f680943de171e77f5aa5358a2c44b1a125e493cec23195ba86d3e63a3024f0",
+      "afterSha256": "8392396267b48ae8620a5e668c8583d87a4efe7cdf224806b9475d4c5e78fd96",
+      "changed": true
+    },
+    {
+      "path": "desktop/scope-request.png",
+      "beforeSha256": "0c598e6e3e3fcc6a2d25172834751b523047f9fac989e04073fb4ba83fd84dc0",
+      "afterSha256": "60782325347854bff3cf0db4db8a9ad522df84665014a6ff618b322073335602",
+      "changed": true
+    },
+    {
+      "path": "desktop/service-questions.png",
+      "beforeSha256": "2468e7e7a9096bca4040027bdcc99c1bb030d03d19c52bc76b62a19a7c99b9f2",
+      "afterSha256": "7de2271970c471caa4a5c1c2f40996fe7af1c44f299dd475e043fc805ee4d016",
+      "changed": true
+    },
+    {
+      "path": "desktop/services.png",
+      "beforeSha256": "ab9ab447728497d88adef8729aa60416360ac639c532d351c1737c28c60be293",
+      "afterSha256": "528ad0eaafdaf2ce1b1631f5fb6bf25eb7042fe6def8e82f7c8a243c855164b3",
+      "changed": true
+    },
+    {
+      "path": "desktop/systems.png",
+      "beforeSha256": null,
+      "afterSha256": "1e06c0e271073f85c18e63eaf04966035e3eaf6c632ed9525594a7bf0f160908",
+      "changed": true
+    },
+    {
+      "path": "desktop/texas-county.png",
+      "beforeSha256": "68672d1d23a1450c4259fafa1089390a38f7d5dbb2aa4060ab4fb8eb4752e00e",
+      "afterSha256": "b3a68d96a3e7a432f47274af689217a8da8ebf113db2c1277ba373184118d5ae",
+      "changed": true
+    },
+    {
+      "path": "desktop/texas-entry.png",
+      "beforeSha256": "ee9da320b74f56678f3c988bd3dceef71c18c36cb0e2bc2a3c92f326360da5aa",
+      "afterSha256": "0cb2e5e90060358db794f80d884a56719c8612041cfcad9ddb8d01ca09d6c59c",
+      "changed": true
+    },
+    {
+      "path": "desktop/web-design.png",
+      "beforeSha256": "e94930d1c4f50857fd2c234c0efee8e7d681d1e3a8ee9b6b3cfafdd99a4656c0",
+      "afterSha256": "979c8ccdd071606cf0f59866c7be8bf76e40545d3edceabf9a3c3e1cd8aac7dc",
+      "changed": true
+    },
+    {
+      "path": "desktop/wisconsin-entry.png",
+      "beforeSha256": "6e112837363f8e68c29447667258aa16094acdbcdcafe9c3fb1309cf742095fe",
+      "afterSha256": "63c6935b2e50f4923d5510d9e992f701dda6c3fbdb3ae01b90c3c4637816398a",
+      "changed": true
+    },
+    {
+      "path": "desktop/work.png",
+      "beforeSha256": "2dcf334ceada59be07e0dc6cc2b61f63edaf1955c89318af83770a11191aeecb",
+      "afterSha256": "077d994999b037cf06eb7a7de1c5b3f00829dc3cea0e7b579dc5c8386915d0f8",
+      "changed": true
+    },
+    {
+      "path": "desktop/workflow.png",
+      "beforeSha256": null,
+      "afterSha256": "824afdbc8bec89ac15e047cfbf3971e86aa7f825076584d4ce5448e5eb79473f",
+      "changed": true
+    },
+    {
+      "path": "phone/about.png",
+      "beforeSha256": "4d9d8e06b3df74c6a95cdb9f4b7d2084e6fc7e94d1ec5b24efdda9bc62a930c8",
+      "afterSha256": "4d9d8e06b3df74c6a95cdb9f4b7d2084e6fc7e94d1ec5b24efdda9bc62a930c8",
+      "changed": false
+    },
+    {
+      "path": "phone/addons.png",
+      "beforeSha256": "53d07609892c1e4402b1ded6abac354d8bdcc7c76e259c73e09d278bcd06487e",
+      "afterSha256": "782bb9a99796346190396d5f35b820d9fd6f639452f6348592aa4d3d847ab326",
+      "changed": true
+    },
+    {
+      "path": "phone/alabama-entry.png",
+      "beforeSha256": "12869b7d7f7f6644e530dc35239a1f925267e129bd11ece8f0c7c13031f3835f",
+      "afterSha256": "e2f60118ad5be9f7936a7d2f91f805c903810b7c91a183b15bc21d2d3fde0fa6",
+      "changed": true
+    },
+    {
+      "path": "phone/audit.png",
+      "beforeSha256": "6b1aaac854ff14876c8cdbe295f73e7a5b8cd7e2c42ad666a39b371987aed49e",
+      "afterSha256": "6d8d85189700692de98af0fd39e7bf1136da5b033f8063eddfffb9e7ad734b66",
+      "changed": true
+    },
+    {
+      "path": "phone/brand-messaging.png",
+      "beforeSha256": null,
+      "afterSha256": "927dc4586c40d2394c70567099f2d00fe9e189b32c3b67c37c19b46498413b2f",
+      "changed": true
+    },
+    {
+      "path": "phone/care.png",
+      "beforeSha256": "7affe2bcc54a13040b0b994a94d2f675ab418a84e9236ba1d97325012cc171d5",
+      "afterSha256": "5e055041b30b857836185d17b917aecf2740c445745fee020f90fec44197acf6",
+      "changed": true
+    },
+    {
+      "path": "phone/concept.png",
+      "beforeSha256": "f71e99ec8688907f5091a71bdadda88037d194f262f542fff7dcb2e4b559051a",
+      "afterSha256": "2785f43e95beadb2930ffafa10a9a83f8fd719494a7d40978d2c49233ef0f1a3",
+      "changed": true
+    },
+    {
+      "path": "phone/contact.png",
+      "beforeSha256": "7b91c047b2b911e1ed0a7acc2c9a660edf0c7de3a75807a4081787c67e07e268",
+      "afterSha256": "7b91c047b2b911e1ed0a7acc2c9a660edf0c7de3a75807a4081787c67e07e268",
+      "changed": false
+    },
+    {
+      "path": "phone/contractors.png",
+      "beforeSha256": "a5e4ee52c3219e36bd194e427326def25504c71a94f1e61a5aa3da96f51caff8",
+      "afterSha256": "6a855d09bf454e79edf6e014ff7e2b72ad2c09d27d359eea6ecabf5d148e2105",
+      "changed": true
+    },
+    {
+      "path": "phone/county-entry.png",
+      "beforeSha256": "91cf2b4df162e17727717105db5054c98df02ed06f6897c39c8a238ee75a4143",
+      "afterSha256": "c02547a98d7e16c49c82d7f8d6d86c97c300587f6a59768bb561cc4585bd55b5",
+      "changed": true
+    },
+    {
+      "path": "phone/county-questions.png",
+      "beforeSha256": "78ff62ee76aab0ac90004bb729fd341dd6e0cdec96f26ce070fc1b14ea1648c9",
+      "afterSha256": "daa53fc6aa7afb6555e7bc031bdb1b09c92c3730a1e2e664530201435c7ecf55",
+      "changed": true
+    },
+    {
+      "path": "phone/county.png",
+      "beforeSha256": "8795bb694e061d4e289dd73e3d90732ccc7e234d8abdd281f7e6aaf8009e941a",
+      "afterSha256": "33b3491da4db14d6cc6a10e9140bb0869ffb569cc26bf68adc5c154521e3d4b3",
+      "changed": true
+    },
+    {
+      "path": "phone/district-directory.png",
+      "beforeSha256": "c60dd50d7463a0072455b09c9c3b87bf288be5bab627b566aabc80988549feb5",
+      "afterSha256": "a938759a963a407fb23a810159facf6904fba62358c4dcafeba460dcf22aa98f",
+      "changed": true
+    },
+    {
+      "path": "phone/ecommerce.png",
+      "beforeSha256": null,
+      "afterSha256": "0cf83ae85665bc50c260f46fd52ee30c8f8ddd0741ff386949fba2e78567de43",
+      "changed": true
+    },
+    {
+      "path": "phone/floating-tools-content.png",
+      "beforeSha256": "60f740ca0d24038c1859d6039f358a472a9f5d24f5a7eb9c7d3ee40b4c95038b",
+      "afterSha256": "4880532d574dc49841ebb9172d7495340a1ad2229dbaa45fca0418f2c1f9eb75",
+      "changed": true
+    },
+    {
+      "path": "phone/floating-tools-home.png",
+      "beforeSha256": "02548a699028d172e60a91441b2a49caa7c84d1b33b68170f88bb7440d5a630f",
+      "afterSha256": "5226a47e3b86a5aa1d95f4f41e7c445c5770dd8a5fe917bd53343689a3a10811",
+      "changed": true
+    },
+    {
+      "path": "phone/footer-closed.png",
+      "beforeSha256": "85967d08554ace200fb05d5be7d6e225bf0ad45538e9f7ec7bbed43871b7ee26",
+      "afterSha256": "699de3353586a94d155a96cda023487764eb269fba307978cb24f30755f9212c",
+      "changed": true
+    },
+    {
+      "path": "phone/footer-open.png",
+      "beforeSha256": "433b1386cf1dd776d927e2d3290af6338ff3e285746ea411bdbf05d69b4d2183",
+      "afterSha256": "9547e663be8c3657faaa7530c6251518aa2500f1083e02a1c1e53e88aea421e2",
+      "changed": true
+    },
+    {
+      "path": "phone/georgia-entry.png",
+      "beforeSha256": "3bc6335f54d0e0f2571bcab55273ee2a0bc83b2f6d4f93770119f81e331ffcce",
+      "afterSha256": "413da35b964a28665446d761116c1b3f573d113023ea8538813684d87069e24e",
+      "changed": true
+    },
+    {
+      "path": "phone/guide.png",
+      "beforeSha256": "f86ade58eab132a84def0b0f905c9b960a997a5e652fc87a67067f243167f1f5",
+      "afterSha256": "f86ade58eab132a84def0b0f905c9b960a997a5e652fc87a67067f243167f1f5",
+      "changed": false
+    },
+    {
+      "path": "phone/home.png",
+      "beforeSha256": "52ae2a48afa48f99d07bd53829df20338ef8bf2ce122ab9418d4d464c437ebec",
+      "afterSha256": "3bc438a1166893ee1a6d1f138309783de0924278dedce119447d24df32af2636",
+      "changed": true
+    },
+    {
+      "path": "phone/illinois-entry.png",
+      "beforeSha256": "4a6a33ec67eedaa623f88188402b582e729072ac12d3e821bc788dda506c2efb",
+      "afterSha256": "729056b13e1fda35cddb677f5ad27ca462ddfe9aa53ba72577808906ec80f1b7",
+      "changed": true
+    },
+    {
+      "path": "phone/iowa-county.png",
+      "beforeSha256": "fc326bd4b19dbfe01cdd4d4b5d77e324c0ca39ae2165eabe6471dc532bca3e4b",
+      "afterSha256": "1b189f42528a70ae60c7f62785a90a0b33e8d12f4fcd77b77f1a0298a8564156",
+      "changed": true
+    },
+    {
+      "path": "phone/iowa-entry.png",
+      "beforeSha256": "b410a75f756ca21fd1a707754761d2521480e5dc62dc05e31c79822316bda549",
+      "afterSha256": "3cda408bcd985d27c66535f35a21c248253f44589b2f927645e9d6825ee06147",
+      "changed": true
+    },
+    {
+      "path": "phone/local-profiles.png",
+      "beforeSha256": null,
+      "afterSha256": "6f50ecd932b0a0d556c52e93b9f8b56bc0ee43e8f7454f7f680d8000b4d6a66f",
+      "changed": true
+    },
+    {
+      "path": "phone/mississippi-entry.png",
+      "beforeSha256": "a737073e0798a2243226540aff113ec04b845d6137b6743eb4ebb6b227d0b488",
+      "afterSha256": "fd4901cf2086d9569d58f800a0d84591cc7d7d2fbfe324152ac742a01dc7a6a6",
+      "changed": true
+    },
+    {
+      "path": "phone/missouri-county.png",
+      "beforeSha256": "a3c20c86743c3d39581cb5cb4abc76e41c66c8eea0c3c8a62c4bc920aed5c7dd",
+      "afterSha256": "6ebde26c961d4e5a4debc32d6290987266431fd099faddfc8ea1657c5e07ffa7",
+      "changed": true
+    },
+    {
+      "path": "phone/missouri-entry.png",
+      "beforeSha256": "a418a45ff201b279b327d79e962a3e2443cdb0aeeea257595360e19982c7f44a",
+      "afterSha256": "0f76dc544df72ed8813a287befd85bb460c7eae367f4f595e308237c0df36565",
+      "changed": true
+    },
+    {
+      "path": "phone/monthly-seo.png",
+      "beforeSha256": "d55acbc5844dbf64a72b5c081b0be5a98667dded60c266facea817f867de172b",
+      "afterSha256": "a67102b21913a2416d0ccdf788011474950f408685a2eac7360277028f249749",
+      "changed": true
+    },
+    {
+      "path": "phone/pricing.png",
+      "beforeSha256": "cae1e552279804fba9e60be6d57ada11dcac330f15f1265c335b71f3c336dc17",
+      "afterSha256": "4aeacfb68bd2c36d4440d1d482f0d56c49cc6e1c021c70b84676101d6c17750d",
+      "changed": true
+    },
+    {
+      "path": "phone/process.png",
+      "beforeSha256": "a68ce4b363103bf2574ad33cdf078d37d21ec86d8d91456a0e412feab730adf7",
+      "afterSha256": "071603dc01cc418af7e79c2e6c120ac0fa4178883e1f14e687c4dda3dabd60c9",
+      "changed": true
+    },
+    {
+      "path": "phone/redesign.png",
+      "beforeSha256": "06efb82ecc2c3d07c6f99d0908ca63fd1ea8ddc7d42c71df9e92b325617e109d",
+      "afterSha256": "53813fb8278024452484933d951543b61ca58dedf6b3ba0d490696798bb211a4",
+      "changed": true
+    },
+    {
+      "path": "phone/regional-directory.png",
+      "beforeSha256": "f33fa942a193e8f30b5e735f1036b0ccb4899ecc73aa15b7b16bf69d9136968f",
+      "afterSha256": "1a0d2ef042aac9f5f2d20553df3906aca175c681742073521ce749a1a9c6e4b9",
+      "changed": true
+    },
+    {
+      "path": "phone/scope-request.png",
+      "beforeSha256": "36f064c34eb6bf2fb91e841a93bd7e4e2ee57ad459274313c033f9ccfbc0cf1b",
+      "afterSha256": "53c61db8de885b017b08d6c7bc00b1edd3c24e9a71ef62636e23821f1c59a0ff",
+      "changed": true
+    },
+    {
+      "path": "phone/service-questions.png",
+      "beforeSha256": "70f4bbe5b41409499220d920db2614b5bbf1680c2e7582866ace616b2fb938ef",
+      "afterSha256": "de1a340f007d4c93c145f6db8030d49ec0b9cef78dc92e5940bb3482e09069cf",
+      "changed": true
+    },
+    {
+      "path": "phone/services.png",
+      "beforeSha256": "d56c1cb2bb5cd6e42c92c0f56dca3120c03755df5148764d6d9e2bd57e618252",
+      "afterSha256": "dcdafb6e8237f4a376bbbad8464f6c54ce1e526b6d9bf8918f62a7ae809aa22d",
+      "changed": true
+    },
+    {
+      "path": "phone/systems.png",
+      "beforeSha256": null,
+      "afterSha256": "2f57ba7454f8f895b8cc6b217acc9d232963189d784f4ecaabb1a8fe423fbe95",
+      "changed": true
+    },
+    {
+      "path": "phone/texas-county.png",
+      "beforeSha256": "fde219179ca8637cfbcfd8e5a5a18632d80961b7fe81382ac9543acfc69a40aa",
+      "afterSha256": "1eed33472ca7dfdcd6d4a7629610f968f73575fc417f95e2a4795156c9fe689f",
+      "changed": true
+    },
+    {
+      "path": "phone/texas-entry.png",
+      "beforeSha256": "1341531585758c381d68f4ce13b4c4254a950758ae28deb8c45145a08b359d21",
+      "afterSha256": "68ad5ce25e84b1c9aed80f0b4cd0f46a55c2d19502ce6ea7d7afefa5fd62fa64",
+      "changed": true
+    },
+    {
+      "path": "phone/web-design.png",
+      "beforeSha256": "37bcd797cf4aec62c3f664b08be79e31a352a960cbe3e0f78e8c4e5102cf3df3",
+      "afterSha256": "cba7e5a6e4f953aed9954332e37556a51284536ea5fc6e655b781a09e7facba5",
+      "changed": true
+    },
+    {
+      "path": "phone/wisconsin-entry.png",
+      "beforeSha256": "fca08a081b366233f86858a9531418a97df30e297ddc92e4bcf3b45bccaabb70",
+      "afterSha256": "3e6d28aa836599c718ebc36af0f05233a6b48106f8fdb36aa1a452deac49b4c6",
+      "changed": true
+    },
+    {
+      "path": "phone/work.png",
+      "beforeSha256": "e14a071b6b335198159f385343ddf3514a2f93b1897f231598b6b81eda2f4bed",
+      "afterSha256": "d8e1ce6ecfd5c61d6c72b25d6bbb46c0efbf73ab24c0230b49d45112ed636f8c",
+      "changed": true
+    },
+    {
+      "path": "phone/workflow.png",
+      "beforeSha256": null,
+      "afterSha256": "2989346d56281faa7adf9e11c7bed5685400be151253764c57e506e35a801b23",
+      "changed": true
+    }
+  ],
+  "limits": "Approved visual references; exact final-source CI and deployment verification remain required."
+}
