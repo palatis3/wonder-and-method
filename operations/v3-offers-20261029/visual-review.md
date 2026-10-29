@@ -1,16 +1,14 @@
 # V3 visual candidate review
 
-FAIL for two inconsistent price statements; layout PASS.
+FAIL pending two corrections. Release approval remains false.
 
-Reviewed all 89 changed/new candidates through 43 full-height contact sheets (13 desktop, 30 phone). The other three phone candidates are byte-identical to existing baselines. All 92 candidate and baseline hashes are recorded in visual-review.json. No baseline was copied.
+Final capture run 40872555231 at fe8e69657c24c2bea6d99a82f8e28ad2b917edba contains 92 images. All 10 changed images were inspected over their full captured height using 30 native-scale sheets/slices. Prior coverage is retained only for 82 byte-identical images. All final and prior hashes are recorded in visual-review.json. Eleven additional desktop closing crops were inspected.
 
-1. V3-VIS-01: directory CTA still shows $925 first payment when a review is needed, coupling $650 Roadmap with $275 Care. Replace with approved separate onboarding terms.
-2. V3-VIS-02: home search card says From $1,250/month, while Local Search Focus starts at $850/month.
-3. V3-VIS-03 (minor): separate SEO exclusion clauses need punctuation.
+The three earlier findings are resolved: directory Care/onboarding is separate from Roadmap, homepage search starts at $850/month, and SEO exclusions have distinct list items.
 
-No structural clipping, missing imagery, broken card boundaries or footer failures found. Pricing, five specialist pages, monthly plans, Care and scoped inquiry remain visually coherent at desktop and phone sizes. Pricing is lengthy but grouped and internally linked. This is a static screenshot review, not proof of accessibility or interactions.
+1. V3-VIS-04: shared desktop closing links concatenate and touch the primary pill. Confirmed across pricing, services, web design, addons, audit, care, SEO and five specialist pages. Add an explicitly spaced action group and recapture. This preexisting defect was missed in the earlier review; its layout PASS is superseded.
+2. V3-VIS-05: the homepage entry card promises Custom design beside the $2,950 established-layout plan. Replace with accurate design-neutral wording and recapture desktop and phone.
 
-Bounded heading correction PASS: removing the exact added H2 from buyer-decisions restores the captured commit bytes. It is inside a closed disclosure and does not change the initial captured state. Production release and helper gates are separate.
+No other changed-image clipping, missing imagery, broken card boundaries or footer failures found. This is static screenshot review, not interaction/accessibility proof. No baseline was copied. Full CI and publication remain pending.
 
-
-Applied source correction addendum: all three findings are SOURCE_FIXED_SCREENSHOTS_PENDING. Current overall status is PENDING. Fresh in-memory bindings pass 2670 assertions across all 2437 routes; original 92 candidate hashes and 89-image visual coverage remain unchanged. Do not infer corrected-image approval from source approval.
+Source addendum: VIS04 and VIS05 source fixes independently PASS. New closing flex/gap/target rules survive pruning and occur in the linked CSS for all 12 affected built routes; current built homepage uses accurate design-neutral wording. Independent family-style tests pass 2/2. Visual verdict remains FAIL pending corrected captures.

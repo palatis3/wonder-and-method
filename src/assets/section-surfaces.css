@@ -52,6 +52,8 @@
 .studio-site .v3-section .link-row a{display:inline-block;padding:.5rem 0;line-height:1.5;min-height:44px}
 .studio-site .v3-section :is(h2,h3,h4,p,li){color:#253c2d}
 .studio-site .v3-section .button{color:#fff}
+.studio-site .v3-closing-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 1.5rem;margin-top:1.5rem}
+.studio-site .v3-closing-actions .text-link{display:inline-flex;align-items:center;min-height:44px}
 @media(min-width:1100px){.studio-site .v3-offer-grid--compact{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){
  .studio-site :is(.v3-offer-grid,.v3-capabilities,.v3-comparison-list,.v3-addon-grid,.v3-service-grid){grid-template-columns:minmax(0,1fr);gap:1rem}

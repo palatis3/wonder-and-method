@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-29T12:17:11.322Z",
+  "reviewedAt": "2026-10-29T12:33:54.512Z",
   "reviewer": "Primary implementation review",
   "status": "PASS",
   "scope": "Every generated route inspected by commercial-pattern, fragment-link, offer-binding, schema/metadata and preservation checks. Pattern matches below read in full. This is not a claim of manual visual inspection of every page.",
@@ -9,7 +9,7 @@
   "offerBindings": {
     "plans": 15,
     "modules": 13,
-    "assertions": 2670
+    "assertions": 2672
   },
   "patterns": {
     "retired_name": 2,
@@ -152,16 +152,17 @@
   "sourceHashes": {
     "config/offers.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
     "src/v3-offer-content.mjs": "921b7e78ed713db0bd7d54736e547abb01a65af9e3b3f69854bad9ebf8f7f45a",
-    "src/v3-service-content.mjs": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9",
-    "src/home-proof.mjs": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780",
+    "src/v3-service-content.mjs": "a24d5cbcd3d24dc4bda81e84bfb04d3e1cca1a0278ed4f21b1ed5233f0e9d17f",
+    "src/home-proof.mjs": "743c8bd5ff04e10520250e6b03a9c522e629eb9af93223720822a246ba463936",
     "src/service-counties.mjs": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f",
     "src/buyer-decisions.mjs": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7",
-    "scripts/check-v3-offer-bindings.mjs": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891",
+    "scripts/check-v3-offer-bindings.mjs": "293c8d1429843b222454111a6efd95f3b80fef815700edad03ccdd8044061174",
     "src/guide-review-consolidations.mjs": "6dbae81a1c7ff660ff76f173b35db5a387554f4702767db41cacb37ac67d83b2",
     "operations/v3-offers-20261029/audit-routes.mjs": "e6fd05b48e5e5f5d938db6b5eab7fd6fa641bbdeb4c449ea985aacd7e4bbf98c",
     "src/location-service-data.json": "66ba20b73e9eb0488f83a87de7b7940714b8fdb21a99c2bf215fccb068581fc4",
     "src/human-location-briefs.json": "69ec1316c7ce9b9d999a7e4fa24cd54b900c03b440c7f9773bc29b718dd65731",
-    "src/service-faq-offer-copy.json": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e"
+    "src/service-faq-offer-copy.json": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e",
+    "src/assets/section-surfaces.css": "93b467ee762acd2dde69549b963e938520e945f33bd4f6e7bf7c35b1b5289ab4"
   },
   "routes": [
     {
@@ -178,11 +179,11 @@
     },
     {
       "path": "/",
-      "htmlSha256": "1879a7a92010813b0c692762ead4e6b1151c9bf69c4500a7292a49138beadcd6"
+      "htmlSha256": "0bde966b6d369bfc3518f99b1d0a93cfce54acb4c2a852fbff6f8e5de283a78e"
     },
     {
       "path": "/services/",
-      "htmlSha256": "79109283a2172770fe15ec1fb4747b4c8bb1fe8559035413447d21a79dcd9c43"
+      "htmlSha256": "22f5a26743a01dec5e3f862c0b59001f547be96be26d8cfebafc6e134d71f270"
     },
     {
       "path": "/work/assetrounds/",
@@ -190,19 +191,19 @@
     },
     {
       "path": "/services/website-addons/",
-      "htmlSha256": "48589303299ad29220fd22ce863877390c62fd0844c845f61f8bb9fb3c157f18"
+      "htmlSha256": "dcb45c31477adbfaf889005e075e00a575f4800b22eb7ce56bacf94d4c502d46"
     },
     {
       "path": "/services/web-design/",
-      "htmlSha256": "341c7568c71cb6cdcd5cd79c6637bc280ae57cad113ed1f18c65bc87f247caae"
+      "htmlSha256": "1133e05cfb283e0067e926450353d2c30e489c9b1e69112aa17851beb004281d"
     },
     {
       "path": "/services/seo/",
-      "htmlSha256": "5aeb4ffd8090becf6772c56d5261e435048f2368f2f01cd5ed75190f69dde0b7"
+      "htmlSha256": "f78b55eb8e7d47279eba62b569ed7a69aa4da2eedf7870bbf2285b3c1be328c7"
     },
     {
       "path": "/pricing/",
-      "htmlSha256": "b55257f7becc76f04ce7c9e0a6ff176f21d17467f5cbc96c3a6aa59d031207b3"
+      "htmlSha256": "b7d30d8da73e28c59aa1cc52d5d4a26e78130ceb33d3e385a085ec853917a051"
     },
     {
       "path": "/work/",
@@ -242,11 +243,11 @@
     },
     {
       "path": "/services/website-care/",
-      "htmlSha256": "0c7a46b7dd891a51c87dd747e960e293adeee629680d13b02ab9df464d8654a3"
+      "htmlSha256": "62983e2687ebaefb473d6fb7e2d47504db247ae8d2f77885e8fb05b6c758ce3f"
     },
     {
       "path": "/services/website-audit/",
-      "htmlSha256": "93dccbac5a0bc2e78258b6d518e488854401b1ccff66e249e68425df9edea4fe"
+      "htmlSha256": "cea99f0db0dc43277003e094cc35f8cdefad19e2088cca6af3f7b536b6355c82"
     },
     {
       "path": "/privacy/",
@@ -9894,23 +9895,23 @@
     },
     {
       "path": "/services/brand-messaging/",
-      "htmlSha256": "48fd8bb9a70dce0f11bdb285a52df6c0281f54e62ec01e5a70f9bd4efa6a46a9"
+      "htmlSha256": "6da13b9ece79c2638835b0652616b0e751e10c2376f96da0a169702b31d54859"
     },
     {
       "path": "/services/ecommerce-websites/",
-      "htmlSha256": "40c854494a63d0d87beac93296d595f74429f0a60daa068680edd10a2af066b5"
+      "htmlSha256": "126264e68abd95a5241bf2ec60690f6d2077d20233803c42d79d9e509c4012dc"
     },
     {
       "path": "/services/local-business-profiles/",
-      "htmlSha256": "6abae2ebac258280ae14277ea96ed5bb414dae3dd92cd85bc718906ecbbe8108"
+      "htmlSha256": "45c7d900f217520c890a3bf7da4e8b1bd8a96e2ebe8fc0cfe6bb8ab1faf87e0f"
     },
     {
       "path": "/services/workflow-automation/",
-      "htmlSha256": "f0999907cf18c372f8f0698a75527b0cde1d80546fbb25a98a39b4cddedd19f7"
+      "htmlSha256": "8267af5fa1440f527228cd8e32c143832857df15cc261a589bd7df14adcb14c8"
     },
     {
       "path": "/services/custom-systems/",
-      "htmlSha256": "a27558c02744defd9e5940c57f92156b23b2901027a7923fa0ecec9d69e54882"
+      "htmlSha256": "36a1f4e3faf6743e3287788c50082e785ac0522db6b4197a9e4f34457d8bf459"
     }
   ],
   "limits": [

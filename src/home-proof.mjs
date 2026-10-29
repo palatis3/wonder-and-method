@@ -13,7 +13,7 @@ export function websiteProof(){return `<section class="studio-section home-proof
 
 export function homeStartingPoints(o){
  const choices=[
-  {icon:'services',title:'A new or redesigned website',outcome:'Custom design, complete writing and search setup for your business.',price:`From ${money(o.launch_site.public_price)}`,action:'Plan my website',path:'/services/web-design/'},
+  {icon:'services',title:'A new or redesigned website',outcome:o.catalog_format===3?'Thoughtful design, original writing and search foundations for your business.':'Custom design, complete writing and search setup for your business.',price:`From ${money(o.launch_site.public_price)}`,action:'Plan my website',path:'/services/web-design/'},
   {icon:'search',id:'seo-services',title:'Get found in search',outcome:o.catalog_format===3?'Improve an existing page or eligible local profile each month.':'Useful content and researched website improvements, published each month.',price:`From ${money(o.plans.local_focus?.monthly_price??o.plans.improve.monthly_price)}/month`,action:'Explore monthly SEO',path:'/services/seo/'},
   {icon:'care',title:'Keep your site working',outcome:'Website checks and small updates, handled for you.',price:`${money(o.plans.keep_running.monthly_price)}/month`,action:'Explore website care',path:'/services/website-care/'},
   {icon:'care',title:'Something is broken',outcome:'Start with the problem. I check whether a review and agreed small fixes fit.',price:`Reviews from ${money(o.baseline.one_time_price)}`,action:'Explore reviews and repairs',path:'/services/website-audit/'}

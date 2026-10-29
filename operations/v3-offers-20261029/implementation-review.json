@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewer": "Independent Astra reviewer (/root/astra_v3_final_release_review)",
-  "reviewedAt": "2026-10-29T12:18:35.603Z",
+  "reviewedAt": "2026-10-29T12:34:28.920Z",
   "verdict": "PASS",
   "scope": "Bounded implementation review only; not release approval",
   "releaseApproved": false,
@@ -77,7 +77,7 @@
     "config/offers.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6",
     "src/offer-catalog.mjs": "af919515090cfb3f4bee2e3f6136a810f4e1ab025e0554e7c1c4a592c4f43f41",
     "src/v3-offer-content.mjs": "921b7e78ed713db0bd7d54736e547abb01a65af9e3b3f69854bad9ebf8f7f45a",
-    "src/v3-service-content.mjs": "a0e7cbecdf2eb1c7bc33157025a616c3c486e081d1b8e7a579ac1b0135b5f0b9",
+    "src/v3-service-content.mjs": "a24d5cbcd3d24dc4bda81e84bfb04d3e1cca1a0278ed4f21b1ed5233f0e9d17f",
     "src/commercial.mjs": "8843b47ab942a476cc363e235994b88f54f82d03a4e1e378f4ac5ab48269d9bf",
     "src/payments.mjs": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398",
     "src/shared.mjs": "45d88c35a187e983c295214ae31a56e4a23e96b929f7ba08a78b530ff75beb04",
@@ -86,7 +86,7 @@
     "scripts/create-job.mjs": "d7a15bf8af6d0aaee6867ac920114c5ec67eeb0f16cfba945aaaa1b0760efc0c",
     "scripts/job-packet.mjs": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f",
     "scripts/build-buyer-packs.mjs": "32a4705fd7490fb99b94aeeefb71831de77b7c6f04d95a7aa90bfc5db91c1f56",
-    "scripts/check-v3-offer-bindings.mjs": "a52ee2d7d88299cb4e021d62e4021d9e08abb3a887a57bb898b7723e258e6891",
+    "scripts/check-v3-offer-bindings.mjs": "293c8d1429843b222454111a6efd95f3b80fef815700edad03ccdd8044061174",
     "deployment/migrations/0049_v3_offers.sql": "033d5d04116ad1dac7188f431218c456a249e20c3b8a50b805bd91affdd6520d",
     "tests/v3-migration.test.mjs": "45cd3f8213b4221cdfc75701d6c7d3cf7c9caf660e0bb75b4ec1ff9ac593deeb",
     "tests/offer-catalog.test.mjs": "cceb7a490db10d0414be6da8b1501dc8ca6a685220b572d36dc3c7d59ba76dc0",
@@ -105,7 +105,7 @@
     "tests/browser/site-health.spec.mjs": "a22b672461dd9bf70d3acca5b72d0d04d327983f9ce29d3b4a18103b570397e2",
     "scripts/ci-browser.mjs": "7d47e9847fea4aa0a143ada2ae444104509e4fcac7ffcdce418bee2f49ca5754",
     "src/service-counties.mjs": "8da6f9ad2f393a326906be434c56c39a8892df6bd5e02b50f8e3a4ddebff777f",
-    "src/home-proof.mjs": "179bc24904e0a21d7f29da64b4b7e4cc36abbf2626510ac84b8fe98b65e96780",
+    "src/home-proof.mjs": "743c8bd5ff04e10520250e6b03a9c522e629eb9af93223720822a246ba463936",
     "src/buyer-decisions.mjs": "862b9890ee7520036bcbcea142e39611fc6708098cff6b729abab9a3e70be1b7",
     "src/human-location-briefs.json": "69ec1316c7ce9b9d999a7e4fa24cd54b900c03b440c7f9773bc29b718dd65731",
     "src/service-faq-offer-copy.json": "063441ee31b2a57968a38ef8d1eb7c152b1a87f126d7b98140cb7b5ac1c8089e",
@@ -120,7 +120,8 @@
     "tests/northern-expansion.test.mjs": "28a211347afa6190588fcde22facf66ac7ce8361cc69360151a0e3deaa713518",
     "tests/ohio-counties.test.mjs": "46a144e2bbb0908db06fec4adb5c7b078bc557825c89087034a952e4bddc213f",
     "tests/pennsylvania-counties.test.mjs": "ef81a4f20e3481668eedb4dbdc80045ee8211ddc59afadbfe0ca6a3f266aaa44",
-    "tests/regional-directory.test.mjs": "80d1b1defbe425847c71b6d105adbf42e5974717934ecbc2e8a5b1b31cd66a07"
+    "tests/regional-directory.test.mjs": "80d1b1defbe425847c71b6d105adbf42e5974717934ecbc2e8a5b1b31cd66a07",
+    "src/assets/section-surfaces.css": "93b467ee762acd2dde69549b963e938520e945f33bd4f6e7bf7c35b1b5289ab4"
   },
   "inspectedEvidenceHashes": {
     "output/playwright/v3-final-pricing-desktop.png": "50f3132925238cc18b5d7c5a7cfd9ddb6b6327f85ef7e6485a86b7bd7c544f5d",
@@ -454,6 +455,41 @@
         "path": "tests/regional-directory.test.mjs",
         "sha256": "80d1b1defbe425847c71b6d105adbf42e5974717934ecbc2e8a5b1b31cd66a07"
       }
+    ]
+  },
+  "closingHomeSourceReview": {
+    "reviewedAt": "2026-10-29T12:34:28.920Z",
+    "verdict": "PASS",
+    "scope": "Bounded VIS04/VIS05 source corrections",
+    "releaseApproved": false,
+    "visualVerdict": "FAIL_PENDING_CORRECTED_CAPTURE",
+    "checks": [
+      "Homepage V3 wording no longer promises custom design for the established-layout entry plan; legacy branch retained. Current built homepage matches corrected phrase and excludes retired phrase.",
+      "Shared close wraps all three unchanged action links in v3-closing-actions. Flex wrapping, centered alignment, 16px/24px gaps and 44px text-link height address the diagnosed desktop issue.",
+      "Inspected page-family pruning: v3 classes are outside the positive component exclusion matcher, so these selectors survive. Independently verified both new rules in CSS linked from all 12 affected built routes, including pricing and five specialist pages.",
+      "Independent family-style tests pass 2/2. Mutated-catalog binding script adds positive/negative homepage copy assertions; no prior assertion removed."
+    ],
+    "files": [
+      {
+        "path": "src/home-proof.mjs",
+        "sha256": "743c8bd5ff04e10520250e6b03a9c522e629eb9af93223720822a246ba463936"
+      },
+      {
+        "path": "src/v3-service-content.mjs",
+        "sha256": "a24d5cbcd3d24dc4bda81e84bfb04d3e1cca1a0278ed4f21b1ed5233f0e9d17f"
+      },
+      {
+        "path": "src/assets/section-surfaces.css",
+        "sha256": "93b467ee762acd2dde69549b963e938520e945f33bd4f6e7bf7c35b1b5289ab4"
+      },
+      {
+        "path": "scripts/check-v3-offer-bindings.mjs",
+        "sha256": "293c8d1429843b222454111a6efd95f3b80fef815700edad03ccdd8044061174"
+      }
+    ],
+    "limits": [
+      "Source/CSS artifact approval only; corrected visual captures still required before baseline approval.",
+      "Full CI and publication remain pending."
     ]
   }
 }

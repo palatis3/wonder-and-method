@@ -497,5 +497,65 @@
       "operations/v3-offers-20261029/guadalupe-source-review.json",
       "operations/v3-offers-20261029/human-brief-source-repairs.json"
     ]
+  },
+  "finalVisualSourceAddendum": {
+    "reviewedAt": "2026-10-29T12:33:58.964Z",
+    "rawChanged": [
+      "/",
+      "/services/",
+      "/services/website-addons/",
+      "/services/web-design/",
+      "/services/seo/",
+      "/pricing/",
+      "/services/website-care/",
+      "/services/website-audit/",
+      "/services/brand-messaging/",
+      "/services/ecommerce-websites/",
+      "/services/local-business-profiles/",
+      "/services/workflow-automation/",
+      "/services/custom-systems/"
+    ],
+    "changes": [
+      "Changed page: index.html (htmlSha256, textSha256)",
+      "Changed page: pricing/index.html (htmlSha256)",
+      "Changed page: services/brand-messaging/index.html (htmlSha256)",
+      "Changed page: services/custom-systems/index.html (htmlSha256)",
+      "Changed page: services/ecommerce-websites/index.html (htmlSha256)",
+      "Changed page: services/index.html (htmlSha256)",
+      "Changed page: services/local-business-profiles/index.html (htmlSha256)",
+      "Changed page: services/seo/index.html (htmlSha256)",
+      "Changed page: services/web-design/index.html (htmlSha256)",
+      "Changed page: services/website-addons/index.html (htmlSha256)",
+      "Changed page: services/website-audit/index.html (htmlSha256)",
+      "Changed page: services/website-care/index.html (htmlSha256)",
+      "Changed page: services/workflow-automation/index.html (htmlSha256)",
+      "Changed asset: _headers",
+      "Changed asset: assets/asset-hashes.json",
+      "Changed asset: assets/site-home.css",
+      "Changed asset: assets/site.css"
+    ],
+    "status": "PASS",
+    "reason": "Correct homepage starting-price design wording and add a wrapping centered action group to the twelve shared closing panels. Other text and routes are unchanged. Four asset deltas are the two CSS bundles, their hash index and cache headers.",
+    "compiledCssRules": [
+      {
+        "selector": ".studio-site .v3-closing-actions",
+        "declarations": {
+          "display": "flex",
+          "flex-wrap": "wrap",
+          "align-items": "center",
+          "justify-content": "center",
+          "gap": "1rem 1.5rem",
+          "margin-top": "1.5rem"
+        }
+      },
+      {
+        "selector": ".studio-site .v3-closing-actions .text-link",
+        "declarations": {
+          "display": "inline-flex",
+          "align-items": "center",
+          "min-height": "44px"
+        }
+      }
+    ]
   }
 }

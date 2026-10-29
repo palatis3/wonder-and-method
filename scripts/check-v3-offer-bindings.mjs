@@ -31,6 +31,8 @@ export function assertV3OfferBindings({config,offers,map,geography}){
  for(const p of probe.quoted_add_ons){has('/services/website-addons/',e(p.public_name));assert.equal(p.public_price,null);assertions++;}
  for(const path of ['/pricing/','/services/web-design/']){has(path,'Up to 17');has(path,'4, up to 11 fields each');}
  has('/','From '+money(probe.plans.local_focus.monthly_price)+'/month');
+ has('/','Thoughtful design, original writing and search foundations for your business.');
+ assert.ok(!routes.get('/').html.includes('Custom design, complete writing and search setup for your business.'));assertions++;
  for(const page of pages){assert.ok(!page.html.includes('first payment if a new review is needed'),'Retired Roadmap/Care charge coupling: '+page.path);assertions++;}
  const schema=commercialOffers(config,probe);assert.equal(schema.length,15);assertions++;
  for(const row of schema){const id=row['@id'].split('#offer-')[1],p=offerRecord(probe,id);assert.equal(row.name,p.public_name);assert.equal(row.price,p.public_price??p.monthly_price??p.one_time_price);assertions+=2;}
