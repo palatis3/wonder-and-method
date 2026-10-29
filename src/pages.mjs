@@ -158,7 +158,7 @@ export function renderPages({config,offers:o,map,geography,previewDrafts=false})
   pages.push(page('/work/','Website Portfolio & Design Concepts','Explore Wonder and Method studio work: websites, search planning, a working lead-list demo, brand design and original animation.',''));
   if(config.civicWorkArchive)pages.push(page(BUFFALO_STUDY_PATH,'Buffalo Civic — a studio animation study','An original Buffalo-inspired animation study in stone and bronze. Play the preserved sculptural reveal and its ambient loop.',buffaloStudy(config,o)));
   pages.push(page('/work/lead-workbench/','Inquiry tracker demo','Try a studio-owned browser-local example: add fictional inquiries, update stages and notes, search and export CSV. No protected records, email or client data.',leadWorkbench()));
-  pages.push(page('/work/source-handoff/','Sample website files','Inspect a real delivery folder for a fictional website: editable source, hosting files, instructions, checks and clear account-transfer responsibilities.',sourceHandoff()));
+  pages.push(page('/work/source-handoff/','Sample website files','Inspect a real delivery folder for a fictional website: editable source, hosting files, instructions, checks and clear account-transfer responsibilities.',sourceHandoff(o)));
   pages.push(page('/process/','How your website project works','Six steps from your first inquiry to design, written approval, launch and delivery of your website files.',websiteProcess(config,o)));
   pages.push(page('/about/','About Wonder & Method','Meet Terry, founder of Wonder & Method, an independent web studio operated by Venture House Group LLC.',''));
   const places=[...new Set(geography.municipalities.map(x=>x.name))].sort();

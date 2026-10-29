@@ -42,7 +42,7 @@ test('plain handoff wording preserves the paid-completion trigger and full deliv
  assert.match(html,/does not delay file delivery/);
  assert.match(html,/This sample shows a source-code website handoff/);
  assert.match(html,/Read the included permission before reusing the sample/);
- assert.match(html,/one optional walkthrough call of up to 30 minutes/);
+ assert.match(html,/An optional walkthrough is included: Focused Website, up to 20 minutes; Custom Website, up to 45 minutes; Business Custom Website, up to 60 minutes; Signature Custom Website, up to 90 minutes/);
  assert.match(html,/Reusable components and third-party software retain their licenses/);
  assert.match(html,/21190e9af341b6e889c9581debe456423b2a99d93728a579aade1dabb61650c0/);
 });

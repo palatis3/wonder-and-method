@@ -33,8 +33,9 @@ Use a new version for each update. The command rejects the current version, reco
 
 ## Fields to edit
 
-- Build fees: `launch_site.public_price`, `focused_site.public_price`, `signature_site.public_price`.
-- Monthly fees: `plans.keep_running.monthly_price`, `plans.improve.monthly_price`, `plans.grow.monthly_price`.
+- Build fees: `launch_site.public_price`, `focused_site.public_price`, `business_site.public_price`, `signature_site.public_price`, `storefront.public_price`.
+- Monthly fees: `plans.keep_running.monthly_price`, `plans.improve.monthly_price`, `plans.local_focus.monthly_price`, `plans.grow.monthly_price`.
+- Specialist fees: `brand_message.public_price`, `local_presence.public_price`, `workflow.public_price`, `systems.public_price`.
 - Reviews: `baseline.one_time_price`, `audit_sprint.one_time_price`.
 - Names: each offer's `public_name`.
 - Main limits: build `marketing_page_cap`, `launch_content.articles`, `forms`, `external_connection_limit`, `graphic_counts.launch`, `graphic_counts.promotional`, `graphic_counts.supplied_photo_edits`, and `search_research` limits. Monthly plans use `priorities`, `small_change_batches`, `review_minutes` and `search_scope` limits.
@@ -43,6 +44,16 @@ Use a new version for each update. The command rejects the current version, reco
 Do not edit payment-stage `amount`, `graphic_counts.total`, annual `upfront_price`, `monthly_equivalent` or `saving_vs_12_monthly`. They are derived. Annual amounts use the monthly price, twelve cycles and `annual.discount_percent`. Annual enrollment remains controlled by its existing separate gate; a price update does not activate it. Each payment amount is rounded to cents, with the final stage receiving the remainder so the stages exactly equal the total. Annual monthly equivalent is a comparison and can contain fractional cents; the annual payment itself uses whole cents.
 
 The existing annual settlement tool requires twelve equal whole-cent cycles. Catalog validation therefore blocks activating annual enrollment when a derived annual total cannot divide evenly into twelve cents-based cycles. Monthly-only price updates may retain such an inactive annual comparison. Review compatible annual prices and settlement terms before any future activation.
+
+## V4 monthly choices
+
+The October 29 V4 catalog retains schema format 3 and adds `catalog_revision: 4`. Its `plans.*.monthly_price` is the Brochure Care price. For the three production plans, normalization derives production-only as that price minus $100 and Commerce as that price plus $146. Standalone Commerce Care uses `care_variants.commerce.price`. Do not hand-edit derived `variants.*.price` values. Changing these relationships is a reviewed product change requiring the normalizer, quote, calculator, request and snapshot tests to change together.
+
+New monthly drafts accept `care_variant` as `production`, `brochure` or `commerce`; standalone Care rejects `production`. Workflow drafts separately accept `workflow_variant` as `simple` or `complex`; the two scopes never stack. An omitted preference remains a conversation about fit, not authorization to bill a selected variant.
+
+Eligible documented hosting reduces the studio invoice only for Brochure Care, up to $25 per paid month. The client still pays the hosting provider. Keep production-only and Commerce outside that credit. Introductory onboarding eligibility, the included first-cycle basic measurement, and the first three paid cycles of fee protection must remain explicit in new scopes and estimates.
+
+The frozen V4 approval and implementation review are under `operations/v4-offers-20261029/`. Its migration scripts document that release; future catalog changes use the normal updater and a new version. The historical V3 catalog under `operations/historical/` is an immutable fixture. If a price is visible inside a portfolio screenshot, refresh the actual capture and its responsive variants as well as the text.
 
 ## Scope and wording
 

@@ -26,5 +26,19 @@
       "sourceAnswer": "Improve and Grow include Keep Running care and a separate set of small supplied edits; routine care is not an additional plan charge. A substantial rewrite of equipment-service content can be agreed as improvement work, while ordinary approved corrections remain distinct. We define the supported site and tasks first, and the same work is not counted against two allowances.",
       "template": "{{plans.improve.public_name}} and {{plans.grow.public_name}} can include {{plans.keep_running.public_name}} and its 60-minute allowance of supplied edits; the selected bundle already includes that Care fee. A substantial rewrite of equipment-service content can be agreed as improvement work, while ordinary approved corrections remain distinct. We define the supported site and tasks first, and the same work is not counted against two allowances."
     }
+  ],
+  "/areas/niagara-county/": [
+    {
+      "question": "What if an inquiry form stops matching the agreed behavior after launch?",
+      "sourceAnswer": "For 30 calendar days after launch, I correct work I built that does not function as agreed at no charge. Report the page and the steps that failed so the issue can be assessed. New requests and changes made by outside providers are separate; optional ongoing care has its own coverage after the launch correction period.",
+      "template": "The defect-reporting windows after launch are {{launch_site.defect_days}} days for {{launch_site.public_name}}, {{focused_site.defect_days}} days for {{focused_site.public_name}}, {{business_site.defect_days}} days for {{business_site.public_name}} and {{signature_site.defect_days}} days for {{signature_site.public_name}}. I correct W&M-caused defects against the accepted scope at no charge. A timely report remains covered until corrected. Report the page and the steps that failed so the issue can be assessed. New requests and changes made by outside providers are separate; optional ongoing care has its own coverage after the launch correction period."
+    }
+  ],
+  "/areas/michigan/grand-traverse-county/": [
+    {
+      "question": "Is support after my website launches included?",
+      "sourceAnswer": "For 30 calendar days after launch, I fix work I built that does not operate as agreed, without an extra charge. New content, new features and outside-provider changes are separate. Optional monthly care covers its own agreed checks and supplied small updates. Your paid files are delivered without waiting for that correction period to finish.",
+      "template": "The defect-reporting windows after launch are {{launch_site.defect_days}} days for {{launch_site.public_name}}, {{focused_site.defect_days}} days for {{focused_site.public_name}}, {{business_site.defect_days}} days for {{business_site.public_name}} and {{signature_site.defect_days}} days for {{signature_site.public_name}}. I correct W&M-caused defects against the accepted scope at no charge. A timely report remains covered until corrected. New content, new features and outside-provider changes are separate. Optional monthly care covers its own agreed checks and supplied small updates. Your paid files are delivered without waiting for that correction period to finish."
+    }
   ]
 }

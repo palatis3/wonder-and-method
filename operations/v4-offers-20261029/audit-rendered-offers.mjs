@@ -6,6 +6,7 @@ const candidates=new Map();let pages=0;
 const patterns=[
  ['prior-price',/\$(?:2,950|4,500|7,500|11,500|275|450|375|650|850|1,250|1,750|1,800|950|2,500|2,000)(?![\d,.])/],
  ['prior-care-edit-limit',/(?:30|45)[ -]minute(?:s)? (?:of )?(?:supplied )?(?:edit|change)|(?:supplied )?edits[^.!?]{0,35}(?:30|45) minutes/i],
+ ['generic-old-defect-window',/For 30 (?:calendar )?days after launch|for 30 days after launch|the 30-day (?:correction period|defect-correction window)|separate 30-day correction/i],
  ['prior-monthly-scope',/existing (?:service )?page (?:OR|or) (?:selected |eligible )?(?:local )?profile|conditional, relevant outreach|Brochure Website Care included, with no second|Each includes brochure Website Care|up to 20 pages[^.!?]{0,80}(?:care|monitoring)/i],
  ['internal-planning',/base hours|reserved hours|reservedHours|phase budget remains|existing specialist schedule retained|5\.3125|internal planning/i]
 ];

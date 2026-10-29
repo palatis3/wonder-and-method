@@ -1,5 +1,11 @@
 import {isV3,v3Timing} from './v3-offer-content.mjs';
 // Current offer explanations; accepted agreements keep their saved terms.
+export function websiteDefectSupport(o) {
+ if(Number(o.catalog_revision||0)<4)return 'For 30 calendar days after launch, I correct work I built that does not function as agreed, at no charge.';
+ const ids=['launch_site','focused_site','business_site','signature_site'];
+ const windows=ids.map(id=>`${o[id].defect_days} days for ${o[id].public_name}`);
+ return 'The defect-reporting windows after launch are '+windows.slice(0,-1).join(', ')+' and '+windows.at(-1)+'. I correct W&M-caused defects against the accepted scope at no charge. A timely report remains covered until corrected.';
+}
 export function reviewPageLimits(o) {
  if(isV3(o))return `${o.baseline.public_name} reviews up to ${o.baseline.page_cap} agreed public pages and one inquiry journey; ${o.audit_sprint.public_name} is scoped by up to three named fixes, rather than a full-site page allowance`;
  const a=o.baseline,b=o.audit_sprint;

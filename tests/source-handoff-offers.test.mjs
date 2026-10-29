@@ -26,6 +26,9 @@ test('public offers explain agreed editing workflows and preserve retired-route 
   const html=pages.find(p=>p.path===path).html;assert.match(html,/platform and editing workflow before booking/);assert.match(html,/recorded demonstration/);assert.match(html,/which changes you can make yourself/);
  }
  assert.ok(!pages.some(p=>p.path==='/work/content-editor/'));
+ const revised=structuredClone(offers);revised.focused_site.defect_days=75;revised.focused_site.training_minutes=55;
+ const handoff=renderPages({config,offers:revised,map,geography}).find(p=>p.path==='/work/source-handoff/').html;
+ assert.match(handoff,/75 days for Custom Website/);assert.match(handoff,/Custom Website, up to 55 minutes/);
  const value=validateInquiry({name:'Synthetic',email:'sample@example.test',business:'Fictional studio',service:'signature_site',message:'Synthetic check of retired workflow choices.',workflow:'client_portal'}).value;
  assert.ok(!Object.hasOwn(value,'workflow'));
  for(const pack of buyerPacks(offers))assert.doesNotMatch(JSON.stringify(pack),/START-HERE\.md|\bMarkdown\b/);

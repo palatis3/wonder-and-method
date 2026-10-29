@@ -8,10 +8,28 @@ import {priceList,calculateCost,costEstimateCopy,inquiryRequestSummary,selectedI
 import {validateInquiry} from '../src/inquiry.mjs';
 import {draftScope} from '../scripts/create-job.mjs';
 import {buyerPacks,assertUniquePackSentences} from '../src/buyer-packs.mjs';
+import {websiteProcess} from '../src/process-content.mjs';
+import {guideContentSections} from '../src/guide-content.mjs';
+import {sourceHandoff} from '../src/source-handoff.mjs';
+import {serviceFaqSection} from '../src/service-faqs.mjs';
+import {websiteDefectSupport} from '../src/offer-copy.mjs';
 
 const offers=normalizeOfferCatalog(raw),prices=priceList(offers);
 const variants={keep_running:{brochure:149,commerce:295},improve:{production:299,brochure:399,commerce:545},local_focus:{production:199,brochure:299,commerce:445},grow:{production:499,brochure:599,commerce:745}};
 const valid={name:'Synthetic visitor',email:'visitor@example.com',message:'Please help me select the appropriate plan.'};
+
+test('current process, cost guide, handoff and local FAQs retain every tier’s defect-reporting window',()=>{
+ const surfaces=[websiteProcess({},offers),JSON.stringify(guideContentSections('/guides/website-project-cost/',offers)),sourceHandoff(offers),serviceFaqSection('/areas/niagara-county/',offers),serviceFaqSection('/areas/michigan/grand-traverse-county/',offers)];
+ for(const html of surfaces){
+  for(const [days,name] of [[30,'Focused Website'],[60,'Custom Website'],[60,'Business Custom Website'],[90,'Signature Custom Website']])assert.ok(html.includes(`${days} days for ${name}`));
+  assert.match(html,/timely report remains covered until corrected/);
+  assert.doesNotMatch(html,/For 30 (?:calendar )?days after launch/);
+ }
+ const revised=structuredClone(raw);revised.focused_site.defect_days=75;
+ assert.match(websiteProcess({},revised),/75 days for Custom Website/);
+ assert.match(serviceFaqSection('/areas/niagara-county/',revised),/75 days for Custom Website/);
+ assert.match(websiteDefectSupport(historical),/For 30 calendar days after launch/);
+});
 
 for(const [id,options] of Object.entries(variants))for(const [variant,fee] of Object.entries(options))test(`V4 ${id}/${variant} freezes the selected fee and Care responsibilities`,async()=>{
  const quote=quotedOffer(offers,id,'monthly',{care_variant:variant});

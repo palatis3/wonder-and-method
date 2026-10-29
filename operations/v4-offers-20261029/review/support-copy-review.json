@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "reviewer": "astra_v4_buyer_judge",
+  "reviewedAt": "2026-10-29T17:35:09.785749+00:00",
+  "baseCommit": "9826bd59393d026fc50dd8ee12bc1eec212647ad",
+  "scope": "Bounded support-copy correction and handoff catalog wiring only",
+  "sourceHashes": {
+    "src/offer-copy.mjs": "457fee00cba8cb87140e4c8af8c9aa3ff32dc8454258b1dc758585cc861ebe4e",
+    "src/process-content.mjs": "eb03e32dce8c85fafda8ef74c5f49874150b35e290f29630cb797c68e3e9075a",
+    "src/guide-content.mjs": "560f5ca2d0140cf5582e52bf3dc8a379275e26d498c2244eee33fc7f8bdd8da8",
+    "src/source-handoff.mjs": "53e59b70594f93f1939b693d08f5116e98fefeb60e48c8cdd8c20a3c30f149c9",
+    "src/service-faq-offer-copy.json": "d3cd817430778423d16bb0c0ed839c0e7caa5dacef7d51430aee08cb9e7b25d7",
+    "src/pages.mjs": "7b753b451f89084de9ca88f57ad3878469ccae6f6ece330a6039d5e89d074f3b",
+    "tests/v4-offers.test.mjs": "7bb46ce7b6e6bc0fdfa1963c0dc377360ce99acb262e4ea01c1c06429c0ad513",
+    "tests/source-handoff-offers.test.mjs": "452ce99d429df9a7b280e94822aeeec10b0f4f986afa268a3b2be08a1a7ec4f6",
+    "operations/v4-offers-20261029/audit-rendered-offers.mjs": "75eb481c6718e61aa65f4fbef36e352ec9eb70813e5bb13bde79fd3e96ab26d1",
+    "tests/audit-work-clarity.test.mjs": "3f82e83d9c56814f4cf4e6adb317c2829edc8e9b6154028137a0d1a571be8543"
+  },
+  "unchangedEvidence": {
+    "config/offers.json": "210a6042a9fe96e41f60667b750e56e34241785284795b68ea16bacf28b14a0a",
+    "src/service-faqs.json": "16b3b37c305a20721abc889d7cd8826f009c3dbad2b6295a26904551c6091acb",
+    "operations/historical/offers-2026-10-29-v3.json": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6"
+  },
+  "findings": [],
+  "resolvedFindings": [
+    {
+      "id": "VISUAL-COPY-01",
+      "resolution": "All five public surfaces use the correct catalog-based website defect-reporting windows, including timely-report protection."
+    },
+    {
+      "id": "SUPPORT-BINDING-01",
+      "resolution": "renderPages passes its selected catalog to sourceHandoff(o); generated page override regression verifies 75-day Custom support and 55-minute Custom training."
+    }
+  ],
+  "verifiedDetails": [
+    "websiteDefectSupport reads every tier name and defect_days; revision below 4 preserves the original 30-day fallback.",
+    "Output escapes names and ampersands via existing rendering escape functions.",
+    "Two FAQ bindings pin exact source answers; raw FAQ records remain byte-identical to base.",
+    "Source handoff uses existing optionalBuildCall allowances and does not delay paid-file delivery for the correction window.",
+    "Guide/process line-ending normalization introduces no additional semantic changes in whitespace-insensitive diff.",
+    "Current approved catalog and historical V3 fixture are byte-identical to base.",
+    "Generic old-window scan added without changing legitimate Storefront/Repair windows."
+  ],
+  "tests": [
+    {
+      "command": "node --test tests/v4-offers.test.mjs tests/source-handoff.test.mjs tests/project-milestones.test.mjs tests/service-faqs.test.mjs",
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "node --test tests/v4-offers.test.mjs tests/source-handoff-offers.test.mjs",
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0,
+      "includesFinalCatalogWiring": true
+    }
+  ],
+  "renderedSurfaces": {
+    "/process/": {
+      "sha256": "d1fef2a13f3b2c1b0b9dc768c145287f6111ced53f6811fad88599955223dae8",
+      "correctWindows": true,
+      "timelyReportProtection": true,
+      "oldGenericSentenceAbsent": true
+    },
+    "/guides/website-project-cost/": {
+      "sha256": "04b278c5f8f0570331a8bf6990a55dc0301c4786a59f9ce7113fde7421d6b20e",
+      "correctWindows": true,
+      "timelyReportProtection": true,
+      "oldGenericSentenceAbsent": true
+    },
+    "/work/source-handoff/": {
+      "sha256": "67d23ca6bab5bcc7cb371a03f8e1f4fa3a58c5f18c6c118c2286d0e175bf119d",
+      "correctWindows": true,
+      "timelyReportProtection": true,
+      "oldGenericSentenceAbsent": true
+    },
+    "/areas/niagara-county/": {
+      "sha256": "dd3f220ef96b6ac9c6b2dc8e67f07ca37084dc1b03785c5145eb87b9123b9ccf",
+      "correctWindows": true,
+      "timelyReportProtection": true,
+      "oldGenericSentenceAbsent": true
+    },
+    "/areas/michigan/grand-traverse-county/": {
+      "sha256": "e112cbd0a7597781b0f0a4c7a5dcf88fc54040d6610fe6685531580b63f284c7",
+      "correctWindows": true,
+      "timelyReportProtection": true,
+      "oldGenericSentenceAbsent": true
+    }
+  },
+  "limitations": [
+    "Rendered HTML inspected after primary build; final sourceHandoff(o) call has identical default output and separately verified override behavior.",
+    "Fresh process-page visual captures still require review; this is source/copy approval only.",
+    "No source, baseline, browser or production actions performed by reviewer."
+  ],
+  "readabilityFollowup": {
+    "supersededReviewSHA256": "65342334711f2b69dd82100d0d1da58cb3b78a3484f55de1358156088c5d0b85",
+    "paragraphOnlyChangesVerifiedByReversingBreaksAndMatchingPriorSourceHashes": true,
+    "changedExpectation": "Only stale flat 30-minute optional walkthrough regex replaced with exact Focused20/Custom45/Business60/Signature90 allowances. Remaining rights, permission, checks and checksum assertions unchanged.",
+    "targetedEvidence": {
+      "path": "output/v4-offers/support-closure-tests.log",
+      "sha256": "b2f00f59336517d21f15ddebd63015a4d6db971bcf6066286050b1dc1a208474",
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "reviewerReadLog": true
+    }
+  },
+  "renderedParagraphBreaks": {
+    "handoff": true,
+    "costGuide": true
+  }
+}
