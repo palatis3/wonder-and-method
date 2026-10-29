@@ -16,7 +16,7 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
  const prices=priceList(offers);
  const {add_ons,...basePrices}=prices;
  assert.equal(basePrices.catalog_format,3);assert.equal(basePrices.annual_available,false);
- for(const [key,expected] of Object.entries({launch:2950,focused:4500,business:7500,signature:11500,keep_running:275,improve:1250,local_focus:850,grow:1750,baseline:650,sprint:1800,brand_message:1800,storefront:8500,local_presence:950,workflow:2500,systems:2000}))assert.equal(basePrices[key],expected,key);
+ for(const [key,expected] of Object.entries({launch:2195,focused:2995,business:4495,signature:6495,keep_running:149,improve:399,local_focus:299,grow:599,baseline:199,sprint:849,brand_message:995,storefront:8500,local_presence:495,workflow:1495,systems:1495}))assert.equal(basePrices[key],expected,key);
  assert.equal(basePrices.provider_model,'client_owned_direct_billing');assert.equal(basePrices.commercial_version,offers.version);
  assert.deepEqual(add_ons,offers.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})));
  for(const name of ['launch','focused','business','signature']){
@@ -25,12 +25,12 @@ test('current fixed-project ladder reconciles through quote, rendered choices an
   const draft=await draftScope(key,'synthetic-ladder');
   assert.deepEqual(draft.milestones.map(m=>m.amount),[price*.4,price*.3,price*.3]);
   assert.equal(draft.accepted_at,null);
-  assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+3025);
+  assert.equal(calculateCost(prices,{build:name,plan:'keep_running',cycles:11}).serviceTotal,price+1639);
   assert.ok(pages.find(p=>p.path==='/').html.includes('/pricing/'));
   assert.ok(pages.find(p=>p.path==='/pricing/').html.includes('id="offer-'+key+'"'));
   for(const route of ['/pricing/','/services/web-design/'])assert.ok(pages.find(p=>p.path===route).html.includes('/checkout/'+key.replaceAll('_','-')+'/'));
  }
- assert.equal(offers.plans.keep_running.monthly_price,275);assert.equal(offers.audit_sprint.one_time_price,1800);assert.equal(offers.plans.improve.monthly_price,1250);
+ assert.equal(offers.plans.keep_running.monthly_price,149);assert.equal(offers.audit_sprint.one_time_price,849);assert.equal(offers.plans.improve.monthly_price,399);
  const publicCopy=pages.map(p=>p.html).join('\n');
  assert.doesNotMatch(publicCopy,/choose implementable priority by hour 3|seven-hour estimate|signed 10-hour scope/);
  // The ROI tool contains labeled hypothetical contribution amounts, not package prices.
@@ -51,10 +51,10 @@ test('Launch survives a real synthetic request and remains recoverable without s
 
 test('current estimates itemize separate diagnostic, repair and care fees before proposal credits',()=>{
  const prices=priceList(offers);
- assert.equal(calculateCost(prices,{build:'existing',plan:'improve',baseline:true,cycles:12}).serviceTotal,650+1250*12);
- assert.equal(calculateCost(prices,{build:'existing',plan:'grow',baseline:true,sprint:true,cycles:1}).serviceTotal,650+1800+1750);
- assert.equal(calculateCost(prices,{build:'signature',plan:'keep_running',baseline:true,cycles:1}).serviceTotal,11500+275);
- assert.equal(calculateCost(prices,{build:'existing',plan:'none',baseline:true,cycles:0}).serviceTotal,650);
+ assert.equal(calculateCost(prices,{build:'existing',plan:'improve',baseline:true,cycles:12}).serviceTotal,199+399*12);
+ assert.equal(calculateCost(prices,{build:'existing',plan:'grow',baseline:true,sprint:true,cycles:1}).serviceTotal,199+849+599);
+ assert.equal(calculateCost(prices,{build:'signature',plan:'keep_running',baseline:true,cycles:1}).serviceTotal,6495+149);
+ assert.equal(calculateCost(prices,{build:'existing',plan:'none',baseline:true,cycles:0}).serviceTotal,199);
 });
 
 test('published decisions include the real review framework, exclusions and inspectable examples',()=>{
@@ -117,11 +117,11 @@ test('historical snapshot: hosting costs are credited once and overlap reduces t
  assert.throws(()=>calculateLegacyCost(prices,{plan:'improve',cycles:12,serviceStart:2,hostingMonths:12}),/Hosting period/);
 });
 
-test('agreed-platform handoff scopes survive drafting with complete V3 deliverables',async()=>{
+test('agreed-platform handoff scopes survive drafting with complete V4 deliverables',async()=>{
  const draft=await draftScope('signature_site','expanded-synthetic');
  assert.deepEqual(draft.commercial_boundaries.deliverables,draft.commercial_snapshot.offer.v3.includes);
  assert.equal(draft.commercial_boundaries.provider_policy.model,'client_owned_direct_billing');assert.ok(!Object.hasOwn(draft.commercial_boundaries,'hosting_credit'));
- const scope=JSON.stringify(draft.commercial_boundaries);assert.match(scope,/recorded demonstrations/);assert.match(scope,/three consolidated review rounds/);assert.match(scope,/three supplied policy pages outside/);assert.match(scope,/20 marketing pages/);
+ const scope=JSON.stringify(draft.commercial_boundaries);assert.match(scope,/recorded demonstrations/);assert.match(scope,/three consolidated review rounds/);assert.match(scope,/three supplied policy pages outside/);assert.match(scope,/25 marketing pages/);
  assert.ok(!Object.hasOwn(draft.commercial_boundaries,'workflow_menu'));
  assert.deepEqual([offers.launch_site.forms,offers.focused_site.forms,offers.business_site.forms,offers.signature_site.forms],[1,1,2,3]);
  const html=pages.map(p=>p.html).join(' ');assert.doesNotMatch(html,/These packages are custom static websites|CMS remain separate|Fixed builds are static websites|standard static hosting within/);

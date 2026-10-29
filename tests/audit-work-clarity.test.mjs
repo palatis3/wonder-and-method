@@ -53,7 +53,7 @@ test('the project calendar matches current delivery units with review windows al
  for(const id of ['launch_site','focused_site','business_site','signature_site'])assert.ok(html.includes(offers[id].delivery_average),id);
  assert.match(html,/two rounds; Signature includes three/);assert.match(html,/Two business days for each consolidated review are included/);
  assert.match(html,/proposal sets start, review and launch dates/);
- assert.match(html,/does not delay the paid handoff/);
+ assert.match(html,/do not delay the paid handoff/);
  assert.doesNotMatch(html,/few extra days|usual review window/);
 });
 

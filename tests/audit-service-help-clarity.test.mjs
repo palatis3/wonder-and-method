@@ -27,8 +27,8 @@ test('contractor page links to complete coverage and keeps a seven-item page pla
  for(const trade of ['plumbing','electrical','HVAC','roofing','exterior','remodeling','landscaping','cleaning'])assert.ok(contractor.toLowerCase().includes(trade.toLowerCase()));
  const plan=contractor.match(/<h3>A sample seven-page plan<\/h3>(.*?)<\/section>/s)[1];
  assert.equal((plan.match(/<li>/g)||[]).length,7);
- assert.match(plan,/seven pages plus Business Custom Website’s 1 included guide use 8 of its 15 pages/);
- assert.match(plan,/eight-page Focused Website plan is another option/);
+ assert.match(plan,/seven pages plus Business Custom Website’s 1 included guide use 8 of its 20 pages/);
+ assert.match(plan,/ten-page Focused Website plan is another option/);
  assert.doesNotMatch(contractor,/<table|compact-offer|data-label=/);
  const words=text(contractor).split(' ').length;
  assert.ok(words>=500&&words<=1200,`Contractor copy has ${words} words`);

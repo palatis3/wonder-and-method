@@ -8,6 +8,54 @@
 .studio-site .v3-intro{max-width:1100px;padding-bottom:2rem}
 .studio-site .v3-intro h1{max-width:15ch;text-wrap:balance}
 .studio-site .v3-intro .lede{max-width:48rem}
+.studio-site .v4-pricing-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(20rem,1fr);gap:clamp(2rem,5vw,5rem);max-width:none;align-items:center;padding:clamp(2rem,5vw,5rem) 0 3rem}
+.studio-site .v4-pricing-hero h1{max-width:15ch;font-size:clamp(2.6rem,5.3vw,5.1rem);line-height:1.03;letter-spacing:-.045em;margin:.6rem 0 1.6rem;text-wrap:balance}
+.studio-site .v4-pricing-hero .lede{font-size:clamp(1.13rem,1.6vw,1.38rem);line-height:1.65;max-width:43ch}
+.studio-site .v4-pricing-hero>div>p:not(.eyebrow){max-width:52ch}
+.studio-site .v4-pricing-hero aside{background:#1d392d;color:#f4f2e6;border-radius:1.35rem;padding:clamp(1.5rem,3vw,2.7rem);box-shadow:0 18px 45px #1b362712;position:relative;overflow:hidden}
+.studio-site .v4-pricing-hero aside :is(p,strong,span){color:inherit}
+.studio-site .v4-pricing-hero aside .eyebrow{color:#d4dfbc;font-size:.72rem;letter-spacing:.12em}
+.studio-site .v4-pricing-hero aside .v4-hero-price{font-size:1rem;margin:1.5rem 0 2rem;padding-bottom:1.7rem;border-bottom:1px solid #aec5b44d}
+.studio-site .v4-hero-price strong{font-size:clamp(2.8rem,4vw,4.1rem);font-weight:500;letter-spacing:-.05em;line-height:1.1}
+.studio-site .v4-hero-price>span{display:block;margin-top:.5rem;font-size:.9rem}
+.studio-site .v4-pricing-hero ol{list-style:none;padding:0;margin:0;display:grid;gap:1.45rem}
+.studio-site .v4-pricing-hero li{display:grid;grid-template-columns:2.1rem 1fr;gap:.8rem;margin:0}
+.studio-site .v4-pricing-hero li>span{font-size:.75rem;padding-top:.2rem;color:#d4dfbc;font-variant-numeric:tabular-nums}
+.studio-site .v4-pricing-hero li strong{font-size:1.02rem;line-height:1.45}
+.studio-site .v4-pricing-hero li p{font-size:.88rem;line-height:1.65;margin:.25rem 0 0;color:#dde6db}
+.studio-site .v4-pricing-hero .v4-hero-note{font-size:.82rem;line-height:1.8;margin:1.75rem 0 0;padding-top:1.25rem;border-top:1px solid #aec5b44d;color:#dde6db}
+.studio-site .v4-hero-actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-top:1.7rem}
+.studio-site .v4-offer-card{border-top-width:1px;border-radius:1rem;padding:clamp(1.3rem,2.6vw,2.5rem);box-shadow:0 8px 30px #1e382609}
+.studio-site .v4-offer-card--website{background:linear-gradient(150deg,#fffefa 0%,#f5f6ee 100%)}
+.studio-site .v4-offer-card--website>.eyebrow{border-bottom:1px solid #b6c5b5;padding-bottom:1rem;margin-bottom:1.4rem;color:#3b5c40}
+.studio-site .v4-offer-card .v3-price{font-size:clamp(2.4rem,3.5vw,3.4rem);font-weight:500;margin:.3rem 0 1.4rem}
+.studio-site .v4-offer-card .v4-card-promise{font-size:1.22rem;font-weight:650;line-height:1.45;max-width:32ch;margin:0 0 .75rem}
+.studio-site .v4-offer-card .v4-card-why{font-size:.96rem;line-height:1.75;margin:0 0 .8rem;max-width:55ch}
+.studio-site .v4-offer-card>ul{padding-left:1.2rem;margin-bottom:1.2rem}
+.studio-site .v4-offer-card>ul li{font-size:.94rem;line-height:1.7;margin:.75rem 0;padding-left:.25rem}
+.studio-site .v4-offer-card>ul li::marker{color:#547651}
+.studio-site .v4-support-line{font-size:.84rem;line-height:1.7;padding:.75rem 0;border-block:1px solid #cbd5c7;margin:.4rem 0 1rem}
+.studio-site .v4-cost-note{font-size:.83rem;line-height:1.65}
+.studio-site .v4-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:1rem 0;border:1px solid #c3cdbb;border-radius:.65rem;background:#f2f5ec;overflow:hidden}
+.studio-site .v4-variants>div{padding:.9rem .7rem;display:flex;flex-direction:column;gap:.5rem;border-right:1px solid #c3cdbb;min-width:0}
+.studio-site .v4-variants>div:last-child{border-right:0}
+.studio-site .v4-variants span{font-size:.78rem;line-height:1.4;font-weight:600}
+.studio-site .v4-variants strong{font-size:1.3rem;letter-spacing:-.03em;line-height:1.2;white-space:nowrap}
+.studio-site .v4-variants small{font-size:.7rem;font-weight:450;line-height:1.5;letter-spacing:0}
+.studio-site .v4-variants strong small{margin-left:.15rem}
+.studio-site .v4-variants:not(:has(>div:nth-child(3))){grid-template-columns:repeat(2,minmax(0,1fr))}
+.studio-site .v4-offer-card .v4-scope{border-top:1px solid #cbd5c7;padding-top:.45rem}
+.studio-site .v4-offer-card .v4-scope li{font-size:.9rem}
+.studio-site .v4-monthly-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin:2rem 0}
+.studio-site .v4-monthly-terms article{border-top:1px solid #9fb29c;padding-top:1.4rem;min-width:0}
+.studio-site .v4-monthly-terms h3{font-size:1.2rem;line-height:1.4;margin:0 0 1rem}
+.studio-site .v4-monthly-terms p{font-size:.92rem;line-height:1.75}
+.studio-site .v4-plan-guide{display:grid;grid-template-columns:7rem 1fr;gap:1rem;margin:1.5rem 0}
+.studio-site .v4-plan-guide dt{font-weight:650}
+.studio-site .v4-plan-guide dd{margin:0;line-height:1.65}
+@media(max-width:900px){.studio-site .v4-pricing-hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem}.studio-site .v4-pricing-hero aside{max-width:none}.studio-site .v4-pricing-hero h1{max-width:19ch}.studio-site .v4-pricing-hero aside ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}.studio-site .v4-pricing-hero li{grid-template-columns:1fr;gap:.4rem}}
+@media(max-width:700px){.studio-site .v4-pricing-hero aside ol,.studio-site .v4-monthly-terms{grid-template-columns:1fr}.studio-site .v4-pricing-hero li{grid-template-columns:1.8rem 1fr}.studio-site .v4-pricing-hero h1{font-size:clamp(2.5rem,9.5vw,3.5rem)}.studio-site .v4-offer-card .v3-price{font-size:2.8rem}.studio-site .v4-variants>div{padding:.8rem .55rem}.studio-site .v4-plan-guide{grid-template-columns:1fr;gap:.5rem}.studio-site .v4-plan-guide dd{margin-bottom:.75rem}}
+@media(max-width:700px){.studio-site .v4-variants,.studio-site .v4-variants:not(:has(>div:nth-child(3))){grid-template-columns:1fr}.studio-site .v4-variants>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:.3rem .8rem;padding:.9rem;border-right:0;border-bottom:1px solid #c3cdbb}.studio-site .v4-variants>div:last-child{border-bottom:0}.studio-site .v4-variants span{font-size:.84rem}.studio-site .v4-variants>div>small{grid-column:1/-1;font-size:.76rem}}
 .studio-site .v3-section{background:var(--surface-sage);border:1px solid var(--surface-border);border-radius:1.3rem;padding:clamp(1.25rem,3.2vw,3rem);margin-top:2rem;margin-bottom:2rem}
 .studio-site .v3-section::before{display:none}
 .studio-site .v3-section--stone{background:var(--surface-stone)}

@@ -129,7 +129,7 @@ test('portfolio previews, SEO topic navigation and early process overview work b
  const preview=page.locator('#fieldwork').getByRole('link',{name:'Explore the Fieldwork website',exact:true});await preview.focus();await expect(preview).toBeFocused();
  await page.keyboard.press('Enter');await expect(page).toHaveURL(/\/work\/fieldwork\//);await expect(page.locator('.concept-notice')).toContainText('Fictional concept');
  await page.goto('/services/seo/?qa=1');
- const request=page.getByRole('link',{name:'Request Website Improvement Partnership',exact:true});await request.focus();await page.keyboard.press('Enter');
+ const request=page.getByRole('link',{name:'Discuss Website Improvement Partnership',exact:true});await request.focus();await page.keyboard.press('Enter');
  await expect(page).toHaveURL(/\/checkout\/improve\/(?:\?qa=1)?$/);await expect(page.locator('#service')).toHaveValue('improve');
  await page.goto('/services/seo/?qa=1');
  const limits=page.locator('#scope-limits');await expect(limits).toBeVisible();await expect(limits).toContainText('Not included');

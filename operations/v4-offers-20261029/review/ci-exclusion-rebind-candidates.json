@@ -1,0 +1,23 @@
+{
+  "exclusionCount": 587,
+  "changed": [
+    {
+      "path": "tests/browser/buyer-journeys.spec.mjs",
+      "beforeSha256": "7d472bd92da752d6aa3cad1e50f86665ee7b88b4645822be8ed43facb131db07",
+      "afterSha256": "ff2df8e826efcdcf13c71fa8cc808bb48063044e70339a43a1ce791b01924a80",
+      "skipLinesUnchanged": true
+    },
+    {
+      "path": "tests/browser/living-city-night.spec.mjs",
+      "beforeSha256": "993c298d7eb07da14a4df6acdc4596b5f8bf3dc24138ab07c4cd020dfcd4577a",
+      "afterSha256": "f87f439954aa11aa2b0c9e5f747a298c5e34a85082ea3aad3ace233f919468c3",
+      "skipLinesUnchanged": true
+    },
+    {
+      "path": "tests/browser/no-javascript.spec.mjs",
+      "beforeSha256": "1d54f1c7d72ba72f2f734f9eb3e6167402abf5f7e22132645a2ea06aa8e42866",
+      "afterSha256": "5d91ea1687c464b3f04b9afe2e97a15bef671c09334c33b9447a52b7366038e5",
+      "skipLinesUnchanged": true
+    }
+  ]
+}

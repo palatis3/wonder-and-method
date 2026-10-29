@@ -26,9 +26,9 @@ test('home, Buffalo web design and service navigation describe distinct visitor 
 
 test('search descriptions stay concise and derive prices and page allowances from current offers',()=>{
  for(const path of Object.keys(searchMetadata)){const text=description(path);assert.ok(text.length<=160,path+': '+text.length);assert.doesNotMatch(text,/without (?:promising|inventing)|scoped SEO|Label demonstrations/i,path);}
- const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.launch_site.marketing_page_cap=7;revised.focused_site.marketing_page_cap=16;revised.signature_site.marketing_page_cap=31;revised.plans.local_focus.monthly_price=425;revised.plans.improve.monthly_price=425;revised.plans.grow.monthly_price=850;
- assert.match(description('/',revised),/from \$1,625/);assert.match(description('/services/web-design/',revised),/from \$1,625 /);assert.match(description('/services/web-design/',revised),/7, 16, 15, 31-page/);
- assert.match(description('/services/seo/',revised),/Local Search Focus from \$425\/month/);assert.match(description('/areas/erie-county/',revised),/from \$1,625/);
+ const revised=structuredClone(offers);revised.launch_site.public_price=1625;revised.launch_site.marketing_page_cap=7;revised.focused_site.marketing_page_cap=16;revised.signature_site.marketing_page_cap=31;revised.plans.local_focus.monthly_price=425;revised.plans.local_focus.variants.production.price=325;revised.plans.improve.monthly_price=425;revised.plans.grow.monthly_price=850;
+ assert.match(description('/',revised),/from \$1,625/);assert.match(description('/services/web-design/',revised),/from \$1,625 /);assert.match(description('/services/web-design/',revised),/7, 16, 20, 31-page/);
+ assert.match(description('/services/seo/',revised),/Local Search Focus from \$325\/month/);assert.match(description('/areas/erie-county/',revised),/from \$1,625/);
 });
 
 test('Erie metadata stays specific while same-named counties in Pennsylvania and Ohio have their own reviewed pages',()=>{

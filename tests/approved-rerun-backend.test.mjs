@@ -180,7 +180,7 @@ test('cost copy includes entered money once, preserves prices and has a true emp
  for(const hostingMonthly of [null,0,10.25])for(const external of [null,0,120.50]){
   const v=calculateCost(prices,{build:'focused',plan:'improve',cycles:1,hostingMonths:1,hostingMonthly,external});const copy=costEstimateCopy(v,{plan:'improve',prices,external});
   assert.match(copy.breakdown,/1 monthly payment of/);assert.doesNotMatch(copy.total,/not added|Still/);
-  assert.equal(copy.note.includes('hosting'),hostingMonthly===null);assert.equal(copy.note.includes('domain, email'),external===null);
+  assert.equal(/Still to add: [^.]*hosting/.test(copy.note),hostingMonthly===null);assert.equal(copy.note.includes('domain, email'),external===null);
  }
  assert.throws(()=>calculateCost(prices,{plan:'improve',cycles:0}),/at least one month/);assert.doesNotThrow(()=>calculateCost(prices,{plan:'improve',cycles:120}));assert.throws(()=>calculateCost(prices,{plan:'improve',cycles:121}));
  const empty=calculateCost(prices,{build:'existing',plan:'none'});assert.match(costEstimateCopy(empty).total,/Choose work/);

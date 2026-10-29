@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "reviewer": "Astra independent commercial implementation review",
+  "reviewedAt": "2026-10-29T16:19:19.544Z",
+  "workspace": "C:\\Wonder and Method\\v4-implementation-20261029\\site",
+  "approvedSourceSHA256": "c1e7c12e560c33b1eed4fa8369fbd6a2cc147d8457dfba06aa44575344966b7a",
+  "reviewedFiles": [
+    {
+      "file": "config/offers.json",
+      "sha256": "08aa591cef6fcdf359c2a3edf2a10bdc784107aa2b4c6c54cabb50980c61fb6d"
+    },
+    {
+      "file": "src/offer-catalog.mjs",
+      "sha256": "fa4b10488594af98df9464f64152dd6df6dda6313216e34ae7b9a6a8b8547118"
+    },
+    {
+      "file": "src/commercial.mjs",
+      "sha256": "de9c8943aaabb3f5a9f2177d45cfc08db9354e2a1620850243486dda950fb333"
+    },
+    {
+      "file": "scripts/create-job.mjs",
+      "sha256": "a21b00eb8915039cac11d934e2967d2b853ea2fba35a3df1aed3babdb965def4"
+    },
+    {
+      "file": "src/shared.mjs",
+      "sha256": "b359f8d7c488f4d2ed34a99575394d843e3c3efea8fffadb78bea0f0c17eca81"
+    },
+    {
+      "file": "src/inquiry.mjs",
+      "sha256": "5876b910b8304e9b074b6c89c501e79bcda1b57483f744286cc9057b743c6498"
+    },
+    {
+      "file": "src/inquiry-form.mjs",
+      "sha256": "fed64d5d36fd0222e49aef3d10531725b4753214fd4ae573237884fd333a2dd0"
+    },
+    {
+      "file": "src/inquiry-prefill.mjs",
+      "sha256": "6f3f3ed55f4d5dd5c1e0a4bb1fc0215d6a9b185951cf5517c1e8138eeaa8ef32"
+    },
+    {
+      "file": "src/inquiry-response.mjs",
+      "sha256": "0ac02b15fdcfba4c59a28d0eecd1231e65a7fe36992dfa2c46c79f6622ac4dc2"
+    },
+    {
+      "file": "src/client.js",
+      "sha256": "1c4869cf681511b544c04e0e384111be6e9f129fc8e36b83d4f1ceac5c57ee14"
+    },
+    {
+      "file": "src/payments.mjs",
+      "sha256": "fb58ed63e121618ffd2ccea7b07a951dfa42246828b97ece3a9938727d9a8398"
+    },
+    {
+      "file": "scripts/job-packet.mjs",
+      "sha256": "62bf879a45fecd1fdf663a37cf3b8a0d15ad56daf43df613aa5c5724b845710f"
+    },
+    {
+      "file": "scripts/build.mjs",
+      "sha256": "514b06a810e42ccf5bbfdf0f9145d8dadc697bbb3add870845fd3f721d03dcf7"
+    },
+    {
+      "file": "operations/v4-offers-20261029/approved-catalog.json",
+      "sha256": "c1e7c12e560c33b1eed4fa8369fbd6a2cc147d8457dfba06aa44575344966b7a"
+    }
+  ],
+  "coverage": {
+    "plans": 15,
+    "websiteTiers": 4,
+    "monthlyVariants": 11,
+    "workflowRoutes": 2
+  },
+  "findings": [],
+  "resolvedFindings": [
+    {
+      "id": "CI-1",
+      "severity": "P2",
+      "file": "src/client.js",
+      "line": 48,
+      "title": "Refresh Care option prices when the selected service changes",
+      "reproduction": "Open a general contact form prefilled for Local Search Focus, then change the package to Website Improvement Partnership. Before the fix, the Care option retained $299 while the request summary correctly showed $399.",
+      "resolution": "The existing service-change refresh now derives each option label from inquiryOffer(service, context.care_variant). Verified the updated loop and exact Local Focus 199/299/445, Improvement 299/399/545 and Search 499/599/745 derived prices."
+    }
+  ],
+  "verified": [
+    {
+      "area": "Approved catalog and primary scope",
+      "result": "Approved source hash matches. All 15 plan prices, four page caps (10/15/20/25), exclusions, inputs, acceptance, support windows and delivery targets match approved V4. Dynamic guide/output templates preserve the approved counts; their wording changes are semantically equivalent."
+    },
+    {
+      "area": "Monthly variants and Care",
+      "result": "All eleven monthly variant fees resolve correctly. Production-only excludes maintenance/incident response/Care edits; selected local plans retain one location/service-area and 30 marketing-page limits. Care variants retain 60-minute edits, three ordinary inquiry journeys, and Commerce 100 products/one checkout. Brochure-only lines are removed from Commerce quoted deliverables."
+    },
+    {
+      "area": "Hosting offset",
+      "result": "Pure calculation reproductions: Local Focus Brochure with $20 hosting yields $279 W&M + $20 host = $299; $50 hosting yields $274 + $50 = $324. Commerce and production-only deduct zero. Unknown eligible hosting remains pending; no automatic assumption of free vendor costs."
+    },
+    {
+      "area": "First-cycle and recurring terms",
+      "result": "Quoted snapshot retains onboarding terms, first-cycle native measurement setup, three-cycle fee protection and at least 30-day notice before later changes. Waiver eligibility remains explicit. Onboarding estimate choices are provisional before written scope credits; no production-only Care onboarding charge is accepted."
+    },
+    {
+      "area": "Workflow variants",
+      "result": "In-memory draftScope calls select the correct mutually exclusive route: both $1495; simple 10–15 business days/five distinct native automations and five tests each; complex 5–10 business days/one trigger, five actions, two branches, fifteen fields and its own acceptance tests."
+    },
+    {
+      "area": "Inquiry selection",
+      "result": "Validator preserves workflow_variant=complex and rejects care_variant=production for standalone Website Care. Native prefill uses the shared allowlist; request/receipt summaries derive the selected variant. Browser code refreshes service-dependent visibility and labels."
+    },
+    {
+      "area": "Historical agreement isolation",
+      "result": "A draft from the saved pre-V3 catalog was populated with synthetic acceptance data in memory. prepareInvoice retained the historical $1400 fixed price and $700 first milestone after normalizing a modified current catalog with a $9999 entry price; the invoice identifier was unchanged. Invoice preparation reads the saved snapshot; create-job uses exclusive file creation rather than overwriting an existing agreement."
+    },
+    {
+      "area": "Customer versus internal wording",
+      "result": "Public offer projection excludes planning hours, stress models and other internal economics. Browser bundle inputs explicitly use that projection. Reviewed customer v3 scope fields contain no V3/review/pilot-economics leakage."
+    }
+  ],
+  "validationLimits": [
+    "Read-only implementation review plus focused in-memory function invocations; no implementation/test edits, full suite, build, deployment, real client records, invoices or external messages.",
+    "Primary owns final UI/browser validation and the full test/build gates.",
+    "Review binds to the listed file hashes; later changes require reconciliation."
+  ],
+  "conclusion": "No unresolved actionable commercial implementation discrepancy in the reviewed scope."
+}

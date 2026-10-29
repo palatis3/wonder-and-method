@@ -1,0 +1,149 @@
+{
+  "reviewedAt": "2026-10-29T16:41:23.991Z",
+  "captureTime": "2026-10-29T10:44:57.621Z",
+  "reason": "The only change in buyer-experience.mjs is projectCalendar, which is outside all concept captures. The complete concept article, concept stylesheet, illustrations and fonts remain unchanged. Current prices appear in the separate debrief below the crop.",
+  "sourceComparisons": [
+    {
+      "path": "src/portfolio-concepts.mjs",
+      "beforeSha256": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3",
+      "afterSha256": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3",
+      "unchanged": true
+    },
+    {
+      "path": "src/assets/portfolio-concepts.css",
+      "beforeSha256": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30",
+      "afterSha256": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30",
+      "unchanged": true
+    },
+    {
+      "path": "src/buyer-experience.mjs",
+      "beforeSha256": "60c32ae19240bc0dd54acab4ba05f226dcbdae4d7635c8ccd8f8c692b1e5ab7c",
+      "afterSha256": "4683a544ba7a3e46fae9a9fcbbb8601eadc0454d8dd865354a1f549e65014ae0",
+      "unchanged": false
+    }
+  ],
+  "articleComparisons": [
+    {
+      "path": "/work/fieldwork/",
+      "beforeSha256": "7c6f6c66483f386a00f0b5b414705f14ef187a0250e6e39d9ab3db3ba7f94cff",
+      "afterSha256": "7c6f6c66483f386a00f0b5b414705f14ef187a0250e6e39d9ab3db3ba7f94cff",
+      "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+    },
+    {
+      "path": "/work/northline/",
+      "beforeSha256": "6e6daf0e11fb9abca05bb6f172d699755e7a8bc5c17f0f152d428607b1189f55",
+      "afterSha256": "6e6daf0e11fb9abca05bb6f172d699755e7a8bc5c17f0f152d428607b1189f55",
+      "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+    },
+    {
+      "path": "/work/hearthside/",
+      "beforeSha256": "050d7fbb73daceb19a046e434133e55add697e9197d90ff7f35bc60c6b4ae027",
+      "afterSha256": "050d7fbb73daceb19a046e434133e55add697e9197d90ff7f35bc60c6b4ae027",
+      "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+    }
+  ],
+  "unchangedCaptureHashes": [
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-desktop.webp",
+      "sha256": "6ccc68ae638c1d4a0008e2cfb68a33dbd36e65feb2e6699c3f58c9a7361eeaad"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-desktop-480.webp",
+      "sha256": "4155e3953a7ebf266a902cf3ae45e9eff2d6924663082de8d48c6b4450ddbd81"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-desktop-640.webp",
+      "sha256": "0f715534f264cc01ba185ecf222db19f38898ab8178c8f445175db54f32fb92a"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-desktop-960.webp",
+      "sha256": "be433982f0d1f82dbbc7aa3d91a6c68108024d62144a810350b4dc899f559633"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-desktop.webp",
+      "sha256": "8f4bc201669555a3ea2b17408e3ef12d258c87f01bf6da7cba52291dedc12aed"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-desktop-480.webp",
+      "sha256": "3334945c4f0ef0e9b2154affd3107c1449ab9a5293a18c53fc65accf39277181"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-desktop-640.webp",
+      "sha256": "1c4aaf787f10e064f365636bfc3eed7de8955c7b4bc5a49c1e191d629d52ac6a"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-desktop-960.webp",
+      "sha256": "f636f4b5082b73d796102a5ce501212f567177d813377d9994dc2403c428478b"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-desktop.webp",
+      "sha256": "bab642ec8f314a3d1926e6487828d59650399bf07c992e42fccccb0032d3b6f7"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-desktop-480.webp",
+      "sha256": "4126e7223a66edbcee48bd1405c3183ac5d5212c70caf34772ebc6db30acdf27"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-desktop-640.webp",
+      "sha256": "ba2a499401e26a682936fd1392a0bb1e2d99961d3ce10eb31c7b93fc82fd4e2e"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-desktop-960.webp",
+      "sha256": "e9c5440794792f018793a765158f9d972089fccd88211e1f8019aab0e2ff0be6"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-phone.webp",
+      "sha256": "640933a197c83212587bb04ad530f29404c6e1d30c0d8afb60b7f38882d6ac55"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-phone-350.webp",
+      "sha256": "5913e4d9316c889e3f7f5936f35bae9b3d703d8cf1982de1216e9322d3fac03b"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-phone-525.webp",
+      "sha256": "838d50591daf05523eba1df61953b2885392521534a9e75b3699a0f49cf10d8a"
+    },
+    {
+      "path": "/assets/work/concepts/fieldwork-showcase-phone-700.webp",
+      "sha256": "7b47fd79763c28690c87e09827e90e2169550dd3ec65359c1f7eece45a2024d0"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-phone.webp",
+      "sha256": "59d49833d09cb4300105568a131b4afd55f721a6a98763bac623f0b9534d680e"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-phone-350.webp",
+      "sha256": "97b323288926b084a087c9ffc131a812c787d86ea3e39b5e9bfadda4b81454c8"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-phone-525.webp",
+      "sha256": "d67866536314a06aa27f17d30db8608c05dbeea484c2bc99048b93cb7ddfcbd3"
+    },
+    {
+      "path": "/assets/work/concepts/northline-showcase-phone-700.webp",
+      "sha256": "d1d6ae2065664edf02344929df22ed94e2396871fdc2703f4baec2b81e886d55"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-phone.webp",
+      "sha256": "97ec18a556be0b9fb4d561cc1e9a5d826f0c2254bfa4f587e74514d7a7993064"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-phone-350.webp",
+      "sha256": "e241bf63b3d49859e0bdc922f7ea5722e77a2fd0d2b06057352bb4865477de94"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-phone-525.webp",
+      "sha256": "1baf138137523e68d1c0ce586459700356e411560628415c4179a72906503008"
+    },
+    {
+      "path": "/assets/work/concepts/hearthside-showcase-phone-700.webp",
+      "sha256": "70d5007d466ab8139b4abad947f9171b26b6dfeeefd3658085509e059da80693"
+    }
+  ],
+  "sharedStyleComparison": {
+    "beforeSha256": "93b467ee762acd2dde69549b963e938520e945f33bd4f6e7bf7c35b1b5289ab4",
+    "afterSha256": "60471da3ab00efb7e29fd4139252eef11c66c7d4442f227483a80e4c49d23cf1",
+    "priorRulesUnchanged": true,
+    "addedRulesRequireAbsentV4Elements": 62
+  }
+}

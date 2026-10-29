@@ -16,7 +16,7 @@ const render=(values=offers)=>renderPages({config,offers:values,map,geography});
 const addonPath='/services/website-addons/';
 const packPath='/assets/buyer-packs/website-addons';
 const baseIds=['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems'];
-const expectedIds=Object.keys({reporting_dashboard:1500,logo_identity:1800,standard_page:350,three_page_bundle:900,practical_guide:800,campaign_landing_page:1200,booking_setup:850,guided_quote_form:1200,business_email_domain:650,profile_recovery:650,print_collateral:750,care_onboarding:375,single_fix:450});
+const expectedIds=Object.keys({reporting_dashboard:795,logo_identity:995,standard_page:195,three_page_bundle:525,practical_guide:495,campaign_landing_page:695,booking_setup:495,guided_quote_form:695,business_email_domain:295,profile_recovery:395,print_collateral:395,care_onboarding:195,single_fix:295});
 const schema=html=>JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);
 
 test('add-on service is discoverable, indexable and separate from all fifteen base requests',()=>{
@@ -24,7 +24,7 @@ test('add-on service is discoverable, indexable and separate from all fifteen ba
  assert.ok(catalogue);
  assert.deepEqual(offers.add_ons.map(item=>item.id),expectedIds);
  assert.deepEqual(pages.filter(page=>page.path.startsWith('/checkout/')).map(page=>page.path).sort(),baseIds.map(id=>'/checkout/'+id.replaceAll('_','-')+'/').sort());
- assert.equal((pricing.html.match(/class="v3-offer-card" id="offer-[^"]+"/g)||[]).length,15);
+ assert.equal((pricing.html.match(/class="[^"\n]*\bv3-offer-card\b[^"\n]*" id="offer-[^"]+"/g)||[]).length,15);
  assert.match(catalogue.html,/<h1>A useful addition\. A defined scope\.<\/h1>/);
  assert.match(catalogue.html,/class="studio-contact-note"/);
  assert.match(catalogue.html,/class="back-to-top"/);

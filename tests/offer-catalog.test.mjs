@@ -36,11 +36,9 @@ const changes={version:'2099-01-01-catalog-regression',as_of:'2099-01-01',set:{
 test('normalization preserves current commercial promises and prices without mutating inputs',()=>{
  const before=JSON.stringify(offers),catalog=normalizeOfferCatalog(offers);
  const expected=structuredClone(offers);
- expected.plans.grow.v3.includes[2]=expected.plans.grow.v3.includes[2].replace('uses both units.','uses two units.');
- expected.business_site.v3.includes[1]=expected.business_site.v3.includes[1].replace('One can be a researched practical guide answering one agreed buyer question;', 'The allowance includes up to one researched practical guide, each answering one agreed buyer question;').replace('Both count inside','These count inside');
  assert.deepEqual(catalog,expected);assert.equal(JSON.stringify(offers),before);
  assert.ok(Object.isFrozen(catalog.plans.improve.annual));
- assert.deepEqual([catalog.launch_site.public_price,catalog.focused_site.public_price,catalog.signature_site.public_price],[2950,4500,11500]);
+ assert.deepEqual([catalog.launch_site.public_price,catalog.focused_site.public_price,catalog.signature_site.public_price],[2195,2995,6495]);
 });
 
 test('one update reaches current metadata, schema, forms, calculator, downloads, quotes and payment catalog',async()=>{
@@ -50,12 +48,12 @@ test('one update reaches current metadata, schema, forms, calculator, downloads,
  const schemas=[...page('/pricing/').html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  assert.match(JSON.stringify(schemas),/"name":"Starter Website"/);assert.match(JSON.stringify(schemas),/"price":1601\.03/);
  assert.match(page('/pricing/').html,/Up to 18/);
- assert.match(page('/contact/').html,/Starter Website[^<]*1,601\.03/);assert.match(page('/contact/').html,/Progress[^<]*450\.07/);
+ assert.match(page('/contact/').html,/Starter Website[^<]*1,601\.03/);assert.match(page('/contact/').html,/Progress[^<]*350\.07/);
  assert.match(page('/checkout/launch-site/').html,/\$640\.41/);
  assert.match(page('/tools/website-roi-calculator/').html,/value="2603\.07"/);assert.match(page('/services/website-audit/').description,/\$801\.01/);
  const prices=priceList(changed),projection=publicOfferProjection(changed);
  assert.equal(prices.launch,1601.03);assert.equal(prices.baseline,425.03);assert.equal(projection.plans.improve.priorities,3);
- assert.match(inquiryChoiceLabel('improve',projection),/Progress.*450\.07/);
+ assert.match(inquiryChoiceLabel('improve',projection),/Progress.*350\.07/);
  assert.equal(calculateCost(prices,{build:'launch',plan:'keep_running',cycles:12,hostingMonthly:0,external:0}).total,3701.39);
  const launch=paymentCatalog(changed).find(p=>p.id==='launch_site');assert.equal(launch.name,'Starter Website');assert.deepEqual(launch.prices.map(p=>p.amount),[64041,48031,48031]);
  const draft=await draftScope('focused_site','catalog-regression',{catalog:changed});assert.equal(draft.fixed_price,2603.07);
@@ -79,20 +77,20 @@ test('cent allocation uses one base price while current V3 annual enrollment sta
  const raw=structuredClone(offers);raw.launch_site.public_price=1800;raw.plans.improve.monthly_price=500;assert.equal(normalizeOfferCatalog(raw).launch_site.payment_schedule[0].amount,720);assert.equal(normalizeOfferCatalog(raw).plans.improve.annual.upfront_price,6000);
 });
 
-test('current service and county prose follows renamed plans and V3 monthly quantities without retired promotion',()=>{
+test('current service and county prose follows renamed plans and V4 monthly quantities without retired promotion',()=>{
  const changed=applyOfferChanges(offers,{...changes,set:{...changes.set,'plans.grow.public_name':'Campaign','plans.grow.growth_plan.days':120}});
  const pages=renderPages({config,offers:changed,map,geography}),seo=pages.find(p=>p.path==='/services/seo/').html,care=pages.find(p=>p.path==='/services/website-care/').html,county=countyServiceCards(changed);
- const card=(html,id)=>html.match(new RegExp('<article class="v3-offer-card" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1]||'';
- assert.match(card(seo,'improve'),/<h3>Progress<\/h3>/);assert.match(card(seo,'improve'),/(?:3|three) main website improvements/i);
- assert.match(card(seo,'grow'),/<h3>Campaign<\/h3>/);assert.match(card(seo,'grow'),/(?:4|four) monthly content\/SEO units/i);
+ const card=(html,id)=>html.match(new RegExp('<article class="[^"]*\\bv3-offer-card\\b[^"]*" id="offer-'+id+'">([\\s\\S]*?)</article>'))?.[1]||'';
+ assert.match(card(seo,'improve'),/<h3>Progress<\/h3>/);assert.match(card(seo,'improve'),/(?:3|three) main (?:website improvements|outputs?)/i);
+ assert.match(card(seo,'grow'),/<h3>Campaign<\/h3>/);assert.match(card(seo,'grow'),/(?:4|four) (?:monthly )?content\/SEO units/i);
  assert.match(care,/Steady Care/);assert.match(care,/\$175\.03/);
  for(const name of ['Starter Website','Complete Website',changed.business_site.public_name,'Progress','Local Search Focus','Campaign'])assert.ok(county.includes(name),name);
  for(const html of [seo,care,county])assert.doesNotMatch(html,/extra social graphic|newsletter excerpts|one small fix if|up to two agreed fixes total|monthly first payments are/i);
  const escaped=structuredClone(changed);escaped.plans.keep_running.public_name='Care & Support';escaped.launch_site.public_name='Start & Launch';
  assert.match(countyServiceCards(escaped),/Start &amp; Launch/);assert.doesNotMatch(countyServiceCards(escaped),/&amp;amp;/);assert.match(servicesOverview(escaped),/Care &amp; Support/);
  const currentSeo=seoContent(offers),currentCare=careContent(offers),currentCounty=countyServiceCards(offers);
- assert.match(currentSeo,/one (?:main |useful )?website improvement/i);assert.match(currentSeo,/two (?:monthly )?content\/SEO units/i);assert.match(currentSeo,/Local Search Focus/);
- assert.match(currentCare,/\$275/);assert.match(currentCounty,/Website Roadmap/);assert.match(currentCounty,/no implementation|review only|action plan/i);
+ assert.match(currentSeo,/one (?:main |useful )?(?:website improvement|output)/i);assert.match(currentSeo,/two (?:monthly )?content\/SEO units/i);assert.match(currentSeo,/Local Search Focus/);
+ assert.match(currentCare,/\$149/);assert.match(currentCounty,/Website Roadmap/);assert.match(currentCounty,/no implementation|review only|action plan/i);
 });
 
 test('invalid source values, broken templates and reused versions fail before writing',()=>{
@@ -123,7 +121,7 @@ test('new catalog leaves an accepted commercial snapshot and its invoice amount 
  const before=JSON.stringify(scope),billing={mode:'test',account_id:paymentAccounts.test,customer_id:'cus_synthetic',scope_version:1,due_at:'2026-11-01T12:00:00Z',fit_reference:'Synthetic',capacity_reference:'Synthetic',cash_reference:'Synthetic',agreement_reference:'Synthetic',tax:{treatment:'no_tax',review_reference:'Synthetic',rate_ids:[]}};
  const old=prepareInvoice(scope,billing,0,{now:new Date('2026-10-22T12:00:00Z')});
  const changed=applyOfferChanges(offers,changes);await draftScope('launch_site','new-catalog-regression',{catalog:changed});paymentCatalog(changed);
- assert.equal(JSON.stringify(scope),before);assert.equal(old.amount,118000);assert.deepEqual(prepareInvoice(scope,billing,0,{now:new Date('2026-10-22T12:00:00Z')}),old);
+ assert.equal(JSON.stringify(scope),before);assert.equal(old.amount,87800);assert.deepEqual(prepareInvoice(scope,billing,0,{now:new Date('2026-10-22T12:00:00Z')}),old);
 });
 
 test('the build probe exercises all current offers, form and page limits without changing inputs',()=>{
@@ -211,8 +209,8 @@ test('downloaded buyer documents and the report sample follow the same changed c
   const [baseline,launch,grow,sample]=await Promise.all(['website_baseline.txt','launch_site.txt','grow.txt','keep-running-sample.html'].map(read));
   assert.match(baseline,/Probe & Review/i);assert.doesNotMatch(baseline,/Website Baseline/);
   assert.match(launch,/(?:3|three) contact forms/i);assert.match(launch,/(?:7|seven) (?:agreed )?fields/i);
-  assert.match(grow,/(?:4|four) content\/SEO units/i);assert.match(grow,/35-minute/);
-  assert.doesNotMatch(grow,/Agree two units|Two defined units|two bounded search improvements/);assert.match(grow,/baseline observations and 120-day plan/);
+  assert.match(grow,/(?:4|four) content\/SEO units/i);assert.match(grow,/35-minute|35 minutes/);
+  assert.doesNotMatch(grow,/Agree two units|Two defined units|two bounded search improvements/);assert.match(grow,/120-day topic and local-presence plan/);
   assert.doesNotMatch(grow,/extra social graphic|newsletter excerpts/i);
   assert.match(sample,/<title>Sample Probe &amp; Care report/);
   assert.match(sample,/Probe &amp; Progress and Probe &amp; Campaign add researched improvements/);

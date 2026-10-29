@@ -11,18 +11,18 @@ const offers=await load('config/offers.json'),config=await load('config/site.jso
 
 test('monthly checkout explains conditional onboarding and prevents duplicate review fees',()=>{
  const pages=checkoutPages(offers,intakeContent(config));
- for(const [slug,monthly] of [['keep-running','$275'],['improve','$1,250'],['local-focus','$850'],['grow','$1,750']]){
+ for(const [slug,monthly] of [['keep-running','$149'],['improve','$299'],['local-focus','$199'],['grow','$499']]){
   const body=pages.find(p=>p.path===`/checkout/${slug}/`).body,before=body.slice(0,body.indexOf('<form'));
-  assert.ok(before.includes(monthly));assert.match(before,/\$375/);assert.match(before,/\$650/);
-  assert.match(before,/usable prior handoff or paid review reduces duplicated work/);assert.match(before,/not an automatic enrollment charge/);
-  assert.match(before,/Eligibility and the exact first invoice are confirmed before payment/);assert.match(before,/month-to-month/);
+  assert.ok(before.includes(monthly));assert.match(before,/\$195/);assert.match(before,/\$395/);
+  assert.match(before,/waived immediately after a W&amp;M build/);assert.match(before,/Production-only plans have no Care onboarding charge/);
+  assert.match(before,/Eligibility and the exact first invoice are confirmed before payment/);assert.match(before,/Cancel before the next billing date/);
  }
 });
 
 test('all fifteen offers have request-only checkout with the exact service preserved without JavaScript',()=>{
  const pages=checkoutPages(offers,intakeContent(config));assert.equal(pages.length,15);assert.equal(new Set(pages.map(p=>p.path)).size,15);
  for(const page of pages){const id=page.path.split('/')[2].replaceAll('-','_');assert.match(page.body,new RegExp(`name="service" value="${id}"`));assert.match(page.body,/name="request_kind" value="checkout"/);assert.match(page.body,/Nothing is booked or charged when you send this/);assert.match(page.body,/action="\/api\/inquiries"/);assert.doesNotMatch(page.body,/buy\.stripe\.com|invoice\.stripe\.com|name="(?:card|cvc|card_number)"/);}
- assert.match(pages.find(p=>p.path.includes('audit-fix-sprint')).body,/\$900/);assert.match(pages.find(p=>p.path.includes('website-baseline')).body,/\$650/);assert.match(pages.find(p=>p.path.includes('focused-site')).body,/\$1,800/);
+ assert.match(pages.find(p=>p.path.includes('audit-fix-sprint')).body,/\$424.50/);assert.match(pages.find(p=>p.path.includes('website-baseline')).body,/\$199/);assert.match(pages.find(p=>p.path.includes('focused-site')).body,/\$1,198/);
 });
 test('checkout and service-question context survives validation, status and native correction',()=>{
  for(const kind of ['checkout','question']){

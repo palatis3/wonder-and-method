@@ -12,7 +12,7 @@ const [config,offers,map,geography,previous]=await Promise.all(['config/site.jso
 const pages=renderPages({config,offers,map,geography});
 
 test('V3 website handoff records the agreed platform, editing task and paid ownership rights',async()=>{
- for(const [id,price] of [['launch_site',2950],['focused_site',4500],['business_site',7500],['signature_site',11500]]){
+ for(const [id,price] of [['launch_site',2195],['focused_site',2995],['business_site',4495],['signature_site',6495]]){
   const p=offers[id],draft=await draftScope(id,'synthetic-source-handoff');assert.equal(p.public_price,price);
   assert.deepEqual(p.payment_schedule.map(m=>m.percent),[40,30,30]);
   const content=JSON.stringify(draft.commercial_boundaries);assert.match(content,/editing guide/i);assert.match(content,/recorded demonstration/);assert.match(content,/one real editing task/);

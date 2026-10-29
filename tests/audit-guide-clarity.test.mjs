@@ -309,7 +309,7 @@ test('form troubleshooting finishes owner checks before help and points to the R
  assert.match(body('contact-form-not-working'),/site dashboard, open Automations/);
  assert.match(body('contact-form-not-working'),/Log out and send another test/);
  assert.doesNotMatch(body('contact-form-not-working'),/applicable agreement|additional contact-form scope|quarantine|approved retention/);
- assert.match(html,/\$650 Website Roadmap/);assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);assert.match(html,/No implementation is included/);assert.doesNotMatch(html,/web person/);
+ assert.match(html,/\$199 Website Roadmap/);assert.equal((html.match(/class="journal-callout guide-ending"/g)||[]).length,1);assert.match(html,/No implementation is included/);assert.doesNotMatch(html,/web person/);
  assert.match(guideInquiry(path('contact-form-not-working')).href,/offer=website_baseline&amp;goal=fix/);
  assert.match(sections('contact-form-not-working').find(x=>x.id==='review-options').body,/href="\/services\/website-audit\/#offer-website_baseline"/);
  assert.match(sections('contact-form-not-working').at(-1).body,/^<details>/);
@@ -340,7 +340,7 @@ test('prices and payment examples recalculate from the supplied offers',()=>{
  assert.match(cost,/Redirects and migration are assessed and quoted separately/);
  assert.match(cost,/assumed \$20 × 12 months/);
  assert.match(cost,/assumed yearly total/);
- assert.ok(body('website-maintenance-cost',changed).includes(money(3135)));
+ assert.ok(body('website-maintenance-cost',changed).includes(money(2955)));
  assert.ok(body('contact-form-not-working',changed).includes(money(450)));
  assert.ok(article('contact-form-not-working',changed).includes('$450 Website Roadmap'));assert.ok(article('contact-form-not-working',changed).includes('Ask about fixing your form'));
 });
@@ -365,9 +365,8 @@ test('timeline uses configuration, names both review windows, and preserves the 
 
 test('monthly care describes conditional onboarding, supported maintenance and written pause choice',()=>{
  for(const slug of ['website-maintenance-cost','website-care-versus-seo','website-project-cost']){
-  const text=body(slug);assert.match(text,/\$375/);assert.match(text,/\$650/);
-  assert.match(text,/usable.*(?:handoff|review)|(?:handoff|review).*usable/i);
-  assert.match(text,/not.*(?:mandatory|automatic).*enrollment|separate diagnostic service/);
+  const text=body(slug);assert.match(text,/\$195/);assert.match(text,/\$395/);
+  if(slug==='website-project-cost'){assert.match(text,/usable handoff or paid review reduces duplicated work/i);assert.match(text,/separate diagnostic service, not a mandatory enrollment charge/);}else{assert.match(text,/waived.*complete handoff|complete handoff.*waived/i);assert.match(text,/Production-only plans have no Care onboarding charge/);}
   assert.doesNotMatch(text,/starts with the one-time.*Website Roadmap|start with the.*Website Roadmap unless/);
  }
  for(const slug of ['website-maintenance-cost','website-care-versus-seo']){
@@ -375,7 +374,7 @@ test('monthly care describes conditional onboarding, supported maintenance and w
  }
  assert.match(body('website-care-versus-seo'),/Website Care’s checks continue/);
  assert.match(body('website-care-versus-seo'),/agree in writing whether care/);
- assert.match(body('website-care-versus-seo'),/no automatic \$275 care charge/);
+ assert.match(body('website-care-versus-seo'),/no automatic \$149 care charge/);
  assert.doesNotMatch(body('website-care-versus-seo'),/Historic prepaid rights/);
 });
 

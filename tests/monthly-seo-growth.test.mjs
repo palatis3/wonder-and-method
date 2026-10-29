@@ -4,16 +4,17 @@ import {readFile} from 'node:fs/promises';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket} from '../scripts/job-packet.mjs';
 import {assertPackageVisualOffers} from '../src/package-visuals.mjs';
+import {quotedOffer} from '../src/commercial.mjs';
 import {buyerPacks} from '../src/buyer-packs.mjs';
 import {renderPages} from '../src/pages.mjs';
 const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
 const [offers,config,map,geography,previous]=await Promise.all(['config/offers.json','config/site.json','authority/v5/site-map.json','authority/v5/geography.json','operations/historical/offers-2026-10-24-pre-v3.json'].map(read));
 
-test('V3 monthly contracts snapshot approved outputs, care and honest measurement',async()=>{
- const approved=await read('operations/v3-offers-20261029/approved-plan-catalog.json');
- for(const [id,price] of [['keep_running',275],['improve',1250],['local_focus',850],['grow',1750]]){
+test('V4 monthly contracts snapshot approved outputs, care and honest measurement',async()=>{
+ const approved=await read('operations/v4-offers-20261029/approved-catalog.json');
+ for(const [id,price] of [['keep_running',149],['improve',399],['local_focus',299],['grow',599]]){
   const plan=offers.plans[id],scope=await draftScope(id,'synthetic-monthly-upgrade'),source=approved.plans.find(p=>p.id===plan.v3_plan_id);
-  assert.equal(plan.monthly_price,price);assert.equal(source.price,price);const expectedIncludes=source.includes.map(line=>line.replace('uses both units.', 'uses two units.'));assert.deepEqual(scope.commercial_boundaries.deliverables,expectedIncludes);
+  assert.equal(plan.monthly_price,price);assert.equal(source.price,price);const approvedIncludes=source.includes.map(line=>line.replace('Select one monthly output: one new', 'Select one monthly output: for each output, choose one new').replaceAll('their existing agreed purposes','their existing purposes').replace('uses both units.','uses two units.'));assert.deepEqual(plan.v3.includes,approvedIncludes);const expectedIncludes=quotedOffer(offers,id).v3.includes;assert.deepEqual(scope.commercial_boundaries.deliverables,expectedIncludes);assert.equal(scope.commercial_snapshot.offer.care_variant,'brochure');
   assert.deepEqual(scope.commercial_snapshot.offer.v3.includes,expectedIncludes);assert.deepEqual(scope.exclusions,source.excludes);
   for(const check of source.acceptance)assert.ok(scope.acceptance_tests.includes(check));
   const future=structuredClone(offers);future.plans[id].v3.includes=['UNAPPROVED FUTURE RESEARCH'];
@@ -26,12 +27,12 @@ test('V3 monthly contracts snapshot approved outputs, care and honest measuremen
  assert.match(availability,/Existing accepted annual agreements retain their original terms/);
 });
 
-test('V3 care and local-search packs preserve distinct included work and avoid duplicate care bills',()=>{
+test('V4 care and local-search packs preserve distinct included work and avoid duplicate care bills',()=>{
  const packs=buyerPacks(offers),text=id=>JSON.stringify(packs.find(p=>p.id===id).sections);
- const care=text('keep_running');for(const pattern of [/quarterly/i,/recovery/i,/30 minutes/,/45 minutes/,/maintenance/i])assert.match(care,pattern);
- const improve=text('improve');assert.match(improve,/One main|one main/);assert.match(improve,/Care.*included|includes.*Care/i);
- const focus=text('local_focus');assert.match(focus,/one substantive output/);assert.match(focus,/no second Care bill/);assert.match(focus,/do not manufacture a baseline/);
- const grow=text('grow');for(const pattern of [/Two content\/SEO units/,/guide.*two units/,/up to five.*listing/i,/up to two individualized outreach/i,/not counted twice/,/duplicate care billing is prevented/])assert.match(grow,pattern);
+ const care=text('keep_running');for(const pattern of [/quarterly/i,/recovery/i,/60 minutes/,/one business day/,/maintenance/i])assert.match(care,pattern);
+ const improve=text('improve');assert.match(improve,/one (?:agreed )?main/i);assert.match(improve,/Care.*optional|optional.*Care/i);
+ const focus=text('local_focus');assert.match(focus,/one new standard page OR refresh up to two existing pages/);assert.match(focus,/Care.*optional|optional.*Care/i);assert.match(focus,/avoid invented baselines/);
+ const grow=text('grow');for(const pattern of [/Two content\/SEO units/,/guide.*two units/,/up to five.*listing/i,/up to two short owner-approved Google profile update posts/i,/in addition to the two content\/SEO units/,/Care.*optional|optional.*Care/i])assert.match(grow,pattern);
  for(const id of ['improve','local_focus','grow'])assert.doesNotMatch(text(id),/1 extra graphic or short excerpt|150-word newsletter/);
 });
 

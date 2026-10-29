@@ -47,9 +47,9 @@ function calculatorFixture(annual=true,catalog=offers){
 test('calculator includes known hosting while naming other unknown costs',()=>{
  const f=calculatorFixture();try{
   assert.equal(f.output['calculator-error'].textContent,'');
-  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$24,025/);
+  assert.match(f.output['cost-total'].textContent,/Your estimate so far: \$9,859/);
   assert.match(f.output['external-note'].textContent,/Still to add: domain, email and other paid tools/);
-  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$24,075/);
+  f.fields.external.value='50';f.update();assert.match(f.output['cost-total'].textContent,/Estimated total: \$9,909/);
  }finally{f.restore();}
 });
 test('historical annual toggling restores unedited defaults and preserves edited monthly counts',()=>{

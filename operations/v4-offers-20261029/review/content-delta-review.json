@@ -1,0 +1,29 @@
+{
+  "reviewedAt": "2026-10-29",
+  "decision": "accept deliberate V4 offer changes",
+  "counts": {
+    "Changed page": 2388,
+    "Changed download": 17,
+    "Changed asset": 9
+  },
+  "unchanged": [
+    "route inventory",
+    "canonical and robots policy",
+    "navigation link inventory",
+    "media references"
+  ],
+  "changedAssets": [
+    "Changed asset: _headers",
+    "Changed asset: assets/asset-hashes.json",
+    "Changed asset: assets/buyer-packs/index.json",
+    "Changed asset: assets/buyer-packs/owned-audit-two-fix-record.json",
+    "Changed asset: assets/calculator.js",
+    "Changed asset: assets/client.js",
+    "Changed asset: assets/prices.json",
+    "Changed asset: assets/site-home.css",
+    "Changed asset: assets/site.css"
+  ],
+  "changesSha256": "004d4654e4fe5358844d606f00efe9c56062fd1853c9d0a7a06c2e3d36616c85",
+  "renderedAuditSha256": "a9a189088ec5f0dd22aa34385f2c675ac90e0e4eead279705235d7168463332b",
+  "falsePositiveDisposition": "All nine candidate snippets concern three existing factual county examples: Hanson Nature Center reserved hours, Four Springs House reserved hours, and Cheyenne Botanic Gardens public event rates. None is a Wonder & Method offer or internal delivery budget. No commercial stale-price/scope finding remains."
+}

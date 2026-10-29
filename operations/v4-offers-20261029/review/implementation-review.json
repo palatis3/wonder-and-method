@@ -1,0 +1,570 @@
+{
+  "reviewer": "Independent Astra buyer/implementation judge",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-29T17:06:13.555Z",
+  "status": "PASS",
+  "scope": "Read-only review of current commercial source, final rendered HTML, test migration and specified evidence rebindings. No production action or visual-browser certification.",
+  "findings": [],
+  "ciExclusionRebind": {
+    "status": "APPROVED",
+    "count": 587,
+    "identitiesReasonsAndSkipsUnchanged": true,
+    "bindings": [
+      {
+        "path": "tests/browser/buyer-journeys.spec.mjs",
+        "beforeSha256": "7d472bd92da752d6aa3cad1e50f86665ee7b88b4645822be8ed43facb131db07",
+        "afterSha256": "ff2df8e826efcdcf13c71fa8cc808bb48063044e70339a43a1ce791b01924a80",
+        "skipLinesUnchanged": true
+      },
+      {
+        "path": "tests/browser/living-city-night.spec.mjs",
+        "beforeSha256": "993c298d7eb07da14a4df6acdc4596b5f8bf3dc24138ab07c4cd020dfcd4577a",
+        "afterSha256": "f87f439954aa11aa2b0c9e5f747a298c5e34a85082ea3aad3ace233f919468c3",
+        "skipLinesUnchanged": true
+      },
+      {
+        "path": "tests/browser/no-javascript.spec.mjs",
+        "beforeSha256": "1d54f1c7d72ba72f2f734f9eb3e6167402abf5f7e22132645a2ea06aa8e42866",
+        "afterSha256": "5d91ea1687c464b3f04b9afe2e97a15bef671c09334c33b9447a52b7366038e5",
+        "skipLinesUnchanged": true
+      }
+    ],
+    "conditions": "Change only the three listed sourceFiles bindings to their verified afterSha256. Preserve all 587 exclusions, reasons, identities and skip predicates. The complete three diffs retain assertions and update only V4 amounts, ROI results and current offer/CTA wording.",
+    "currentExclusionsDeepEqualHEAD": true,
+    "currentPolicySHA256": "c3923893a8c5cbc2da7d292822e0eef906d756ce40adb4b7d3e63290b62f31a4",
+    "appliedRebindVerified": true,
+    "allowedMetadataChanges": [
+      "reviewedBy",
+      "reviewedAt",
+      "basis"
+    ]
+  },
+  "conceptPreviewRevalidation": {
+    "status": "APPROVED",
+    "recaptured": false,
+    "capturedAt": "2026-10-29T10:44:57.621Z",
+    "capturedAtUnchanged": true,
+    "originalCaptureRecordsAndBuiltPageHashesPreserved": true,
+    "originalSourceHashesRetainedInCaptureSourceHashes": true,
+    "actualAssetsVerified": 24,
+    "assetHashes": [
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-desktop.webp",
+        "sha256": "6ccc68ae638c1d4a0008e2cfb68a33dbd36e65feb2e6699c3f58c9a7361eeaad"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-desktop-480.webp",
+        "sha256": "4155e3953a7ebf266a902cf3ae45e9eff2d6924663082de8d48c6b4450ddbd81"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-desktop-640.webp",
+        "sha256": "0f715534f264cc01ba185ecf222db19f38898ab8178c8f445175db54f32fb92a"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-desktop-960.webp",
+        "sha256": "be433982f0d1f82dbbc7aa3d91a6c68108024d62144a810350b4dc899f559633"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-desktop.webp",
+        "sha256": "8f4bc201669555a3ea2b17408e3ef12d258c87f01bf6da7cba52291dedc12aed"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-desktop-480.webp",
+        "sha256": "3334945c4f0ef0e9b2154affd3107c1449ab9a5293a18c53fc65accf39277181"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-desktop-640.webp",
+        "sha256": "1c4aaf787f10e064f365636bfc3eed7de8955c7b4bc5a49c1e191d629d52ac6a"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-desktop-960.webp",
+        "sha256": "f636f4b5082b73d796102a5ce501212f567177d813377d9994dc2403c428478b"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-desktop.webp",
+        "sha256": "bab642ec8f314a3d1926e6487828d59650399bf07c992e42fccccb0032d3b6f7"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-desktop-480.webp",
+        "sha256": "4126e7223a66edbcee48bd1405c3183ac5d5212c70caf34772ebc6db30acdf27"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-desktop-640.webp",
+        "sha256": "ba2a499401e26a682936fd1392a0bb1e2d99961d3ce10eb31c7b93fc82fd4e2e"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-desktop-960.webp",
+        "sha256": "e9c5440794792f018793a765158f9d972089fccd88211e1f8019aab0e2ff0be6"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-phone.webp",
+        "sha256": "640933a197c83212587bb04ad530f29404c6e1d30c0d8afb60b7f38882d6ac55"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-phone-350.webp",
+        "sha256": "5913e4d9316c889e3f7f5936f35bae9b3d703d8cf1982de1216e9322d3fac03b"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-phone-525.webp",
+        "sha256": "838d50591daf05523eba1df61953b2885392521534a9e75b3699a0f49cf10d8a"
+      },
+      {
+        "path": "/assets/work/concepts/fieldwork-showcase-phone-700.webp",
+        "sha256": "7b47fd79763c28690c87e09827e90e2169550dd3ec65359c1f7eece45a2024d0"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-phone.webp",
+        "sha256": "59d49833d09cb4300105568a131b4afd55f721a6a98763bac623f0b9534d680e"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-phone-350.webp",
+        "sha256": "97b323288926b084a087c9ffc131a812c787d86ea3e39b5e9bfadda4b81454c8"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-phone-525.webp",
+        "sha256": "d67866536314a06aa27f17d30db8608c05dbeea484c2bc99048b93cb7ddfcbd3"
+      },
+      {
+        "path": "/assets/work/concepts/northline-showcase-phone-700.webp",
+        "sha256": "d1d6ae2065664edf02344929df22ed94e2396871fdc2703f4baec2b81e886d55"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-phone.webp",
+        "sha256": "97ec18a556be0b9fb4d561cc1e9a5d826f0c2254bfa4f587e74514d7a7993064"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-phone-350.webp",
+        "sha256": "e241bf63b3d49859e0bdc922f7ea5722e77a2fd0d2b06057352bb4865477de94"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-phone-525.webp",
+        "sha256": "1baf138137523e68d1c0ce586459700356e411560628415c4179a72906503008"
+      },
+      {
+        "path": "/assets/work/concepts/hearthside-showcase-phone-700.webp",
+        "sha256": "70d5007d466ab8139b4abad947f9171b26b6dfeeefd3658085509e059da80693"
+      }
+    ],
+    "completeArticles": [
+      {
+        "path": "/work/fieldwork/",
+        "beforeSha256": "7c6f6c66483f386a00f0b5b414705f14ef187a0250e6e39d9ab3db3ba7f94cff",
+        "afterSha256": "7c6f6c66483f386a00f0b5b414705f14ef187a0250e6e39d9ab3db3ba7f94cff",
+        "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+      },
+      {
+        "path": "/work/northline/",
+        "beforeSha256": "6e6daf0e11fb9abca05bb6f172d699755e7a8bc5c17f0f152d428607b1189f55",
+        "afterSha256": "6e6daf0e11fb9abca05bb6f172d699755e7a8bc5c17f0f152d428607b1189f55",
+        "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+      },
+      {
+        "path": "/work/hearthside/",
+        "beforeSha256": "050d7fbb73daceb19a046e434133e55add697e9197d90ff7f35bc60c6b4ae027",
+        "afterSha256": "050d7fbb73daceb19a046e434133e55add697e9197d90ff7f35bc60c6b4ae027",
+        "bodyClass": "studio-site edition-living-city studio-inner     studio-concept"
+      }
+    ],
+    "sharedCss": {
+      "unchangedApplicableRules": true,
+      "addedRulesRequiringAbsentV4Classes": 62
+    },
+    "fontFilesVerified": 3,
+    "justification": "Independently reproduced the source/article/PostCSS checks without executing the mutating revalidation script. All actual capture bytes match prior records; three full concept articles and inline artwork match prior rendered pages; portfolio source, concept CSS and font bytes are unchanged. Only unrelated projectCalendar text changed in buyer-experience. Revalidation preserves original capturedAt and does not claim recapture."
+  },
+  "commercialReview": {
+    "status": "PASS",
+    "plans": 15,
+    "modules": 13,
+    "monthlyVariants": 11,
+    "workflowVariants": 2,
+    "approvedCatalogSHA256": "c1e7c12e560c33b1eed4fa8369fbd6a2cc147d8457dfba06aa44575344966b7a",
+    "checks": [
+      "All fees match the approved catalog. Scope/exclusion/acceptance/support comparison found only equivalent normalization wording and removal of an internal Storefront schedule annotation.",
+      "Website page/design/journey/guide/motion boundaries, writing, measurement, review gates and 30/60/60/90-day support retained. Storefront remains $8,500 unchanged.",
+      "All selected monthly quotes preserve their price and selected Care obligations. Production-only omits maintenance/incident/recovery/edit work. Purchased Care includes 60 minutes of supplied edits. Hosting credit, first-cycle measurement, conditional waived onboarding, cancellation and three-cycle fee protection survive rendered packets.",
+      "Two $1,495 automation alternatives remain separate and non-stacking. Native inquiry selectors retain variant choices and reject unsupported combinations. Checkout is request-only: nothing booked or charged.",
+      "Public stories explain useful outcomes without fabricated client proof or guaranteed results. Full scopes remain accessible. Rendered pricing, service, payment and sampled checkout HTML were inspected after the final build.",
+      "Historical accepted scope prices and annual rights remain isolated from prospective changes.",
+      "Public projection and full-dist HTML/JS scans found no internal planning/economics fields. Broad reserved-hours search hits were unrelated county venue rental descriptions."
+    ]
+  },
+  "testMigration": {
+    "status": "PASS",
+    "changedTrackedFiles": 43,
+    "method": "Structural screening of every tracked test diff, manual review of nonliteral changes and complete review of the three CI binding candidates. Pricing, quantities, descriptions and locators change to V4; assertions, negative guards and historical-snapshot coverage remain. All unchanged skip/fixme/only predicates preserved.",
+    "checks": [
+      "Direct approved-catalog assertions remain alongside selected quote-composition assertions.",
+      "Care optionality and posts replace obsolete compulsory-Care/outreach expectations; original no-double-billing semantics remain in approved acceptance and quote tests.",
+      "Card regexes accommodate added CSS classes while retaining IDs/counts. Variant loops expand coverage.",
+      "Native form correction replay, keyboard/viewport checks, mock-only payment behavior, exact amounts/tax safeguards and immutable accepted snapshots remain asserted."
+    ],
+    "executedCommand": "node --test --test-reporter=dot tests/v4-offers.test.mjs tests/expanded-website-packages.test.mjs tests/monthly-seo-growth.test.mjs",
+    "executedTests": 21,
+    "executedResult": "PASS"
+  },
+  "build": {
+    "routes": 2437,
+    "bindingAssertions": 2716,
+    "log": "output/v4-offers/final-build.log"
+  },
+  "limitations": [
+    "No browser visual/performance suite performed by this reviewer.",
+    "Build log contains separate homepage-screenshot staleness warnings. Approval covers only the named three concept previews and 24 assets, not that separate homepage screenshot.",
+    "No real inquiry, payment, email, deployment or historical agreement mutation performed."
+  ],
+  "hashes": {
+    "sources": [
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/operations/v4-offers-20261029/approved-catalog.json",
+        "sha256": "c1e7c12e560c33b1eed4fa8369fbd6a2cc147d8457dfba06aa44575344966b7a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/config/offers.json",
+        "sha256": "210a6042a9fe96e41f60667b750e56e34241785284795b68ea16bacf28b14a0a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/config/site.json",
+        "sha256": "8d92bf6c6b7e5d0059d741d118fa0469b22d16aa608a38cd9848588442d5cb65"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/config/ci-browser-exclusions.json",
+        "sha256": "c3923893a8c5cbc2da7d292822e0eef906d756ce40adb4b7d3e63290b62f31a4"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/operations/historical/offers-2026-10-29-v3.json",
+        "sha256": "66b67c5b28dd9471b18488c3fb5ab39d4b1d046f4806c6c3ff039f4f055f46b6"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/v4-offer-story.mjs",
+        "sha256": "57ace855b033c16dfa3e90565d4f3a38d6dad72b1ce0fa77e51e7d876aeb529a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/v3-offer-content.mjs",
+        "sha256": "eadc1a766102df35e0b4d1cf5b39b5e1dd2ec546360def762d1e1e577261a54e"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/v3-service-content.mjs",
+        "sha256": "8debc53d24082c99aa08a19638780132453374d23659652b179554f18375cb84"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/shared.mjs",
+        "sha256": "b359f8d7c488f4d2ed34a99575394d843e3c3efea8fffadb78bea0f0c17eca81"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/commercial.mjs",
+        "sha256": "de9c8943aaabb3f5a9f2177d45cfc08db9354e2a1620850243486dda950fb333"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/inquiry.mjs",
+        "sha256": "5876b910b8304e9b074b6c89c501e79bcda1b57483f744286cc9057b743c6498"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/inquiry-form.mjs",
+        "sha256": "fed64d5d36fd0222e49aef3d10531725b4753214fd4ae573237884fd333a2dd0"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/client.js",
+        "sha256": "1c4869cf681511b544c04e0e384111be6e9f129fc8e36b83d4f1ceac5c57ee14"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/checkout-content.mjs",
+        "sha256": "76220c4938c349c6c7636c4586f262032f12f738225b0c49b389c7e4c62e49b8"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/offer-catalog.mjs",
+        "sha256": "fa4b10488594af98df9464f64152dd6df6dda6313216e34ae7b9a6a8b8547118"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/calculator.js",
+        "sha256": "2169c8750c17f8ffa0d2f9968562fc28443d0879e3cfddf70b336a712016a48a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/buyer-experience.mjs",
+        "sha256": "4683a544ba7a3e46fae9a9fcbbb8601eadc0454d8dd865354a1f549e65014ae0"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/assets/section-surfaces.css",
+        "sha256": "60471da3ab00efb7e29fd4139252eef11c66c7d4442f227483a80e4c49d23cf1"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/city-preview-captures.json",
+        "sha256": "22a4a454a6ab24050b4c9ba457dc92327c46b29e05ea4c02f7b89002f8b358d4"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/portfolio-concepts.mjs",
+        "sha256": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/assets/portfolio-concepts.css",
+        "sha256": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/src/assets/fonts.css",
+        "sha256": "f0257919addd2f7dd4e98ecf58cb712be19a98e813f7c5f6c87f26c4858a3063"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/scripts/create-job.mjs",
+        "sha256": "a21b00eb8915039cac11d934e2967d2b853ea2fba35a3df1aed3babdb965def4"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/scripts/check-v3-offer-bindings.mjs",
+        "sha256": "60dad20fbda95409c71b39687fd1bdf4132aff1e4eacce20189f1e33293f0324"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/operations/v4-offers-20261029/revalidate-concept-previews.mjs",
+        "sha256": "373ddb79c96947af94d342f7bac18017cf5677d045a85f831e540a333ed928aa"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/operations/v4-offers-20261029/review/ci-exclusion-rebind-candidates.json",
+        "sha256": "ca7714aab2d8621395a4e669dfc45a285a5163a9d0e4dc9d45ee6797e3ab3fcf"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/operations/v4-offers-20261029/review/concept-preview-revalidation.json",
+        "sha256": "680ad16dd60269bd4833737d1806b2c379dede217201ca1d43f83eb1b27f4376"
+      }
+    ],
+    "tests": [
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/addons-backend.test.mjs",
+        "sha256": "ea7d8f2945e419ac9a668fded547f842a6865643d788cfbc2266a6e00358d77a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/addons-content.test.mjs",
+        "sha256": "4a3071e3964c29fc80a72ce9818cf50ce11d420b0ee013149c885a0db76e8f6d"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/addons-frontend.test.mjs",
+        "sha256": "0480ca611272048cdb7b0a603707343f44eda7c2da1d662db2c4d1e0ab8113ce"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/approved-rerun-backend.test.mjs",
+        "sha256": "7952db3c7a821eb7fd06425954baa0f42075cd5d1a2585067d0d6b0aad45705a"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-buyer-packs-clarity.test.mjs",
+        "sha256": "ed219a577fe7eab46e5c0857acaf0e8486935e920d1f75c59223787301a66e21"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-calculator-clarity.test.mjs",
+        "sha256": "6d32dd748de1f87fda5c1eaa9ec6f9fa001f26d419063c6b7c3d1a55b1f210e8"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-guide-clarity.test.mjs",
+        "sha256": "cbbe51b1bec983489ca0cabdd91e91df0a4d064ba69c25f06be02533e43d0e13"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-implementation.test.mjs",
+        "sha256": "43efb7949c25bd16eecb0eb954b91a8e3b8358c81d1d6b49e8c25e6266413fd1"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-inquiry-clarity.test.mjs",
+        "sha256": "a27ec7e933823820c36855782e13354cdd6b672641d31f6aecf07e67ac2d691e"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-search-metadata.test.mjs",
+        "sha256": "5dbbb2740d0c995f9b6b33722cc87d56c362d42e6e116597cef280cb45d2459c"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-service-help-clarity.test.mjs",
+        "sha256": "b4bcc184c1d29e893f14022198fbb9d20da08cab2d08aebef10e47f6b97d2276"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/audit-work-clarity.test.mjs",
+        "sha256": "2c81ff6488b84bfdaab470275f8f8cb6ac5a2311c7f4edd1d5dc08994ddff015"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/baselines/site-content.json",
+        "sha256": "3b49852e50d786dc879f9e8ebfce5006cfc76aa939dc6ec76f0c650dc448f964"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/addons.spec.mjs",
+        "sha256": "efc58379c1a3dbd8ac8c5ffb842fde5d6df86beb50acdf5ced3f3417f0ee9c01"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/approved-rerun-backend.spec.mjs",
+        "sha256": "7e805047d5ca906d3e1befc1ffb3721d392ab497fcefd6005b645229044fc91e"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/buyer-decisions.spec.mjs",
+        "sha256": "79e1faa7e18956ee4f9c5091c15c10c12d7b71ec907074afbde004a25251153b"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/buyer-journeys.spec.mjs",
+        "sha256": "ff2df8e826efcdcf13c71fa8cc808bb48063044e70339a43a1ce791b01924a80"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/living-city-night.spec.mjs",
+        "sha256": "f87f439954aa11aa2b0c9e5f747a298c5e34a85082ea3aad3ace233f919468c3"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/no-javascript.spec.mjs",
+        "sha256": "5d91ea1687c464b3f04b9afe2e97a15bef671c09334c33b9447a52b7366038e5"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/payment-schedule.spec.mjs",
+        "sha256": "cd5ce13083cc6206e0aef6defed58b13f6aefa56fc13d905d45b707c1578bd59"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/research-guides.spec.mjs",
+        "sha256": "59457111335e5834aa0d0164617e12bc0855077b3862374253999e4ad9df344f"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/browser/ux-improvements.spec.mjs",
+        "sha256": "684459ad33beea4a501e9f2b7046cefbde00c772b57b56fb64731811a393960c"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/business-documents.test.mjs",
+        "sha256": "f0cb819f08b67cb5d8f822508654b83054c6e77abda59c2bf856c5cc98f2ee26"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/buyer-experience.test.mjs",
+        "sha256": "a5309a98726f6e4383291e66ec820f9916aa6ec8cdb8341d02787e5e334e8fc3"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/buyer-packs.test.mjs",
+        "sha256": "82902bee530c19e59cd646e4e5cdade47f29e91afd5277ed22428d108b69b50b"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/checkout.test.mjs",
+        "sha256": "81a27d678a37c28bac921734f37676932edad176072568cf5945558754a01e01"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/claude-clarity-frontend.test.mjs",
+        "sha256": "bf1b19e4f60c78b2c26ae429852ebb23522f3a101367983492350135405bd17f"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/drafts.test.mjs",
+        "sha256": "22c96bdf7f0811681b352094e14f5e15e5c6d2cf6e30f49b02478128830fa851"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/expanded-website-packages.test.mjs",
+        "sha256": "a4dcd3cd9fcf142af00a6c7a5e2fb53481e93469b1651f56d811be43a70d1334"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/job-packet.test.mjs",
+        "sha256": "fe55a829c8ce0a53e68d1700257ccf1399016687c544c27e80abe3cc9c5a32c6"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/journal.test.mjs",
+        "sha256": "044cbc4f9772b4dbe75d8e80cf2305ad3d08554e71dc3b0c8fb84e24c4a24b88"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/location-services.test.mjs",
+        "sha256": "c859274aab28e75477dc5044ab8db2401f0136d432b025262951f07837ce10a0"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/monthly-seo-growth.test.mjs",
+        "sha256": "441b6a75dcac16d07c05530d269b41eb7459a45cfb116464544afc4d5b863187"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/offer-catalog.test.mjs",
+        "sha256": "31088481b6a760c5edf0ff1b16d4e3bdecd87b899851cd510b88f355f930c574"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/payments.test.mjs",
+        "sha256": "d11b33bf7f9aedc7f6228931310c10b039f65a6c67e2850d29c87f2960748e1c"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/plan-clarity.test.mjs",
+        "sha256": "6f6954f1ea0e7de3cad468b92527884cbac9cc3c39ac141e1f82f568fc36a374"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/project-milestones.test.mjs",
+        "sha256": "1f038051d75ac051f8a590d44d7df3a7b8a8895a8c32e1e3c0209a2692126fe2"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/rerun2-buyer-content.test.mjs",
+        "sha256": "3aff0136794361f54f77db78e19a6d0fc02f651a225ebe368f15659eea98d021"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/rerun2-content.test.mjs",
+        "sha256": "5c2376e757de5cef243e87cc1dac486bd94f31ac0116fc7d9cd7f86345150302"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/rerun2-guide-consolidation.test.mjs",
+        "sha256": "c2cdcd854a23c30bef6f42ab6bfffa5afb2fce2c55d5f1a74c8d721865cc3cb1"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/search-expansion.test.mjs",
+        "sha256": "664ce45904ce8ca295a2fbb1e620958b56afe2334c7def3fda91c651499fc633"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/source-handoff-offers.test.mjs",
+        "sha256": "a62942486d1c8777eb5f567f61af93ced182ae9be3dc6bcb92feaf0a6fe3f437"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/v3-source-repair.test.mjs",
+        "sha256": "746c8e0355fe58d26c522cee583dddfd30213d26680e786ebfefbbf07ffad38f"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/tests/v4-offers.test.mjs",
+        "sha256": "1dfb6552fd2e067428288569d5b9ab09b0417b4e120432f7c0530cdddc3271aa"
+      }
+    ],
+    "rendered": [
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/index.html",
+        "sha256": "4ce5088ef6298b11196ca571dfbd1ea23d68290719e56535df0881732b6c99e7"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/pricing/index.html",
+        "sha256": "203ab62ae711d74a3d3c8d9e83ab40f03e887d4b84641e878618b6d96ab216d8"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/services/web-design/index.html",
+        "sha256": "485544757189f87d05b639c4b67f5c7d162cab6d5b3a1cdff328376125959412"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/services/seo/index.html",
+        "sha256": "c8decbb027500d1a6b3dc07c8410dbb511ff827d45bf54c30083d456d6e0d49e"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/services/website-care/index.html",
+        "sha256": "1c64eb28873b29c762fa2709d6477079cdcda70ba57f688f3988239596e13260"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/checkout/local-focus/index.html",
+        "sha256": "8daba369e8b8680ec337464555ae2935c07874a6d53e410b23235d6b3a7b6ee8"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/checkout/workflow/index.html",
+        "sha256": "2e4b6f16c454665dd4411c0efbb338b4de4e5f5bdb7d4211b76e2b5eac43c57c"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/payments/index.html",
+        "sha256": "3c0a57a7b5b81812ebd37230de68fd97de4954732e883f6c9b22437d9bd2cfbd"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/work/fieldwork/index.html",
+        "sha256": "dff610406274adaa4a07ef1596cc25ea06784c96b30f208b1537421cef0cb0cc"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/work/northline/index.html",
+        "sha256": "ee672dc78166c38e7adc55d06ff68e2ae05f3f4fbfe57f8a0631647b5158c520"
+      },
+      {
+        "path": "C:/Wonder and Method/v4-implementation-20261029/site/dist/work/hearthside/index.html",
+        "sha256": "31fecce0540d6bc13ce0611fc5d710769cf792647692c95386d05a5ad0975d4a"
+      }
+    ],
+    "testDiffSHA256": "5fa9d7d212c80f15e0def95bf8e906c8c9b326d9b844ca414b1ecb15de3c619a",
+    "buildLog": {
+      "path": "C:/Wonder and Method/v4-implementation-20261029/site/output/v4-offers/final-build.log",
+      "sha256": "8e077324b643898e0b47072665ff0e02ffdd1d4349377d75b98676d35a5cf084"
+    }
+  },
+  "resolvedFindings": [
+    {
+      "id": "I1",
+      "severity": "blocking",
+      "file": "config/ci-browser-exclusions.json",
+      "field": "exclusions[*].identity",
+      "summary": "Applied rebind changed Unicode identity separators to mojibake, so exclusion records no longer match HEAD.",
+      "affectedRecords": 587,
+      "fix": "Restore original policy via exact UTF-8 git bytes, then update only the three approved source hashes and reviewer metadata. Recheck all 587 exclusion objects for exact equality before release.",
+      "status": "RESOLVED",
+      "resolution": "Policy rebuilt from original binary UTF-8 git bytes. All 587 exclusion objects now exactly equal HEAD; only approved source hashes and review metadata differ."
+    }
+  ]
+}

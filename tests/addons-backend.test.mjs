@@ -16,7 +16,7 @@ import {createServer} from '../scripts/server.mjs';
 import {inquiryResponseHtml} from '../src/inquiry-response.mjs';
 import worker,{notifyInquiry} from '../deployment/worker.mjs';
 
-const expectedPrices={reporting_dashboard:1500,logo_identity:1800,standard_page:350,three_page_bundle:900,practical_guide:800,campaign_landing_page:1200,booking_setup:850,guided_quote_form:1200,business_email_domain:650,profile_recovery:650,print_collateral:750,care_onboarding:375,single_fix:450};
+const expectedPrices={reporting_dashboard:795,logo_identity:995,standard_page:195,three_page_bundle:525,practical_guide:495,campaign_landing_page:695,booking_setup:495,guided_quote_form:695,business_email_domain:295,profile_recovery:395,print_collateral:395,care_onboarding:195,single_fix:295};
 const inquiry={name:'Synthetic Additions',email:'additions@example.test',business:'Synthetic Only',website:'',service:'launch_site',message:'Synthetic request for the selected website additions.'};
 const now=new Date('2026-10-20T12:00:00Z');
 async function accepted(id='launch_site',ids=['standard_page','booking_setup'],payment_schedule,catalog){
@@ -83,7 +83,7 @@ test('forged public prices are never saved or used and all inquiry intents retai
   assert.deepEqual(result.errors,{});assert.deepEqual(result.value.add_ons,['booking_setup']);
   for(const key of ['public_price','price','total'])assert.equal(result.value[key],undefined);
  }
- assert.equal(priceAddons(['booking_setup']).total,850);
+ assert.equal(priceAddons(['booking_setup']).total,495);
 });
 
 test('edge native and JSON submissions canonicalize, dedupe and export the same selection',async t=>{
@@ -119,7 +119,7 @@ test('notification includes requested additions, freezes new requests, and prese
  env.DB.sqlite.prepare("UPDATE inquiries SET synthetic=0,delivery_status='pending' WHERE id=?").run(saved.reference);
  const bodies=[],sender=async(_url,options)=>{bodies.push(options.body);return new Response('',{status:503});},instant=Date.now();
  await notifyInquiry(env,saved.reference,sender,instant);
- assert.match(JSON.parse(bodies[0]).text,/Booking or Deposit Setup/);assert.match(JSON.parse(bodies[0]).text,/\$850/);
+ assert.match(JSON.parse(bodies[0]).text,/Booking or Deposit Setup/);assert.match(JSON.parse(bodies[0]).text,/\$495/);
  const payload=JSON.parse(env.DB.sqlite.prepare('SELECT payload FROM inquiries WHERE id=?').get(saved.reference).payload);
  env.DB.sqlite.prepare('UPDATE inquiries SET payload=? WHERE id=?').run(JSON.stringify({...payload,add_ons:['logo_identity']}),saved.reference);
  env.NOTIFICATION_TO='changed@example.test';
@@ -150,11 +150,11 @@ test('local native parser rejects repeated fields before saving and shares canon
 });
 
 test('all four website builds combine exact frozen line items with unchanged base terms and 40/30/30 stages',async()=>{
- for(const [id,base]of [['launch_site',2950],['focused_site',4500],['business_site',7500],['signature_site',11500]]){
+ for(const [id,base]of [['launch_site',2195],['focused_site',2995],['business_site',4495],['signature_site',6495]]){
   const original=structuredClone(offers[id]),scope=await draftScope(id,'synthetic-additions',{add_ons:['standard_page','booking_setup']});
   const quote=assertAddonCommercialSnapshot(scope);
-  assert.equal(quote.base_price,base);assert.equal(quote.add_ons_total,1200);assert.equal(scope.fixed_price,base+1200);
-  assert.deepEqual(scope.milestones.map(m=>m.amount),[(base+1200)*.4,(base+1200)*.3,(base+1200)*.3]);
+  assert.equal(quote.base_price,base);assert.equal(quote.add_ons_total,690);assert.equal(scope.fixed_price,base+690);
+  assert.deepEqual(scope.milestones.map(m=>m.amount),[(base+690)*.4,(base+690)*.3,(base+690)*.3]);
   assert.deepEqual(offers[id],original);assert.deepEqual(quote.base_payment_schedule,original.payment_schedule);
   const packet=renderJobPacket(scope,{},offers);
   assert.match(packet,/Selected website additions/);assert.match(packet,/Booking or Deposit Setup/);assert.equal((packet.match(/class="invoice"/g)||[]).length,3);
@@ -164,21 +164,21 @@ test('all four website builds combine exact frozen line items with unchanged bas
 });
 
 test('standalone additions require a nonempty selection and explicit internally consistent schedule',async()=>{
- const ids=['booking_setup','standard_page'],schedule=[{event:'After written scope approval',percent:50,amount:600},{event:'After written acceptance of completed additions',percent:50,amount:600}];
+ const ids=['booking_setup','standard_page'],schedule=[{event:'After written scope approval',percent:50,amount:345},{event:'After written acceptance of completed additions',percent:50,amount:345}];
  await assert.rejects(()=>draftScope('website_additions','synthetic-additions'),/at least one/);
  await assert.rejects(()=>draftScope('website_additions','synthetic-additions',{add_ons:ids}),/explicit agreed payment schedule/);
  for(const invalid of [[],[{event:'Accepted',percent:100,amount:1}],[{event:'',percent:100,amount:1200}],[{event:'Accepted',percent:50,amount:450}],[{event:'Accepted',percent:100,amount:-1200}],[{event:'Accepted',percent:100,amount:1200.001}]]){
   await assert.rejects(()=>draftScope('website_additions','synthetic-additions',{add_ons:ids,payment_schedule:invalid}));
  }
  const {scope,billing}=await accepted('website_additions',ids,schedule);
- assert.equal(scope.fixed_price,1200);assert.equal(scope.billing_option,'one_off');assert.equal(scope.service_period,null);
+ assert.equal(scope.fixed_price,690);assert.equal(scope.billing_option,'one_off');assert.equal(scope.service_period,null);
  assert.equal(assertAddonCommercialSnapshot(scope).payment_rule,'agreed_standalone');
- assert.equal(prepareInvoice(scope,billing,0,{now}).amount,60000);
+ assert.equal(prepareInvoice(scope,billing,0,{now}).amount,34500);
  assert.equal((renderJobPacket(scope,{},offers).match(/class="invoice"/g)||[]).length,2);
 });
 
 test('new compositions bind accepted prices, selection and boundaries; stale or absent evidence blocks billing',async()=>{
- const original=await accepted();assert.equal(prepareInvoice(original.scope,original.billing,0,{now}).amount,166000);
+ const original=await accepted();assert.equal(prepareInvoice(original.scope,original.billing,0,{now}).amount,115400);
  for(const change of [
   s=>{delete s.buyer_confirmation.accepted_commercial_digest;},
   s=>{s.buyer_confirmation.accepted_version=2;},
@@ -197,15 +197,15 @@ test('new compositions bind accepted prices, selection and boundaries; stale or 
   assert.throws(()=>prepareInvoice(scope,original.billing,0,{now}));
   const packet=renderJobPacket(scope,{},offers);assert.match(packet,/Commercial mismatch/);assert.doesNotMatch(packet,/class="invoice"/);
  }
- const samePrice=await accepted('launch_site',['business_email_domain']),substitute=await draftScope('launch_site','synthetic-additions',{add_ons:['profile_recovery']});
+ const samePrice=await accepted('launch_site',['profile_recovery']),substitute=await draftScope('launch_site','synthetic-additions',{add_ons:['print_collateral']});
  samePrice.scope.add_ons=substitute.add_ons;samePrice.scope.commercial_snapshot=substitute.commercial_snapshot;samePrice.scope.commercial_boundaries=substitute.commercial_boundaries;
  assert.throws(()=>prepareInvoice(samePrice.scope,samePrice.billing,0,{now}),/changed after acceptance/);
  original.scope.milestones[1].approval_reference='new operational approval reference';
- assert.equal(prepareInvoice(original.scope,original.billing,0,{now}).amount,166000,'Later approval evidence does not invalidate commercial acceptance.');
+ assert.equal(prepareInvoice(original.scope,original.billing,0,{now}).amount,115400,'Later approval evidence does not invalidate commercial acceptance.');
 });
 
 test('acceptance binds all scope obligations, project facts and optional-service terms by default',async()=>{
- const schedule=[{event:'After written scope approval',percent:50,amount:900},{event:'After written acceptance of the identity kit',percent:50,amount:900}];
+ const schedule=[{event:'After written scope approval',percent:50,amount:497.5},{event:'After written acceptance of the identity kit',percent:50,amount:497.5}];
  for(const [id,ids,stages]of [['website_additions',['logo_identity'],schedule],['launch_site',['booking_setup'],undefined]]){
   const {scope:original,billing}=await accepted(id,ids,stages),approved=commercialAcceptanceDigest(original);
   assert.equal(prepareInvoice(original,billing,0,{now}).amount,Math.round(original.milestones[0].amount*100));
@@ -236,11 +236,11 @@ test('documented operational evidence can change without redefining accepted com
  scope.buyer_confirmation.written_acceptance_reference='synthetic replacement reference to the same written approval';
  Object.assign(scope.milestones[0],{approval_reference:'synthetic recorded approval',invoice_system_reference:'synthetic milestone invoice',payment_confirmed:true});
  assert.equal(commercialAcceptanceDigest(scope),approved);
- assert.equal(prepareInvoice(scope,billing,0,{now}).amount,166000);
+ assert.equal(prepareInvoice(scope,billing,0,{now}).amount,115400);
  assert.doesNotMatch(renderJobPacket(scope,{},offers),/Commercial mismatch/);
 });
 
-test('V3 overlapping additions require reviewed credits and new builds cannot sell duplicate onboarding',async()=>{
+test('V4 overlapping additions require reviewed credits and new builds cannot sell duplicate onboarding',async()=>{
  for(const id of ['launch_site','focused_site','business_site','signature_site','storefront']){
   await assert.rejects(()=>draftScope(id,'synthetic-credits',{add_ons:['care_onboarding']}),/onboarding is included/i);
   await assert.rejects(()=>draftScope(id,'synthetic-credits',{add_ons:['guided_quote_form']}),/reviewed incremental-scope credit/);
@@ -249,17 +249,17 @@ test('V3 overlapping additions require reviewed credits and new builds cannot se
  const credit={id:'guided_quote_form',credit:200,reason:'Remove the included ordinary form production and testing.'};
  const scope=await draftScope('launch_site','synthetic-credits',{add_ons:['guided_quote_form'],add_on_credits:[credit]});
  const quote=assertAddonCommercialSnapshot(scope);
- assert.equal(quote.add_ons_total,1000);assert.equal(quote.project_total,3950);
- assert.deepEqual(quote.lines[0].scope_credit,{listed_price:1200,credit:200,reason:credit.reason});
- assert.deepEqual(scope.milestones.map(stage=>stage.amount),[1580,1185,1185]);
- for(const invalid of [{...credit,credit:0},{...credit,credit:1200},{...credit,reason:''},{...credit,id:'unknown'}])await assert.rejects(()=>draftScope('launch_site','synthetic-credits',{add_ons:['guided_quote_form'],add_on_credits:[invalid]}));
+ assert.equal(quote.add_ons_total,495);assert.equal(quote.project_total,2690);
+ assert.deepEqual(quote.lines[0].scope_credit,{listed_price:695,credit:200,reason:credit.reason});
+ assert.deepEqual(scope.milestones.map(stage=>stage.amount),[1076,807,807]);
+ for(const invalid of [{...credit,credit:0},{...credit,credit:695},{...credit,reason:''},{...credit,id:'unknown'}])await assert.rejects(()=>draftScope('launch_site','synthetic-credits',{add_ons:['guided_quote_form'],add_on_credits:[invalid]}));
 });
 
 test('saved add-on terms survive catalog changes and historical no-add-on acceptance remains valid',async()=>{
  const {scope,billing}=await accepted(),changed=structuredClone(offers);
  changed.add_ons=[];changed.launch_site.public_price=1;changed.version='future-unrelated-catalog';
- assert.equal(prepareInvoice(scope,billing,0,{now}).amount,166000);
- const packet=renderJobPacket(scope,{},changed);assert.match(packet,/\$4,150\.00/);assert.match(packet,/Booking or Deposit Setup/);assert.doesNotMatch(packet,/Commercial mismatch/);
+ assert.equal(prepareInvoice(scope,billing,0,{now}).amount,115400);
+ const packet=renderJobPacket(scope,{},changed);assert.match(packet,/\$2,885\.00/);assert.match(packet,/Booking or Deposit Setup/);assert.doesNotMatch(packet,/Commercial mismatch/);
  const historical=await accepted('launch_site',[],undefined,historicalOffers);
  assert.equal(historical.scope.add_ons,undefined);assert.equal(historical.scope.commercial_snapshot.add_on_quote,undefined);
  delete historical.scope.commercial_snapshot.offer.editing_mode;
@@ -267,5 +267,5 @@ test('saved add-on terms survive catalog changes and historical no-add-on accept
  delete historical.scope.buyer_confirmation.initial_launch_ready_service_limits_and_exclusions_understood;
  delete historical.scope.buyer_confirmation.optional_handoff_call_and_separate_growth_work_understood;
  assert.equal(prepareInvoice(historical.scope,historical.billing,0,{now}).amount,70000);
- assert.equal(quotedOffer(offers,'launch_site').public_price,2950);
+ assert.equal(quotedOffer(offers,'launch_site').public_price,2195);
 });

@@ -14,10 +14,10 @@ const read=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.
 const historical=await read('operations/historical/offers-2026-10-24-pre-v3.json');
 const offers=await read('config/offers.json'),prices=priceList(offers),legacy=await read('tests/fixtures/legacy-offers.json'),artOffers=await read('tests/fixtures/plan-art-offers-20261018.json');
 
-test('V3 pricing publishes four website totals and independent provider costs',()=>{
+test('V4 pricing publishes four website totals and independent provider costs',()=>{
  const before=JSON.stringify(offers),html=clearPricing(offers);
- for(const [id,price,pages] of [['launch_site',2950,8],['focused_site',4500,10],['business_site',7500,15],['signature_site',11500,20]]){
-  const summary=offerSummary(offers,id);assert.equal(summary.price,price);assert.ok(summary.briefPoints.some(x=>x.includes(pages+' pages')));
+ for(const [id,price,pages] of [['launch_site',2195,10],['focused_site',2995,15],['business_site',4495,20],['signature_site',6495,25]]){
+  const summary=offerSummary(offers,id);assert.equal(summary.price,price);assert.ok(summary.briefPoints.some(x=>new RegExp(pages+' (?:(?:marketing|useful) )?pages').test(x)));
   assert.ok(html.includes('/checkout/'+id.replaceAll('_','-')+'/'));
  }
  assert.match(html,/domain|hosting/i);assert.equal(JSON.stringify(offers),before);
@@ -25,13 +25,13 @@ test('V3 pricing publishes four website totals and independent provider costs',(
 
 test('new costs add direct vendor bills once and retain baseline, unknown, zero and cent boundaries',()=>{
  const examples=[
-  [{build:'launch',plan:'none',cycles:0,hostingMonthly:20,hostingMonths:12,external:120},3310],
-  [{build:'existing',plan:'keep_running',baseline:true,cycles:12,hostingMonthly:20,hostingMonths:12,external:120},4310],
-  [{build:'existing',plan:'keep_running',baseline:false,cycles:12,hostingMonthly:20,hostingMonths:12,external:120},3660],
-  [{build:'focused',plan:'keep_running',cycles:11,hostingMonthly:19.99,hostingMonths:12,external:120.03},7884.91],
-  [{build:'launch',plan:'none',cycles:0,hostingMonthly:.1,hostingMonths:12,external:.2},2951.4],
-  [{build:'existing',plan:'keep_running',cycles:1,hostingMonthly:25.01,hostingMonths:1,external:.02},300.03],
-  [{build:'launch',hostingMonthly:0,external:0},2950],
+  [{build:'launch',plan:'none',cycles:0,hostingMonthly:20,hostingMonths:12,external:120},2555],
+  [{build:'existing',plan:'keep_running',baseline:true,cycles:12,hostingMonthly:20,hostingMonths:12,external:120},2347],
+  [{build:'existing',plan:'keep_running',baseline:false,cycles:12,hostingMonthly:20,hostingMonths:12,external:120},2148],
+  [{build:'focused',plan:'keep_running',cycles:11,hostingMonthly:19.99,hostingMonths:12,external:120.03},4993.91],
+  [{build:'launch',plan:'none',cycles:0,hostingMonthly:.1,hostingMonths:12,external:.2},2196.4],
+  [{build:'existing',plan:'keep_running',cycles:1,hostingMonthly:25.01,hostingMonths:1,external:.02},174.03],
+  [{build:'launch',hostingMonthly:0,external:0},2195],
  ];
  for(const [input,total] of examples){const cost=calculateCost(prices,input);assert.equal(cost.total,total);assert.equal(moneyExact(cost.total),moneyExact(total));for(const key of ['buildHostingCredit','monthlyHostingCredit','planOverlapDiscount','overlapMonths','serviceStart'])assert.ok(!Object.hasOwn(cost,key),key);}
  for(const input of [{hostingMonthly:null,external:0},{hostingMonthly:20,external:null}])assert.equal(calculateCost(prices,input).total,null);
@@ -54,12 +54,12 @@ test('historical annual agreements preserve twelve cycles and original refunds',
  assert.match(offers.annual_terms.cancellation,/current-cycle unearned work/);assert.match(offers.annual_terms.refund_timing,/Undisputed unearned amounts/);assert.match(offers.annual_terms.hosting,/Vendor cancellation and refunds follow each vendor/);
 });
 
-test('V3 monthly cards distinguish four outputs and included care',()=>{
+test('V4 monthly cards distinguish four outputs and included care',()=>{
  const packs=buyerPacks(offers);assert.equal(packs.length,15);
- for(const [id,count,price] of [['keep_running',0,275],['improve',1,1250],['local_focus',1,850],['grow',2,1750]]){
+ for(const [id,count,price] of [['keep_running',0,149],['improve',1,399],['local_focus',1,299],['grow',2,599]]){
   assert.equal(offers.plans[id].priorities,count);assert.equal(packs.find(p=>p.id===id).price,price);
  }
- const monthly=planCards(offers);assert.equal((monthly.match(/class="v3-offer-card"/g)||[]).length,4);
+ const monthly=planCards(offers);assert.equal((monthly.match(/class="[^"\n]*\bv3-offer-card\b[^"\n]*"/g)||[]).length,4);
  assert.match(monthly,/Care included|Care bill|maintenance/i);
 });
 
@@ -67,10 +67,10 @@ test('native pricing links to a separate estimator and directly paid provider co
  const html=pricingContent(offers);assert.match(html,/href="\/payments\/#cost-calculator"/);
  assert.doesNotMatch(html,/<form\b[^>]*\bid="cost-calculator"/);
  const calculator=costCalculator(offers);assert.doesNotMatch(calculator,/value="annual"|hosting credit|overlap discount/);
- const overview=ongoingOverview(offers);assert.equal((overview.match(/class="v3-offer-card"/g)||[]).length,4);
+ const overview=ongoingOverview(offers);assert.equal((overview.match(/class="[^"\n]*\bv3-offer-card\b[^"\n]*"/g)||[]).length,4);
 });
 
-test('all V3 builds snapshot measurable acceptance without inventing proof',async()=>{
+test('all V4 builds snapshot measurable acceptance without inventing proof',async()=>{
  for(const id of ['launch_site','focused_site','business_site','signature_site','storefront']){
   const draft=await draftScope(id,'foundation-check');assert.equal(draft.commercial_version,offers.version);
   assert.deepEqual(draft.commercial_snapshot.provider_policy,offers.provider_policy);
@@ -84,7 +84,7 @@ test('all V3 builds snapshot measurable acceptance without inventing proof',asyn
 test('saved agreements survive current policy drift; missing snapshots never authorize replacement invoices',async()=>{
  const scope=await draftScope('focused_site','saved-agreement'),before=JSON.stringify(scope);
  const changed=structuredClone(offers);changed.version='future';changed.focused_site.public_price=9999;changed.focused_site.payment_schedule[0].amount=4999.5;changed.provider_policy.summary='Different terms';
- const html=renderJobPacket(scope,{},changed);assert.equal((html.match(/class="invoice"/g)||[]).length,3);assert.match(html,/\$1,800\.00/);assert.doesNotMatch(html,/Different terms|\$9,999/);assert.equal(JSON.stringify(scope),before);
+ const html=renderJobPacket(scope,{},changed);assert.equal((html.match(/class="invoice"/g)||[]).length,3);assert.match(html,/\$1,198\.00/);assert.doesNotMatch(html,/Different terms|\$9,999/);assert.equal(JSON.stringify(scope),before);
  const missing=structuredClone(scope);delete missing.commercial_snapshot;const blocked=renderJobPacket(missing,{},offers);assert.match(blocked,/Commercial mismatch/);assert.doesNotMatch(blocked,/class="invoice"/);assert.match(blocked,/Historical hosting and refund rights/);
 });
 
@@ -116,7 +116,7 @@ test('archived artwork guards retain their exact dated source and reject current
 });
 
 test('current pricing has fifteen live-text offers and no stale poster publication',()=>{
- const html=pricingContent(offers);assert.equal((html.match(/class="v3-offer-card" id="offer-[^"]+"/g)||[]).length,15);
+ const html=pricingContent(offers);assert.equal((html.match(/class="[^"\n]*\bv3-offer-card\b[^"\n]*" id="offer-[^"]+"/g)||[]).length,15);
  assert.doesNotMatch(html,/package-visual-grid|assets\/package-visuals/);
  for(const id of ['launch_site','focused_site','business_site','signature_site','keep_running','improve','local_focus','grow','website_baseline','audit_fix_sprint','brand_message','storefront','local_presence','workflow','systems']){
   assert.ok(html.includes('href="/assets/buyer-packs/'+id+'"'),id);

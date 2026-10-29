@@ -117,7 +117,7 @@ test('price choices expose editing and booking terms before optional detail',asy
  await page.goto('/pricing/?qa=1');
  const editing=page.locator('#ownership');await expect(editing).toBeVisible();
  await expect(editing).toContainText('platform and editing workflow before booking');await expect(editing).toContainText('which changes you can make yourself');
- const payment=page.locator('#payments .v3-payment-list article').first();await expect(payment).toContainText('$1,180');await expect(payment).toContainText('40%');await expect(payment).toContainText('Reserve your agreed start');
+ const payment=page.locator('#payments .v3-payment-list article').first();await expect(payment).toContainText('$878');await expect(payment).toContainText('40%');await expect(payment).toContainText('Reserve your agreed start');
  const comparison=page.locator('#every-inclusion');
  await expect(comparison).not.toHaveAttribute('open','');await comparison.locator('summary').click();
  await expect(comparison.locator('.v3-comparison-list')).toBeVisible();

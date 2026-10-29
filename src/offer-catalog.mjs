@@ -15,7 +15,7 @@ export const countWords = value => ['zero','one','two','three','four','five','si
 export const titleCount = value => { const text=countWords(value); return text[0].toUpperCase()+text.slice(1); };
 export function publicOfferProjection(input) {
  const o=normalizeOfferCatalog(input),fields=(p,keys)=>Object.fromEntries(keys.map(key=>[key,p[key]]));
- return {catalog_format:o.catalog_format,service_menu:o.service_menu,build_ids:buildOfferIds.filter(id=>o[id]),monthly_ids:monthlyOfferIds.filter(id=>o.plans?.[id]),specialist_ids:specialistOfferIds.filter(id=>o[id]),...Object.fromEntries([...buildOfferIds,...specialistOfferIds].filter(id=>o[id]).map(id=>[id,fields(o[id],['public_name','public_price'])])),plans:Object.fromEntries(monthlyOfferIds.filter(id=>o.plans?.[id]).map(id=>[id,fields(o.plans[id],['public_name','monthly_price','priorities'])])),baseline:fields(o.baseline,['public_name','one_time_price']),audit_sprint:fields(o.audit_sprint,['public_name','one_time_price']),care_variants:o.care_variants,add_ons:o.add_ons.map(p=>fields(p,['id','public_name','public_price'])),annual_enrollment_gate:{verified:o.annual_enrollment_gate?.verified===true}};
+ return {catalog_format:o.catalog_format,catalog_revision:o.catalog_revision,service_menu:o.service_menu,build_ids:buildOfferIds.filter(id=>o[id]),monthly_ids:monthlyOfferIds.filter(id=>o.plans?.[id]),specialist_ids:specialistOfferIds.filter(id=>o[id]),...Object.fromEntries([...buildOfferIds,...specialistOfferIds].filter(id=>o[id]).map(id=>[id,fields(o[id],['public_name','public_price'])])),plans:Object.fromEntries(monthlyOfferIds.filter(id=>o.plans?.[id]).map(id=>[id,fields(o.plans[id],['public_name','monthly_price','priorities',...(o.catalog_revision===4?['variants']:[])])])),baseline:fields(o.baseline,['public_name','one_time_price']),audit_sprint:fields(o.audit_sprint,['public_name','one_time_price']),care_variants:o.care_variants,add_ons:o.add_ons.map(p=>fields(p,['id','public_name','public_price'])),annual_enrollment_gate:{verified:o.annual_enrollment_gate?.verified===true}};
 }
 const safePath = path => typeof path === 'string' && path.split('.').every(part => /^[a-zA-Z0-9_]+$/.test(part) && !['__proto__','prototype','constructor'].includes(part));
 export function catalogValue(object, path) {
@@ -91,6 +91,14 @@ export function normalizeOfferCatalog(input) {
  for(const id of specialistOfferIds.filter(id=>o[id])){const p=o[id];name(p);catalogCents(p.public_price);p.payment_schedule=derivePaymentSchedule(p.public_price,p.payment_schedule);}
  if(o.catalog_format===3){
   o.care_variants.brochure.price=o.plans.keep_running.monthly_price;
+  if(o.catalog_revision===4){
+   for(const id of monthlyOfferIds){const p=o.plans[id];
+    p.variants.brochure.price=p.monthly_price;
+    p.variants.commerce.price=id==='keep_running'?o.care_variants.commerce.price:p.monthly_price+o.care_variants.improvement_commerce_supplement;
+    if(p.variants.production)p.variants.production.price=p.monthly_price-100;
+    for(const v of Object.values(p.variants))catalogCents(v.price);
+   }
+  }
   requireValue(currentOfferIds(o).length===15,'V3 requires all fifteen plans');
   requireValue(o.build_ids?.join(',')===buildOfferIds.join(','),'V3 website order must include all four tiers');
   requireValue(o.annual_enrollment_gate?.verified!==true,'V3 does not offer new annual enrollment');
@@ -103,6 +111,11 @@ export function normalizeOfferCatalog(input) {
  for(const [path,template] of Object.entries(o.copy_templates||{})){
   requireValue(typeof catalogValue(o,path)==='string'&&typeof template==='string','invalid copy template '+path);
   setCatalogValue(o,path,resolveOfferCopy(template,o));
+ }
+ if(o.catalog_revision===4)for(const id of currentOfferIds(o)){
+  const p=offerRecord(o,id);p.acceptance=[...p.v3.acceptance];p.exclusions=[...p.v3.excludes];
+  if(monthlyOfferIds.includes(id))p.deliverables=[...p.v3.includes];else p.scope=p.v3.includes.join(' ');
+  if(buildOfferIds.includes(id)){p.copy=p.v3.includes[1];p.launch_content.scope=p.copy;p.included_pages=p.marketing_page_cap;}
  }
  normalized.add(o);return freeze(o);
 }

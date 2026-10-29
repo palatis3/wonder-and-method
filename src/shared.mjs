@@ -23,14 +23,15 @@ export const inquiryChoices=[...offers.service_menu.map(p=>[p.id,p.name]),['unsu
 const serviceAliases={care:'keep_running',search_plan:'improve',search_sprint:'audit_fix_sprint'};
 export const resolveServiceId=value=>typeof value==='string'&&Object.hasOwn(serviceAliases,value)?serviceAliases[value]:value;
 // The browser build projects offers.json to these public names and prices only.
-export function inquiryOffer(service,o=offers){
+export function inquiryOffer(service,o=offers,context={}){
  const id=resolveServiceId(service),monthly=['keep_running','improve','local_focus','grow'].includes(id);
  const offer=offerRecord(o,id);
- return offer?{id,name:offer.public_name,price:monthly?offer.monthly_price:offer.public_price??offer.one_time_price,monthly}:null;
+ const variant=offer?.variants?.[context.care_variant],from=Boolean(offer?.variants?.production&&!variant);
+ return offer?{id,name:offer.public_name,price:monthly?(variant?.price??offer.variants?.production?.price??offer.monthly_price):offer.public_price??offer.one_time_price,monthly,from,...(variant?{variant:variant.name}: {})}:null;
 }
 export function inquiryChoiceLabel(service,o=offers){
  const offer=inquiryOffer(service,o);if(!offer)return 'Not sure — help me choose';
- if(o.catalog_format===3)return `${offer.name} — ${money(offer.price)}${offer.monthly?'/month':''}`;
+ if(o.catalog_format===3)return `${offer.name} — ${offer.from?'from ':''}${money(offer.price)}${offer.monthly?'/month':''}`;
  const monthly={keep_running:'website care',improve:`${countWords(o.plans.improve.priorities)} SEO improvement${o.plans.improve.priorities===1?'':'s'} a month`,grow:`${countWords(o.plans.grow.priorities)} SEO improvement${o.plans.grow.priorities===1?'':'s'} a month`};
  return offer.monthly?`${offer.name} — ${monthly[offer.id]} (${money(offer.price)}/mo)`:`${offer.name} — ${money(offer.price)}${offer.id==='website_baseline'?' review':''}`;
 }
@@ -59,6 +60,8 @@ export function inquiryMessageHelp(service='',requestKind='checkout',goal='',neu
  return hint+(requestKind==='checkout'?' Questions are welcome here too.':'')+' No passwords, payment details or sensitive information. Use 10–3,000 characters.';
 }
 export const inquiryContextFields={
+ care_variant:{label:'Monthly service option',services:['keep_running','improve','local_focus','grow'],options:[['production','Production only — maintenance handled elsewhere'],['brochure','With Brochure Care'],['commerce','With Commerce Care']]},
+ workflow_variant:{label:'Automation route',services:['workflow'],options:[['simple','Up to five simple native automations'],['complex','One more complex workflow']]},
  county:{label:'Service-area page you came from (not your business address)',services:inquiryChoices.map(([id])=>id),options:countyContextOptions},
  concept:{label:'A studio concept you liked',services:inquiryChoices.map(([id])=>id),options:[['fieldwork','Fieldwork — landscaping'],['northline','Northline — remodeling'],['hearthside','Hearthside — pizzeria website']]},
  goal:{label:'Main goal',services:inquiryChoices.map(([id])=>id),options:[['new_website','Build a new website'],['redesign','Improve or replace my website'],['fix','Fix something that is broken'],['search','Help customers find my business'],['care','Get ongoing website help'],['unsure','Help me choose']]},
@@ -72,7 +75,7 @@ export const inquiryContextFields={
  billing:{label:'Service billing',services:['keep_running','improve','local_focus','grow'],options:[['monthly','Monthly'],['annual','Annual prepaid — twelve cycles']]}
 };
 export function inquiryAllowsMonthlyInterest(value={}){const service=resolveServiceId(value.service);return ['launch_site','focused_site','business_site','signature_site'].includes(service)||service==='unsure'&&['new_website','redesign'].includes(value.goal);}
-export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&(key!=='care_interest'||inquiryAllowsMonthlyInterest(value))&&field.options.some(([id])=>id===value[key]))result[key]=value[key];try{const ids=normalizeAddonSelection(value);if(ids.length)result.add_ons=ids;}catch{/* Invalid selections are rejected by inquiry validation. */}return result;}
+export function selectedInquiryContext(value={}){const result={};const service=resolveServiceId(value.service);for(const [key,field] of Object.entries(inquiryContextFields))if(field.services.includes(service)&&(key!=='care_interest'||inquiryAllowsMonthlyInterest(value))&&!(key==='care_variant'&&service==='keep_running'&&value[key]==='production')&&field.options.some(([id])=>id===value[key]))result[key]=value[key];try{const ids=normalizeAddonSelection(value);if(ids.length)result.add_ons=ids;}catch{/* Invalid selections are rejected by inquiry validation. */}return result;}
 // Public forms keep useful link context, without offering inactive annual enrollment.
 // The broader validator/receipt allowlist remains compatible with historical records.
 export function publicInquiryContext(value={},annualEnabled=false){
@@ -84,14 +87,15 @@ export function publicInquiryContext(value={},annualEnabled=false){
 export function hasInquirySelection(value={}){return Boolean(value.service&&value.service!=='unsure'||value.goal&&value.goal!=='unsure'||value.concept||value.county||value.add_ons?.length);}
 export function inquiryContextSummary(value={}){const {add_ons=[],...context}=selectedInquiryContext(value);const additions=priceAddons(add_ons);return [...Object.entries(context).map(([key,id])=>inquiryContextFields[key].label+': '+inquiryContextFields[key].options.find(([v])=>v===id)[1]),...additions.lines.map(item=>'Addition requested: '+item.public_name+' — '+money(item.public_price)),...(additions.ids.length?['One-time additions subtotal: '+money(additions.total)+'; subject to fit and a written proposal.']:[])];}
 export function inquiryRequestSummary(value={},o=offers,{includeGoal=true}={}){
- const context=selectedInquiryContext(value),offer=inquiryOffer(value.service,o);
+ const context=selectedInquiryContext(value),offer=inquiryOffer(value.service,o,context);
  const parts=[];
- if(offer)parts.push(`${offer.name} (${money(offer.price)}${offer.monthly?'/month':offer.id==='website_baseline'?', paid only after I confirm fit':''})`);
+ if(offer)parts.push(`${offer.name}${offer.variant?' — '+offer.variant:''} (${offer.from?'from ':''}${money(offer.price)}${offer.monthly?'/month':offer.id==='website_baseline'?', paid only after I confirm fit':''})`);
+ if(context.workflow_variant)parts.push(inquiryContextFields.workflow_variant.options.find(([id])=>id===context.workflow_variant)[1]);
  for(const key of [ ...(includeGoal?['goal']:[]),'concept','county'])if(context[key]&&context[key]!=='unsure')parts.push((key==='county'?'From service-area page: ':'')+inquiryContextFields[key].options.find(([id])=>id===context[key])[1]);
  if(context.add_ons?.length)parts.push(priceAddons(context.add_ons,o.add_ons).lines.map(item=>`${item.public_name} (${money(item.public_price)} extra)`).join(', '));
  return (context.add_ons?.length&&!offer?'Asking about: ':'')+parts.join(' · ');
 }
-export const priceList=input=>{const o=input.provider_policy?normalizeOfferCatalog(input):input;if(o.catalog_format===3)return {catalog_format:3,add_ons:o.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,business:o.business_site.public_price,signature:o.signature_site.public_price,...Object.fromEntries(['brand_message','storefront','local_presence','workflow','systems'].map(id=>[id,o[id].public_price])),...Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.monthly_price])),baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,care_variants:o.care_variants,annual_available:false,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),commercial_version:o.version,provider_model:o.provider_policy.model};return ({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});};
+export const priceList=input=>{const o=input.provider_policy?normalizeOfferCatalog(input):input;if(o.catalog_format===3)return {catalog_format:3,catalog_revision:o.catalog_revision,monthly_variants:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.variants])),add_ons:o.add_ons.map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,business:o.business_site.public_price,signature:o.signature_site.public_price,...Object.fromEntries(['brand_message','storefront','local_presence','workflow','systems'].map(id=>[id,o[id].public_price])),...Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.monthly_price])),baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,care_variants:o.care_variants,annual_available:false,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),commercial_version:o.version,provider_model:o.provider_policy.model};return ({add_ons:(o.add_ons||[]).map(({id,public_name,public_price})=>({id,public_name,public_price})),launch:o.launch_site.public_price,focused:o.focused_site.public_price,signature:o.signature_site.public_price,keep_running:o.plans.keep_running.monthly_price,improve:o.plans.improve.monthly_price,grow:o.plans.grow.monthly_price,baseline:o.baseline.one_time_price,sprint:o.audit_sprint.one_time_price,annual_available:o.annual_enrollment_gate?.verified===true,annual:Object.fromEntries(Object.entries(o.plans).map(([id,p])=>[id,p.annual.upfront_price])),...(o.provider_policy?{commercial_version:o.version,provider_model:o.provider_policy.model}:{hosting_credit:{monthly_cap:o.hosting_credit.cap_per_month,launch:o.launch_site.hosting_credit.months,focused:o.focused_site.hosting_credit.months,signature:o.signature_site.hosting_credit.months}})});};
 // Saved historical terms only; never infer legacy benefits from current prices.
 export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=11,external=null,hostingMonthly=null,hostingMonths=12,serviceStart=1,billing='monthly'}={}) {
  if(!prices.hosting_credit||prices.provider_model)throw new Error('Legacy calculation requires a saved hosting-credit snapshot');
@@ -118,26 +122,32 @@ export function calculateLegacyCost(prices,{build='launch',plan='none',baseline=
  return {once,monthly,annualUpfront,billing,baselineFee,serviceTotal,total,cycles,hostingMonths,serviceStart,buildHostingCredit,monthlyHostingCredit,planOverlapDiscount,grossHosting,overlapMonths};
 }
 
-// Current prospective terms: studio work plus directly paid provider costs, without subsidies.
-export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly',add_ons=[],careVariant='brochure',onboarding='none'}={}) {
+// Current prospective terms; historical credits use the separate saved-snapshot calculator.
+export function calculateCost(prices,{build='launch',plan='none',baseline=false,sprint=false,cycles=12,external=null,hostingMonthly=null,hostingMonths=12,billing='monthly',add_ons=[],careVariant='brochure',onboarding='none',hostingEligible=false}={}) {
  if(prices.provider_model!=='client_owned_direct_billing')throw new Error('Use the explicit legacy calculator with a saved historical snapshot');
  if(!['launch','focused',...(prices.catalog_format===3?['business','brand_message','storefront','local_presence','workflow','systems']:[]),'signature','existing'].includes(build)||!['none','keep_running','improve',...(prices.catalog_format===3?['local_focus']:[]),'grow'].includes(plan)||!Number.isInteger(cycles)||cycles<0||cycles>120||!Number.isInteger(hostingMonths)||hostingMonths<0||hostingMonths>120||[external,hostingMonthly].some(n=>n!==null&&(!Number.isFinite(n)||n<0)))throw new Error('Invalid cost inputs');
  if(!['monthly','annual'].includes(billing)||billing==='annual'&&(plan==='none'||cycles!==12))throw new Error('Annual billing requires one plan and twelve cycles');
  if(plan!=='none'&&cycles<1)throw new Error('Monthly plans require at least one month');
  if(hostingMonthly!==null&&plan!=='none'&&cycles>hostingMonths)throw new Error('Hosting period must include all monthly service months');
- if(!['brochure','commerce'].includes(careVariant)||!['none','brochure','commerce'].includes(onboarding)||careVariant==='commerce'&&!['none','keep_running','improve'].includes(plan))throw Error('Choose a supported care variant');
+ const v4=prices.catalog_revision===4;
+ if(!(v4?['production','brochure','commerce']:['brochure','commerce']).includes(careVariant)||!['none','brochure','commerce'].includes(onboarding)||careVariant==='commerce'&&!(v4?['none','keep_running','improve','local_focus','grow']:['none','keep_running','improve']).includes(plan)||careVariant==='production'&&!['none','improve','local_focus','grow'].includes(plan))throw Error('Choose a supported care variant');
+ if(typeof hostingEligible!=='boolean')throw Error('Confirm eligible hosting with a boolean');
+ if(v4&&careVariant==='production'&&onboarding!=='none')throw Error('Production-only plans have no Care onboarding fee');
  if(prices.catalog_format===3&&billing==='annual')throw Error('Annual enrollment is unavailable');
- const variantMonthly=careVariant==='commerce'?(plan==='keep_running'?prices.care_variants?.commerce.price:plan==='improve'?prices.improve+prices.care_variants?.improvement_commerce_supplement:0):prices[plan];
+ const variantMonthly=v4&&plan!=='none'?prices.monthly_variants?.[plan]?.[careVariant]?.price:careVariant==='commerce'?(plan==='keep_running'?prices.care_variants?.commerce.price:plan==='improve'?prices.improve+prices.care_variants?.improvement_commerce_supplement:0):prices[plan];
  const onboardingFee=onboarding==='none'?0:prices.care_variants?.[onboarding]?.onboarding;
  if(onboarding!=='none'&&add_ons.includes('care_onboarding'))throw Error('Choose onboarding only once');
  const buildFee=build==='existing'?0:prices[build],annualUpfront=billing==='annual'?prices.annual?.[plan]:null,monthly=plan==='none'?0:billing==='annual'?annualUpfront/12:variantMonthly;
  const baselineFee=baseline&&build==='existing'&&(prices.catalog_format===3||!sprint)?prices.baseline:0;
  const additions=priceAddons(add_ons,prices.add_ons||[]);
  const onceCents=cents(buildFee)+cents(sprint?prices.sprint:0)+cents(baselineFee)+cents(additions.total)+cents(onboardingFee),serviceCents=onceCents+(billing==='annual'?cents(annualUpfront):cents(monthly)*cycles);
- const externalCents=external===null?null:cents(external),grossCents=hostingMonthly===null?null:cents(hostingMonthly)*hostingMonths,totalCents=externalCents===null||grossCents===null?null:serviceCents+grossCents+externalCents;
- const knownSubtotalCents=serviceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
+ const offsetApplies=v4&&plan!=='none'&&careVariant==='brochure'&&hostingEligible;
+ const hostingOffsetCents=offsetApplies&&hostingMonthly!==null?Math.min(cents(hostingMonthly),cents(prices.care_variants.brochure.hosting_offset_cap))*cycles:0;
+ const netServiceCents=serviceCents-hostingOffsetCents;
+ const externalCents=external===null?null:cents(external),grossCents=hostingMonthly===null?null:cents(hostingMonthly)*hostingMonths,totalCents=externalCents===null||grossCents===null?null:netServiceCents+grossCents+externalCents;
+ const knownSubtotalCents=netServiceCents+(grossCents??0)+(externalCents??0),missingComponents=[...(grossCents===null?['hosting']:[]),...(externalCents===null?['external']:[])];
  if(!Number.isFinite(monthly)||[onceCents,serviceCents,grossCents,totalCents,knownSubtotalCents].some(n=>n!==null&&!Number.isSafeInteger(n)))throw new Error('Invalid cost inputs');
- return {onboardingFee,careVariant,once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
+ return {onboardingFee,careVariant,hostingOffset:hostingOffsetCents/100,offsetPending:offsetApplies&&hostingMonthly===null,netServiceTotal:netServiceCents/100,once:onceCents/100,addonTotal:additions.total,addonLines:additions.lines,monthly,annualUpfront,billing,baselineFee,serviceTotal:serviceCents/100,total:totalCents===null?null:totalCents/100,knownSubtotal:knownSubtotalCents/100,missingComponents,complete:missingComponents.length===0,cycles,hostingMonths,grossHosting:grossCents===null?null:grossCents/100};
 }
 
 export function costEstimateCopy(v,{plan='none',prices={},external=null}={}){
@@ -147,12 +157,12 @@ export function costEstimateCopy(v,{plan='none',prices={},external=null}={}){
  const onceDetails=[...(v.onboardingFee?['care onboarding: '+money(v.onboardingFee)]:[]),...(v.addonTotal?['selected additions: '+money(v.addonTotal)]:[]),...(v.baselineFee&&v.baselineFee!==v.once?['website review: '+money(v.baselineFee)]:[])];
  const breakdown=empty?'':`${money(v.once)} one-time${onceDetails.length?' (including '+onceDetails.join('; ')+')':''}`+(plan==='none'?'.':v.billing==='annual'?` + ${money(v.annualUpfront)} paid upfront for 12 months. The same 12 months billed monthly cost ${money(prices[plan]*12)}; annual savings ${money(prices[plan]*12-v.annualUpfront)}. Subject to written approval.`:` + ${v.cycles} monthly payment${v.cycles===1?'':'s'} of ${money(v.monthly)}.`)+(v.grossHosting===null?'':` Direct hosting (${v.hostingMonths} month${v.hostingMonths===1?'':'s'}): ${money(v.grossHosting)}.`)+(external===null?'':` Domain, email and tools: ${money(external)}.`);
  const note=(missing.length?`Still to add: ${missing.join('; ')}. `:'')+'Tax, unselected items and work beyond the listed allowances are extra. '+(prices.catalog_format===3?'This estimate uses listed fees before scope credits. Included onboarding and reusable setup are credited in your written proposal; overlapping work is never billed twice.':'');
- return {total,breakdown,note};
+ return {total,breakdown:breakdown+(v.hostingOffset?` Eligible hosting offset: −${money(v.hostingOffset)} from the W&M invoices; net studio fees ${money(v.netServiceTotal)}.`:''),note:note+(prices.catalog_revision===4?' '+(v.offsetPending?'The eligible hosting offset is still unknown. ':'')+'Brochure Care offsets documented eligible hosting by up to $25 per paid month; Commerce and production-only plans have no offset. A period longer than three paid cycles assumes the current fee continues; later rate changes require at least 30 days written notice.':'')};
 }
 
 export function annualRefund(prices,{plan,completedCycles}){if(!Object.hasOwn(prices.annual,plan)||!Number.isInteger(completedCycles)||completedCycles<0||completedCycles>12)throw new Error('Invalid annual refund inputs');return cents(prices.annual[plan])*(12-completedCycles)/12/100;}
 
 export function inquiryOptionalFields(value={},_onlyApplicable=false,annualEnabled=false){
  const context=publicInquiryContext(value,annualEnabled);
- return Object.keys(inquiryContextFields).filter(key=>!['request_kind','goal','found_via','care_interest'].includes(key)).map(key=>`<input type="hidden" id="${key}" name="${key}" value="${escapeHtml(context[key]||'')}">`).join('');
+ return Object.keys(inquiryContextFields).filter(key=>!['request_kind','goal','found_via','care_interest','care_variant','workflow_variant'].includes(key)).map(key=>`<input type="hidden" id="${key}" name="${key}" value="${escapeHtml(context[key]||'')}">`).join('');
 }

@@ -30,7 +30,11 @@ export function assertV3OfferBindings({config,offers,map,geography}){
  for(const p of probe.add_ons){has('/pricing/',e(p.public_name));has('/services/website-addons/',e(p.public_name));has('/services/website-addons/',money(p.public_price));}
  for(const p of probe.quoted_add_ons){has('/services/website-addons/',e(p.public_name));assert.equal(p.public_price,null);assertions++;}
  for(const path of ['/pricing/','/services/web-design/']){has(path,'Up to 17');has(path,'4, up to 11 fields each');}
- has('/','From '+money(probe.plans.local_focus.monthly_price)+'/month');
+ has('/','From '+money(probe.plans.local_focus.variants?.production?.price??probe.plans.local_focus.monthly_price)+'/month');
+ if(probe.catalog_revision===4)for(const id of monthlyOfferIds)for(const [variant,option] of Object.entries(probe.plans[id].variants)){
+  for(const path of ['/pricing/',v3ServicePath(probe,id),`/checkout/${id.replaceAll('_','-')}/`])has(path,money(option.price));
+  assert.equal(publicOfferProjection(probe).plans[id].variants[variant].price,option.price);assertions++;
+ }
  has('/','Thoughtful design, original writing and search foundations for your business.');
  assert.ok(!routes.get('/').html.includes('Custom design, complete writing and search setup for your business.'));assertions++;
  for(const page of pages){assert.ok(!page.html.includes('first payment if a new review is needed'),'Retired Roadmap/Care charge coupling: '+page.path);assertions++;}

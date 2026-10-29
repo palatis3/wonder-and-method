@@ -6,7 +6,7 @@ import review from './fixtures/source-repairs-v3-20261029.json' with {type:'json
 import {beforeReviewedV3SourceRepairs} from './fixtures/reviewed-v3-source-repairs.mjs';
 import briefs from '../src/human-location-briefs.json' with {type:'json'};
 import briefReview from '../operations/v3-offers-20261029/human-brief-source-repairs.json' with {type:'json'};
-import offers from '../config/offers.json' with {type:'json'};
+import offers from '../operations/historical/offers-2026-10-29-v3.json' with {type:'json'};
 import {locationServicePage} from '../src/location-service-pages.mjs';
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 
@@ -39,7 +39,7 @@ test('Guadalupe repair preserves its original row and rejects unreviewed replace
  }
 });
 
-test('default rendered county pages use the complete reviewed brief and current source',()=>{
+test('historical V3 county render retains the complete reviewed brief and source',()=>{
  assert.equal(briefReview.briefs.length,2);
  for(const change of briefReview.briefs){
   const brief=briefs.find(b=>b.route===change.route),record=records.find(r=>r.path===change.route);

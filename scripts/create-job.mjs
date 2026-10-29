@@ -6,10 +6,10 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(import.meta.dirname,'..');
-export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure',catalog}={}){
+export async function draftScope(offerId,clientId,{billing='monthly',add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure',workflow_variant='simple',catalog}={}){
  const offers=normalizeOfferCatalog(catalog??JSON.parse(await readFile(resolve(root,'config/offers.json'),'utf8')));
  if(!/^[a-z0-9][a-z0-9-]{0,60}$/.test(clientId))throw new Error('Use a simple lowercase client ID, without personal information.');
- const {add_on_quote,...offer}=quotedOffer(offers,offerId,billing,{add_ons,payment_schedule,add_on_credits,care_variant,onboarding_variant}),scope=JSON.parse(await readFile(resolve(root,'operations/templates/accepted-scope.json'),'utf8'));
+ const {add_on_quote,...offer}=quotedOffer(offers,offerId,billing,{add_ons,payment_schedule,add_on_credits,care_variant,onboarding_variant,workflow_variant}),scope=JSON.parse(await readFile(resolve(root,'operations/templates/accepted-scope.json'),'utf8'));
  const commercialSnapshot={version:offers.version,offer_id:offerId,billing,offer,provider_policy:offers.provider_policy,ownership_and_billing:offers.ownership_and_billing,...(add_on_quote?{add_on_quote}:{}),...(Object.hasOwn(offers.plans,offerId)?{monthly_terms:offers.monthly_terms,...(billing==='annual'?{annual_terms:offers.annual_terms}:{}),priority_menu:offer.priorities?offers.priority_menu:[]}:{one_off_terms:offers.one_off_terms})};
  const finish=draft=>{
   if(!add_on_quote)return draft;
@@ -63,6 +63,7 @@ async function main(){
   if(seen.has(key))throw Error('Supply each job option once.');seen.add(key);
   if(arg==='--annual')options.billing='annual';
   else if(arg.startsWith('--care-variant='))options.care_variant=arg.slice('--care-variant='.length);
+  else if(arg.startsWith('--workflow-variant='))options.workflow_variant=arg.slice('--workflow-variant='.length);
   else if(arg.startsWith('--onboarding-variant='))options.onboarding_variant=arg.slice('--onboarding-variant='.length);
   else if(arg.startsWith('--addons='))options.add_ons=addonSelectionFromQuery(arg.slice('--addons='.length));
   else if(arg.startsWith('--addon-credits=')){

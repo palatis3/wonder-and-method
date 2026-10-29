@@ -26,6 +26,6 @@ test('build and review time stay visible, with detailed calendar examples and or
  const html=websiteProcess(config,offers);
  for(let i=1;i<=6;i++)assert.equal((html.match(new RegExp(`id="process-stage-${i}"`,'g'))||[]).length,1);
  assert.ok(html.indexOf('<strong>Your review time:</strong>')<html.indexOf('<details'));assert.match(html,/two business days/i);assert.match(html,/included/i);assert.doesNotMatch(html,/Up to 5 business days|windows are added|allows up to five business days/);
- for(const phrase of ['5–10 business days','2–3 weeks','3–4 weeks','4–6 weeks','Silence is never approval and does not trigger a payment'])assert.ok(html.includes(phrase));
+ for(const phrase of ['5–7 business days','10–15 business days','15–20 business days','20–30 business days','Silence is never approval and does not trigger a payment'])assert.ok(html.includes(phrase));
  assert.match(html,/written proposal|proposal confirms the dates/);
 });

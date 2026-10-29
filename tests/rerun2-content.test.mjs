@@ -342,7 +342,7 @@ test('review choices preserve prices, caps, a full service comparison and contex
   const targets=hrefs(html).filter(x=>x.startsWith('/contact/')).map(x=>new URL(x,'https://wonderandmethod.com'));
   assert.ok(targets.some(x=>x.searchParams.get('offer')===offer&&x.searchParams.get('goal')===goal&&x.searchParams.get('request_kind')==='question'&&x.hash==='#inquiry'),offer+' / '+goal);
   assert.ok(hrefs(html).some(url=>url.split('#')[0]==='/services/website-audit/'),'Full review comparison remains reachable');
-  assert.match(html,/\$650/);assert.match(html,/\$1,800/);assert.match(html,/up to 10 agreed public pages/);
+  assert.match(html,/\$199/);assert.match(html,/\$849/);assert.match(html,/up to 10 agreed public pages/);
   assert.match(html,/up to three agreed fixes/);assert.match(html,/unchanged accepted work|six.*hour/i);
  }
  const choices=hrefs(auditContent(offers));
@@ -368,10 +368,10 @@ test('budget and maintenance wording keeps current allowances and provider assum
  assert.equal((article('website-project-cost').match(/<caption>Current studio website prices<\/caption>/g)||[]).length,1);
  assert.match(article('website-project-cost'),/Illustrative first-year budget — replace the provider assumptions/);assert.match(article('website-project-cost'),/Replace \$20\/month hosting and \$120\/year other bills with your actual renewal prices/);
  const scope=journalSections('/guides/seo-work-and-reporting/',offers).find(section=>section.id==='scope').body;
- assert.match(scope,/Website Improvement Partnership — \$1,250\/month:.*1 completed improvement/);assert.match(scope,/Local Search Partnership — \$1,750\/month:.*2 content\/SEO units/);
+ assert.match(scope,/Website Improvement Partnership — from \$299\/month:.*1 completed improvement/);assert.match(scope,/Local Search Partnership — from \$499\/month:.*2 content\/SEO units/);
  assert.match(article('website-maintenance-checklist'),/supported maintenance and representative recovery tests/);assert.doesNotMatch(article('website-maintenance-checklist'),/does not include CMS, plugin or theme updates, backups or restores/);assert.match(article('website-maintenance-checklist'),/Monitoring is automated/);assert.ok(hrefs(article('website-maintenance-checklist')).includes('/services/website-care/'));
  assert.match(careContent(offers),/not a guaranteed resolution time/);
- assert.match(seoServiceContent(offers),/href="\/services\/website-care\/"/);assert.match(careContent(offers),/\$275/);
+ assert.match(seoServiceContent(offers),/href="\/services\/website-care\/"/);assert.match(careContent(offers),/\$149/);
  assert.match(seoServiceContent(offers),/carry-forward|credit or refund|refund or credit|new date or refund/i);
 });
 
@@ -416,7 +416,7 @@ test('worksheets, contractor scope and source handoff agree with the pages',()=>
  assert.match(read('src/assets/guides/contact-form-flow-worksheet.txt'),/Find the saved message if your form tool keeps one/);
  assert.match(read('src/assets/guides/contact-form-flow.svg'),/Some forms do not save it/);
  const contractor=contractorService(offers,config);
- assert.match(contractor,/eight pages|8 pages/i);assert.match(contractor,/Focused Website/);assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate agreement on the work and price/);
+ assert.match(contractor,/ten pages|10 pages/i);assert.match(contractor,/Focused Website/);assert.match(contractor,/Photo uploads, dispatch tools and custom integrations need a separate agreement on the work and price/);
  assert.ok(hrefs(contractor).some(x=>x.includes('request_kind=question#inquiry')));
  assert.match(article('contractor-website-checklist'),/href="\/services\/contractor-websites\/"/);
  assert.match(sourceHandoff(),/<h1>Sample website files\.<\/h1>/);assert.match(sourceHandoff(),/This sample shows a source-code website handoff/);

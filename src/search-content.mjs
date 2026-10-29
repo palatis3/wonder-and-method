@@ -1,5 +1,6 @@
 import {serviceCoverage} from './service-area.mjs';
 import {escapeHtml as e, money} from './shared.mjs';
+import {normalizeOfferCatalog} from './offer-catalog.mjs';
 
 // Intent owners, not a list of keyword permutations. Prices remain offer-driven.
 export const searchMetadata = {
@@ -7,7 +8,7 @@ export const searchMetadata = {
  '/services/': {title:'Website, SEO and Business Tool Services',description:'Explore websites, ecommerce, brand messaging, local presence, automation, reviews, repairs and monthly support with clear scope and prices.'},
  '/services/web-design/': {title:'Small Business Web Design',description:o=>`Websites from ${money(o.launch_site.public_price)} with original writing, search foundations and launch checks. Compare ${[o.launch_site,o.focused_site,o.business_site,o.signature_site].filter(Boolean).map(p=>p.marketing_page_cap).join(", ")}-page plans and design approaches.`},
  '/services/website-redesign/': {title:'Website Redesign for Small Businesses',description:o=>`Rebuild a website around clear services, useful content and a working inquiry path. Packages from ${money(o.launch_site.public_price)}; review the existing site first.`},
- '/services/seo/': {title:'Local SEO and Website Improvement Plans',description:o=>`Local Search Focus from ${money(o.plans.local_focus.monthly_price)}/month. Compare existing-page work, new content and website improvements, with brochure care included.`},
+ '/services/seo/': {title:'Local SEO and Website Improvement Plans',description:o=>{const plan=normalizeOfferCatalog(o).plans.local_focus;return `${plan.public_name} from ${money(plan.variants?.production?.price??plan.monthly_price)}/month. Research, writing and practical website improvements, with optional Website Care.`;}},
  '/services/website-care/': {title:'Website Care and Maintenance',description:o=>`Brochure care ${money(o.care_variants.brochure.price)}/month; commerce care ${money(o.care_variants.commerce.price)}/month. Supported maintenance, monitoring, edits and recovery checks.`},
  '/services/website-audit/': {title:'Website Reviews and Repair Sprints',description:o=>`${o.baseline.public_name}: ${money(o.baseline.one_time_price)} for an action plan. ${o.audit_sprint.public_name}: ${money(o.audit_sprint.one_time_price)} for up to three agreed fixes.`},
  '/pricing/': {title:'Website, SEO and Business Service Pricing',description:o=>`Compare four website plans from ${money(o.launch_site.public_price)}, monthly care and SEO, repairs and specialist projects. Clear scope, optional additions and payment stages.`},

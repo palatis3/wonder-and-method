@@ -24,20 +24,20 @@ async function mount(page,html,script,{path='/contact/',css='',bodyClass=''}={})
   if(url.pathname==='/api/inquiries'){
    const input=route.request().postDataJSON();return route.fulfill({status:202,contentType:'application/json',body:JSON.stringify({...input,reference:'abcdef12-3456-4000-8000-000000000001',synthetic:true})});
   }
-  return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:Arial,sans-serif;margin:0;padding:20px;box-sizing:border-box}*{box-sizing:border-box}[hidden]{display:none!important}input,textarea,select{font:inherit}label{display:block}form{max-width:100%}'+css+'</style></head><body class="'+bodyClass+'">'+html+'</body></html>'});
+  return route.fulfill({contentType:'text/html',body:'<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:Arial,sans-serif;margin:0;padding:20px;box-sizing:border-box}*{box-sizing:border-box}[hidden]{display:none!important}input,textarea,select{font:inherit}label{display:block}form{max-width:100%}'+css+'</style></head><body class="'+bodyClass+'">'+html+'</body></html>'});
  });
  await page.goto('http://synthetic.test'+path);if(script)await page.addScriptTag({content:script});return network;
 }
 
 test('ROI shows defaults, keeps stale results, debounces valid updates without focus jumps and resets accurately',async({page})=>{
  const network=await mount(page,websiteRoiPage(),roiScript,{path:'/tools/website-roi-calculator/',css:roiCss});
- await expect(page.locator('#roi-results')).toBeVisible();await expect(page.locator('#roi-output')).toContainText('5.5 extra serious inquiries');
+ await expect(page.locator('#roi-results')).toBeVisible();await expect(page.locator('#roi-output')).toContainText('3.5 extra serious inquiries');
  await expect(page.locator('#roi-results-title')).not.toBeFocused();
  const cost=page.locator('#roi-oneTime');await cost.fill('');await expect(page.locator('#roi-stale')).toBeVisible();await expect(page.locator('#roi-results')).toBeVisible();
- await cost.fill('2000');await expect(page.locator('#roi-stale')).toBeHidden();await expect(cost).toBeFocused();await expect(page.locator('#roi-output')).toContainText('$5,660');
+ await cost.fill('2000');await expect(page.locator('#roi-stale')).toBeHidden();await expect(cost).toBeFocused();await expect(page.locator('#roi-output')).toContainText('$4,148');
  await cost.fill('2000.');await expect(page.locator('#roi-stale')).toBeVisible();
  await cost.fill('bad');await page.getByRole('button',{name:'Calculate scenario'}).click();await expect(cost).toBeFocused();await expect(cost).toHaveAttribute('aria-invalid','true');await expect(page.locator('#roi-results')).toBeVisible();
- await page.getByRole('button',{name:'Reset example'}).click();await expect(cost).toHaveValue('4500');await expect(page.locator('#roi-stale')).toBeHidden();await expect(page.locator('#roi-output')).toContainText('$8,160');
+ await page.getByRole('button',{name:'Reset example'}).click();await expect(cost).toHaveValue('2995');await expect(page.locator('#roi-stale')).toBeHidden();await expect(page.locator('#roi-output')).toContainText('$5,143');
  await page.getByRole('button',{name:'Calculate scenario'}).click();await expect(page.locator('#roi-results-title')).toBeFocused();assertNoPersonalNetwork(network);
 });
 

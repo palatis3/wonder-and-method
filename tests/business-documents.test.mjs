@@ -34,15 +34,15 @@ test('V3 never opens annual enrollment while existing agreement rights remain av
 
 test('care onboarding is conditional and separate from the Roadmap diagnostic',()=>{
  const html=paymentContent(config,offers),note=baselineEnrollmentNote(offers);
- assert.match(note,/\$375/);assert.match(note,/\$650/);assert.match(note,/not an automatic enrollment charge/);assert.match(note,/reduces duplicated work/);
- assert.match(html,/\$275/);assert.match(html,/\$450/);
- assert.equal(offers.care_variants.brochure.page_cap,20);assert.equal(offers.care_variants.commerce.product_cap,100);
+ assert.match(note,/\$195/);assert.match(note,/\$395/);assert.match(note,/waived immediately after a W&M build/);assert.match(note,/Production-only plans have no Care onboarding charge/);
+ assert.match(html,/\$149/);assert.match(html,/\$295/);
+ assert.equal(offers.care_variants.brochure.page_cap,30);assert.equal(offers.care_variants.commerce.product_cap,100);
  for(const pack of buyerPacks(offers).filter(p=>p.summary.monthly)){assert.equal(pack.baselineFee,undefined);assert.match(text(pack),/Eligibility and the exact first invoice are confirmed before payment/);}
 });
 
-test('V3 build documents preserve payment, approval, cancellation and handoff conditions',()=>{
+test('V4 build documents preserve payment, approval, cancellation and handoff conditions',()=>{
  const packs=buyerPacks(offers);
- for(const [id,price] of [['launch_site',2950],['focused_site',4500],['business_site',7500],['signature_site',11500],['storefront',8500]]){
+ for(const [id,price] of [['launch_site',2195],['focused_site',2995],['business_site',4495],['signature_site',6495],['storefront',8500]]){
   const pack=packs.find(p=>p.id===id),body=text(pack);assert.equal(pack.price,price);
   for(const pattern of [/40%/,/30%/,/unearned prepaid fees/,/approved nonrecoverable outside expenses/,/platform export limits/,/applicable license and ownership limits/,/Form receipt and confirmation are verified/,/one real editing task/])assert.match(body,pattern,id);
   for(const stage of pack.summary.offer.payment_schedule)assert.ok(body.includes(money(stage.amount))&&body.includes(stage.event),id);

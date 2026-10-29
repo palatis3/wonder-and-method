@@ -4,9 +4,9 @@ import {escapeHtml as e, money} from './shared.mjs';
 
 export const monthlyDisplayLabels=Object.freeze({smallChanges:'set of small text, photo or link changes',futureTopics:'future-topic list',growthPlan:'rolling 90-day plan'});
 export const monthlySearchChecks='available Google search or page-speed warnings where access allows';
-export function monthlySmallChanges(o,id,{capitalized=false}={}){if(isV3(o))return `${capitalized?'One':'one'} batch of supplied text/image edits, up to 30 minutes a month (45 minutes with Commerce Care)`;const count=o.plans[id].small_change_batches;const label=`${countWords(count)} ${count===1?monthlyDisplayLabels.smallChanges:monthlyDisplayLabels.smallChanges.replace(/^set /,'sets ')} you send each month`;return capitalized?label[0].toUpperCase()+label.slice(1):label;}
+export function monthlySmallChanges(o,id,{capitalized=false}={}){if(isV3(o))return `${capitalized?'One':'one'} batch of supplied text/image edits, up to 60 minutes a month when Brochure or Commerce Care is selected`;const count=o.plans[id].small_change_batches;const label=`${countWords(count)} ${count===1?monthlyDisplayLabels.smallChanges:monthlyDisplayLabels.smallChanges.replace(/^set /,'sets ')} you send each month`;return capitalized?label[0].toUpperCase()+label.slice(1):label;}
 export function monthlySmallChangeTerms(o,id) {
- if(isV3(o))return `One monthly batch of supplied text/image edits, up to 30 minutes for Brochure Care or 45 minutes for Commerce Care. New pages, original writing and new functionality use a separately agreed output or project. Unused client allocations do not accumulate; work delayed by me remains owed or receives an agreed credit/refund.`;
+ if(isV3(o))return `One monthly batch of supplied text/image edits, up to 60 minutes for either Brochure Care or Commerce Care, when selected. New pages, original writing and new functionality use a separately agreed output or project. Unused client allocations do not accumulate; work delayed by me remains owed or receives an agreed credit/refund.`;
  const ids=id?[id]:['keep_running','improve','grow'];
  const allowance=new Set(ids.map(key=>o.plans[key].small_change_batches)).size===1
   ? monthlySmallChanges(o,ids[0],{capitalized:true}).replace(' you send each month',' each month')+'.'
@@ -102,7 +102,7 @@ export function monthlySearchMethod(o, {id = 'keyword-opportunities'} = {}) {
 }
 
 export function monthlySharedScope(o){
- if(isV3(o))return `<section class="studio-section"><h2>Care included once. Useful work clearly defined.</h2><p>All four monthly options include brochure-site care. Choose the improvement or search scope you need; overlapping work is credited before booking.</p><p>${e(v3CareBoundary())}</p><p>${e(v3Enrollment(o))}</p></section>`;
+ if(isV3(o))return `<section class="studio-section"><h2>Useful work. Your choice of care.</h2><p>Choose standalone Website Care or a production plan with optional Brochure or Commerce Care. Production-only plans use your existing maintenance arrangement. Overlapping work is credited before booking.</p><p>${e(v3CareBoundary())}</p><p>${e(v3Enrollment(o))}</p></section>`;
  const ids=['keep_running','improve','grow'],plans=ids.map(id=>o.plans[id]);
  const smallChanges = new Set(plans.map(p=>p.small_change_batches)).size===1 ? monthlySmallChanges(o,'keep_running') : ids.map(id=>`${o.plans[id].public_name}: ${monthlySmallChanges(o,id)}`).join('; ');
  return `<p>Every plan includes automated monitoring, monthly website and contact-form checks, ${e(smallChanges)}, a quarterly website check and a monthly report.</p>`;

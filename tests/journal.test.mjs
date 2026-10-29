@@ -123,9 +123,9 @@ test('edge noindex covers public assets, rejected API requests and unavailable s
 });
 
 
-test('cost-guide examples distinguish V3 scope and agreed-platform handoff',()=>{
+test('cost-guide examples distinguish V4 scope and agreed-platform handoff',()=>{
  const html=pages.find(page=>page.path==='/guides/website-project-cost/').html;
- for(const [name,cap] of [['Focused Website',8],['Custom Website',10],['Business Custom Website',15],['Signature Custom Website',20]]){assert.ok(html.includes(name));assert.ok(html.includes('Up to '+cap+' pages'));}
+ for(const [name,cap] of [['Focused Website',10],['Custom Website',15],['Business Custom Website',20],['Signature Custom Website',25]]){assert.ok(html.includes(name));assert.ok(html.includes('Up to '+cap+' pages'));}
  assert.match(html,/20 seconds.*still and reduced-motion/);assert.match(html,/three.*Signature|Signature.*three/i);
  assert.match(html,/source files and written handoff instructions/);assert.match(html,/supported platform, editing workflow, export limits/);
  assert.match(html,/tasks that need a developer/);assert.doesNotMatch(html,/the first scope might|the second could|browser CMS|publishing dashboard/);

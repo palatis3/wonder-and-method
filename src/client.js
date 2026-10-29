@@ -40,6 +40,13 @@ if(form){
    const input=field(key);if(input?.type==='hidden'){input.value=context[key]||'';}
   }
   const current={service,...context};
+  for(const wrapper of form.querySelectorAll('[data-service-variant]')){
+   const key=wrapper.dataset.serviceVariant,input=field(key),allowed=inquiryContextFields[key].services.includes(service);
+   wrapper.hidden=!allowed;input.disabled=!allowed;
+   if(!allowed||key==='care_variant'&&service==='keep_running'&&input.value==='production')input.value='';
+   const production=key==='care_variant'?[...input.options].find(option=>option.value==='production'):null;if(production)production.disabled=service==='keep_running';
+   if(key==='care_variant')for(const option of input.options){if(!option.value)continue;const label=inquiryContextFields[key].options.find(([id])=>id===option.value)?.[1],price=inquiryOffer(service,undefined,{care_variant:option.value});if(label)option.textContent=label+(allowed&&price?.variant?' — '+money(price.price)+'/month':'');}
+  }
   const additions=priceAddons(normalizeAddonSelection(values));
   const isBuild=['launch_site','focused_site','business_site','signature_site','storefront'].includes(service);
   const interest=field('care_interest'),interestPanel=form.querySelector('[data-care-interest]'),allowInterest=inquiryAllowsMonthlyInterest(values);
@@ -75,6 +82,7 @@ if(form){
   const wrapper=form.querySelector('.request-summary');if(wrapper)wrapper.hidden=!hasInquirySelection({...current,goal:form.querySelector('[data-goal-choices]')?'':current.goal});
   const summary=document.querySelector('#request-summary');
   const next=inquiryRequestSummary(current,undefined,{includeGoal:!form.querySelector('[data-goal-choices]')});if(summary&&summary.textContent!==next)summary.textContent=next;
+  const variantSummary=form.querySelector('[data-selected-variant-summary]');if(variantSummary)variantSummary.textContent=next;
   const changeService=form.querySelector('[data-change-service]');if(changeService)changeService.hidden=service==='unsure';
   const clearAddons=form.querySelector('[data-clear-addons]');if(clearAddons)clearAddons.hidden=!additions.ids.length;
   for(const questionLink of document.querySelectorAll('[data-checkout-question]')){

@@ -5,14 +5,15 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {draftScope} from '../scripts/create-job.mjs';
 import {renderJobPacket,buildJobPacket} from '../scripts/job-packet.mjs';
-import {currentOfferIds,offerRecord,normalizeOfferCatalog} from '../src/offer-catalog.mjs';
+import {currentOfferIds} from '../src/offer-catalog.mjs';
+import {quotedOffer} from '../src/commercial.mjs';
 import {v3Policy} from '../src/v3-offer-content.mjs';
 const legacy=JSON.parse(await readFile(new URL('../operations/historical/offers-2026-10-24-pre-v3.json',import.meta.url),'utf8'));
 const offers=JSON.parse(await readFile(new URL('../config/offers.json',import.meta.url),'utf8'));
 
 test('current scopes and packets retain their distinct approved review, correction and exit terms',async()=>{
  for(const id of currentOfferIds(offers)){
-  const p=offerRecord(normalizeOfferCatalog(offers),id),recurring=Object.hasOwn(offers.plans,id),build=['launch_site','focused_site','business_site','signature_site','storefront'].includes(id);
+  const p=quotedOffer(offers,id),recurring=Object.hasOwn(offers.plans,id),build=['launch_site','focused_site','business_site','signature_site','storefront'].includes(id);
   const scope=await draftScope(id,'synthetic-service-terms'),html=renderJobPacket(scope,{},offers);
   assert.equal(scope.defect_window,p.v3.support);assert.ok(html.includes(scope.included_revisions));
   assert.deepEqual(scope.commercial_boundaries.deliverables,p.v3.includes);
@@ -41,7 +42,7 @@ test('local invoice drafts use exact milestones, escape client data and provide 
  scope.buyer_job='<script>alert("private")</script>';
  const html=renderJobPacket(scope,{entries:[{type:'Fit',note:'<img src=https://example.invalid/pixel>'}]},offers);
  assert.equal((html.match(/class="invoice"/g)||[]).length,3);
- for(const amount of ['$1,800.00','$1,350.00'])assert.ok(html.includes(amount));
+ for(const amount of ['$1,198.00','$898.50'])assert.ok(html.includes(amount));
  assert.ok(html.includes('&lt;script&gt;'));assert.ok(html.includes('&lt;img'));
  assert.ok(!/<(?:script|img|iframe|form)\b/i.test(html));
  assert.ok(!/href=["']https?:/i.test(html));

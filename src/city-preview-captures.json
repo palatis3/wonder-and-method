@@ -4,7 +4,7 @@
   "sourceHashes": {
     "src/portfolio-concepts.mjs": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3",
     "src/assets/portfolio-concepts.css": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30",
-    "src/buyer-experience.mjs": "60c32ae19240bc0dd54acab4ba05f226dcbdae4d7635c8ccd8f8c692b1e5ab7c"
+    "src/buyer-experience.mjs": "4683a544ba7a3e46fae9a9fcbbb8601eadc0454d8dd865354a1f549e65014ae0"
   },
   "builtPages": {
     "/work/fieldwork/": "b6423392b3ffbb880fcc82bbd3bad21eb4197246fbd12c5dd0644c4484dac9f0",
@@ -270,5 +270,15 @@
         }
       ]
     }
-  ]
+  ],
+  "captureSourceHashes": {
+    "src/portfolio-concepts.mjs": "ebcd98b52262f324e226addde24ea0a05ed599f4b3434570d601aee89d370dc3",
+    "src/assets/portfolio-concepts.css": "7e89f6c391a6d421be93ec21a319db0f0fb7ec3a3d27e37446b5370fd07cad30",
+    "src/buyer-experience.mjs": "60c32ae19240bc0dd54acab4ba05f226dcbdae4d7635c8ccd8f8c692b1e5ab7c"
+  },
+  "revalidation": {
+    "reviewedAt": "2026-10-29T16:41:23.991Z",
+    "evidence": "operations/v4-offers-20261029/review/concept-preview-revalidation.json",
+    "reason": "The only change in buyer-experience.mjs is projectCalendar, which is outside all concept captures. The complete concept article, concept stylesheet, illustrations and fonts remain unchanged. Current prices appear in the separate debrief below the crop."
+  }
 }

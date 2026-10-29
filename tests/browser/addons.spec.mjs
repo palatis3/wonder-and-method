@@ -16,7 +16,7 @@ test('all addition prices, scope disclosures and request links work on the catal
  await expect(page.locator('#addon-guided_quote_form details')).toContainText('15 fields');
  await page.locator('#addon-guided_quote_form').getByRole('link',{name:'Ask about this addition',exact:true}).click();
  await expect(page.locator('#inquiry-addon-guided_quote_form')).toBeChecked();
- await expect(page.locator('[data-addon-total]')).toHaveText('$1,200');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$695');
  await expect(page.locator('#request_kind')).toHaveValue('question');
  await expect(page.locator('.addon-picker')).not.toHaveAttribute('open','');
 });
@@ -28,15 +28,15 @@ test('multiple additions survive a failed enhanced request and appear in its con
   await route.fulfill({status:calls===1?503:201,contentType:'application/json',body:JSON.stringify(calls===1?{message:'Synthetic retry needed.'}:{reference:'00000000-0000-4000-8000-000000000001',synthetic:true})});
  });
  await page.goto('/checkout/launch-site/?addons=booking_setup,standard_page#inquiry');
- await expect(page.locator('[data-addon-total]')).toHaveText('$1,200');
- await expect(page.locator('[data-addon-project-total]')).toContainText('$4,150');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$690');
+ await expect(page.locator('[data-addon-project-total]')).toContainText('$2,885');
  await page.locator('.addon-picker summary').click();await page.locator('#inquiry-addon-guided_quote_form').check();
  await page.locator('#inquiry-addon-standard_page').uncheck();
- await expect(page.locator('[data-addon-total]')).toHaveText('$2,050');
- await expect(page.locator('[data-addon-project-total]')).toContainText('$5,000');
- await expect(page.locator('[data-addon-payments]')).toContainText('$2,000 to book (40%)');
- await expect(page.locator('[data-addon-payments]')).toContainText('$1,500 after copy/design approval (30%)');
- await expect(page.locator('[data-addon-payments]')).toContainText('$1,500 after staging approval');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$1,190');
+ await expect(page.locator('[data-addon-project-total]')).toContainText('$3,385');
+ await expect(page.locator('[data-addon-payments]')).toContainText('$1,354 to book (40%)');
+ await expect(page.locator('[data-addon-payments]')).toContainText('$1,015.50 after copy/design approval (30%)');
+ await expect(page.locator('[data-addon-payments]')).toContainText('$1,015.50 after staging approval');
  await expect(page.locator('[data-checkout-question]')).toHaveCount(0);
  await expect(page.locator('#request_kind')).toHaveValue('checkout');
  await expect(page.locator('#service')).toHaveValue('launch_site');
@@ -49,7 +49,7 @@ test('multiple additions survive a failed enhanced request and appear in its con
  await expect(page.locator('#inquiry-addon-guided_quote_form')).toBeChecked();
  await page.getByRole('button',{name:'Request my Focused proposal',exact:true}).click();
  await expect(page.locator('#inquiry-confirmation')).toBeFocused();
- await expect(page.locator('#inquiry-confirmation')).toContainText('One-time additions subtotal: $2,050');
+ await expect(page.locator('#inquiry-confirmation')).toContainText('One-time additions subtotal: $1,190');
  expect(payloads[1]).toEqual(payloads[0]);
  expect(payloads[1].add_ons).toEqual(['booking_setup','guided_quote_form']);
  expect(Object.keys(payloads[1]).filter(key=>key.startsWith('addon_'))).toEqual([]);
@@ -60,19 +60,19 @@ test('estimator includes selected additions once through package and recurring-p
  await page.locator('#cost-calculator .addon-picker summary').click();
  await page.locator('#estimate-addon-three_page_bundle').check();
  await page.locator('#estimate-addon-booking_setup').check();
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $4,700');
- await expect(page.locator('[data-addon-total]')).toHaveText('$1,750');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $3,215');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$1,020');
  await page.locator('#plan').selectOption('keep_running');
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $8,000');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $5,003');
  await page.locator('#build').selectOption('existing');
  await page.locator('input[name="baseline"]').uncheck();
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $5,050');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $2,808');
  await page.locator('#estimate-addon-booking_setup').uncheck();
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $4,200');
- await expect(page.locator('#cost-breakdown')).toContainText('selected additions: $900');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $2,313');
+ await expect(page.locator('#cost-breakdown')).toContainText('selected additions: $525');
  await expect(page.locator('#external-note')).toContainText('Still to add');
  await page.locator('#plan').selectOption('none');
- await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $900');
+ await expect(page.locator('#cost-total')).toHaveText('Your estimate so far: $525');
 });
 
 test('catalogue and all-open selection controls fit narrow screens and text spacing',async({page})=>{

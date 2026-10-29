@@ -44,7 +44,7 @@ function composeAddons(offers,id,base,ids,paymentSchedule,adjustments=[],onboard
  }
  if(offers.catalog_format===3&&builds.includes(id)){
   requireValue(!ids.includes('care_onboarding'),'Care onboarding is included with a new website; remove this addition.');
-  for(const addon of ids.filter(item=>item==='guided_quote_form'||item==='reporting_dashboard'&&id!=='launch_site'))requireValue(credits.has(addon),'This addition overlaps included work. Record a reviewed incremental-scope credit before creating its quote.');
+  for(const addon of ids.filter(item=>item==='guided_quote_form'||item==='reporting_dashboard'&&(id!=='launch_site'||offers.catalog_revision===4)))requireValue(credits.has(addon),'This addition overlaps included work. Record a reviewed incremental-scope credit before creating its quote.');
  }
  const priced=priceAddons(ids,addonCatalog.map(item=>credits.has(item.id)?{...item,public_price:(toCents(item.public_price)-toCents(credits.get(item.id).credit))/100}:item));
  if(credits.size)for(const line of priced.lines)if(credits.has(line.id))line.scope_credit=credits.get(line.id);
@@ -76,10 +76,12 @@ function composeAddons(offers,id,base,ids,paymentSchedule,adjustments=[],onboard
  }};
 }
 
-export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure'}={}){
+export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_schedule,add_on_credits=[],care_variant='brochure',onboarding_variant='brochure',workflow_variant='simple'}={}){
  offers=normalizeOfferCatalog(offers);
- requireValue(['brochure','commerce'].includes(care_variant),'Choose brochure or commerce care.');
- requireValue(care_variant==='brochure'||offers.catalog_format===3&&['keep_running','improve'].includes(id),'Commerce care is available only with Website Care or Website Improvement Partnership.');
+ const v4=offers.catalog_revision===4;
+ requireValue((v4?['production','brochure','commerce']:['brochure','commerce']).includes(care_variant),'Choose a supported production or Care variant.');
+ requireValue(care_variant==='brochure'||(v4?Boolean(offers.plans[id]?.variants?.[care_variant]):offers.catalog_format===3&&['keep_running','improve'].includes(id)),'This service does not offer the selected Care variant.');
+ requireValue(['simple','complex'].includes(workflow_variant)&& (workflow_variant==='simple'||v4&&id==='workflow'),'Choose a supported workflow route.');
  const ids=normalizeAddonSelection({add_ons},offers.add_ons||[]);
  if(id==='website_additions'){
   requireValue(billing!=='annual','Standalone additions are one-time work, not an annual plan.');
@@ -92,18 +94,29 @@ export function quotedOffer(offers,id,billing='monthly',{add_ons=[],payment_sche
   requireValue(onboarding_variant==='brochure','Quote onboarding as a separate one-time addition.');
   if(!['monthly','annual'].includes(billing))throw Error('Choose monthly or annual billing.');
   if(offers.catalog_format===3&&billing==='annual')throw Error('New annual enrollment is unavailable; accepted agreements retain their saved terms.');
-  const p=offers.plans[id],monthly=care_variant==='commerce'?(id==='keep_running'?offers.care_variants.commerce.price:p.monthly_price+offers.care_variants.improvement_commerce_supplement):p.monthly_price,price=billing==='annual'?p.annual.upfront_price:monthly;
+  const p=offers.plans[id],monthly=v4?p.variants[care_variant].price:care_variant==='commerce'?(id==='keep_running'?offers.care_variants.commerce.price:p.monthly_price+offers.care_variants.improvement_commerce_supplement):p.monthly_price,price=billing==='annual'?p.annual.upfront_price:monthly;
   const v3=p.v3?structuredClone(p.v3):undefined;
-  if(v3&&care_variant==='commerce'){
+  if(v3&&v4){
+   const selected=p.variants[care_variant],care=offers.plans.keep_running.v3;
+   const careScope=care.includes.filter(line=>!/^Brochure Care:|^Commerce Care:|^Brochure Care,/.test(line)&&!(care_variant==='commerce'&&line.startsWith('Brochure scope')));
+   const siteScope=care_variant==='commerce'?'One supported store, up to 100 products, one checkout and three ordinary inquiry journeys.':'One supported brochure/service website, up to 30 marketing pages and three ordinary inquiry journeys.';
+   v3.includes=[`${selected.name}: ${monthly} USD per month. ${id==='keep_running'?siteScope:'One supported site; up to 30 marketing pages for production. Store work covers service/information pages, not product/category ecommerce SEO.'}${['local_focus','grow'].includes(id)?' One business location and one primary service area.':''}`,...(id==='keep_running'?careScope:p.v3.includes.filter((line,index)=>index>0&&!line.startsWith('When Brochure Care')&&!line.startsWith('For the first three approved'))),...(id!=='keep_running'&&selected.care?[`Included Care: ${siteScope}`,...careScope]:[]),selected.care?'Care maintenance, recovery tests, 60 minutes of supplied edits and response obligations are included once.':'Production only: maintenance, incident response, recovery tests and the Care edit allowance are not included. Keep a supported maintenance arrangement in place.',care_variant==='brochure'?offers.hosting_offset_terms:'No hosting offset applies to this variant.',...(id==='keep_running'?[]:[offers.first_cycle_measurement]),offers.introductory_terms];
+  }else if(v3&&care_variant==='commerce'){
    if(id==='keep_running')v3.includes=v3.includes.filter(line=>!line.startsWith('Brochure Care:'));
    else v3.includes[0]=`Commerce Care is included once for a supported store; the monthly fee includes the ${offers.care_variants.improvement_commerce_supplement} USD commerce supplement. No separate Care charge applies to the same site.`;
   }
-  return {...p,...(v3?{v3,care_variant}:{}),monthly_price:monthly,public_price:price,payment_schedule:[{event:billing==='annual'?'after fit and written twelve-cycle scope/dates, before service starts':'after fit and written first-cycle scope/dates, before service starts',percent:100,amount:price}],exclusions:offers.catalog_format===3?p.v3.excludes:offers.monthly_terms.excluded};
+  return {...p,...(v3?{v3,care_variant,deliverables:v3.includes}:{}),...(v4?{selected_variant:structuredClone(p.variants[care_variant]),hosting_offset_terms:care_variant==='brochure'?offers.hosting_offset_terms:'No hosting offset.',onboarding_terms:offers.monthly_onboarding_terms,introductory_terms:offers.introductory_terms}:{}),monthly_price:monthly,public_price:price,payment_schedule:[{event:billing==='annual'?'after fit and written twelve-cycle scope/dates, before service starts':'after fit and written first-cycle scope/dates, before service starts',percent:100,amount:price}],exclusions:offers.catalog_format===3?p.v3.excludes:offers.monthly_terms.excluded};
  }
  const p=offers[id]||(id==='audit_fix_sprint'?offers.audit_sprint:id==='website_baseline'?offers.baseline:null);
  if(!p)throw Error('Choose a current build, monthly plan, Sprint or baseline.');
  if(billing==='annual')throw Error('Annual billing is only available for the three ongoing plans.');
- return composeAddons(offers,id,{...p,public_price:p.public_price??p.one_time_price,exclusions:p.exclusions||[offers.audit_sprint.boundaries,offers.one_off_terms.extra_costs]},ids,payment_schedule,add_on_credits,onboarding_variant);
+ let selected=p;
+ if(v4&&id==='workflow'){
+  const route=p.workflow_variants[workflow_variant],v3={...structuredClone(p.v3),includes:[...(route.scope??route.includes)],acceptance:[...route.acceptance],timeline:route.timeline};
+  if(workflow_variant==='simple')v3.includes[0]='Up to five distinct simple native automations for one related business process. The alternative complex route is not included.';
+  selected={...p,v3,workflow_variant,scope:v3.includes.join(' '),acceptance:v3.acceptance,delivery_average:v3.timeline};
+ }
+ return composeAddons(offers,id,{...selected,public_price:p.public_price??p.one_time_price,exclusions:p.exclusions||[offers.audit_sprint.boundaries,offers.one_off_terms.extra_costs]},ids,payment_schedule,add_on_credits,onboarding_variant);
 }
 
 // Validate against the frozen composition, never the current catalog. This keeps

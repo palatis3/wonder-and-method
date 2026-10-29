@@ -11,7 +11,7 @@ test('a question retains useful context and the public price without adopting bi
   const value={service:'improve',request_kind:'question',goal:'search',concept:'fieldwork',billing:'annual',priority:'article'};
   const summary=inquiryRequestSummary(value);
   assert.match(summary,/Improve/);assert.match(summary,/Help customers find my business/);assert.match(summary,/Fieldwork/);
-  assert.match(summary,/Website Improvement Partnership \(\$1,250\/month\)/);assert.doesNotMatch(summary,/^(Question|Proposal request) ·/);assert.doesNotMatch(summary,/prepaid|First monthly priority|Billing/);
+  assert.match(summary,/Website Improvement Partnership \(from \$299\/month\)/);assert.doesNotMatch(summary,/^(Question|Proposal request) ·/);assert.doesNotMatch(summary,/prepaid|First monthly priority|Billing/);
   const html=prefillInquiryHtml(inquiryForm({live:false,privacyLink:'Privacy'}),new URL('https://example.test/contact/?offer=improve&request_kind=question&goal=search&concept=fieldwork&billing=annual&priority=article'));
   assert.doesNotMatch(html,/<details class="inquiry-extra" open/);
   assert.doesNotMatch(html,/name="concept" value="fieldwork"/);assert.doesNotMatch(html,/value="annual"/);assert.match(html,/name="request_kind" value="question"/);
@@ -23,19 +23,19 @@ test('a question retains useful context and the public price without adopting bi
 test('proposal summaries stay concise while hidden selected details remain available to submit',()=>{
   const value={service:'grow',request_kind:'checkout',billing:'monthly',priority:'page',priority_two:'article'};
   const summary=inquiryRequestSummary(value);
-  assert.match(summary,/^Local Search Partnership \(\$1,750\/month\)/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/payment|scope|billing/i);
+  assert.match(summary,/^Local Search Partnership \(from \$499\/month\)/);assert.ok(summary.length<160);assert.doesNotMatch(summary,/payment|scope|billing/i);
   assert.equal(inquiryRequestSummary({service:'unsure',request_kind:'question'}),'');
   const html=inquiryForm({live:true},{checkout:true,service:'grow',value});
   assert.match(html,/type="hidden" id="service" name="service" value="grow"/);assert.match(html,/name="priority_two" value="article"/);
   assert.doesNotMatch(html,/class="fixed-service"/);assert.doesNotMatch(html,/class="request-summary"/);
 });
 
-test('production timing consistently includes two-business-day feedback in the approved V3 windows',async()=>{
+test('production timing consistently includes two-business-day feedback in the approved V4 windows',async()=>{
  const load=async path=>JSON.parse(await readFile(new URL('../'+path,import.meta.url),'utf8'));
  const [config,offers,map,geography]=await Promise.all(['config/site.json','config/offers.json','authority/v5/site-map.json','authority/v5/geography.json'].map(load));
- const ranges={launch_site:'5–10 business days',focused_site:'2–3 weeks',business_site:'3–4 weeks',signature_site:'4–6 weeks'};
+ const ranges={launch_site:'5–7 business days',focused_site:'10–15 business days',business_site:'15–20 business days',signature_site:'20–30 business days'};
  for(const range of Object.values(ranges))assert.ok(config.projectTiming.includes(range));
- assert.match(config.projectTiming,/ready, booked kickoff/);assert.match(config.projectTiming,/review time is already included/);assert.match(config.projectTiming,/two business days/);assert.match(config.projectTiming,/Missing inputs or approved scope changes can move dates/);
+ assert.match(config.projectTiming,/ready, booked start/);assert.match(config.projectTiming,/review time is included/);assert.match(config.projectTiming,/two business days/);assert.match(config.projectTiming,/Missing inputs or approved changes can move dates/);
  const pages=renderPages({config,offers,map,geography});
  const home=pages.find(page=>page.path==='/').html;assert.ok(home.includes(config.projectTiming));assert.match(home,/writing/i);
  const process=pages.find(page=>page.path==='/process/').html;assert.ok(process.includes(config.projectTiming));
@@ -43,9 +43,9 @@ test('production timing consistently includes two-business-day feedback in the a
  for(const [id,range] of Object.entries(ranges)){
   assert.equal(offers[id].delivery_average,range);
   const detail=buyerPacks(offers).find(pack=>pack.id===id).sections.flatMap(section=>section.items).join(' ');
-  assert.ok(detail.includes(range),id);assert.match(detail,/review time is already included/);assert.match(detail,/two business days/);
+  assert.ok(detail.includes(range),id);assert.match(detail,/review time is included/);assert.match(detail,/two business days/);
   const checkout=pages.find(page=>page.path===`/checkout/${id.replaceAll('_','-')}/`).html;
-  assert.ok(checkout.includes(range),id+' timing');assert.match(checkout,/review time is already included/);
+  assert.ok(checkout.includes(range),id+' timing');assert.match(checkout,/review time is included/);
   for(const other of Object.keys(ranges).filter(key=>key!==id))assert.ok(!checkout.includes(ranges[other]),id+' must not inherit '+other+' timing');
  }
  for(const page of pages)assert.doesNotMatch(page.html,/seven.day target|7.day target|delivery in 7 days|target is seven days/i,page.path);

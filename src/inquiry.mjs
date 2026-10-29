@@ -84,6 +84,7 @@ export function validateInquiry(data){
     }catch{/* A harmless website/social note remains plain text, never a generated link. */}
   }
   for(const [key,field] of Object.entries(inquiryContextFields)){if(data[key]===undefined||data[key]==='')continue;if(typeof data[key]!=='string'||!field.options.some(([id])=>id===data[key])){errors[key]='Choose one of the listed options.';continue;}if(!field.services.includes(value.service))continue;value[key]=data[key];}
+  if(value.service==='keep_running'&&value.care_variant==='production'){errors.care_variant='Website Care requires Brochure or Commerce Care. Choose a production plan for production-only work.';delete value.care_variant;}
   if(!inquiryAllowsMonthlyInterest(value))delete value.care_interest;
   if(!inquiryNeedsWebsite(value)&&/^(?:none|n\/?a|no website|not yet|-)?$/i.test(value.website))value.website='';
   if(inquiryNeedsWebsite(value)){

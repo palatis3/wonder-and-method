@@ -114,7 +114,7 @@ test('ROI worked example and guide templates stay useful without JavaScript',asy
  await expect(page.getByText('The interactive calculator needs JavaScript. Open “How this is calculated” below for the example and formulas.',{exact:true})).toBeVisible();
  await page.locator('#worked-example summary').click();await expect(page.locator('#worked-example details')).toHaveAttribute('open','');
  await expect(page.getByRole('heading',{name:'The example, step by step',exact:true})).toBeVisible();
- for(const value of ['$8,160','-$2,160','-26.5%','23.1 months'])await expect(page.locator('#worked-example')).toContainText(value);
+ for(const value of ['$5,143','$857','16.7%','9.3 months'])await expect(page.locator('#worked-example')).toContainText(value);
  await page.goto('/guides/website-content-template/?qa=1');await expect(page.locator('.journal-prose')).toBeVisible();
  const template=page.locator('a[href^="/assets/guides/website-content-template.txt"]').first();await expect(template).toBeVisible();await expect(template).toHaveAttribute('download','');
  const download=await page.request.get(await template.getAttribute('href'));expect(download.status()).toBe(200);expect((await download.text()).length).toBeGreaterThan(300);
@@ -232,17 +232,17 @@ test('native additions prefill, correction and receipt preserve all selected wor
  await page.goto('/contact/?addons=standard_page,booking_setup&request_kind=checkout#inquiry');
  await expect(page.locator('#inquiry-addon-standard_page')).toBeChecked();
  await expect(page.locator('#inquiry-addon-booking_setup')).toBeChecked();
- await expect(page.locator('[data-addon-total]')).toHaveText('$1,200');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$690');
  await page.locator('[data-addon-picker] > summary').click();
  await page.locator('#inquiry-addon-guided_quote_form').check();
  await page.locator('#name').fill('Native additions fixture');await page.locator('#email').fill('fixture@example.test');await page.locator('#message').fill('Synthetic request for several agreed additions.');
  await page.getByRole('button',{name:'Send message',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Please check these details',exact:true})).toBeVisible();
  for(const id of ['standard_page','booking_setup','guided_quote_form'])await expect(page.locator('#inquiry-addon-'+id)).toBeChecked();
- await expect(page.locator('[data-addon-total]')).toHaveText('$2,400');
+ await expect(page.locator('[data-addon-total]')).toHaveText('$1,385');
  await page.getByRole('button',{name:'Send message',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Test inquiry recorded.',exact:true})).toBeVisible();
- await expect(page.locator('.inquiry-confirmation')).toContainText('One-time additions subtotal: $2,400');
+ await expect(page.locator('.inquiry-confirmation')).toContainText('One-time additions subtotal: $1,385');
  expect(payloads[1]).toEqual(payloads[0]);
  expect(payloads[1].add_ons).toEqual(['booking_setup','guided_quote_form','standard_page']);
 });
@@ -250,8 +250,8 @@ test('native additions prefill, correction and receipt preserve all selected wor
 test('native checkout retains chosen additions and welcomes questions without another form',async({page},testInfo)=>{
  test.skip(testInfo.project.name!=='no-javascript','Dedicated no-JavaScript project');
  await page.goto('/checkout/launch-site/?addons=guided_quote_form,booking_setup#inquiry');
- await expect(page.locator('[data-addon-project-total]')).toContainText('$5,000');
- await expect(page.locator('[data-addon-payments]')).toContainText('$2,000 to book (40%)');
+ await expect(page.locator('[data-addon-project-total]')).toContainText('$3,385');
+ await expect(page.locator('[data-addon-payments]')).toContainText('$1,354 to book (40%)');
  await expect(page.locator('[data-checkout-question]')).toHaveCount(0);
  await expect(page.locator('#message-help')).toContainText('Questions are welcome here too');
  await expect(page.locator('#service')).toHaveValue('launch_site');

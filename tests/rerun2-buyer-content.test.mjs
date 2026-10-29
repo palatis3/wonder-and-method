@@ -60,9 +60,9 @@ test('generated media inventories do not keep obsolete images alive while linked
 });
 test('monthly first-payment alternatives and website editing limits appear before the request form',()=>{
  const pages=checkoutPages(offers,intakeContent(config));
- for(const [slug,first,repeat]of [['keep-running','$375','$275'],['improve','$375','$1,250'],['local-focus','$375','$850'],['grow','$375','$1,750']]){
+ for(const [slug,first,repeat]of [['keep-running','$195','$149'],['improve','$195','$299'],['local-focus','$195','$199'],['grow','$195','$499']]){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body,header=page.slice(0,page.indexOf('<form'));
-  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/usable prior handoff or paid review reduces duplicated work/);assert.match(header,/month-to-month/);
+  assert.ok(header.includes(first));assert.ok(header.includes(repeat));assert.match(header,/waived immediately after a W&amp;M build/);assert.match(header,/Cancel before the next billing date/);
  }
  for(const slug of ['launch-site','focused-site','business-site','signature-site']){
   const page=pages.find(p=>p.path===`/checkout/${slug}/`).body;
