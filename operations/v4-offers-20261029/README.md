@@ -7,3 +7,5 @@ This release gives all 15 plans a clearer explanation of their audience, outcome
 The pricing presentation uses the established studio palette, section navigation and expandable complete scopes. Service, county, guide, payment and checkout surfaces use the same approved terms. The actual homepage portfolio capture was refreshed to remove an embedded historical price.
 
 Independent commercial, implementation, test-migration and capture reviews are in `review/`. Raw test logs and all production credentials, backups, CI downloads and release evidence stay private. Regression coverage includes 1,081 unit tests and 2,716 generated offer-binding assertions. Final publication additionally requires the existing complete CI, visual review, exact artifact parity and recovery gates; local results alone do not certify deployment.
+
+The [completed release record](RELEASE.md) identifies the published source, runtime, exact-source CI and verified recovery receipts.

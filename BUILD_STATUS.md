@@ -1,8 +1,8 @@
-# Implementation status — October 26, 2026
+# Implementation status — October 29, 2026
 
-Current published application: [Colorado, Utah and Puerto Rico](operations/co-ut-pr-expansion-20261026/RELEASE.md), source `76a5b665f52447579de68703de60b57003b7ea05`, runtime `22055743-5bfc-41d9-9507-55485ed6ad4b`, deployed 2026-10-27T00:22:53.176Z. All 2,299 routes and 2,969 assets match the tested build; exact-source CI, live verification, Search Console submission and scheduled recovery with external monitoring receipt are complete.
+Current published application: [V4 offers](operations/v4-offers-20261029/RELEASE.md), source `f64d4a7faa12d02f8ab84ed0e20095c6446b0bfc`, runtime `472f43ed-afc5-4c6f-be80-d298b29a4892`, deployed 2026-10-29T20:34:01.721Z. All 2,437 routes and 3,124 assets match the tested build; 2,418 URLs are sitemap-eligible. All 15 exact-source CI jobs, 18 live browser checks, fresh-backup restore, scheduled recovery and external monitoring receipts passed. Database schema and operational bindings are unchanged. Later documentation-only commits do not change the deployed application identity.
 
-The [Idaho and Montana candidate](operations/id-mt-expansion-20261026/RELEASE.md) adds 69 reviewed service pages and two state directories. It remains pending final exact-source CI and production verification.
+Earlier dated release records remain below; the application identity and catalog above govern current operation.
 
 ## Retained prior release record
 
@@ -36,7 +36,7 @@ The completed October 26 Semrush crawl measured the preceding eight-state releas
 
 ## Offers and daily operation
 
-New scopes use [config/offers.json](config/offers.json), currently version `2026-10-21-clarity-review`; accepted historical scopes retain their exact saved terms. Launch, Focused and Signature remain $1,400 / $2,350 / $3,700 with 6 / 15 / 30 pages. Use the current catalogue and written scope for inclusions, additions and dates; older V5 prices and planning assumptions are historical.
+New scopes use [config/offers.json](config/offers.json), version `2026-10-29-v4-offers`. Website plans are $2,195 / $2,995 / $4,495 / $6,495 for up to 10 / 15 / 20 / 25 pages. Website Care is $149 Brochure or $295 Commerce monthly. Production-only Improvement, Local Search Focus and Local Search Partnership start at $299 / $199 / $349 monthly, with the catalog listing all Care-inclusive variants and the eligible Brochure hosting offset. Accepted historical scopes retain their exact saved terms; original V5 material and older offer versions remain historical.
 
 Use [HANDOFF.md](HANDOFF.md) for daily operation, [WORKFLOWS.md](operations/WORKFLOWS.md) for a client job, [PAYMENTS.md](operations/PAYMENTS.md) for private Stripe invoicing, and [CLIENT_HANDOFF.md](operations/CLIENT_HANDOFF.md) for source delivery. Website notifications go to the owner's Gmail inbox; public support mail remains in Fastmail and chat remains in tawk.to. Monitoring does not prove mailbox review or a buyer reply.
 
