@@ -64,6 +64,12 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'invitation.create':['email','role'],
+  'invitation.revoke':['id','expected_version'],
+  'invitation.accept':['id','business_name'],
+  'member.change':['user_id','role','status','expected_version'],
+  'authority.assign':['engagement_id','user_id','domain','kind','starts_at','ends_at','evidence','previous_id','expected_version'],
+  'authority.revoke':['id','expected_version','reason'],
   'request.create':['engagement_id','outcome','source'],
   'request.accept':['request_id','expected_version','scope','coverage','owner_id','due_at','next_contact_at','approver_id','blockers'],
   'request.progress':['request_id','expected_version','state','reason','next_contact_at'],

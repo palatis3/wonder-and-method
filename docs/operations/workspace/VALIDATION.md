@@ -77,3 +77,25 @@ independent encrypted receipt/file backup and scoped restore drills; browser,
 accessibility and interrupted-form tests; complete public-offer reconciliation;
 CI results; three final independent Astra judges. Do not publish or represent
 these items as passing based on the tests above.
+
+## People controls and synthetic interface
+
+Added verified-email invitation acceptance, explicit customer-role changes,
+last-administrator protection, and bounded decision-domain assignments. All
+material changes require recent sign-in; operator assignments also require MFA
+and independent customer-authority evidence. Reducing access invalidates older
+invitations. The tenant authority-version change cancels all pending positive
+operations; in-flight and defensive operations remain visible. Independent
+Astra review identified both edge cases and regression tests now cover them.
+
+Local suite: 31 passed, three multi-connection cases skipped locally; subsequent
+expanded People suite: four passed. Prior committed GitHub PostgreSQL 17.11 run
+41146285077 passed all 31 then-current tests, including concurrency. This is not
+evidence for the newly added cases until their next CI run completes.
+
+Synthetic-only local browser: customer overview, request submission, exact
+version approval and invitation creation exercised against isolated PGlite.
+Invitation UI truthfully records delivery as pending; live email provisioning
+and delivery are not yet connected. People migration applied to staging only.
+The two advisor categories remain deliberate RPC-only access findings, as
+documented above. No production migration or publication has occurred.

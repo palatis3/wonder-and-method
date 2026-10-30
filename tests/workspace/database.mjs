@@ -17,6 +17,7 @@ export async function database() {
   await db.exec(`
     create schema auth;
     create table auth.sessions(id uuid primary key,user_id uuid not null,not_after timestamptz);
+    create table auth.users(id uuid primary key,email text,email_confirmed_at timestamptz);
     create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claims',true)::jsonb->>'sub','')::uuid$$;
     create function auth.role() returns text language sql stable as $$select current_setting('request.jwt.claims',true)::jsonb->>'role'$$;
     grant usage on schema auth to authenticated,anon,service_role;
@@ -24,6 +25,7 @@ export async function database() {
   const dir=new URL('../../db/workspace/migrations/',import.meta.url);
   for(const file of (await readdir(dir)).filter(f=>f.endsWith('.sql')).sort())await db.exec(await readFile(new URL(file,dir),'utf8'));
   await db.query(`insert into auth.sessions(id,user_id) select u,u from unnest($1::uuid[]) u`,[[ids.client,ids.operator,ids.viewer,ids.outsider]]);
+  await db.query(`insert into auth.users(id,email,email_confirmed_at) select u,u::text||'@synthetic.example',now() from unnest($1::uuid[]) u`,[[ids.client,ids.operator,ids.viewer,ids.outsider]]);
   await db.query(`insert into wm.organizations(id,name) values($1,'Synthetic North'),($2,'Synthetic South')`,[ids.org,ids.other]);
   await db.query(`insert into wm.tenant_guards(organization_id,external_generation) values($1,'fixture-generation-1'),($2,'fixture-generation-2')`,[ids.org,ids.other]);
   await db.query(`insert into wm.memberships(organization_id,user_id,role) values($1,$2,'customer_admin'),($1,$3,'viewer'),($4,$5,'customer_admin')`,[ids.org,ids.client,ids.viewer,ids.other,ids.outsider]);
