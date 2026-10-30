@@ -1,0 +1,2287 @@
+{
+  "status": "Implementation acceptance inventory; none run against production",
+  "counts": {
+    "priorResearch": 45,
+    "businessV1": 33,
+    "businessV2": 36,
+    "total": 114
+  },
+  "supersededExpectations": [
+    "F22",
+    "AD15",
+    "AD22",
+    "AD25",
+    "AD30",
+    "AD33"
+  ],
+  "tests": [
+    {
+      "id": "F01",
+      "origin": "V2",
+      "scenario": "The same verified payment event repeats",
+      "setup": "Replay the same verified payment event three times.",
+      "expected": "One event is applied once; repeated delivery has no duplicate provisioning or message.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F01",
+        "origin": "V2",
+        "original": {
+          "id": "F01",
+          "scenario": "The same verified payment event repeats",
+          "workflow": "W05 / W11",
+          "expected": "One event is applied once; repeated delivery has no duplicate provisioning or message.",
+          "test": "Replay the same verified payment event three times.",
+          "source": "E02"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F02",
+      "origin": "V2",
+      "scenario": "Subscription exists but payment needs authentication",
+      "setup": "Create an incomplete payment state, then complete it.",
+      "expected": "Customer sees payment action; delivery is not marked ready merely because a subscription exists.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F02",
+        "origin": "V2",
+        "original": {
+          "id": "F02",
+          "scenario": "Subscription exists but payment needs authentication",
+          "workflow": "W05",
+          "expected": "Customer sees payment action; delivery is not marked ready merely because a subscription exists.",
+          "test": "Create an incomplete payment state, then complete it.",
+          "source": "E03"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F03",
+      "origin": "V2",
+      "scenario": "Paid event arrives before contract or client record",
+      "setup": "Deliver events in reverse order.",
+      "expected": "Persist and reconcile the event; hold commercial readiness until all required gates are satisfied.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F03",
+        "origin": "V2",
+        "original": {
+          "id": "F03",
+          "scenario": "Paid event arrives before contract or client record",
+          "workflow": "W05 / W11",
+          "expected": "Persist and reconcile the event; hold commercial readiness until all required gates are satisfied.",
+          "test": "Deliver events in reverse order.",
+          "source": "E02"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F04",
+      "origin": "V2",
+      "scenario": "An email or attachment is rejected",
+      "setup": "Use an unknown sender, a large attachment and a bounced receipt.",
+      "expected": "Customer receives a non-sensitive explicit status and upload/recovery option; accepted content is preserved.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F04",
+        "origin": "V2",
+        "original": {
+          "id": "F04",
+          "scenario": "An email or attachment is rejected",
+          "workflow": "W04",
+          "expected": "Customer receives a non-sensitive explicit status and upload/recovery option; accepted content is preserved.",
+          "test": "Use an unknown sender, a large attachment and a bounced receipt.",
+          "source": "E01"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F05",
+      "origin": "V2",
+      "scenario": "Customer sends the same change in three threads",
+      "setup": "Send similar and genuinely different requests.",
+      "expected": "One owned work item with merged provenance; uncertain duplicates stay reviewable.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F05",
+        "origin": "V2",
+        "original": {
+          "id": "F05",
+          "scenario": "Customer sends the same change in three threads",
+          "workflow": "W04",
+          "expected": "One owned work item with merged provenance; uncertain duplicates stay reviewable.",
+          "test": "Send similar and genuinely different requests.",
+          "source": "E07"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F06",
+      "origin": "V2",
+      "scenario": "Customer supplies credentials or unrelated sensitive data",
+      "setup": "Use synthetic sensitive content in a test message.",
+      "expected": "Request the appropriate invitation or secure channel; restrict access and avoid echoing secrets in notifications.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F06",
+        "origin": "V2",
+        "original": {
+          "id": "F06",
+          "scenario": "Customer supplies credentials or unrelated sensitive data",
+          "workflow": "W03 / W04",
+          "expected": "Request the appropriate invitation or secure channel; restrict access and avoid echoing secrets in notifications.",
+          "test": "Use synthetic sensitive content in a test message.",
+          "source": "V023"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F07",
+      "origin": "V2",
+      "scenario": "Client grants access to the wrong account",
+      "setup": "Invite an unrelated test account and remove a needed role.",
+      "expected": "Verify business identity and required role before declaring access ready.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F07",
+        "origin": "V2",
+        "original": {
+          "id": "F07",
+          "scenario": "Client grants access to the wrong account",
+          "workflow": "W05",
+          "expected": "Verify business identity and required role before declaring access ready.",
+          "test": "Invite an unrelated test account and remove a needed role.",
+          "source": "C371"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F08",
+      "origin": "V2",
+      "scenario": "An asset is present but unusable",
+      "setup": "Upload a blurry image or incompatible format.",
+      "expected": "Keep accepted assets; request only the failing item with a reason and example.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F08",
+        "origin": "V2",
+        "original": {
+          "id": "F08",
+          "scenario": "An asset is present but unusable",
+          "workflow": "W03",
+          "expected": "Keep accepted assets; request only the failing item with a reason and example.",
+          "test": "Upload a blurry image or incompatible format.",
+          "source": "C410"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F09",
+      "origin": "V2",
+      "scenario": "Client does not answer an approval",
+      "setup": "Let the deadline expire without a click.",
+      "expected": "Show the unanswered decision and date consequence; escalate or pause the affected work.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F09",
+        "origin": "V2",
+        "original": {
+          "id": "F09",
+          "scenario": "Client does not answer an approval",
+          "workflow": "W06",
+          "expected": "Show the unanswered decision and date consequence; escalate or pause the affected work.",
+          "test": "Let the deadline expire without a click.",
+          "source": "C302"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F10",
+      "origin": "V2",
+      "scenario": "An approved file changes",
+      "setup": "Change price, destination URL and harmless punctuation separately.",
+      "expected": "Preserve the approved snapshot; material changes cannot ship under the previous approval.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F10",
+        "origin": "V2",
+        "original": {
+          "id": "F10",
+          "scenario": "An approved file changes",
+          "workflow": "W06",
+          "expected": "Preserve the approved snapshot; material changes cannot ship under the previous approval.",
+          "test": "Change price, destination URL and harmless punctuation separately.",
+          "source": "C335"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F11",
+      "origin": "V2",
+      "scenario": "Two client contacts disagree",
+      "setup": "Submit contradictory decisions from reviewer and approver.",
+      "expected": "Use the named decision maker or explicitly configured approval rule; record the unresolved conflict.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F11",
+        "origin": "V2",
+        "original": {
+          "id": "F11",
+          "scenario": "Two client contacts disagree",
+          "workflow": "W06 / W07",
+          "expected": "Use the named decision maker or explicitly configured approval rule; record the unresolved conflict.",
+          "test": "Submit contradictory decisions from reviewer and approver.",
+          "source": "C402"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F12",
+      "origin": "V2",
+      "scenario": "Minor revision conceals a new deliverable",
+      "setup": "Request a new language, page or audience under a small-edit label.",
+      "expected": "Explain included correction/revision versus additional work; no silent charge or scope expansion.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F12",
+        "origin": "V2",
+        "original": {
+          "id": "F12",
+          "scenario": "Minor revision conceals a new deliverable",
+          "workflow": "W07",
+          "expected": "Explain included correction/revision versus additional work; no silent charge or scope expansion.",
+          "test": "Request a new language, page or audience under a small-edit label.",
+          "source": "C378"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F13",
+      "origin": "V2",
+      "scenario": "AI invents a start date or interprets a request as permission",
+      "setup": "Provide an ambiguous requested date and conflicting budget notes.",
+      "expected": "Keep inferred values provisional and route the actual commitment for confirmation.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F13",
+        "origin": "V2",
+        "original": {
+          "id": "F13",
+          "scenario": "AI invents a start date or interprets a request as permission",
+          "workflow": "W03 / W09",
+          "expected": "Keep inferred values provisional and route the actual commitment for confirmation.",
+          "test": "Provide an ambiguous requested date and conflicting budget notes.",
+          "source": "C397"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F14",
+      "origin": "V2",
+      "scenario": "An uploaded instruction tells AI to reveal other clients",
+      "setup": "Use a synthetic hostile instruction and direct cross-client API requests.",
+      "expected": "Server-enforced organization and role boundaries prevent access regardless of model output.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F14",
+        "origin": "V2",
+        "original": {
+          "id": "F14",
+          "scenario": "An uploaded instruction tells AI to reveal other clients",
+          "workflow": "W09",
+          "expected": "Server-enforced organization and role boundaries prevent access regardless of model output.",
+          "test": "Use a synthetic hostile instruction and direct cross-client API requests.",
+          "source": "C281"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F15",
+      "origin": "V2",
+      "scenario": "Workflow says success but nothing was delivered",
+      "setup": "Generate a local email file without sending it and create duplicate CRM rows.",
+      "expected": "Compare intended outcome with provider evidence; open one owned failure task.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F15",
+        "origin": "V2",
+        "original": {
+          "id": "F15",
+          "scenario": "Workflow says success but nothing was delivered",
+          "workflow": "W11",
+          "expected": "Compare intended outcome with provider evidence; open one owned failure task.",
+          "test": "Generate a local email file without sending it and create duplicate CRM rows.",
+          "source": "C342"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F16",
+      "origin": "V2",
+      "scenario": "Provider token expires or repeated retries fail",
+      "setup": "Revoke a test integration token midway through a job.",
+      "expected": "Bounded retries, an owned reconnect task and honest customer status; no false completion.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F16",
+        "origin": "V2",
+        "original": {
+          "id": "F16",
+          "scenario": "Provider token expires or repeated retries fail",
+          "workflow": "W11",
+          "expected": "Bounded retries, an owned reconnect task and honest customer status; no false completion.",
+          "test": "Revoke a test integration token midway through a job.",
+          "source": "E04"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F17",
+      "origin": "V2",
+      "scenario": "Report data is stale or partial",
+      "setup": "Disconnect one source and retain historical results.",
+      "expected": "Flag affected metrics and conclusions, show last known date and create a repair task.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F17",
+        "origin": "V2",
+        "original": {
+          "id": "F17",
+          "scenario": "Report data is stale or partial",
+          "workflow": "W10",
+          "expected": "Flag affected metrics and conclusions, show last known date and create a repair task.",
+          "test": "Disconnect one source and retain historical results.",
+          "source": "V271"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F18",
+      "origin": "V2",
+      "scenario": "Owner is unavailable and work is urgent",
+      "setup": "Run a planned absence against a critical approval and routine update.",
+      "expected": "Named backup or explicit coverage limitation, with a handoff packet and priority reason.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F18",
+        "origin": "V2",
+        "original": {
+          "id": "F18",
+          "scenario": "Owner is unavailable and work is urgent",
+          "workflow": "W08",
+          "expected": "Named backup or explicit coverage limitation, with a handoff packet and priority reason.",
+          "test": "Run a planned absence against a critical approval and routine update.",
+          "source": "C337"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F19",
+      "origin": "V2",
+      "scenario": "Delayed website work affects SEO and ads",
+      "setup": "Change a shared landing-page URL or service offer.",
+      "expected": "One impact explanation identifies dependent assets, dates and choices.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F19",
+        "origin": "V2",
+        "original": {
+          "id": "F19",
+          "scenario": "Delayed website work affects SEO and ads",
+          "workflow": "W05 / W07",
+          "expected": "One impact explanation identifies dependent assets, dates and choices.",
+          "test": "Change a shared landing-page URL or service offer.",
+          "source": "V096"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F20",
+      "origin": "V2",
+      "scenario": "Client cancels but scheduled jobs remain",
+      "setup": "Cancel an engagement with a pending post, reminder and renewal.",
+      "expected": "Apply agreed stop/retention rules, revoke access and cancel future jobs without deleting required history.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F20",
+        "origin": "V2",
+        "original": {
+          "id": "F20",
+          "scenario": "Client cancels but scheduled jobs remain",
+          "workflow": "W12",
+          "expected": "Apply agreed stop/retention rules, revoke access and cancel future jobs without deleting required history.",
+          "test": "Cancel an engagement with a pending post, reminder and renewal.",
+          "source": "C288"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F21",
+      "origin": "V2",
+      "scenario": "Login link is forwarded, expired or revoked",
+      "setup": "Use multiple test identities and expired/revoked links.",
+      "expected": "No unauthorized client data or consequential approval; recovery returns the intended user to the task.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F21",
+        "origin": "V2",
+        "original": {
+          "id": "F21",
+          "scenario": "Login link is forwarded, expired or revoked",
+          "workflow": "W02",
+          "expected": "No unauthorized client data or consequential approval; recovery returns the intended user to the task.",
+          "test": "Use multiple test identities and expired/revoked links.",
+          "source": "V077"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F22",
+      "origin": "V2",
+      "scenario": "Evaluate net effort without deferring required functionality",
+      "setup": "Use timed synthetic tasks with maintenance/review cost.",
+      "expected": "Expose net effort; simplify implementation when needed. No promised launch feature is postponed until paying customers exist.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F22",
+        "origin": "V2",
+        "original": {
+          "id": "F22",
+          "scenario": "A useful automation costs more to maintain than it saves",
+          "workflow": "W12",
+          "expected": "A visible net-effort calculation triggers simplification or retirement.",
+          "test": "Include setup, review, correction and maintenance in the pilot log.",
+          "source": "E09"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F23",
+      "origin": "V2",
+      "scenario": "Two genuine charges pay the same obligation",
+      "setup": "Record two distinct successful charge IDs for one obligation, then verify both transactions and the reconciliation task.",
+      "expected": "Preserve both financial records, avoid duplicate work provisioning, flag overpayment for reconciliation and authorized refund or credit handling.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F23",
+        "origin": "V2",
+        "original": {
+          "id": "F23",
+          "scenario": "Two genuine charges pay the same obligation",
+          "workflow": "W05 / W11",
+          "expected": "Preserve both financial records, avoid duplicate work provisioning, flag overpayment for reconciliation and authorized refund or credit handling.",
+          "test": "Record two distinct successful charge IDs for one obligation, then verify both transactions and the reconciliation task.",
+          "source": "E02"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-01",
+      "origin": "V3",
+      "scenario": "One person, two businesses, two browser tabs",
+      "setup": "Open A and B in different tabs; swap resource IDs and attempt download/approval. No foreign metadata.",
+      "expected": "Every request/file/action remains scoped to the selected authorized business.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-01",
+        "origin": "V3",
+        "original": {
+          "id": "F3-01",
+          "scenario": "One person, two businesses, two browser tabs",
+          "expected": "Every request/file/action remains scoped to the selected authorized business.",
+          "test": "Open A and B in different tabs; swap resource IDs and attempt download/approval. No foreign metadata.",
+          "source": "X08; X18",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-02",
+      "origin": "V3",
+      "scenario": "Approver removed while their old tab is open",
+      "setup": "Revoke membership, then submit approval and open an old signed-file link under the documented expiry policy.",
+      "expected": "Current membership and approval authority are checked at action time.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-02",
+        "origin": "V3",
+        "original": {
+          "id": "F3-02",
+          "scenario": "Approver removed while their old tab is open",
+          "expected": "Current membership and approval authority are checked at action time.",
+          "test": "Revoke membership, then submit approval and open an old signed-file link under the documented expiry policy.",
+          "source": "V3-014; X08",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-03",
+      "origin": "V3",
+      "scenario": "Email link scanner, expired sign-in or lost task",
+      "setup": "Prefetch link, expire token, then use OTP/confirmation; reject an external redirect target.",
+      "expected": "GET never approves; access recovery returns to the intended authorized request.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-03",
+        "origin": "V3",
+        "original": {
+          "id": "F3-03",
+          "scenario": "Email link scanner, expired sign-in or lost task",
+          "expected": "GET never approves; access recovery returns to the intended authorized request.",
+          "test": "Prefetch link, expire token, then use OTP/confirmation; reject an external redirect target.",
+          "source": "X10",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-04",
+      "origin": "V3",
+      "scenario": "Unknown, forwarded or ambiguous email sender",
+      "setup": "Send from a second address and a person in two businesses; no guessed service or automatic private reply.",
+      "expected": "Receipt is visible to owner triage without granting access or exposing private history.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-04",
+        "origin": "V3",
+        "original": {
+          "id": "F3-04",
+          "scenario": "Unknown, forwarded or ambiguous email sender",
+          "expected": "Receipt is visible to owner triage without granting access or exposing private history.",
+          "test": "Send from a second address and a person in two businesses; no guessed service or automatic private reply.",
+          "source": "X16; V3-060",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-05",
+      "origin": "V3",
+      "scenario": "Retry sends the same inbound email twice",
+      "setup": "Replay identical provider ID concurrently; then send a distinct follow-up with the same subject.",
+      "expected": "One message/request effect; genuine new messages remain distinct.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-05",
+        "origin": "V3",
+        "original": {
+          "id": "F3-05",
+          "scenario": "Retry sends the same inbound email twice",
+          "expected": "One message/request effect; genuine new messages remain distinct.",
+          "test": "Replay identical provider ID concurrently; then send a distinct follow-up with the same subject.",
+          "source": "X05; X12",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-06",
+      "origin": "V3",
+      "scenario": "Attachment retrieval fails or temporary URL expires",
+      "setup": "Expire URL and fail the first copy; verify no false complete-file status.",
+      "expected": "Keep request; mark specific file pending/failed; retry by refreshing the URL or offer upload.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-06",
+        "origin": "V3",
+        "original": {
+          "id": "F3-06",
+          "scenario": "Attachment retrieval fails or temporary URL expires",
+          "expected": "Keep request; mark specific file pending/failed; retry by refreshing the URL or offer upload.",
+          "test": "Expire URL and fail the first copy; verify no false complete-file status.",
+          "source": "X13",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-07",
+      "origin": "V3",
+      "scenario": "Large, unsafe or mislabeled attachment",
+      "setup": "Submit oversize file, mismatched type and active content; verify private storage and safe download handling.",
+      "expected": "Safe parts remain available; rejected file is explicit, not silently lost.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-07",
+        "origin": "V3",
+        "original": {
+          "id": "F3-07",
+          "scenario": "Large, unsafe or mislabeled attachment",
+          "expected": "Safe parts remain available; rejected file is explicit, not silently lost.",
+          "test": "Submit oversize file, mismatched type and active content; verify private storage and safe download handling.",
+          "source": "X16; Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-08",
+      "origin": "V3",
+      "scenario": "Autoresponder and mailing-loop reply",
+      "setup": "Inject out-of-office, bounce and repeated auto-replies; confirm no reply loop.",
+      "expected": "No reminder reset or business-state change from automated mail.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-08",
+        "origin": "V3",
+        "original": {
+          "id": "F3-08",
+          "scenario": "Autoresponder and mailing-loop reply",
+          "expected": "No reminder reset or business-state change from automated mail.",
+          "test": "Inject out-of-office, bounce and repeated auto-replies; confirm no reply loop.",
+          "source": "Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-09",
+      "origin": "V3",
+      "scenario": "Client replies while reminder is already queued",
+      "setup": "Race human reply with dispatcher; audit any unavoidable in-flight notification and avoid repeated follow-ups.",
+      "expected": "Unsent reminders recheck last relevant reply/current state before sending.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-09",
+        "origin": "V3",
+        "original": {
+          "id": "F3-09",
+          "scenario": "Client replies while reminder is already queued",
+          "expected": "Unsent reminders recheck last relevant reply/current state before sending.",
+          "test": "Race human reply with dispatcher; audit any unavoidable in-flight notification and avoid repeated follow-ups.",
+          "source": "V3-009; Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-10",
+      "origin": "V3",
+      "scenario": "Preview changes after approval link was sent",
+      "setup": "Approve old revision, replace preview, then attempt publish. Admin-note change alone must not invalidate content approval.",
+      "expected": "Old decision stays in history; only current immutable version can be published.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-10",
+        "origin": "V3",
+        "original": {
+          "id": "F3-10",
+          "scenario": "Preview changes after approval link was sent",
+          "expected": "Old decision stays in history; only current immutable version can be published.",
+          "test": "Approve old revision, replace preview, then attempt publish. Admin-note change alone must not invalidate content approval.",
+          "source": "V3-041; Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-11",
+      "origin": "V3",
+      "scenario": "Two contradictory approvers or contributor feedback",
+      "setup": "Contributor says approved while named approver requests changes; no release.",
+      "expected": "Named authority and agreed rule determine decision; conflict remains visible.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-11",
+        "origin": "V3",
+        "original": {
+          "id": "F3-11",
+          "scenario": "Two contradictory approvers or contributor feedback",
+          "expected": "Named authority and agreed rule determine decision; conflict remains visible.",
+          "test": "Contributor says approved while named approver requests changes; no release.",
+          "source": "V3-053",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-12",
+      "origin": "V3",
+      "scenario": "Publication times out after it actually succeeded",
+      "setup": "Drop response after deployment; inspect artifact/provider ID before any repeat.",
+      "expected": "Outcome becomes unknown until external state is reconciled.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-12",
+        "origin": "V3",
+        "original": {
+          "id": "F3-12",
+          "scenario": "Publication times out after it actually succeeded",
+          "expected": "Outcome becomes unknown until external state is reconciled.",
+          "test": "Drop response after deployment; inspect artifact/provider ID before any repeat.",
+          "source": "X06; V3-042",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-13",
+      "origin": "V3",
+      "scenario": "Owner takes over as a job starts",
+      "setup": "Race takeover with leased job and delayed provider response; show one accountable outcome record.",
+      "expected": "Block new claims/retries and identify in-flight effects; reconcile before manual redo.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-13",
+        "origin": "V3",
+        "original": {
+          "id": "F3-13",
+          "scenario": "Owner takes over as a job starts",
+          "expected": "Block new claims/retries and identify in-flight effects; reconcile before manual redo.",
+          "test": "Race takeover with leased job and delayed provider response; show one accountable outcome record.",
+          "source": "Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-14",
+      "origin": "V3",
+      "scenario": "Email provider retry occurs after its deduplication window",
+      "setup": "Simulate unknown result older than 24h; reconcile or require owner decision rather than blind resend.",
+      "expected": "Durable operation ledger prevents an unexamined duplicate send.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-14",
+        "origin": "V3",
+        "original": {
+          "id": "F3-14",
+          "scenario": "Email provider retry occurs after its deduplication window",
+          "expected": "Durable operation ledger prevents an unexamined duplicate send.",
+          "test": "Simulate unknown result older than 24h; reconcile or require owner decision rather than blind resend.",
+          "source": "X14",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-15",
+      "origin": "V3",
+      "scenario": "Payment events repeat, reorder or represent a second real charge",
+      "setup": "Replay event, reorder paid/pending events and create a distinct charge; no duplicate entitlement or hidden charge.",
+      "expected": "Current invoice state is correct; distinct charges are preserved and surfaced.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-15",
+        "origin": "V3",
+        "original": {
+          "id": "F3-15",
+          "scenario": "Payment events repeat, reorder or represent a second real charge",
+          "expected": "Current invoice state is correct; distinct charges are preserved and surfaced.",
+          "test": "Replay event, reorder paid/pending events and create a distinct charge; no duplicate entitlement or hidden charge.",
+          "source": "X15",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-16",
+      "origin": "V3",
+      "scenario": "AI is unavailable, wrong or instructed by a malicious attachment",
+      "setup": "Disable AI and inject text asking for another client file; inspect tool permissions and output facts.",
+      "expected": "Original request still works; no unauthorized change or cross-business retrieval.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-16",
+        "origin": "V3",
+        "original": {
+          "id": "F3-16",
+          "scenario": "AI is unavailable, wrong or instructed by a malicious attachment",
+          "expected": "Original request still works; no unauthorized change or cross-business retrieval.",
+          "test": "Disable AI and inject text asking for another client file; inspect tool permissions and output facts.",
+          "source": "X22; X23; X24",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-17",
+      "origin": "V3",
+      "scenario": "Scheduler stops without producing an error",
+      "setup": "Stop pings and suppress normal job errors; verify alert arrival through the chosen route.",
+      "expected": "Independent monitor alerts the owner; no false all-clear from the stopped system.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-17",
+        "origin": "V3",
+        "original": {
+          "id": "F3-17",
+          "scenario": "Scheduler stops without producing an error",
+          "expected": "Independent monitor alerts the owner; no false all-clear from the stopped system.",
+          "test": "Stop pings and suppress normal job errors; verify alert arrival through the chosen route.",
+          "source": "X25; X28",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-18",
+      "origin": "V3",
+      "scenario": "Customer or owner unavailable past a commitment",
+      "setup": "Set absence, authorized substitute or none, then resume after capacity changes.",
+      "expected": "Visible next-contact/coverage plan; no fabricated approval or deadline.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-18",
+        "origin": "V3",
+        "original": {
+          "id": "F3-18",
+          "scenario": "Customer or owner unavailable past a commitment",
+          "expected": "Visible next-contact/coverage plan; no fabricated approval or deadline.",
+          "test": "Set absence, authorized substitute or none, then resume after capacity changes.",
+          "source": "V3-117; Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-19",
+      "origin": "V3",
+      "scenario": "Database restore reintroduces already-executed effects or misses files",
+      "setup": "Restore older records after a sent email and publication; remove one file; verify no resend or invented approval.",
+      "expected": "Restore isolated, compare manifests and reconcile providers before enabling jobs.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-19",
+        "origin": "V3",
+        "original": {
+          "id": "F3-19",
+          "scenario": "Database restore reintroduces already-executed effects or misses files",
+          "expected": "Restore isolated, compare manifests and reconcile providers before enabling jobs.",
+          "test": "Restore older records after a sent email and publication; remove one file; verify no resend or invented approval.",
+          "source": "X11; V3-059",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-20",
+      "origin": "V3",
+      "scenario": "Portal vendor exit or account loss",
+      "setup": "Export synthetic multi-business work, verify counts/hashes and reconstruct one complete request offline.",
+      "expected": "Usable records/files/approval evidence can be recovered without the vendor UI.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-20",
+        "origin": "V3",
+        "original": {
+          "id": "F3-20",
+          "scenario": "Portal vendor exit or account loss",
+          "expected": "Usable records/files/approval evidence can be recovered without the vendor UI.",
+          "test": "Export synthetic multi-business work, verify counts/hashes and reconstruct one complete request offline.",
+          "source": "Dot review",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-21",
+      "origin": "V3",
+      "scenario": "Mobile submission fails after text entry",
+      "setup": "Disconnect during submit, reconnect and retry; one request, no lost draft; shared-device privacy respected.",
+      "expected": "Draft is retained appropriately; user sees whether the request was received and can retry safely.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-21",
+        "origin": "V3",
+        "original": {
+          "id": "F3-21",
+          "scenario": "Mobile submission fails after text entry",
+          "expected": "Draft is retained appropriately; user sees whether the request was received and can retry safely.",
+          "test": "Disconnect during submit, reconnect and retry; one request, no lost draft; shared-device privacy respected.",
+          "source": "V3-038",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "F3-22",
+      "origin": "V3",
+      "scenario": "Source data is stale or contradictory",
+      "setup": "Provide conflicting business facts and a newer unapproved note; inspect proposed changes.",
+      "expected": "AI/report shows uncertainty and source date; it does not silently prefer the newest draft over an approved fact.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "F3-22",
+        "origin": "V3",
+        "original": {
+          "id": "F3-22",
+          "scenario": "Source data is stale or contradictory",
+          "expected": "AI/report shows uncertainty and source date; it does not silently prefer the newest draft over an approved fact.",
+          "test": "Provide conflicting business facts and a newer unapproved note; inspect proposed changes.",
+          "source": "V3-041",
+          "status": "Not run"
+        },
+        "phase": "Before enabling affected capability",
+        "scope": "Apply to shared core and corresponding ads workflow; website-publication-only capability remains gated until future module.",
+        "status": "not_run",
+        "evidence": "Actual implementation version, test fixture, observed result and artifact; unbuilt is not passed."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD01",
+      "origin": "Business V1",
+      "scenario": "Account isolation",
+      "setup": "Swap customer/account IDs between two businesses on API, CSV and operator route.",
+      "expected": "No foreign account data or action; tenant-safe error.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD01",
+        "origin": "Business V1",
+        "scenario": "Account isolation",
+        "setup": "Swap customer/account IDs between two businesses on API, CSV and operator route.",
+        "expected": "No foreign account data or action; tenant-safe error.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD02",
+      "origin": "Business V1",
+      "scenario": "Approval drift",
+      "setup": "Approve revision 3; alter URL/geography/budget in Google before launch.",
+      "expected": "Launch blocked pending reconciled current manifest and material reapproval.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD02",
+        "origin": "Business V1",
+        "scenario": "Approval drift",
+        "setup": "Approve revision 3; alter URL/geography/budget in Google before launch.",
+        "expected": "Launch blocked pending reconciled current manifest and material reapproval.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD03",
+      "origin": "Business V1",
+      "scenario": "Responsive asset scope",
+      "setup": "Enable a material unapproved account-level asset/expansion.",
+      "expected": "Drift detected; client sees actual permitted asset/configuration set before launch.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD03",
+        "origin": "Business V1",
+        "scenario": "Responsive asset scope",
+        "setup": "Enable a material unapproved account-level asset/expansion.",
+        "expected": "Drift detected; client sees actual permitted asset/configuration set before launch.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD04",
+      "origin": "Business V1",
+      "scenario": "Conversion duplicate",
+      "setup": "Count native and imported action for one form; include custom goal.",
+      "expected": "Primary outcome/goal duplication detected; report does not double leads.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD04",
+        "origin": "Business V1",
+        "scenario": "Conversion duplicate",
+        "setup": "Count native and imported action for one form; include custom goal.",
+        "expected": "Primary outcome/goal duplication detected; report does not double leads.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD05",
+      "origin": "Business V1",
+      "scenario": "Consent choices",
+      "setup": "Exercise granted/denied/withdrawn consent and repeated form submit.",
+      "expected": "Approved behavior, no personal form data in analytics, no unintended duplicate outcome.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD05",
+        "origin": "Business V1",
+        "scenario": "Consent choices",
+        "setup": "Exercise granted/denied/withdrawn consent and repeated form submit.",
+        "expected": "Approved behavior, no personal form data in analytics, no unintended duplicate outcome.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD06",
+      "origin": "Business V1",
+      "scenario": "Budget arithmetic",
+      "setup": "Full-month unchanged, mid-month start, later budget edit, weekends and multiple campaigns.",
+      "expected": "No hard-daily-cap claim; provider limits/reserve/coverage and account allocations are explained correctly.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD06",
+        "origin": "Business V1",
+        "scenario": "Budget arithmetic",
+        "setup": "Full-month unchanged, mid-month start, later budget edit, weekends and multiple campaigns.",
+        "expected": "No hard-daily-cap claim; provider limits/reserve/coverage and account allocations are explained correctly.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD07",
+      "origin": "Business V1",
+      "scenario": "Expiry and revocation",
+      "setup": "Withdraw approval or expire spending permission with an old tab/job open; submit feedback/withdrawal after budget expiry.",
+      "expected": "No new positive change; current authority rechecked; authorized feedback/withdrawal is not blocked by expired budget; defensive response/receipt retained.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD07",
+        "origin": "Business V1",
+        "scenario": "Expiry and revocation",
+        "setup": "Withdraw approval or expire spending permission with an old tab/job open; submit feedback/withdrawal after budget expiry.",
+        "expected": "No new positive change; current authority rechecked; authorized feedback/withdrawal is not blocked by expired budget; defensive response/receipt retained.",
+        "phase": "3,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD08",
+      "origin": "Business V1",
+      "scenario": "Out-of-band edits",
+      "setup": "Client changes campaign budget in Google.",
+      "expected": "Observed state changes; mismatch requires reconciliation, no silent overwrite.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD08",
+        "origin": "Business V1",
+        "scenario": "Out-of-band edits",
+        "setup": "Client changes campaign budget in Google.",
+        "expected": "Observed state changes; mismatch requires reconciliation, no silent overwrite.",
+        "phase": "4,6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD09",
+      "origin": "Business V1",
+      "scenario": "Serving versus service",
+      "setup": "Set billable service paused while Google enabled; also enabled but disapproved.",
+      "expected": "UI separates service/serving/measurement/freshness; no false paused/running claim.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD09",
+        "origin": "Business V1",
+        "scenario": "Serving versus service",
+        "setup": "Set billable service paused while Google enabled; also enabled but disapproved.",
+        "expected": "UI separates service/serving/measurement/freshness; no false paused/running claim.",
+        "phase": "2,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD10",
+      "origin": "Business V1",
+      "scenario": "Lost access",
+      "setup": "Revoke W&M Google access while ads may serve.",
+      "expected": "Ad state unknown, direct client-admin escalation; no false stop confirmation.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD10",
+        "origin": "Business V1",
+        "scenario": "Lost access",
+        "setup": "Revoke W&M Google access while ads may serve.",
+        "expected": "Ad state unknown, direct client-admin escalation; no false stop confirmation.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD11",
+      "origin": "Business V1",
+      "scenario": "Freshness",
+      "setup": "Fail import/API while cached recent-looking report remains.",
+      "expected": "Last complete period/time and stale marker; missing not zero; expansion advice held.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD11",
+        "origin": "Business V1",
+        "scenario": "Freshness",
+        "setup": "Fail import/API while cached recent-looking report remains.",
+        "expected": "Last complete period/time and stale marker; missing not zero; expansion advice held.",
+        "phase": "2,6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD12",
+      "origin": "Business V1",
+      "scenario": "Import duplicates",
+      "setup": "Replay same CSV; add second real period; change duplicate file content.",
+      "expected": "No doubled totals; distinct rows preserved; conflicting payload surfaced.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD12",
+        "origin": "Business V1",
+        "scenario": "Import duplicates",
+        "setup": "Replay same CSV; add second real period; change duplicate file content.",
+        "expected": "No doubled totals; distinct rows preserved; conflicting payload surfaced.",
+        "phase": "3,6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD13",
+      "origin": "Business V1",
+      "scenario": "Partial and hostile imports",
+      "setup": "Mixed currencies/accounts, invalid dates, formula cells, malformed/oversize rows.",
+      "expected": "Quarantine/reject or staged partial errors; safe export and no corrupt promoted snapshot.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD13",
+        "origin": "Business V1",
+        "scenario": "Partial and hostile imports",
+        "setup": "Mixed currencies/accounts, invalid dates, formula cells, malformed/oversize rows.",
+        "expected": "Quarantine/reject or staged partial errors; safe export and no corrupt promoted snapshot.",
+        "phase": "3,6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD14",
+      "origin": "Business V1",
+      "scenario": "Late outcomes",
+      "setup": "Sale arrives next month; attribution adjustment supersedes a period.",
+      "expected": "Revision and cohort dates visible; no unmarked historical rewrite or causal overclaim.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD14",
+        "origin": "Business V1",
+        "scenario": "Late outcomes",
+        "setup": "Sale arrives next month; attribution adjustment supersedes a period.",
+        "expected": "Revision and cohort dates visible; no unmarked historical rewrite or causal overclaim.",
+        "phase": "4,6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD15",
+      "origin": "Business V1",
+      "scenario": "Missing lead feedback",
+      "setup": "Leave a weekly outcome batch unanswered while current standing authority exists.",
+      "expected": "Show unknown outcomes and confidence limits; assign sensible review. Missing feedback alone neither fabricates results nor automatically blocks all authorized routine operation.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD15",
+        "origin": "Business V1",
+        "scenario": "No feedback",
+        "setup": "Client marks unknown/does not reply by agreed review date.",
+        "expected": "Unknown remains unknown; no expansion; follow agreed review/loss/coverage policy.",
+        "phase": "2,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD16",
+      "origin": "Business V1",
+      "scenario": "Offboarding live ads",
+      "setup": "Cancel fee while campaigns remain enabled; unlink manager.",
+      "expected": "Explicit pause/transfer instruction; actual state/successor verified before access removal.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD16",
+        "origin": "Business V1",
+        "scenario": "Offboarding live ads",
+        "setup": "Cancel fee while campaigns remain enabled; unlink manager.",
+        "expected": "Explicit pause/transfer instruction; actual state/successor verified before access removal.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD17",
+      "origin": "Business V1",
+      "scenario": "Paused billing",
+      "setup": "Pause for diagnosis, prolonged waiting and agency-caused delay.",
+      "expected": "Continuing work, fee/credit, review date and restart authority recorded; no silent renewal.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD17",
+        "origin": "Business V1",
+        "scenario": "Paused billing",
+        "setup": "Pause for diagnosis, prolonged waiting and agency-caused delay.",
+        "expected": "Continuing work, fee/credit, review date and restart authority recorded; no silent renewal.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD18",
+      "origin": "Business V1",
+      "scenario": "Friday outage",
+      "setup": "Portal unavailable Friday; operator unavailable until Monday.",
+      "expected": "Named cover or verified pause; new positive action blocked if authority unverified.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD18",
+        "origin": "Business V1",
+        "scenario": "Friday outage",
+        "setup": "Portal unavailable Friday; operator unavailable until Monday.",
+        "expected": "Named cover or verified pause; new positive action blocked if authority unverified.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD19",
+      "origin": "Business V1",
+      "scenario": "Authority restore",
+      "setup": "Restore before a recent withdrawal/revocation/pause.",
+      "expected": "Effects frozen; independent receipts and current memberships/provider state reconcile before resume.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD19",
+        "origin": "Business V1",
+        "scenario": "Authority restore",
+        "setup": "Restore before a recent withdrawal/revocation/pause.",
+        "expected": "Effects frozen; independent receipts and current memberships/provider state reconcile before resume.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD20",
+      "origin": "Business V1",
+      "scenario": "Backup objects and Auth",
+      "setup": "Remove one file; restore database plus identities and credentials.",
+      "expected": "Missing bytes detected, usable authorized restore proven, stale sessions not trusted.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD20",
+        "origin": "Business V1",
+        "scenario": "Backup objects and Auth",
+        "setup": "Remove one file; restore database plus identities and credentials.",
+        "expected": "Missing bytes detected, usable authorized restore proven, stale sessions not trusted.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD21",
+      "origin": "Business V1",
+      "scenario": "Intake outage",
+      "setup": "Supabase down during public inquiry; replay accepted import.",
+      "expected": "D1 receipt/ack works once; import later creates one engagement without overwriting newer facts.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD21",
+        "origin": "Business V1",
+        "scenario": "Intake outage",
+        "setup": "Supabase down during public inquiry; replay accepted import.",
+        "expected": "D1 receipt/ack works once; import later creates one engagement without overwriting newer facts.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD22",
+      "origin": "Business V1",
+      "scenario": "Production-capable Google adapter",
+      "setup": "Test reads and typed writes, wrong project access, revoked OAuth, missing permissible use and quota exhaustion.",
+      "expected": "Allowed current-authority operations work; unsupported or unapproved actions fail explicitly. Production access evidence is separate from fixture success; no hidden arbitrary API passthrough.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD22",
+        "origin": "Business V1",
+        "scenario": "API current access",
+        "setup": "Use unapproved project, denied scope, wrong manager, quota limit and expired credential.",
+        "expected": "Read-only connector fails safely with actionable status and no hidden production-write path.",
+        "phase": "6",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD23",
+      "origin": "Business V1",
+      "scenario": "Client usability",
+      "setup": "Five representative participants review ads/budget, ask for help and recover sign-in.",
+      "expected": "At least 4/5 primary task unaided; fix every severe barrier; record time/assistance.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD23",
+        "origin": "Business V1",
+        "scenario": "Client usability",
+        "setup": "Five representative participants review ads/budget, ask for help and recover sign-in.",
+        "expected": "At least 4/5 primary task unaided; fix every severe barrier; record time/assistance.",
+        "phase": "2",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD24",
+      "origin": "Business V1",
+      "scenario": "Public coherence",
+      "setup": "Compare new page/pricing/form/JSON-LD and measurement/landing/Care terms.",
+      "expected": "One scope/price authority; no double-charge, unsupported CTA or altered website milestones.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD24",
+        "origin": "Business V1",
+        "scenario": "Public coherence",
+        "setup": "Compare new page/pricing/form/JSON-LD and measurement/landing/Care terms.",
+        "expected": "One scope/price authority; no double-charge, unsupported CTA or altered website milestones.",
+        "phase": "5",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD25",
+      "origin": "Business V1",
+      "scenario": "Economic model and capacity",
+      "setup": "Compute synthetic six/nine/twelve-hour monthly cases; include shared costs and all service commitments.",
+      "expected": "Correct contribution and disjoint allocations; useful capacity/date warning. No paid-cycle or profit prerequisite for completing the product.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD25",
+        "origin": "Business V1",
+        "scenario": "Owner economics",
+        "setup": "Include sales losses, support, recovery, maintenance and specialist cost in two cycles.",
+        "expected": "Disjoint allocation; measured contribution/capacity; apply correction/stop rule.",
+        "phase": "4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD26",
+      "origin": "Business V1",
+      "scenario": "Coverage reserve",
+      "setup": "Run spend scenarios with delayed reporting and no weekend human attendance.",
+      "expected": "Client affordable loss/standing authority includes reserve; no exact-cap promise or uncovered assumption.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD26",
+        "origin": "Business V1",
+        "scenario": "Coverage reserve",
+        "setup": "Run spend scenarios with delayed reporting and no weekend human attendance.",
+        "expected": "Client affordable loss/standing authority includes reserve; no exact-cap promise or uncovered assumption.",
+        "phase": "1,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD27",
+      "origin": "Business V1",
+      "scenario": "Pseudonymous lead data",
+      "setup": "Attempt cross-business outcome edit and upload personal fields not needed.",
+      "expected": "Tenant denial and data minimization; consent/source and retention recorded.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD27",
+        "origin": "Business V1",
+        "scenario": "Pseudonymous lead data",
+        "setup": "Attempt cross-business outcome edit and upload personal fields not needed.",
+        "expected": "Tenant denial and data minimization; consent/source and retention recorded.",
+        "phase": "3,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD28",
+      "origin": "Business V1",
+      "scenario": "Unexpected charge",
+      "setup": "Duplicate payment events plus two distinct real charges; redirect says success before webhook.",
+      "expected": "No duplicate entitlement, no hidden distinct charge, payment not inferred from redirect.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD28",
+        "origin": "Business V1",
+        "scenario": "Unexpected charge",
+        "setup": "Duplicate payment events plus two distinct real charges; redirect says success before webhook.",
+        "expected": "No duplicate entitlement, no hidden distinct charge, payment not inferred from redirect.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD29",
+      "origin": "Business V1",
+      "scenario": "Receipt persistence failure",
+      "setup": "Independent authority receipt unavailable before launch/increase and during urgent defensive pause.",
+      "expected": "Positive action blocks; secure alternate incident evidence for authorized defense; reconcile before resume.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD29",
+        "origin": "Business V1",
+        "scenario": "Receipt persistence failure",
+        "setup": "Independent authority receipt unavailable before launch/increase and during urgent defensive pause.",
+        "expected": "Positive action blocks; secure alternate incident evidence for authorized defense; reconcile before resume.",
+        "phase": "3,4",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD30",
+      "origin": "Business V1",
+      "scenario": "Complete before acquisition",
+      "setup": "Review all launch capabilities and complete synthetic end-to-end fixtures with no paying customers.",
+      "expected": "All required modules/connectors/operations are implemented and qualified; no two-client, three-live-business, earned-integration or bought-portal release gate remains.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD30",
+        "origin": "Business V1",
+        "scenario": "Effort gate sample",
+        "setup": "Two-client pilot gives 10 tasks but only two live businesses.",
+        "expected": "Do not claim three-business real-work gate passed; gather third live business and compare task mix.",
+        "phase": "7",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD31",
+      "origin": "Business V1",
+      "scenario": "Public and private origin boundary",
+      "setup": "With a synthetic signed-in private session, probe reads/mutations from public-page script and sibling-origin contexts, iframe embedding and public service-worker scope.",
+      "expected": "No private response exposed or unauthorized mutation; host-only session, exact private origin/CSRF, no credentialed public CORS and no embedding.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD31",
+        "origin": "Business V1",
+        "scenario": "Public and private origin boundary",
+        "setup": "With a synthetic signed-in private session, probe reads/mutations from public-page script and sibling-origin contexts, iframe embedding and public service-worker scope.",
+        "expected": "No private response exposed or unauthorized mutation; host-only session, exact private origin/CSRF, no credentialed public CORS and no embedding.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD32",
+      "origin": "Business V1",
+      "scenario": "Internal file audience",
+      "setup": "Same-business customer lists/downloads/previews/exports internal-note attachment, relinks its ID, supplies mismatched parents or another uploader draft.",
+      "expected": "No private metadata/bytes exposed; parent-chain and audience constraints reject all attempts; authorized shared files still work.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD32",
+        "origin": "Business V1",
+        "scenario": "Internal file audience",
+        "setup": "Same-business customer lists/downloads/previews/exports internal-note attachment, relinks its ID, supplies mismatched parents or another uploader draft.",
+        "expected": "No private metadata/bytes exposed; parent-chain and audience constraints reject all attempts; authorized shared files still work.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "AD33",
+      "origin": "Business V1",
+      "scenario": "Missing authority tail within recovery scope",
+      "setup": "Lose a primary-only revocation; restore affected tenant. Separately rebuild a report without rolling back identity, then simulate global identity loss.",
+      "expected": "Affected old authority stays inactive pending independently verified current identity/authority and provider reconciliation. Proven unaffected tenants continue; global/unknown authorization damage broadens recovery. An intact old receipt prefix is insufficient.",
+      "status": "not_run",
+      "phase": "Before complete release / affected contracted option activation",
+      "archivedOriginal": {
+        "id": "AD33",
+        "origin": "Business V1",
+        "scenario": "Missing authority receipt tail",
+        "setup": "Commit membership revocation/approval withdrawal, fail independent receipt, lose primary, restore old backup/available receipt prefix; repeat urgent defensive pause.",
+        "expected": "Old sessions remain suspended; no positive spend until freshly verified membership/authority and provider reconciliation; alternate defensive evidence retained.",
+        "phase": "3",
+        "status": "not_run",
+        "evidence": "Versioned fixture, actor/account identifiers redacted, observed state, result and reviewer."
+      },
+      "activeRule": "V2 expectation controls; historical phase/scope is non-operative",
+      "evidence": "Actual build/schema, fixture, actor/account context, observed state, result and reviewer; provider evidence where applicable."
+    },
+    {
+      "id": "V201",
+      "origin": "Business V2",
+      "scenario": "Inquiry to accepted agreement",
+      "setup": "Repeat form/import; receive quote; accept exact terms with contract authority.",
+      "expected": "One intake/proposal/engagement; no duplicate acknowledgment; immutable agreement receipt and saved catalog terms.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V202",
+      "origin": "Business V2",
+      "scenario": "Milestones and subscription start",
+      "setup": "Run website 40/30/30 and ads 20/60/20 schedules, failed payment and delayed readiness.",
+      "expected": "Correct schedule/earned/due/paid separation; recurring service starts on agreed date, not merely subscription creation.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V203",
+      "origin": "Business V2",
+      "scenario": "Billing portal cancellation",
+      "setup": "Cancel in Stripe portal; delay/reorder webhook; run provider reconciliation.",
+      "expected": "One closure record; future billing state reconciled; campaign stop/transfer remains assigned until verified; unrelated service stays active.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V204",
+      "origin": "Business V2",
+      "scenario": "Immediate cancellation and refund",
+      "setup": "Cancel mid-period after completed setup milestones and one duplicate real charge.",
+      "expected": "Adopted actual-day refund policy and unearned setup reconcile; both charges visible; refund unknown result not repeated blindly.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V205",
+      "origin": "Business V2",
+      "scenario": "Complete Search action path",
+      "setup": "Create paused supported Search configuration, approve, launch, read back, pause and authorized resume in test account.",
+      "expected": "Manifest/settings match; statuses distinguish requested/observed; material drift invalidates stale action; no automatic recovery resume.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V206",
+      "origin": "Business V2",
+      "scenario": "Shared and recurring budgets",
+      "setup": "Roll accepted recurring authority; rebalance shared budget; end agreement; external account edit.",
+      "expected": "Period unique; no double allocations; accepted limits persist without ritual reapproval; termination/revocation prevents new spend authority.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V207",
+      "origin": "Business V2",
+      "scenario": "Urgent stop usability",
+      "setup": "Authorized customer stops through mobile; expired positive budget; API timeout after pause; unknown email sender.",
+      "expected": "Stop does not require new spend approval; signed-in authorized path works; actual readback governs confirmation; ambiguous email triaged without disclosure.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V208",
+      "origin": "Business V2",
+      "scenario": "No account or website",
+      "setup": "Start with no Google account, wrong property and unusable landing page.",
+      "expected": "Guided owner/client tasks explain help/creation/access; scoped dependencies priced before acceptance; no invented readiness.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V209",
+      "origin": "Business V2",
+      "scenario": "Complete website project",
+      "setup": "Map page inventory, approved facts, copy/design, staging, changed commit, deployment and handoff.",
+      "expected": "Exact approved artifact delivered; inquiry reaches destination; editing/access proof and correct correction period retained.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V210",
+      "origin": "Business V2",
+      "scenario": "Website change and rollback",
+      "setup": "Covered request plus new scope; failed deploy after partial action; rollback and verify form.",
+      "expected": "Entitlement reserved/consumed once; new scope has one proposal; no false complete; rollback evidence and downstream delivery verified.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V211",
+      "origin": "Business V2",
+      "scenario": "Complete SEO production",
+      "setup": "Audit to prioritized task, approved content/technical change, publication and Search Console observation.",
+      "expected": "Useful output and dated report; publication distinct from indexing/ranking; no unsupported result promise.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V212",
+      "origin": "Business V2",
+      "scenario": "Care and existing commerce",
+      "setup": "Run scheduled checks, 60-minute allowance where contracted, defect fix, commerce journey and recovery exercise.",
+      "expected": "Catalog-specific allowance/correction/coverage honored; existing Storefront/Commerce Care have working templates.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V213",
+      "origin": "Business V2",
+      "scenario": "Catalog completeness",
+      "setup": "Enumerate every active catalog ID and compare template, billing and handoff mapping.",
+      "expected": "No sold service dead end; unsupported new advertising products not silently sold; saved old contracts unchanged.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V214",
+      "origin": "Business V2",
+      "scenario": "Catalog conflicts and overlap",
+      "setup": "Render all Care onboarding consumers; quote existing native measurement and advanced incremental work.",
+      "expected": "New quotes consistently $195/$395 with actual waivers; stale $375/$650 field removed from active consumers; no duplicate charge for existing entitlement.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V215",
+      "origin": "Business V2",
+      "scenario": "Cross-service changed fact",
+      "setup": "Change service area/URL/claim already used in ads, website and SEO.",
+      "expected": "One impact list; affected material revisions invalidated explicitly; no silent global overwrite or duplicate work invoice.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V216",
+      "origin": "Business V2",
+      "scenario": "Outcome producer and funnel",
+      "setup": "Client/CRM supplies duplicate, corrected, booked, attended, suitable, won and unknown events.",
+      "expected": "Source-key dedup, actor/definition provenance and distinct stages; unanswered is not unsuitable; client responsibility visible.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V217",
+      "origin": "Business V2",
+      "scenario": "Calls and external booking",
+      "setup": "Use call click, supported Google call conversion and external booking fixture with failure/no-show.",
+      "expected": "No click-as-call or booking-as-sale inflation; excluded path stays unmeasured; correct destination/response checks.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V218",
+      "origin": "Business V2",
+      "scenario": "Follow-up cancellation when contracted",
+      "setup": "Queue a scoped response sequence then receive reply, booking or opt-out before send.",
+      "expected": "Applicable follow-ups stop; no message sent from stale queued eligibility; ads service alone does not provision unsolicited outreach.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V219",
+      "origin": "Business V2",
+      "scenario": "Scanner and attachments",
+      "setup": "Paid scanner contract limit, clean/unsafe/timeout/mislabeled DOCX and retrying upload.",
+      "expected": "Exact checksum and explicit content rules govern ready state; message survives file failure; no unscanned bypass or internal audience leak.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V220",
+      "origin": "Business V2",
+      "scenario": "Scoped file/report recovery",
+      "setup": "Restore missing bytes/report from backup while current authoritative DB/Auth is intact.",
+      "expected": "Current permissions/deletion remain authoritative; only affected asset/report unavailable; no unrelated session suspension.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V221",
+      "origin": "Business V2",
+      "scenario": "Owner cover and dependency deadlines",
+      "setup": "Owner absent; backup has bounded rights; linked website delay affects ads.",
+      "expected": "All commitments visible; authorized cover/runbook works; client gets one explanation and explicit revised date, not silent reschedule.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V222",
+      "origin": "Business V2",
+      "scenario": "Provider and local operation split",
+      "setup": "Provider succeeds then response is lost; worker takeover and retry race.",
+      "expected": "One operation ledger reconciles actual effect; stale epoch cannot start new work; in-flight result remains visible.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V223",
+      "origin": "Business V2",
+      "scenario": "OAuth sharing and key recovery",
+      "setup": "One operator grant serves two businesses; disconnect one; rotate wrapping key; restore envelope.",
+      "expected": "Only intended mapping removed; other business unaffected; keys recovered separately; no token in user rows/logs/AI.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V224",
+      "origin": "Business V2",
+      "scenario": "Provider prerequisites",
+      "setup": "Use sandbox success with missing live DNS, Stripe activation, API production access or scanner entitlement.",
+      "expected": "Readiness remains blocked with exact owner/prerequisite; no mock-to-live status promotion; per-client activation correctly separate.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V225",
+      "origin": "Business V2",
+      "scenario": "Timezones and cost units",
+      "setup": "Cross DST/month boundary, mixed currencies, fractional micro costs and zero denominator.",
+      "expected": "Correct dated periods and validated monetary conversion; currencies never summed; undefined ratios shown honestly.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V226",
+      "origin": "Business V2",
+      "scenario": "Load and scheduled health",
+      "setup": "Run documented forecast plus headroom; stop actual scheduled dispatcher and exceed API quota.",
+      "expected": "Measured latency/backlog evidence; independent heartbeat alerts named cover; no arbitrary account cap or missing scheduled-trigger proof.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V227",
+      "origin": "Business V2",
+      "scenario": "Agreement and role domains",
+      "setup": "Customer admin without signatory/spend authority attempts contract and launch approval; authorized substitute acts.",
+      "expected": "Domain-specific authority enforced; recorded substitute works; no inferred approval from admin role/payment/email.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V228",
+      "origin": "Business V2",
+      "scenario": "Nonpayment and service pause",
+      "setup": "Invoice fails while management and other paid services continue; then explicitly pause service.",
+      "expected": "Finance exception and adopted terms apply; campaign state remains separately verified; no collateral file deletion/unpublishing.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V229",
+      "origin": "Business V2",
+      "scenario": "Retention and export",
+      "setup": "Export mixed shared/internal records; legal hold; delete expired lead data; restore old backup.",
+      "expected": "Usable entitled files/records; no internal leak; hold/deletion schedule applied and deleted data not resurrected to users.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V230",
+      "origin": "Business V2",
+      "scenario": "AI helpers completed",
+      "setup": "Run all seven task types with wrong/stale/malicious context and unavailable model.",
+      "expected": "Source/version and edit/review retained; no invented authority/effects; manual path works; configured provider evaluation and cost evidence present.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V231",
+      "origin": "Business V2",
+      "scenario": "Customer task comprehension",
+      "setup": "Five noncustomer participants use mobile/keyboard/zoom to find fees, next action, revision, help and stop.",
+      "expected": "At least four complete primary task unaided; every severe barrier corrected; no need to recruit paying clients.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V232",
+      "origin": "Business V2",
+      "scenario": "Owner operating completeness",
+      "setup": "Search/assign/cover/quote/record time/edit template/reconcile finance/report/export from owner views.",
+      "expected": "All actions work with scoped roles and audit; ordinary commitments remain visible beside exceptions.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V233",
+      "origin": "Business V2",
+      "scenario": "Full release audit",
+      "setup": "Trace every capability through record, screen, adapter/human step, runbook and test evidence.",
+      "expected": "All launch promises complete; remaining blockers explicit; plan/demo tests never called production qualification.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V234",
+      "origin": "Business V2",
+      "scenario": "Superseded source policy",
+      "setup": "Search active plan/backlog/tests for old buy-first/pilot-first/earned-module instructions.",
+      "expected": "Historical evidence retained but explicitly non-operative; complete-before-acquisition direction controls.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V236",
+      "origin": "Business V2",
+      "scenario": "Stop races with positive operations",
+      "setup": "Stop before claim, after in-flight registration, during launch, after provider timeout, and across takeover/restore; then attempt resume under old standing authority.",
+      "expected": "Durable active stop/epoch blocks new positive dispatch, cancels stale queued work and reconciles older in-flight effects; pause re-applied as needed. Final pause receipt waits for resolved older effects and paused readback. Resume needs current explicit stop clearance.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    },
+    {
+      "id": "V235",
+      "origin": "Business V2",
+      "scenario": "Public-private complete journey",
+      "setup": "Browse service → inquiry → proposal → login → bill → work → results → cancel/export.",
+      "expected": "Coherent copy/price/terms, no placeholder module, accessible task return; public site works during private outage.",
+      "phase": "Before complete release; contracted options before activation",
+      "status": "not_run",
+      "evidence": "Versioned fixture, observed behavior/screens/provider records, reviewer and exact scope. No mock proves live provider configuration."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+name: Private workspace checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: workspace-checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  workspace-postgres:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17.11
+        env:
+          POSTGRES_USER: workspace_test
+          POSTGRES_PASSWORD: synthetic_ci_only
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      WORKSPACE_TEST_DATABASE_URL: postgresql://workspace_test:synthetic_ci_only@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24.22.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run workspace:build
+      - name: Transaction, authorization, revocation and concurrent command tests
+        run: npm run test:workspace
+      - name: Check runtime dependency advisories
+        run: npm audit --omit=dev --audit-level=moderate

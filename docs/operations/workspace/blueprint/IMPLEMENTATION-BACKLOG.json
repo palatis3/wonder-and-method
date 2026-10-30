@@ -1,0 +1,401 @@
+{
+  "status": "Implementation not started by this planning artifact",
+  "order": "Dependency order for complete build before customer acquisition",
+  "tasks": [
+    {
+      "id": "B01",
+      "title": "Baseline, catalog and service contracts",
+      "dependsOn": [],
+      "paths": [
+        "config/offers.json",
+        "catalog validators",
+        "docs/operations/workspace/commercial.md"
+      ],
+      "work": "Inspect current commit; reconcile Care conflict/measurement entitlement; map every offer and adopted policies.",
+      "acceptance": [
+        "V213",
+        "V214",
+        "V234",
+        "AD24"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B02",
+      "title": "Customer and owner interface",
+      "dependsOn": [
+        "B01"
+      ],
+      "paths": [
+        "src/workspace/",
+        "src/assets/"
+      ],
+      "work": "Build full navigation, mobile/error/draft states, plain labels and task return.",
+      "acceptance": [
+        "V231",
+        "V232",
+        "F3-21"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B03",
+      "title": "Private identity and data foundation",
+      "dependsOn": [
+        "B01",
+        "B02"
+      ],
+      "paths": [
+        "worker/workspace/auth/",
+        "db/workspace/migrations/",
+        "src/workspace/domain/"
+      ],
+      "work": "Private origin, host-only sessions, RLS/composite parents, authority domains, operators/MFA and typed service records.",
+      "acceptance": [
+        "AD01",
+        "AD31",
+        "AD32",
+        "V227",
+        "F3-01",
+        "F3-02"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B03E",
+      "title": "Durable external-effect foundation",
+      "dependsOn": [
+        "B03"
+      ],
+      "paths": [
+        "worker/workspace/effects/",
+        "worker/workspace/events/",
+        "db/workspace/migrations/"
+      ],
+      "work": "Implement shared transactional outbox, event receipts, operation keys, leases/epochs, provider reconciliation and independently durable critical-receipt writer before any proposal/mail/payment/scanning effect.",
+      "acceptance": [
+        "V222",
+        "F01",
+        "F3-14",
+        "F3-15",
+        "AD29"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B04",
+      "title": "Inquiry, proposal and agreement",
+      "dependsOn": [
+        "B03E"
+      ],
+      "paths": [
+        "worker/workspace/intake/",
+        "worker/workspace/agreements/",
+        "src/workspace/proposals/"
+      ],
+      "work": "D1 projection/idempotent import, opportunity, catalog snapshot, terms acceptance and change proposal.",
+      "acceptance": [
+        "V201",
+        "AD21",
+        "V235"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B05",
+      "title": "Payments and commercial lifecycle",
+      "dependsOn": [
+        "B04"
+      ],
+      "paths": [
+        "worker/workspace/payments/",
+        "src/workspace/billing/",
+        "db/workspace/migrations/"
+      ],
+      "work": "Stripe hosted checkout/portal, milestones/subscriptions, refunds, finance exceptions, cancellation integration.",
+      "acceptance": [
+        "V202",
+        "V203",
+        "V204",
+        "V228",
+        "AD28",
+        "F23"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B06",
+      "title": "Messages, files and reusable facts",
+      "dependsOn": [
+        "B03E",
+        "B04"
+      ],
+      "paths": [
+        "worker/workspace/messages/",
+        "worker/workspace/files/",
+        "src/workspace/conversation/"
+      ],
+      "work": "Verified Resend threading/triage, scanner, upload recovery, safe audiences, facts/rights reuse.",
+      "acceptance": [
+        "V219",
+        "AD32",
+        "F3-04",
+        "F3-05",
+        "F3-06",
+        "F3-07",
+        "F3-08",
+        "F3-09"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B07",
+      "title": "Approvals, operations and receipts",
+      "dependsOn": [
+        "B03E",
+        "B06"
+      ],
+      "paths": [
+        "worker/workspace/operations/",
+        "worker/workspace/approvals/",
+        "db/workspace/migrations/"
+      ],
+      "work": "Build immutable revisions and current approval/stop authority on the existing shared effect kernel; integrate critical receipts and service-level reconciliation.",
+      "acceptance": [
+        "AD02",
+        "AD07",
+        "AD29",
+        "V206",
+        "V222",
+        "F3-10",
+        "F3-12",
+        "F3-13"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B08",
+      "title": "Google and measurement operations",
+      "dependsOn": [
+        "B07"
+      ],
+      "paths": [
+        "worker/workspace/integrations/google-ads/",
+        "src/workspace/ads/",
+        "docs/operations/workspace/ads/"
+      ],
+      "work": "Production-capable read/typed-write adapter, account onboarding, supported measurement/calls, stop/fallback, budget readback.",
+      "acceptance": [
+        "V205",
+        "V206",
+        "V207",
+        "V236",
+        "V208",
+        "AD04",
+        "AD05",
+        "AD06",
+        "AD08",
+        "AD10",
+        "AD22",
+        "AD26"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B09",
+      "title": "Results, outcomes and reports",
+      "dependsOn": [
+        "B06",
+        "B08"
+      ],
+      "paths": [
+        "worker/workspace/reporting/",
+        "worker/workspace/integrations/analytics/",
+        "src/workspace/results/"
+      ],
+      "work": "Ads/GA4/Search Console reads, CSV/outcome fallback, provenance/revisions and reviewed reports.",
+      "acceptance": [
+        "V216",
+        "V217",
+        "V225",
+        "AD11",
+        "AD12",
+        "AD13",
+        "AD14",
+        "AD15",
+        "AD27"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B10",
+      "title": "Website, SEO, Care and catalog delivery",
+      "dependsOn": [
+        "B05",
+        "B07"
+      ],
+      "paths": [
+        "worker/workspace/services/",
+        "src/workspace/services/",
+        "docs/operations/workspace/delivery/"
+      ],
+      "work": "Complete typed templates, entitlements, content/preview/deploy/verify/handoff, recurring SEO/Care and shared dependencies.",
+      "acceptance": [
+        "V209",
+        "V210",
+        "V211",
+        "V212",
+        "V213",
+        "V215",
+        "F19"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B11",
+      "title": "Owner work, coverage and finance administration",
+      "dependsOn": [
+        "B05",
+        "B09",
+        "B10"
+      ],
+      "paths": [
+        "worker/workspace/operator/",
+        "src/workspace/operator/"
+      ],
+      "work": "Commitments plus exceptions, capacity/time, search/assignment/cover, templates, provider/cost overview.",
+      "acceptance": [
+        "V221",
+        "V226",
+        "V232",
+        "AD25",
+        "F18",
+        "F3-18"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B12",
+      "title": "AI preparation in work",
+      "dependsOn": [
+        "B06",
+        "B07",
+        "B09"
+      ],
+      "paths": [
+        "worker/workspace/ai/",
+        "src/workspace/ai/",
+        "docs/operations/workspace/ai/"
+      ],
+      "work": "Seven reviewed source-based helpers; select/configure/evaluate one adapter; keep manual fallback.",
+      "acceptance": [
+        "V230",
+        "F13",
+        "F14",
+        "F3-16",
+        "F3-22"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B13",
+      "title": "Continuity, exports, retention and scoped restore",
+      "dependsOn": [
+        "B07",
+        "B08",
+        "B10",
+        "B11"
+      ],
+      "paths": [
+        "worker/workspace/recovery/",
+        "worker/workspace/exports/",
+        "docs/operations/workspace/runbooks/"
+      ],
+      "work": "Independent encrypted bytes/receipts, keys/monitor, scoped restore, privacy retention and verified service exit.",
+      "acceptance": [
+        "V220",
+        "V223",
+        "V229",
+        "AD16",
+        "AD18",
+        "AD19",
+        "AD20",
+        "AD33",
+        "F3-17",
+        "F3-19",
+        "F3-20"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B14",
+      "title": "Public site integration",
+      "dependsOn": [
+        "B01",
+        "B02",
+        "B10"
+      ],
+      "paths": [
+        "src/pages.mjs",
+        "src/navigation.mjs",
+        "src/display-names.mjs",
+        "src/intake-content.mjs",
+        "src/privacy-content.mjs",
+        "config/offers.json"
+      ],
+      "work": "Complete public ads/price/process/help/privacy/structured-data and sign-in route, existing offers preserved.",
+      "acceptance": [
+        "AD24",
+        "V214",
+        "V235"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    },
+    {
+      "id": "B15",
+      "title": "Full release qualification",
+      "dependsOn": [
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14"
+      ],
+      "paths": [
+        "tests/workspace/",
+        "docs/operations/workspace/readiness/"
+      ],
+      "work": "Run complete synthetic/multi-service/failure/usability/load/restore tests and verify production agency prerequisites.",
+      "acceptance": [
+        "V224",
+        "V231",
+        "V233",
+        "V234",
+        "AD30"
+      ],
+      "releaseRequirement": "Required before complete launch; no paying-customer prerequisite",
+      "rollback": "Disable affected new effects/intake; preserve newer records; reconcile in-flight provider state; assign named operator. No blind restore/replay."
+    }
+  ]
+}
