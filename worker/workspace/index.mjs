@@ -4,7 +4,8 @@ import {handleAuth,identity,readSession,requireCsrf} from './auth/session.mjs';
 import {rpc} from './database.mjs';
 import {handleFile} from './files/service.mjs';
 import {aiCommand} from './ai/service.mjs';
-const COMMANDS=Object.freeze({'request.create':'wm_request_create','request.accept':'wm_request_accept','message.send':'wm_message_send','revision.create':'wm_revision_create','decision.record':'wm_decision_record','ads.stop':'wm_ads_stop','operation.prepare':'wm_operation_prepare','file.intent':'wm_file_intent'});
+import {scheduledWork} from './effects/dispatcher.mjs';
+const COMMANDS=Object.freeze({'request.create':'wm_request_create','request.accept':'wm_request_accept','message.send':'wm_message_send','revision.create':'wm_revision_create','decision.record':'wm_decision_record','ads.stop':'wm_ads_stop','operation.prepare':'wm_operation_prepare','operation.reconcile':'wm_reconcile_request','file.intent':'wm_file_intent'});
 const SERVICES=new Set(['request.progress','fact.confirm','lead.save','time.record','absence.save','preference.save','engagement.cancel','export.request','allowance.reserve','allowance.settle','allowance.release','allowance.defect']);
 export async function handleRequest(request,env){
   const correlation=crypto.randomUUID();
@@ -39,4 +40,4 @@ export async function handleRequest(request,env){
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }
-export default {fetch:handleRequest};
+export default {fetch:handleRequest,async scheduled(_event,env){return scheduledWork(env);}};

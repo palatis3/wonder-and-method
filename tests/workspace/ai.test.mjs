@@ -35,10 +35,12 @@ test('AI snapshots are tenant-bound, opt-in, idempotent, reviewable and cannot e
     await db.query('select public.wm_ai_complete($1,$2,$3,$4,$5,null)',[ids.org,first.id,first.dispatch_nonce,valid,{}]);
     await actor(db,ids.operator,{aal:'aal2'});
     const reviewed=await ai(db,'ai.review',{id:first.id,expected_version:2,decision:'accepted',text:'Edited draft for human use.',minutes:2});assert.equal(reviewed.status,'accepted');
+    await admin(db);assert.equal((await db.query('select count(*)::int as n from wm.operations')).rows[0].n,0);
+    await actor(db,ids.operator,{aal:'aal2'});
     await command(db,'message_send',{engagement_id:ids.engagement,request_id:request.id,body:'The requirement changed after review.'});
     const workspace=(await db.query('select public.wm_workspace($1) as w',[ids.org])).rows[0].w;
     assert.equal(workspace.operator_data.ai[0].status,'stale');assert.equal(workspace.operator_data.ai[0].reviewed_text,'Edited draft for human use.');
-    await admin(db);assert.equal((await db.query('select count(*)::int as n from wm.operations')).rows[0].n,0);assert.equal((await db.query('select count(*)::int as n from wm.decisions')).rows[0].n,0);
+    await admin(db);assert.equal((await db.query("select count(*)::int as n from wm.operations where kind<>'message_notify'")).rows[0].n,0);assert.equal((await db.query('select count(*)::int as n from wm.decisions')).rows[0].n,0);
   }finally{await db.close();}
 });
 

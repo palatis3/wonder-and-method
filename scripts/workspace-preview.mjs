@@ -5,7 +5,7 @@ const port=Number(process.env.PORT||4198),root=new URL('../src/workspace/',impor
 const synthetic=process.argv.includes('--synthetic');
 const fixture=synthetic?await(await import('../tests/workspace/preview-fixture.mjs')).previewFixture():null;
 const dbTools=synthetic?await import('../tests/workspace/database.mjs'):null;
-const commandNames={'request.create':'request_create','request.accept':'request_accept','message.send':'message_send','revision.create':'revision_create','decision.record':'decision_record','ads.stop':'ads_stop','operation.prepare':'operation_prepare','file.intent':'file_intent'};
+const commandNames={'request.create':'request_create','request.accept':'request_accept','message.send':'message_send','revision.create':'revision_create','decision.record':'decision_record','ads.stop':'ads_stop','operation.prepare':'operation_prepare','operation.reconcile':'reconcile_request','file.intent':'file_intent'};
 let serial=Promise.resolve();
 async function fixtureApi(req,res,url){
  const role=/preview_role=(operator|customer|signedout)/.exec(req.headers.cookie||'')?.[1]||'customer';

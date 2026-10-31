@@ -79,7 +79,7 @@ const fields = {
   'ads.stop':['engagement_id','reason'],
   'ads.clear_stop':['engagement_id','expected_version','reason'],
   'operation.prepare':['engagement_id','request_id','revision_id','digest','kind','expected_version'],
-  'operation.reconcile':['operation_id','expected_version','evidence','observed_state'],
+  'operation.reconcile':['operation_id','expected_version'],
   'operation.takeover':['operation_id','expected_version','reason'],
   'fact.confirm':['key','value','source','valid_until','expected_version'],
   'lead.save':['engagement_id','outcomes'],

@@ -37,5 +37,9 @@ jobs:
       - run: npm run workspace:build
       - name: Transaction, authorization, revocation and concurrent command tests
         run: npm run test:workspace
+      - name: Install browser for private workspace journeys
+        run: npx playwright install --with-deps chromium
+      - name: Customer journeys, mobile layout and accessibility
+        run: npx playwright test --config=playwright.workspace.config.mjs
       - name: Check runtime dependency advisories
         run: npm audit --omit=dev --audit-level=moderate

@@ -50,8 +50,8 @@ export async function scanFile(env,operation,fetcher=fetch){
   const result=await response.json(),assessment=cleanScanResult(result);if(!assessment.complete)throw new WorkspaceError('scan_incomplete','The scanner returned an incomplete result.',503);
   const sealedKey=assessment.clean?`${org}/${id}/${checksum}`:null;
   if(assessment.clean){
-    const written=await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});
-    if(!written.ok){const prior=await storage(env,'workspace-sealed',sealedKey,{fetcher});if(!prior.ok||await sha256(await readBounded(prior.body,bytes.length))!==checksum)throw new WorkspaceError('seal_unavailable','The checked file could not be sealed.',503);}
+    await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});
+    const prior=await storage(env,'workspace-sealed',sealedKey,{fetcher});if(!prior.ok||await sha256(await readBounded(prior.body,bytes.length))!==checksum)throw new WorkspaceError('seal_unavailable','The checked file could not be sealed and verified.',503);
   }
   const evidence={policy:SCAN_POLICY,clean:assessment.clean,checksum,observed_at:new Date().toISOString(),provider:'cloudmersive',flags:Object.fromEntries(Object.entries(result).filter(([k,v])=>k.startsWith('Contains')&&typeof v==='boolean'))};
   await machineRpc(env,'wm_file_scan_complete',{p_org:org,p_id:id,p_checksum:checksum,p_clean:assessment.clean,p_policy:SCAN_POLICY,p_evidence:evidence,p_sealed_key:sealedKey},fetcher);

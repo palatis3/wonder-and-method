@@ -99,3 +99,24 @@ Invitation UI truthfully records delivery as pending; live email provisioning
 and delivery are not yet connected. People migration applied to staging only.
 The two advisor categories remain deliberate RPC-only access findings, as
 documented above. No production migration or publication has occurred.
+
+## Receipt, dispatcher and browser checkpoint
+
+Staging now includes receipt durability and service outbox migrations. Independent
+Astra review found two receipt issues: a missing current predecessor could be
+extended, and one failing tenant could starve the global batch. Both are fixed
+with regression cases for damaged predecessors and cross-tenant retry rotation.
+Read-only reconciliation preserves the original dispatch context, including when
+an invitation is revoked after an uncertain identity effect.
+
+The full local Node suite passed 44 tests with three real-PostgreSQL concurrency
+tests skipped locally. GitHub PostgreSQL run 41147330572 passed the preceding
+People commit; the receipt/dispatcher changes require their new CI result.
+
+Six Playwright tests passed across desktop (1440 × 1000) and phone (390 × 844):
+customer request → scoped preparation → exact-version approval; invitation save
+and revoke; error-preserved form intent and retry; and all eleven workspace
+sections checked for horizontal overflow and WCAG A/AA automated violations.
+Secondary text contrast was corrected after the first run. These use the
+isolated synthetic database and cannot establish live OTP, provider permissions,
+email delivery, scanning entitlement, R2 retention or production readiness.
