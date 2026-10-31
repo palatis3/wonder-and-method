@@ -80,7 +80,7 @@ test('date proposals preserve agreed dates until named customer acceptance and r
   const before=(await db.query('select * from wm.requests where id=$1',[r.id])).rows[0];
   await db.query('insert into wm.commitments(organization_id,engagement_id,request_id,deliverable,owner_user_id,due_at,next_update_at) values($1,$2,$3,$4,$5,$6,$7)',[ids.org,ids.engagement,r.id,'Confirmed delivery',ids.operator,before.due_at,before.next_contact_at]);
   await actor(db,ids.operator,{aal:'aal2'});
-  const input={request_id:r.id,expected_version:before.version,blocking_request_id:blocker.id,due_at:date(3),next_contact_at:date(1),reason:'Dependency needs another day'};
+  const input={request_id:r.id,expected_version:Number(before.version),blocking_request_id:blocker.id,due_at:date(3),next_contact_at:date(1),reason:'Dependency needs another day'};
   await assert.rejects(cmd(db,'owner.date.propose',{...input,due_at:'2026-12-01 12:00'}),/timezone/);
   await assert.rejects(cmd(db,'owner.date.propose',{...input,blocking_request_id:ids.otherEngagement}),/dependency/);
   const proposal=await cmd(db,'owner.date.propose',input);
@@ -94,7 +94,7 @@ test('date proposals preserve agreed dates until named customer acceptance and r
   assert.equal(new Date((await db.query('select due_at from wm.commitments where request_id=$1',[r.id])).rows[0].due_at).toISOString(),input.due_at);
   await assert.rejects(db.query('delete from wm.owner_date_proposals where id=$1',[proposal.id]),/immutable/);
   const current=(await db.query('select version from wm.requests where id=$1',[r.id])).rows[0];
-  await actor(db,ids.operator,{aal:'aal2'});const stale=await cmd(db,'owner.date.propose',{...input,expected_version:current.version});
+  await actor(db,ids.operator,{aal:'aal2'});const stale=await cmd(db,'owner.date.propose',{...input,expected_version:Number(current.version)});
   await admin(db);await db.query("update wm.commitments set version=version+1 where request_id=$1",[r.id]);
   await actor(db,ids.client);await assert.rejects(cmd(db,'owner.date.decide',{...decision,proposal_id:stale.id}),/commitments changed/);
   await actor(db,ids.operator,{aal:'aal2'});await cmd(db,'owner.date.decide',{...decision,decision:'withdraw',proposal_id:stale.id});
