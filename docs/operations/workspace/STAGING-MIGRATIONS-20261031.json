@@ -1,0 +1,23 @@
+{
+  "project_id": "lobowejsstuoicjxoqmy",
+  "environment": "staging",
+  "organizations_at_verification": 0,
+  "production_changed": false,
+  "migrations": [
+    {"file":"20261031132142_owner_operations.sql","name":"owner_operations","remote_version":"20261031150618","sha256":"f830a690b05bc572e84dae80aad3ba60c4d99a10209c4780349c82380347fe23"},
+    {"file":"20261031133949_intake_workflows.sql","name":"intake_workflows","remote_version":"20261031150623","sha256":"4adaa794166e7f75a4bf6a0a56275bd7b4baaaf1d81426571b3f0406cf4a3af8"},
+    {"file":"20261031135902_notification_delivery.sql","name":"notification_delivery","remote_version":"20261031150936","sha256":"b27b815618e24238a67adc4ed7982eeb7ffa286a039b563961f577ff24245851"},
+    {"file":"20261031140756_owner_effective_permissions.sql","name":"owner_effective_permissions","remote_version":"20261031151155","sha256":"7935eb9ff495633e6d71f3c8ba7f6278072096efd78c55243833cb868bae55ae"},
+    {"file":"20261031142642_customer_exports.sql","name":"customer_exports","remote_version":"20261031151209","sha256":"b4b8219fb39934c8b7e4d0108068495a1bdbaa7e9ca32695ca0aa405115b2f65"}
+  ],
+  "notification_ledger_repair": {
+    "cause": "MCP generated the same second-resolution version as intake_workflows. The canonical notification DDL committed before the ledger insert failed.",
+    "action": "No DDL was replayed. An independent local database loaded through notification_delivery supplied a function manifest; all 22 function bodies/signatures/security attributes and all 12 private RLS tables matched staging. A guarded notification_delivery history entry recorded that canonical source hash and refused any mismatch.",
+    "subsequent_execution": "Outer transaction wrappers were omitted from later MCP apply_migration arguments so the tool owns the transaction; canonical SQL files are unchanged."
+  },
+  "verified_denials": ["anonymous commands","customer machine ingestion","customer notification preflight and no-POST recovery","customer export machine context","customer raw intake/export tables","legacy unversioned preference helper bypass"],
+  "verified_machine_grants": ["intake receive","notification preflight","customer export context"],
+  "customer_export_bucket_public": false,
+  "advisory_classes": ["rls_enabled_no_policy","authenticated_security_definer_function_executable"],
+  "applied_files_are_immutable": true
+}

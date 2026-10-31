@@ -69,3 +69,18 @@ These verdicts follow the archived acceptance criteria, including V201–V236, A
 5. Freeze the acceptance evidence matrix, run complete multi-service/failure/usability/load journeys and exact-commit CI, then obtain the three final judges.
 
 No pilot cap, paying-customer validation prerequisite or bought-portal detour is needed. The remaining requirement is to connect and qualify every promised workflow before acquisition.
+
+**2026-10-31 integration update**
+
+The earlier table is the original audit snapshot. Owner-wide queues, estimates,
+allocations, approved date changes and scoped cover now have shared UI/API and
+current machine-actor permission integration. First-business intake includes the
+protected D1 export adapter, assignment/progression, deliberate tenant handoff and
+one-use preapproved creation. Notification cadence, mandatory notices, signed
+outbound status and safe no-POST recovery are wired. Customer exports now build,
+verify and deliver a private customer-visible ZIP with current audience checks.
+All five reviewed migrations are applied to empty staging, with 57 browser cases
+passing. Real account/storage/SMTP qualification, owner bootstrap, the remaining
+owner administration, full DR/retention/restore and native advertising modules are
+still separate outstanding work. The backup contribution currently in progress is
+not claimed as integrated or release-qualified here.

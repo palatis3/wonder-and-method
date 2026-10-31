@@ -50,7 +50,7 @@ test('billing attempt is fenced by independent receipts, operator revocation and
   const permit=(await begin()).rows[0].r;assert.equal(permit.context.id,o.id);
   await db.query('select public.wm_job_attention($1,$2,$3,$4)',[ids.org,job.id,job.lease_generation,'worker_database']);await admin(db);assert.equal((await db.query('select state from wm.outbox_jobs where id=$1',[job.id])).rows[0].state,'leased');
   await admin(db);await db.query("update wm.operator_assignments set revoked_at=now() where organization_id=$1",[ids.org]);await actor(db,ids.operator,{role:'service_role'});
-  await assert.rejects(db.query('select public.wm_billing_effect_context($1,$2,$3)',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce]),/Finance operator/);
+  await assert.rejects(db.query('select public.wm_billing_effect_context($1,$2,$3)',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce]),e=>e.code==='42501'&&/Finance operator|authority unavailable/.test(e.message));
   const proof={settled:true,readback_matches:true,evidence_reference:'stripe:in_real',provider_reference:'in_real',observed_at:new Date().toISOString(),invoice_id:'in_real',obligation_id:o.id,customer_id:'cus_fixture',environment:'test',account_id:'acct_fixture',currency:'USD',amount_minor:87800};
   const resolved=(await db.query('select public.wm_attempt_resolve($1,$2,$3,$4) r',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce,proof])).rows[0].r;assert.equal(resolved.state,'verified');
   await admin(db);assert.equal((await db.query('select invoice_id from wm.billing_obligations where id=$1',[o.id])).rows[0].invoice_id,'in_real');

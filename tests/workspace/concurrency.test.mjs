@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {setTimeout as delay} from 'node:timers/promises';
 import {database,actor,admin,command,ids} from './database.mjs';
+import {exportEnvelope} from '../../worker/workspace/intake/service.mjs';
 const onlyPostgres={skip:!process.env.WORKSPACE_TEST_DATABASE_URL};
 async function waitForBlocked(observer,pid){
   const deadline=Date.now()+5000;
@@ -62,4 +63,36 @@ test('session removal is checked again after a waiting command acquires the lock
     assert.match((await pending).error?.message||'',/Session ended/);
     assert.equal((await db.query('select count(*)::int as n from wm.requests')).rows[0].n,0);
   }finally{await db.exec('rollback').catch(()=>{});await second.close();await db.close();}
+});
+
+test('staff revocation that wins the shared tenant lock prevents a waiting cover read',onlyPostgres,async()=>{
+ const db=await database(),second=await db.connect();try{
+  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['coverage'],now()+interval '2 days'),($2,array['intake'],now()+interval '2 days')",[ids.operator,ids.outsider]);
+  await actor(db,ids.operator,{aal:'aal2'});await db.query('select public.wm_owner_command($1,$2,$3,$4)',[ids.org,'owner.cover.assign',{recipient_id:ids.outsider,capabilities:['read','reports'],starts_at:new Date().toISOString(),ends_at:new Date(Date.now()+86400000).toISOString(),reason:'Synthetic concurrency cover'},crypto.randomUUID()]);
+  await admin(db);await db.exec('begin');await db.query('update wm.staff set revoked_at=clock_timestamp() where user_id=$1',[ids.operator]);
+  await actor(second,ids.outsider,{aal:'aal2'});const pid=(await second.query('select pg_backend_pid() id')).rows[0].id;
+  const pending=second.query('select public.wm_workspace($1)',[ids.org]).then(value=>({value}),error=>({error}));
+  await waitForBlocked(db,pid);await db.exec('commit');assert.equal((await pending).error?.code,'42501');
+ }finally{await db.exec('rollback').catch(()=>{});await second.close();await db.close();}
+});
+
+test('concurrent first-business creation replays a read/reporting-only grant receipt once',onlyPostgres,async()=>{
+ const db=await database(),second=await db.connect();try{
+  const source={id:'race-source',origin:'https://synthetic.example',environment:'staging'};
+  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['intake','create_business'],now()+interval '2 days')",[ids.operator]);
+  await db.query("insert into wm.intake_sources values($1,$2,$3,true,'Synthetic concurrency fixture')",[source.id,source.origin,source.environment]);
+  const page={records:[{id:'40000000-0000-4000-8000-000000000009',created_at:1793400000000,synthetic:1,payload:'{"business":"Synthetic concurrent intake"}'}],next_cursor:null};
+  await actor(db,ids.operator,{role:'service_role'});await db.query('select public.wm_intake_receive($1,$2)',[source.id,await exportEnvelope(page,JSON.stringify(page),source)]);
+  await actor(db,ids.operator,{aal:'aal2'});let item=(await db.query("select public.wm_intake_queue('','',null) r")).rows[0].r.items[0];
+  const act=async(connection,name,input,key=crypto.randomUUID())=>(await connection.query('select public.wm_intake_command($1,$2,$3) r',[name,input,key])).rows[0].r;
+  item={...item,...await act(db,'intake.assign',{id:item.id,expected_version:item.version,assignee_id:ids.operator,reason:'Assigned for concurrency test'})};
+  item={...item,...await act(db,'intake.progress',{id:item.id,expected_version:item.version,stage:'qualified',next_action:'Review approved creation grant',next_contact_at:new Date(Date.now()+86400000).toISOString(),reason:'Qualified synthetic inquiry'})};
+  const grant=crypto.randomUUID();await admin(db);await db.query("insert into wm.intake_creation_grants(id,staff_id,intake_id,business_name,timezone,capabilities,operator_expires_at,expires_at,approved_by,approval_evidence,staff_digest) select $1,$2,$3,'Synthetic concurrent approved business','UTC',array['read','reports'],now()+interval '1 day',now()+interval '1 hour',$4,'Explicit synthetic approval',wm.hash_json(to_jsonb(s)) from wm.staff s where s.user_id=$2",[grant,ids.operator,item.id,ids.client]);
+  const key=crypto.randomUUID(),input={id:item.id,expected_version:item.version,grant_id:grant,accepted_summary:'Explicitly accepted synthetic summary',requested_services:['web_design'],reason:'Consume the exact approved grant'};
+  await actor(db,ids.operator,{aal:'aal2'});await db.exec('begin');const first=await act(db,'intake.create_business',input,key);
+  await actor(second,ids.operator,{aal:'aal2'});const pid=(await second.query('select pg_backend_pid() id')).rows[0].id,pending=act(second,'intake.create_business',input,key).then(value=>({value}),error=>({error}));
+  await waitForBlocked(db,pid);await db.exec('commit');const replay=await pending;assert.ifError(replay.error);assert.deepEqual(replay.value,first);
+  await admin(db);assert.equal((await db.query('select count(*)::int n from wm.intake_grant_uses')).rows[0].n,1);
+  assert.equal((await db.query("select count(*)::int n from wm.organizations where name='Synthetic concurrent approved business'")).rows[0].n,1);
+ }finally{await db.exec('rollback').catch(()=>{});await second.close();await db.close();}
 });

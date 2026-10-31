@@ -488,3 +488,58 @@ files, error recovery, navigation, responsive layout and accessibility journeys.
 Analytics is applied to staging; remote grants deny anonymous commands, customer
 machine-context/raw-page access and the legacy reporting bypass. The service role
 alone can obtain collection context. Production collection is still disabled.
+
+## 2026-10-31: Owner, intake, notification and customer-copy integration
+
+The five reviewed migrations through `20261031142642_customer_exports.sql` are
+applied to the empty staging project. They are now immutable; corrections require
+a new migration. Production is unchanged. Canonical hashes, remote ledger
+versions and the notification-ledger repair are recorded in
+`STAGING-MIGRATIONS-20261031.json`.
+
+Owner operations now reach the shared API, customer date decisions and cross-business
+screens. Cover reaches current human and original machine-actor permission checks
+without creating customer membership or finance/people/ads/recovery authority.
+Grant versions prevent a narrowed-then-restored row from reviving old cover.
+Current issuer verification, wall-clock expiry, immediate revocation and scoped
+tenant invalidation have actual SQL regressions. Purely historical expired covers
+do not cancel another operator's work.
+
+Intake is available to verified MFA staff without a business. It imports a bounded
+protected public export, quarantines immutable-source conflicts and creates only
+reviewed tenant handoff data. First-business creation consumes an exact one-use
+preapproved grant. A read/report-only creation grant can replay its saved receipt
+without needing new delivery authority. No owner was bootstrapped and no live D1
+export was read.
+
+Notifications use versioned cadence, separately bound mandatory notices, exact
+channel preflight, signed outbound webhooks, suppression evidence and immutable
+send reservations. A missing reservation can prove a new-protocol interruption
+occurred before any POST; recovery is serialized with reservation. A reserved
+unknown send cannot replay. Historical notifications require a separately reviewed
+original-operation account registry for GET reconciliation. Secondary status-write
+failures no longer starve later jobs.
+
+Customer exports freeze a customer-visible engagement snapshot and copy permitted
+file bytes into a verified private ZIP. Unsent commercial drafts and contracts
+outside the current customer's financial/contract role are excluded; losing the
+named contract role blocks the old package. Hidden inbound work cannot block a
+customer's otherwise complete export. Download checks run again after byte
+retrieval; the browser receives the verified ZIP through the workspace and shows
+access/reauthentication errors without navigating to raw API JSON. Cancellation
+blocks future retrieval. This does not complete disaster recovery or retention.
+
+Validation for this checkpoint: **185 passing core tests**, with **six genuine
+PostgreSQL concurrency cases reserved for CI**, and **57/57 browser checks** on
+desktop Chromium, phone Chromium and phone WebKit. The combined checkout run also
+passed 12 then-present backup-module cases; that separate in-progress module is
+excluded from this checkpoint and remains unreviewed/unwired. Build and diff checks
+pass. Remote smoke checks deny anonymous commands, customer machine ingestion,
+preflight/no-POST recovery and raw private-table access; the intended machine RPCs
+remain granted. The export bucket is private. Advisors show only the existing
+deny-all-RLS/no-policy and intentionally authenticated checked-definer-RPC classes.
+
+The previous public-source repair commit `4fe7978` passed public and private CI.
+This checkpoint still needs its exact-commit GitHub runs, including actual
+PostgreSQL races. No live email, export storage/control custody, provider mutation,
+customer message, production publication or final release-judge approval is claimed.

@@ -67,7 +67,7 @@ test('authority changes cancel all pending positive operations at the tenant ver
   }
   const a=(await db.query("select id from wm.engagement_authorities where organization_id=$1 and domain='content'",[ids.org])).rows[0];
   await actor(db,ids.client);await people(db,'authority.revoke',{id:a.id,expected_version:1,reason:'Change decision-maker'});
-  await admin(db);const operations=(await db.query('select state,positive_effect from wm.operations')).rows;
+  await admin(db);const operations=(await db.query("select state,positive_effect from wm.operations where kind='fixture'")).rows;
   assert.equal(operations.filter(x=>x.state==='cancelled').length,2);
   assert.equal(operations.filter(x=>x.state==='in_flight').length,1);
   assert.equal(operations.filter(x=>x.state==='pending'&&!x.positive_effect).length,1);

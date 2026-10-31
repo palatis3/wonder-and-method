@@ -1,5 +1,6 @@
 // Synthetic, ephemeral data only. This module is never imported by the Worker.
 import {database,actor,admin,command,reviewable,ids} from './database.mjs';
+import {exportEnvelope} from '../../worker/workspace/intake/service.mjs';
 export async function previewFixture(){
   if(process.env.WORKSPACE_TEST_DATABASE_URL)throw Error('The UI preview must use ephemeral local WASM storage.');
   const db=await database();const {r,rev}=await reviewable(db);
@@ -17,7 +18,15 @@ export async function previewFixture(){
   await admin(db);
   await db.query(`insert into wm.ai_runs(organization_id,engagement_id,request_id,task_type,input_refs,input_digest,model_config,prompt_version,output,status,created_by)
     values($1,$2,$3,'request_brief',$4,'synthetic-not-live','{"model":"gpt-6-astra"}','synthetic-preview','{"title":"Opening-hours brief","draft":"Confirm the updated hours and review the homepage change. This is synthetic preview text.","claims":[],"questions":["Are weekend hours unchanged?"],"warnings":["Synthetic example; no model call was made."]}','stale',$5)`,[ids.org,ids.engagement,r.id,aiSources,ids.operator]);
-  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['intake'],now()+interval '1 day')",[ids.operator]);
+  const intakeStaff='20000000-0000-4000-8000-000000000005';
+  await db.query("insert into auth.users(id,email,email_confirmed_at) values($1,'intake@synthetic.example',now())",[intakeStaff]);
+  await db.query('insert into auth.sessions(id,user_id) values($1,$1)',[intakeStaff]);
+  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['intake','coverage','create_business'],now()+interval '1 day'),($2,array['intake'],now()+interval '1 day')",[ids.operator,intakeStaff]);
+  const source={id:'synthetic-public',origin:'https://synthetic.example',environment:'staging'};
+  await db.query("insert into wm.intake_sources values($1,$2,$3,true,'Synthetic browser fixture only')",[source.id,source.origin,source.environment]);
+  const records=['desktop','phone','safari-phone'].map((project,index)=>({id:`40000000-0000-4000-8000-${String(50+index).padStart(12,'0')}`,created_at:1793400000000,synthetic:1,payload:JSON.stringify({business:`Synthetic intake ${project}`,name:'Unverified synthetic contact',email:`${project}@synthetic.example`,message:'Literal <script>untrusted inquiry</script>'})}));
+  const page={records,next_cursor:null},envelope=await exportEnvelope(page,JSON.stringify(page),source);
+  await actor(db,ids.operator,{role:'service_role'});await db.query('select public.wm_intake_receive($1,$2)',[source.id,envelope]);await admin(db);
   const routeId='40000000-0000-4000-8000-000000000031';
   await db.query("insert into wm.inbound_routes(id,organization_id,engagement_id,request_id,token_hash,created_by) values($1,$2,$3,$4,$5,$6)",[routeId,ids.org,ids.engagement,r.id,'a'.repeat(64),ids.operator]);
   await db.query("insert into wm.inbound_emails(id,connection,environment,provider_id,state,metadata,body_text,content_hash,urgent,reason) values('40000000-0000-4000-8000-000000000032','synthetic','staging','40000000-0000-4000-8000-000000000033','captured',$1,$2,$3,true,'sender_needs_review')",[{from:'unverified@synthetic.example',subject:'Synthetic urgent email'},'Please pause. <script>Literal untrusted content</script>','b'.repeat(64)]);

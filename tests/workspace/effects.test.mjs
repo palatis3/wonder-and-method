@@ -47,7 +47,7 @@ test('an approval for Google cannot authorize a Meta operation; STOP covers ever
   await admin(db);
   for(const provider of ['meta_ads','microsoft_ads','tiktok_ads','linkedin_ads'])await db.query(`insert into wm.provider_scopes(organization_id,engagement_id,provider,environment,account_id) values($1,$2,$3,'test','987654321')`,[ids.org,ids.engagement,provider]);
   await actor(db,ids.client);const stopped=await command(db,'ads_stop',{engagement_id:ids.engagement});assert.equal(stopped.stops.length,5);
-  const jobs=await claim(db);assert.deepEqual(jobs.map(x=>x.kind).sort(),['google_pause','linkedin_pause','meta_pause','microsoft_pause','tiktok_pause']);
+  const jobs=await claim(db);assert.deepEqual(jobs.filter(x=>x.kind.endsWith('_pause')).map(x=>x.kind).sort(),['google_pause','linkedin_pause','meta_pause','microsoft_pause','tiktok_pause']);
  }finally{await db.close();}
 });
 test('STOP cancels claimed-but-undispatched positive work and retains current managed resource identity',async()=>{

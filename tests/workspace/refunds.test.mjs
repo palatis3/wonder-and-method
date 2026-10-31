@@ -23,7 +23,7 @@ test('refund intent binds verified charges, reserves money, fences revoked autho
   const key=crypto.randomUUID();const f=await billing(db,'billing.refund',input,key);assert.deepEqual(await billing(db,'billing.refund',input,key),f);
   await assert.rejects(billing(db,'billing.refund',{...input,expected_version:3,amount_minor:4000}),/unreserved/);
   const permit=await begin(db,'stripe_refund_create');await admin(db);await db.query("update wm.operator_assignments set revoked_at=now() where organization_id=$1",[ids.org]);await actor(db,ids.operator,{role:'service_role'});
-  await assert.rejects(db.query('select public.wm_billing_effect_context($1,$2,$3)',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce]),/Finance operator/);
+  await assert.rejects(db.query('select public.wm_billing_effect_context($1,$2,$3)',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce]),e=>e.code==='42501'&&/Finance operator|authority unavailable/.test(e.message));
   await resolve(db,permit,proof(permit,{provider_reference:'re_fixture',adjustment_id:f.id,amount_minor:6000,state:'pending'}));
   const refund={id:'re_fixture',object:'refund',charge:'ch_fixture',currency:'usd',amount:6000,livemode:false,status:'succeeded',metadata:{wm_adjustment:f.id}};
   const polled=(await db.query("select public.wm_refunds_poll('test','acct_fixture',10) r")).rows[0].r;const lease=polled[0].readback_lease;

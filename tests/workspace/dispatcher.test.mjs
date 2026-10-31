@@ -6,11 +6,12 @@ import {provisionIdentity,sendNotification,notificationMessage} from '../../work
 import {reconcileAttempts} from '../../worker/workspace/effects/reconciliation.mjs';
 const people=async(db,name,input,key=crypto.randomUUID())=>(await db.query('select public.wm_people_command($1,$2,$3::jsonb,$4) as r',[ids.org,name,JSON.stringify(input),key])).rows[0].r;
 const machine=async db=>actor(db,ids.operator,{role:'service_role'});
-const env={APP_ORIGIN:'https://app.example.com',SUPABASE_URL:'https://synthetic.supabase.co',SUPABASE_PUBLISHABLE_KEY:'synthetic-publishable',SUPABASE_SECRET_KEY:'synthetic-secret',RESEND_API_KEY:'synthetic-key',NOTIFICATION_FROM:'Wonder and Method <workspace@example.com>',NOTIFICATIONS_ENABLED:'true',IDENTITY_PROVISIONING_ENABLED:'true',EFFECTS_ENABLED:'true'};
+const env={APP_ORIGIN:'https://app.example.com',SUPABASE_URL:'https://synthetic.supabase.co',SUPABASE_PUBLISHABLE_KEY:'synthetic-publishable',SUPABASE_SECRET_KEY:'synthetic-secret',RESEND_API_KEY:'synthetic-key',NOTIFICATION_FROM:'Wonder and Method <workspace@example.com>',NOTIFICATION_CHANNELS:JSON.stringify({synthetic:{account_id:'synthetic-account',environment:'staging',api_key:'synthetic-key'}}),NOTIFICATIONS_ENABLED:'true',IDENTITY_PROVISIONING_ENABLED:'true',EFFECTS_ENABLED:'true'};
 const permit={operation:{id:'40000000-0000-4000-8000-000000000001',organization_id:ids.org,kind:'invitation_notify'},attempt:{id:'50000000-0000-4000-8000-000000000001',dispatch_nonce:'60000000-0000-4000-8000-000000000001'}};
+const runtimeChannel={channel_id:'synthetic',account_id:'synthetic-account',environment:'staging'};
 const context={email:'recipient@synthetic.example',identity_id:ids.outsider};
 test('one scheduled class failure does not starve remaining effect, billing or reporting work and still fails the cron invocation',async()=>{
- const calls=[],names=['inbound_inventory','inbound','periods','receipts','reconciliation','effects','billing','refunds','analytics'];
+ const calls=[],names=['inbound_inventory','inbound','periods','receipts','notification_digests','reconciliation','effects','notification_delivery','customer_exports','billing','refunds','analytics'];
  const tasks=Object.fromEntries(names.map(name=>[name,async()=>{calls.push(name);if(name==='receipts')throw Error('Synthetic provider failure');return {done:true};}]));
  await assert.rejects(scheduledWork({},tasks),/stages need attention: receipts/);assert.deepEqual(calls,names);
 });
@@ -49,7 +50,7 @@ test('notification acceptance requires exact readback; delivery and private mess
 
 test('dispatcher records unknown without automatic retry and cancels before dispatch when independent control changes',async()=>{
  const job={id:crypto.randomUUID(),organization_id:ids.org,kind:'invitation_notify',lease_generation:1};let effects=0;const events=[];
- const rpc=async(_env,name,args)=>{events.push({name,args});if(name==='wm_jobs_claim')return [job];if(name==='wm_attempt_begin')return permit;return {};};
+ const rpc=async(_env,name,args)=>{events.push({name,args});if(name==='wm_jobs_claim')return [job];if(name==='wm_notification_preflight')return runtimeChannel;if(name==='wm_attempt_begin')return permit;return {};};
  const control={organization_id:ids.org,external_generation:'fixture-generation-1',access_state:'open'};
  let result=await dispatchJobs(env,{journal:async()=>({}),rpc,readControl:async()=>control,implementations:{invitation_notify:async()=>{effects++;throw Error('Provider outcome unknown');}}});
  assert.equal(effects,1);assert.equal(result.attention,1);assert.equal(events.at(-1).args.p_kind,'timeout');assert.equal(events.some(x=>x.name==='wm_attempt_resolve'),false);
@@ -62,13 +63,29 @@ test('dispatcher records unknown without automatic retry and cancels before disp
 test('readback reconciles a lost email acknowledgment without sending again',async()=>{
  const emailId=crypto.randomUUID(),p={...permit,operation:{...permit.operation,provider_reference:emailId},attempt:{...permit.attempt,external_generation:'fixture-generation-1'},context};
  const message=notificationMessage(env,p,context);let reads=0,resolved=0;
- const result=await reconcileAttempts(env,{journal:async()=>({}),rpc:async(_env,name)=>{if(name==='wm_unresolved_attempts')return [p];if(name==='wm_attempt_resolve'){resolved++;return {state:'verified'};}throw Error('Unexpected RPC');},
+ const archived={...env,LEGACY_NOTIFICATION_READS:JSON.stringify({[p.operation.id]:{organization_id:ids.org,account_id:'original-synthetic-account',environment:'staging',api_key:'original-synthetic-key',origin:env.APP_ORIGIN,from_address:env.NOTIFICATION_FROM,qualified_at:'2026-10-30T00:00:00Z',evidence:'Explicit reviewed original operation account and sender binding'}})};
+ const result=await reconcileAttempts(archived,{journal:async()=>({}),rpc:async(_env,name)=>{if(name==='wm_unresolved_attempts')return [p];if(name==='wm_attempt_resolve'){resolved++;return {state:'verified'};}throw Error('Unexpected RPC');},
   readControl:async()=>({access_state:'open',external_generation:'fixture-generation-1'}),fetcher:async(url,options)=>{assert.equal(options.method,undefined);assert.ok(url.endsWith(emailId));reads++;return Response.json({id:emailId,...message});}});
  assert.equal(reads,1);assert.equal(resolved,1);assert.equal(result.verified,1);
+ const blocked=await reconcileAttempts(env,{journal:async()=>({}),rpc:async(_env,name)=>{if(name==='wm_unresolved_attempts')return [p];throw Error('Must not resolve without original binding');},readControl:async()=>({access_state:'open',external_generation:'fixture-generation-1'}),fetcher:async()=>{throw Error('Must not contact a guessed legacy account');}});assert.equal(blocked.unresolved,1);
+});
+
+test('failed secondary status recording does not starve later provider jobs and fails the stage afterward',async()=>{
+ const first=crypto.randomUUID(),second=crypto.randomUUID(),effects=[];
+ const jobs=[first,second].map(id=>({id,organization_id:ids.org,kind:'invitation_notify',lease_generation:1}));
+ const rpc=async(_env,name,args)=>{
+  if(name==='wm_jobs_claim')return jobs;
+  if(name==='wm_notification_preflight')return runtimeChannel;
+  if(name==='wm_attempt_begin')return {...permit,operation:{...permit.operation,id:args.p_job},attempt:{...permit.attempt,external_generation:'fixture-generation-1'}};
+  if(name==='wm_attempt_observe')throw Error('Synthetic status storage outage');
+  if(name==='wm_attempt_resolve')return {state:'verified'};throw Error('Unexpected RPC '+name);
+ };
+ await assert.rejects(dispatchJobs(env,{rpc,journal:async()=>{},readControl:async()=>({access_state:'open',external_generation:'fixture-generation-1'}),implementations:{invitation_notify:async(_e,p)=>{effects.push(p.operation.id);if(p.operation.id===first)throw Error('Synthetic unknown provider outcome');return {settled:true};}}}),/status recording needs attention/);
+ assert.deepEqual(effects,[first,second]);
 });
 test('provider writes wait for independent intent and projection waits for outcome evidence',async()=>{
  const job={id:crypto.randomUUID(),organization_id:ids.org,kind:'invitation_notify',lease_generation:1},sequence=[];
- const rpc=async(_e,name,args)=>{if(name==='wm_jobs_claim')return [job];if(name==='wm_attempt_begin')return permit;if(name==='wm_attempt_observe')sequence.push(args.p_kind);if(name==='wm_attempt_resolve'){sequence.push('resolved');return {state:'verified'};}return {};};
+ const rpc=async(_e,name,args)=>{if(name==='wm_jobs_claim')return [job];if(name==='wm_notification_preflight')return runtimeChannel;if(name==='wm_attempt_begin')return permit;if(name==='wm_attempt_observe')sequence.push(args.p_kind);if(name==='wm_attempt_resolve'){sequence.push('resolved');return {state:'verified'};}return {};};
  const readControl=async()=>({access_state:'open',external_generation:'fixture-generation-1'}),implementations={invitation_notify:async()=>{sequence.push('effect');return {settled:true};}};
  await dispatchJobs(env,{rpc,readControl,implementations,journal:async(_e,_p,phase)=>{sequence.push(phase);}});assert.deepEqual(sequence,['intent','effect','outcome','resolved']);
  sequence.length=0;await dispatchJobs(env,{rpc,readControl,implementations,journal:async()=>{throw Error('Storage unavailable');}});assert.deepEqual(sequence,['cancelled_before_dispatch']);

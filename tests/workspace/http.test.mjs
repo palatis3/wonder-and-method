@@ -39,3 +39,18 @@ test('the production Worker serves every entry module imported by the workspace 
  const modules=[...app.matchAll(/from ['"]\.\/([^'"]+)['"]/g)].map(m=>m[1]);
  for(const module of modules){const response=await handleRequest(new Request(env.APP_ORIGIN+'/'+module),{...env,ASSETS:{fetch:async()=>new Response('synthetic module')}});assert.equal(response.status,200,module);}
 });
+test('authenticated intake actions work without a business and retain exact Origin and CSRF checks',async(t)=>{
+ const user='20000000-0000-4000-8000-000000000005',exp=Math.floor(Date.now()/1000)+3600,claims={sub:user,iss:env.SUPABASE_URL+'/auth/v1',role:'authenticated',exp,aal:'aal2'};
+ const token=Buffer.from('{"alg":"synthetic-only"}').toString('base64url')+'.'+Buffer.from(JSON.stringify(claims)).toString('base64url')+'.synthetic';
+ const cookie=await sessionCookie({access_token:token,csrf:'synthetic-csrf',exp},env),calls=[];
+ t.mock.method(globalThis,'fetch',async(url,options)=>{
+  if(String(url).endsWith('/auth/v1/user'))return Response.json({id:user,email:'intake@synthetic.example'});
+  const name=String(url).split('/').at(-1);calls.push({name,args:JSON.parse(options.body)});
+  if(name==='wm_session_check')return Response.json({active:true});
+  if(name==='wm_intake_command')return Response.json({id:'40000000-0000-4000-8000-000000000001',version:2});throw Error('Unexpected request');
+ });
+ const input={command:'intake.assign',input:{id:'40000000-0000-4000-8000-000000000001',expected_version:1,assignee_id:user,reason:'Explicit reviewed assignee'}};
+ const req=(origin=env.APP_ORIGIN,csrf='synthetic-csrf')=>new Request(env.APP_ORIGIN+'/api/command',{method:'POST',headers:{cookie,origin,'content-type':'application/json','x-csrf-token':csrf,'idempotency-key':crypto.randomUUID()},body:JSON.stringify(input)});
+ assert.equal((await handleRequest(req(),env)).status,200);assert.equal(calls.filter(c=>c.name==='wm_intake_command').length,1);assert.equal(calls.at(-1).args.p_command,'intake.assign');
+ assert.equal((await handleRequest(req('https://www.synthetic.example'),env)).status,403);assert.equal((await handleRequest(req(env.APP_ORIGIN,'wrong'),env)).status,403);assert.equal(calls.filter(c=>c.name==='wm_intake_command').length,1);
+});
