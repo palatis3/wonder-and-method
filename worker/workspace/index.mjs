@@ -3,6 +3,7 @@ import {ownerQueue,ownerCommand,OWNER_COMMANDS} from './owner/service.mjs';
 import {intakeQueue,intakeCommand,syncIntakePage,INTAKE_COMMANDS} from './intake/service.mjs';
 import {handleOutboundWebhook,notificationStatus,notificationCommand,NOTIFICATION_COMMANDS} from './notifications/service.mjs';
 import {exportStatus,exportCommand,downloadCustomerExport,EXPORT_COMMANDS} from './exports/service.mjs';
+import {backupStatus,backupCommand,BACKUP_COMMANDS} from './backups/service.mjs';
 import {handleInboundWebhook,handleInboundFile,inboundCommand} from './inbound/service.mjs';
 import {handleConnectionCallback,handleConnections} from './integrations/service.mjs';
 import {readAccounts} from './integrations/accounts.mjs';
@@ -31,6 +32,7 @@ export async function handleRequest(request,env){
       await identity(session,env);
       const exportFile=await downloadCustomerExport(request,env,session);if(exportFile)return exportFile;
       if(request.method==='GET'&&url.pathname==='/api/customer-exports')return json(await exportStatus(env,session,uuid(url.searchParams.get('business')),url.searchParams.get('before')||null));
+      if(request.method==='GET'&&url.pathname==='/api/backups')return json(await backupStatus(env,session,uuid(url.searchParams.get('business'))));
       if(request.method==='GET'&&url.pathname==='/api/notifications')return json(await notificationStatus(env,session,uuid(url.searchParams.get('business'))));
       if(request.method==='GET'&&url.pathname==='/api/owner')return json(await ownerQueue(env,session,{query:url.searchParams.get('query')||'',week_start:url.searchParams.get('week_start'),timezone:url.searchParams.get('timezone')||'UTC',after:url.searchParams.get('after')||null}));
       if(request.method==='GET'&&url.pathname==='/api/owner-dates')return json(await rpc(env,session.access_token,'wm_owner_dates',{p_org:uuid(url.searchParams.get('business'))}));
@@ -57,6 +59,7 @@ export async function handleRequest(request,env){
         if(INTAKE_COMMANDS.includes(command))return json(await intakeCommand(env,session,command,input.input,key));
         const org=uuid(input.organization_id,'business');
         if(EXPORT_COMMANDS.has(command))return json(await exportCommand(env,session,org,command,input.input,key));
+        if(BACKUP_COMMANDS.has(command))return json(await backupCommand(env,session,org,command,input.input,key));
         if(command==='export.request')throw new WorkspaceError('export_replaced','Open Your service exports and choose an engagement.',409);
         if(NOTIFICATION_COMMANDS.includes(command))return json(await notificationCommand(env,session,org,command,input.input,key));
         if(OWNER_COMMANDS.includes(command))return json(await ownerCommand(env,session,org,command,input.input,key));
@@ -81,7 +84,7 @@ export async function handleRequest(request,env){
     if(!['GET','HEAD'].includes(request.method))return json({error:{message:'Method unavailable.'}},405);
     if(!env.ASSETS)return json({error:{message:'Workspace interface unavailable.'}},503);
     if(url.pathname==='/'||url.pathname.startsWith('/workspace/')||url.pathname.startsWith('/operator/'))url.pathname='/index.html';
-    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/connections-ui.mjs','/reporting-ui.mjs','/outcomes-ui.mjs','/delivery-ui.mjs','/website-ui.mjs','/analytics-ui.mjs','/owner-ui.mjs','/intake-ui.mjs','/notification-ui.mjs','/export-ui.mjs','/domain/reporting.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
+    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/connections-ui.mjs','/reporting-ui.mjs','/outcomes-ui.mjs','/delivery-ui.mjs','/website-ui.mjs','/analytics-ui.mjs','/owner-ui.mjs','/intake-ui.mjs','/notification-ui.mjs','/export-ui.mjs','/backup-ui.mjs','/domain/reporting.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }

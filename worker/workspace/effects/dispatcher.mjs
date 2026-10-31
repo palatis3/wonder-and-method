@@ -2,6 +2,8 @@ import {websiteEffect} from '../website/cloudflare.mjs';
 import {sendCadencedNotification,prepareNotificationDigests,pollNotificationDelivery,notificationChannel} from '../notifications/service.mjs';
 import {notificationChannels} from '../notifications/config.mjs';
 import {processCustomerExports} from '../exports/service.mjs';
+import {processTenantBackups} from '../backups/service.mjs';
+import {completeMonitoring} from '../monitoring/service.mjs';
 import {runAnalytics} from '../analytics/service.mjs';
 import {captureInbound,inventoryInbound} from '../inbound/service.mjs';
 import {invoiceEffect} from '../billing/stripe.mjs';
@@ -60,9 +62,11 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
   if(recordingFailures)throw new Error('Effect status recording needs attention for '+recordingFailures+' jobs.');return {verified,attention};
 }
 export async function scheduledWork(env,overrides={}){
- const tasks={inbound_inventory:inventoryInbound,inbound:captureInbound,periods:e=>e.STRIPE_ENABLED==='true'?machineRpc(e,'wm_billing_generate',{p_limit:10}):{disabled:true},receipts:flushReceipts,notification_digests:prepareNotificationDigests,reconciliation:reconcileAttempts,effects:dispatchJobs,notification_delivery:pollNotificationDelivery,customer_exports:e=>e.CUSTOMER_EXPORTS_ENABLED==='true'?processCustomerExports(e):{disabled:true},billing:reconcileStripe,refunds:pollRefunds,analytics:runAnalytics,...overrides},results={},failed=[];
+ const {monitoring:monitor=completeMonitoring,...stageOverrides}=overrides;
+ const tasks={inbound_inventory:inventoryInbound,inbound:captureInbound,periods:e=>e.STRIPE_ENABLED==='true'?machineRpc(e,'wm_billing_generate',{p_limit:10}):{disabled:true},receipts:flushReceipts,notification_digests:prepareNotificationDigests,reconciliation:reconcileAttempts,effects:dispatchJobs,notification_delivery:pollNotificationDelivery,customer_exports:e=>e.CUSTOMER_EXPORTS_ENABLED==='true'?processCustomerExports(e):{disabled:true},backup_schedules:e=>e.TENANT_BACKUPS_ENABLED==='true'?machineRpc(e,'wm_backup_generate',{p_limit:10}):{disabled:true},tenant_backups:e=>e.TENANT_BACKUPS_ENABLED==='true'?processTenantBackups(e):{disabled:true},billing:reconcileStripe,refunds:pollRefunds,analytics:runAnalytics,...stageOverrides},results={},failed=[];
  // Receipt persistence precedes effect dispatch, but one failing class must not
  // starve unrelated STOP, payment readback, or correspondence work this tick.
  for(const [name,run]of Object.entries(tasks)){try{results[name]=await run(env);}catch{results[name]={attention:true};failed.push(name);}}
+ try{results.monitoring=await monitor(env,{results,failed});}catch{results.monitoring={attention:true};failed.push('monitoring');}
  if(failed.length)throw new Error('Scheduled workspace stages need attention: '+failed.join(', '));return results;
 }

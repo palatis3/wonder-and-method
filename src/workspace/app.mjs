@@ -3,6 +3,7 @@ import {ownerViews,ownerFormInput} from './owner-ui.mjs';
 import {intakeViews,intakeFormInput} from './intake-ui.mjs';
 import {notificationViews,notificationFormInput} from './notification-ui.mjs';
 import {exportViews,exportFormInput} from './export-ui.mjs';
+import {backupViews,backupFormInput} from './backup-ui.mjs';
 import {analyticsViews,syncAnalyticsForm} from './analytics-ui.mjs';
 import {deliveryViews} from './delivery-ui.mjs';
 import {outcomesViews} from './outcomes-ui.mjs';
@@ -92,6 +93,7 @@ async function loadWorkspace(){
   state.analyticsData=null;if(id)try{state.analyticsData=await api(`/api/analytics?business=${encodeURIComponent(id)}${new URL(location.href).searchParams.get('analytics_before')?'&before='+encodeURIComponent(new URL(location.href).searchParams.get('analytics_before')):''}`);}catch(error){state.analyticsError=error.message;}
   state.notificationData=null;state.notificationError=null;if(id)try{state.notificationData=await api(`/api/notifications?business=${encodeURIComponent(id)}`);}catch(error){state.notificationError=error.message;}
   state.exportData=null;state.exportError=null;if(id&&state.workspace.viewer.role)try{await loadExports();}catch(error){state.exportError=error.message;}
+  state.backupData=null;state.backupError=null;if(id&&can('recovery'))try{state.backupData=await api(`/api/backups?business=${encodeURIComponent(id)}`);}catch(error){state.backupError=error.message;}
 }
 async function command(name,input,key){return api('/api/command',{method:'POST',data:{organization_id:org(),command:name,input},key});}
 async function downloadExport(link){
@@ -185,6 +187,8 @@ const analyticsView=analyticsViews({data:()=>state.analyticsData,esc,hidden,fiel
 const owner=ownerViews({esc,dateTime,name}),intake=intakeViews({esc,dateTime,name});
 const notifications=notificationViews({esc,dateTime});
 const exports=exportViews({esc,dateTime});
+const backups=backupViews({esc,dateTime});
+const backupView=()=>state.backupData?backups.panel(state.backupData,{org:org(),qualification:state.backupData.request_configuration?.qualification,keyId:state.backupData.request_configuration?.key_id}):state.backupError?`<section class="panel"><h2>Tenant recovery backups</h2><p>${esc(state.backupError)}</p></section>`:'';
 const exportView=()=>state.exportData?exports.panel(state.exportData,{org:org(),engagements:rows('engagements')}):state.exportError?`<section class="panel"><h2>Your service exports</h2><p>${esc(state.exportError)}</p></section>`:'';
 const notificationView=()=>state.notificationData?notifications.status(state.notificationData,{org:org(),canSetPreferences:Boolean(state.workspace.viewer.role)})+notifications.retry(state.notificationData,{org:org()}):state.notificationError?`<section class="panel"><h2>Notification delivery</h2><p>${esc(state.notificationError)}</p></section>`:'';
 const studioLinks=()=>`${state.ownerData?`<a class="button secondary" href="${href('owner','',true)}" data-nav>Work across businesses</a>`:''}${state.intakeData?`<a class="button secondary" href="${href('intake','',true)}" data-nav>First-business intake</a>`:''}`;
@@ -196,12 +200,13 @@ function wireRenderedForms(){
   for(const form of app.querySelectorAll('form[data-intake-action]'))form.dataset.action=form.dataset.intakeAction;
   for(const form of app.querySelectorAll('form[data-notification-action]'))form.dataset.action=form.dataset.notificationAction;
   for(const form of app.querySelectorAll('form[data-export-action]'))form.dataset.action=form.dataset.exportAction;
+  for(const form of app.querySelectorAll('form[data-backup-action]'))form.dataset.action=form.dataset.backupAction;
   for(const [selector,action,filter]of [['[data-owner-search]','owner.search',state.ownerFilter],['[data-intake-search]','intake.search',state.intakeFilter]])for(const form of app.querySelectorAll(selector)){form.dataset.action=action;for(const [key,value]of Object.entries(filter))if(form.elements.namedItem(key))form.elements.namedItem(key).value=value;}
   for(const form of app.querySelectorAll('[data-intake-sync]')){form.dataset.action='intake.sync';form.dataset.formKey=form.dataset.intakeSync;}
   for(const form of app.querySelectorAll('form[data-action]')){
     const action=form.dataset.action;
     if(isOperator()&&!form.dataset.ownerAction&&!form.dataset.intakeAction){
-      const required=/^(billing|closure|service|proposal|agreement|onboarding|milestone)\./.test(action)?'finance':/^(reporting|analytics)\./.test(action)?'reports':/^(invitation|member|authority)\./.test(action)?'people':action==='ads.stop'?'ads':/^(request|message|revision|file|website|delivery|fact|time|ai)\./.test(action)?'delivery':null;
+      const required=action.startsWith('backup.')?'recovery':/^(billing|closure|service|proposal|agreement|onboarding|milestone)\./.test(action)?'finance':/^(reporting|analytics)\./.test(action)?'reports':/^(invitation|member|authority)\./.test(action)?'people':action==='ads.stop'?'ads':/^(request|message|revision|file|website|delivery|fact|time|ai)\./.test(action)?'delivery':null;
       if(required&&!can(required)){form.remove();continue;}
     }
     syncServiceForm(form);syncAnalyticsForm(form,state.analyticsData);
@@ -220,6 +225,7 @@ function render(){
   if(section==='results')content+=analyticsView();
   if(section==='help'||path()[0]==='operator')content+=notificationView();
   if(section==='help')content+=exportView();
+  if(path()[0]==='operator'&&can('recovery'))content+=backupView();
   if(section==='business')content+=aiPreference();
   if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones();
   if(['work','agreements'].includes(section)&&state.ownerDates?.length)content+=`<section class="panel"><h2>Delivery date proposals</h2>${owner.dates(state.ownerDates.filter(p=>!id||section!=='work'||p.request_id===id),{org:org(),canDecide:!isOperator()&&['customer_admin','contributor'].includes(state.workspace.viewer.role),canWithdraw:can('delivery')})}</section>`;
@@ -234,6 +240,7 @@ async function formAction(form){
   if(form.dataset.ownerAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:ownerFormInput(action,form)},key});await loadWorkspace();state.notice='Saved. Current work and responsibilities have been refreshed.';return;}
   if(form.dataset.intakeAction){await api('/api/command',{method:'POST',data:{command:action,input:intakeFormInput(action,form)},key});await loadWorkspace();state.notice='Intake action saved. Access, invitations and agreement acceptance remain separate.';return;}
   if(form.dataset.notificationAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:notificationFormInput(action,form)},key});await loadWorkspace();state.notice='Notification settings saved. Delivery status remains based on provider evidence.';return;}
+  if(form.dataset.backupAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:backupFormInput(action,form)},key});await loadWorkspace();state.notice=action==='backup.schedule'?'Daily backup schedule saved.':action==='backup.cancel'?'Backup preparation cancelled. Existing encrypted evidence remains private.':'Backup requested. Its copying and verification state is shown below.';return;}
   if(form.dataset.exportAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:exportFormInput(action,form)},key});await loadWorkspace();state.notice=action==='customer_export.cancel'?'Future access to this export is cancelled. Previously downloaded bytes remain with their recipients.':'Export request saved. Its preparation and file checks are shown below.';return;}
   if(action==='login'){const r=await api('/api/auth/start',{method:'POST',data:{email:values.email,return_path:state.returnPath}});state.csrf=r.csrf;state.loginStep='code';state.notice=r.message;return;}
   if(action==='verify'){const r=await api('/api/auth/verify',{method:'POST',data:{code:values.code}});state.csrf=r.csrf;state.user=(await api('/api/session')).user;await loadWorkspace();history.replaceState({},'',allowedReturnPath(r.return_path));return;}

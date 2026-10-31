@@ -543,3 +543,40 @@ The previous public-source repair commit `4fe7978` passed public and private CI.
 This checkpoint still needs its exact-commit GitHub runs, including actual
 PostgreSQL races. No live email, export storage/control custody, provider mutation,
 customer message, production publication or final release-judge approval is claimed.
+
+## 2026-10-31: Tenant backup, standing schedule and independent monitoring
+
+The backup producer copies actual private snapshot/file bytes into authenticated
+immutable chunks, verifies whole-source hashes and seals the exact manifest with
+an independent latest-tail witness. Receipt durability acknowledgment and provider
+intent/outcome journaling now include the witness hooks. Customer exports remain
+a separate audience-restricted workflow. Daily preparation is explicit standing
+authority; on-demand preparation retains its original session checks.
+
+Independent review found three defects: restoring a revoked staff row revived old
+leases, due-time processing reversed UUID tenant guard order, and monitoring
+ignored fresh known processing/recording failures. Monotonic staff fingerprints,
+UUID-order processing of the bounded due set, and complete stage-result/presence
+checks fix them. Reproductions cover both old lease types and immediate failure
+signals. The independent bounded recheck found no remaining P0–P2 finding.
+
+Current focused result: **51/51 passing** backup/schedule/witness/monitoring,
+dispatcher and HTTP tests, plus **3/3** backup browser journeys (desktop Chromium,
+phone Chromium, phone WebKit). The browser includes request interruption, current
+configuration, cancellation, daily enable/disable and customer denial. Two genuine
+PostgreSQL tests cover concurrent period generation and the two-tenant/staff
+revocation lock order; they remain for CI. Build and diff checks pass.
+
+The three reviewed migrations are applied to the empty staging project. Their
+canonical hashes and remote ledger versions are in the staging receipt. There are
+135 classified wm tables, no unclassified table/signature drift, and denied
+anonymous commands/customer machine/raw-table/legacy-bypass access. Advisors show
+the intentional deny-all RLS/checked-definer RPC classes and INFO-level index
+followups; index coverage will be reconciled against the complete schema before
+load qualification. Production is unchanged.
+
+These results do not qualify live byte/control/witness storage, admin separation,
+key custody, actual delivered monitoring alerts, offline/account-loss recovery or
+maximum-bound performance. The separate restore/retention/native-ad contributions
+are not claimed complete or release-qualified by this checkpoint. The prior commit
+887ac7f passed private PostgreSQL CI; this checkpoint still needs its own CI.

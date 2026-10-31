@@ -13,6 +13,38 @@ async function waitForBlocked(observer,pid){
   }
   throw new Error('Expected the second connection to wait on the transaction lock');
 }
+
+test('concurrent daily backup producers create one job after the tenant guard commits',onlyPostgres,async()=>{
+ const db=await database(),second=await db.connect();try{
+  const input={enabled:true,expected_version:0,key_id:'synthetic',qualification:{bytes_identity:'Synthetic account A',witness_identity:'Synthetic account B',custody_reference:'Synthetic offline custodian',witness_hooks_version:'tenant-witness-v1'}};
+  await actor(db,ids.operator,{aal:'aal2'});await db.query('select public.wm_backup_command($1,$2,$3,$4)',[ids.org,'backup.schedule',input,crypto.randomUUID()]);
+  await actor(db,ids.operator,{role:'service_role'});await db.exec('begin');const first=(await db.query('select public.wm_backup_generate(10) r')).rows[0].r;assert.equal(first.length,1);
+  await actor(second,ids.operator,{role:'service_role'});const pid=(await second.query('select pg_backend_pid() id')).rows[0].id;
+  const pending=second.query('select public.wm_backup_generate(10) r').then(value=>({value}),error=>({error}));
+  await waitForBlocked(db,pid);await db.exec('commit');const replay=await pending;assert.ifError(replay.error);assert.deepEqual(replay.value.rows[0].r,[]);
+  await admin(db);assert.equal((await db.query('select count(*)::int n from wm.tenant_backup_jobs')).rows[0].n,1);
+ }finally{await db.exec('rollback').catch(()=>{});await second.close();await db.close();}
+});
+
+test('two-tenant backup generation follows UUID lock order while staff revocation is pending',onlyPostgres,async()=>{
+ const db=await database(),second=await db.connect();let pending;
+ try{
+  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['recovery'],now()+interval '2 days')",[ids.operator]);
+  await db.query("insert into wm.operator_assignments(organization_id,user_id,capabilities,active_until) values($1,$2,array['recovery'],now()+interval '2 days')",[ids.other,ids.operator]);
+  const input={enabled:true,expected_version:0,key_id:'synthetic',qualification:{bytes_identity:'Synthetic A',witness_identity:'Synthetic B',custody_reference:'Synthetic offline custodian',witness_hooks_version:'tenant-witness-v1'}};
+  await actor(db,ids.operator,{aal:'aal2'});for(const org of [ids.org,ids.other])await db.query('select public.wm_backup_command($1,$2,$3,$4)',[org,'backup.schedule',input,crypto.randomUUID()]);
+  await admin(db);await db.query("update wm.tenant_backup_schedules set next_at=now()-case when organization_id=$1 then interval '1 minute' else interval '10 minutes' end",[ids.org]);
+  await db.exec('begin');await db.query('select 1 from wm.tenant_guards where organization_id=$1 for update',[ids.org]);
+  await actor(second,ids.operator,{role:'service_role'});const pid=(await second.query('select pg_backend_pid() id')).rows[0].id;
+  pending=second.query('select public.wm_backup_generate(2) r').then(value=>({value}),error=>({error}));await waitForBlocked(db,pid);
+  // The older due row is B. A correct generator waits for A without holding B.
+  // NOWAIT gives a deterministic diagnosis instead of waiting for a deadlock.
+  await db.query('select 1 from wm.tenant_guards where organization_id=$1 for update nowait',[ids.other]);
+  await db.query('update wm.staff set revoked_at=clock_timestamp() where user_id=$1',[ids.operator]);await db.exec('commit');
+  const finished=await pending;assert.ifError(finished.error);assert.deepEqual(finished.value.rows[0].r,[]);pending=null;
+  assert.equal((await db.query('select count(*)::int n from wm.tenant_backup_jobs')).rows[0].n,0);
+ }finally{await db.exec('rollback').catch(()=>{});if(pending)await pending;await second.close();await db.close();}
+});
 test('concurrent retries commit one command result',onlyPostgres,async()=>{
   const db=await database(),second=await db.connect();
   try{

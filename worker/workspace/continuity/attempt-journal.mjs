@@ -1,6 +1,7 @@
 import {canonical,uuid,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 import {backupKeys,byteDigest,sealBytes,openBytes} from './envelope.mjs';
 import {externalControl} from './receipts.mjs';
+import {witnessAttempt} from './witness-hooks.mjs';
 const encoder=new TextEncoder();
 const fail=()=>{throw new WorkspaceError('attempt_evidence_unavailable','Independent action evidence needs attention.',503);};
 export async function journalAttempt(env,permit,phase,proof=null){
@@ -22,5 +23,6 @@ export async function journalAttempt(env,permit,phase,proof=null){
  if(!stored||stored.size>1048576)fail();
  const bytes=new Uint8Array(await stored.arrayBuffer()),verified=await openBytes(bytes,context,keys);
  if(await byteDigest(verified)!==digest)fail();
- return {key,digest,ciphertext_digest:await byteDigest(bytes)};
+ const evidence={key,digest,ciphertext_digest:await byteDigest(bytes)};
+ await witnessAttempt(env,permit,phase,{...evidence,context,bytes:plain.length});return evidence;
 }

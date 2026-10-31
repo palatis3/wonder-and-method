@@ -4,20 +4,101 @@
   "organizations_at_verification": 0,
   "production_changed": false,
   "migrations": [
-    {"file":"20261031132142_owner_operations.sql","name":"owner_operations","remote_version":"20261031150618","sha256":"f830a690b05bc572e84dae80aad3ba60c4d99a10209c4780349c82380347fe23"},
-    {"file":"20261031133949_intake_workflows.sql","name":"intake_workflows","remote_version":"20261031150623","sha256":"4adaa794166e7f75a4bf6a0a56275bd7b4baaaf1d81426571b3f0406cf4a3af8"},
-    {"file":"20261031135902_notification_delivery.sql","name":"notification_delivery","remote_version":"20261031150936","sha256":"b27b815618e24238a67adc4ed7982eeb7ffa286a039b563961f577ff24245851"},
-    {"file":"20261031140756_owner_effective_permissions.sql","name":"owner_effective_permissions","remote_version":"20261031151155","sha256":"7935eb9ff495633e6d71f3c8ba7f6278072096efd78c55243833cb868bae55ae"},
-    {"file":"20261031142642_customer_exports.sql","name":"customer_exports","remote_version":"20261031151209","sha256":"b4b8219fb39934c8b7e4d0108068495a1bdbaa7e9ca32695ca0aa405115b2f65"}
+    {
+      "file": "20261031132142_owner_operations.sql",
+      "name": "owner_operations",
+      "remote_version": "20261031150618",
+      "sha256": "f830a690b05bc572e84dae80aad3ba60c4d99a10209c4780349c82380347fe23"
+    },
+    {
+      "file": "20261031133949_intake_workflows.sql",
+      "name": "intake_workflows",
+      "remote_version": "20261031150623",
+      "sha256": "4adaa794166e7f75a4bf6a0a56275bd7b4baaaf1d81426571b3f0406cf4a3af8"
+    },
+    {
+      "file": "20261031135902_notification_delivery.sql",
+      "name": "notification_delivery",
+      "remote_version": "20261031150936",
+      "sha256": "b27b815618e24238a67adc4ed7982eeb7ffa286a039b563961f577ff24245851"
+    },
+    {
+      "file": "20261031140756_owner_effective_permissions.sql",
+      "name": "owner_effective_permissions",
+      "remote_version": "20261031151155",
+      "sha256": "7935eb9ff495633e6d71f3c8ba7f6278072096efd78c55243833cb868bae55ae"
+    },
+    {
+      "file": "20261031142642_customer_exports.sql",
+      "name": "customer_exports",
+      "remote_version": "20261031151209",
+      "sha256": "b4b8219fb39934c8b7e4d0108068495a1bdbaa7e9ca32695ca0aa405115b2f65"
+    },
+    {
+      "file": "20261031144939_tenant_backups.sql",
+      "name": "tenant_backups",
+      "remote_version": "20261031161552",
+      "sha256": "673554cbf46852bde45998bb41af995021bd5110f1bac8f74eda0c41121c2730"
+    },
+    {
+      "file": "20261031153656_tenant_backup_schedules.sql",
+      "name": "tenant_backup_schedules",
+      "remote_version": "20261031161557",
+      "sha256": "6d7c968f0cf800a98a8ae49de33e7b027b9bfeaa82b77b614d3d3a013d8f0539"
+    },
+    {
+      "file": "20261031154246_runtime_monitoring.sql",
+      "name": "runtime_monitoring",
+      "remote_version": "20261031161601",
+      "sha256": "d6f001808ea2121711747bc0ce88649ae8e055e2423bae946f3cf14a02167171"
+    }
   ],
   "notification_ledger_repair": {
     "cause": "MCP generated the same second-resolution version as intake_workflows. The canonical notification DDL committed before the ledger insert failed.",
     "action": "No DDL was replayed. An independent local database loaded through notification_delivery supplied a function manifest; all 22 function bodies/signatures/security attributes and all 12 private RLS tables matched staging. A guarded notification_delivery history entry recorded that canonical source hash and refused any mismatch.",
     "subsequent_execution": "Outer transaction wrappers were omitted from later MCP apply_migration arguments so the tool owns the transaction; canonical SQL files are unchanged."
   },
-  "verified_denials": ["anonymous commands","customer machine ingestion","customer notification preflight and no-POST recovery","customer export machine context","customer raw intake/export tables","legacy unversioned preference helper bypass"],
-  "verified_machine_grants": ["intake receive","notification preflight","customer export context"],
+  "verified_denials": [
+    "anonymous commands",
+    "customer machine ingestion",
+    "customer notification preflight and no-POST recovery",
+    "customer export machine context",
+    "customer raw intake/export tables",
+    "legacy unversioned preference helper bypass"
+  ],
+  "verified_machine_grants": [
+    "intake receive",
+    "notification preflight",
+    "customer export context"
+  ],
   "customer_export_bucket_public": false,
-  "advisory_classes": ["rls_enabled_no_policy","authenticated_security_definer_function_executable"],
-  "applied_files_are_immutable": true
+  "advisory_classes": [
+    "rls_enabled_no_policy",
+    "authenticated_security_definer_function_executable"
+  ],
+  "applied_files_are_immutable": true,
+  "backup_checkpoint_verification": {
+    "wm_tables": 135,
+    "unclassified_tables": 0,
+    "signature_drift": 0,
+    "customer_backup_command": "authenticated checked recovery RPC only",
+    "denied": [
+      "anonymous backup commands",
+      "customer machine generation",
+      "customer raw backup/schedule rows",
+      "legacy command bypass",
+      "customer global health"
+    ],
+    "machine_grants": [
+      "backup generation",
+      "aggregate runtime health"
+    ],
+    "advisory_counts": {
+      "rls_enabled_no_policy": 135,
+      "authenticated_security_definer_function_executable": 49,
+      "unindexed_foreign_keys": 52,
+      "unused_index": 99
+    },
+    "performance_followup": "Review current FK access paths with the completed schema; the new schedule_id FK is included in the pending index pass."
+  }
 }

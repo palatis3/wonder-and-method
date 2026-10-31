@@ -4,11 +4,13 @@ import {sealBytes,openBytes} from '../../worker/workspace/continuity/envelope.mj
 import {persistReceipt,flushReceipts} from '../../worker/workspace/continuity/receipts.mjs';
 import {database,actor,admin,ids,command} from './database.mjs';
 import {journalAttempt} from '../../worker/workspace/continuity/attempt-journal.mjs';
+import {checkWitness} from '../../worker/workspace/backups/witness.mjs';
+import {dispatchJobs} from '../../worker/workspace/effects/dispatcher.mjs';
 const encoder=new TextEncoder();
 const key=()=>Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('base64');
 class MemoryBucket{
  objects=new Map(); writes=[]; loseAck=null; rejectHead=false;
- async get(key){const o=this.objects.get(key);return o?{size:o.bytes.length,etag:o.etag,arrayBuffer:async()=>o.bytes.slice().buffer,json:async()=>JSON.parse(new TextDecoder().decode(o.bytes))}:null;}
+ async get(key){const o=this.objects.get(key);return o?{size:o.bytes.length,etag:o.etag,body:new Response(o.bytes).body,arrayBuffer:async()=>o.bytes.slice().buffer,json:async()=>JSON.parse(new TextDecoder().decode(o.bytes))}:null;}
  async put(key,body,options={}){
   const old=this.objects.get(key),condition=options.onlyIf;
   if((condition instanceof Headers&&condition.get('If-None-Match')==='*'&&old)||(condition?.etagMatches&&condition.etagMatches!==old?.etag))return null;
@@ -20,6 +22,32 @@ class MemoryBucket{
 }
 async function fixture(){const bytes=new MemoryBucket(),control=new MemoryBucket(),keys={one:key()};await control.put(`control/${ids.org}.json`,JSON.stringify({schema_version:1,organization_id:ids.org,external_generation:'fixture-generation-1',access_state:'open',positive_effects_allowed:false}));return {RECOVERY_BYTES:bytes,RECOVERY_CONTROL:control,BACKUP_KEY_ID:'one',BACKUP_KEYS:JSON.stringify(keys),BACKUP_ENABLED:'true'};}
 function receipt(sequence,predecessor=null){return {organization_id:ids.org,id:crypto.randomUUID(),sequence:String(sequence),predecessor_id:predecessor?.id||null,event_type:'decision.approve',target_id:crypto.randomUUID(),payload:{text:'Synthetic approval'},digest:'a'.repeat(64),external_generation:'fixture-generation-1',created_at:'2026-10-30T00:00:00Z'};}
+
+test('shared receipt and attempt journals acknowledge the same independent witness events after interruption',async()=>{
+ const env={...await fixture(),RECOVERY_WITNESS_ENABLED:'true',RECOVERY_WITNESS:new MemoryBucket()},r=receipt(1);
+ await persistReceipt(env,r);
+ const permit={operation:{id:crypto.randomUUID(),organization_id:ids.org,kind:'synthetic'},attempt:{id:crypto.randomUUID(),dispatch_nonce:crypto.randomUUID(),external_generation:r.external_generation}};
+ env.RECOVERY_WITNESS.loseAck=k=>k.endsWith('head.bin');await journalAttempt(env,permit,'intent');
+ await journalAttempt(env,permit,'outcome',{verified:true,provider_reference:'synthetic'});
+ const before=(await checkWitness(env,ids.org,r.external_generation)).head;
+ await persistReceipt(env,r);await journalAttempt(env,permit,'intent');await journalAttempt(env,permit,'outcome',{verified:true,provider_reference:'synthetic'});
+ const history=await checkWitness(env,ids.org,r.external_generation);assert.deepEqual(history.head,before);
+ assert.deepEqual(history.events.map(x=>x.kind),['attempt_outcome','attempt_intent','receipt']);
+ assert.equal(new Set(history.events.map(x=>x.id)).size,3);assert.equal(history.events[2].source_id,r.id);
+});
+
+test('failed independent witness does not acknowledge receipt durability or dispatch a provider',async()=>{
+ const env={...await fixture(),RECOVERY_WITNESS_ENABLED:'true',RECOVERY_WITNESS:new MemoryBucket(),EFFECTS_ENABLED:'true',STRIPE_ENABLED:'true',STRIPE_SECRET_KEY:'synthetic-unused'};
+ env.RECOVERY_WITNESS.put=async()=>null;const r=receipt(1);let durable=false;
+ const flushed=await flushReceipts(env,{rpc:async(_env,name)=>{if(name==='wm_receipts_pending')return [r];if(name==='wm_receipt_persisted')durable=true;}});
+ assert.equal(flushed.failed,1);assert.equal(durable,false);
+ const job={id:crypto.randomUUID(),organization_id:ids.org,kind:'stripe_invoice_create',lease_generation:1},permit={operation:{id:crypto.randomUUID(),organization_id:ids.org,kind:job.kind},attempt:{id:crypto.randomUUID(),dispatch_nonce:crypto.randomUUID(),external_generation:r.external_generation}};
+ let sent=false,observation;
+ const rpc=async(_env,name,args)=>{if(name==='wm_jobs_claim')return [job];if(name==='wm_attempt_begin')return permit;if(name==='wm_attempt_observe'){observation=args;return {};}throw Error('Unexpected '+name);};
+ await dispatchJobs(env,{rpc,readControl:async()=>({access_state:'open',positive_effects_allowed:true,external_generation:r.external_generation}),implementations:{stripe_invoice_create:async()=>{sent=true;return {verified:true};}}});
+ assert.equal(sent,false);assert.equal(observation.p_kind,'cancelled_before_dispatch');
+ assert.equal(observation.p_attempt,permit.attempt.id);
+});
 
 test('independent attempt intents are immutable; uncertain writes are verified and old-generation outcomes remain recoverable',async()=>{
  const env=await fixture(),permit={operation:{id:crypto.randomUUID(),organization_id:ids.org,kind:'synthetic'},attempt:{id:crypto.randomUUID(),dispatch_nonce:crypto.randomUUID(),external_generation:'fixture-generation-1'},context:{exact:'Synthetic bound inputs'}};

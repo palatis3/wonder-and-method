@@ -84,3 +84,10 @@ passing. Real account/storage/SMTP qualification, owner bootstrap, the remaining
 owner administration, full DR/retention/restore and native advertising modules are
 still separate outstanding work. The backup contribution currently in progress is
 not claimed as integrated or release-qualified here.
+
+**Backup/monitor integration update:** encrypted tenant/file copying, whole-source
+verification, independent receipt/attempt witness hooks, versioned daily schedules
+and independent completion/backlog monitoring are wired and reviewed. The three
+migrations are in empty staging. Local tests and three browser projects pass.
+Live custody/offline recovery, delivered alerts, retention, functional scoped
+restoration/resumption and native ad workflow qualification remain outstanding.

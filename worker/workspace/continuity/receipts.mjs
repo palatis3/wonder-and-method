@@ -1,6 +1,7 @@
 import {canonical,uuid,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 import {backupKeys,byteDigest,sealBytes,openBytes} from './envelope.mjs';
 import {machineRpc} from '../database.mjs';
+import {witnessReceipt} from './witness-hooks.mjs';
 const encoder=new TextEncoder(),decoder=new TextDecoder();
 const conflict=()=>{throw new WorkspaceError('receipt_conflict','Independent evidence requires reconciliation.',503);};
 function generation(value){if(!/^[A-Za-z0-9_-]{8,100}$/.test(value||''))conflict();return value;}
@@ -60,7 +61,8 @@ export async function persistReceipt(env,receipt){
   }
   const currentHead=await bucket.get(headKey);if(!currentHead||!await contains(bucket,await currentHead.json(),pointer,keys))throw new WorkspaceError('receipt_unknown','Receipt head confirmation is pending.',503);
   const currentControl=await externalControl(env,org);if(currentControl.external_generation!==receipt.external_generation)conflict();
-  return {p_org:org,p_id:id,p_digest:receipt.digest,p_generation:receipt.external_generation,p_key:key,p_ciphertext_digest:pointer.ciphertext_digest};
+  const evidence={p_org:org,p_id:id,p_digest:receipt.digest,p_generation:receipt.external_generation,p_key:key,p_ciphertext_digest:pointer.ciphertext_digest};
+  await witnessReceipt(env,receipt,evidence);return evidence;
 }
 export async function flushReceipts(env,{rpc=machineRpc}={}){
   if(env.BACKUP_ENABLED!=='true')return {disabled:true};
