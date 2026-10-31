@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import {Webhook} from 'svix';
 import {database,actor,admin,ids} from './database.mjs';
 import {verifyInboundWebhook,handleInboundWebhook,routeEvidence,captureEmail,enumerateAttachments,inventoryInbound} from '../../worker/workspace/inbound/service.mjs';
+import {independentEnvironment} from './independent-bucket.mjs';
 const emailId='40000000-0000-4000-8000-000000000001',attachmentId='40000000-0000-4000-8000-000000000002';
-const env={INBOUND_ENABLED:'true',ENVIRONMENT:'staging',RESEND_INBOUND_CONNECTION:'fixture',RESEND_INBOUND_API_KEY:'synthetic',INBOUND_REPLY_DOMAIN:'reply.synthetic.example',FILE_POLICY:'invite_only_unscanned'};
+const env={...independentEnvironment(),INBOUND_ENABLED:'true',ENVIRONMENT:'staging',RESEND_INBOUND_CONNECTION:'fixture',RESEND_INBOUND_API_KEY:'synthetic',INBOUND_REPLY_DOMAIN:'reply.synthetic.example',FILE_POLICY:'invite_only_unscanned'};
 const secret='whsec_'+Buffer.from('synthetic-verification-key-only').toString('base64');
 async function command(db,type,input,org=ids.org){return (await db.query('select public.wm_inbound_command($1,$2,$3,$4) r',[org,type,input,crypto.randomUUID()])).rows[0].r;}
 async function receive(db,id='msg_fixture',provider=emailId){await actor(db,ids.operator,{role:'service_role'});return (await db.query('select public.wm_inbound_event_receive($1,$2,$3,$4,$5,$6) r',['fixture','staging',id,'a'.repeat(64),{type:'email.received',data:{email_id:provider,subject:'Please stop this'}},'synthetic-v1'])).rows[0].r;}
@@ -28,7 +29,7 @@ test('inbound capture checks complete inventory, server authentication and byte 
  const token='a'.repeat(64),alias=`r.${token}@${env.INBOUND_REPLY_DOMAIN}`,bytes=new TextEncoder().encode('Synthetic attachment text');let posts=0;const requests=[];let stored;
  const item={id:attachmentId,filename:'brief.txt',size:bytes.length,content_type:'text/plain',download_url:'https://inbound-cdn.resend.com/synthetic?signature=private',expires_at:new Date(Date.now()+3600000).toISOString()};
  const fetcher=async(url,options)=>{requests.push({url:String(url),headers:options.headers});if(String(url).includes('inbound-cdn'))return new Response(bytes);if(String(url).includes('/attachments?'))return Response.json({data:[item],has_more:false});return Response.json({id:emailId,from:'Owner <avery@synthetic.example>',to:[alias],cc:[],bcc:[],received_for:[],reply_to:[],text:'Stop please',html:'<script>bad()</script>',html_format:'cid',authentication:{dmarc:'pass'},attachments:[{id:attachmentId}],subject:'Private email'});};
- const result=await captureEmail(env,{id:emailId,provider_id:emailId},{fetcher,store:async(_e,_key,{bytes:body})=>{if(body){posts++;stored=body;throw Error('Lost upload acknowledgment');}return new Response(stored);}});
+ const result=await captureEmail(env,{id:emailId,provider_id:emailId,lease_generation:1},{fetcher,rpc:async(_e,name,args)=>{assert.equal(name,'wm_inbound_attachment_write_once');assert.equal(args.p_generation,1);return true;},store:async(_e,_key,{bytes:body})=>{if(body){posts++;stored=body;throw Error('Lost upload acknowledgment');}return new Response(stored);}});
  assert.equal(result.complete,true);assert.equal(result.metadata.dmarc,'pass');assert.equal(result.routing_safe,true);assert.equal(result.urgent,true);assert.equal(result.attachments[0].state,'stored_unscanned');assert.equal(posts,1);assert.equal(requests.find(r=>r.url.includes('inbound-cdn')).headers.Authorization,undefined);assert.equal(JSON.stringify(result).includes('signature=private'),false);
  const ambiguous=await routeEvidence({from:'avery@synthetic.example',to:[alias,'r.'+'b'.repeat(64)+'@'+env.INBOUND_REPLY_DOMAIN],reply_to:[]},env);assert.equal(ambiguous.routing_safe,false);
  assert.equal((await routeEvidence({from:'bad@example.com, Owner <avery@synthetic.example>',to:[alias]},env)).routing_safe,false);

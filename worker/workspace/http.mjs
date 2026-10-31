@@ -3,7 +3,7 @@ export const PRIVATE_HEADERS=Object.freeze({
   'Cache-Control':'no-store, private','Pragma':'no-cache','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff',
   'X-Frame-Options':'DENY','Cross-Origin-Resource-Policy':'same-origin','Cross-Origin-Opener-Policy':'same-origin',
   'Permissions-Policy':'camera=(), microphone=(), geolocation=(), payment=()',
-  'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'",
+  'Content-Security-Policy':"default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://billing.stripe.com",
   'Strict-Transport-Security':'max-age=31536000',
 });
 export function secure(response){const headers=new Headers(response.headers);for(const [k,v] of Object.entries(PRIVATE_HEADERS))headers.set(k,v);headers.delete('Access-Control-Allow-Origin');headers.delete('Access-Control-Allow-Credentials');return new Response(response.body,{status:response.status,headers});}

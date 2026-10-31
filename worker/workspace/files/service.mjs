@@ -3,6 +3,7 @@ import {config,json,providerFetch,requireOrigin,secure,limited} from '../http.mj
 import {requireCsrf} from '../auth/session.mjs';
 import {rpc,machineRpc} from '../database.mjs';
 import {readBounded,sha256,verifyContent,cleanScanResult,SCAN_POLICY} from './content.mjs';
+import {assertObjectWritable,claimObjectWrite} from '../retention/fences.mjs';
 const objectPath=key=>key.split('/').map(encodeURIComponent).join('/');
 export async function storage(env,bucket,key,{method='GET',bytes,media='application/octet-stream',fetcher=fetch}={}){
   if(!env.SUPABASE_SECRET_KEY)throw new WorkspaceError('storage_unavailable','File storage is being configured.',503);
@@ -47,8 +48,10 @@ export async function scanFile(env,operation,fetcher=fetch){
   verifyContent(bytes,{name:file.original_name,media_type:file.declared_media_type,bytes:file.declared_bytes});
   if(unscanned){
     const sealedKey=`${org}/${id}/${checksum}`;
+    const identity={backend:'supabase',bucket:'workspace-sealed',key:sealedKey};await assertObjectWritable(env,identity);
     // A lost POST acknowledgement is resolved only by reading the immutable key.
-    try{await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});}catch{}
+    const write=await machineRpc(env,'wm_file_seal_write_once',{p_org:org,p_id:id,p_checksum:checksum,p_key:sealedKey},fetcher);
+    if(write===true&&await claimObjectWrite(env,identity)){try{await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});}catch{}}
     const prior=await storage(env,'workspace-sealed',sealedKey,{fetcher});
     if(!prior.ok||await sha256(await readBounded(prior.body,bytes.length))!==checksum)throw new WorkspaceError('seal_unavailable','The file could not be saved and verified.',503);
     await machineRpc(env,'wm_file_release_unscanned',{p_org:org,p_id:id,p_checksum:checksum,p_sealed_key:sealedKey},fetcher);
@@ -61,7 +64,9 @@ export async function scanFile(env,operation,fetcher=fetch){
   const result=await response.json(),assessment=cleanScanResult(result);if(!assessment.complete)throw new WorkspaceError('scan_incomplete','The scanner returned an incomplete result.',503);
   const sealedKey=assessment.clean?`${org}/${id}/${checksum}`:null;
   if(assessment.clean){
-    await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});
+    const identity={backend:'supabase',bucket:'workspace-sealed',key:sealedKey};await assertObjectWritable(env,identity);
+    const write=await machineRpc(env,'wm_file_seal_write_once',{p_org:org,p_id:id,p_checksum:checksum,p_key:sealedKey},fetcher);
+    if(write===true&&await claimObjectWrite(env,identity)){try{await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});}catch{}}
     const prior=await storage(env,'workspace-sealed',sealedKey,{fetcher});if(!prior.ok||await sha256(await readBounded(prior.body,bytes.length))!==checksum)throw new WorkspaceError('seal_unavailable','The checked file could not be sealed and verified.',503);
   }
   const evidence={policy:SCAN_POLICY,clean:assessment.clean,checksum,observed_at:new Date().toISOString(),provider:'cloudmersive',flags:Object.fromEntries(Object.entries(result).filter(([k,v])=>k.startsWith('Contains')&&typeof v==='boolean'))};

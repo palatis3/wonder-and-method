@@ -4,6 +4,9 @@ import {intakeViews,intakeFormInput} from './intake-ui.mjs';
 import {notificationViews,notificationFormInput} from './notification-ui.mjs';
 import {exportViews,exportFormInput} from './export-ui.mjs';
 import {backupViews,backupFormInput} from './backup-ui.mjs';
+import {restoreViews,restoreFormInput,restoreRecordPage} from './restore-ui.mjs';
+import {retentionViews,retentionFormInput} from './retention-ui.mjs';
+import {portalViews,portalFormInput,portalAdmin} from './portal-ui.mjs';
 import {analyticsViews,syncAnalyticsForm} from './analytics-ui.mjs';
 import {deliveryViews} from './delivery-ui.mjs';
 import {outcomesViews} from './outcomes-ui.mjs';
@@ -81,10 +84,19 @@ async function loadExports(before=null){
  state.exportData={...page,items:before?[...new Map([...(state.exportData?.items||[]),...page.items].map(j=>[j.id,j])).values()]:page.items};state.exportError=null;
 }
 async function loadWorkspace(){
-  [state.businesses,state.invitations]=await Promise.all([api('/api/businesses'),api('/api/invitations')]);
+  const [businesses,invitations,recoveryBusinesses]=await Promise.all([api('/api/businesses'),api('/api/invitations'),api('/api/recovery-businesses').catch(e=>{if(![401,403].includes(e.status))throw e;return [];})]);
+  state.businesses=[...businesses,...recoveryBusinesses.filter(b=>!businesses.some(existing=>existing.id===b.id))];state.invitations=invitations;
   const requested=org(),id=state.businesses.some(b=>b.id===requested)?requested:state.businesses[0]?.id;
   if(id&&id!==requested){const url=new URL(location.href);url.searchParams.set('business',id);history.replaceState({},'',url);}
-  state.workspace=id?await api(`/api/workspace?business=${encodeURIComponent(id)}`):null;
+  state.recoveryData=null;state.recoveryError=null;state.retentionData=null;state.retentionError=null;state.recoveryPage=null;state.recoveryRun=null;state.portalData=null;state.portalAdmin=null;
+  state.workspace=null;
+  if(id)try{state.workspace=await api(`/api/workspace?business=${encodeURIComponent(id)}`);}catch(error){
+    if(error.status!==403)throw error;const recovery=await api(`/api/recovery-workspace?business=${encodeURIComponent(id)}`);if(!recovery.recovery_only)throw error;state.workspace=recovery;state.recoveryData=recovery;
+  }
+  if(state.workspace?.recovery_only){
+    state.ownerData=null;state.intakeData=null;state.ownerDates=[];state.backupData=null;state.exportData=null;state.connectionData=null;state.inboundData=null;state.analyticsData=null;state.notificationData=null;
+    try{state.retentionData=await api(`/api/retention?business=${encodeURIComponent(id)}`);}catch(e){state.retentionError=e.message;}return;
+  }
   state.ownerData=null;state.intakeData=null;state.ownerDates=[];
   await Promise.all([loadOwner().catch(e=>{if(e.status!==403)state.ownerError=e.message;}),loadIntake().catch(e=>{if(e.status!==403)state.intakeError=e.message;}),id?api(`/api/owner-dates?business=${encodeURIComponent(id)}`).then(data=>{state.ownerDates=data;}):Promise.resolve()]);
   state.connectionData=null;state.connectionError=null;state.connectionAccounts=null;
@@ -94,6 +106,9 @@ async function loadWorkspace(){
   state.notificationData=null;state.notificationError=null;if(id)try{state.notificationData=await api(`/api/notifications?business=${encodeURIComponent(id)}`);}catch(error){state.notificationError=error.message;}
   state.exportData=null;state.exportError=null;if(id&&state.workspace.viewer.role)try{await loadExports();}catch(error){state.exportError=error.message;}
   state.backupData=null;state.backupError=null;if(id&&can('recovery'))try{state.backupData=await api(`/api/backups?business=${encodeURIComponent(id)}`);}catch(error){state.backupError=error.message;}
+  if(id&&can('recovery'))await Promise.all([api(`/api/recovery-workspace?business=${encodeURIComponent(id)}`).then(data=>{state.recoveryData=data;}).catch(e=>{state.recoveryError=e.message;}),api(`/api/retention?business=${encodeURIComponent(id)}`).then(data=>{state.retentionData=data;}).catch(e=>{state.retentionError=e.message;})]);
+  if(id&&state.workspace.viewer.role)try{state.portalData=await api(`/api/billing-portal?business=${encodeURIComponent(id)}`);}catch(e){if(e.status!==403)state.portalError=e.message;}
+  if(id&&can('finance')&&can('people'))try{state.portalAdmin=await api(`/api/billing-portal/access?business=${encodeURIComponent(id)}`);}catch(e){if(e.status!==403)state.portalError=e.message;}
 }
 async function command(name,input,key){return api('/api/command',{method:'POST',data:{organization_id:org(),command:name,input},key});}
 async function downloadExport(link){
@@ -188,6 +203,11 @@ const owner=ownerViews({esc,dateTime,name}),intake=intakeViews({esc,dateTime,nam
 const notifications=notificationViews({esc,dateTime});
 const exports=exportViews({esc,dateTime});
 const backups=backupViews({esc,dateTime});
+const recovery=restoreViews({esc,dateTime}),retention=retentionViews({esc,dateTime});
+const portal=portalViews({esc,dateTime});
+const portalView=()=>state.portalData?portal.panel(state.portalData,{org:org()}):'';
+const recoveryView=()=>state.recoveryData?recovery.panel(state.recoveryData.restore,{org:org(),backups:state.recoveryData.backups}):state.recoveryError?`<section class="panel"><h2>Recovery access</h2><p>${esc(state.recoveryError)}</p></section>`:'';
+const retentionView=()=>state.retentionData?retention.panel(state.retentionData,{org:org()}):state.retentionError?`<section class="panel"><h2>Retention and legal holds</h2><p>${esc(state.retentionError)}</p></section>`:'';
 const backupView=()=>state.backupData?backups.panel(state.backupData,{org:org(),qualification:state.backupData.request_configuration?.qualification,keyId:state.backupData.request_configuration?.key_id}):state.backupError?`<section class="panel"><h2>Tenant recovery backups</h2><p>${esc(state.backupError)}</p></section>`:'';
 const exportView=()=>state.exportData?exports.panel(state.exportData,{org:org(),engagements:rows('engagements')}):state.exportError?`<section class="panel"><h2>Your service exports</h2><p>${esc(state.exportError)}</p></section>`:'';
 const notificationView=()=>state.notificationData?notifications.status(state.notificationData,{org:org(),canSetPreferences:Boolean(state.workspace.viewer.role)})+notifications.retry(state.notificationData,{org:org()}):state.notificationError?`<section class="panel"><h2>Notification delivery</h2><p>${esc(state.notificationError)}</p></section>`:'';
@@ -201,12 +221,16 @@ function wireRenderedForms(){
   for(const form of app.querySelectorAll('form[data-notification-action]'))form.dataset.action=form.dataset.notificationAction;
   for(const form of app.querySelectorAll('form[data-export-action]'))form.dataset.action=form.dataset.exportAction;
   for(const form of app.querySelectorAll('form[data-backup-action]'))form.dataset.action=form.dataset.backupAction;
+  for(const form of app.querySelectorAll('form[data-restore-action]'))form.dataset.action=form.dataset.restoreAction;
+  for(const form of app.querySelectorAll('form[data-retention-action]'))form.dataset.action=form.dataset.retentionAction;
+  for(const form of app.querySelectorAll('form[data-portal-action]'))form.dataset.action=form.dataset.portalAction;
+  for(const form of app.querySelectorAll('form[data-portal-open]')){form.action='/api/billing-portal/'+encodeURIComponent(form.dataset.portalOpen)+'/open?business='+encodeURIComponent(form.dataset.organization);form.innerHTML+='<input type="hidden" name="csrf" value="'+esc(state.csrf)+'">';}
   for(const [selector,action,filter]of [['[data-owner-search]','owner.search',state.ownerFilter],['[data-intake-search]','intake.search',state.intakeFilter]])for(const form of app.querySelectorAll(selector)){form.dataset.action=action;for(const [key,value]of Object.entries(filter))if(form.elements.namedItem(key))form.elements.namedItem(key).value=value;}
   for(const form of app.querySelectorAll('[data-intake-sync]')){form.dataset.action='intake.sync';form.dataset.formKey=form.dataset.intakeSync;}
   for(const form of app.querySelectorAll('form[data-action]')){
     const action=form.dataset.action;
     if(isOperator()&&!form.dataset.ownerAction&&!form.dataset.intakeAction){
-      const required=action.startsWith('backup.')?'recovery':/^(billing|closure|service|proposal|agreement|onboarding|milestone)\./.test(action)?'finance':/^(reporting|analytics)\./.test(action)?'reports':/^(invitation|member|authority)\./.test(action)?'people':action==='ads.stop'?'ads':/^(request|message|revision|file|website|delivery|fact|time|ai)\./.test(action)?'delivery':null;
+      const required=/^(backup|restore|retention)\./.test(action)?'recovery':/^(billing|closure|service|proposal|agreement|onboarding|milestone)\./.test(action)?'finance':/^(reporting|analytics)\./.test(action)?'reports':/^(invitation|member|authority)\./.test(action)?'people':action==='ads.stop'?'ads':/^(request|message|revision|file|website|delivery|fact|time|ai)\./.test(action)?'delivery':null;
       if(required&&!can(required)){form.remove();continue;}
     }
     syncServiceForm(form);syncAnalyticsForm(form,state.analyticsData);
@@ -214,6 +238,7 @@ function wireRenderedForms(){
 }
 function render(){
   if(!state.user){app.innerHTML=authView();return;}
+  if(state.workspace?.recovery_only){app.innerHTML=shell(heading('Restricted recovery','Recovery is in progress','Current recovery operators can inspect the exact recovery plan and retained holds. Customer workflows remain restricted.')+recoveryView()+retentionView()+`<button class="button secondary" data-action="reload">Refresh recovery status</button>`);wireRenderedForms();document.title='Restricted recovery — Wonder and Method';return;}
   if(path()[0]==='operator'&&['owner','intake'].includes(path()[1])){app.innerHTML=shell(studioQueue());wireRenderedForms();document.title='Studio operations — Wonder and Method';return;}
   if(!state.workspace){app.innerHTML=shell(invitationInbox()+heading('Welcome','Your workspace is taking shape.','You’re signed in. Your studio will connect your business and services to this account.')+`<p class="actions">${studioLinks()}</p><section class="panel">${empty('No business access yet','An invitation must be confirmed before business records become available.')}<button class="button secondary" data-action="reload">Check again</button></section>`);return;}
   const [,section='',id]=path();let content;
@@ -225,9 +250,10 @@ function render(){
   if(section==='results')content+=analyticsView();
   if(section==='help'||path()[0]==='operator')content+=notificationView();
   if(section==='help')content+=exportView();
-  if(path()[0]==='operator'&&can('recovery'))content+=backupView();
+  if(path()[0]==='operator'&&can('recovery'))content+=backupView()+recoveryView()+retentionView();
+  if(path()[0]==='operator'&&state.portalAdmin)content+=portalAdmin({esc,dateTime},state.portalAdmin,{org:org()});
   if(section==='business')content+=aiPreference();
-  if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones();
+  if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones()+portalView();
   if(['work','agreements'].includes(section)&&state.ownerDates?.length)content+=`<section class="panel"><h2>Delivery date proposals</h2>${owner.dates(state.ownerDates.filter(p=>!id||section!=='work'||p.request_id===id),{org:org(),canDecide:!isOperator()&&['customer_admin','contributor'].includes(state.workspace.viewer.role),canWithdraw:can('delivery')})}</section>`;
   app.innerHTML=shell(content);wireRenderedForms();document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
 }
@@ -241,6 +267,9 @@ async function formAction(form){
   if(form.dataset.intakeAction){await api('/api/command',{method:'POST',data:{command:action,input:intakeFormInput(action,form)},key});await loadWorkspace();state.notice='Intake action saved. Access, invitations and agreement acceptance remain separate.';return;}
   if(form.dataset.notificationAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:notificationFormInput(action,form)},key});await loadWorkspace();state.notice='Notification settings saved. Delivery status remains based on provider evidence.';return;}
   if(form.dataset.backupAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:backupFormInput(action,form)},key});await loadWorkspace();state.notice=action==='backup.schedule'?'Daily backup schedule saved.':action==='backup.cancel'?'Backup preparation cancelled. Existing encrypted evidence remains private.':'Backup requested. Its copying and verification state is shown below.';return;}
+  if(form.dataset.restoreAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:restoreFormInput(action,form)},key});await loadWorkspace();state.notice=action==='restore.request'?'Recovery requested. This business is restricted while the backup is verified.':action==='restore.abandon'?'Rehearsal abandoned. Recovery restrictions remain in place.':'The exact recovery plan was submitted. Its verification state is shown below.';return;}
+  if(form.dataset.retentionAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:retentionFormInput(action,form)},key});await loadWorkspace();state.notice=action==='retention.plan'?'Exact deletion plan prepared for your review.':action==='retention.hold'?'Hold decision recorded. Check its independent durability below.':'Retention action recorded. Its observed outcome is shown below.';return;}
+  if(form.dataset.portalAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:portalFormInput(action,form)},key});await loadWorkspace();state.notice=action==='portal.grant'?'Customer-wide billing access updated.':'Billing access request saved. Refresh to check its verified status.';return;}
   if(form.dataset.exportAction){await api('/api/command',{method:'POST',data:{organization_id:form.dataset.organization,command:action,input:exportFormInput(action,form)},key});await loadWorkspace();state.notice=action==='customer_export.cancel'?'Future access to this export is cancelled. Previously downloaded bytes remain with their recipients.':'Export request saved. Its preparation and file checks are shown below.';return;}
   if(action==='login'){const r=await api('/api/auth/start',{method:'POST',data:{email:values.email,return_path:state.returnPath}});state.csrf=r.csrf;state.loginStep='code';state.notice=r.message;return;}
   if(action==='verify'){const r=await api('/api/auth/verify',{method:'POST',data:{code:values.code}});state.csrf=r.csrf;state.user=(await api('/api/session')).user;await loadWorkspace();history.replaceState({},'',allowedReturnPath(r.return_path));return;}

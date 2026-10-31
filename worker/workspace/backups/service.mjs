@@ -22,7 +22,14 @@ export async function backupCommand(env,session,org,command,input,key,{call=rpc,
  if(command==='backup.request'||command==='backup.schedule'&&input.enabled)qualification(env,{qualification:input.qualification,key_id:input.key_id});
  await controlCheck(env,org,null,control);const r=await call(env,session.access_token,'wm_backup_command',{p_org:org,p_command:command,p_input:input,p_key:key});await controlCheck(env,org,r.external_generation,control);const {external_generation,...result}=r;return result;
 }
-export async function backupStatus(env,session,org,{call=rpc,control=externalControl}={}){uuid(org);await controlCheck(env,org,null,control);const r=await call(env,session.access_token,'wm_backup_status',{p_org:org});await controlCheck(env,org,r.external_generation,control);let request_configuration=null;try{const q=JSON.parse(env.BACKUP_QUALIFICATION);qualification(env,{qualification:q,key_id:env.BACKUP_KEY_ID});request_configuration={qualification:q,key_id:env.BACKUP_KEY_ID};}catch{/* Existing history remains visible when preparation is unconfigured. */}return {items:r.items,schedule:r.schedule??null,request_configuration};}
+export async function backupStatus(env,session,org,{call=rpc,control=externalControl}={}){
+ uuid(org);await controlCheck(env,org,null,control);const r=await call(env,session.access_token,'wm_backup_status',{p_org:org});await controlCheck(env,org,r.external_generation,control);
+ // External reads may outlive a grant. Recheck authoritative human access before
+ // returning the history; a denial must never return the earlier snapshot.
+ const current=await call(env,session.access_token,'wm_backup_status',{p_org:org});if(current.external_generation!==r.external_generation)fail('backup_generation');
+ let request_configuration=null;try{const q=JSON.parse(env.BACKUP_QUALIFICATION);qualification(env,{qualification:q,key_id:env.BACKUP_KEY_ID});request_configuration={qualification:q,key_id:env.BACKUP_KEY_ID};}catch{/* Existing history remains visible when preparation is unconfigured. */}
+ return {items:current.items,schedule:current.schedule??null,request_configuration};
+}
 function qualification(env,j){let q;try{q=JSON.parse(env.BACKUP_QUALIFICATION);}catch{fail('backup_configuration');}if(canonical(q)!==canonical(j.qualification)||q.witness_hooks_version!==WITNESS_HOOKS_VERSION||env.RECOVERY_WITNESS_ENABLED!=='true'||env.BACKUP_ENABLED!=='true'||!env.RECOVERY_BYTES||!env.RECOVERY_WITNESS)fail('backup_configuration');configuredKeys(env,j.key_id);return q;}
 const base=j=>`tenant-backups/${namespace(j.organization_id,j.external_generation)}/${j.id}`;
 function plan(j){

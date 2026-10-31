@@ -4,6 +4,7 @@ import {externalControl} from '../continuity/receipts.mjs';
 import {config,providerFetch,secure} from '../http.mjs';
 import {readBounded,sha256} from '../files/content.mjs';
 import {buildArchive,verifyArchive,EXPORT_LIMITS} from './archive.mjs';
+import {assertObjectWritable,claimObjectWrite} from '../retention/fences.mjs';
 const fail=(code,message='Customer export needs checking.',status=409)=>{throw new WorkspaceError(code,message,status);};
 async function controlCheck(env,org,generation,control){const c=await control(env,org);if(c.access_state!=='open'||generation&&c.external_generation!==generation)fail('access_changed','Customer export access is restricted.',403);return c;}
 const SHA=/^[a-f0-9]{64}$/,ID=/^[a-f0-9-]{36}$/;
@@ -78,11 +79,13 @@ export async function prepareCustomerExport(env,job,{call=machineRpc,fetcher=fet
  }
  if(context.storage_target!==store.target)fail('configuration');
  validKey(context.object_key);if(context.object_key!==`customer-exports/${job.organization_id}/${job.id}/${context.archive_digest}.zip`)fail('archive_integrity');
+ const identity={backend:context.storage_target.split(':')[0],storage_target:context.storage_target,bucket:'workspace-customer-exports',key:context.object_key};await assertObjectWritable(env,identity);
  let bytes=await store.get(context.object_key,Number(context.archive_bytes));
  if(bytes===null){
   if(!archive||context.write_started_at)fail('archive_unknown');
   await controlCheck(env,job.organization_id,context.external_generation,control);
   if(!await call(env,'wm_customer_export_write_once',args))fail('archive_unknown');
+  if(!await claimObjectWrite(env,identity))fail('archive_unknown');
   try{await store.put(context.object_key,archive.bytes,archive.hash);}catch{/* Accepted write may have lost its response. Read exact key, never repeat POST. */}
   bytes=await store.get(context.object_key,Number(context.archive_bytes));
  }

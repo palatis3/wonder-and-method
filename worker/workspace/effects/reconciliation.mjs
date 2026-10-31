@@ -43,6 +43,9 @@ export async function reconcileAttempts(env,{rpc=machineRpc,fetcher=fetch,readCo
   if(env.EFFECTS_ENABLED!=='true')return {disabled:true};
   const attempts=await rpc(env,'wm_unresolved_attempts',{p_limit:10});let verified=0,unresolved=0,recoveredNoPost=0;
   for(const permit of attempts){
+    // Stripe exposes no qualified session readback; a customer must explicitly
+    // authorize any same-key portal POST. The scheduled reader never replays it.
+    if(permit.operation.kind==='billing_portal_create'){unresolved++;continue;}
     try{
       const control=await readControl(env,permit.operation.organization_id);
       if(control.access_state!=='open'||control.external_generation!==permit.attempt.external_generation){unresolved++;continue;}

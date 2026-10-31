@@ -7,12 +7,14 @@ const fixture=synthetic?await(await import('../tests/workspace/preview-fixture.m
 const dbTools=synthetic?await import('../tests/workspace/database.mjs'):null;
 const exportTools=synthetic?await import('../worker/workspace/exports/service.mjs'):null;
 const backupTools=synthetic?await import('../worker/workspace/backups/service.mjs'):null;
+const objectFenceEnvironment=synthetic?(await import('../tests/workspace/independent-bucket.mjs')).independentEnvironment():{};
 const backupEnvironment={BACKUP_ENABLED:'true',RECOVERY_WITNESS_ENABLED:'true',BACKUP_KEYS:JSON.stringify({synthetic:Buffer.alloc(32,7).toString('base64')}),BACKUP_KEY_ID:'synthetic',BACKUP_QUALIFICATION:JSON.stringify({bytes_identity:'Synthetic bytes account',witness_identity:'Synthetic separate witness account',custody_reference:'Synthetic offline custodian',witness_hooks_version:'tenant-witness-v1'}),RECOVERY_BYTES:{},RECOVERY_WITNESS:{}};
 const exportObjects=new Map(),exportStore={target:'r2:synthetic-preview',async get(key){return exportObjects.get(key)||null;},async put(key,bytes){if(exportObjects.has(key))throw Error('Synthetic immutable export already exists');exportObjects.set(key,bytes);}};
 const exportControl=async(_env,id)=>{if(![fixture.ids.org,fixture.ids.other].includes(id))throw Error('Synthetic recovery control unavailable');return {access_state:'open',external_generation:id===fixture.ids.org?'fixture-generation-1':'fixture-generation-2'};};
 const commandNames={'request.create':'request_create','request.accept':'request_accept','message.send':'message_send','revision.create':'revision_create','decision.record':'decision_record','ads.stop':'ads_stop','operation.prepare':'operation_prepare','operation.reconcile':'reconcile_request','file.intent':'file_intent'};
 let serial=Promise.resolve();
 async function fixtureApi(req,res,url){
+ if(url.pathname==='/_preview/portal-handoff'){res.writeHead(200,{'Content-Type':'text/html','Cache-Control':'no-store'});res.end('<title>Synthetic portal destination</title><h1>Synthetic portal handoff</h1>');return;}
  const role=/preview_role=(operator|intake|customer|signedout)/.exec(req.headers.cookie||'')?.[1]||'customer';
  const send=(value,status=200)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(value));};
  if(url.pathname==='/_preview/role'){
@@ -23,10 +25,25 @@ async function fixtureApi(req,res,url){
  if(url.pathname==='/api/session'){send({user:role==='signedout'?null:{id:user,email:role==='intake'?'intake@synthetic.example':role==='operator'?'studio@synthetic.example':'avery@synthetic.example',aal:role==='customer'?'aal1':'aal2'},csrf:'synthetic-only',synthetic:true});return;}
  if(url.pathname==='/api/auth/logout'){res.setHeader('Set-Cookie','preview_role=signedout; Path=/; SameSite=Strict');send({signed_out:true});return;}
  if(role==='signedout'){send({error:{message:'Use the synthetic preview role links above.',code:'sign_in'}},401);return;}
+ if(url.pathname==='/_preview/recovery-state'){
+  if(role!=='operator'||!['open','restricted'].includes(url.searchParams.get('state'))){send({error:{message:'Synthetic recovery operator required'}},403);return;}
+  await dbTools.admin(fixture.db);await fixture.db.query('update wm.tenant_guards set access_state=$2 where organization_id=$1',[fixture.ids.org,url.searchParams.get('state')]);send({synthetic:true});return;
+ }
  try{
   await dbTools.actor(fixture.db,user,{aal:role==='customer'?'aal1':'aal2'});
+  if(/^\/api\/billing-portal\/[a-f0-9-]{36}\/open$/.test(url.pathname)){
+   if(req.method!=='POST'||role!=='customer'||req.headers.origin!==`http://127.0.0.1:${port}`||req.headers['content-type']?.split(';')[0]!=='application/x-www-form-urlencoded'||url.searchParams.get('business')!==fixture.ids.org)throw Error('Synthetic portal form unavailable');
+   const chunks=[];let n=0;for await(const part of req){n+=part.length;if(n>2048)throw Error('Synthetic form too large');chunks.push(part);}const form=new URLSearchParams(Buffer.concat(chunks).toString());
+   if([...form.keys()].join(',')!=='csrf'||form.get('csrf')!=='synthetic-only')throw Error('Synthetic portal CSRF required');
+   res.writeHead(303,{'Location':'/_preview/portal-handoff','Cache-Control':'no-store, private','Referrer-Policy':'no-referrer'});res.end();return;
+  }
   const exportCall=async(_env,_token,name,args)=>{await dbTools.actor(fixture.db,user,{aal:role==='customer'?'aal1':'aal2'});if(!/^wm_[a-z_]+$/.test(name))throw Error('Unknown synthetic export call');const values=Object.values(args);return (await fixture.db.query(`select public.${name}(${values.map((_,i)=>'$'+(i+1)).join(',')}) r`,values)).rows[0].r;};
   if(url.pathname==='/api/backups'){send(await backupTools.backupStatus(backupEnvironment,{access_token:'synthetic'},url.searchParams.get('business'),{call:exportCall,control:exportControl}));return;}
+  if(url.pathname==='/api/recovery-businesses'){send((await fixture.db.query('select public.wm_recovery_businesses() r')).rows[0].r);return;}
+  if(url.pathname==='/api/recovery-workspace'){send((await fixture.db.query('select public.wm_recovery_workspace($1) r',[url.searchParams.get('business')])).rows[0].r);return;}
+  if(url.pathname==='/api/retention'){send({... (await fixture.db.query('select public.wm_retention_status($1) r',[url.searchParams.get('business')])).rows[0].r,independent:{state:'Synthetic preview has no independent deletion store; physical deletion disabled'}});return;}
+  if(url.pathname==='/api/billing-portal'){send((await fixture.db.query('select public.wm_portal_status($1) r',[url.searchParams.get('business')])).rows[0].r);return;}
+  if(url.pathname==='/api/billing-portal/access'){send((await fixture.db.query('select public.wm_portal_admin($1) r',[url.searchParams.get('business')])).rows[0].r);return;}
   if(url.pathname==='/api/customer-exports'){send(await exportTools.exportStatus({}, {access_token:'synthetic'},url.searchParams.get('business'),url.searchParams.get('before')||null,{call:exportCall,control:exportControl}));return;}
   if(/^\/api\/customer-exports\/[^/]+\/download$/.test(url.pathname)){const response=await exportTools.downloadCustomerExport(new Request(url.href),{}, {access_token:'synthetic'},{call:exportCall,control:exportControl,store:exportStore});res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));return;}
   if(url.pathname==='/api/owner'){const {ownerQueue}=await import('../worker/workspace/owner/service.mjs');send(await ownerQueue({}, {access_token:'synthetic'},{query:url.searchParams.get('query')||'',week_start:url.searchParams.get('week_start'),timezone:url.searchParams.get('timezone')||'UTC',after:url.searchParams.get('after')||null},{call:async(_e,_t,_n,p)=>(await fixture.db.query('select public.wm_owner_queue($1,$2,$3,$4) r',[p.p_query,p.p_week,p.p_timezone,p.p_after])).rows[0].r}));return;}
@@ -49,12 +66,15 @@ async function fixtureApi(req,res,url){
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    if(exportTools.EXPORT_COMMANDS.has(input.command)){
     const result=await exportTools.exportCommand({}, {access_token:'synthetic'},input.organization_id,input.command,input.input,key,{call:exportCall,control:exportControl});
-    if(input.command==='customer_export.request'&&result.state==='captured')await exportTools.processCustomerExports({}, {call:async(_env,name,args)=>{await dbTools.actor(fixture.db,fixture.ids.operator,{role:'service_role'});const values=Object.values(args);return (await fixture.db.query(`select public.${name}(${values.map((_,i)=>'$'+(i+1)).join(',')}) r`,values)).rows[0].r;},control:exportControl,store:exportStore,loadSource:async()=>{throw Object.assign(Error('Synthetic source file bytes unavailable'),{code:'source_unavailable'});}});
+    if(input.command==='customer_export.request'&&result.state==='captured')await exportTools.processCustomerExports(objectFenceEnvironment, {call:async(_env,name,args)=>{await dbTools.actor(fixture.db,fixture.ids.operator,{role:'service_role'});const values=Object.values(args);return (await fixture.db.query(`select public.${name}(${values.map((_,i)=>'$'+(i+1)).join(',')}) r`,values)).rows[0].r;},control:exportControl,store:exportStore,loadSource:async()=>{throw Object.assign(Error('Synthetic source file bytes unavailable'),{code:'source_unavailable'});}});
     send(result);return;
    }
    if(input.command.startsWith('owner.')){const {validateOwnerCommand}=await import('../worker/workspace/owner/service.mjs');validateOwnerCommand(input.command,input.input);send((await fixture.db.query('select public.wm_owner_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('notification.')){const {validateNotificationCommand}=await import('../worker/workspace/notifications/service.mjs');validateNotificationCommand(input.command,input.input);send((await fixture.db.query('select public.wm_notification_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(backupTools.BACKUP_COMMANDS.has(input.command)){send(await backupTools.backupCommand(backupEnvironment,{access_token:'synthetic'},input.organization_id,input.command,input.input,key,{call:exportCall,control:exportControl}));return;}
+   if(input.command.startsWith('retention.')){const {validateRetention}=await import('../worker/workspace/retention/service.mjs');validateRetention(input.command,input.input);if(['retention.execute','retention.reconcile'].includes(input.command))throw Error('Synthetic preview has no physical deletion store');send((await fixture.db.query('select public.wm_retention_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
+   if(input.command==='portal.grant'){send((await fixture.db.query('select public.wm_portal_grant($1,$2,$3) r',[input.organization_id,input.input,key])).rows[0].r);return;}
+   if(['portal.request','portal.reconcile'].includes(input.command)){send((await fixture.db.query('select public.wm_portal_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
    if(input.command.startsWith('analytics.')){send((await fixture.db.query('select public.wm_analytics_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}

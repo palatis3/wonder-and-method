@@ -5,8 +5,9 @@ import {encode,decode,namespace,objectBytes,putEncrypted,getEncrypted,fail} from
 const MAX_EVENT=65536,MAX_CHAIN=256;
 const headContext=(org,generation)=>({type:'tenant_latest_witness_head',organization_id:org,external_generation:generation});
 function validateEvent(event){
- if(!event||Object.keys(event).some(k=>!['id','kind','source_id','source_digest','attempt_id','nonce','phase','snapshot_digest','manifest_key','source_pointer'].includes(k)))fail('witness_input');
- uuid(event.id);if(!event.source_pointer||encode(event.source_pointer).length>4096)fail('witness_source_required');if(!['receipt','attempt_intent','attempt_outcome','backup_seal'].includes(event.kind)||! /^[a-f0-9]{64}$/.test(event.source_digest||''))fail('witness_input');uuid(event.source_id);
+ if(!event||Object.keys(event).some(k=>!['id','kind','retention_kind','source_id','source_digest','attempt_id','nonce','phase','snapshot_digest','manifest_key','source_pointer'].includes(k)))fail('witness_input');
+ uuid(event.id);if(!event.source_pointer||encode(event.source_pointer).length>4096)fail('witness_source_required');if(!['receipt','retention','attempt_intent','attempt_outcome','backup_seal'].includes(event.kind)||! /^[a-f0-9]{64}$/.test(event.source_digest||''))fail('witness_input');uuid(event.source_id);
+ if(event.kind==='retention'&&!['delete_intent','dispatch','hold','release','cancel','absent'].includes(event.retention_kind))fail('witness_input');
  if(event.kind.startsWith('attempt_')){uuid(event.attempt_id);uuid(event.nonce);if(event.phase!==(event.kind==='attempt_intent'?'intent':'outcome'))fail('witness_input');}
  if(encode(event).length>MAX_EVENT-8192)fail('witness_input');return event;
 }
@@ -15,12 +16,16 @@ async function verifySource(env,event,org,generation,keys){
  const source=decode(await getEncrypted(env.RECOVERY_BYTES,p,keys,event.kind==='backup_seal'?2097152+8212:1048576));
  if(event.kind==='receipt'){
   if(p.context.type!=='critical_receipt'||p.context.id!==event.source_id||source.receipt?.id!==event.source_id||source.receipt?.digest!==event.source_digest||source.receipt?.organization_id!==org||source.receipt?.external_generation!==generation)fail('witness_source_binding');
+ }else if(event.kind==='retention'){
+  if(p.context.type!=='retention_event'||p.context.id!==event.source_id||source.receipt?.id!==event.source_id||source.receipt?.digest!==event.source_digest||source.receipt?.organization_id!==org||source.receipt?.external_generation!==generation||source.receipt?.sequence!==p.context.sequence||source.event?.id!==event.source_id||source.event?.organization_id!==org||source.event?.generation!==generation||source.event?.kind!==event.retention_kind||p.key!==`retention/${org}/${source.epoch}/${event.source_id}.bin`||await byteDigest(encode({event:source.event,previous:source.previous,epoch:source.epoch,claim:source.claim}))!==event.source_digest)fail('witness_source_binding');
+  if(BigInt(source.receipt.sequence)!==BigInt(source.previous?.context.sequence||'0')+1n)fail('witness_source_binding');
  }else if(event.kind==='backup_seal'){
   if(p.context.type!=='tenant_backup_manifest'||p.context.backup_id!==event.source_id||source.backup_id!==event.source_id||p.plaintext_digest!==event.source_digest||p.key!==event.manifest_key||source.snapshot_digest!==event.snapshot_digest)fail('witness_source_binding');
  }else{
   const a=event.kind==='attempt_intent'?source.attempt:{id:source.attempt_id,dispatch_nonce:source.dispatch_nonce};
   if(p.context.type!=='provider_attempt'||p.context.id!==event.attempt_id||p.context.nonce!==event.nonce||p.plaintext_digest!==event.source_digest||a?.id!==event.attempt_id||a?.dispatch_nonce!==event.nonce||p.context.phase!==event.phase)fail('witness_source_binding');
  }
+ return {retention_kind:event.kind==='retention'?source.event.kind:null};
 }
 async function rawHead(bucket,org,generation,keys){
  const key=`witness/${namespace(org,generation)}/head.bin`,obj=await bucket.get(key);if(!obj)return {key,etag:null,pointer:null};
@@ -50,8 +55,13 @@ export async function appendWitness(env,org,generation,event,{expected,control=e
  validateEvent(event);namespace(org,generation);const keys=backupKeys(env),bucket=env.RECOVERY_WITNESS;if(!bucket||!Object.hasOwn(keys,keyId))fail('witness_configuration');
  // Historic outcomes can be retained in their original stream; new intents and
  // backup seals require the current open external generation.
- if(event.kind!=='attempt_outcome'){const c=await control(env,org);if(c.access_state!=='open'||c.external_generation!==generation)fail('witness_generation');}
- await verifySource(env,event,org,generation,keys);
+ const source=await verifySource(env,event,org,generation,keys);
+ const checkControl=async()=>{
+  if(event.kind==='attempt_outcome')return;
+  const c=await control(env,org),defensive=event.kind==='retention'&&['hold','release','cancel','absent'].includes(source.retention_kind);
+  if(!(defensive?['open','restricted'].includes(c.access_state):c.access_state==='open')||(source.retention_kind!=='absent'&&c.external_generation!==generation))fail('witness_generation');
+ };
+ await checkControl();
  let head=await rawHead(bucket,org,generation,keys);const key=`witness/${org}/${generation}/events/${event.id}.bin`;
  const obj=await bucket.get(key);let pointer;
  if(obj){
@@ -71,7 +81,7 @@ export async function appendWitness(env,org,generation,event,{expected,control=e
  const bytes=await sealBytes(encode({format:1,pointer}),headContext(org,generation),keys,keyId);
  let outcome;try{outcome=await bucket.put(head.key,bytes,{onlyIf:head.etag?{etagMatches:head.etag}:new Headers({'If-None-Match':'*'}),httpMetadata:{contentType:'application/octet-stream'}});}catch{outcome='unknown';}
  try{await checkWitness(env,org,generation,{expected:pointer,keys});}catch(error){if(outcome==='unknown')fail('witness_write_unknown');if(outcome===null)fail('witness_cas_conflict');throw error;}
- if(event.kind!=='attempt_outcome'){const c=await control(env,org);if(c.external_generation!==generation||c.access_state!=='open')fail('witness_generation');}
+ await checkControl();
  return pointer;
 }
 // Compare only documented source identities. A complete historical chain does
@@ -80,6 +90,7 @@ export function assessWitnessTail(check,tail){
  const issues=[];
  for(const e of check.events){
   if(e.kind==='receipt'&&tail.receipts?.[e.source_id]!==e.source_digest)issues.push({kind:tail.receipts?.[e.source_id]?'receipt_diverged':'receipt_missing',event_id:e.id});
+  if(e.kind==='retention'){const r=tail.retention_receipts?.[e.source_id];if(!r||r.digest!==e.source_digest||r.key!==e.source_pointer.key||r.generation!==e.source_pointer.context.external_generation||r.kind!==e.retention_kind)issues.push({kind:r?'retention_diverged':'retention_missing',event_id:e.id});}
   if(e.kind.startsWith('attempt_')){const a=tail.attempts?.[e.attempt_id];if(!a||a.nonce!==e.nonce)issues.push({kind:'attempt_missing_or_changed',event_id:e.id});else if(e.kind==='attempt_outcome'&&a.state!=='resolved')issues.push({kind:'outcome_requires_reconciliation',event_id:e.id});}
  }
  return {state:issues.length?'reconciliation_required':'no_gap_in_checked_witness',issues,complete_to_genesis:check.complete_to_genesis,coverage:'Only wired witnessed events; not proof of complete provider history'};

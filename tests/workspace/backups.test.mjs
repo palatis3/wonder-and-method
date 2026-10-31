@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {database,actor,admin,ids,command} from './database.mjs';
 import {byteDigest,openBytes} from '../../worker/workspace/continuity/envelope.mjs';
-import {backupStep,sourceRange,validateBackupCommand,processTenantBackups} from '../../worker/workspace/backups/service.mjs';
+import {backupStep,sourceRange,validateBackupCommand,processTenantBackups,backupStatus} from '../../worker/workspace/backups/service.mjs';
 import {appendWitness,checkWitness,assessWitnessTail} from '../../worker/workspace/backups/witness.mjs';
 import {putEncrypted,getEncrypted,readEvidencePointer,encode,CHUNK_BYTES} from '../../worker/workspace/backups/objects.mjs';
 import {verifyOfflineBackup} from '../../worker/workspace/backups/offline.mjs';
@@ -15,6 +15,9 @@ class Bucket{
  async put(key,body,options={}){this.puts++;const old=this.objects.get(key),condition=options.onlyIf;if(condition instanceof Headers&&condition.get('If-None-Match')==='*'&&old)return null;if(condition?.etagMatches&&old?.etag!==condition.etagMatches)return null;const bytes=typeof body==='string'?new TextEncoder().encode(body):new Uint8Array(body);this.objects.set(key,{bytes:bytes.slice(),etag:'v'+(++this.serial)});if(this.lost||(this.lostHead&&key.endsWith('/head.bin'))){this.lost=false;this.lostHead=false;throw Error('accepted then disconnected');}return {etag:'v'+this.serial};}
 }
 const environment=()=>({BACKUP_ENABLED:'true',RECOVERY_WITNESS_ENABLED:'true',BACKUP_KEYS:JSON.stringify({synthetic:syntheticKey}),BACKUP_KEY_ID:'synthetic',BACKUP_QUALIFICATION:JSON.stringify(q),RECOVERY_BYTES:new Bucket(),RECOVERY_WITNESS:new Bucket()});
+test('late recovery revocation after an external read cannot disclose stale backup history',async()=>{
+ let reads=0;await assert.rejects(backupStatus({}, {access_token:'synthetic'},ids.org,{control:async()=>({access_state:'open',external_generation:'fixture-generation-1'}),call:async()=>{if(++reads===1)return {external_generation:'fixture-generation-1',items:[{id:'private history'}]};throw Error('Synthetic current recovery access denied');}}),/current recovery access denied/);assert.equal(reads,2);
+});
 const control=async(_env,org)=>({access_state:'open',external_generation:org===ids.org?'fixture-generation-1':'fixture-generation-2'});
 const sql=async(db,name,args={})=>(await db.query(`select public.${name}(${Object.keys(args).map((_,i)=>'$'+(i+1)).join(',')}) r`,Object.values(args).map(v=>v&&typeof v==='object'?JSON.stringify(v):v))).rows[0].r;
 const request=async(db,key=crypto.randomUUID())=>sql(db,'wm_backup_command',{org:ids.org,command:'backup.request',input:{qualification:q,key_id:'synthetic'},key});

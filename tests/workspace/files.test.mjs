@@ -6,6 +6,7 @@ import {scanFile,filePolicy,handleFile} from '../../worker/workspace/files/servi
 import {readServiceEffect} from '../../worker/workspace/effects/reconciliation.mjs';
 import {sha256} from '../../worker/workspace/files/content.mjs';
 import {verifyContent,cleanScanResult} from '../../worker/workspace/files/content.mjs';
+import {independentEnvironment} from './independent-bucket.mjs';
 const access=async(db,id,action='download')=>(await db.query('select public.wm_file_access($1,$2,$3) as result',[ids.org,id,action])).rows[0].result;
 test('file bytes must match their declaration and Office archives reject macros, active content and excessive expansion',()=>{
  const text=strToU8('Plain business text');assert.equal(verifyContent(text,{name:'brief.txt',media_type:'text/plain',bytes:text.length}),'text/plain');
@@ -51,16 +52,17 @@ test('unscanned files require verified bytes, current uploader access, and a mac
 });
 test('invite-only file preparation seals bytes without contacting a scanner; missing mode never bypasses scanning',async()=>{
  const bytes=strToU8('Brief'),checksum=await sha256(bytes),fileId=crypto.randomUUID();let released=false,sealed=false;const calls=[];
- const env={APP_ORIGIN:'https://app.synthetic.example',SUPABASE_URL:'https://synthetic.supabase.co',SUPABASE_SECRET_KEY:'synthetic',SUPABASE_PUBLISHABLE_KEY:'synthetic',FILE_POLICY:'invite_only_unscanned'};
+ const env={...independentEnvironment(),APP_ORIGIN:'https://app.synthetic.example',SUPABASE_URL:'https://synthetic.supabase.co',SUPABASE_SECRET_KEY:'synthetic',SUPABASE_PUBLISHABLE_KEY:'synthetic',FILE_POLICY:'invite_only_unscanned'};
  const operation={organization_id:ids.org,payload:{file_id:fileId,checksum}};
  const fetcher=async(url,options={})=>{
   calls.push(url);assert.equal(new URL(url).host,'synthetic.supabase.co');
   if(url.endsWith('/wm_file_scan_input'))return Response.json({upload_object_key:'synthetic/upload',actual_bytes:5,declared_bytes:5,checksum,original_name:'brief.txt',declared_media_type:'text/plain',actual_media_type:'text/plain'});
   if(url.endsWith('/wm_file_release_unscanned')){released=true;assert.equal(JSON.parse(options.body).p_checksum,checksum);return Response.json({state:'unscanned'});}
+  if(url.endsWith('/wm_file_seal_write_once'))return Response.json(true);
   if(options.method==='POST'){sealed=true;return Response.json({});}
   return new Response(bytes);
  };
- const proof=await scanFile(env,operation,fetcher);assert.equal(proof.file_state,'unscanned');assert.equal(proof.malware_scanned,false);assert.ok(sealed&&released);assert.equal(calls.length,5);
+ const proof=await scanFile(env,operation,fetcher);assert.equal(proof.file_state,'unscanned');assert.equal(proof.malware_scanned,false);assert.ok(sealed&&released);assert.equal(calls.length,6);
  released=false;const lost=await scanFile(env,operation,async(url,opt)=>{if(url.includes('workspace-sealed')&&opt?.body)throw new Error('Synthetic lost POST acknowledgement');return fetcher(url,opt);});assert.equal(lost.file_state,'unscanned');assert.ok(released);
  assert.equal(filePolicy({}),'scan_required');assert.equal(filePolicy({FILE_POLICY:'typo'}),'scan_required');
  await assert.rejects(scanFile({...env,FILE_POLICY:'scan_required'},operation,fetcher),/scanning is being configured/);

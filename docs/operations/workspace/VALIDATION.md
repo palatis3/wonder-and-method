@@ -580,3 +580,27 @@ key custody, actual delivered monitoring alerts, offline/account-loss recovery o
 maximum-bound performance. The separate restore/retention/native-ad contributions
 are not claimed complete or release-qualified by this checkpoint. The prior commit
 887ac7f passed private PostgreSQL CI; this checkpoint still needs its own CI.
+
+## 31 October pause checkpoint
+
+The current final local workspace run completed with 362 tests: **351 passed,
+zero failures, 11 PostgreSQL-only concurrency cases skipped locally**. The existing
+CI PostgreSQL job runs those cases against real separate connections. The prior
+c11fbce commit passed both public and private GitHub workflows; the new pause
+commit requires its own CI result on resume.
+
+All **12 targeted browser journeys passed** across desktop Chrome, phone Chrome
+and phone WebKit: backup request/cancel/schedule, scoped export preparation and
+download, native portal POST/303 navigation, and restricted recovery access.
+The portal browser handoff uses a local synthetic destination; the production
+adapter's fixed Stripe destination and Origin/CSRF checks have separate unit
+coverage. Private build, staged diff checks and the redacted staged secret scan
+pass. No production publication, new remote migration or live provider effect
+was performed.
+
+The independent Astra checkpoint review's three findings are repaired and its
+five focused rechecks passed. See RECOVERY-REVIEW-20261031.md. The independent
+checkpoint extension separately passed 26 local cases; its shared consumer and
+trusted producer wiring remain unfinished. Budget integration and the remaining
+complete-build acceptance gates are recorded in PAUSE-20261031.md. This is an
+explicit user-requested pause, not a release approval or completion claim.

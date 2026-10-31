@@ -3,6 +3,7 @@ import {WorkspaceError,uuid,FILE_TYPES} from '../../../src/workspace/domain/cont
 import {json,providerFetch,config,secure} from '../http.mjs';
 import {machineRpc,rpc} from '../database.mjs';
 import {readBounded,sha256,verifyContent} from '../files/content.mjs';
+import {assertObjectWritable,claimObjectWrite} from '../retention/fences.mjs';
 const fail=(code='inbound_unavailable')=>{throw new WorkspaceError(code,'Incoming email needs checking by the studio.',503);};
 const EMAIL=/^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 export function mailbox(value){
@@ -59,7 +60,7 @@ async function inboundStorage(env,key,{bytes,fetcher=fetch}={}){
  if(!/^inbound\/[a-f0-9-]{36}\/[a-f0-9-]{36}\/[a-f0-9]{64}$/.test(key)||!env.SUPABASE_SECRET_KEY)fail('attachment_storage_identity');
  return providerFetch(`${config(env).supabase}/storage/v1/object/workspace-inbound/${key}`,{method:bytes?'POST':'GET',headers:{apikey:env.SUPABASE_SECRET_KEY,...(bytes?{'Content-Type':'application/octet-stream','x-upsert':'false'}:{})},...(bytes?{body:bytes}:{})},fetcher);
 }
-export async function captureEmail(env,job,{fetcher=fetch,store=inboundStorage}={}){
+export async function captureEmail(env,job,{fetcher=fetch,store=inboundStorage,rpc:call=machineRpc}={}){
  uuid(job.id);uuid(job.provider_id);const email=await resend(env,job.provider_id+'?html_format=cid',fetcher);
  if(email.id!==job.provider_id||email.html_format&&email.html_format!=='cid'||email.text!==null&&email.text!==undefined&&typeof email.text!=='string'||email.html!==null&&email.html!==undefined&&typeof email.html!=='string')fail('email_identity_invalid');
  const body_text=email.text??null,body_html=email.html??null;
@@ -78,7 +79,9 @@ export async function captureEmail(env,job,{fetcher=fetch,store=inboundStorage}=
    const response=await providerFetch(url.href,{headers:{}},fetcher);if(!response.ok)fail('attachment_download_failed');
    const bytes=await readBounded(response.body,item.size);verifyContent(bytes,{name,media_type:media,bytes:item.size});total+=bytes.length;
    const checksum=await sha256(bytes),key=`inbound/${job.id}/${item.id}/${checksum}`;
-   try{await store(env,key,{bytes,fetcher});}catch{}
+   const identity={backend:'supabase',bucket:'workspace-inbound',key};await assertObjectWritable(env,identity);
+   const write=await call(env,'wm_inbound_attachment_write_once',{p_id:job.id,p_generation:job.lease_generation,p_attachment:item.id,p_checksum:checksum,p_key:key});
+   if(write===true&&await claimObjectWrite(env,identity)){try{await store(env,key,{bytes,fetcher});}catch{}}
    const saved=await store(env,key,{fetcher});if(!saved.ok||await sha256(await readBounded(saved.body,bytes.length))!==checksum)fail('attachment_storage_unknown');
    Object.assign(entry,{state:'stored_unscanned',reason:null,checksum,object_key:key,bytes:bytes.length,media_type:media});
   }catch(error){entry.reason=error.code||'attachment_capture_failed';}
@@ -93,7 +96,7 @@ export async function captureInbound(env,{rpc:call=machineRpc,fetcher=fetch,capt
  if(env.INBOUND_ENABLED!=='true')return {disabled:true};let captured=0,attention=0;
  for(let i=0;i<3;i++){
   const job=await call(env,'wm_inbound_claim',{p_connection:env.RESEND_INBOUND_CONNECTION,p_environment:env.ENVIRONMENT});if(!job)break;
-  let data;try{data=await capture(env,job,{fetcher});}catch(error){data={error:error.code||'email_capture_failed'};}
+  let data;try{data=await capture(env,job,{fetcher,rpc:call});}catch(error){data={error:error.code||'email_capture_failed'};}
   const result=await call(env,'wm_inbound_capture',{p_id:job.id,p_generation:job.lease_generation,p_capture:data});if(result.state==='captured')captured++;else attention++;
  }return {captured,attention};
 }

@@ -1,4 +1,5 @@
 import {websiteEffect} from '../website/cloudflare.mjs';
+import {portalEffect} from '../portal/service.mjs';
 import {sendCadencedNotification,prepareNotificationDigests,pollNotificationDelivery,notificationChannel} from '../notifications/service.mjs';
 import {notificationChannels} from '../notifications/config.mjs';
 import {processCustomerExports} from '../exports/service.mjs';
@@ -15,8 +16,9 @@ import {scanFile,filePolicy} from '../files/service.mjs';
 import {provisionIdentity} from '../providers/notifications.mjs';
 import {reconcileAttempts} from './reconciliation.mjs';
 import {journalAttempt} from '../continuity/attempt-journal.mjs';
-const adapters={website_publish:websiteEffect,stripe_charge_read:financialEffect,stripe_refund_create:financialEffect,stripe_invoice_create:invoiceEffect,stripe_invoice_item:invoiceEffect,stripe_invoice_finalize:invoiceEffect,stripe_invoice_send:invoiceEffect,identity_provision:provisionIdentity,invitation_notify:sendCadencedNotification,message_notify:sendCadencedNotification,notice_notify:sendCadencedNotification,file_scan:(env,permit,{fetcher})=>scanFile(env,permit.operation,fetcher)};
+const adapters={billing_portal_create:portalEffect,website_publish:websiteEffect,stripe_charge_read:financialEffect,stripe_refund_create:financialEffect,stripe_invoice_create:invoiceEffect,stripe_invoice_item:invoiceEffect,stripe_invoice_finalize:invoiceEffect,stripe_invoice_send:invoiceEffect,identity_provision:provisionIdentity,invitation_notify:sendCadencedNotification,message_notify:sendCadencedNotification,notice_notify:sendCadencedNotification,file_scan:(env,permit,{fetcher})=>scanFile(env,permit.operation,fetcher)};
 function configured(env,kind){
+  if(kind==='billing_portal_create')return env.STRIPE_ENABLED==='true'&&env.BILLING_PORTAL_ENABLED==='true'&&env.PORTAL_KERNEL_VERSION==='portal-v1'&&env.PORTAL_IDEMPOTENCY_QUALIFIED==='true'&&Boolean(env.STRIPE_SECRET_KEY&&env.PORTAL_KEYS&&env.PORTAL_KEY_ID);
   if(kind==='website_publish')return env.WEBSITE_PUBLICATION_ENABLED==='true'&&Boolean(env.CLOUDFLARE_WEBSITE_TOKEN&&env.WEBSITE_TARGETS);
   if(kind.startsWith('stripe_'))return env.STRIPE_ENABLED==='true'&&Boolean(env.STRIPE_SECRET_KEY);
   if(kind==='identity_provision')return env.IDENTITY_PROVISIONING_ENABLED==='true'&&Boolean(env.SUPABASE_SECRET_KEY);
@@ -39,7 +41,7 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
       permit=await rpc(env,'wm_attempt_begin',{...attentionArgs,p_external_generation:control.external_generation});
       await journal(env,permit,'intent');
       const current=await readControl(env,job.organization_id);
-      if(current.external_generation!==control.external_generation||current.access_state!=='open'||((permit.operation.positive_effect||job.kind.startsWith('stripe_'))&&!current.positive_effects_allowed)){
+      if(current.external_generation!==control.external_generation||current.access_state!=='open'||((permit.operation.positive_effect||job.kind.startsWith('stripe_')||job.kind==='billing_portal_create')&&!current.positive_effects_allowed)){
         await record('wm_attempt_observe',{p_org:job.organization_id,p_attempt:permit.attempt.id,p_nonce:permit.attempt.dispatch_nonce,p_kind:'cancelled_before_dispatch',p_evidence:{reason:'independent_control_changed'},p_observed_at:new Date().toISOString()});attention++;continue;
       }
       dispatchStarted=true;
@@ -63,7 +65,7 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
 }
 export async function scheduledWork(env,overrides={}){
  const {monitoring:monitor=completeMonitoring,...stageOverrides}=overrides;
- const tasks={inbound_inventory:inventoryInbound,inbound:captureInbound,periods:e=>e.STRIPE_ENABLED==='true'?machineRpc(e,'wm_billing_generate',{p_limit:10}):{disabled:true},receipts:flushReceipts,notification_digests:prepareNotificationDigests,reconciliation:reconcileAttempts,effects:dispatchJobs,notification_delivery:pollNotificationDelivery,customer_exports:e=>e.CUSTOMER_EXPORTS_ENABLED==='true'?processCustomerExports(e):{disabled:true},backup_schedules:e=>e.TENANT_BACKUPS_ENABLED==='true'?machineRpc(e,'wm_backup_generate',{p_limit:10}):{disabled:true},tenant_backups:e=>e.TENANT_BACKUPS_ENABLED==='true'?processTenantBackups(e):{disabled:true},billing:reconcileStripe,refunds:pollRefunds,analytics:runAnalytics,...stageOverrides},results={},failed=[];
+ const tasks={inbound_inventory:inventoryInbound,inbound:captureInbound,periods:e=>e.STRIPE_ENABLED==='true'?machineRpc(e,'wm_billing_generate',{p_limit:10}):{disabled:true},receipts:flushReceipts,notification_digests:prepareNotificationDigests,reconciliation:reconcileAttempts,effects:dispatchJobs,notification_delivery:pollNotificationDelivery,customer_exports:e=>e.CUSTOMER_EXPORTS_ENABLED==='true'?processCustomerExports(e):{disabled:true},backup_schedules:e=>e.TENANT_BACKUPS_ENABLED==='true'?machineRpc(e,'wm_backup_generate',{p_limit:10}):{disabled:true},tenant_backups:e=>e.TENANT_BACKUPS_ENABLED==='true'?processTenantBackups(e):{disabled:true},portal_cleanup:e=>e.BILLING_PORTAL_ENABLED==='true'?machineRpc(e,'wm_portal_expire',{}):{disabled:true},billing:reconcileStripe,refunds:pollRefunds,analytics:runAnalytics,...stageOverrides},results={},failed=[];
  // Receipt persistence precedes effect dispatch, but one failing class must not
  // starve unrelated STOP, payment readback, or correspondence work this tick.
  for(const [name,run]of Object.entries(tasks)){try{results[name]=await run(env);}catch{results[name]={attention:true};failed.push(name);}}

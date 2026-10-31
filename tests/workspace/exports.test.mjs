@@ -8,6 +8,7 @@ import {buildArchive,verifyArchive,csvCell,EXPORT_LIMITS} from '../../worker/wor
 import {prepareCustomerExport,processCustomerExports,downloadCustomerExport,privateExportStore,loadExportSource,validateExportCommand,exportStatus} from '../../worker/workspace/exports/service.mjs';
 import {exportViews} from '../../src/workspace/export-ui.mjs';
 import {sha256} from '../../worker/workspace/files/content.mjs';
+import {independentEnvironment} from './independent-bucket.mjs';
 const sql=async(db,name,args={})=>(await db.query(`select public.${name}(${Object.keys(args).map((_,i)=>'$'+(i+1)).join(',')}) as result`,Object.values(args).map(x=>x&&typeof x==='object'?JSON.stringify(x):x))).rows[0].result;
 const request=async(db,{org=ids.org,eng=ids.engagement,key=crypto.randomUUID(),version=1}={})=>sql(db,'wm_customer_export_command',{org,command:'customer_export.request',input:{engagement_id:eng,expected_version:version,acknowledge_unscanned:true},key});
 const machine=async(db,name,args)=>{await actor(db,ids.operator,{role:'service_role'});return sql(db,name,args);};
@@ -21,7 +22,7 @@ async function file(db,{visibility='shared',uploader=ids.client,message=null,org
  await admin(db);const id=crypto.randomUUID(),hash=await sha256(bytes),key=`${org}/${id}/${hash}`;
  await db.query(`insert into wm.attachments(organization_id,id,engagement_id,message_id,uploader_id,visibility,upload_object_key,sealed_object_key,original_name,declared_media_type,declared_bytes,actual_media_type,actual_bytes,checksum,scan_state,scan_policy_version,expires_at) values($1,$2,$3,$4,$5,$6,$7,$8,$9,'text/plain',$10,'text/plain',$10,$11,$12,'synthetic',now()+interval '1 day')`,[org,id,eng,message,uploader,visibility,id+'.upload',state==='ready'?key:null,name,bytes.length,hash,state]);return {id,bytes,hash,key};
 }
-async function ready(db){await actor(db,ids.client);const r=await request(db);const j=(await claim(db)).find(x=>x.id===r.id),s=store();const result=await prepareCustomerExport({},j,{call:(_e,n,a)=>machine(db,n,a),store:s,control,loadSource:async()=>strToU8('Brief')});return {r,j,s,result};}
+async function ready(db){await actor(db,ids.client);const r=await request(db);const j=(await claim(db)).find(x=>x.id===r.id),s=store();const result=await prepareCustomerExport(independentEnvironment(),j,{call:(_e,n,a)=>machine(db,n,a),store:s,control,loadSource:async()=>strToU8('Brief')});return {r,j,s,result};}
 
 test('customer export requires a current named member, recent session, exact engagement and private RPC grants',async()=>{
  const db=await database();try{
@@ -164,11 +165,11 @@ test('deterministic store-only ZIP verifies SHA256, neutralizes CSV and rejects 
 test('lost accepted PUT reconciles exact bytes; registered unknown never repeats and one failure does not starve another tenant',async()=>{
  const db=await database();try{
  await actor(db,ids.client);await request(db);const j=(await claim(db))[0],s=store();const put=s.put;s.put=async function(k,b){await put.call(this,k,b);throw Error('lost acknowledgement');};
- assert.equal((await prepareCustomerExport({},j,{call:(_e,n,a)=>machine(db,n,a),store:s,control})).state,'sealed');assert.equal(s.puts,1);
- await actor(db,ids.client);await request(db);const unknown=(await claim(db))[0];s.put=async function(){this.puts++;throw Error('no acknowledgement');};await assert.rejects(prepareCustomerExport({},unknown,{call:(_e,n,a)=>machine(db,n,a),store:s,control}),/needs checking/);const count=s.puts;
- await assert.rejects(prepareCustomerExport({},unknown,{call:(_e,n,a)=>machine(db,n,a),store:s,control}),/needs checking/);assert.equal(s.puts,count);
+ assert.equal((await prepareCustomerExport(independentEnvironment(),j,{call:(_e,n,a)=>machine(db,n,a),store:s,control})).state,'sealed');assert.equal(s.puts,1);
+ await actor(db,ids.client);await request(db);const unknown=(await claim(db))[0];s.put=async function(){this.puts++;throw Error('no acknowledgement');};await assert.rejects(prepareCustomerExport(independentEnvironment(),unknown,{call:(_e,n,a)=>machine(db,n,a),store:s,control}),/needs checking/);const count=s.puts;
+ await assert.rejects(prepareCustomerExport(independentEnvironment(),unknown,{call:(_e,n,a)=>machine(db,n,a),store:s,control}),/needs checking/);assert.equal(s.puts,count);
  let visited=0;const jobs=[{...unknown,organization_id:ids.org},{...unknown,id:crypto.randomUUID(),organization_id:ids.other}];const call=async(_e,n)=>{if(n==='wm_customer_export_claim')return jobs;if(n==='wm_customer_export_context'){visited++;throw Error('synthetic unavailable');}if(n==='wm_customer_export_attention')throw Error('synthetic secondary failure');};
- const results=await processCustomerExports({}, {call,store:s,control});assert.equal(visited,2);assert.equal(results.length,2);assert.equal(results[0].attention_recorded,false);
+ const results=await processCustomerExports(independentEnvironment(), {call,store:s,control});assert.equal(visited,2);assert.equal(results.length,2);assert.equal(results[0].attention_recorded,false);
  }finally{await db.close();}
 });
 
@@ -206,7 +207,7 @@ test('financial rows and exact agreement content are customer-admin only where r
 test('independent recovery control fences restored database state before archive reads or writes',async()=>{
  const db=await database();try{
  await actor(db,ids.client);await request(db);const j=(await claim(db))[0],s=store();let reads=0;s.get=async()=>{reads++;return null;};
- await assert.rejects(prepareCustomerExport({},j,{call:(_e,n,a)=>machine(db,n,a),store:s,control:async()=>({access_state:'open',external_generation:'new-independent-generation'})}),/restricted/);assert.equal(reads,0);assert.equal(s.puts,0);
+ await assert.rejects(prepareCustomerExport(independentEnvironment(),j,{call:(_e,n,a)=>machine(db,n,a),store:s,control:async()=>({access_state:'open',external_generation:'new-independent-generation'})}),/restricted/);assert.equal(reads,0);assert.equal(s.puts,0);
  }finally{await db.close();}
 });
 
