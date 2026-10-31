@@ -455,3 +455,36 @@ the two already reviewed county source repairs. A separate exact before/after
 ledger and shared normalizer fix all 14 failures; 14 additional acceptance tests
 pass, with every historical preservation baseline unchanged. The combined next
 GitHub run must still pass before production publication.
+
+### Connected analytics — October 31, 2026
+
+Eight focused provider/database tests pass, plus three analytics browser journeys
+(desktop Chrome, phone Chrome and phone Safari). Cases preserve exact large
+integers/decimals, restricted zeros, no-reported-data states, multi-page completion,
+Search Console top-row limits, 23/25-hour days, current authority/lease checks,
+whole-partition corrections and late-completion fencing. A form-retry regression
+found stale disabled controls after restoring a selected account; control state
+and checkbox intent now recover together.
+
+Independent Sol review found two defects: a changed stream could collide with
+the promoted-period index, and GA publication checked Admin permission without
+probing Data permission. Canonical scope-series keys and actual profile permission
+probes fix both. Explicit same/changed-scope rebind and Data-403/restriction-drift
+regressions pass. The bounded recheck found no remaining P0–P2 issue in those areas
+and additionally exercised between-page restriction changes and Search Analytics
+403 with a still-readable site entry. Lists use bounded previews and ordinal pages.
+
+The combined local workspace run has 141 passes and four PostgreSQL-only skips
+(145 total), including the separately delivered owner/intake module tests. Those
+two modules still require shared integration/review; their passing local tests do
+not certify complete workflows. Sixteen focused analytics/dispatcher cases pass;
+a failed cron class no longer starves independent stages and still fails the
+scheduled invocation. Build and diff checks pass. No live Google reads or
+measurement qualification were performed.
+
+The complete browser run subsequently passed all **45** cases across desktop
+Chrome, phone Chrome and phone Safari, including the existing catalog, reports,
+files, error recovery, navigation, responsive layout and accessibility journeys.
+Analytics is applied to staging; remote grants deny anonymous commands, customer
+machine-context/raw-page access and the legacy reporting bypass. The service role
+alone can obtain collection context. Production collection is still disabled.

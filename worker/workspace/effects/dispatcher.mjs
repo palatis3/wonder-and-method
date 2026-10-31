@@ -1,4 +1,5 @@
 import {websiteEffect} from '../website/cloudflare.mjs';
+import {runAnalytics} from '../analytics/service.mjs';
 import {captureInbound,inventoryInbound} from '../inbound/service.mjs';
 import {invoiceEffect} from '../billing/stripe.mjs';
 import {financialEffect,pollRefunds} from '../billing/refunds.mjs';
@@ -47,14 +48,10 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
   }
   return {verified,attention};
 }
-export async function scheduledWork(env){
- const inbound_inventory=await inventoryInbound(env).catch(()=>({attention:true}));
- const inbound=await captureInbound(env).catch(()=>({attention:true}));
- const periods=env.STRIPE_ENABLED==='true'?await machineRpc(env,'wm_billing_generate',{p_limit:10}):{disabled:true};
- const receipts=await flushReceipts(env);
- const reconciliation=await reconcileAttempts(env);
- const effects=await dispatchJobs(env);
- const billing=await reconcileStripe(env);
- const refunds=await pollRefunds(env);
- return {receipts,reconciliation,effects,billing,periods,refunds,inbound,inbound_inventory};
+export async function scheduledWork(env,overrides={}){
+ const tasks={inbound_inventory:inventoryInbound,inbound:captureInbound,periods:e=>e.STRIPE_ENABLED==='true'?machineRpc(e,'wm_billing_generate',{p_limit:10}):{disabled:true},receipts:flushReceipts,reconciliation:reconcileAttempts,effects:dispatchJobs,billing:reconcileStripe,refunds:pollRefunds,analytics:runAnalytics,...overrides},results={},failed=[];
+ // Receipt persistence precedes effect dispatch, but one failing class must not
+ // starve unrelated STOP, payment readback, or correspondence work this tick.
+ for(const [name,run]of Object.entries(tasks)){try{results[name]=await run(env);}catch{results[name]={attention:true};failed.push(name);}}
+ if(failed.length)throw new Error('Scheduled workspace stages need attention: '+failed.join(', '));return results;
 }

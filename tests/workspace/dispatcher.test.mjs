@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {database,actor,admin,ids} from './database.mjs';
-import {dispatchJobs} from '../../worker/workspace/effects/dispatcher.mjs';
+import {dispatchJobs,scheduledWork} from '../../worker/workspace/effects/dispatcher.mjs';
 import {provisionIdentity,sendNotification,notificationMessage} from '../../worker/workspace/providers/notifications.mjs';
 import {reconcileAttempts} from '../../worker/workspace/effects/reconciliation.mjs';
 const people=async(db,name,input,key=crypto.randomUUID())=>(await db.query('select public.wm_people_command($1,$2,$3::jsonb,$4) as r',[ids.org,name,JSON.stringify(input),key])).rows[0].r;
@@ -9,6 +9,11 @@ const machine=async db=>actor(db,ids.operator,{role:'service_role'});
 const env={APP_ORIGIN:'https://app.example.com',SUPABASE_URL:'https://synthetic.supabase.co',SUPABASE_PUBLISHABLE_KEY:'synthetic-publishable',SUPABASE_SECRET_KEY:'synthetic-secret',RESEND_API_KEY:'synthetic-key',NOTIFICATION_FROM:'Wonder and Method <workspace@example.com>',NOTIFICATIONS_ENABLED:'true',IDENTITY_PROVISIONING_ENABLED:'true',EFFECTS_ENABLED:'true'};
 const permit={operation:{id:'40000000-0000-4000-8000-000000000001',organization_id:ids.org,kind:'invitation_notify'},attempt:{id:'50000000-0000-4000-8000-000000000001',dispatch_nonce:'60000000-0000-4000-8000-000000000001'}};
 const context={email:'recipient@synthetic.example',identity_id:ids.outsider};
+test('one scheduled class failure does not starve remaining effect, billing or reporting work and still fails the cron invocation',async()=>{
+ const calls=[],names=['inbound_inventory','inbound','periods','receipts','reconciliation','effects','billing','refunds','analytics'];
+ const tasks=Object.fromEntries(names.map(name=>[name,async()=>{calls.push(name);if(name==='receipts')throw Error('Synthetic provider failure');return {done:true};}]));
+ await assert.rejects(scheduledWork({},tasks),/stages need attention: receipts/);assert.deepEqual(calls,names);
+});
 
 test('invitation effects are transactional and revocation blocks both queued and reserved delivery',async()=>{
  const db=await database();try{

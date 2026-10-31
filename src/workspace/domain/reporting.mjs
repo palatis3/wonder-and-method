@@ -27,7 +27,10 @@ export function parseMetricCsv(text){
 export const metricCsvTemplate='metric,value,unit,definition_version,observed_at,provisional\r\nclicks,25,count,confirmed-definition-v1,2026-10-01T12:00:00Z,false\r\nwon,,count,client-feedback-v1,2026-10-01T12:00:00Z,true\r\ncost,1234567,micros,provider-cost-v1,2026-10-01T12:00:00Z,false\r\n';
 export function displayExactMetric(value,unit,currency){
  if(value===null||value===undefined)return 'Not available';
- const s=String(value);if(!/^\d+(?:\.\d+)?$/.test(s))return 'Not available';
- if(unit==='micros')return `${currency} ${s.padStart(7,'0').slice(0,-6)}.${s.padStart(7,'0').slice(-6)}`;
+ const s=String(value);if(!/^-?\d+(?:\.\d+)?$/.test(s))return 'Not available';
+ const sign=s.startsWith('-')?'-':'',absolute=sign?s.slice(1):s;
+ if(unit==='currency')return `${currency} ${s}`;
+ if(unit==='fraction'){const [whole,fraction='']=absolute.split('.'),digits=whole+fraction.padEnd(2,'0'),point=whole.length+2;return sign+(digits.slice(0,point).replace(/^0+(?=\d)/,'')+(digits.slice(point).replace(/0+$/,'')?'.'+digits.slice(point).replace(/0+$/,''):''))+'%';}
+ if(unit==='micros')return `${currency} ${sign}${absolute.padStart(7,'0').slice(0,-6)}.${absolute.padStart(7,'0').slice(-6)}`;
  return s;
 }

@@ -64,6 +64,11 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'analytics.bind':['scope_id','stream_ids','hostnames','event_names','profiles','auto_collect','consent_evidence'],
+  'analytics.disable':['id','expected_version'],
+  'analytics.run':['binding_id','profile','day'],
+  'analytics.inspect':['binding_id','day','url'],
+  'analytics.promote':['id','expected_version','digest'],
   'inbound.route':['engagement_id','request_id'],
   'inbound.revoke':['route_id'],
   'inbound.accept':['id','expected_version','route_id','reason'],

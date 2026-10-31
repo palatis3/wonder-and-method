@@ -1,4 +1,5 @@
 import {websiteViews} from './website-ui.mjs';
+import {analyticsViews,syncAnalyticsForm} from './analytics-ui.mjs';
 import {deliveryViews} from './delivery-ui.mjs';
 import {outcomesViews} from './outcomes-ui.mjs';
 import {reportingViews} from './reporting-ui.mjs';
@@ -62,6 +63,7 @@ async function loadWorkspace(){
   state.connectionData=null;state.connectionError=null;state.connectionAccounts=null;
   if(id)try{state.connectionData=await api(`/api/connections?business=${encodeURIComponent(id)}`);}catch(error){state.connectionError=error.message;}
   state.inboundData=null;state.inboundError=null;if(id)try{state.inboundData=await api(`/api/inbound?business=${encodeURIComponent(id)}`);}catch(error){state.inboundError=error.message;}
+  state.analyticsData=null;if(id)try{state.analyticsData=await api(`/api/analytics?business=${encodeURIComponent(id)}${new URL(location.href).searchParams.get('analytics_before')?'&before='+encodeURIComponent(new URL(location.href).searchParams.get('analytics_before')):''}`);}catch(error){state.analyticsError=error.message;}
 }
 async function command(name,input,key){return api('/api/command',{method:'POST',data:{organization_id:org(),command:name,input},key});}
 function authView(){
@@ -141,6 +143,7 @@ const websiteView=websiteViews({rows,isOperator,esc,hidden,field,area,select,sub
 const deliveryView=deliveryViews({rows:key=>key==='operator_operations'?(state.workspace?.operator_data?.operations||[]):rows(key),esc,field,area,select,hidden,submit,badge,dateTime,isOperator,engagement});
 const invoiceView=billingViews({rows,esc,label,hidden,submit,badge,dateTime,moneyDisplay,isOperator,engagement,field,area,select,operations:()=>state.workspace.operator_data?.operations||[]});
 const commercial=commercialViews({rows,esc,label,heading,link,hidden,field,area,select,submit,badge,dateTime,moneyDisplay,isOperator,org,engagement});
+const analyticsView=analyticsViews({data:()=>state.analyticsData,esc,hidden,field,area,select,submit,badge,dateTime,org});
 function render(){
   if(!state.user){app.innerHTML=authView();return;}
   if(!state.workspace){app.innerHTML=shell(invitationInbox()+heading('Welcome','Your workspace is taking shape.','You’re signed in. Your studio will connect your business and services to this account.')+`<section class="panel">${empty('No business access yet','An invitation must be confirmed before business records become available.')}<button class="button secondary" data-action="reload">Check again</button></section>`);return;}
@@ -150,9 +153,10 @@ function render(){
   if(['ads','business'].includes(section))content+=connectionsView();
   if(section==='work'&&!id)content+=deliveryView()+websiteView();
   if(section==='messages'||path()[0]==='operator')content+=inboundView();
+  if(section==='results')content+=analyticsView();
   if(section==='business')content+=aiPreference();
   if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones();
-  app.innerHTML=shell(content);for(const form of app.querySelectorAll('form[data-action]'))syncServiceForm(form);document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
+  app.innerHTML=shell(content);for(const form of app.querySelectorAll('form[data-action]')){syncServiceForm(form);syncAnalyticsForm(form,state.analyticsData);}document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
 }
 function formValues(form){const result={};for(const [key,value]of new FormData(form)){if(!(value instanceof File))result[key]=value;}for(const k of ['expected_version','minutes','budget_minor','quote_minor','incremental_price_minor','eligible_minor','amount_minor'])if(result[k]!==undefined&&result[k]!=='')result[k]=Number(result[k]);for(const k of ['due_at','next_contact_at','starts_at','ends_at','started_at','observed_at','event_at','received_at','retention_until'])if(result[k])result[k]=new Date(result[k]).toISOString();return result;}
 async function formAction(form){
@@ -168,6 +172,7 @@ async function formAction(form){
     await loadWorkspace();state.notice=operation==='bind'?'Account access verified. Campaign launch still requires approval.':'Stored connection removed. Platform permissions and campaign state are unchanged.';return;
   }
   delete values.confirmed;
+  if(action.startsWith('analytics.')){if(action==='analytics.bind'){const data=new FormData(form);values.profiles=data.getAll('profiles');values.auto_collect=data.has('auto_collect');for(const field of ['stream_ids','hostnames','event_names'])values[field]=(values[field]||'').split(',').map(x=>x.trim()).filter(Boolean);}const saved=await command(action,values,key);await loadWorkspace();state.notice=saved.state==='publish_queued'?'Publication queued. The account and current access will be checked again.':saved.state==='queued'?'Reporting read queued. The prior published results remain available.':'Reporting scope saved.';return;}
   if(action.startsWith('inbound.')){if(!values.request_id)delete values.request_id;let selected=action;if(values.resolution_action){selected=values.resolution_action;delete values.resolution_action;if(selected!=='inbound.accept')delete values.route_id;}const result=await command(selected,values,key);await loadWorkspace();state.notice=result.reply_address?'Reply address: '+result.reply_address:'Incoming email settings saved.';return;}
   if(['service.create','proposal.create'].includes(action)){const [catalog_id,variant]=values.catalog_option.split('|');const catalog=rows('catalog').find(c=>c.id===catalog_id&&c.variant===variant);delete values.catalog_option;Object.assign(values,{catalog_id,variant,catalog_version:catalog.catalog_version});for(const k of ['quote_minor','incremental_price_minor','overlap_evidence','supersedes_id','waiver_kind','waiver_agreement_id','waiver_evidence'])if(!values[k])delete values[k];const saved=await command(action,values,key);target=action==='proposal.create'?href('agreements',saved.id):href('proposal',saved.id);}
   else if(action==='agreement.accept'){values.consent=new FormData(form).has('consent');await command(action,values,key);}
@@ -202,10 +207,10 @@ async function formAction(form){
 document.addEventListener('submit',async event=>{
   const form=event.target.closest('form[data-action]');if(!form)return;event.preventDefault();if(state.busy)return;state.busy=true;state.error=null;state.notice=null;const button=form.querySelector('[type=submit]');if(button){button.disabled=true;button.textContent='Saving…';}
   try{await formAction(form);state.busy=false;render();document.querySelector('[role=status]')?.focus();}
-  catch(error){state.busy=false;state.error=error.message;if(error.code==='sign_in'){state.returnPath=allowedReturnPath(location.pathname+location.search);state.user=null;state.loginStep='email';try{const session=await api('/api/session');state.csrf=session.csrf;}catch{}}const saved=new FormData(form);render();const replacement=[...document.querySelectorAll(`form[data-action="${form.dataset.action}"]`)].find(el=>!form.dataset.formKey||el.dataset.formKey===form.dataset.formKey);if(replacement)for(const [k,v]of saved){const el=replacement.elements.namedItem(k);if(el&&typeof v==='string'&&!['checkbox','file'].includes(el.type))el.value=v;}if(replacement&&form.dataset.action!=='connection.start')replacement.dataset.actionKey=form.dataset.actionKey;document.querySelector('[role=alert]')?.focus();}
+  catch(error){state.busy=false;state.error=error.message;if(error.code==='sign_in'){state.returnPath=allowedReturnPath(location.pathname+location.search);state.user=null;state.loginStep='email';try{const session=await api('/api/session');state.csrf=session.csrf;}catch{}}const saved=new FormData(form);render();const replacement=[...document.querySelectorAll(`form[data-action="${form.dataset.action}"]`)].find(el=>!form.dataset.formKey||el.dataset.formKey===form.dataset.formKey);if(replacement)for(const el of replacement.elements){if(!el.name||el.type==='file')continue;const values=saved.getAll(el.name).filter(v=>typeof v==='string');if(['checkbox','radio'].includes(el.type))el.checked=values.includes(el.value);else if(values.length)el.value=values[0];}if(replacement){syncServiceForm(replacement);syncAnalyticsForm(replacement,state.analyticsData);}if(replacement&&form.dataset.action!=='connection.start')replacement.dataset.actionKey=form.dataset.actionKey;document.querySelector('[role=alert]')?.focus();}
 });
 document.addEventListener('input',event=>{const form=event.target.closest('form[data-action]');if(form)delete form.dataset.actionKey;});
-document.addEventListener('change',async event=>{if(event.target.id==='business-selector'){history.pushState({},'',`/workspace/?business=${encodeURIComponent(event.target.value)}`);await reload();}else if(['engagement_id','request_id'].includes(event.target.name)){const form=event.target.closest('form[data-action]');if(form)syncServiceForm(form);}});
+document.addEventListener('change',async event=>{if(event.target.id==='business-selector'){history.pushState({},'',`/workspace/?business=${encodeURIComponent(event.target.value)}`);await reload();}else{const form=event.target.closest('form[data-action]');if(form){if(['engagement_id','request_id'].includes(event.target.name))syncServiceForm(form);syncAnalyticsForm(form,state.analyticsData);}}});
 document.addEventListener('click',async event=>{
   const nav=event.target.closest('a[data-nav]');if(nav&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey){event.preventDefault();navigate(nav.getAttribute('href'));return;}
   const action=event.target.closest('[data-action]')?.dataset.action;if(!action||event.target.closest('form'))return;
