@@ -337,3 +337,37 @@ payment-card and live-resize journeys passed: 45 passed, 15 intentionally skippe
 for incompatible device conditions, across desktop/phone/reduced-motion projects.
 Public source layout was unchanged. The initial public test startup failed because
 this checkout had no built dist; it passed after building. No publication occurred.
+
+## Reporting and outcome history checkpoint — October 30
+
+Added explicit CSV validation, staged preview, complete-import promotion, exact
+numeric values, one-current-period conflict handling, and append-only corrected
+snapshots. Published reports require an exact reviewed narrative; draft report
+revisions are excluded from the complete customer projection. All figures retain
+source/account/currency/zone/period/definition/provisional metadata. Missing values
+remain null. Source corrections visibly mark older reports rather than rewriting
+published evidence. This is the manual CSV path; automatic provider metric reads
+remain pending and are not claimed as qualified.
+
+Pseudonymous outcome entry now records unknown/booked/attended/no-show/suitable/
+won/lost separately, with source-event dedup, immutable correction events, source
+and consent references, retention deadlines and current-actor checks. Late events
+cannot erase a later outcome. Preexisting confirmations get an explicitly labeled
+legacy baseline with unknown occurrence date/actor retained honestly. Win amounts
+and currency are visible in both current and historical records. Expired records
+are hidden and further edits denied; physical retention sweep remains pending.
+
+Four reporting and three outcome database/parser tests pass. Full workspace run
+before the final legacy-baseline addition: 93 pass, 4 PostgreSQL-only skips; CI
+runs the PostgreSQL cases. Six browser cases passed across Chromium desktop,
+Chromium phone and WebKit phone, covering CSV → review → publish, second-card
+error isolation, phone containment and dated outcome entry. Build passes.
+Independent Astra checkpoints found card retry identity, preview containment,
+ledger immutability, win visibility and legacy-baseline gaps; all fixed and
+reviewed with no remaining P0–P2 findings in these bounded scopes.
+
+Both migrations applied to staging only. Verified no anonymous reporting RPC,
+customer direct history SELECT, old projection RPC, legacy unhistoried editor or
+private baseline execution. Advisor notices remain the deliberate private-schema
+RLS-deny/default and authenticated command-boundary notices. No production deploy,
+provider metric import or customer report was performed.

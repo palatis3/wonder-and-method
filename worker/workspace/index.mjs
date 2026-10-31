@@ -28,10 +28,12 @@ export async function handleRequest(request,env){
       if(request.method==='GET'&&url.pathname==='/api/invitations')return json(await rpc(env,session.access_token,'wm_invitations',{}));
       if(request.method==='GET'&&url.pathname==='/api/workspace')return json({...await rpc(env,session.access_token,'wm_workspace',{p_org:uuid(url.searchParams.get('business'),'business')}),file_policy:filePolicy(env)});
       if(request.method==='POST'&&url.pathname==='/api/command'){
-        requireOrigin(request,env);requireCsrf(request,session);const input=await body(request);
+        requireOrigin(request,env);requireCsrf(request,session);const input=await body(request,524288);
         const org=uuid(input.organization_id,'business'),command=input.command;
         const data=validateCommand(command,input.input),key=request.headers.get('idempotency-key');
         if(!key||!/^[A-Za-z0-9_-]{16,200}$/.test(key))throw new WorkspaceError('action_key','Retry this action with its original identifier.');
+        if(command.startsWith('outcome.'))return json(await rpc(env,session.access_token,'wm_outcome_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
+        if(command.startsWith('reporting.'))return json(await rpc(env,session.access_token,'wm_reporting_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('billing.'))return json(await rpc(env,session.access_token,'wm_billing_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('closure.'))return json(await rpc(env,session.access_token,'wm_closure_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('ai.'))return json(await aiCommand(env,session,org,command,data,key));
@@ -46,7 +48,7 @@ export async function handleRequest(request,env){
     if(!['GET','HEAD'].includes(request.method))return json({error:{message:'Method unavailable.'}},405);
     if(!env.ASSETS)return json({error:{message:'Workspace interface unavailable.'}},503);
     if(url.pathname==='/'||url.pathname.startsWith('/workspace/')||url.pathname.startsWith('/operator/'))url.pathname='/index.html';
-    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/connections-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
+    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/connections-ui.mjs','/reporting-ui.mjs','/outcomes-ui.mjs','/domain/reporting.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }

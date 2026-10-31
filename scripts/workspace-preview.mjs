@@ -27,11 +27,13 @@ async function fixtureApi(req,res,url){
   if(url.pathname==='/api/workspace'){send({... (await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r,file_policy:'invite_only_unscanned'});return;}
   if(req.method==='POST'&&url.pathname==='/api/command'){
    if(req.headers.origin!==`http://127.0.0.1:${port}`||req.headers['x-csrf-token']!=='synthetic-only')throw Error('Synthetic preview origin required');
-   const chunks=[];let bytes=0;for await(const c of req){bytes+=c.length;if(bytes>100000)throw Error('Request too large');chunks.push(c);}
+   const chunks=[];let bytes=0;for await(const c of req){bytes+=c.length;if(bytes>524288)throw Error('Request too large');chunks.push(c);}
    const input=JSON.parse(Buffer.concat(chunks).toString()),key=req.headers['idempotency-key'];
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
+   if(input.command.startsWith('outcome.')){send((await fixture.db.query('select public.wm_outcome_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
+   if(input.command.startsWith('reporting.')){send((await fixture.db.query('select public.wm_reporting_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('closure.')){send((await fixture.db.query('select public.wm_closure_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('billing.')){send((await fixture.db.query('select public.wm_billing_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(/^(service|proposal|agreement|onboarding|milestone)\./.test(input.command)){send((await fixture.db.query('select public.wm_commercial_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}

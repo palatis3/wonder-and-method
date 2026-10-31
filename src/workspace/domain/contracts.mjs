@@ -64,6 +64,12 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'outcome.record':['engagement_id','id','expected_version','source','source_key','received_at','event_key','event_at','outcome','value_minor','currency','definition_version','consent_ref','retention_until','supersedes_id'],
+  'reporting.stage':['engagement_id','source','account_reference','currency','timezone','period_start','period_end','rows','supersedes_id'],
+  'reporting.promote':['id','expected_version'],
+  'reporting.draft':['engagement_id','request_id','period_key','snapshot_ids','summary','limitations','supersedes_id'],
+  'reporting.review':['id','expected_version','digest'],
+  'reporting.publish':['id','expected_version','digest'],
   'billing.prepare':['schedule_id','expected_version'],
   'closure.statement':['closure_id','expected_version','basis_digest','lines','tax_evidence','summary'],
   'billing.check_charge':['obligation_id','expected_version','charge_reference'],
