@@ -401,3 +401,29 @@ CI now preserves synthetic browser diagnostics on failure.
 Delivery migration applied to staging only. Verified all 38 template rows, denied
 anonymous delivery RPCs/customer dispatch/raw evidence access and legacy wrapper
 bypass, and retained service-only dispatch access. Production remains unpublished.
+
+### Website publication and resumed CI repairs — October 31, 2026
+
+CI identified Linux native form minimum sizing and two unavailable public sources.
+The grid containment fix passes 26 Linux Chromium and 13 Windows WebKit cases;
+21 public source/history regression tests pass. Exactly two county source/brief
+records and their reviewed page-date hashes were updated. Gates remain enabled.
+
+Website publication now uses a trusted final-module upload receipt and an exact
+approved version. The uploader checks a completed successful GitHub run against
+the actual repository, commit and qualified workflow, freezes that identity before
+upload and retries only receipt registration after confirmed upload. Publication
+binds every displayed target/artifact field, current operator/customer authority,
+source facts, dependencies and independently durable evidence. It checks the live
+deployment and uncached version/marker response. Lost POST responses use read-only
+history reconciliation; superseded deployments never trigger automatic republish.
+Definitive pre-POST failures are cancelled before dispatch.
+
+Eight focused database/provider/upload-crash tests pass. Full workspace validation
+before the final receipt-identity amendment: 107 pass, four PostgreSQL-only skips;
+the final eight focused cases pass after that amendment. Three existing delivery
+browser journeys also pass with the website controls rendered. Build passes.
+Independent Sol 6.1 Extra High review found target/config binding, operator expiry,
+preflight classification, modern key/header, credential destination and receipt
+provenance issues; fixes have specific regressions. No live upload, publication or
+customer inquiry was performed; provider target qualification remains required.

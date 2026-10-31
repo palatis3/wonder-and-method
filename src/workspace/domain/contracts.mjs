@@ -64,6 +64,8 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'website.target':['engagement_id','account_id','worker_name','environment','origin','dependency_revision'],
+  'website.preview':['request_id','expected_version','artifact_id','baseline_deployment_id','summary','cost_effect','date_effect'],
   'delivery.start':['request_id','agreement_id','period_key'],
   'delivery.facts':['revision_id','fact_ids'],
   'delivery.observe':['id','expected_version','step_key','outcome','evidence','observed_at','revision_id','operation_id','report_id','details'],

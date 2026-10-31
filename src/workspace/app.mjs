@@ -1,3 +1,4 @@
+import {websiteViews} from './website-ui.mjs';
 import {deliveryViews} from './delivery-ui.mjs';
 import {outcomesViews} from './outcomes-ui.mjs';
 import {reportingViews} from './reporting-ui.mjs';
@@ -35,7 +36,7 @@ const alert=()=>`${state.error?`<div class="alert" role="alert" tabindex="-1">${
 function setNavigationOpen(open){state.navOpen=open;document.querySelector('.sidebar')?.classList.toggle('nav-open',open);const button=document.querySelector('.nav-toggle');if(button){button.setAttribute('aria-expanded',String(open));button.lastElementChild.textContent=open?'−':'+';button.focus();}}
 function syncServiceForm(form){
   const service=form.elements.namedItem('engagement_id'),work=form.elements.namedItem('request_id');
-  const selectedService=service?.value||(form.dataset.action==='delivery.start'?rows('requests').find(r=>r.id===work?.value)?.engagement_id:null);
+  const selectedService=service?.value||(['delivery.start','website.preview'].includes(form.dataset.action)?rows('requests').find(r=>r.id===work?.value)?.engagement_id:null);
   if(!selectedService)return;
   for(const [fieldName,collection] of [['request_id','requests'],['agreement_id','agreements']]){
     const control=form.elements.namedItem(fieldName);if(control?.tagName!=='SELECT'||fieldName==='request_id'&&!service)continue;
@@ -43,6 +44,7 @@ function syncServiceForm(form){
     if(control.selectedOptions[0]?.disabled)control.value=[...control.options].find(o=>!o.disabled)?.value||'';
   }
   if(form.dataset.action==='reporting.draft')for(const box of form.querySelectorAll('input[name=snapshot_ids]')){const metric=rows('metrics').find(m=>m.id===box.value),visible=metric?.engagement_id===selectedService;box.closest('label').hidden=!visible;box.disabled=!visible;if(!visible)box.checked=false;}
+  if(form.dataset.action==='website.preview'){const control=form.elements.namedItem('artifact_id');for(const option of control.options){const a=rows('website_artifacts').find(a=>a.id===option.value),t=rows('website_targets').find(t=>t.id===a?.target_id);option.hidden=option.disabled=t?.engagement_id!==selectedService;}if(control.selectedOptions[0]?.disabled)control.value=[...control.options].find(o=>!o.disabled)?.value||'';}
 }
 function navigate(url){state.navOpen=false;history.pushState({},'',url);state.error=null;state.notice=null;render();window.scrollTo(0,0);document.querySelector('h1')?.focus({preventScroll:true});}
 async function api(url,{method='GET',data,key,retry=true}={}){
@@ -128,6 +130,7 @@ const outcomeView=outcomesViews({rows,state,esc,hidden,field,select,submit,dateT
 const reportView=reportingViews({rows,state,esc,hidden,field,area,select,submit,badge,dateTime,engagement,serviceSelect});
 const connectionsView=connectionViews({esc,hidden,select,submit,badge,dateTime,rows,state,isOperator});
 const statementView=closureViews({rows,esc,hidden,field,area,submit,badge,dateTime,moneyDisplay,engagement});
+const websiteView=websiteViews({rows,isOperator,esc,hidden,field,area,select,submit,engagement});
 const deliveryView=deliveryViews({rows:key=>key==='operator_operations'?(state.workspace?.operator_data?.operations||[]):rows(key),esc,field,area,select,hidden,submit,badge,dateTime,isOperator,engagement});
 const invoiceView=billingViews({rows,esc,label,hidden,submit,badge,dateTime,moneyDisplay,isOperator,engagement,field,area,select,operations:()=>state.workspace.operator_data?.operations||[]});
 const commercial=commercialViews({rows,esc,label,heading,link,hidden,field,area,select,submit,badge,dateTime,moneyDisplay,isOperator,org,engagement});
@@ -138,7 +141,7 @@ function render(){
   if(path()[0]==='operator')content=section==='ai'?aiView():`<p><a class="button secondary" href="${href('ai','',true)}" data-nav>Prepare with AI</a></p>`+operatorView();
   else content=section===''||section==='home'?homeView():section==='new'?newRequestView():section==='work'?(id?requestView(id):workView()):section==='approvals'?approvalsView(id):section==='messages'?allMessagesView():section==='ads'?adsView():section==='files'?filesView():section==='results'?resultsView():section==='business'?businessView():section==='agreements'?commercial.agreements(id):section==='proposal'?commercial.proposal(id):section==='onboarding'?commercial.onboarding():section==='billing'?billingView():section==='people'?peopleView():section==='help'?helpView():section==='prepare'?prepareView(id):empty('This page is unavailable','Choose a section from your workspace navigation.');
   if(['ads','business'].includes(section))content+=connectionsView();
-  if(section==='work'&&!id)content+=deliveryView();
+  if(section==='work'&&!id)content+=deliveryView()+websiteView();
   if(section==='business')content+=aiPreference();
   if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones();
   app.innerHTML=shell(content);for(const form of app.querySelectorAll('form[data-action]'))syncServiceForm(form);document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
@@ -168,6 +171,7 @@ async function formAction(form){
   else if(action==='outcome.record'){values.event_key=key;for(const k of ['id','expected_version','value_minor','supersedes_id'])if(values[k]==='')delete values[k];if(values.value_minor===undefined)delete values.currency;else values.value_minor=Number(values.value_minor);await command(action,values,key);}
   else if(action==='reporting.stage'){const csv=form.querySelector('[name=csv]').files[0];if(!csv||csv.size>128*1024)throw new Error('Choose a reporting CSV smaller than 128 KB.');values.rows=parseMetricCsv(new TextDecoder('utf-8',{fatal:true}).decode(await csv.arrayBuffer()));delete values.csv;if(!values.supersedes_id)delete values.supersedes_id;await command(action,values,key);}
   else if(action==='reporting.draft'){values.snapshot_ids=new FormData(form).getAll('snapshot_ids');if(!values.supersedes_id)delete values.supersedes_id;await command(action,values,key);}
+  else if(action==='website.preview'){values.expected_version=rows('requests').find(r=>r.id===values.request_id)?.version;await command(action,values,key);}
   else if(action==='delivery.facts'){values.fact_ids=new FormData(form).getAll('fact_ids');await command(action,values,key);}
   else if(action==='delivery.observe'){values.details={};for(const k of Object.keys(values))if(k.startsWith('detail_')){values.details[k.slice(7)]=values[k];delete values[k];}for(const k of ['revision_id','operation_id','report_id'])if(!values[k])delete values[k];await command(action,values,key);}
   else if(action.startsWith('billing.')){for(const k of ['attachment_id','launch_operation_id'])if(!values[k])delete values[k];await command(action,values,key);}

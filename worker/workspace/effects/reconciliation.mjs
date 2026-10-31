@@ -1,3 +1,4 @@
+import {readWebsiteEffect} from '../website/cloudflare.mjs';
 import {readInvoiceEffect} from '../billing/stripe.mjs';
 import {readFinancialEffect} from '../billing/refunds.mjs';
 import {journalAttempt} from '../continuity/attempt-journal.mjs';
@@ -9,6 +10,7 @@ import {readBounded,sha256} from '../files/content.mjs';
 import {UUID,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 const unknown=()=>{throw new WorkspaceError('readback_unconfirmed','The earlier provider action still needs checking.',503);};
 export async function readServiceEffect(env,permit,{rpc=machineRpc,fetcher=fetch}={}){
+  if(permit.operation.kind==='website_publish')return readWebsiteEffect(env,permit,{fetcher});
   if(['stripe_charge_read','stripe_refund_create'].includes(permit.operation.kind))return readFinancialEffect(env,permit,{fetcher});
   if(permit.operation.kind.startsWith('stripe_'))return readInvoiceEffect(env,permit,{fetcher});
   if(['invitation_notify','message_notify'].includes(permit.operation.kind))return readNotification(env,permit,{fetcher});
