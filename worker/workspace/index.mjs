@@ -1,4 +1,5 @@
 import {websiteCommand} from './website/service.mjs';
+import {handleInboundWebhook,handleInboundFile,inboundCommand} from './inbound/service.mjs';
 import {handleConnectionCallback,handleConnections} from './integrations/service.mjs';
 import {readAccounts} from './integrations/accounts.mjs';
 import {WorkspaceError,uuid,validateCommand} from '../../src/workspace/domain/contracts.mjs';
@@ -18,10 +19,13 @@ export async function handleRequest(request,env){
     if(request.method==='OPTIONS')return json({error:{message:'Cross-origin access is unavailable.'}},403);
     if(url.pathname==='/health')return json({service:'wonder-and-method-workspace',status:'available',environment:env.ENVIRONMENT||'unconfigured'});
     if(url.pathname==='/api/webhooks/stripe')return await handleStripeWebhook(request,env);
+    if(url.pathname==='/api/webhooks/resend/inbound')return await handleInboundWebhook(request,env);
     const callback=await handleConnectionCallback(request,env);if(callback)return callback;
     const session=await readSession(request,env);const auth=await handleAuth(request,env,session);if(auth)return auth;
     if(url.pathname.startsWith('/api/')){
       await identity(session,env);
+      const inboundFile=await handleInboundFile(request,env,session);if(inboundFile)return inboundFile;
+      if(request.method==='GET'&&url.pathname==='/api/inbound')return json(await rpc(env,session.access_token,'wm_inbound_list',{p_org:uuid(url.searchParams.get('business'))}));
       const connectionResponse=await handleConnections(request,env,session,{accounts:readAccounts});if(connectionResponse)return connectionResponse;
       const fileResponse=await handleFile(request,env,session);if(fileResponse)return fileResponse;
       if(request.method==='GET'&&url.pathname==='/api/businesses')return json(await rpc(env,session.access_token,'wm_businesses',{}));
@@ -34,6 +38,7 @@ export async function handleRequest(request,env){
         const data=validateCommand(command,input.input),key=request.headers.get('idempotency-key');
         if(!key||!/^[A-Za-z0-9_-]{16,200}$/.test(key))throw new WorkspaceError('action_key','Retry this action with its original identifier.');
         if(command.startsWith('website.'))return json(await websiteCommand(env,session,org,command,data,key));
+        if(command.startsWith('inbound.'))return json(await inboundCommand(env,session,org,command,data,key));
         if(command.startsWith('delivery.'))return json(await rpc(env,session.access_token,'wm_delivery_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('outcome.'))return json(await rpc(env,session.access_token,'wm_outcome_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('reporting.'))return json(await rpc(env,session.access_token,'wm_reporting_command',{p_org:org,p_command:command,p_input:data,p_key:key}));

@@ -1,4 +1,5 @@
 import {websiteEffect} from '../website/cloudflare.mjs';
+import {captureInbound,inventoryInbound} from '../inbound/service.mjs';
 import {invoiceEffect} from '../billing/stripe.mjs';
 import {financialEffect,pollRefunds} from '../billing/refunds.mjs';
 import {reconcileStripe} from '../billing/webhooks.mjs';
@@ -47,11 +48,13 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
   return {verified,attention};
 }
 export async function scheduledWork(env){
+ const inbound_inventory=await inventoryInbound(env).catch(()=>({attention:true}));
+ const inbound=await captureInbound(env).catch(()=>({attention:true}));
  const periods=env.STRIPE_ENABLED==='true'?await machineRpc(env,'wm_billing_generate',{p_limit:10}):{disabled:true};
  const receipts=await flushReceipts(env);
  const reconciliation=await reconcileAttempts(env);
  const effects=await dispatchJobs(env);
  const billing=await reconcileStripe(env);
  const refunds=await pollRefunds(env);
- return {receipts,reconciliation,effects,billing,periods,refunds};
+ return {receipts,reconciliation,effects,billing,periods,refunds,inbound,inbound_inventory};
 }

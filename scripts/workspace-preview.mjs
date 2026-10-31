@@ -22,6 +22,7 @@ async function fixtureApi(req,res,url){
   await dbTools.actor(fixture.db,user,{aal:role==='operator'?'aal2':'aal1'});
   if(url.pathname==='/api/agreement-receipt'){res.setHeader('Content-Disposition','attachment; filename=agreement-receipt.json');send((await fixture.db.query('select public.wm_agreement_receipt($1,$2) as r',[url.searchParams.get('business'),url.searchParams.get('id')])).rows[0].r);return;}
   if(url.pathname==='/api/invitations'){send((await fixture.db.query('select public.wm_invitations() as r')).rows[0].r);return;}
+  if(url.pathname==='/api/inbound'){send((await fixture.db.query('select public.wm_inbound_list($1) r',[url.searchParams.get('business')])).rows[0].r);return;}
   if(url.pathname==='/api/connections'){send({providers:[{id:'google_ads',name:'Google Ads',enabled:false}],connections:[]});return;}
   if(url.pathname==='/api/businesses'){send((await fixture.db.query('select public.wm_businesses() as r')).rows[0].r);return;}
   if(url.pathname==='/api/workspace'){send({... (await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r,file_policy:'invite_only_unscanned'});return;}
@@ -32,6 +33,7 @@ async function fixtureApi(req,res,url){
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
+   if(input.command.startsWith('inbound.')){const r=(await fixture.db.query('select public.wm_inbound_command($1,$2,$3,$4) r',[input.organization_id,input.command,input.input,key])).rows[0].r;if(r.token){r.reply_address=`r.${r.token}@synthetic.example`;delete r.token;}send(r);return;}
    if(input.command.startsWith('website.')){if(input.command==='website.preview')input.input.baseline_deployment_id='40000000-0000-4000-8000-000000000004';send((await fixture.db.query('select public.wm_website_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('delivery.')){send((await fixture.db.query('select public.wm_delivery_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('outcome.')){send((await fixture.db.query('select public.wm_outcome_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}

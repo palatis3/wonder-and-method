@@ -17,5 +17,9 @@ export async function previewFixture(){
   await admin(db);
   await db.query(`insert into wm.ai_runs(organization_id,engagement_id,request_id,task_type,input_refs,input_digest,model_config,prompt_version,output,status,created_by)
     values($1,$2,$3,'request_brief',$4,'synthetic-not-live','{"model":"gpt-6-astra"}','synthetic-preview','{"title":"Opening-hours brief","draft":"Confirm the updated hours and review the homepage change. This is synthetic preview text.","claims":[],"questions":["Are weekend hours unchanged?"],"warnings":["Synthetic example; no model call was made."]}','stale',$5)`,[ids.org,ids.engagement,r.id,aiSources,ids.operator]);
+  await db.query("insert into wm.staff(user_id,capabilities,active_until) values($1,array['intake'],now()+interval '1 day')",[ids.operator]);
+  const routeId='40000000-0000-4000-8000-000000000031';
+  await db.query("insert into wm.inbound_routes(id,organization_id,engagement_id,request_id,token_hash,created_by) values($1,$2,$3,$4,$5,$6)",[routeId,ids.org,ids.engagement,r.id,'a'.repeat(64),ids.operator]);
+  await db.query("insert into wm.inbound_emails(id,connection,environment,provider_id,state,metadata,body_text,content_hash,urgent,reason) values('40000000-0000-4000-8000-000000000032','synthetic','staging','40000000-0000-4000-8000-000000000033','captured',$1,$2,$3,true,'sender_needs_review')",[{from:'unverified@synthetic.example',subject:'Synthetic urgent email'},'Please pause. <script>Literal untrusted content</script>','b'.repeat(64)]);
   return {db,ids,request:r,revision:rev};
 }

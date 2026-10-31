@@ -11,3 +11,4 @@
 @media(max-width:360px){.nav-open .nav{grid-template-columns:1fr}.grid.metrics{grid-template-columns:1fr}.grid.metrics .card:last-child{grid-column:auto}.topbar .avatar{display:none}.hero{padding:20px}.panel,.card{padding:16px}}
 
 .topbar .context,.identity .email{overflow-wrap:anywhere}.identity .email{min-width:0;max-width:240px}
+:is([role="status"],[role="alert"]){overflow-wrap:anywhere;}

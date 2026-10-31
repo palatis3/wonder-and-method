@@ -427,3 +427,31 @@ Independent Sol 6.1 Extra High review found target/config binding, operator expi
 preflight classification, modern key/header, credential destination and receipt
 provenance issues; fixes have specific regressions. No live upload, publication or
 customer inquiry was performed; provider target qualification remains required.
+
+### Incoming correspondence and exact source-history repair — October 31, 2026
+
+The incoming-email module has 8 passing focused database/provider/crash tests.
+The final full workspace run has 115 passes and four PostgreSQL-only skips
+(119 total); GitHub runs the independent PostgreSQL concurrency checks. Desktop
+Chrome and phone Safari email journeys pass; phone Chrome exposed a long reply
+address expanding the page, fixed by wrapping status/error text, and its rerun
+passes. Customer views exclude private triage; literal email markup is escaped.
+Build and diff checks pass.
+
+Independent Sol 6.1 Extra High review found a partial-retry attachment inventory
+loss. The fix retains prior file manifests after failed enumeration and records a
+blocking anomaly for changed complete inventories. The extended regression and
+all eight focused tests pass; the bounded recheck found no remaining issue.
+
+`20261031125117_inbound_correspondence.sql` is applied to staging. Remote grants
+confirm no anonymous ingestion, no customer capture/raw-email access, machine-only
+capture and a private attachment bucket. Production and live inbound delivery are
+unmodified. Signature/capture/provider mocks do not prove real Resend or Storage
+qualification. A durable received-email inventory also recovers missing webhooks.
+
+The latest prior private CI checkpoint `7803137` passed PostgreSQL and browser
+checks. Its public workflow identified 14 strict historical comparisons missing
+the two already reviewed county source repairs. A separate exact before/after
+ledger and shared normalizer fix all 14 failures; 14 additional acceptance tests
+pass, with every historical preservation baseline unchanged. The combined next
+GitHub run must still pass before production publication.
