@@ -7,7 +7,7 @@ const attemptArgs=p=>({p_org:p.operation.organization_id,p_attempt:p.attempt.id,
 export async function provisionIdentity(env,permit,{fetcher=fetch,rpc=machineRpc}={}){
   const args=attemptArgs(permit);let context=await rpc(env,'wm_service_effect_context',args);
   if(!context.identity_id){
-    try{await providerFetch(`${config(env).supabase}/auth/v1/admin/users`,{method:'POST',headers:{apikey:env.SUPABASE_SECRET_KEY,Authorization:`Bearer ${env.SUPABASE_SECRET_KEY}`,'Content-Type':'application/json'},body:JSON.stringify({email:context.email,email_confirm:false})},fetcher);}catch{/* A response loss is reconciled by exact identity, never another create. */}
+    try{await providerFetch(`${config(env).supabase}/auth/v1/admin/users`,{method:'POST',headers:{apikey:env.SUPABASE_SECRET_KEY,'Content-Type':'application/json'},body:JSON.stringify({email:context.email,email_confirm:false})},fetcher);}catch{/* A response loss is reconciled by exact identity, never another create. */}
     context=await rpc(env,'wm_service_effect_context',args);
   }
   if(!UUID.test(context.identity_id||''))unknown();

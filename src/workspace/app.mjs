@@ -116,7 +116,7 @@ function render(){
   if(section==='billing')content+=invoiceView()+commercial.milestones();
   app.innerHTML=shell(content);document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
 }
-function formValues(form){const result={};for(const [key,value]of new FormData(form)){if(!(value instanceof File))result[key]=value;}for(const k of ['expected_version','minutes','budget_minor','quote_minor','incremental_price_minor','eligible_minor'])if(result[k]!==undefined&&result[k]!=='')result[k]=Number(result[k]);for(const k of ['due_at','next_contact_at','starts_at','ends_at','started_at'])if(result[k])result[k]=new Date(result[k]).toISOString();return result;}
+function formValues(form){const result={};for(const [key,value]of new FormData(form)){if(!(value instanceof File))result[key]=value;}for(const k of ['expected_version','minutes','budget_minor','quote_minor','incremental_price_minor','eligible_minor','amount_minor'])if(result[k]!==undefined&&result[k]!=='')result[k]=Number(result[k]);for(const k of ['due_at','next_contact_at','starts_at','ends_at','started_at'])if(result[k])result[k]=new Date(result[k]).toISOString();return result;}
 async function formAction(form){
   const action=form.dataset.action,values=formValues(form);let target=null;const key=form.dataset.actionKey||(form.dataset.actionKey=crypto.randomUUID());
   if(action==='login'){const r=await api('/api/auth/start',{method:'POST',data:{email:values.email,return_path:state.returnPath}});state.csrf=r.csrf;state.loginStep='code';state.notice=r.message;return;}

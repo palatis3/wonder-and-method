@@ -65,6 +65,8 @@ export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?
 
 const fields = {
   'billing.prepare':['schedule_id','expected_version'],
+  'billing.check_charge':['obligation_id','expected_version','charge_reference'],
+  'billing.refund':['charge_binding_id','expected_version','amount_minor','reason','tax_evidence'],
   'billing.hosting':['schedule_id','expected_version','attachment_id','eligible_minor','reason'],
   'billing.enable':['engagement_id','agreement_id','expected_version','evidence'],
   'billing.start_service':['engagement_id','agreement_id','expected_version','started_at','evidence','launch_operation_id'],

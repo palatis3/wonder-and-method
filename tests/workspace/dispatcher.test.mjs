@@ -25,7 +25,7 @@ test('invitation effects are transactional and revocation blocks both queued and
 
 test('identity provisioning never confirms email or grants workspace access and resolves only exact provider identity',async()=>{
  let calls=0,reads=0;const p={...permit,operation:{...permit.operation,kind:'identity_provision'}};
- const result=await provisionIdentity(env,p,{rpc:async(_env,name)=>name==='wm_service_effect_context'?{...context,identity_id:++reads===1?null:ids.outsider}:{},fetcher:async(url,options)=>{calls++;assert.ok(url.endsWith('/admin/users'));assert.deepEqual(JSON.parse(options.body),{email:context.email,email_confirm:false});throw Error('Lost response');}});
+ const result=await provisionIdentity(env,p,{rpc:async(_env,name)=>name==='wm_service_effect_context'?{...context,identity_id:++reads===1?null:ids.outsider}:{},fetcher:async(url,options)=>{calls++;assert.equal(options.headers.Authorization,undefined);assert.equal(options.headers.apikey,env.SUPABASE_SECRET_KEY);assert.ok(url.endsWith('/admin/users'));assert.deepEqual(JSON.parse(options.body),{email:context.email,email_confirm:false});throw Error('Lost response');}});
  assert.equal(calls,1);assert.equal(result.readback_matches,true);assert.equal(result.email_verified,false);
  await assert.rejects(provisionIdentity(env,p,{rpc:async()=>({...context,identity_id:null}),fetcher:async()=>new Response('{}',{status:503})}),/reconciliation/);
 });

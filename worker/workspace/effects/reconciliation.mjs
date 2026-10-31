@@ -1,4 +1,5 @@
 import {readInvoiceEffect} from '../billing/stripe.mjs';
+import {readFinancialEffect} from '../billing/refunds.mjs';
 import {journalAttempt} from '../continuity/attempt-journal.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl} from '../continuity/receipts.mjs';
@@ -8,6 +9,7 @@ import {readBounded,sha256} from '../files/content.mjs';
 import {UUID,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 const unknown=()=>{throw new WorkspaceError('readback_unconfirmed','The earlier provider action still needs checking.',503);};
 export async function readServiceEffect(env,permit,{rpc=machineRpc,fetcher=fetch}={}){
+  if(['stripe_charge_read','stripe_refund_create'].includes(permit.operation.kind))return readFinancialEffect(env,permit,{fetcher});
   if(permit.operation.kind.startsWith('stripe_'))return readInvoiceEffect(env,permit,{fetcher});
   if(['invitation_notify','message_notify'].includes(permit.operation.kind))return readNotification(env,permit,{fetcher});
   const observed=await rpc(env,'wm_service_readback',{p_org:permit.operation.organization_id,p_attempt:permit.attempt.id,p_nonce:permit.attempt.dispatch_nonce});

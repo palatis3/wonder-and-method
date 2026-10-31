@@ -206,3 +206,36 @@ browser tests passed. The fairness regression passed after the final query fix.
 GitHub private checks passed for 76eafaf, including PostgreSQL concurrency. This
 migration is applied to staging only; real provider qualification and restoration
 exercises remain pending.
+
+
+## Refund checkpoint
+
+Verified invoice-payment relations bind charges to the existing invoice/customer/
+account before refund authorization. Partial cross-invoice allocations are rejected
+for separate review. Refund reservations retain unknown and pending outcomes;
+provider calls use the durable attempt journal and exact idempotency key. Finance
+and independent recovery authority are rechecked after allocation lookup, directly
+before the refund POST. A missing provider reference never causes a second POST.
+
+Independent Astra review identified stale charge balances after a refund, delayed
+charge reads overwriting newer refund state, long preflight authority gaps, and
+incorrect invoice lookup trapping the charge. The fixes invalidate old balances,
+fence charge readback by binding version, recheck final dispatch authority, and
+keep tentative lookup records separate from unique verified allocation.
+
+Refund refresh uses a fair leased queue and fresh provider GETs, with webhook
+watermarks. A successful refund can later fail or need customer action; it is not
+an immutable terminal state. Created/accepted/pending/succeeded/failed remain
+separate from earned work and service status. Tax/credit-note treatment requires
+explicit finance evidence before authorization; live tax treatment remains an
+account qualification gate.
+
+Full local checkpoint: 62 passed, four PostgreSQL-only cases skipped locally;
+eight desktop/phone journeys passed. Four focused refund tests then passed after
+the final review fixes. No actual refund or real customer charge was created.
+
+Official API contracts verified 2026-10-30:
+- https://docs.stripe.com/api/invoice-payment/list
+- https://docs.stripe.com/api/charges/retrieve
+- https://docs.stripe.com/api/refunds/create
+- https://docs.stripe.com/refunds (including later bank failures/requires-action)
