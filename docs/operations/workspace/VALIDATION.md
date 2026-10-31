@@ -151,3 +151,30 @@ Remaining commercial integration work includes billing-provider execution and
 reconciliation, effective-date activation, recurring entitlements, exact site
 identity/overlap checks, and complete service-specific readiness. These tests
 do not establish live Stripe, email, scanner or advertising qualification.
+
+## Controlled invoice checkpoint
+
+Catalog scope revision 2 adds site identity and overlap checks for bundled Care,
+onboarding and native measurement. Staging has both catalog revisions; accepted
+agreements retain their original snapshots. The current catalog has 38 variants.
+
+The billing ledger separates due charges, earned work and provider-observed
+payments. Each milestone invoice has separate create, attach, finalize and send
+operations, stable keys, exact customer/account/environment bindings and a
+read-only recovery path. A lost send acknowledgement remains unknown. Stripe
+webhooks verify raw signatures and persist before acknowledgement; event snapshots
+only request current-state retrieval. Readback leases retain their claimed request
+watermark so a newer event is not swallowed by an older readback.
+
+Independent Astra review found and verified corrections for the webhook watermark
+race, unsupported-event starvation, saved provider-reference recovery, finalized
+invoice validation and reuse of completed leases. The local suite passed 56 tests;
+four multi-connection tests run in PostgreSQL CI. All eight desktop/phone journeys
+passed, including accepted agreement to prepared invoice. The migration was applied
+to staging only. No real Stripe invoice, charge or notification was created.
+
+Remaining billing work includes qualified account provisioning, service activation,
+recurring scheduling, hosting allocations, amendments, settlement/refunds, portal,
+non-invoice payment objects and live provider qualification. These gates remain
+closed until implemented and verified. Owner email: palatis3@gmail.com; the staging
+Auth project has no owner identity yet and operator access has not been provisioned.

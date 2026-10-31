@@ -29,10 +29,10 @@ test('two businesses cannot reserve the last introductory Care waiver concurrent
  try{
   await db.query("update wm.intro_care_slots set consumed_at=now() where slot<3");
   await db.query("insert into wm.operator_assignments(organization_id,user_id,capabilities,active_until) values($1,$2,array['read','finance'],now()+interval '1 year')",[ids.other,ids.operator]);
-  const version=(await db.query("select catalog_version from wm.catalog_registry where catalog_id='improve' and variant='brochure'")).rows[0].catalog_version;
+  const version=(await db.query("select catalog_version from wm.catalog_registry where catalog_id='improve' and variant='brochure' and catalog_version=(select catalog_version from wm.catalog_active)")).rows[0].catalog_version;
   const invoke=async(conn,org,action,input)=>(await conn.query('select public.wm_commercial_command($1,$2,$3,$4) as r',[org,action,input,crypto.randomUUID()])).rows[0].r;
   await actor(db,ids.operator,{aal:'aal2'});const a=await invoke(db,ids.org,'service.create',{catalog_id:'improve',variant:'brochure',catalog_version:version,title:'First synthetic production service'});const b=await invoke(db,ids.other,'service.create',{catalog_id:'improve',variant:'brochure',catalog_version:version,title:'Second synthetic production service'});
-  const input=e=>({engagement_id:e.id,expected_version:1,catalog_id:'improve',variant:'brochure',catalog_version:version,starts_at:new Date(Date.now()+86400000).toISOString(),scope_note:'Synthetic production with Brochure Care',waiver_kind:'intro_production',waiver_evidence:'Approved introductory client; checks still apply.'});
+  const input=e=>({engagement_id:e.id,expected_version:1,catalog_id:'improve',variant:'brochure',catalog_version:version,starts_at:new Date(Date.now()+86400000).toISOString(),site_host:'synthetic.example',scope_note:'Synthetic production with Brochure Care',waiver_kind:'intro_production',waiver_evidence:'Approved introductory client; checks still apply.'});
   await db.exec('begin');await invoke(db,ids.org,'proposal.create',input(a));
   await actor(second,ids.operator,{aal:'aal2'});const pid=(await second.query('select pg_backend_pid() as id')).rows[0].id;const pending=invoke(second,ids.other,'proposal.create',input(b)).then(value=>({value}),error=>({error}));
   await waitForBlocked(db,pid);await db.exec('commit');assert.match((await pending).error?.message||'',/All three introductory Care places/);

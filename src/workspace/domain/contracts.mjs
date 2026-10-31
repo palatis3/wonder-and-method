@@ -64,8 +64,9 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'billing.prepare':['schedule_id','expected_version'],
   'service.create':['catalog_id','variant','catalog_version','title'],
-  'proposal.create':['engagement_id','catalog_id','variant','catalog_version','expected_version','starts_at','scope_note','quote_minor','waiver_evidence','waiver_kind','waiver_agreement_id','supersedes_id'],
+  'proposal.create':['engagement_id','catalog_id','variant','catalog_version','expected_version','starts_at','scope_note','site_host','incremental_price_minor','overlap_evidence','quote_minor','waiver_evidence','waiver_kind','waiver_agreement_id','supersedes_id'],
   'proposal.send':['id','expected_version'],
   'proposal.withdraw':['id','expected_version','reason'],
   'agreement.accept':['id','expected_version','digest','consent','signer_name'],

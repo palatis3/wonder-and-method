@@ -4,7 +4,7 @@ import {build} from 'esbuild';
 import {fileURLToPath} from 'node:url';
 const output=new URL('../output/workspace/',import.meta.url),source=new URL('../src/workspace/',import.meta.url);
 await mkdir(new URL('assets/',output),{recursive:true});
-for(const file of ['index.html','app.css','app.mjs','commercial-ui.mjs','favicon.svg','domain'])await cp(new URL(file,source),new URL('assets/'+file,output),{recursive:true});
+for(const file of ['index.html','app.css','app.mjs','commercial-ui.mjs','billing-ui.mjs','favicon.svg','domain'])await cp(new URL(file,source),new URL('assets/'+file,output),{recursive:true});
 await build({entryPoints:[fileURLToPath(new URL('../worker/workspace/index.mjs',import.meta.url))],outfile:fileURLToPath(new URL('worker.mjs',output)),bundle:true,platform:'browser',format:'esm',target:'es2022',minify:false,sourcemap:false});
 const migrations=[];const dir=new URL('../db/workspace/migrations/',import.meta.url);for(const name of (await readdir(dir)).filter(x=>x.endsWith('.sql')).sort())migrations.push({name,sha256:createHash('sha256').update(await readFile(new URL(name,dir))).digest('hex')});
 await writeFile(new URL('build.json',output),JSON.stringify({schema:1,built_at:new Date().toISOString(),migrations,entry:'worker.mjs',assets:'assets/',external_effects:'require provider qualification'},null,2)+'\n');

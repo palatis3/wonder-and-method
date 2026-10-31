@@ -31,6 +31,7 @@ async function fixtureApi(req,res,url){
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
+   if(input.command.startsWith('billing.')){send((await fixture.db.query('select public.wm_billing_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(/^(service|proposal|agreement|onboarding|milestone)\./.test(input.command)){send((await fixture.db.query('select public.wm_commercial_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(/^(invitation|member|authority)\./.test(input.command)){send((await fixture.db.query('select public.wm_people_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('ai.')){
@@ -46,7 +47,7 @@ async function fixtureApi(req,res,url){
   send({error:{message:'This provider action is not connected in the synthetic preview.'}},503);
  }catch(error){send({error:{message:error.message,code:error.code==='40001'?'changed':'invalid_action'}},error.code==='40001'?409:400);}
 }
-const allowed=new Set(['index.html','app.css','app.mjs','commercial-ui.mjs','favicon.svg','domain/contracts.mjs','domain/channels.mjs']);
+const allowed=new Set(['index.html','app.css','app.mjs','commercial-ui.mjs','billing-ui.mjs','favicon.svg','domain/contracts.mjs','domain/channels.mjs']);
 createServer(async(req,res)=>{
  try{
   const url=new URL(req.url,'http://localhost');

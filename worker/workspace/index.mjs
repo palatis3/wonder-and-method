@@ -4,6 +4,7 @@ import {handleAuth,identity,readSession,requireCsrf} from './auth/session.mjs';
 import {rpc} from './database.mjs';
 import {handleFile} from './files/service.mjs';
 import {aiCommand} from './ai/service.mjs';
+import {handleStripeWebhook} from './billing/webhooks.mjs';
 import {scheduledWork} from './effects/dispatcher.mjs';
 const COMMANDS=Object.freeze({'request.create':'wm_request_create','request.accept':'wm_request_accept','message.send':'wm_message_send','revision.create':'wm_revision_create','decision.record':'wm_decision_record','ads.stop':'wm_ads_stop','operation.prepare':'wm_operation_prepare','operation.reconcile':'wm_reconcile_request','file.intent':'wm_file_intent'});
 const SERVICES=new Set(['request.progress','fact.confirm','lead.save','time.record','absence.save','preference.save','engagement.cancel','export.request','allowance.reserve','allowance.settle','allowance.release','allowance.defect']);
@@ -13,6 +14,7 @@ export async function handleRequest(request,env){
     const url=new URL(request.url);if(url.origin!==config(env).origin)throw new WorkspaceError('invalid_host','Open the private workspace address.',421);
     if(request.method==='OPTIONS')return json({error:{message:'Cross-origin access is unavailable.'}},403);
     if(url.pathname==='/health')return json({service:'wonder-and-method-workspace',status:'available',environment:env.ENVIRONMENT||'unconfigured'});
+    if(url.pathname==='/api/webhooks/stripe')return await handleStripeWebhook(request,env);
     const session=await readSession(request,env);const auth=await handleAuth(request,env,session);if(auth)return auth;
     if(url.pathname.startsWith('/api/')){
       await identity(session,env);
@@ -26,6 +28,7 @@ export async function handleRequest(request,env){
         const org=uuid(input.organization_id,'business'),command=input.command;
         const data=validateCommand(command,input.input),key=request.headers.get('idempotency-key');
         if(!key||!/^[A-Za-z0-9_-]{16,200}$/.test(key))throw new WorkspaceError('action_key','Retry this action with its original identifier.');
+        if(command.startsWith('billing.'))return json(await rpc(env,session.access_token,'wm_billing_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('ai.'))return json(await aiCommand(env,session,org,command,data,key));
         if(/^(service|proposal|agreement|onboarding|milestone)\./.test(command))return json(await rpc(env,session.access_token,'wm_commercial_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(/^(invitation|member|authority)\./.test(command))return json(await rpc(env,session.access_token,'wm_people_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
@@ -38,7 +41,7 @@ export async function handleRequest(request,env){
     if(!['GET','HEAD'].includes(request.method))return json({error:{message:'Method unavailable.'}},405);
     if(!env.ASSETS)return json({error:{message:'Workspace interface unavailable.'}},503);
     if(url.pathname==='/'||url.pathname.startsWith('/workspace/')||url.pathname.startsWith('/operator/'))url.pathname='/index.html';
-    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
+    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }

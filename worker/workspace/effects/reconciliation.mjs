@@ -1,3 +1,4 @@
+import {readInvoiceEffect} from '../billing/stripe.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl} from '../continuity/receipts.mjs';
 import {readNotification} from '../providers/notifications.mjs';
@@ -6,6 +7,7 @@ import {readBounded,sha256} from '../files/content.mjs';
 import {UUID,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 const unknown=()=>{throw new WorkspaceError('readback_unconfirmed','The earlier provider action still needs checking.',503);};
 export async function readServiceEffect(env,permit,{rpc=machineRpc,fetcher=fetch}={}){
+  if(permit.operation.kind.startsWith('stripe_'))return readInvoiceEffect(env,permit,{fetcher});
   if(['invitation_notify','message_notify'].includes(permit.operation.kind))return readNotification(env,permit,{fetcher});
   const observed=await rpc(env,'wm_service_readback',{p_org:permit.operation.organization_id,p_attempt:permit.attempt.id,p_nonce:permit.attempt.dispatch_nonce});
   if(permit.operation.kind==='identity_provision'){

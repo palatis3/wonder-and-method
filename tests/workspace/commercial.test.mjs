@@ -6,12 +6,12 @@ const call=async(db,action,input,key=crypto.randomUUID())=>(await db.query('sele
 const projection=async db=>(await db.query('select public.wm_workspace($1) as r',[ids.org])).rows[0].r;
 async function proposal(db,extra={}){
  await actor(db,ids.operator,{aal:'aal2'});
- const p=await call(db,'proposal.create',{engagement_id:ids.engagement,catalog_id:'launch_site',variant:'standard',catalog_version:CATALOG[0].catalog_version,expected_version:1,starts_at:new Date(Date.now()+86400000).toISOString(),scope_note:'Synthetic website at the agreed domain; included native measurement, no duplicate setup charge.',...extra});
+ const p=await call(db,'proposal.create',{engagement_id:ids.engagement,catalog_id:'launch_site',variant:'standard',catalog_version:CATALOG[0].catalog_version,expected_version:1,starts_at:new Date(Date.now()+86400000).toISOString(),site_host:'synthetic.example',scope_note:'Synthetic website at the agreed domain; included native measurement, no duplicate setup charge.',...extra});
  return p;
 }
 test('every current catalog variant has an exact immutable database snapshot and correct fee totals',async()=>{
  const db=await database();try{
- const rows=(await db.query('select snapshot from wm.catalog_registry')).rows;
+ const rows=(await db.query('select snapshot from wm.catalog_registry where catalog_version=(select catalog_version from wm.catalog_active)')).rows;
  assert.equal(rows.length,CATALOG.length);for(const c of CATALOG)assert.deepEqual(rows.find(x=>x.snapshot.id===c.id&&x.snapshot.variant===c.variant).snapshot,c);
  assert.deepEqual(CATALOG.find(x=>x.id==='search_ads').milestones.map(x=>x.amount_minor),[25000,75000,25000]);
  assert.deepEqual(CATALOG.find(x=>x.id==='launch_site').milestones.map(x=>x.amount_minor),[87800,65850,65850]);
@@ -73,13 +73,29 @@ test('Care variant and explicit verified waiver preserve original catalog; onboa
  await actor(db,ids.operator,{aal:'aal2'});const c=CATALOG.find(x=>x.id==='improve'&&x.variant==='commerce');
  const service=await call(db,'service.create',{catalog_id:'improve',variant:c.variant,catalog_version:c.catalog_version,title:'Synthetic Commerce Care'});
  await admin(db);await db.query("insert into wm.engagement_authorities(organization_id,engagement_id,user_id,domain,kind,starts_at,ends_at,verified_by,evidence) values($1,$2,$3,'contract','primary',now()-interval '1 day',now()+interval '1 year',$4,'Verified synthetic signer')",[ids.org,service.id,ids.client,ids.operator]);
- await actor(db,ids.operator,{aal:'aal2'});const p=await call(db,'proposal.create',{engagement_id:service.id,expected_version:1,catalog_id:c.id,variant:c.variant,catalog_version:c.catalog_version,starts_at:new Date(Date.now()+86400000).toISOString(),scope_note:'Supported store with verified recovery baseline.',waiver_kind:'intro_production',waiver_evidence:'Approved introductory production client; compatibility checks still required.'});
+ await actor(db,ids.operator,{aal:'aal2'});const p=await call(db,'proposal.create',{engagement_id:service.id,expected_version:1,catalog_id:c.id,variant:c.variant,catalog_version:c.catalog_version,starts_at:new Date(Date.now()+86400000).toISOString(),site_host:'synthetic-store.example',scope_note:'Supported store with verified recovery baseline.',waiver_kind:'intro_production',waiver_evidence:'Approved introductory production client; compatibility checks still required.'});
  const sent=await call(db,'proposal.send',{id:p.id,expected_version:p.version});await actor(db,ids.client);const a=(await projection(db)).agreements[0];assert.equal(a.manifest.components.find(x=>x.id==='care_onboarding').amount_minor,0);
  await call(db,'agreement.accept',{id:p.id,expected_version:sent.version,digest:a.digest,consent:true,signer_name:'Avery'});
  const view=await projection(db);assert.equal(view.billing.find(x=>x.component==='management').amount_minor,54500);assert.ok(view.billing.every(x=>x.state==='planned'&&x.next_invoice_at===null));assert.equal(view.access.length,2);
  await actor(db,ids.operator,{aal:'aal2'});const step=view.access[0];await assert.rejects(call(db,'onboarding.update',{id:step.id,expected_version:step.version,status:'verified',next_action:'Ready'}),/verified access evidence/);
  await call(db,'onboarding.update',{id:step.id,expected_version:step.version,status:'verified',account_reference:'synthetic-store.example',evidence:'Verified named owner and recovery access on the exact store.',next_action:'Maintain current access'});
- await admin(db);const original=(await db.query("select snapshot from wm.catalog_registry where catalog_id='keep_running' and variant='commerce'")).rows[0].snapshot;assert.equal(original.components.find(x=>x.id==='care_onboarding').amount_minor,39500);
+ await admin(db);const original=(await db.query("select snapshot from wm.catalog_registry where catalog_id='keep_running' and variant='commerce' and catalog_version=(select catalog_version from wm.catalog_active)")).rows[0].snapshot;assert.equal(original.components.find(x=>x.id==='care_onboarding').amount_minor,39500);
+ await actor(db,ids.operator,{aal:'aal2'});
+ for(const [id,variant,message] of [['keep_running','commerce',/Care is already included/],['grow','production',/already has a production plan/]]){
+  const next=await call(db,'service.create',{catalog_id:id,variant,catalog_version:c.catalog_version,title:'Potential overlapping service'});
+  await assert.rejects(call(db,'proposal.create',{engagement_id:next.id,expected_version:1,catalog_id:id,variant,catalog_version:c.catalog_version,starts_at:new Date(Date.now()+86400000).toISOString(),scope_note:'Potential overlap for same site',site_host:'www.synthetic-store.example'}),message);
+ }
+ }finally{await db.close();}
+});
+test('measurement already included in a website requires an explicit incremental quote',async()=>{
+ const db=await database();try{
+ const p=await proposal(db);const sent=await call(db,'proposal.send',{id:p.id,expected_version:1});await actor(db,ids.client);const a=(await projection(db)).agreements[0];await call(db,'agreement.accept',{id:p.id,expected_version:sent.version,digest:a.digest,consent:true,signer_name:'Avery'});
+ await actor(db,ids.operator,{aal:'aal2'});const c=CATALOG.find(x=>x.id==='reporting_dashboard');const service=await call(db,'service.create',{catalog_id:c.id,variant:c.variant,catalog_version:c.catalog_version,title:'Incremental reporting'});
+ const input={engagement_id:service.id,expected_version:1,catalog_id:c.id,variant:c.variant,catalog_version:c.catalog_version,starts_at:new Date(Date.now()+86400000).toISOString(),scope_note:'Only additional approved events and reporting; included native setup removed.',site_host:'www.synthetic.example'};
+ await assert.rejects(call(db,'proposal.create',input),/incremental quote/);
+ const draft=await call(db,'proposal.create',{...input,incremental_price_minor:39500,overlap_evidence:'Existing website includes native properties, primary inquiry event and consent setup; remove that work and charge only the additional events and dashboard.'});
+ const saved=(await projection(db)).agreements.find(x=>x.id===draft.id).manifest;assert.equal(saved.site_host,'synthetic.example');assert.equal(saved.milestones.reduce((sum,x)=>sum+x.amount_minor,0),39500);assert.match(saved.terms.payment,/197.50 USD/);assert.doesNotMatch(saved.terms.payment,/397.50/);
+ assert.equal(saved.incremental_quote,true);assert.equal(c.milestones.reduce((sum,x)=>sum+x.amount_minor,0),79500);
  }finally{await db.close();}
 });
 test('a delivered-work approval can earn only its pre-linked milestone',async()=>{

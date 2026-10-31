@@ -44,7 +44,7 @@ test('catalog proposal, named signer, agreement acceptance and portable receipt 
  const authority=page.locator('form[data-action="authority.assign"]');await authority.getByLabel('Service',{exact:true}).selectOption({label:title});await authority.getByLabel('Decision domain',{exact:true}).selectOption('contract');
  await authority.getByLabel('Valid from',{exact:true}).fill(new Date(Date.now()-86400000).toISOString().slice(0,16));await authority.getByLabel('Valid until',{exact:true}).fill(new Date(Date.now()+86400000*365).toISOString().slice(0,16));
  await authority.getByLabel('Independent business-authority verification evidence',{exact:true}).fill('Synthetic owner identity and business authority checked independently.');await authority.getByRole('button',{name:'Record verified authority',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
- await page.goto(proposalUrl);await page.getByLabel('Proposed start',{exact:true}).fill(new Date(Date.now()+86400000).toISOString().slice(0,16));await page.getByLabel('Agreed scope and site',{exact:true}).fill('Synthetic focused website with included native measurement and one agreed domain.');await page.getByRole('button',{name:'Save proposal draft',exact:true}).click();
+ await page.goto(proposalUrl);await page.getByLabel('Proposed start',{exact:true}).fill(new Date(Date.now()+86400000).toISOString().slice(0,16));await page.getByLabel('Site hostname',{exact:true}).fill('synthetic.example');await page.getByLabel('Agreed scope and site',{exact:true}).fill('Synthetic focused website with included native measurement and one agreed domain.');await page.getByRole('button',{name:'Save proposal draft',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Focused Website',exact:true})).toBeVisible();await expect(page.getByText('$878.00',{exact:true})).toBeVisible();const agreementUrl=page.url();
  await page.getByRole('button',{name:'Send agreement for review',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
  await page.getByRole('link',{name:'Customer',exact:true}).click();await page.goto(agreementUrl);
@@ -53,6 +53,14 @@ test('catalog proposal, named signer, agreement acceptance and portable receipt 
  const download=page.waitForEvent('download');await page.getByRole('link',{name:'Download acceptance receipt',exact:true}).click();expect((await download).suggestedFilename()).toBe('agreement-receipt.json');
  await page.addScriptTag({content:axe});expect(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id))).toEqual([]);
  await page.screenshot({path:`output/playwright/workspace/${info.project.name}-agreement.png`,fullPage:true});
+ await page.getByRole('link',{name:'Studio',exact:true}).click();await page.goto(route('billing'));
+ const stage=page.locator('article.card').filter({has:page.locator('form[data-action="milestone.due"]')}).first();
+ await stage.getByText('Start this milestone',{exact:true}).click();
+ await stage.getByLabel('Start and readiness evidence',{exact:true}).fill('Synthetic booked start confirmed.');
+ await stage.getByRole('button',{name:'Record milestone as due',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
+ await page.getByRole('button',{name:'Prepare the agreed invoice',exact:true}).first().click();await expect(page.getByRole('status')).toBeVisible();
+ await expect(page.getByText('Prepared',{exact:true})).toBeVisible();
+
 });
 
 test('workspace pages have no horizontal overflow or automated serious accessibility violations',async({page})=>{

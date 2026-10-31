@@ -1,10 +1,13 @@
+import {invoiceEffect} from '../billing/stripe.mjs';
+import {reconcileStripe} from '../billing/webhooks.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl,flushReceipts} from '../continuity/receipts.mjs';
 import {scanFile} from '../files/service.mjs';
 import {provisionIdentity,sendNotification} from '../providers/notifications.mjs';
 import {reconcileAttempts} from './reconciliation.mjs';
-const adapters={identity_provision:provisionIdentity,invitation_notify:sendNotification,message_notify:sendNotification,file_scan:(env,permit,{fetcher})=>scanFile(env,permit.operation,fetcher)};
+const adapters={stripe_invoice_create:invoiceEffect,stripe_invoice_item:invoiceEffect,stripe_invoice_finalize:invoiceEffect,stripe_invoice_send:invoiceEffect,identity_provision:provisionIdentity,invitation_notify:sendNotification,message_notify:sendNotification,file_scan:(env,permit,{fetcher})=>scanFile(env,permit.operation,fetcher)};
 function configured(env,kind){
+  if(kind.startsWith('stripe_'))return env.STRIPE_ENABLED==='true'&&Boolean(env.STRIPE_SECRET_KEY);
   if(kind==='identity_provision')return env.IDENTITY_PROVISIONING_ENABLED==='true'&&Boolean(env.SUPABASE_SECRET_KEY);
   if(['invitation_notify','message_notify'].includes(kind))return env.NOTIFICATIONS_ENABLED==='true'&&Boolean(env.RESEND_API_KEY&&env.NOTIFICATION_FROM);
   if(kind==='file_scan')return env.SCANNING_ENABLED==='true'&&Boolean(env.CLOUDMERSIVE_API_KEY);
@@ -22,7 +25,7 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
       if(control.access_state!=='open'){await rpc(env,'wm_job_attention',{...attentionArgs,p_reason:'recovery_restricted'});attention++;continue;}
       permit=await rpc(env,'wm_attempt_begin',{...attentionArgs,p_external_generation:control.external_generation});
       const current=await readControl(env,job.organization_id);
-      if(current.external_generation!==control.external_generation||current.access_state!=='open'||(permit.operation.positive_effect&&!current.positive_effects_allowed)){
+      if(current.external_generation!==control.external_generation||current.access_state!=='open'||((permit.operation.positive_effect||job.kind.startsWith('stripe_'))&&!current.positive_effects_allowed)){
         await rpc(env,'wm_attempt_observe',{p_org:job.organization_id,p_attempt:permit.attempt.id,p_nonce:permit.attempt.dispatch_nonce,p_kind:'cancelled_before_dispatch',p_evidence:{reason:'independent_control_changed'},p_observed_at:new Date().toISOString()});attention++;continue;
       }
       const evidence=await implementations[job.kind](env,permit,{fetcher,rpc});
@@ -36,4 +39,4 @@ export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl
   }
   return {verified,attention};
 }
-export async function scheduledWork(env){const receipts=await flushReceipts(env);const reconciliation=await reconcileAttempts(env);const effects=await dispatchJobs(env);return {receipts,reconciliation,effects};}
+export async function scheduledWork(env){const receipts=await flushReceipts(env);const reconciliation=await reconcileAttempts(env);const effects=await dispatchJobs(env);const billing=await reconcileStripe(env);return {receipts,reconciliation,effects,billing};}
