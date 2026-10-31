@@ -5,7 +5,7 @@ import {commercialViews} from './commercial-ui.mjs';
 import {moneyDisplay,allowedReturnPath,FILE_TYPES,AI_TASKS} from './domain/contracts.mjs';
 import {AD_CHANNELS,adChannel} from './domain/channels.mjs';
 const app=document.querySelector('#app');
-const state={user:null,csrf:null,businesses:[],invitations:[],workspace:null,error:null,notice:null,busy:false,loginStep:'email',returnPath:'/workspace/',mfa:null};
+const state={navOpen:false,user:null,csrf:null,businesses:[],invitations:[],workspace:null,error:null,notice:null,busy:false,loginStep:'email',returnPath:'/workspace/',mfa:null};
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const label=value=>String(value??'').replaceAll('_',' ').replace(/^./,c=>c.toUpperCase());
 const org=()=>new URL(location.href).searchParams.get('business')||state.businesses[0]?.id;
@@ -28,7 +28,8 @@ const hidden=(key,value)=>`<input type="hidden" name="${key}" value="${esc(value
 const submit=(text='Save')=>`<button class="button" type="submit" ${state.busy?'disabled':''}>${state.busy?'Saving…':esc(text)}</button>`;
 const serviceSelect=(value='')=>select('Service','engagement_id',rows('engagements').filter(x=>x.service_state!=='closed').map(x=>[x.id,x.title]),value,'required');
 const alert=()=>`${state.error?`<div class="alert" role="alert" tabindex="-1">${esc(state.error)}</div>`:''}${state.notice?`<div class="success" role="status">${esc(state.notice)}</div>`:''}`;
-function navigate(url){history.pushState({},'',url);state.error=null;state.notice=null;render();window.scrollTo(0,0);document.querySelector('h1')?.focus({preventScroll:true});}
+function setNavigationOpen(open){state.navOpen=open;document.querySelector('.sidebar')?.classList.toggle('nav-open',open);const button=document.querySelector('.nav-toggle');if(button){button.setAttribute('aria-expanded',String(open));button.lastElementChild.textContent=open?'−':'+';button.focus();}}
+function navigate(url){state.navOpen=false;history.pushState({},'',url);state.error=null;state.notice=null;render();window.scrollTo(0,0);document.querySelector('h1')?.focus({preventScroll:true});}
 async function api(url,{method='GET',data,key,retry=true}={}){
   const response=await fetch(url,{method,credentials:'same-origin',headers:{...(data?{'Content-Type':'application/json','X-CSRF-Token':state.csrf}:{}),...(key?{'Idempotency-Key':key}:{})},...(data?{body:JSON.stringify(data)}:{})});
   const result=await response.json().catch(()=>({}));
@@ -52,7 +53,7 @@ function authView(){
 function shell(content){
   const section=path()[1]||'home',owner=path()[0]==='operator';const pending=rows('requests').filter(x=>x.state==='in_review').length;
   const nav=[['home','Overview'],['work','Your work'],['approvals','To review'],['messages','Messages'],['files','Files'],['ads','Advertising'],['results','Results'],['business','Business details'],['agreements','Agreements'],['onboarding','Getting started'],['billing','Billing'],['people','People & access'],['help','Help']];
-  return `<div class="app-shell"><aside class="sidebar">${brand()}<label class="business-select">Your business<select id="business-selector" aria-label="Choose a business">${state.businesses.map(b=>`<option value="${b.id}" ${b.id===org()?'selected':''}>${esc(b.name)}</option>`).join('')}</select></label><nav class="nav" aria-label="Workspace">${nav.map(([key,title])=>`<a href="${href(key==='home'?'':key)}" data-nav ${section===key&&!owner?'aria-current="page"':''}><span>${title}</span>${key==='approvals'&&pending?`<span class="count">${pending}</span>`:''}</a>`).join('')}</nav><div class="sidebar-bottom">${isOperator()?`<a class="operator-switch" href="${href('queue','',true)}" data-nav>Studio workspace ↗</a>`:''}<p>Clear steps. Considered work.<br>A little room to breathe.</p></div></aside><div class="content"><header class="topbar"><span class="context">${esc(state.workspace?.business.name||'Your businesses')} / ${owner?'Studio':esc(nav.find(x=>x[0]===section)?.[1]||'Your work')}</span><div class="identity"><span class="email">${esc(state.user.email)}</span><span class="avatar" aria-hidden="true">${esc((state.user.email||'Y')[0].toUpperCase())}</span><button class="text-button" data-action="logout">Sign out</button></div></header><main id="main" class="page">${alert()}${content}<p class="footer-note">Dates shown in ${esc(state.workspace?.business.timezone||'America/New_York')}. Last refreshed ${dateTime(new Date().toISOString())}.</p></main></div></div>`;
+  return `<div class="app-shell"><aside class="sidebar ${state.navOpen?'nav-open':''}">${brand()}<label class="business-select">Your business<select id="business-selector" aria-label="Choose a business">${state.businesses.map(b=>`<option value="${b.id}" ${b.id===org()?'selected':''}>${esc(b.name)}</option>`).join('')}</select></label><button class="nav-toggle" type="button" data-action="toggle-nav" aria-controls="workspace-nav" aria-expanded="${state.navOpen}" aria-label="Workspace menu"><span>Menu</span><span>${owner?'Studio':esc(nav.find(x=>x[0]===section)?.[1]||'Overview')}</span><span aria-hidden="true">${state.navOpen?'−':'+'}</span></button><nav id="workspace-nav" class="nav" aria-label="Workspace">${nav.map(([key,title])=>`<a href="${href(key==='home'?'':key)}" data-nav ${section===key&&!owner?'aria-current="page"':''}><span>${title}</span>${key==='approvals'&&pending?`<span class="count">${pending}</span>`:''}</a>`).join('')}${isOperator()?`<a class="operator-switch" href="${href('queue','',true)}" data-nav ${owner?'aria-current="page"':''}>Studio workspace ↗</a>`:''}</nav><div class="sidebar-bottom"><p>Clear steps. Considered work.<br>A little room to breathe.</p></div></aside><div class="content"><header class="topbar"><span class="context">${esc(state.workspace?.business.name||'Your businesses')} / ${owner?'Studio':esc(nav.find(x=>x[0]===section)?.[1]||'Your work')}</span><div class="identity"><span class="email">${esc(state.user.email)}</span><span class="avatar" aria-hidden="true">${esc((state.user.email||'Y')[0].toUpperCase())}</span><button class="text-button" data-action="logout">Sign out</button></div></header><main id="main" class="page">${alert()}${content}<p class="footer-note">Dates shown in ${esc(state.workspace?.business.timezone||'America/New_York')}. Last refreshed ${dateTime(new Date().toISOString())}.</p></main></div></div>`;
 }
 function heading(kicker,title,copy,action=''){return `<div class="page-heading"><div><p class="eyebrow">${esc(kicker)}</p><h1 tabindex="-1">${esc(title)}</h1><p class="muted">${esc(copy)}</p></div>${action}</div>`;}
 function requestRows(list){return list.length?`<ul class="rows">${list.map(r=>`<li class="row"><div class="row-main"><strong>${link('work',r.outcome,r.id)}</strong><p>${esc(engagement(r.engagement_id)?.title)} · ${r.due_at?'Due '+date(r.due_at):'Timing to be agreed'}</p></div>${badge(r.state)}</li>`).join('')}</ul>`:empty('Nothing waiting here','New requests and updates will appear here when there is work to do.');}
@@ -172,13 +173,15 @@ document.addEventListener('click',async event=>{
   const nav=event.target.closest('a[data-nav]');if(nav&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey){event.preventDefault();navigate(nav.getAttribute('href'));return;}
   const action=event.target.closest('[data-action]')?.dataset.action;if(!action||event.target.closest('form'))return;
   try{
-    if(action==='logout'){await api('/api/auth/logout',{method:'POST',data:{}});state.user=null;state.workspace=null;state.businesses=[];state.notice=null;state.error=null;state.loginStep='email';const s=await api('/api/session');state.csrf=s.csrf;render();}
+    if(action==='toggle-nav'){setNavigationOpen(!state.navOpen);}
+    else if(action==='logout'){await api('/api/auth/logout',{method:'POST',data:{}});state.user=null;state.workspace=null;state.businesses=[];state.notice=null;state.error=null;state.loginStep='email';const s=await api('/api/session');state.csrf=s.csrf;render();}
     else if(action==='restart-login'){state.loginStep='email';state.notice=null;render();}
     else if(action==='reload')await reload();
     else if(action==='mfa.enroll'){state.mfa=await api('/api/auth/mfa/enroll',{method:'POST',data:{}});render();}
   }catch(error){state.error=error.message;render();}
 });
-window.addEventListener('popstate',render);
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&state.navOpen&&matchMedia('(max-width:700px)').matches){setNavigationOpen(false);}});
+window.addEventListener('popstate',()=>{state.navOpen=false;render();});
 async function reload(){try{await loadWorkspace();state.error=null;}catch(error){state.error=error.message;}render();}
 async function start(){
   try{let session=await api('/api/session');state.csrf=session.csrf;if(!session.user&&session.refresh_available){try{const refreshed=await api('/api/auth/refresh',{method:'POST',data:{},retry:false});state.csrf=refreshed.csrf;session=await api('/api/session');}catch{}}state.user=session.user;state.returnPath=allowedReturnPath(location.pathname+location.search);if(state.user)await loadWorkspace();}

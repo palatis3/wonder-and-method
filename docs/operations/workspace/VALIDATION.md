@@ -307,3 +307,33 @@ context RPC, anonymous cannot start OAuth, service_role can claim callbacks.
 Advisors show only the existing intentional deny-all private-table/RPC-boundary
 categories (RLS without policies; authenticated SECURITY DEFINER entrypoints).
 No live authorization, provider app approval or production publication is implied.
+
+## Desktop and mobile optimization (owner request, 2026-10-30)
+
+Replaced the horizontally clipped mobile workspace links with an expandable
+menu exposing all customer sections and Studio access. Desktop navigation can
+scroll in short windows. Mobile inputs use 16px text; buttons, links in the menu,
+selects and disclosure controls have 44px minimum targets. Long names/IDs and
+buttons wrap. Narrow cards/forms, safe-area padding and table containment remain
+responsive. Escape closes the menu and returns focus. Menu updates do not rerender
+the work area, preserving unfinished drafts and selected files.
+
+Checks cover widths 320, 390, 768, 1024, 1440 and 1920, short desktop windows,
+long unbroken business names, all 13 customer sections, keyboard navigation,
+accessibility and reduced motion. Overflow compares with assigned device width,
+not mobile innerWidth (which can expand to accommodate accidental overflow), and
+waits for actual workspace content rather than the initial loading heading.
+
+Fourteen existing Chromium desktop/phone journeys passed. WebKit phone journeys
+and navigation passed; final long-content/accessibility checks passed in all
+three environments (6 cases). Draft/file preservation regression passed in all
+three (3 cases). Desktop/phone screenshots were visually inspected. Independent
+Astra review found the menu rerender issue, which was fixed; no remaining P0-P2
+responsive findings. CI now installs WebKit and runs the full workspace suite on
+Chromium desktop/phone plus WebKit phone.
+
+Public-site production build completed: 2,437 routes. Targeted public buyer,
+payment-card and live-resize journeys passed: 45 passed, 15 intentionally skipped
+for incompatible device conditions, across desktop/phone/reduced-motion projects.
+Public source layout was unchanged. The initial public test startup failed because
+this checkout had no built dist; it passed after building. No publication occurred.

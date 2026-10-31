@@ -74,8 +74,8 @@ test('catalog proposal, named signer, agreement acceptance and portable receipt 
 test('workspace pages have no horizontal overflow or automated serious accessibility violations',async({page})=>{
  test.setTimeout(90000);
  for(const section of ['','work','approvals','messages','files','ads','results','business','agreements','onboarding','billing','people','help']){
-  await page.goto(route(section));await expect(page.locator('h1')).toBeVisible();
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),section+' width').toBe(true);
+  await page.goto(route(section));await expect(page.locator('.page h1')).toBeVisible();
+  expect(await page.evaluate(expected=>document.documentElement.scrollWidth<=expected+1,page.viewportSize().width),section+' width').toBe(true);
   await page.addScriptTag({content:axe});const violations=await page.evaluate(async()=>{const result=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}));});
   expect(violations,section+' accessibility').toEqual([]);
  }
