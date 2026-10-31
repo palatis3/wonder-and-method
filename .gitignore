@@ -23,6 +23,7 @@ deployment/exports/
 deployment/*.local.json
 deployment/.dev.vars
 *.dpapi
+supabase/.temp/
 
 # Private delivery records and CRM inputs
 operations/jobs/

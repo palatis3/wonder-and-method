@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "wonder-method-workspace",
+  "main": "../../output/workspace/worker.mjs",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": false,
+  "triggers": {"crons": ["* * * * *"]},
+  "assets": {"directory": "../../output/workspace/assets", "binding": "ASSETS", "run_worker_first": true},
+  "vars": {"APP_ORIGIN": "https://app.wonderandmethod.com", "SUPABASE_URL": "https://qbjfabidetdyjavljnsd.supabase.co", "ENVIRONMENT": "production", "EFFECTS_ENABLED": "false", "FILE_POLICY": "invite_only_unscanned", "TENANT_BACKUPS_ENABLED": "false", "RECOVERY_WITNESS_ENABLED": "false", "MONITORING_ENABLED": "false"},
+  "unsafe": {"bindings": [{"name": "AUTH_LIMITER", "type": "ratelimit", "namespace_id": "1120", "simple": {"limit": 30, "period": 60}}]},
+  "env": {
+    "staging": {
+      "name": "wonder-method-workspace-staging",
+      "workers_dev": true,
+      "triggers": {"crons": ["* * * * *"]},
+      "vars": {"APP_ORIGIN": "https://workspace-staging.wonderandmethod.com", "SUPABASE_URL": "https://lobowejsstuoicjxoqmy.supabase.co", "ENVIRONMENT": "staging", "EFFECTS_ENABLED": "false", "FILE_POLICY": "invite_only_unscanned", "TENANT_BACKUPS_ENABLED": "false", "RECOVERY_WITNESS_ENABLED": "false", "MONITORING_ENABLED": "false"},
+      "unsafe": {"bindings": [{"name": "AUTH_LIMITER", "type": "ratelimit", "namespace_id": "1121", "simple": {"limit": 30, "period": 60}}]}
+    }
+  }
+}

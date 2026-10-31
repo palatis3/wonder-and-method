@@ -1,0 +1,468 @@
+{
+  "checkedAt": "2026-10-30",
+  "method": "Prior evidence retained with original dates; targeted official pages rechecked 2026-10-30 for V2. Research reread documented in RESEARCH-COVERAGE.json. No fresh video viewing or current-price survey claimed.",
+  "v3OfficialAndUX": [
+    {
+      "id": "X01",
+      "title": "Simplify forms: eliminate, automate, simplify",
+      "kind": "UX guidance",
+      "url": "https://www.nngroup.com/articles/eas-framework-simplify-forms/",
+      "finding": "NN/g recommends removing unnecessary questions before automating and simplifying remaining input.",
+      "caveat": "Use as design guidance; actual W&M task completion must be observed.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X02",
+      "title": "Cloudflare Workers pricing",
+      "kind": "Official documentation",
+      "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+      "finding": "Workers Paid has a $5 monthly subscription with included usage and metered overages.",
+      "caveat": "Platform subscription is not the full operating cost; existing billing may reduce incremental cost.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X03",
+      "title": "Cloudflare D1 limits",
+      "kind": "Official documentation",
+      "url": "https://developers.cloudflare.com/d1/platform/limits/",
+      "finding": "Paid databases have a 10 GB per-database limit and 30-day Time Travel; Free has 500 MB per database and seven-day Time Travel.",
+      "caveat": "Recovery windows do not replace independent exports or object backups.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X04",
+      "title": "Cloudflare D1 pricing",
+      "kind": "Official documentation",
+      "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+      "finding": "D1 meters rows read, rows written and storage, with included plan allowances.",
+      "caveat": "Index design affects scanned rows; avoid treating the service as unlimited.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X05",
+      "title": "Cloudflare Queues delivery",
+      "kind": "Official documentation",
+      "url": "https://developers.cloudflare.com/queues/reference/delivery-guarantees/",
+      "finding": "Queues uses at-least-once delivery and can deliver a message more than once.",
+      "caveat": "Application-level deduplication and provider reconciliation are still needed.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X06",
+      "title": "Cloudflare Workflows rules",
+      "kind": "Official documentation",
+      "url": "https://developers.cloudflare.com/workflows/build/rules-of-workflows/",
+      "finding": "Workflow steps are individually retryable; documentation recommends idempotent external operations.",
+      "caveat": "A workflow engine does not make an arbitrary external action exactly-once.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X07",
+      "title": "Supabase pricing",
+      "kind": "Official pricing",
+      "url": "https://supabase.com/pricing",
+      "finding": "Pro starts at $25/month; first project included; paid usage and additional projects can increase the total. Free projects can pause after inactivity.",
+      "caveat": "Verify compute, storage, egress and add-ons for the selected account before purchase.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X08",
+      "title": "Supabase row-level security",
+      "kind": "Official documentation",
+      "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "finding": "RLS can constrain record access; privileged service access and some views/functions can bypass policies.",
+      "caveat": "Managed infrastructure is not a substitute for tested tenant authorization.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X09",
+      "title": "Supabase production auth email",
+      "kind": "Official documentation",
+      "url": "https://supabase.com/docs/guides/auth/auth-smtp",
+      "finding": "The default mailer is restricted to project team addresses and currently two messages/hour; production delivery needs custom SMTP.",
+      "caveat": "Configure and test real recipient delivery, rate limits and account recovery.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X10",
+      "title": "Email link prefetching",
+      "kind": "Official documentation",
+      "url": "https://supabase.com/docs/guides/auth/auth-email-templates",
+      "finding": "Security scanners can consume one-time links. Supabase documents OTP and an intermediate confirmation page as mitigations.",
+      "caveat": "Also test task return, expired links and disabled email link tracking.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X11",
+      "title": "Database backups exclude file bytes",
+      "kind": "Official documentation",
+      "url": "https://supabase.com/docs/guides/platform/backups",
+      "finding": "Pro retains seven days of daily database backups; Storage object bytes are not included in database backups.",
+      "caveat": "Back up and restore files separately and reconcile them with database metadata.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X12",
+      "title": "Resend inbound message content",
+      "kind": "Official documentation",
+      "url": "https://resend.com/docs/dashboard/receiving/get-email-content",
+      "finding": "Received-email webhooks provide metadata; body, headers and attachments require subsequent API retrieval.",
+      "caveat": "Durably accept the receipt before asynchronous retrieval and handle retrieval failure visibly.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X13",
+      "title": "Resend attachment retrieval",
+      "kind": "Official documentation",
+      "url": "https://resend.com/docs/dashboard/receiving/attachments",
+      "finding": "Attachment download URLs are valid for one hour and can be refreshed through the API.",
+      "caveat": "Copy accepted file bytes to private application storage; do not make temporary URLs the permanent attachment record.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X14",
+      "title": "Resend idempotency window",
+      "kind": "Official documentation",
+      "url": "https://resend.com/changelog/idempotency-keys",
+      "finding": "Resend retains idempotency keys for 24 hours.",
+      "caveat": "Keep a durable local operation ledger; reconcile late/unknown sends rather than relying forever on provider deduplication.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X15",
+      "title": "Stripe webhook behavior",
+      "kind": "Official documentation",
+      "url": "https://docs.stripe.com/webhooks",
+      "finding": "Stripe documents signature validation, duplicate deliveries and non-guaranteed event order. Current provider objects can resolve missing or stale events.",
+      "caveat": "A duplicate event differs from a genuine second charge; do not collapse distinct financial transactions.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X16",
+      "title": "ManyRequests email intake rules",
+      "kind": "Official product documentation",
+      "url": "https://help.manyrequests.com/en/articles/14810294-how-to-send-requests-via-email",
+      "finding": "Known-client matching is required; some ineligible senders are ignored without notification. Service selection follows a documented order, and attachments over 25 MB are skipped.",
+      "caveat": "A concrete fit gap to test, not proof the whole product is unsuitable. Current vendor behavior can change.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X17",
+      "title": "ManyRequests pricing",
+      "kind": "Official pricing",
+      "url": "https://www.manyrequests.com/pricing",
+      "finding": "Monthly Core is $59 and Pro $99, each with one internal seat. Core includes requests/proofing; Pro lists webhooks and more notification controls.",
+      "caveat": "Additional seats, annual terms, integration costs and payment fees need a real quote.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X18",
+      "title": "Assembly multi-company clients",
+      "kind": "Official product documentation",
+      "url": "https://assembly.com/blog/multi-company-clients",
+      "finding": "Professional and above supports one login switching between assigned companies; the article describes up to 30 companies per client.",
+      "caveat": "Verify current plan/limits and isolation with actual tasks; this does not prove every approval requirement.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X19",
+      "title": "Assembly plan selection",
+      "kind": "Official pricing; Dot review",
+      "url": "https://assembly.com/pricing",
+      "finding": "Dot found API/custom-domain/automation and audit/access features at different plan tiers; dynamic numeric prices were not reliably readable.",
+      "caveat": "Exact cost is deliberately unresolved. Confirm required features and current monthly quote before selecting.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X20",
+      "title": "Wayfront pricing (SPP successor route)",
+      "kind": "Official pricing",
+      "url": "https://wayfront.com/pricing",
+      "finding": "Base lists $129 monthly/$99 annual-equivalent; Pro $299/$249. Client coworkers are listed on Pro; integration API is an add-on choice.",
+      "caveat": "Verify checkout terms and API cost. Coworkers do not by themselves prove unrelated multi-business switching.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X21",
+      "title": "Clerk managed-auth cost",
+      "kind": "Official pricing",
+      "url": "https://clerk.com/pricing",
+      "finding": "Pro is $25 monthly or $20/month billed annually; organization features and usage can add cost.",
+      "caveat": "Identity service plans do not enforce application D1 record permissions.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X22",
+      "title": "Structured AI output still needs validation",
+      "kind": "Official OpenAI documentation",
+      "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "finding": "Structured Outputs can still contain mistakes despite meeting a schema.",
+      "caveat": "Validate facts and authority separately; a schema is not proof of a correct business decision.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X23",
+      "title": "AI tools and review gates",
+      "kind": "Official OpenAI documentation",
+      "url": "https://developers.openai.com/api/docs/guides/agents/guardrails-approvals",
+      "finding": "The documentation demonstrates explicit review before a tool action executes.",
+      "caveat": "The W&M design additionally enforces application permissions and state checks; prompts alone are not controls.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X24",
+      "title": "AI API data controls",
+      "kind": "Official OpenAI documentation",
+      "url": "https://developers.openai.com/api/docs/guides/your-data",
+      "finding": "Retention varies by API feature and account controls; default abuse-monitoring retention can be up to 30 days.",
+      "caveat": "Do not describe store:false as blanket zero retention. Minimize submitted customer data and verify account policy.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X25",
+      "title": "External cron heartbeat",
+      "kind": "Official documentation",
+      "url": "https://healthchecks.io/docs/",
+      "finding": "Healthchecks.io alerts when expected scheduled-job pings stop arriving.",
+      "caveat": "An independent monitor can detect a stopped scheduler; it still needs an alert-delivery test and an owner.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X26",
+      "title": "Portal updates and email disconnected",
+      "kind": "First-person forum report",
+      "url": "https://forum.asana.com/t/feature-request-client-portal-access-management-email-notifications-and-email-integration/1158928",
+      "finding": "An October 18, 2026 poster asks for contact access records, email notification and linked conversation history after portal updates go unnoticed.",
+      "caveat": "Unverified account-level experience, not a comprehensive current Asana product audit or prevalence estimate.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X27",
+      "title": "Automation upkeep exceeded expectation",
+      "kind": "First-person public report",
+      "url": "https://www.reddit.com/r/n8n/comments/1tot6ou/",
+      "finding": "A poster reports 7–9 monthly hours maintaining three workflows after budgeting roughly two hours.",
+      "caveat": "One unverified report; do not use as an industry benchmark or forecast.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X28",
+      "title": "Inactive workflow discovered by customer",
+      "kind": "First-person public report",
+      "url": "https://www.reddit.com/r/n8n/comments/1tyzc1p/",
+      "finding": "A poster says lead synchronization stopped for three days after a workflow became inactive, with the customer reporting it first.",
+      "caveat": "Unverified story; motivates an external heartbeat and outcome check rather than a measured failure rate.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "id": "X29",
+      "title": "Resend plan and sending limits",
+      "kind": "Official pricing",
+      "url": "https://resend.com/pricing",
+      "finding": "The plan comparison distinguishes a daily free-tier sending limit and paid usage. Sending and receiving consume transactional allowance.",
+      "caveat": "Retain the existing account where suitable. Reconfirm the exact plan quote; V3 does not treat a placeholder email budget as a verified total.",
+      "checkedAt": "2026-10-30"
+    }
+  ],
+  "adsAndRecovery": [
+    {
+      "id": "G01",
+      "title": "Google Ads token migration",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "finding": "Body documents September 9, 2026 sunset and project-based access; stale page summary conflicts. Primary agent checked."
+    },
+    {
+      "id": "G02",
+      "title": "Google Ads access levels",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "finding": "Current project access tiers, quota windows and restricted Explorer operations. Primary agent checked."
+    },
+    {
+      "id": "G03",
+      "title": "Google Ads spending limits",
+      "url": "https://support.google.com/google-ads/answer/10486637",
+      "finding": "Most-campaign limits; mid-month/budget/schedule caveats. Primary agent checked."
+    },
+    {
+      "id": "G04",
+      "title": "Google fees transparency",
+      "url": "https://support.google.com/adspolicy/answer/16489093?hl=en",
+      "finding": "Dot checked; separate agency fees and platform costs."
+    },
+    {
+      "id": "G05",
+      "title": "Manager ownership",
+      "url": "https://support.google.com/google-ads/answer/7456532?hl=en",
+      "finding": "Dot checked; client account control and manager privileges."
+    },
+    {
+      "id": "G06",
+      "title": "Conversion action roles",
+      "url": "https://support.google.com/google-ads/answer/11461796?hl=en",
+      "finding": "Dot checked; primary/secondary and custom-goal behavior."
+    },
+    {
+      "id": "G07",
+      "title": "Consent mode",
+      "url": "https://support.google.com/google-ads/answer/10000067?hl=en",
+      "finding": "Dot checked; signals do not themselves supply consent."
+    },
+    {
+      "id": "G08",
+      "title": "Customer-data policies",
+      "url": "https://support.google.com/google-ads/answer/7475709?hl=en",
+      "finding": "Dot checked; permitted first-party data and terms."
+    },
+    {
+      "id": "G09",
+      "title": "Responsive search ads",
+      "url": "https://support.google.com/google-ads/answer/7684791?hl=en",
+      "finding": "Dot checked; asset combinations mean screenshot alone is insufficient approval."
+    },
+    {
+      "id": "G10",
+      "title": "Ads freshness",
+      "url": "https://support.google.com/google-ads/answer/2544985?hl=en",
+      "finding": "Dot checked; platform observation is delayed and may be revised."
+    },
+    {
+      "id": "G11",
+      "title": "GA4 freshness",
+      "url": "https://support.google.com/analytics/answer/12233314?hl=en",
+      "finding": "Dot checked; processing and later attribution changes."
+    },
+    {
+      "id": "G12",
+      "title": "Manager unlinking",
+      "url": "https://support.google.com/google-ads/answer/7458428?hl=en",
+      "finding": "Dot checked; unlinking is not universal pause."
+    },
+    {
+      "id": "G13",
+      "title": "Data Manager",
+      "url": "https://support.google.com/google-ads/answer/15707550?hl=en",
+      "finding": "Dot checked; supported conversion ingestion before custom uploader."
+    },
+    {
+      "id": "G14",
+      "title": "Advertiser verification",
+      "url": "https://support.google.com/adspolicy/answer/9703665?hl=en",
+      "finding": "Dot checked; account-specific verification prerequisite."
+    },
+    {
+      "id": "G15",
+      "title": "Ads REST auth",
+      "url": "https://developers.google.com/google-ads/api/rest/auth",
+      "finding": "Dot checked; OAuth and account context; scope not read-only."
+    },
+    {
+      "id": "G16",
+      "title": "Supabase backups",
+      "url": "https://supabase.com/docs/guides/platform/backups",
+      "finding": "Primary agent and Dot checked; database backup does not replace object byte backup."
+    },
+    {
+      "id": "G17",
+      "title": "R2 bucket locks",
+      "url": "https://developers.cloudflare.com/r2/buckets/bucket-locks/",
+      "finding": "Primary agent checked; configurable retention blocks object deletion/overwrite; admin and correlated-provider risks still require separate controls."
+    },
+    {
+      "id": "G18",
+      "title": "Browser origin boundary",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Same-origin_policy",
+      "finding": "Independent judge checked; public/private paths on one origin do not isolate executable scripts."
+    }
+  ],
+  "siteBaseline": {
+    "live": "https://wonderandmethod.com/",
+    "local": "v4-implementation-20261029/site",
+    "commit": "bb562cf",
+    "checked": "Homepage DOM and visual style; catalog, navigation, intake and active styles read. No claim of a complete live-site audit."
+  },
+  "v2Checked": [
+    {
+      "title": "Google project access",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "finding": "Body documents September 2026 token sunset; stale summary conflicts; use current body/project access.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Google API levels",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "finding": "Project production permissions/quotas and restricted services must match adapter.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Google test accounts",
+      "url": "https://developers.google.com/google-ads/api/docs/best-practices/test-accounts",
+      "finding": "Test accounts do not establish serving/performance/billing/conversion uploads.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Cloudmersive scan",
+      "url": "https://api.cloudmersive.com/docs/virus.asp",
+      "finding": "Advanced endpoint exposes explicit file/content restrictions and clean result.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Cloudmersive limits",
+      "url": "https://cloudmersive.com/virus-api",
+      "finding": "Files over 10MB require paid plan; chosen 20MB limit requires applicable entitlement.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Cloudmersive security",
+      "url": "https://cloudmersive.com/security",
+      "finding": "Vendor states stateless payload processing; actual region/terms still need setup verification.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Stripe portal",
+      "url": "https://docs.stripe.com/customer-management",
+      "finding": "Billing detail/subscription portal must be connected to local closure workflow.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Stripe events",
+      "url": "https://docs.stripe.com/webhooks",
+      "finding": "Signed events, duplicates/order and current-object reconciliation.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Stripe subscriptions",
+      "url": "https://docs.stripe.com/billing/subscriptions/webhooks",
+      "finding": "Payment/authentication/invoice and subscription states need explicit handling.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Resend receiving",
+      "url": "https://resend.com/docs/dashboard/receiving/introduction",
+      "finding": "Inbound webhook, body retrieval and temporary attachment URLs require durable processing.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "GA4 reporting",
+      "url": "https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart",
+      "finding": "Data API requires authorized property access.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Search Console inspection",
+      "url": "https://developers.google.com/webmaster-tools/v1/urlInspection.index/inspect",
+      "finding": "Only indexed-version inspection; cannot test live URL indexability.",
+      "checkedAt": "2026-10-30"
+    },
+    {
+      "title": "Supabase backups",
+      "url": "https://supabase.com/docs/guides/platform/backups",
+      "finding": "Database backups do not replace independently backed up object bytes.",
+      "checkedAt": "2026-10-30"
+    }
+  ],
+  "sourceConflicts": [
+    "Historical Footbridge ownership claims disagree; no competitor-ownership claim used.",
+    "Care monthly_terms.baseline stale $375/$650 versus current $195/$395 schedule; V2 new-quote precedence explicitly reconciled.",
+    "Historic pilot/buy-first sequence superseded by latest user complete-before-acquisition direction."
+  ]
+}

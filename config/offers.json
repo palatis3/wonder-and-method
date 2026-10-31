@@ -1573,7 +1573,7 @@
   },
   "monthly_terms": {
     "eligibility": "One supported website, one main market and one agreed monthly objective, with a named set of covered accounts and workflows. Approved static/source-code websites, supported existing CMS sites and defined workflows require account, permissions, provider and compatibility review. Multiple locations, languages, new templates, unknown legacy applications, arbitrary plugin stacks and complex systems need separate scope.",
-    "baseline": "Existing-site Care onboarding is $375 for a supported brochure site or $650 for a supported store when needed. A usable prior handoff or paid review reduces duplicated work and the quoted fee. Website Roadmap is a separate diagnostic service, not an automatic enrollment charge.",
+    "baseline": "Care onboarding is $195 for Brochure or $395 for Commerce. It is waived immediately after a W&M build with the same complete handoff, and for the first three approved introductory monthly production clients who select Care. Standalone Care retains its onboarding fee. The full compatibility, access, monitoring and recovery checks still apply. Production-only plans have no Care onboarding charge; a pre-start fit and access review is included. Any remediation is agreed separately before acceptance. Eligibility and the exact first invoice are confirmed before payment.",
     "small_batch": "One monthly batch of supplied text/image edits, up to 60 minutes, for either Brochure or Commerce Care. New page design and original copywriting belong to a production plan or separate scope.",
     "priority": "Agree the monthly output, purpose, evidence, acceptance checks and feedback round before work starts. A researched guide uses both Local Search Partnership units; output counts are not word caps.",
     "queue": "One agreed work queue per site. Each selected output has its own completion check. Research, planning, reporting and relevant publication checks support the output rather than replacing it. Defects and unfinished promised work do not consume a new paid allowance.",
@@ -3028,5 +3028,42 @@
   "introductory_terms": "Your accepted fixed project keeps its written price and scope. One month is billed in advance. Cancel before the next billing date to stop the next cycle. Monthly clients keep the quoted fee for their first three paid cycles. After that, the same fee continues until a written change has at least 30 days notice. There is no automatic price increase or annual lock-in. Availability is confirmed against actual delivery capacity before booking.",
   "hosting_offset_terms": "Brochure Care, standalone or bundled, offsets your documented eligible supported hosting bill by up to $25/month. You own and pay the hosting account; the offset reduces the W&M invoice. With $20 hosting, a $299 bundle means $279 to W&M plus $20 to the host. With $50 hosting it means $274 plus $50, or $324 total. No hosting bill means no offset. Commerce and production-only plans receive no hosting offset. Domains, platform licenses, apps, taxes and other vendor charges remain separate.",
   "monthly_onboarding_terms": "Care onboarding is $195 for Brochure or $395 for Commerce. It is waived immediately after a W&M build with the same complete handoff, and for the first three approved introductory monthly production clients who select Care. Standalone Care retains its onboarding fee. The full compatibility, access, monitoring and recovery checks still apply. Production-only plans have no Care onboarding charge; a pre-start fit and access review is included. Any remediation is agreed separately before acceptance. Eligibility and the exact first invoice are confirmed before payment.",
-  "first_cycle_measurement": "The first paid production cycle includes missing supported native GA4 and Search Console setup plus one inquiry-success event, using client-approved consent settings. Working measurement is reused. There is no separate fee for this basic setup; advanced tagging or dashboards need an incremental quote. If native setup is unavailable, agree an equivalent or revised scope before payment. The cycle still includes all promised production outputs."
+  "first_cycle_measurement": "The first paid production cycle includes missing supported native GA4 and Search Console setup plus one inquiry-success event, using client-approved consent settings. Working measurement is reused. There is no separate fee for this basic setup; advanced tagging or dashboards need an incremental quote. If native setup is unavailable, agree an equivalent or revised scope before payment. The cycle still includes all promised production outputs.",
+  "search_ads": {
+    "id": "search_ads",
+    "public_name": "Google Search Ads",
+    "currency": "USD",
+    "setup_price": 1250,
+    "monthly_price": 750,
+    "media_billing": "Client pays Google directly; media is separate from the studio fee.",
+    "scope": {
+      "accounts": 1,
+      "websites": 1,
+      "principal_offers": 1,
+      "languages": 1,
+      "search_campaigns": 2,
+      "ad_groups": 6,
+      "initial_revision_rounds": 1
+    },
+    "milestones": [
+      {
+        "id": "readiness",
+        "percent": 20
+      },
+      {
+        "id": "campaign_build",
+        "percent": 60
+      },
+      {
+        "id": "verified_launch",
+        "percent": 20
+      }
+    ],
+    "monthly_starts": "Agreed verified launch or service-start date; recurs on its anniversary.",
+    "measurement": "Reuse existing working measurement and included website or monthly-plan entitlements. Additional work is agreed separately.",
+    "ownership": "The client owns their Google account and retains administrator access.",
+    "coverage": "Monday–Friday, 9am–5pm America/New_York, excluding announced holidays. Ordinary acknowledgment within one business day.",
+    "cancellation": "Immediate or period-end cancellation under the accepted agreement; campaign stop/transfer and billing confirmation are tracked separately.",
+    "publication_status": "implementation_pending"
+  }
 }

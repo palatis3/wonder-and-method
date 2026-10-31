@@ -1,0 +1,313 @@
+{
+  "status": "Requirements map; implementation not yet verified",
+  "capabilities": [
+    {
+      "id": "C01",
+      "feature": "Public buying path",
+      "backlog": "B14",
+      "screens": "Public pages/contact",
+      "records": "Catalog + D1 intake",
+      "tests": [
+        "V214",
+        "V235"
+      ],
+      "runbook": "Owner publishes coherent offer; public intake persists independently",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C02",
+      "feature": "Identity and multi-business access",
+      "backlog": "B03",
+      "screens": "Sign in/People/Business switcher",
+      "records": "profiles/memberships/authorities",
+      "tests": [
+        "AD31",
+        "AD32",
+        "V227"
+      ],
+      "runbook": "Auth recovery and current authority verification",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C03",
+      "feature": "Opportunity/proposal/agreement",
+      "backlog": "B04",
+      "screens": "Owner intake + customer proposal",
+      "records": "opportunities/agreements/catalog_snapshots",
+      "tests": [
+        "V201",
+        "V227"
+      ],
+      "runbook": "Versioned signatory and amendment path",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C04",
+      "feature": "Billing and cancellation",
+      "backlog": "B05",
+      "screens": "Billing + owner finance",
+      "records": "billing_schedules/payment_references/adjustments",
+      "tests": [
+        "V202",
+        "V203",
+        "V204",
+        "V228"
+      ],
+      "runbook": "Provider reconciliation and service-specific closure",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C05",
+      "feature": "Account and fact readiness",
+      "backlog": "B06",
+      "screens": "Readiness/profile/assets",
+      "records": "business_facts/access_requirements/asset_rights",
+      "tests": [
+        "V208",
+        "V215"
+      ],
+      "runbook": "Existing/no-account/need-help branches",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C06",
+      "feature": "Conversation and private files",
+      "backlog": "B06",
+      "screens": "Files & messages/triage",
+      "records": "messages/attachments/event_receipts",
+      "tests": [
+        "V219",
+        "AD32",
+        "F3-04"
+      ],
+      "runbook": "Resend retrieval/scan/bounce/visibility recovery",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C07",
+      "feature": "Requests and material approval",
+      "backlog": "B07",
+      "screens": "Work/review/operator acceptance",
+      "records": "requests/revisions/decisions",
+      "tests": [
+        "AD02",
+        "AD07",
+        "F3-10"
+      ],
+      "runbook": "Exact current artifact and authority; routine standing scope",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C08",
+      "feature": "Search campaign execution",
+      "backlog": "B08",
+      "screens": "Ads & budget/operator launch",
+      "records": "campaign_bindings/budget_authorizations/operations",
+      "tests": [
+        "V205",
+        "V206",
+        "AD22"
+      ],
+      "runbook": "Readback, drift, partial/unknown effect reconciliation",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C09",
+      "feature": "Stop and coverage",
+      "backlog": "B08",
+      "screens": "Stop ads/status/help",
+      "records": "service_pauses/incidents/operations",
+      "tests": [
+        "V207",
+        "V236",
+        "V221",
+        "AD10"
+      ],
+      "runbook": "Native provider/admin fallback and verified pause",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C10",
+      "feature": "Measurement and outcome quality",
+      "backlog": "B09",
+      "screens": "Results/lead feedback",
+      "records": "measurement_checks/lead_outcomes/import_runs",
+      "tests": [
+        "V216",
+        "V217",
+        "AD04",
+        "AD05"
+      ],
+      "runbook": "Defined source/producer, unknowns and receipt path",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C11",
+      "feature": "Reports and source freshness",
+      "backlog": "B09",
+      "screens": "Results/report review",
+      "records": "metric_snapshots/reports/connected_accounts",
+      "tests": [
+        "V225",
+        "AD11",
+        "AD12",
+        "AD14"
+      ],
+      "runbook": "Last complete snapshot and source revision",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C12",
+      "feature": "Website/project delivery",
+      "backlog": "B10",
+      "screens": "Website milestone/review/handoff",
+      "records": "website_releases/milestones/entitlements",
+      "tests": [
+        "V209",
+        "V210",
+        "V213"
+      ],
+      "runbook": "Approved bytes, deployment, live checks and usable handoff",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C13",
+      "feature": "SEO production",
+      "backlog": "B10",
+      "screens": "SEO plan/content/results",
+      "records": "seo_plans/seo_items/reports",
+      "tests": [
+        "V211",
+        "V215"
+      ],
+      "runbook": "Publication distinct from search observations",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C14",
+      "feature": "Care and commerce service support",
+      "backlog": "B10",
+      "screens": "Care checks/allowance",
+      "records": "care_checks/allowance_entries",
+      "tests": [
+        "V212",
+        "V213",
+        "V214"
+      ],
+      "runbook": "Contract-specific checks, correction and recovery",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C15",
+      "feature": "Owner operations and workload",
+      "backlog": "B11",
+      "screens": "Work/Clients/Reports/Operations",
+      "records": "commitments/time_entries/capacity/incidents",
+      "tests": [
+        "V221",
+        "V226",
+        "V232"
+      ],
+      "runbook": "Promises plus exceptions; cover and honest dates",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C16",
+      "feature": "AI preparation",
+      "backlog": "B12",
+      "screens": "Embedded request/report helper",
+      "records": "ai_runs/source revisions",
+      "tests": [
+        "V230",
+        "F14",
+        "F3-16"
+      ],
+      "runbook": "Configured/evaluated provider; original/template fallback",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C17",
+      "feature": "Exports, retention and recovery",
+      "backlog": "B13",
+      "screens": "Export/help/operator recovery",
+      "records": "backup_manifests/retention_actions/recovery_scopes",
+      "tests": [
+        "V220",
+        "V223",
+        "V229",
+        "AD33"
+      ],
+      "runbook": "Scoped independent restoration and provider reconciliation",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    },
+    {
+      "id": "C18",
+      "feature": "Complete release readiness",
+      "backlog": "B15",
+      "screens": "Owner readiness record",
+      "records": "Versioned tests/provider register/runbooks",
+      "tests": [
+        "V224",
+        "V231",
+        "V233",
+        "AD30"
+      ],
+      "runbook": "All promised capabilities verified before acquisition",
+      "owner": "W&M accountable operator; implementation owner assigned before work",
+      "implementation": "not_started",
+      "evidence": null,
+      "providerDependency": "See Technical §9–12 and actual production readiness record"
+    }
+  ]
+}

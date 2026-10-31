@@ -1,0 +1,208 @@
+{
+  "schema": 1,
+  "reviewedOn": "2026-10-31",
+  "beforeCommit": "97d76c0a32f6fa7dc87b03b16a58f85ac6118a67",
+  "sourceRepairCommit": "cd8e573ef5531c45e80c1e35da8107b4746d27b8",
+  "reason": "Two confirmed outbound 404s required source-backed corrections. Replay only these exact reviewed records for frozen historical acceptance; do not refresh old baselines.",
+  "records": [
+    {
+      "path": "/areas/florida/highlands-county/",
+      "beforeSha256": "7e00ac1d555db09338828c395f26705d3cf6d850687f6762cbadd6d62228e554",
+      "afterSha256": "03caa111324fc3a1b7c4e5009fe1a87af3255f137d2f9a250562b55f762bfe30",
+      "changedFields": [
+        "decision",
+        "sources",
+        "checkedDate"
+      ],
+      "edits": [
+        {
+          "key": "decision",
+          "before": "Signsmith in Sebring presents custom sign cabinets with a structured quote form and separately describes dimensional metal signs beginning with design and scaled drawings. Its cabinet form asks about dimensions, mounting and finish; the metal-sign page begins with a general project inquiry. I can clarify those offers on an existing website or build a fuller capability introduction. The buyer should know whether they are describing a component to fabricate or asking the team to develop a sign concept, while keeping site and installation responsibilities visible.",
+          "after": "Signsmith in Sebring describes sign cabinets made to specified sizes with several mounting options, and separately presents dimensional metal signs with scaled drawings and renderings. Both service pages invite project inquiries. I can clarify those offers on an existing website or build a fuller capability introduction. The buyer should know whether they are describing a component to fabricate or asking the team to develop a sign concept, while keeping site and installation responsibilities visible."
+        },
+        {
+          "key": "sources",
+          "before": [
+            {
+              "url": "https://www.signsmithflorida.com/about-1",
+              "label": "Signsmith: sign-cabinet quotation",
+              "observation": "Describes cabinet configurations and collects dimensions, mounting, finish and buyer-role information."
+            },
+            {
+              "url": "https://www.signsmithflorida.com/metalsigns",
+              "label": "Signsmith: dimensional metal-sign process",
+              "observation": "Describes design and scaled drawings, fabrication and lighting, with a general inquiry route."
+            }
+          ],
+          "after": [
+            {
+              "url": "https://www.signsmithflorida.com/signcabinets",
+              "label": "Signsmith: sign cabinets and mounting options",
+              "observation": "Describes cabinets fabricated in Sebring to the buyer’s size and specifications, wall and pole mounting options, and a project inquiry route."
+            },
+            {
+              "url": "https://www.signsmithflorida.com/metalsigns",
+              "label": "Signsmith: dimensional metal-sign process",
+              "observation": "Describes design and scaled drawings, fabrication and lighting, with a general inquiry route."
+            }
+          ]
+        },
+        {
+          "key": "checkedDate",
+          "before": "2026-10-23",
+          "after": "2026-10-31"
+        }
+      ]
+    },
+    {
+      "path": "/areas/north-carolina/davie-county/",
+      "beforeSha256": "7cf28e7ea582b51930e9f025b0f963742fe59ac3703a35ff3d1dfec0beb5215f",
+      "afterSha256": "0d30d0ea0d570ef08fa1f94e154a2ea391ed04646e8d0557e9814902a3bf66dd",
+      "changedFields": [
+        "decision",
+        "scopes",
+        "coverageNote",
+        "sources",
+        "checkedDate"
+      ],
+      "edits": [
+        {
+          "key": "decision",
+          "before": "Shirt Works Creations in Mocksville offers in-house designs and logos alongside screen and DTF printing, and invites race teams to put names and numbers on shirts. For a custom apparel business, the website can help a customer describe what should be recognizable in the design before asking for production details. I can clarify that introduction or build a fuller design-to-apparel explanation connecting the team identity, supplied references and intended products.",
+          "after": "Killer Impressions in Lexington explicitly serves Davie County and describes in-house graphics design and screen printing, alongside apparel embroidery. Its examples include shirts, hoodies and shopping bags. For a custom apparel business, the website can help a customer describe what should be recognizable in the design before asking for production details. I can clarify that introduction or build a fuller design-to-apparel explanation connecting the team identity, supplied references and intended products."
+        },
+        {
+          "key": "scopes",
+          "before": [
+            {
+              "title": "Clarify the design starting point",
+              "pages": [
+                "Team or business identity",
+                "Existing logo and references",
+                "Apparel inquiry"
+              ],
+              "request": "Explain how to begin with a name, number, existing image or request for a new design.",
+              "supplies": "Approved examples showing the customer’s starting material and the design work the shop contributed.",
+              "check": "A race-team organizer with a name and number can ask for design help without pretending to have a finished print file."
+            },
+            {
+              "title": "Connect identity and finished products",
+              "pages": [
+                "Design purpose and audience",
+                "Names, numbers and visual references",
+                "Apparel and other products",
+                "Review and production discussion"
+              ],
+              "request": "Show how the same identity appears in the requested products while keeping design decisions open for review.",
+              "supplies": "Actual design services, product categories, example captions and the process for reviewing design and print details.",
+              "check": "A customer asking for shirts and bags can explain the identity that should carry across both and identify where the layout still needs work."
+            }
+          ],
+          "after": [
+            {
+              "title": "Clarify the design starting point",
+              "pages": [
+                "Team or business identity",
+                "Existing logo and references",
+                "Apparel inquiry"
+              ],
+              "request": "Explain how to begin with a name, number, existing image or request for a new design.",
+              "supplies": "Approved examples showing the customer’s starting material and the design work the shop contributed.",
+              "check": "A team organizer with a name and number can ask for design help without pretending to have a finished print file."
+            },
+            {
+              "title": "Connect identity and finished products",
+              "pages": [
+                "Design purpose and audience",
+                "Names, numbers and visual references",
+                "Apparel and other products",
+                "Review and production discussion"
+              ],
+              "request": "Show how the same identity appears in the requested products while keeping design decisions open for review.",
+              "supplies": "Actual design services, product categories, example captions and the process for reviewing design and print details.",
+              "check": "A customer asking for shirts and bags can explain the identity that should carry across both and identify where the layout still needs work."
+            }
+          ]
+        },
+        {
+          "key": "coverageNote",
+          "before": "For Davie County, NC website buyers. Shirt Works Creations identifies its business as locally owned and operated in Davie County and says it relocated to Mocksville in 2022. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients.",
+          "after": "For Davie County, NC website buyers. Killer Impressions is based in Lexington and explicitly includes Davie County in its service area. Wonder and Method is a Buffalo studio working remotely. Named organizations are examples, not clients."
+        },
+        {
+          "key": "sources",
+          "before": [
+            {
+              "url": "https://shirtworkscreations.com/",
+              "label": "Shirt Works Creations: design and apparel services",
+              "observation": "Describes in-house custom designs and logos, screen and DTF printing, and race-team shirts with names and numbers; explicitly identifies Davie County."
+            }
+          ],
+          "after": [
+            {
+              "url": "https://killerimpressionsscreenprinting.com/screen-printing-embroidery-services-lexington-nc/",
+              "label": "Killer Impressions: apparel design, screen printing and embroidery",
+              "observation": "Lists Davie County among the areas served from Lexington and describes graphics design, screen printing and apparel embroidery."
+            }
+          ]
+        },
+        {
+          "key": "checkedDate",
+          "before": "2026-10-23",
+          "after": "2026-10-31"
+        }
+      ]
+    }
+  ],
+  "briefs": [
+    {
+      "path": "/areas/florida/highlands-county/",
+      "beforeSha256": "c500922a442de9dc3af11d2940bf4f9cc9f8556b4c9f2ce2f156bb857e85fd9d",
+      "afterSha256": "97e293553b9215f37045364bf9594a59657742b0efffffe8292bcf86248c2110",
+      "changedFields": [
+        "sourceBridge"
+      ],
+      "edits": [
+        {
+          "key": "sourceBridge",
+          "before": "Signsmith in Sebring uses a structured cabinet quote form collecting dimensions, mounting, finish and buyer role. Its dimensional metal-sign page instead describes design and scaled drawings with a general inquiry. These are distinct starting states worth making obvious on the public site.",
+          "after": "Signsmith in Sebring describes cabinets made to specified sizes with wall and pole mounting options, alongside dimensional metal signs with scaled drawings and renderings. Both pages invite project inquiries. A specified cabinet and a sign concept still give the website two different starting points to explain."
+        }
+      ]
+    },
+    {
+      "path": "/areas/north-carolina/davie-county/",
+      "beforeSha256": "822b7bc05b1baf8a0c71090eebf1cde6618697e2ff817ec6885172b5e9795724",
+      "afterSha256": "d6d5697d6dcc51dda12cec72ba56e8be176970111f7e32588faff272af85de74",
+      "changedFields": [
+        "sourceBridge"
+      ],
+      "edits": [
+        {
+          "key": "sourceBridge",
+          "before": "Shirt Works Creations in Mocksville describes in-house designs and logos, screen and DTF printing and race-team shirts with names and numbers. Its Davie County offer supports an identity-first apparel inquiry.",
+          "after": "Killer Impressions is based in Lexington and explicitly serves Davie County. Its service page describes in-house graphics design and screen printing, alongside apparel embroidery, with examples including shirts, hoodies and shopping bags. That combination supports an inquiry connecting the customer’s identity to the products they want made."
+        }
+      ]
+    }
+  ],
+  "research": [
+    {
+      "path": "/areas/florida/highlands-county/",
+      "replacedUrl": "https://www.signsmithflorida.com/about-1",
+      "urls": [
+        "https://www.signsmithflorida.com/signcabinets",
+        "https://www.signsmithflorida.com/metalsigns"
+      ],
+      "observation": "Current official service pages support specified cabinet sizes and mounting options, dimensional metal signs, scaled drawings and project inquiries. The old structured-form claim was removed."
+    },
+    {
+      "path": "/areas/north-carolina/davie-county/",
+      "replacedUrl": "https://shirtworkscreations.com/",
+      "urls": [
+        "https://killerimpressionsscreenprinting.com/screen-printing-embroidery-services-lexington-nc/"
+      ],
+      "observation": "The replacement official service page explicitly serves Davie County from Lexington and describes graphics design, screen printing and apparel embroidery. Coverage and the visible source bridge were corrected to match."
+    }
+  ]
+}

@@ -1,0 +1,572 @@
+{
+  "status": "V2 active mapping; original research fields remain historical evidence",
+  "source": "Complete unchanged wonder-and-method-backend-v3-data.zip in delivery archive",
+  "simplifications": [
+    {
+      "id": "S01",
+      "title": "Receive first; authenticate for private work",
+      "before": "Portal activation blocks the first request.",
+      "proposal": "Capture existing-client email without requiring portal activation; offer a task link only when useful.",
+      "ownerBenefit": "No retyping an emailed brief.",
+      "customerBenefit": "Can describe the change immediately.",
+      "guardrail": "Routing is not authority; ambiguous identity goes to triage.",
+      "measure": "Request-to-acknowledgment time and access-help requests.",
+      "sources": [
+        "V3-016",
+        "V3-079",
+        "X12",
+        "X26"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S02",
+      "title": "One complete owner acceptance",
+      "before": "Scope, missing assets and dates are decided across separate messages.",
+      "proposal": "One acceptance panel shows outcome, agreement coverage, blockers, approver and proposed slot.",
+      "ownerBenefit": "One informed decision replaces repeated reconstruction.",
+      "customerBenefit": "Receives a clear commitment or a specific missing question.",
+      "guardrail": "Owner confirms price/date; no silent deadline recomputation.",
+      "measure": "Owner touches before work starts.",
+      "sources": [
+        "V3-006",
+        "V3-029"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S03",
+      "title": "Ask only what is missing",
+      "before": "Every service starts with another generic questionnaire.",
+      "proposal": "Reuse confirmed facts; show their age/source and ask only request-specific gaps.",
+      "ownerBenefit": "Less cleanup of repeated and conflicting information.",
+      "customerBenefit": "No repeated business description or account checklist.",
+      "guardrail": "Material facts remain confirmed by an appropriate person, never inferred silently.",
+      "measure": "Repeated questions and fields entered.",
+      "sources": [
+        "X01",
+        "V3-006"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S04",
+      "title": "Give a path when the customer cannot supply an asset",
+      "before": "A required upload blocks progress without help.",
+      "proposal": "Offer use existing / send later / help me prepare it, with scope/date effects.",
+      "ownerBenefit": "Can resolve the real blocker in one exchange.",
+      "customerBenefit": "Rough notes or assistance can be enough to start appropriate work.",
+      "guardrail": "Never invent content rights or add free deliverables without agreement.",
+      "measure": "Blocked days and clarification exchanges.",
+      "sources": [
+        "V3-036"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S05",
+      "title": "One conversation across channels",
+      "before": "Email, portal and private notes disagree.",
+      "proposal": "Each request has a shared history; internal notes remain explicitly private.",
+      "ownerBenefit": "No manual copy/paste between two editable systems.",
+      "customerBenefit": "Can reply in the channel already being used.",
+      "guardrail": "Business-scoped routing and attachments; no private-history disclosure to forwarded/unknown senders.",
+      "measure": "Duplicate records and status-reconstruction time.",
+      "sources": [
+        "X12",
+        "X16",
+        "X26"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S06",
+      "title": "Review the change, not the whole project",
+      "before": "Clients search a large preview and acknowledge scope repeatedly.",
+      "proposal": "Show a short before/after, exact version and Approve / Request changes. Covered work needs no second scope acknowledgment.",
+      "ownerBenefit": "Fewer unnecessary approval conversations.",
+      "customerBenefit": "Understands the actual decision quickly.",
+      "guardrail": "Changed deliverables need new approval; reminder retries and private admin notes do not.",
+      "measure": "Approval comprehension and turnaround.",
+      "sources": [
+        "V3-053",
+        "V3-041"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S07",
+      "title": "Make delays a choice, not a nagging loop",
+      "before": "Each overdue obligation produces another reminder.",
+      "proposal": "One consolidated reminder with a next-contact date, help option and delivery-slot consequence.",
+      "ownerBenefit": "Fewer chases that do not solve the problem.",
+      "customerBenefit": "Can say unavailable or need help without explaining repeatedly.",
+      "guardrail": "Silence never approves; alternate approver must be authorized.",
+      "measure": "Reminder count, replies and unresolved blockers.",
+      "sources": [
+        "V3Kb983f08551",
+        "V3-117"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S08",
+      "title": "Publish, verify and close in one view",
+      "before": "Owner moves among approval, deployment, checks and completion messages.",
+      "proposal": "One operator checklist links the approved artifact, deploy attempt, verification and receipt.",
+      "ownerBenefit": "Less tab switching and forgotten final steps.",
+      "customerBenefit": "Gets a verified result and a concise receipt.",
+      "guardrail": "Unknown outcome is reconciled; automatic retry never guesses.",
+      "measure": "Completion effort and incorrect-success messages.",
+      "sources": [
+        "V3-022",
+        "V3-042",
+        "X06"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S09",
+      "title": "Keep AI preparation inside the request",
+      "before": "A new AI inbox requires another daily review ritual.",
+      "proposal": "Put one editable summary and proposed missing questions beside the original request.",
+      "ownerBenefit": "Review in the same place as the actual decision.",
+      "customerBenefit": "No forced chatbot or extra customer queue.",
+      "guardrail": "AI failure leaves the original record and normal workflow usable.",
+      "measure": "Review minutes, correction rate and fallback success.",
+      "sources": [
+        "V3-024",
+        "V3-050",
+        "X22"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S10",
+      "title": "Use agreed routine messages",
+      "before": "Owner approves every acknowledgment or reminder.",
+      "proposal": "Preapproved templates use verified request facts and deterministic eligibility rules.",
+      "ownerBenefit": "No approval fatigue for routine coordination.",
+      "customerBenefit": "Receives timely, consistent messages.",
+      "guardrail": "Novel promises, price changes and AI-written external replies still need review.",
+      "measure": "Owner notification approvals per request.",
+      "sources": [
+        "V3-053",
+        "V3-050"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S11",
+      "title": "Make acceptance and payment separate facts",
+      "before": "Payment success is mistaken for readiness or permission to launch.",
+      "proposal": "Consult payment only when the agreement requires it for this work.",
+      "ownerBenefit": "No new checkout for already-covered changes.",
+      "customerBenefit": "No irrelevant payment barrier or surprise service suspension.",
+      "guardrail": "Distinct charges stay distinct; disputes need owner judgment.",
+      "measure": "Unnecessary payment steps and reconciliation incidents.",
+      "sources": [
+        "X15"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S12",
+      "title": "Use one business record with explicit memberships",
+      "before": "One email is treated as one customer business.",
+      "proposal": "People can belong to multiple organizations; each request has one organization and named approver.",
+      "ownerBenefit": "No duplicate account workaround for multi-brand clients.",
+      "customerBenefit": "One login with a clear business switcher.",
+      "guardrail": "Membership checked for each child resource; same email never merges businesses automatically.",
+      "measure": "Wrong-business attempts and duplicate profiles.",
+      "sources": [
+        "V3-014",
+        "V3-047",
+        "X18"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S13",
+      "title": "Prefer fewer operating dependencies",
+      "before": "Several tools each hold a live copy of requests and scheduled jobs.",
+      "proposal": "One workspace database, one job dispatcher and one authoritative request record.",
+      "ownerBenefit": "Fewer synchronizations and failures to supervise.",
+      "customerBenefit": "Consistent status across channels.",
+      "guardrail": "Keep legacy inquiry intake until a reconciled cutover; no dual writable request copy.",
+      "measure": "Monthly maintenance and reconciliation minutes.",
+      "sources": [
+        "V3-037",
+        "X27"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S14",
+      "title": "Hand off in the format the customer uses",
+      "before": "A long unrequested training video gets ignored.",
+      "proposal": "Short written task guide first; offer a short video or call when useful.",
+      "ownerBenefit": "Less unused documentation work and repeat support.",
+      "customerBenefit": "Can find the two or three routine actions quickly.",
+      "guardrail": "Test with a fresh reader; maintain links and export access.",
+      "measure": "Repeat how-to questions after delivery.",
+      "sources": [
+        "V3-005",
+        "V3-133"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S15",
+      "title": "Keep the interface stable",
+      "before": "New features rearrange navigation and require retraining.",
+      "proposal": "Use the same request page and labels; progressively reveal detail.",
+      "ownerBenefit": "Fewer support explanations after releases.",
+      "customerBenefit": "Recognizable controls after a week away.",
+      "guardrail": "Test role-specific views, keyboard access and mobile recovery.",
+      "measure": "Return-visit task time and help requests.",
+      "sources": [
+        "V3-049",
+        "V3K6d87ce1c58"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    },
+    {
+      "id": "S16",
+      "title": "Pause honestly when nobody is available",
+      "before": "Automations keep promising progress during absence.",
+      "proposal": "Show service coverage, next update and authorized substitute or pause.",
+      "ownerBenefit": "No hidden obligation that keeps escalating unattended.",
+      "customerBenefit": "Knows when a person will respond and what changes to the date.",
+      "guardrail": "No invented 24/7 support or automatic reassignment to an unauthorized person.",
+      "measure": "Overdue commitments without a named plan.",
+      "sources": [
+        "V3-117"
+      ],
+      "implementation": "V2 Business §§5–13; Technical §§6–14; launch scope (not contingent on live clients)"
+    }
+  ],
+  "aiUses": [
+    {
+      "id": "A01",
+      "task": "Request brief",
+      "input": "Authorized request text plus confirmed organization facts.",
+      "output": "Three lines: desired outcome, known constraints, unresolved questions; each linked to source.",
+      "authority": "Draft only; never change confirmed facts.",
+      "fallback": "Show original message and a blank structured brief.",
+      "success": "Owner preparation time falls without material missed constraints.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A02",
+      "task": "Scope comparison",
+      "input": "Current accepted agreement version and new request.",
+      "output": "Included / likely extra / unclear candidates with evidence and draft response.",
+      "authority": "Owner decides scope, price and schedule.",
+      "fallback": "Owner uses the agreement checklist.",
+      "success": "No invented allowance, price or customer commitment in the accepted result.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A03",
+      "task": "Missing-input helper",
+      "input": "Current request prerequisites and available assets.",
+      "output": "One consolidated question, acceptable examples and optional help paths.",
+      "authority": "Cannot mark access, rights or consent as confirmed.",
+      "fallback": "Deterministic missing-fields template.",
+      "success": "Fewer clarification exchanges and no unnecessary account-access requests.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A04",
+      "task": "Feedback organizer",
+      "input": "Comments tied to the current preview version.",
+      "output": "Suggested grouped edits, conflicting feedback and proposed next action.",
+      "authority": "Named approver resolves conflicts; model cannot approve or silently merge different decisions.",
+      "fallback": "Read the original comments in order.",
+      "success": "Less sorting time; no omitted rejection or changed requirement.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A05",
+      "task": "Owner handoff",
+      "input": "Verified request state, attempted actions and active commitment.",
+      "output": "Brief of what is needed, what was tried and why human attention is needed.",
+      "authority": "Cannot extend dates, impersonate a substitute or decide priority from sentiment alone.",
+      "fallback": "Rule-generated incident facts.",
+      "success": "Owner can act without rereading the whole thread; critical commitments remain visible.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A06",
+      "task": "Completion explanation",
+      "input": "Verified published artifact and check results.",
+      "output": "Plain-language receipt and optional task guide.",
+      "authority": "External AI-written text requires review; factual template can be preapproved.",
+      "fallback": "Deterministic receipt with actual URL/version and support route.",
+      "success": "No success claim before verification; fewer repeated how-to questions.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    },
+    {
+      "id": "A07",
+      "task": "Weekly improvement notes",
+      "input": "Aggregated operational measures with unnecessary personal data removed.",
+      "output": "Suggested causes of rework and one improvement experiment.",
+      "authority": "No autonomous policy changes or customer promises.",
+      "fallback": "Simple counts and owner review.",
+      "success": "A measured reduction in effort after the chosen change, including maintenance.",
+      "implementation": "V2 Technical §13 / B12 / V230; all seven evaluated helpers implemented before release"
+    }
+  ],
+  "priorImplementation": [
+    {
+      "id": "P01",
+      "phase": "Baseline and fit",
+      "work": "Observe comparable requests; test a purchased portal on the eight Dot exercises using synthetic data; inspect existing record ownership.",
+      "gate": "Choose buy or custom using documented must-haves and maintenance burden. Trial capability not inferred from a feature label.",
+      "rollback": "Keep present email/lead process; no migration yet.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P02",
+      "phase": "Private prototype",
+      "work": "Build invite/sign-in, business switch, request page and owner queue against synthetic records.",
+      "gate": "Five representative users can identify status/next action, submit feedback and recover access; no critical access or usability defect.",
+      "rollback": "Prototype only; production site unchanged.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P03",
+      "phase": "Reliable core",
+      "work": "Implement memberships, transactional request transitions, immutable previews, approvals, private files, job/outbox ledger and audit.",
+      "gate": "Pass authorization, duplicate, stale-approval, takeover and publication-recovery tests.",
+      "rollback": "Keep client work manual while defects are resolved.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P04",
+      "phase": "Email and recovery",
+      "work": "Add Resend reply intake, safe attachments, delivery states, external heartbeat, independent export and restore drill.",
+      "gate": "No silently lost legitimate test request; file and provider reconciliation demonstrated.",
+      "rollback": "Disable new inbound automation and route to a staffed triage path.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P05",
+      "phase": "Controlled production pilot",
+      "work": "Invite a small set of existing clients; import accepted inquiry once; perform one complete website-change path.",
+      "gate": "Suggested starting gate: ten comparable completed requests across at least three clients, no critical errors and lower total effort. Extend sample if task mix is not comparable.",
+      "rollback": "Stop new portal intake; preserve/export all pilot records; reconcile newer work before switching authority.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P06",
+      "phase": "Optional AI preparation",
+      "work": "Add draft briefs/questions only after core work succeeds without AI.",
+      "gate": "Compare against manual baseline on real held-out cases; review time plus corrections is lower, with no material factual omissions.",
+      "rollback": "Turn off AI adapter; retain original messages and templates.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    },
+    {
+      "id": "P07",
+      "phase": "Earn expansion",
+      "work": "Add SEO/ads-specific prerequisites and reporting only where repeated demand and verified data justify them.",
+      "gate": "Shared identity/history stays consistent; separate service scope, account access and measurement gates pass.",
+      "rollback": "Keep unsupported services on the proven manual process; do not promise broad automation.",
+      "treatment": "Historical sequence only. Superseded by V2 complete-build stages and B01–B15; no paid pilot prerequisite."
+    }
+  ],
+  "priorRecords": [
+    {
+      "record": "organization",
+      "purpose": "Business identity and confirmed facts",
+      "invariant": "Not inferred from an email domain; shared parent ownership does not imply shared access."
+    },
+    {
+      "record": "membership",
+      "purpose": "User, organization, role, status",
+      "invariant": "Current server-checked membership; fixed owner/contributor/approver relationships initially."
+    },
+    {
+      "record": "engagement",
+      "purpose": "Accepted service, scope and commercial terms",
+      "invariant": "Versioned agreement and covered work; website, SEO and ads remain separately scoped."
+    },
+    {
+      "record": "request",
+      "purpose": "Desired outcome, current state, approver, commitment",
+      "invariant": "One organization and one canonical record; optimistic version for concurrent changes."
+    },
+    {
+      "record": "message",
+      "purpose": "Portal/email conversation and internal notes",
+      "invariant": "Organization/request-bound; visibility explicit; provider IDs unique."
+    },
+    {
+      "record": "attachment",
+      "purpose": "Metadata, private object key, checksum, safe-processing state",
+      "invariant": "Received is not usable; no cross-organization signed links or permanent public buckets."
+    },
+    {
+      "record": "revision",
+      "purpose": "Immutable preview/deployable artifact and configuration manifest",
+      "invariant": "Stable revision ID/digest; mutable preview URLs alone are insufficient."
+    },
+    {
+      "record": "approval",
+      "purpose": "Decision, revision, actor, time and scope shown",
+      "invariant": "Append-only decisions; named authority; no silence-as-approval."
+    },
+    {
+      "record": "publication_attempt",
+      "purpose": "Approved revision, provider operation, verification",
+      "invariant": "Unknown is distinct from failed; published artifact must match approved version."
+    },
+    {
+      "record": "payment_reference",
+      "purpose": "External invoice/charge IDs and reconciled state",
+      "invariant": "Provider remains financial source of truth; distinct genuine charges never deduplicated away."
+    },
+    {
+      "record": "event_receipt",
+      "purpose": "Deduplicated inbound event and processing status",
+      "invariant": "Unique provider/event ID; durable receipt precedes acknowledgment."
+    },
+    {
+      "record": "job_outbox",
+      "purpose": "Intent, operation key, lease, retry count, state, takeover epoch",
+      "invariant": "Transactionally created with business transition; recheck eligibility before effect."
+    },
+    {
+      "record": "audit_event",
+      "purpose": "Actor/action/version and meaningful state change",
+      "invariant": "Compact append-only evidence; avoid logging unnecessary message content or secrets."
+    },
+    {
+      "record": "backup_manifest",
+      "purpose": "Export time, record counts and file/artifact hashes",
+      "invariant": "Restorable set tested independently; retention and deletion policies include backups."
+    }
+  ],
+  "priorRoutes": [
+    {
+      "route": "/workspace",
+      "purpose": "Private client home",
+      "requirements": "Invite-only session, organization switch, clear next action and all outstanding obligations; private/no-store responses."
+    },
+    {
+      "route": "/workspace/requests/:id",
+      "purpose": "Request and revision review",
+      "requirements": "Membership and resource scope; saved feedback; explicit current preview; accessible status."
+    },
+    {
+      "route": "/operator/work",
+      "purpose": "Owner commitments and exceptions",
+      "requirements": "Owner-only access with MFA; due work stays visible alongside failures and blockers."
+    },
+    {
+      "route": "/api/workspace/requests",
+      "purpose": "Create or list authorized requests",
+      "requirements": "Validated user context, organization membership, bounded payload and idempotent submission."
+    },
+    {
+      "route": "/api/workspace/requests/:id/accept",
+      "purpose": "Owner scope/date acceptance",
+      "requirements": "Owner role; expected request version; accepted scope/prerequisites/approver/date in one transaction."
+    },
+    {
+      "route": "/api/workspace/requests/:id/decisions",
+      "purpose": "Approve or request changes",
+      "requirements": "POST only, CSRF protection where relevant, current membership, named authority and immutable revision check."
+    },
+    {
+      "route": "/api/workspace/files/:id",
+      "purpose": "Private file access",
+      "requirements": "Authorize organization and parent request; short-lived signed access or streamed response; safe content headers."
+    },
+    {
+      "route": "/api/integrations/resend",
+      "purpose": "Receive signed email events",
+      "requirements": "Verify signature on the required raw body; deduplicate and persist before queueing retrieval; no user session expected."
+    },
+    {
+      "route": "/api/integrations/payments",
+      "purpose": "Conditional payment events",
+      "requirements": "Provider signature, durable event ID, current-object reconciliation; no redirect-derived paid status."
+    },
+    {
+      "route": "/api/operator/requests/:id/takeover",
+      "purpose": "Manual recovery",
+      "requirements": "Owner-only conditional transition; invalidate pending automation epoch, expose in-flight work, resume explicitly."
+    },
+    {
+      "route": "/api/operator/requests/:id/publish",
+      "purpose": "Publish approved artifact",
+      "requirements": "Owner-only; current approval, revision and capacity checks; operation ID, actual deploy result and independent verification."
+    }
+  ],
+  "priorDecisions": [
+    {
+      "topic": "First service",
+      "recommendation": "Existing-client website change under an existing agreement.",
+      "unresolved": "Which specific client/request is suitable for the live pilot.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "Architecture",
+      "recommendation": "Cloudflare + Supabase + Resend for a deliberately small custom workspace, subject to bought-portal fit check.",
+      "unresolved": "Vendor trial results, actual account plans, region and operational ownership.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "Publication",
+      "recommendation": "Owner initiates publication after exact-version customer approval in this pilot.",
+      "unresolved": "Later preauthorized low-risk change classes require explicit policy and separate testing.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "Response expectations",
+      "recommendation": "Show one honest next-update date and absence coverage.",
+      "unresolved": "Actual business hours, response commitment and authorized backup operator.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "Recovery",
+      "recommendation": "Define tolerated data loss and outage; independently back up records and files and test restoration.",
+      "unresolved": "Recovery objectives must be agreed before live use. Daily backup may be inadequate for approval evidence.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "Retention",
+      "recommendation": "Preserve necessary request and decision history with a documented deletion/export policy.",
+      "unresolved": "Retention periods, client agreement/privacy wording and backup expiry require business/legal review where applicable.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    },
+    {
+      "topic": "AI",
+      "recommendation": "Optional internal preparation with source references and no business-write tools.",
+      "unresolved": "Provider/model selected from measured quality, cost and customer-data requirements; no model chosen by hype.",
+      "current": "V2 Business/Technical authority controls; historical decision retained for provenance, not conflicting implementation instruction."
+    }
+  ],
+  "evidenceFiles": [
+    "report-data-v3.json",
+    "design-v3.json",
+    "external-evidence-v3.json",
+    "comment-analysis-v3.json",
+    "video-findings-v3.json",
+    "wonder-and-method-backend-v3.xlsx"
+  ],
+  "evidenceLocation": "Unchanged V3 archive contains its data and full prior V2 package; consult original source IDs/dates and coverage labels.",
+  "deferredHistorical": [
+    "Public self-signup and self-created organizations",
+    "New checkout for covered existing work",
+    "Generic workflow builder or arbitrary role editor",
+    "Custom chat system, social feed or native mobile app",
+    "Cross-service marketing dashboard before trustworthy measurements",
+    "Vector search, multi-agent orchestration and broad write-enabled MCP access",
+    "Parallel request databases or dual schedulers",
+    "Automatic publication, refunds or AI-generated commitments"
+  ],
+  "activeScope": "All V2 launch capabilities complete before acquisition; new unrelated ad networks/CRM/workflow-builder excluded. Historical deferrals of web/SEO/reports/AI do not apply."
+}
