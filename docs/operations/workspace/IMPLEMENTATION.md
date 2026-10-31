@@ -32,9 +32,26 @@ requested independent final reviews pass.
   configuration required. Do not use the retired developer-token onboarding.
 - OpenAI API: key saved in ignored local configuration and live Astra smoke
   evaluation passed for all seven helpers. Deployment secrets and final data
-  qualification remain pending. Cloudmersive account/20 MB entitlement pending.
+  qualification remain pending. Malware scanning is deferred by the owner for the invitation-only phase; no scanner subscription is required for this phase.
 - R2: private encrypted backup/receipt destination, independently held recovery
   key, retention administration and offline recovery copy need qualification.
 
 Secrets belong in Worker secrets or protected local storage, never this file,
 the Git repository, frontend assets, test evidence or chat output.
+
+## Approved upload policy change (2026-10-30)
+
+The owner explicitly chose private uploads without malware scanning while the
+workspace is invitation-only. This supersedes the scanner launch prerequisite in
+the archived blueprint. `FILE_POLICY=invite_only_unscanned` saves validated bytes
+privately and records the distinct `unscanned` state. The interface labels it,
+downloads force attachment disposition, and no file content is fed automatically
+into AI, document conversion, or inline previews. Type/size/archive limits,
+checksums and current tenant/parent authorization remain enforced. These checks
+are not malware detection. No Cloudmersive purchase was authorized or made.
+
+For later scanning, set `FILE_POLICY=scan_required`, configure a qualified scanner
+key and enable `SCANNING_ENABLED`. Missing/unknown policy defaults to requiring a
+scanner. Existing unscanned files retain their honest status; enabling the switch
+does not claim they were retroactively scanned. Re-upload them for scanning if
+needed. Both modes retain the independent control and job receipts.

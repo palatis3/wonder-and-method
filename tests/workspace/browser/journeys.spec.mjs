@@ -80,3 +80,12 @@ test('workspace pages have no horizontal overflow or automated serious accessibi
   expect(violations,section+' accessibility').toEqual([]);
  }
 });
+
+test('invite-only Files explains the policy and labels unscanned downloads',async({page},info)=>{
+ await page.route('**/api/workspace?*',async route=>{const response=await route.fetch();const data=await response.json();data.file_policy='invite_only_unscanned';data.files=[{id:'60000000-0000-4000-8000-000000000001',name:'Client brief.pdf',bytes:1234,visibility:'shared',state:'unscanned',engagement_id:'30000000-0000-4000-8000-000000000001'}];data.agreements.push({id:'hosting-fixture',manifest:{hosting_offset_cap_minor:5000}});data.billing.push({id:'hosting-fixture',agreement_id:'hosting-fixture',engagement_id:'30000000-0000-4000-8000-000000000001',state:'active',interval:'month',next_invoice_at:'2020-01-01T00:00:00Z',amount_minor:14900,currency:'USD',version:1});await route.fulfill({response,json:data});});
+ await page.goto(route('files'));await expect(page.getByText('Private uploads are not scanned for malware. Files are downloaded, never opened automatically.',{exact:true})).toBeVisible();
+ await expect(page.getByText('Unscanned',{exact:true})).toBeVisible();await expect(page.getByRole('link',{name:'Download',exact:true})).toHaveAttribute('href',/\/api\/files\/.+\/download/);
+ await page.addScriptTag({content:axe});expect(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id))).toEqual([]);
+ await page.screenshot({path:`output/playwright/workspace/${info.project.name}-files.png`,fullPage:true});
+ await page.goto('/_preview/role?as=operator');await page.goto(route('billing'));await page.getByText('Record this period’s hosting offset',{exact:true}).click();await page.getByLabel('Hosting bill',{exact:true}).selectOption({label:'Client brief.pdf (unscanned)'});
+});

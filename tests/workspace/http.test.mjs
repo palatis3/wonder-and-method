@@ -33,3 +33,9 @@ test('oversize bodies and unexpected hosts fail before private data or asset fal
  const privateResponse=await handleRequest(new Request(env.APP_ORIGIN+'/api/not-a-route'),env);assert.equal(privateResponse.status,401);assert.ok(privateResponse.headers.get('content-security-policy').includes("frame-ancestors 'none'"));assert.equal(privateResponse.headers.get('cache-control'),'no-store, private');
  const error=errorResponse(new Error('SECRET_DATABASE_PASSWORD'),crypto.randomUUID());assert.ok(!(await error.text()).includes('SECRET_DATABASE_PASSWORD'));
 });
+
+test('the production Worker serves every entry module imported by the workspace interface',async()=>{
+ const {readFile}=await import('node:fs/promises');const app=await readFile(new URL('../../src/workspace/app.mjs',import.meta.url),'utf8');
+ const modules=[...app.matchAll(/from ['"]\.\/([^'"]+)['"]/g)].map(m=>m[1]);
+ for(const module of modules){const response=await handleRequest(new Request(env.APP_ORIGIN+'/'+module),{...env,ASSETS:{fetch:async()=>new Response('synthetic module')}});assert.equal(response.status,200,module);}
+});

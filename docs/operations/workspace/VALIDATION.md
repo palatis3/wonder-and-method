@@ -263,3 +263,23 @@ immutable history and restricted customer roles. Browser journeys now include
 customer cancellation and studio statement creation. The preview and package
 copy all workspace source modules, preventing omitted UI imports. Mobile
 settlement tables support keyboard scrolling.
+
+## Invite-only upload policy checkpoint
+
+Owner explicitly deferred malware scanning for the invitation-only phase.
+Files retain type/size limits, private storage, tenant and parent checks,
+checksum-verified immutable objects, attachment downloads and sandbox headers.
+`unscanned` is distinct from scanned readiness; only a machine RPC can record
+release. Previously rejected files cannot become available through this path.
+Switching to scan-required mode never falls back on absent credentials.
+
+Focused tests verify no scanner request, unknown sealing acknowledgements,
+interruption after sealing, recovery without another write, corrupt-byte refusal,
+revoked access and explicit unscanned labels in Files and hosting selection.
+Full local suite: 71 passed / 4 Postgres concurrency cases skipped locally before
+the final recovery regression; focused final files/HTTP/recurring suite: 13 passed.
+Ten desktop/phone browser journeys passed, with both changed Files/hosting
+journeys rerun after the selector fix. Build passed. Independent Astra checkpoint
+review reports no remaining P0-P2 findings; live Storage is still unqualified.
+The production Worker asset allowlist now includes closure-ui.mjs; an HTTP
+regression checks every module directly imported by app.mjs.

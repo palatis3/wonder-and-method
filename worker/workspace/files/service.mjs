@@ -35,14 +35,25 @@ export async function handleFile(request,env,session){
   const response=secure(new Response(bytes,{headers:{'Content-Type':info.media_type,'Content-Length':String(bytes.length),'Content-Disposition':`attachment; filename="download"; filename*=UTF-8''${encodeURIComponent(info.name)}`}}));
   response.headers.set('Content-Security-Policy',"sandbox; default-src 'none'; frame-ancestors 'none'");return response;
 }
+export function filePolicy(env){return env.FILE_POLICY==='invite_only_unscanned'?'invite_only_unscanned':'scan_required';}
 export async function scanFile(env,operation,fetcher=fetch){
-  if(!env.CLOUDMERSIVE_API_KEY)throw new WorkspaceError('scanner_unavailable','File scanning is being configured.',503);
+  const unscanned=filePolicy(env)==='invite_only_unscanned';
+  if(!unscanned&&!env.CLOUDMERSIVE_API_KEY)throw new WorkspaceError('scanner_unavailable','File scanning is being configured.',503);
   const org=operation.organization_id,id=operation.payload.file_id;
   const file=await machineRpc(env,'wm_file_scan_input',{p_org:org,p_id:id},fetcher);
   const source=await storage(env,'workspace-quarantine',file.upload_object_key,{fetcher});if(!source.ok)throw new WorkspaceError('file_unavailable','The quarantine object is unavailable.',503);
   const bytes=await readBounded(source.body,Number(file.actual_bytes));const checksum=await sha256(bytes);
   if(checksum!==file.checksum||checksum!==operation.payload.checksum)throw new WorkspaceError('file_integrity','The quarantine object changed.',409);
   verifyContent(bytes,{name:file.original_name,media_type:file.declared_media_type,bytes:file.declared_bytes});
+  if(unscanned){
+    const sealedKey=`${org}/${id}/${checksum}`;
+    // A lost POST acknowledgement is resolved only by reading the immutable key.
+    try{await storage(env,'workspace-sealed',sealedKey,{method:'POST',bytes,media:file.actual_media_type,fetcher});}catch{}
+    const prior=await storage(env,'workspace-sealed',sealedKey,{fetcher});
+    if(!prior.ok||await sha256(await readBounded(prior.body,bytes.length))!==checksum)throw new WorkspaceError('seal_unavailable','The file could not be saved and verified.',503);
+    await machineRpc(env,'wm_file_release_unscanned',{p_org:org,p_id:id,p_checksum:checksum,p_sealed_key:sealedKey},fetcher);
+    return {settled:true,readback_matches:true,evidence_reference:`file:${id}:${checksum}`,observed_at:new Date().toISOString(),file_state:'unscanned',malware_scanned:false};
+  }
   const form=new FormData();form.append('inputFile',new Blob([bytes],{type:file.actual_media_type}),file.original_name);
   const headers={Apikey:env.CLOUDMERSIVE_API_KEY,allowExecutables:'false',allowInvalidFiles:'false',allowScripts:'false',allowPasswordProtectedFiles:'false',allowMacros:'false',allowXmlExternalEntities:'false',allowInsecureDeserialization:'false',allowHtml:'false',restrictFileTypes:'.png,.jpg,.jpeg,.webp,.pdf,.txt,.csv,.docx,.xlsx'};
   const response=await providerFetch('https://api.cloudmersive.com/virus/scan/file/advanced',{method:'POST',headers,body:form},fetcher);

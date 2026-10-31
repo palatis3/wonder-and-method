@@ -3,7 +3,7 @@ import {financialEffect,pollRefunds} from '../billing/refunds.mjs';
 import {reconcileStripe} from '../billing/webhooks.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl,flushReceipts} from '../continuity/receipts.mjs';
-import {scanFile} from '../files/service.mjs';
+import {scanFile,filePolicy} from '../files/service.mjs';
 import {provisionIdentity,sendNotification} from '../providers/notifications.mjs';
 import {reconcileAttempts} from './reconciliation.mjs';
 import {journalAttempt} from '../continuity/attempt-journal.mjs';
@@ -12,7 +12,7 @@ function configured(env,kind){
   if(kind.startsWith('stripe_'))return env.STRIPE_ENABLED==='true'&&Boolean(env.STRIPE_SECRET_KEY);
   if(kind==='identity_provision')return env.IDENTITY_PROVISIONING_ENABLED==='true'&&Boolean(env.SUPABASE_SECRET_KEY);
   if(['invitation_notify','message_notify'].includes(kind))return env.NOTIFICATIONS_ENABLED==='true'&&Boolean(env.RESEND_API_KEY&&env.NOTIFICATION_FROM);
-  if(kind==='file_scan')return env.SCANNING_ENABLED==='true'&&Boolean(env.CLOUDMERSIVE_API_KEY);
+  if(kind==='file_scan')return filePolicy(env)==='invite_only_unscanned'||env.SCANNING_ENABLED==='true'&&Boolean(env.CLOUDMERSIVE_API_KEY);
   return false;
 }
 export async function dispatchJobs(env,{rpc=machineRpc,fetcher=fetch,readControl=externalControl,implementations=adapters,journal=journalAttempt}={}){

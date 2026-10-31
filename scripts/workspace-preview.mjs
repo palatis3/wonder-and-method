@@ -23,7 +23,7 @@ async function fixtureApi(req,res,url){
   if(url.pathname==='/api/agreement-receipt'){res.setHeader('Content-Disposition','attachment; filename=agreement-receipt.json');send((await fixture.db.query('select public.wm_agreement_receipt($1,$2) as r',[url.searchParams.get('business'),url.searchParams.get('id')])).rows[0].r);return;}
   if(url.pathname==='/api/invitations'){send((await fixture.db.query('select public.wm_invitations() as r')).rows[0].r);return;}
   if(url.pathname==='/api/businesses'){send((await fixture.db.query('select public.wm_businesses() as r')).rows[0].r);return;}
-  if(url.pathname==='/api/workspace'){send((await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r);return;}
+  if(url.pathname==='/api/workspace'){send({... (await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r,file_policy:'invite_only_unscanned'});return;}
   if(req.method==='POST'&&url.pathname==='/api/command'){
    if(req.headers.origin!==`http://127.0.0.1:${port}`||req.headers['x-csrf-token']!=='synthetic-only')throw Error('Synthetic preview origin required');
    const chunks=[];let bytes=0;for await(const c of req){bytes+=c.length;if(bytes>100000)throw Error('Request too large');chunks.push(c);}

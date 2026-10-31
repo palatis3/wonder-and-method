@@ -4,7 +4,7 @@ import {journalAttempt} from '../continuity/attempt-journal.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl} from '../continuity/receipts.mjs';
 import {readNotification} from '../providers/notifications.mjs';
-import {storage} from '../files/service.mjs';
+import {storage,filePolicy} from '../files/service.mjs';
 import {readBounded,sha256} from '../files/content.mjs';
 import {UUID,WorkspaceError} from '../../../src/workspace/domain/contracts.mjs';
 const unknown=()=>{throw new WorkspaceError('readback_unconfirmed','The earlier provider action still needs checking.',503);};
@@ -17,8 +17,17 @@ export async function readServiceEffect(env,permit,{rpc=machineRpc,fetcher=fetch
     if(!UUID.test(observed?.identity_id||''))unknown();return {settled:true,readback_matches:true,evidence_reference:`identity:${observed.identity_id}`,provider_reference:observed.identity_id,observed_at:new Date().toISOString()};
   }
   if(permit.operation.kind==='file_scan'){
-    if(!['ready','rejected'].includes(observed?.state))unknown();
-    if(observed.state==='ready'){const response=await storage(env,'workspace-sealed',observed.object_key,{fetcher});if(!response.ok||await sha256(await readBounded(response.body,Number(observed.bytes)))!==observed.checksum)unknown();}
+    // If the worker stopped after sealing bytes but before recording release,
+    // recover the existing object without repeating the Storage POST.
+    if(['quarantined','checking'].includes(observed?.state)&&filePolicy(env)==='invite_only_unscanned'){
+      const key=`${permit.operation.organization_id}/${observed.id}/${observed.checksum}`;
+      const response=await storage(env,'workspace-sealed',key,{fetcher});
+      if(!response.ok||await sha256(await readBounded(response.body,Number(observed.bytes)))!==observed.checksum)unknown();
+      await rpc(env,'wm_file_release_unscanned',{p_org:permit.operation.organization_id,p_id:observed.id,p_checksum:observed.checksum,p_sealed_key:key},fetcher);
+      observed.state='unscanned';observed.object_key=key;
+    }
+    if(!['ready','unscanned','rejected'].includes(observed?.state))unknown();
+    if(['ready','unscanned'].includes(observed.state)){const response=await storage(env,'workspace-sealed',observed.object_key,{fetcher});if(!response.ok||await sha256(await readBounded(response.body,Number(observed.bytes)))!==observed.checksum)unknown();}
     return {settled:true,readback_matches:true,evidence_reference:`file:${observed.id}:${observed.checksum}`,observed_at:new Date().toISOString(),file_state:observed.state};
   }
   unknown();
