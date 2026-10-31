@@ -64,6 +64,15 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'service.create':['catalog_id','variant','catalog_version','title'],
+  'proposal.create':['engagement_id','catalog_id','variant','catalog_version','expected_version','starts_at','scope_note','quote_minor','waiver_evidence','waiver_kind','waiver_agreement_id','supersedes_id'],
+  'proposal.send':['id','expected_version'],
+  'proposal.withdraw':['id','expected_version','reason'],
+  'agreement.accept':['id','expected_version','digest','consent','signer_name'],
+  'onboarding.update':['id','expected_version','status','account_reference','evidence','next_action'],
+  'milestone.link':['id','expected_version','request_id','evidence'],
+  'milestone.due':['id','expected_version','evidence'],
+  'milestone.complete':['id','expected_version','evidence','request_id'],
   'invitation.create':['email','role'],
   'invitation.revoke':['id','expected_version'],
   'invitation.accept':['id','business_name'],
@@ -104,7 +113,7 @@ export function validateCommand(command,input) {
   const unknown=Object.keys(input).filter(k=>!fields[command].includes(k));
   if(unknown.length)fail('invalid_payload','The action contains unsupported fields.');
   for(const [k,v] of Object.entries(input)) {
-    if(k.endsWith('_id')&&v!==null)uuid(v,k);
+    if((k.endsWith('_id')&&k!=='catalog_id'||k==='id')&&v!==null)uuid(v,k);
     if(k==='expected_version')integer(v,'version',{min:1});
     if(k.endsWith('_at')&&v!==null)isoDate(v,k);
   }

@@ -35,9 +35,29 @@ test('customer invitation save and revoke, and failed form submission preserve i
  await page.unroute('**/api/command');await page.getByRole('button',{name:'Send request',exact:true}).click();await expect(page.getByRole('heading',{name:draft,exact:true})).toBeVisible();
 });
 
+test('catalog proposal, named signer, agreement acceptance and portable receipt work together',async({page},info)=>{
+ await page.goto('/_preview/role?as=operator');await page.goto(route('agreements'));
+ const title=`Synthetic ${info.project.name} proposal ${Date.now()}`;
+ await page.getByLabel('Catalog service',{exact:true}).selectOption('launch_site|standard');await page.getByLabel('Service name',{exact:true}).fill(title);await page.getByRole('button',{name:'Add service',exact:true}).click();
+ await expect(page.getByRole('heading',{name:title,exact:true})).toBeVisible();const proposalUrl=page.url();
+ await page.goto(route('people'));await page.getByText('Assign a verified decision-maker',{exact:true}).click();
+ const authority=page.locator('form[data-action="authority.assign"]');await authority.getByLabel('Service',{exact:true}).selectOption({label:title});await authority.getByLabel('Decision domain',{exact:true}).selectOption('contract');
+ await authority.getByLabel('Valid from',{exact:true}).fill(new Date(Date.now()-86400000).toISOString().slice(0,16));await authority.getByLabel('Valid until',{exact:true}).fill(new Date(Date.now()+86400000*365).toISOString().slice(0,16));
+ await authority.getByLabel('Independent business-authority verification evidence',{exact:true}).fill('Synthetic owner identity and business authority checked independently.');await authority.getByRole('button',{name:'Record verified authority',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
+ await page.goto(proposalUrl);await page.getByLabel('Proposed start',{exact:true}).fill(new Date(Date.now()+86400000).toISOString().slice(0,16));await page.getByLabel('Agreed scope and site',{exact:true}).fill('Synthetic focused website with included native measurement and one agreed domain.');await page.getByRole('button',{name:'Save proposal draft',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Focused Website',exact:true})).toBeVisible();await expect(page.getByText('$878.00',{exact:true})).toBeVisible();const agreementUrl=page.url();
+ await page.getByRole('button',{name:'Send agreement for review',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
+ await page.getByRole('link',{name:'Customer',exact:true}).click();await page.goto(agreementUrl);
+ await page.getByLabel('Your full name',{exact:true}).fill('Avery Synthetic');await page.getByLabel('I am authorized to accept this exact agreement for the business and agree to its scope, fees, and terms.',{exact:true}).check();await page.getByRole('button',{name:'Accept this agreement',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Acceptance receipt',exact:true})).toBeVisible();
+ const download=page.waitForEvent('download');await page.getByRole('link',{name:'Download acceptance receipt',exact:true}).click();expect((await download).suggestedFilename()).toBe('agreement-receipt.json');
+ await page.addScriptTag({content:axe});expect(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id))).toEqual([]);
+ await page.screenshot({path:`output/playwright/workspace/${info.project.name}-agreement.png`,fullPage:true});
+});
+
 test('workspace pages have no horizontal overflow or automated serious accessibility violations',async({page})=>{
  test.setTimeout(90000);
- for(const section of ['','work','approvals','messages','files','ads','results','business','billing','people','help']){
+ for(const section of ['','work','approvals','messages','files','ads','results','business','agreements','onboarding','billing','people','help']){
   await page.goto(route(section));await expect(page.locator('h1')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),section+' width').toBe(true);
   await page.addScriptTag({content:axe});const violations=await page.evaluate(async()=>{const result=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}});return result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}));});

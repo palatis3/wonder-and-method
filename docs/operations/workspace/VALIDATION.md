@@ -120,3 +120,34 @@ sections checked for horizontal overflow and WCAG A/AA automated violations.
 Secondary text contrast was corrected after the first run. These use the
 isolated synthetic database and cannot establish live OTP, provider permissions,
 email delivery, scanning entitlement, R2 retention or production readiness.
+
+## Commercial workflow checkpoint
+
+Staging includes 37 immutable catalog variants, draft/send/withdraw proposals,
+exact-version contract acceptance, portable acceptance receipts, access checks
+and distinct due/earned milestone records. Accepted amendments preserve earlier
+obligations; new amendment charges remain blocked until explicit effective-date
+reconciliation. Milestone work must be linked before its review version, and an
+approval cannot be reused for a different milestone. Care onboarding waivers
+require the documented eligibility; introductory reservations are globally
+serialized and limited to the catalog's three introductory production clients.
+This is a discount rule, not an acquisition or service-capacity limit.
+
+Independent Astra review identified five commercial issues and two residual
+paths. The combined corrections have regression coverage in commercial.test.mjs.
+The local suite passes 50 tests, with four multi-connection cases reserved for
+PostgreSQL CI. All eight desktop/phone browser journeys pass, including catalog
+service creation, signer assignment, proposal send, acceptance, and receipt
+download. The prior commit 8cb8598 passed GitHub's private checks.
+
+Remote staging checks confirm no anonymous command access, no direct customer
+catalog-table access, and no execution privilege on the replaced projection.
+Advisors report only the documented RPC/deny-by-default design categories:
+68 RLS tables with no broad policy, 19 authenticated security-definer endpoints,
+and 87 unused indexes in the empty staging database. No missing foreign-key
+indexes remain. Production is unchanged.
+
+Remaining commercial integration work includes billing-provider execution and
+reconciliation, effective-date activation, recurring entitlements, exact site
+identity/overlap checks, and complete service-specific readiness. These tests
+do not establish live Stripe, email, scanner or advertising qualification.

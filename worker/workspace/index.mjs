@@ -18,6 +18,7 @@ export async function handleRequest(request,env){
       await identity(session,env);
       const fileResponse=await handleFile(request,env,session);if(fileResponse)return fileResponse;
       if(request.method==='GET'&&url.pathname==='/api/businesses')return json(await rpc(env,session.access_token,'wm_businesses',{}));
+      if(request.method==='GET'&&url.pathname==='/api/agreement-receipt')return json(await rpc(env,session.access_token,'wm_agreement_receipt',{p_org:uuid(url.searchParams.get('business')),p_id:uuid(url.searchParams.get('id'))}),200,{'Content-Disposition':'attachment; filename=agreement-receipt.json'});
       if(request.method==='GET'&&url.pathname==='/api/invitations')return json(await rpc(env,session.access_token,'wm_invitations',{}));
       if(request.method==='GET'&&url.pathname==='/api/workspace')return json(await rpc(env,session.access_token,'wm_workspace',{p_org:uuid(url.searchParams.get('business'),'business')}));
       if(request.method==='POST'&&url.pathname==='/api/command'){
@@ -26,6 +27,7 @@ export async function handleRequest(request,env){
         const data=validateCommand(command,input.input),key=request.headers.get('idempotency-key');
         if(!key||!/^[A-Za-z0-9_-]{16,200}$/.test(key))throw new WorkspaceError('action_key','Retry this action with its original identifier.');
         if(command.startsWith('ai.'))return json(await aiCommand(env,session,org,command,data,key));
+        if(/^(service|proposal|agreement|onboarding|milestone)\./.test(command))return json(await rpc(env,session.access_token,'wm_commercial_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(/^(invitation|member|authority)\./.test(command))return json(await rpc(env,session.access_token,'wm_people_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(COMMANDS[command])return json(await rpc(env,session.access_token,COMMANDS[command],{p_org:org,p_input:data,p_key:key}));
         if(SERVICES.has(command))return json(await rpc(env,session.access_token,'wm_service_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
@@ -36,7 +38,7 @@ export async function handleRequest(request,env){
     if(!['GET','HEAD'].includes(request.method))return json({error:{message:'Method unavailable.'}},405);
     if(!env.ASSETS)return json({error:{message:'Workspace interface unavailable.'}},503);
     if(url.pathname==='/'||url.pathname.startsWith('/workspace/')||url.pathname.startsWith('/operator/'))url.pathname='/index.html';
-    if(!['/index.html','/app.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
+    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }

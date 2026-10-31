@@ -20,6 +20,7 @@ async function fixtureApi(req,res,url){
  if(role==='signedout'){send({error:{message:'Use the synthetic preview role links above.',code:'sign_in'}},401);return;}
  try{
   await dbTools.actor(fixture.db,user,{aal:role==='operator'?'aal2':'aal1'});
+  if(url.pathname==='/api/agreement-receipt'){res.setHeader('Content-Disposition','attachment; filename=agreement-receipt.json');send((await fixture.db.query('select public.wm_agreement_receipt($1,$2) as r',[url.searchParams.get('business'),url.searchParams.get('id')])).rows[0].r);return;}
   if(url.pathname==='/api/invitations'){send((await fixture.db.query('select public.wm_invitations() as r')).rows[0].r);return;}
   if(url.pathname==='/api/businesses'){send((await fixture.db.query('select public.wm_businesses() as r')).rows[0].r);return;}
   if(url.pathname==='/api/workspace'){send((await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r);return;}
@@ -30,6 +31,7 @@ async function fixtureApi(req,res,url){
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
+   if(/^(service|proposal|agreement|onboarding|milestone)\./.test(input.command)){send((await fixture.db.query('select public.wm_commercial_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(/^(invitation|member|authority)\./.test(input.command)){send((await fixture.db.query('select public.wm_people_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('ai.')){
     const prepared=(await fixture.db.query('select public.wm_ai_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r;
@@ -44,7 +46,7 @@ async function fixtureApi(req,res,url){
   send({error:{message:'This provider action is not connected in the synthetic preview.'}},503);
  }catch(error){send({error:{message:error.message,code:error.code==='40001'?'changed':'invalid_action'}},error.code==='40001'?409:400);}
 }
-const allowed=new Set(['index.html','app.css','app.mjs','favicon.svg','domain/contracts.mjs','domain/channels.mjs']);
+const allowed=new Set(['index.html','app.css','app.mjs','commercial-ui.mjs','favicon.svg','domain/contracts.mjs','domain/channels.mjs']);
 createServer(async(req,res)=>{
  try{
   const url=new URL(req.url,'http://localhost');
