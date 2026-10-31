@@ -4,6 +4,8 @@ import {createHash} from 'node:crypto';
 import records from '../src/location-service-data.json' with {type:'json'};
 import briefs from '../src/human-location-briefs.json' with {type:'json'};
 import ledger from './fixtures/source-repairs-ci-20261031.json' with {type:'json'};
+import guideReviews from '../operations/google-quality-audit-20261023/related-guide-review.json' with {type:'json'};
+import {locationPurposeFingerprint} from '../scripts/site-quality-rules.mjs';
 import {beforeReviewedCiSourceRepairs,beforeReviewedCiSourceBriefRepair} from './fixtures/reviewed-ci-source-repairs.mjs';
 import {beforeReviewedUxCopyEdits} from './fixtures/reviewed-ux-copy-edits.mjs';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -49,5 +51,22 @@ test('matching public source bridges retain every other authored brief field and
    const changed=structuredClone(current);mutate(changed);
    assert.throws(()=>beforeReviewedCiSourceBriefRepair(changed),/approved CI source repair/);
   }
+ }
+});
+
+test('the two source repairs retain their reviewed contextual guides and original relevance evidence',()=>{
+ const prior=[
+  {purpose:'ba49a92dffe706a4982e1232cae14086a6add404048fc1b4aa793f2809975ffd',evidence:'8b82214b3db8f802f8337df1c96ab014ae659ed806f4d7d7aec05d0ba1f920e2'},
+  {purpose:'2607a543b381464e4b681dbc7faa7db7448b49587c71c7518ebb5214c6de6669',evidence:'4d08a0147352e3602d9f707515511078990e7eefa9ff739129d28576481cf577'}
+ ];
+ for(const [index,path]of paths.entries()){
+  const entry=records.find(record=>record.path===path),reviews=guideReviews.filter(row=>row.from===path);
+  assert.equal(reviews.length,1);const row=reviews[0];
+  assert.equal(row.to,entry.relatedGuides[0].path);assert.equal(row.label,entry.relatedGuides[0].label);
+  assert.equal(row.reviewedAt,ledger.reviewedOn);
+  assert.equal(row.locationPurposeSha256,locationPurposeFingerprint(entry));
+  assert.equal(locationPurposeFingerprint(beforeReviewedCiSourceRepairs(entry)),prior[index].purpose);
+  const preserved=Object.fromEntries(Object.entries(row).filter(([key])=>!['reviewedAt','locationPurposeSha256'].includes(key)));
+  assert.equal(hash(preserved),prior[index].evidence,path+' retained destination, label, rationale and guide-review evidence');
  }
 });
