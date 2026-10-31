@@ -23,7 +23,7 @@ test('billing uses agreed due amounts, finance access and immutable allocation; 
   const {schedule,m}=await due(db);const input={schedule_id:schedule.id,expected_version:schedule.version},key=crypto.randomUUID();
   await actor(db,ids.client);await assert.rejects(billing(db,input),/unavailable/);await actor(db,ids.operator,{aal:'aal2'});
   await assert.rejects(billing(db,{...input,amount_minor:1}),/Unsupported field/);
-  const o=await billing(db,input,key);assert.deepEqual(await billing(db,input,key),o);await assert.rejects(billing(db,input),/unique/i);
+  const o=await billing(db,input,key);assert.deepEqual(await billing(db,input,key),o);assert.equal((await billing(db,input)).existing,true);
   await admin(db);const ledger=(await db.query('select * from wm.billing_obligations where id=$1',[o.id])).rows[0];assert.equal(Number(ledger.amount_minor),Number(m.amount_minor));
   await db.query("update wm.billing_obligations set invoice_id='in_fixture' where id=$1",[o.id]);
   await actor(db,ids.operator,{role:'service_role'});
@@ -41,11 +41,14 @@ test('billing uses agreed due amounts, finance access and immutable allocation; 
 test('billing attempt is fenced by independent receipts, operator revocation and cancellation, while readback remains possible',async()=>{
  const db=await database();try{
   const {schedule}=await due(db);const o=await billing(db,{schedule_id:schedule.id,expected_version:schedule.version});
-  await actor(db,ids.operator,{role:'service_role'});const jobs=(await db.query('select public.wm_jobs_claim(10) r')).rows[0].r;const job=jobs.find(x=>x.kind==='stripe_invoice_create');
+  await actor(db,ids.operator,{role:'service_role'});const jobs=(await db.query('select public.wm_jobs_claim(10) r')).rows[0].r;let job=jobs.find(x=>x.kind==='stripe_invoice_create');
   const begin=()=>db.query('select public.wm_attempt_begin($1,$2,$3,$4) r',[ids.org,job.id,job.lease_generation,'fixture-generation-1']);
   await assert.rejects(begin(),/Independent financial evidence/);
-  await admin(db);await db.query("update wm.critical_receipts set durability_status='durable' where organization_id=$1",[ids.org]);await actor(db,ids.operator,{role:'service_role'});
+  await db.query('select public.wm_job_attention($1,$2,$3,$4)',[ids.org,job.id,job.lease_generation,'worker_database']);assert.equal((await db.query('select public.wm_jobs_claim(10) r')).rows[0].r.some(j=>j.id===job.id),false);
+  await admin(db);await db.query('update wm.outbox_jobs set not_before=now() where id=$1',[job.id]);await db.query("update wm.critical_receipts set durability_status='durable' where organization_id=$1",[ids.org]);await actor(db,ids.operator,{role:'service_role'});
+  job=(await db.query('select public.wm_jobs_claim(10) r')).rows[0].r.find(j=>j.id===job.id);
   const permit=(await begin()).rows[0].r;assert.equal(permit.context.id,o.id);
+  await db.query('select public.wm_job_attention($1,$2,$3,$4)',[ids.org,job.id,job.lease_generation,'worker_database']);await admin(db);assert.equal((await db.query('select state from wm.outbox_jobs where id=$1',[job.id])).rows[0].state,'leased');
   await admin(db);await db.query("update wm.operator_assignments set revoked_at=now() where organization_id=$1",[ids.org]);await actor(db,ids.operator,{role:'service_role'});
   await assert.rejects(db.query('select public.wm_billing_effect_context($1,$2,$3)',[ids.org,permit.attempt.id,permit.attempt.dispatch_nonce]),/Finance operator/);
   const proof={settled:true,readback_matches:true,evidence_reference:'stripe:in_real',provider_reference:'in_real',observed_at:new Date().toISOString(),invoice_id:'in_real',obligation_id:o.id,customer_id:'cus_fixture',environment:'test',account_id:'acct_fixture',currency:'USD',amount_minor:87800};

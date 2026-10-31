@@ -75,3 +75,12 @@ delivery exercises, webhook ingestion, broad provider adapters, operator
 resolution of outcomes without exact remote bindings, full backups, exports and
 restore drills are still pending. No live messages, scans or advertising actions
 have been executed by this implementation.
+
+Provider attempt journals use independently encrypted immutable intent records and
+append-only outcome records under the tenant/generation/attempt/nonce prefix.
+Recovery must enumerate this prefix in addition to the critical-receipt chain.
+Intent storage and readback precede provider writes; verified outcome storage
+precedes local resolution. Journals do not eliminate the external-effect/receipt
+crash gap: a retained intent without outcome still requires read-only reconciliation.
+The implementation has synthetic storage tests; real R2 retention, independent
+custody, inventory completeness and restore drills are still release gates.

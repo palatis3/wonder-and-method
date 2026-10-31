@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {sealBytes,openBytes} from '../../worker/workspace/continuity/envelope.mjs';
 import {persistReceipt,flushReceipts} from '../../worker/workspace/continuity/receipts.mjs';
 import {database,actor,admin,ids,command} from './database.mjs';
+import {journalAttempt} from '../../worker/workspace/continuity/attempt-journal.mjs';
 const encoder=new TextEncoder();
 const key=()=>Buffer.from(crypto.getRandomValues(new Uint8Array(32))).toString('base64');
 class MemoryBucket{
@@ -19,6 +20,16 @@ class MemoryBucket{
 }
 async function fixture(){const bytes=new MemoryBucket(),control=new MemoryBucket(),keys={one:key()};await control.put(`control/${ids.org}.json`,JSON.stringify({schema_version:1,organization_id:ids.org,external_generation:'fixture-generation-1',access_state:'open',positive_effects_allowed:false}));return {RECOVERY_BYTES:bytes,RECOVERY_CONTROL:control,BACKUP_KEY_ID:'one',BACKUP_KEYS:JSON.stringify(keys),BACKUP_ENABLED:'true'};}
 function receipt(sequence,predecessor=null){return {organization_id:ids.org,id:crypto.randomUUID(),sequence:String(sequence),predecessor_id:predecessor?.id||null,event_type:'decision.approve',target_id:crypto.randomUUID(),payload:{text:'Synthetic approval'},digest:'a'.repeat(64),external_generation:'fixture-generation-1',created_at:'2026-10-30T00:00:00Z'};}
+
+test('independent attempt intents are immutable; uncertain writes are verified and old-generation outcomes remain recoverable',async()=>{
+ const env=await fixture(),permit={operation:{id:crypto.randomUUID(),organization_id:ids.org,kind:'synthetic'},attempt:{id:crypto.randomUUID(),dispatch_nonce:crypto.randomUUID(),external_generation:'fixture-generation-1'},context:{exact:'Synthetic bound inputs'}};
+ env.RECOVERY_BYTES.loseAck=k=>k.includes('/intent/');const first=await journalAttempt(env,permit,'intent');assert.ok(first.key.endsWith('/intent/record.bin'));assert.deepEqual(await journalAttempt(env,permit,'intent'),first);
+ await assert.rejects(journalAttempt(env,{...permit,context:{exact:'different'}},'intent'));
+ await env.RECOVERY_CONTROL.put(`control/${ids.org}.json`,JSON.stringify({schema_version:1,organization_id:ids.org,external_generation:'replacement-generation',access_state:'restricted'}));
+ await assert.rejects(journalAttempt(env,permit,'intent'));
+ const outcome=await journalAttempt(env,permit,'outcome',{provider_reference:'in_synthetic',settled:true});assert.ok(outcome.key.includes('/fixture-generation-1/'));
+ const stored=env.RECOVERY_BYTES.objects.get(outcome.key);stored.bytes[stored.bytes.length-1]^=1;await assert.rejects(journalAttempt(env,permit,'outcome',{provider_reference:'in_synthetic',settled:true}));
+});
 
 test('backup envelopes bind tenant, purpose, exact bytes and retained key versions',async()=>{
  const keys={one:key(),two:key()},context={org:ids.org,type:'receipt'},plain=encoder.encode('Synthetic private bytes');const packet=await sealBytes(plain,context,keys,'one');

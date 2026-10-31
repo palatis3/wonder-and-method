@@ -1,4 +1,5 @@
 import {readInvoiceEffect} from '../billing/stripe.mjs';
+import {journalAttempt} from '../continuity/attempt-journal.mjs';
 import {machineRpc} from '../database.mjs';
 import {externalControl} from '../continuity/receipts.mjs';
 import {readNotification} from '../providers/notifications.mjs';
@@ -20,7 +21,7 @@ export async function readServiceEffect(env,permit,{rpc=machineRpc,fetcher=fetch
   }
   unknown();
 }
-export async function reconcileAttempts(env,{rpc=machineRpc,fetcher=fetch,readControl=externalControl,readback=readServiceEffect}={}){
+export async function reconcileAttempts(env,{rpc=machineRpc,fetcher=fetch,readControl=externalControl,readback=readServiceEffect,journal=journalAttempt}={}){
   if(env.EFFECTS_ENABLED!=='true')return {disabled:true};
   const attempts=await rpc(env,'wm_unresolved_attempts',{p_limit:10});let verified=0,unresolved=0;
   for(const permit of attempts){
@@ -28,6 +29,7 @@ export async function reconcileAttempts(env,{rpc=machineRpc,fetcher=fetch,readCo
       const control=await readControl(env,permit.operation.organization_id);
       if(control.access_state!=='open'||control.external_generation!==permit.attempt.external_generation){unresolved++;continue;}
       const proof=await readback(env,permit,{rpc,fetcher});
+      await journal(env,permit,'outcome',proof);
       const result=await rpc(env,'wm_attempt_resolve',{p_org:permit.operation.organization_id,p_attempt:permit.attempt.id,p_nonce:permit.attempt.dispatch_nonce,p_proof:proof});
       if(['verified','resolved'].includes(result.state))verified++;else unresolved++;
     }catch{unresolved++;}

@@ -8,6 +8,7 @@ export async function previewFixture(){
   await db.query("update wm.engagements set title='Your website',service_state='active' where id=$1",[ids.engagement]);
   await db.query("insert into wm.profiles(user_id,display_name) values($1,'Avery · business owner'),($2,'Morgan · studio')",[ids.client,ids.operator]);
   await db.query("insert into wm.billing_accounts(organization_id,environment,account_id,customer_id,automatic_tax,tax_qualification,verified_at) values($1,'test','acct_synthetic','cus_synthetic',false,'Synthetic preview only, no Stripe connection',now())",[ids.org]);
+  await db.query('update wm.tenant_guards set positive_effects_allowed=true where organization_id=$1',[ids.org]);
   await actor(db,ids.operator,{aal:'aal2'});
   await command(db,'message_send',{engagement_id:ids.engagement,request_id:r.id,body:'The opening hours are ready for your review. The change is included in your existing website service.',visibility:'shared'});
   await command(db,'message_send',{engagement_id:ids.engagement,request_id:r.id,body:'Internal synthetic note: verify weekend hours in the next review.',visibility:'internal'});

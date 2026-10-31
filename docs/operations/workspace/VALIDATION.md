@@ -178,3 +178,31 @@ recurring scheduling, hosting allocations, amendments, settlement/refunds, porta
 non-invoice payment objects and live provider qualification. These gates remain
 closed until implemented and verified. Owner email: palatis3@gmail.com; the staging
 Auth project has no owner identity yet and operator access has not been provisioned.
+
+## Recurrence and provider-attempt journal checkpoint
+
+Actual service commencement now requires accepted terms, confirmed required facts,
+verified access, finance/delivery authority, and verified launch evidence for ads.
+Monthly service dates retain the local anniversary through short months, leap years
+and DST. The accepted amount remains unchanged; there is no automatic introductory
+price increase. Care allowances renew without rollover. Restricted businesses are
+excluded before the renewal batch limit so they cannot starve open businesses.
+Hosting evidence or a no-eligible-bill confirmation is bound to a specific uninvoiced
+period, with capped allocation and checksum deduplication. The invoice records the
+gross charge, hosting reduction and net price. Live tax treatment needs qualification.
+Cancellation fences queued invoice effects and preserves actual provider outcomes;
+period-end selection requires an observed paid recurring invoice.
+
+Provider effects now require an encrypted independent intent readback before dispatch
+and outcome readback before local resolution. Late outcomes retain their original
+recovery generation. If the outcome record cannot be saved, the operation remains
+unknown; it is never redelivered automatically. Preflight failures with no registered
+attempt can retry a delayed authority check. Recorded attempts remain excluded.
+
+Astra reviewed the added recurrence and journal code. Fixed ready-file/launch UI
+projection mismatches and the restricted-tenant renewal fairness issue. The full
+local suite passed 60 tests (four PostgreSQL-only cases skipped locally), and eight
+browser tests passed. The fairness regression passed after the final query fix.
+GitHub private checks passed for 76eafaf, including PostgreSQL concurrency. This
+migration is applied to staging only; real provider qualification and restoration
+exercises remain pending.

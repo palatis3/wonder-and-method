@@ -65,6 +65,9 @@ export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?
 
 const fields = {
   'billing.prepare':['schedule_id','expected_version'],
+  'billing.hosting':['schedule_id','expected_version','attachment_id','eligible_minor','reason'],
+  'billing.enable':['engagement_id','agreement_id','expected_version','evidence'],
+  'billing.start_service':['engagement_id','agreement_id','expected_version','started_at','evidence','launch_operation_id'],
   'service.create':['catalog_id','variant','catalog_version','title'],
   'proposal.create':['engagement_id','catalog_id','variant','catalog_version','expected_version','starts_at','scope_note','site_host','incremental_price_minor','overlap_evidence','quote_minor','waiver_evidence','waiver_kind','waiver_agreement_id','supersedes_id'],
   'proposal.send':['id','expected_version'],

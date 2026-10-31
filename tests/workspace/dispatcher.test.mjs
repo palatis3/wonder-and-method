@@ -46,10 +46,10 @@ test('dispatcher records unknown without automatic retry and cancels before disp
  const job={id:crypto.randomUUID(),organization_id:ids.org,kind:'invitation_notify',lease_generation:1};let effects=0;const events=[];
  const rpc=async(_env,name,args)=>{events.push({name,args});if(name==='wm_jobs_claim')return [job];if(name==='wm_attempt_begin')return permit;return {};};
  const control={organization_id:ids.org,external_generation:'fixture-generation-1',access_state:'open'};
- let result=await dispatchJobs(env,{rpc,readControl:async()=>control,implementations:{invitation_notify:async()=>{effects++;throw Error('Provider outcome unknown');}}});
+ let result=await dispatchJobs(env,{journal:async()=>({}),rpc,readControl:async()=>control,implementations:{invitation_notify:async()=>{effects++;throw Error('Provider outcome unknown');}}});
  assert.equal(effects,1);assert.equal(result.attention,1);assert.equal(events.at(-1).args.p_kind,'timeout');assert.equal(events.some(x=>x.name==='wm_attempt_resolve'),false);
  events.length=0;let reads=0;
- result=await dispatchJobs(env,{rpc,readControl:async()=>({...control,external_generation:++reads===1?control.external_generation:'replacement-generation'}),implementations:{invitation_notify:async()=>{effects++;}}});
+ result=await dispatchJobs(env,{journal:async()=>({}),rpc,readControl:async()=>({...control,external_generation:++reads===1?control.external_generation:'replacement-generation'}),implementations:{invitation_notify:async()=>{effects++;}}});
  assert.equal(effects,1);assert.equal(events.at(-1).args.p_kind,'cancelled_before_dispatch');
  events.length=0;await dispatchJobs({...env,NOTIFICATIONS_ENABLED:'false'},{rpc});assert.equal(events.some(x=>x.name==='wm_attempt_begin'),false);assert.equal(events.at(-1).name,'wm_job_attention');
 });
@@ -57,9 +57,17 @@ test('dispatcher records unknown without automatic retry and cancels before disp
 test('readback reconciles a lost email acknowledgment without sending again',async()=>{
  const emailId=crypto.randomUUID(),p={...permit,operation:{...permit.operation,provider_reference:emailId},attempt:{...permit.attempt,external_generation:'fixture-generation-1'},context};
  const message=notificationMessage(env,p,context);let reads=0,resolved=0;
- const result=await reconcileAttempts(env,{rpc:async(_env,name)=>{if(name==='wm_unresolved_attempts')return [p];if(name==='wm_attempt_resolve'){resolved++;return {state:'verified'};}throw Error('Unexpected RPC');},
+ const result=await reconcileAttempts(env,{journal:async()=>({}),rpc:async(_env,name)=>{if(name==='wm_unresolved_attempts')return [p];if(name==='wm_attempt_resolve'){resolved++;return {state:'verified'};}throw Error('Unexpected RPC');},
   readControl:async()=>({access_state:'open',external_generation:'fixture-generation-1'}),fetcher:async(url,options)=>{assert.equal(options.method,undefined);assert.ok(url.endsWith(emailId));reads++;return Response.json({id:emailId,...message});}});
  assert.equal(reads,1);assert.equal(resolved,1);assert.equal(result.verified,1);
+});
+test('provider writes wait for independent intent and projection waits for outcome evidence',async()=>{
+ const job={id:crypto.randomUUID(),organization_id:ids.org,kind:'invitation_notify',lease_generation:1},sequence=[];
+ const rpc=async(_e,name,args)=>{if(name==='wm_jobs_claim')return [job];if(name==='wm_attempt_begin')return permit;if(name==='wm_attempt_observe')sequence.push(args.p_kind);if(name==='wm_attempt_resolve'){sequence.push('resolved');return {state:'verified'};}return {};};
+ const readControl=async()=>({access_state:'open',external_generation:'fixture-generation-1'}),implementations={invitation_notify:async()=>{sequence.push('effect');return {settled:true};}};
+ await dispatchJobs(env,{rpc,readControl,implementations,journal:async(_e,_p,phase)=>{sequence.push(phase);}});assert.deepEqual(sequence,['intent','effect','outcome','resolved']);
+ sequence.length=0;await dispatchJobs(env,{rpc,readControl,implementations,journal:async()=>{throw Error('Storage unavailable');}});assert.deepEqual(sequence,['cancelled_before_dispatch']);
+ sequence.length=0;await dispatchJobs(env,{rpc,readControl,implementations,journal:async(_e,_p,phase)=>{if(phase==='outcome')throw Error('Outcome receipt failed');}});assert.deepEqual(sequence,['effect','timeout']);
 });
 
 test('readback queue throttles unknown attempts and preserves dispatch context after invitation revocation',async()=>{
