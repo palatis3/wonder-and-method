@@ -1,3 +1,4 @@
+import {deliveryViews} from './delivery-ui.mjs';
 import {outcomesViews} from './outcomes-ui.mjs';
 import {reportingViews} from './reporting-ui.mjs';
 import {parseMetricCsv} from './domain/reporting.mjs';
@@ -32,6 +33,17 @@ const submit=(text='Save')=>`<button class="button" type="submit" ${state.busy?'
 const serviceSelect=(value='')=>select('Service','engagement_id',rows('engagements').filter(x=>x.service_state!=='closed').map(x=>[x.id,x.title]),value,'required');
 const alert=()=>`${state.error?`<div class="alert" role="alert" tabindex="-1">${esc(state.error)}</div>`:''}${state.notice?`<div class="success" role="status">${esc(state.notice)}</div>`:''}`;
 function setNavigationOpen(open){state.navOpen=open;document.querySelector('.sidebar')?.classList.toggle('nav-open',open);const button=document.querySelector('.nav-toggle');if(button){button.setAttribute('aria-expanded',String(open));button.lastElementChild.textContent=open?'−':'+';button.focus();}}
+function syncServiceForm(form){
+  const service=form.elements.namedItem('engagement_id'),work=form.elements.namedItem('request_id');
+  const selectedService=service?.value||(form.dataset.action==='delivery.start'?rows('requests').find(r=>r.id===work?.value)?.engagement_id:null);
+  if(!selectedService)return;
+  for(const [fieldName,collection] of [['request_id','requests'],['agreement_id','agreements']]){
+    const control=form.elements.namedItem(fieldName);if(control?.tagName!=='SELECT'||fieldName==='request_id'&&!service)continue;
+    for(const option of control.options){const record=rows(collection).find(r=>r.id===option.value);option.hidden=option.disabled=Boolean(record&&record.engagement_id!==selectedService);}
+    if(control.selectedOptions[0]?.disabled)control.value=[...control.options].find(o=>!o.disabled)?.value||'';
+  }
+  if(form.dataset.action==='reporting.draft')for(const box of form.querySelectorAll('input[name=snapshot_ids]')){const metric=rows('metrics').find(m=>m.id===box.value),visible=metric?.engagement_id===selectedService;box.closest('label').hidden=!visible;box.disabled=!visible;if(!visible)box.checked=false;}
+}
 function navigate(url){state.navOpen=false;history.pushState({},'',url);state.error=null;state.notice=null;render();window.scrollTo(0,0);document.querySelector('h1')?.focus({preventScroll:true});}
 async function api(url,{method='GET',data,key,retry=true}={}){
   const response=await fetch(url,{method,credentials:'same-origin',headers:{...(data?{'Content-Type':'application/json','X-CSRF-Token':state.csrf}:{}),...(key?{'Idempotency-Key':key}:{})},...(data?{body:JSON.stringify(data)}:{})});
@@ -116,6 +128,7 @@ const outcomeView=outcomesViews({rows,state,esc,hidden,field,select,submit,dateT
 const reportView=reportingViews({rows,state,esc,hidden,field,area,select,submit,badge,dateTime,engagement,serviceSelect});
 const connectionsView=connectionViews({esc,hidden,select,submit,badge,dateTime,rows,state,isOperator});
 const statementView=closureViews({rows,esc,hidden,field,area,submit,badge,dateTime,moneyDisplay,engagement});
+const deliveryView=deliveryViews({rows:key=>key==='operator_operations'?(state.workspace?.operator_data?.operations||[]):rows(key),esc,field,area,select,hidden,submit,badge,dateTime,isOperator,engagement});
 const invoiceView=billingViews({rows,esc,label,hidden,submit,badge,dateTime,moneyDisplay,isOperator,engagement,field,area,select,operations:()=>state.workspace.operator_data?.operations||[]});
 const commercial=commercialViews({rows,esc,label,heading,link,hidden,field,area,select,submit,badge,dateTime,moneyDisplay,isOperator,org,engagement});
 function render(){
@@ -125,11 +138,12 @@ function render(){
   if(path()[0]==='operator')content=section==='ai'?aiView():`<p><a class="button secondary" href="${href('ai','',true)}" data-nav>Prepare with AI</a></p>`+operatorView();
   else content=section===''||section==='home'?homeView():section==='new'?newRequestView():section==='work'?(id?requestView(id):workView()):section==='approvals'?approvalsView(id):section==='messages'?allMessagesView():section==='ads'?adsView():section==='files'?filesView():section==='results'?resultsView():section==='business'?businessView():section==='agreements'?commercial.agreements(id):section==='proposal'?commercial.proposal(id):section==='onboarding'?commercial.onboarding():section==='billing'?billingView():section==='people'?peopleView():section==='help'?helpView():section==='prepare'?prepareView(id):empty('This page is unavailable','Choose a section from your workspace navigation.');
   if(['ads','business'].includes(section))content+=connectionsView();
+  if(section==='work'&&!id)content+=deliveryView();
   if(section==='business')content+=aiPreference();
   if(section==='billing')content+=invoiceView()+statementView()+commercial.milestones();
-  app.innerHTML=shell(content);document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
+  app.innerHTML=shell(content);for(const form of app.querySelectorAll('form[data-action]'))syncServiceForm(form);document.title=`${document.querySelector('h1')?.textContent||'Workspace'} — Wonder and Method`;
 }
-function formValues(form){const result={};for(const [key,value]of new FormData(form)){if(!(value instanceof File))result[key]=value;}for(const k of ['expected_version','minutes','budget_minor','quote_minor','incremental_price_minor','eligible_minor','amount_minor'])if(result[k]!==undefined&&result[k]!=='')result[k]=Number(result[k]);for(const k of ['due_at','next_contact_at','starts_at','ends_at','started_at','event_at','received_at','retention_until'])if(result[k])result[k]=new Date(result[k]).toISOString();return result;}
+function formValues(form){const result={};for(const [key,value]of new FormData(form)){if(!(value instanceof File))result[key]=value;}for(const k of ['expected_version','minutes','budget_minor','quote_minor','incremental_price_minor','eligible_minor','amount_minor'])if(result[k]!==undefined&&result[k]!=='')result[k]=Number(result[k]);for(const k of ['due_at','next_contact_at','starts_at','ends_at','started_at','observed_at','event_at','received_at','retention_until'])if(result[k])result[k]=new Date(result[k]).toISOString();return result;}
 async function formAction(form){
   const action=form.dataset.action,values=formValues(form);let target=null;const key=form.dataset.actionKey||(form.dataset.actionKey=crypto.randomUUID());
   if(action==='login'){const r=await api('/api/auth/start',{method:'POST',data:{email:values.email,return_path:state.returnPath}});state.csrf=r.csrf;state.loginStep='code';state.notice=r.message;return;}
@@ -154,6 +168,8 @@ async function formAction(form){
   else if(action==='outcome.record'){values.event_key=key;for(const k of ['id','expected_version','value_minor','supersedes_id'])if(values[k]==='')delete values[k];if(values.value_minor===undefined)delete values.currency;else values.value_minor=Number(values.value_minor);await command(action,values,key);}
   else if(action==='reporting.stage'){const csv=form.querySelector('[name=csv]').files[0];if(!csv||csv.size>128*1024)throw new Error('Choose a reporting CSV smaller than 128 KB.');values.rows=parseMetricCsv(new TextDecoder('utf-8',{fatal:true}).decode(await csv.arrayBuffer()));delete values.csv;if(!values.supersedes_id)delete values.supersedes_id;await command(action,values,key);}
   else if(action==='reporting.draft'){values.snapshot_ids=new FormData(form).getAll('snapshot_ids');if(!values.supersedes_id)delete values.supersedes_id;await command(action,values,key);}
+  else if(action==='delivery.facts'){values.fact_ids=new FormData(form).getAll('fact_ids');await command(action,values,key);}
+  else if(action==='delivery.observe'){values.details={};for(const k of Object.keys(values))if(k.startsWith('detail_')){values.details[k.slice(7)]=values[k];delete values[k];}for(const k of ['revision_id','operation_id','report_id'])if(!values[k])delete values[k];await command(action,values,key);}
   else if(action.startsWith('billing.')){for(const k of ['attachment_id','launch_operation_id'])if(!values[k])delete values[k];await command(action,values,key);}
   else if(action==='time.record'){values.occurred_at=new Date().toISOString();await command(action,values,key);}
   else if(action==='lead.save'){await command(action,{engagement_id:values.engagement_id,outcomes:[{id:values.id,expected_version:values.expected_version,outcome:values.outcome}]},key);}
@@ -176,7 +192,7 @@ document.addEventListener('submit',async event=>{
   catch(error){state.busy=false;state.error=error.message;if(error.code==='sign_in'){state.returnPath=allowedReturnPath(location.pathname+location.search);state.user=null;state.loginStep='email';try{const session=await api('/api/session');state.csrf=session.csrf;}catch{}}const saved=new FormData(form);render();const replacement=[...document.querySelectorAll(`form[data-action="${form.dataset.action}"]`)].find(el=>!form.dataset.formKey||el.dataset.formKey===form.dataset.formKey);if(replacement)for(const [k,v]of saved){const el=replacement.elements.namedItem(k);if(el&&typeof v==='string'&&!['checkbox','file'].includes(el.type))el.value=v;}if(replacement&&form.dataset.action!=='connection.start')replacement.dataset.actionKey=form.dataset.actionKey;document.querySelector('[role=alert]')?.focus();}
 });
 document.addEventListener('input',event=>{const form=event.target.closest('form[data-action]');if(form)delete form.dataset.actionKey;});
-document.addEventListener('change',async event=>{if(event.target.id==='business-selector'){history.pushState({},'',`/workspace/?business=${encodeURIComponent(event.target.value)}`);await reload();}});
+document.addEventListener('change',async event=>{if(event.target.id==='business-selector'){history.pushState({},'',`/workspace/?business=${encodeURIComponent(event.target.value)}`);await reload();}else if(['engagement_id','request_id'].includes(event.target.name)){const form=event.target.closest('form[data-action]');if(form)syncServiceForm(form);}});
 document.addEventListener('click',async event=>{
   const nav=event.target.closest('a[data-nav]');if(nav&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey){event.preventDefault();navigate(nav.getAttribute('href'));return;}
   const action=event.target.closest('[data-action]')?.dataset.action;if(!action||event.target.closest('form'))return;

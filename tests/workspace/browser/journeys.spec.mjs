@@ -59,7 +59,7 @@ test('catalog proposal, named signer, agreement acceptance and portable receipt 
  await stage.getByLabel('Start and readiness evidence',{exact:true}).fill('Synthetic booked start confirmed.');
  await stage.getByRole('button',{name:'Record milestone as due',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
  await page.locator('article.card').filter({hasText:title}).getByRole('button',{name:'Prepare the agreed invoice',exact:true}).first().click();await expect(page.getByRole('status')).toBeVisible();
- await expect(page.getByText('Prepared',{exact:true})).toBeVisible();
+ await expect(page.locator('article.card').filter({hasText:title}).getByText('Prepared',{exact:true})).toBeVisible();
   await page.getByRole('link',{name:'Customer',exact:true}).click();await page.goto(route('billing'));
   const close=page.locator('form[data-action="engagement.cancel"]');await close.getByLabel('Service',{exact:true}).selectOption({label:title});
   await close.getByLabel('When should service end?',{exact:true}).selectOption('immediate');await close.getByLabel('Reason or handoff details',{exact:true}).fill('Synthetic service cancellation before work begins.');

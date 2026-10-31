@@ -371,3 +371,33 @@ customer direct history SELECT, old projection RPC, legacy unhistoried editor or
 private baseline execution. Advisor notices remain the deliberate private-schema
 RLS-deny/default and authenticated command-boundary notices. No production deploy,
 provider metric import or customer report was performed.
+
+### Catalog delivery and source-fact checks — October 30, 2026
+
+Added 38 frozen catalog/variant delivery templates and operator workflows for
+accepted work, retained passed/failed/unknown observations, exact-version approval,
+verified publication, inquiry destination evidence, report evidence and handoff.
+Completion requires every applicable check and rejects unresolved operations.
+Recurring plans use explicit month keys. These records do not themselves qualify
+or execute a live website deployment, advertising launch, restore or inquiry.
+
+Linked fact changes retain one impact list, invalidate affected current work and
+cancel queued effects; advertising STOP is requested where an account is bound.
+Same-value reconfirmations preserve lineage. Expiry is checked against wall-clock
+time at approval, preparation and dispatch, including transactions crossing the
+deadline. Report gates require matching work/period and current source imports.
+Independent Astra review and fix rechecks found no remaining P0–P2 in this scope.
+
+Validation: 99 local workspace tests pass; four multi-connection PostgreSQL tests
+remain CI-only. Five focused delivery tests and three delivery browser journeys
+pass. The full browser run passed 38/39; its remaining test selector matched two
+different prepared invoices and was scoped to the tested service. All three
+targeted catalog journeys then passed, including Safari receipt download.
+Build and whitespace checks pass. Earlier CI exposed cross-service report form
+selection, a 43px select on Linux and Safari's receipt download; service-linked
+selection, 44px sizing and an explicit download attribute resolve these cases.
+CI now preserves synthetic browser diagnostics on failure.
+
+Delivery migration applied to staging only. Verified all 38 template rows, denied
+anonymous delivery RPCs/customer dispatch/raw evidence access and legacy wrapper
+bypass, and retained service-only dispatch access. Production remains unpublished.

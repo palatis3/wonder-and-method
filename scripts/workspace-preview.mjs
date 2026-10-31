@@ -32,6 +32,7 @@ async function fixtureApi(req,res,url){
    if(input.organization_id!==fixture.ids.org)throw Error('Synthetic business unavailable');
    const {validateCommand}=await import('../src/workspace/domain/contracts.mjs');validateCommand(input.command,input.input);
    if(commandNames[input.command]){send(await dbTools.command(fixture.db,commandNames[input.command],input.input,{key}));return;}
+   if(input.command.startsWith('delivery.')){send((await fixture.db.query('select public.wm_delivery_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('outcome.')){send((await fixture.db.query('select public.wm_outcome_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('reporting.')){send((await fixture.db.query('select public.wm_reporting_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}
    if(input.command.startsWith('closure.')){send((await fixture.db.query('select public.wm_closure_command($1,$2,$3,$4) as r',[input.organization_id,input.command,input.input,key])).rows[0].r);return;}

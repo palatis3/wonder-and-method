@@ -64,6 +64,10 @@ export function csvExport(rows,columns) {const cell=v=>'"'+spreadsheetCell(v).re
 export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?:workspace|operator)\/(?:[a-zA-Z0-9_\-/]*)?(?:\?[a-zA-Z0-9_=&%.-]*)?$/.test(value)&&!value.includes('//')?value:'/workspace/';}
 
 const fields = {
+  'delivery.start':['request_id','agreement_id','period_key'],
+  'delivery.facts':['revision_id','fact_ids'],
+  'delivery.observe':['id','expected_version','step_key','outcome','evidence','observed_at','revision_id','operation_id','report_id','details'],
+  'delivery.complete':['id','expected_version','revision_id'],
   'outcome.record':['engagement_id','id','expected_version','source','source_key','received_at','event_key','event_at','outcome','value_minor','currency','definition_version','consent_ref','retention_until','supersedes_id'],
   'reporting.stage':['engagement_id','source','account_reference','currency','timezone','period_start','period_end','rows','supersedes_id'],
   'reporting.promote':['id','expected_version'],
