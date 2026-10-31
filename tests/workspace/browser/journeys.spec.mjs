@@ -89,3 +89,25 @@ test('invite-only Files explains the policy and labels unscanned downloads',asyn
  await page.screenshot({path:`output/playwright/workspace/${info.project.name}-files.png`,fullPage:true});
  await page.goto('/_preview/role?as=operator');await page.goto(route('billing'));await page.getByText('Record this period’s hosting offset',{exact:true}).click();await page.getByLabel('Hosting bill',{exact:true}).selectOption({label:'Client brief.pdf (unscanned)'});
 });
+
+test('connection discovery shows exact accounts and preserves the selected account after an error',async({page},info)=>{
+ const id='10000000-0000-4000-8000-000000000001',engagement='30000000-0000-4000-8000-000000000001';let chosen=[];
+ await page.route('**/api/connections?*',r=>r.fulfill({json:{providers:[{id:'google_ads',name:'Google Ads',enabled:true}],connections:[{id,engagement_id:engagement,provider:'google_ads',environment:'test',state:'connected',version:1}]}}));
+ await page.route('**/api/connections/discover',r=>r.fulfill({json:{accounts:[{account_id:'1111111111',name:'First account'},{account_id:'2222222222',name:'Second account',manager_id:'9999999999'}]}}));
+ await page.route('**/api/connections/bind',r=>{chosen.push(r.request().postDataJSON());return r.fulfill({status:503,json:{error:{message:'Synthetic verification interruption'}}});});
+ await page.goto(route('ads'));await page.getByRole('button',{name:'Find available accounts',exact:true}).click();
+ const form=page.locator('form[data-action="connection.bind"]').filter({hasText:'Second account'});await form.getByRole('button',{name:'Connect this account',exact:true}).click();await expect(page.getByRole('alert')).toContainText('Synthetic verification interruption');
+ await expect(form).toContainText('2222222222');await form.getByRole('button',{name:'Connect this account',exact:true}).click();expect(chosen.map(x=>x.account_id)).toEqual(['2222222222','2222222222']);expect(chosen.every(x=>x.manager_id==='9999999999')).toBe(true);
+ await page.screenshot({path:`output/playwright/workspace/${info.project.name}-connections.png`,fullPage:true});
+});
+
+test('connection action retries retain the correct credential card',async({page})=>{
+ const first='10000000-0000-4000-8000-000000000001',second='10000000-0000-4000-8000-000000000002',engagement='30000000-0000-4000-8000-000000000001',sent=[];
+ await page.route('**/api/connections?*',r=>r.fulfill({json:{providers:[{id:'google_ads',name:'Google Ads',enabled:true}],connections:[first,second].map((id,i)=>({id,engagement_id:engagement,provider:'google_ads',environment:'test',state:'connected',version:i+1}))}}));
+ for(const operation of ['discover','disconnect'])await page.route('**/api/connections/'+operation,r=>{sent.push({operation,...r.request().postDataJSON()});return r.fulfill({status:503,json:{error:{message:'Synthetic action interruption'}}});});
+ await page.goto(route('ads'));
+ await page.locator('form[data-action="connection.discover"]').nth(1).getByRole('button').click();await expect(page.getByRole('alert')).toContainText('Synthetic action interruption');await page.locator('form[data-action="connection.discover"]').nth(0).getByRole('button').click();
+ const cards=page.locator('article.section-note');await cards.nth(1).getByText('Remove workspace access',{exact:true}).click();await cards.nth(1).getByRole('button',{name:'Remove stored connection',exact:true}).click();await expect(page.getByRole('alert')).toContainText('Synthetic action interruption');
+ await cards.nth(0).getByText('Remove workspace access',{exact:true}).click();await cards.nth(0).getByRole('button',{name:'Remove stored connection',exact:true}).click();
+ expect(sent.map(x=>x.connection_id)).toEqual([second,first,second,first]);expect(sent.slice(2).map(x=>x.expected_version)).toEqual([2,1]);
+});

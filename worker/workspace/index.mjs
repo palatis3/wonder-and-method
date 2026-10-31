@@ -1,3 +1,5 @@
+import {handleConnectionCallback,handleConnections} from './integrations/service.mjs';
+import {readAccounts} from './integrations/accounts.mjs';
 import {WorkspaceError,uuid,validateCommand} from '../../src/workspace/domain/contracts.mjs';
 import {body,config,errorResponse,json,requireOrigin,secure} from './http.mjs';
 import {handleAuth,identity,readSession,requireCsrf} from './auth/session.mjs';
@@ -15,9 +17,11 @@ export async function handleRequest(request,env){
     if(request.method==='OPTIONS')return json({error:{message:'Cross-origin access is unavailable.'}},403);
     if(url.pathname==='/health')return json({service:'wonder-and-method-workspace',status:'available',environment:env.ENVIRONMENT||'unconfigured'});
     if(url.pathname==='/api/webhooks/stripe')return await handleStripeWebhook(request,env);
+    const callback=await handleConnectionCallback(request,env);if(callback)return callback;
     const session=await readSession(request,env);const auth=await handleAuth(request,env,session);if(auth)return auth;
     if(url.pathname.startsWith('/api/')){
       await identity(session,env);
+      const connectionResponse=await handleConnections(request,env,session,{accounts:readAccounts});if(connectionResponse)return connectionResponse;
       const fileResponse=await handleFile(request,env,session);if(fileResponse)return fileResponse;
       if(request.method==='GET'&&url.pathname==='/api/businesses')return json(await rpc(env,session.access_token,'wm_businesses',{}));
       if(request.method==='GET'&&url.pathname==='/api/agreement-receipt')return json(await rpc(env,session.access_token,'wm_agreement_receipt',{p_org:uuid(url.searchParams.get('business')),p_id:uuid(url.searchParams.get('id'))}),200,{'Content-Disposition':'attachment; filename=agreement-receipt.json'});
@@ -42,7 +46,7 @@ export async function handleRequest(request,env){
     if(!['GET','HEAD'].includes(request.method))return json({error:{message:'Method unavailable.'}},405);
     if(!env.ASSETS)return json({error:{message:'Workspace interface unavailable.'}},503);
     if(url.pathname==='/'||url.pathname.startsWith('/workspace/')||url.pathname.startsWith('/operator/'))url.pathname='/index.html';
-    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
+    if(!['/index.html','/app.mjs','/commercial-ui.mjs','/billing-ui.mjs','/closure-ui.mjs','/connections-ui.mjs','/app.css','/domain/contracts.mjs','/domain/channels.mjs','/favicon.svg'].includes(url.pathname))return json({error:{message:'Page unavailable.'}},404);
     return secure(await env.ASSETS.fetch(new Request(url,{method:request.method})));
   }catch(error){return errorResponse(error,correlation);}
 }

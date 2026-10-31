@@ -283,3 +283,27 @@ journeys rerun after the selector fix. Build passed. Independent Astra checkpoin
 review reports no remaining P0-P2 findings; live Storage is still unqualified.
 The production Worker asset allowlist now includes closure-ui.mjs; an HTTP
 regression checks every module directly imported by app.mjs.
+
+## Provider connection checkpoint
+
+OAuth state is browser/session/tenant/service-bound, single-use and encrypted.
+Credentials bind their original recovery generation and the OAuth application
+configuration. Refresh uncertainty remains fenced; independent control is
+checked around token operations. Fresh account observations preserve manager
+identity and grant read_verified only. No ad execution adapter is enabled.
+
+Astra completed two intermediate read-only reviews. Recovery-generation,
+ending-service and repeated-card error restoration findings were fixed; no
+remaining P0-P2 findings at this checkpoint. These are not the three final judges.
+Dot researched current official provider contracts; OAUTH-SETUP.md records pins,
+required configuration and remaining live qualification gaps.
+
+Full local suite before final additions: 81 passed / 4 Postgres concurrency tests
+reserved for CI. Final focused connection/OAuth/HTTP suite: 20 passed. Ten existing
+desktop/phone journeys passed, plus four new account-selection/action-retry cases.
+Phone connection screenshot visually checked. Build passed. Staging migration
+provider_connections applied successfully; authenticated cannot call secret
+context RPC, anonymous cannot start OAuth, service_role can claim callbacks.
+Advisors show only the existing intentional deny-all private-table/RPC-boundary
+categories (RLS without policies; authenticated SECURITY DEFINER entrypoints).
+No live authorization, provider app approval or production publication is implied.

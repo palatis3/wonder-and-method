@@ -22,6 +22,7 @@ async function fixtureApi(req,res,url){
   await dbTools.actor(fixture.db,user,{aal:role==='operator'?'aal2':'aal1'});
   if(url.pathname==='/api/agreement-receipt'){res.setHeader('Content-Disposition','attachment; filename=agreement-receipt.json');send((await fixture.db.query('select public.wm_agreement_receipt($1,$2) as r',[url.searchParams.get('business'),url.searchParams.get('id')])).rows[0].r);return;}
   if(url.pathname==='/api/invitations'){send((await fixture.db.query('select public.wm_invitations() as r')).rows[0].r);return;}
+  if(url.pathname==='/api/connections'){send({providers:[{id:'google_ads',name:'Google Ads',enabled:false}],connections:[]});return;}
   if(url.pathname==='/api/businesses'){send((await fixture.db.query('select public.wm_businesses() as r')).rows[0].r);return;}
   if(url.pathname==='/api/workspace'){send({... (await fixture.db.query('select public.wm_workspace($1) as r',[url.searchParams.get('business')])).rows[0].r,file_policy:'invite_only_unscanned'});return;}
   if(req.method==='POST'&&url.pathname==='/api/command'){
