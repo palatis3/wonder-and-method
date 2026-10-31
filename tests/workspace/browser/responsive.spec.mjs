@@ -26,7 +26,8 @@ test('workspace forms and long business names reflow at 320px and desktop widths
   await page.setViewportSize({width,height:900});
   for(const section of ['new','business','agreements','billing','people','files']){
    await page.goto(route(section));await expect(page.locator('.page h1')).toBeVisible();
-   expect(await page.evaluate(expected=>document.documentElement.scrollWidth<=expected+1,width),`${section} at ${width}`).toBe(true);
+   const layout=await page.evaluate(expected=>({scrollWidth:document.documentElement.scrollWidth,overflow:Array.from(document.querySelectorAll('body *')).flatMap(el=>{const rect=el.getBoundingClientRect();return rect.width&&rect.right>expected+1?[{tag:el.tagName,className:el.className,type:el.getAttribute('type'),width:rect.width,right:rect.right}]:[];}).slice(-12)}),width);
+   expect(layout.scrollWidth,`${section} at ${width}: ${JSON.stringify(layout.overflow)}`).toBeLessThanOrEqual(width+1);
    if(width<=700){
     const controls=await page.locator('input:not([type=hidden]):not([type=checkbox]),textarea,select').evaluateAll(els=>els.filter(el=>el.getClientRects().length).map(el=>({font:parseFloat(getComputedStyle(el).fontSize),height:el.getBoundingClientRect().height,width:el.getBoundingClientRect().width})));
     expect(controls.every(x=>x.font>=16&&x.height>=44&&x.width<=width),`${section} touch controls`).toBe(true);
