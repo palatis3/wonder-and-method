@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-31T13:58:24.207Z",
+  "status": "accepted-reviewed-source-repair",
+  "baseline": "tests/baselines/site-content.json",
+  "sourceRepairCommit": "cd8e573ef5531c45e80c1e35da8107b4746d27b8",
+  "strictSourceRepairLedger": {
+    "path": "tests/fixtures/source-repairs-ci-20261031.json",
+    "sha256": "d4b3770b0c647a435faab03447c133461bcfd456582874cc895b842bc0160bed"
+  },
+  "relatedGuideReview": "operations/google-quality-audit-20261023/related-guide-review.json",
+  "baselineBeforeSha256": "fd095dd8c90466b407ce13eb8f8e1588a809d0dba2e704480e4e263143357652",
+  "baselineAfterSha256": "5a7382ca9b0086c207a46312c65442051597c9217b4a0d4cc5a39053b11e3098",
+  "counts": {
+    "htmlPages": 2456,
+    "publicRoutes": 2437,
+    "downloads": 443,
+    "assets": 2671,
+    "changedPages": 2,
+    "changedAssets": 1,
+    "added": 0,
+    "removed": 0
+  },
+  "changes": [
+    "Changed page: areas/florida/highlands-county/index.html (htmlSha256, links, textSha256)",
+    "Changed page: areas/north-carolina/davie-county/index.html (htmlSha256, links, textSha256)",
+    "Changed asset: sitemap.xml"
+  ],
+  "pages": [
+    {
+      "path": "areas/florida/highlands-county/index.html",
+      "route": "/areas/florida/highlands-county/",
+      "fields": [
+        "htmlSha256",
+        "links",
+        "textSha256"
+      ],
+      "before": {
+        "htmlSha256": "d078a0d357faa057df3ac8b2a7e181ff12fb8594e74bf5569a7e2aa6eda4008f",
+        "textSha256": "1924491c746ba3d96cd4f3a7f062fe77e88f4cbba8e5ca6419b8b624edff70c0",
+        "linksSha256": "906ca3a9ac01d9d21f17f5dff9023189bdef7b82b2740183e61c02ed5b75e639"
+      },
+      "after": {
+        "htmlSha256": "97140c2b73f5d8a081121d95147a43b9d2073f4e0f256749cba1f5e2c1efb39c",
+        "textSha256": "b199f7f2a7654afa806fe7951cdeec3fb5d47815b391025fc4e915bd95d7ef8d",
+        "linksSha256": "9fff0229b58481c79360322012ac037b7ea25a04c121ce010dbbb4f32d7bee5c"
+      },
+      "removedLinks": [
+        "https://www.signsmithflorida.com/about-1"
+      ],
+      "addedLinks": [
+        "https://www.signsmithflorida.com/signcabinets"
+      ]
+    },
+    {
+      "path": "areas/north-carolina/davie-county/index.html",
+      "route": "/areas/north-carolina/davie-county/",
+      "fields": [
+        "htmlSha256",
+        "links",
+        "textSha256"
+      ],
+      "before": {
+        "htmlSha256": "ca1f5a3cafd21043b59598f3454d9cfaf74d65cb6bdec0df10a5848ca5ead458",
+        "textSha256": "4e2c3af6e76ffa1654a4ce2d6f2e73c0ac895c5b51129b0dccf401bed1e701bf",
+        "linksSha256": "9b942303bd5b390ed9e9f00ff73fc500210e839e045360ca5d3721fc4c99fc9f"
+      },
+      "after": {
+        "htmlSha256": "b3bbc7b1836596e936e2fdab5085ff38687bfc7a59ed9422d9ba1a729c941f68",
+        "textSha256": "0b54c921c8ae6d9e3143ef21856dd119d82bbc2f562f3fdb4dcbe4c3427af619",
+        "linksSha256": "933964511e81cd2c4f1c7398bbed6d3871100feb61c5a6aa6c3f7b679d8b9683"
+      },
+      "removedLinks": [
+        "https://shirtworkscreations.com/"
+      ],
+      "addedLinks": [
+        "https://killerimpressionsscreenprinting.com/screen-printing-embroidery-services-lexington-nc/"
+      ]
+    }
+  ],
+  "sitemap": {
+    "path": "sitemap.xml",
+    "beforeSha256": "464f5814368e83e153378a7ac85d8a08b8c5909330fc4eb63004088258173cb4",
+    "afterSha256": "633349dd903f36134c7d2f848f970cab90db81ac7c7afd845a5da93cd47d0459",
+    "dateChanges": [
+      {
+        "url": "https://wonderandmethod.com/areas/florida/highlands-county/",
+        "before": "2026-10-29",
+        "after": "2026-10-31"
+      },
+      {
+        "url": "https://wonderandmethod.com/areas/north-carolina/davie-county/",
+        "before": "2026-10-29",
+        "after": "2026-10-31"
+      }
+    ],
+    "restoredPriorBytesSha256": "464f5814368e83e153378a7ac85d8a08b8c5909330fc4eb63004088258173cb4"
+  },
+  "preserved": {
+    "htmlPages": 2454,
+    "publicRoutes": 2435,
+    "downloads": 443,
+    "otherAssets": 2670,
+    "inventorySha256": "8bd2d92abfe25121d2aad599f8baa425b87398b094eb35214d567113b68821b9",
+    "unchangedEntriesSha256": "c1275c7dd4b8dfb3f52cf2b6d3bea0bdb412712553a5c52b9c06e4fe30cc7083",
+    "pageFields": [
+      "title",
+      "description",
+      "canonical",
+      "robots",
+      "headings",
+      "ids",
+      "media",
+      "styles",
+      "schemaSha256"
+    ]
+  },
+  "basis": [
+    "The confirmed Signsmith about-1 and Shirt Works Creations 404 repairs were reviewed in cd8e573ef5531c45e80c1e35da8107b4746d27b8. The strict ledger binds exact before/after source records and source bridges; all 14 historical preservation baselines remain unchanged.",
+    "Highlands retains the same fabrication-inquiry purpose while replacing unsupported quote-form claims with the live specified-size cabinet and mounting source. Davie uses the official Lexington business that explicitly serves Davie County, preserving the apparel-design inquiry purpose and honest local coverage.",
+    "Fresh rendered HTML differs only in the reviewed source bridge, source description/link, local coverage wording where necessary, and public source-check date. Contextual-guide destinations, relevance rationale and other metadata remain accepted and unchanged.",
+    "Replacing exactly the two October 31 lastmod values with October 29 reproduces the entire prior sitemap byte for byte. Every other page, download, asset and route identity is unchanged."
+  ],
+  "verification": [
+    "Fresh production build: 2437 public routes.",
+    "Site quality: 2437 pages, 4412 route checks, 2995 historical fragments, zero findings.",
+    "Exact contract comparison before acceptance: two pages (htmlSha256, links, textSha256) and sitemap.xml only; all other entries and inventory byte/value hashes preserved.",
+    "After targeted acceptance, node scripts/site-contract.mjs passed: 2456 HTML pages and 443 downloads.",
+    "node --test tests/site-contract.test.mjs tests/site-quality-rules.test.mjs tests/ci-source-repair.test.mjs: all 10 focused regressions passed.",
+    "Remaining core sequence inspected: Worker dry-run follows content preservation, then browser inventory planning. No additional content acceptance registry gate remains."
+  ]
+}
