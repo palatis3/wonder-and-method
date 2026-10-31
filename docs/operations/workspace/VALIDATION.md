@@ -239,3 +239,27 @@ Official API contracts verified 2026-10-30:
 - https://docs.stripe.com/api/charges/retrieve
 - https://docs.stripe.com/api/refunds/create
 - https://docs.stripe.com/refunds (including later bank failures/requires-action)
+
+
+## Settlement statement checkpoint
+
+Statements preserve immutable versions and distinguish earned work, received
+service fees/tax/overpayments, refund entitlement, and unpaid earned work. A
+source fingerprint changes with substantive billing evidence, not an unchanged
+poll timestamp. Prepared statements never complete refunds, advertising transfer,
+access revocation, exports, or service closure.
+
+Catalog revision 3 makes calendar-day earning explicit for new advertising
+management agreements. Deliverable-based plans require reviewed completed-work
+earnings; existing accepted agreements retain their original policies. Uninvoiced
+earned milestones remain visible. Partial receipts require typed allocation to
+service fees, tax and overpayment, summing to the actual observed receipt. Finance
+records completed-work and tax evidence; no real refund or tax credit is implied.
+
+Independent review identified and corrected universal time proration, missing
+uninvoiced earned milestones, and tax assumptions on partial receipts. Focused
+SQL tests cover leap February, DST, those corrections, stale financial inputs,
+immutable history and restricted customer roles. Browser journeys now include
+customer cancellation and studio statement creation. The preview and package
+copy all workspace source modules, preventing omitted UI imports. Mobile
+settlement tables support keyboard scrolling.

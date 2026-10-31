@@ -65,6 +65,7 @@ export function allowedReturnPath(value) {return typeof value==='string'&&/^\/(?
 
 const fields = {
   'billing.prepare':['schedule_id','expected_version'],
+  'closure.statement':['closure_id','expected_version','basis_digest','lines','tax_evidence','summary'],
   'billing.check_charge':['obligation_id','expected_version','charge_reference'],
   'billing.refund':['charge_binding_id','expected_version','amount_minor','reason','tax_evidence'],
   'billing.hosting':['schedule_id','expected_version','attachment_id','eligible_minor','reason'],
@@ -127,6 +128,11 @@ export function validateCommand(command,input) {
   if(command==='message.send')text(input.body,'message',{max:20000});
   if(command==='decision.record') {choice(input.decision,['approve','request_changes','withdraw'],'decision');if(input.decision==='request_changes')text(input.feedback,'requested changes');if(!/^[a-f0-9]{64}$/.test(input.digest||''))fail('invalid_revision','Reload the version before deciding.',409);}
   if(command==='time.record')integer(input.minutes,'minutes',{min:1,max:1440});
+  if(command==='billing.refund')integer(input.amount_minor,'refund amount',{min:1,max:Number.MAX_SAFE_INTEGER});
+  if(command==='closure.statement'){
+    if(!Array.isArray(input.lines))fail('invalid_payload','Review the statement lines.');
+    for(const line of input.lines){uuid(line.id,'invoice');integer(line.earned_minor,'earned amount',{min:0,max:Number.MAX_SAFE_INTEGER});integer(line.tax_credit_minor,'tax credit',{min:0,max:Number.MAX_SAFE_INTEGER});}
+  }
   if(command==='ai.prepare')choice(input.task_type,AI_TASKS,'AI task');
   if(command==='engagement.cancel'){choice(input.timing,['immediate','period_end'],'end date');choice(input.exit_mode,['stop','transfer'],'handoff');}
   if(command==='file.intent'){integer(input.bytes,'file size',{min:1,max:MAX_FILE_BYTES});text(input.name,'filename',{max:180});const ext=input.name.split('.').at(-1).toLowerCase();if(FILE_TYPES[ext]!==input.media_type)fail('unsupported_file','Choose a supported image, document, text or spreadsheet file.');}

@@ -29,6 +29,7 @@ export async function handleRequest(request,env){
         const data=validateCommand(command,input.input),key=request.headers.get('idempotency-key');
         if(!key||!/^[A-Za-z0-9_-]{16,200}$/.test(key))throw new WorkspaceError('action_key','Retry this action with its original identifier.');
         if(command.startsWith('billing.'))return json(await rpc(env,session.access_token,'wm_billing_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
+        if(command.startsWith('closure.'))return json(await rpc(env,session.access_token,'wm_closure_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(command.startsWith('ai.'))return json(await aiCommand(env,session,org,command,data,key));
         if(/^(service|proposal|agreement|onboarding|milestone)\./.test(command))return json(await rpc(env,session.access_token,'wm_commercial_command',{p_org:org,p_command:command,p_input:data,p_key:key}));
         if(/^(invitation|member|authority)\./.test(command))return json(await rpc(env,session.access_token,'wm_people_command',{p_org:org,p_command:command,p_input:data,p_key:key}));

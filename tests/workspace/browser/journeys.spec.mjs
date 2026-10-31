@@ -54,13 +54,21 @@ test('catalog proposal, named signer, agreement acceptance and portable receipt 
  await page.addScriptTag({content:axe});expect(await page.evaluate(async()=> (await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}})).violations.map(v=>v.id))).toEqual([]);
  await page.screenshot({path:`output/playwright/workspace/${info.project.name}-agreement.png`,fullPage:true});
  await page.getByRole('link',{name:'Studio',exact:true}).click();await page.goto(route('billing'));
- const stage=page.locator('article.card').filter({has:page.locator('form[data-action="milestone.due"]')}).first();
+ const stage=page.locator('article.card').filter({has:page.locator('form[data-action="milestone.due"]')}).filter({hasText:title}).first();
  await stage.getByText('Start this milestone',{exact:true}).click();
  await stage.getByLabel('Start and readiness evidence',{exact:true}).fill('Synthetic booked start confirmed.');
  await stage.getByRole('button',{name:'Record milestone as due',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
- await page.getByRole('button',{name:'Prepare the agreed invoice',exact:true}).first().click();await expect(page.getByRole('status')).toBeVisible();
+ await page.locator('article.card').filter({hasText:title}).getByRole('button',{name:'Prepare the agreed invoice',exact:true}).first().click();await expect(page.getByRole('status')).toBeVisible();
  await expect(page.getByText('Prepared',{exact:true})).toBeVisible();
-
+  await page.getByRole('link',{name:'Customer',exact:true}).click();await page.goto(route('billing'));
+  const close=page.locator('form[data-action="engagement.cancel"]');await close.getByLabel('Service',{exact:true}).selectOption({label:title});
+  await close.getByLabel('When should service end?',{exact:true}).selectOption('immediate');await close.getByLabel('Reason or handoff details',{exact:true}).fill('Synthetic service cancellation before work begins.');
+  await close.getByRole('button',{name:'Request service closure',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
+  await page.getByRole('link',{name:'Studio',exact:true}).click();await page.goto(route('billing'));
+  const settlement=page.locator('details').filter({has:page.locator('form[data-action="closure.statement"]')}).filter({hasText:title});await settlement.locator('summary').click();
+  await settlement.getByLabel('Tax and credit-note review',{exact:true}).fill('Synthetic no-tax unpaid invoice.');await settlement.getByLabel('Customer settlement explanation',{exact:true}).fill('No payment was received and no work was earned. Future charges have stopped; access and export are tracked separately.');
+  await settlement.getByRole('button',{name:'Record this statement',exact:true}).click();await expect(page.getByRole('status')).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Statement 1',exact:true}).first()).toBeVisible();
 });
 
 test('workspace pages have no horizontal overflow or automated serious accessibility violations',async({page})=>{
